@@ -12,6 +12,7 @@
 [workspace]
 resolver = "2"
 members = [
+    "packages/leptos-shadcn-ui",
     "packages/leptos/accordion",
     "packages/leptos/alert",
     "packages/leptos/alert-dialog",

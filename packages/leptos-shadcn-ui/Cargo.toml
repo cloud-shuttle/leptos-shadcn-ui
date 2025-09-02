@@ -1,0 +1,87 @@
+[package]
+name = "leptos-shadcn-ui"
+version = "0.1.0"
+edition = "2021"
+description = "A comprehensive collection of beautiful, accessible UI components built for Leptos v0.8+, inspired by shadcn/ui"
+homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+license = "MIT"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+keywords = ["leptos", "ui", "components", "shadcn", "web", "wasm", "rust"]
+categories = ["wasm", "gui", "web-programming"]
+readme = "README.md"
+
+[dependencies]
+# Core Leptos dependencies
+leptos = "0.8"
+leptos_router = "0.8"
+leptos-node-ref = "0.2"
+leptos-struct-component = "0.2"
+leptos-style = "0.2"
+
+# Individual component packages (internal workspace dependencies)
+leptos-shadcn-button = { path = "../leptos/button", optional = true }
+leptos-shadcn-input = { path = "../leptos/input", optional = true }
+leptos-shadcn-label = { path = "../leptos/label", optional = true }
+leptos-shadcn-checkbox = { path = "../leptos/checkbox", optional = true }
+leptos-shadcn-switch = { path = "../leptos/switch", optional = true }
+leptos-shadcn-radio-group = { path = "../leptos/radio-group", optional = true }
+leptos-shadcn-select = { path = "../leptos/select", optional = true }
+leptos-shadcn-textarea = { path = "../leptos/textarea", optional = true }
+leptos-shadcn-card = { path = "../leptos/card", optional = true }
+leptos-shadcn-separator = { path = "../leptos/separator", optional = true }
+leptos-shadcn-tabs = { path = "../leptos/tabs", optional = true }
+leptos-shadcn-accordion = { path = "../leptos/accordion", optional = true }
+leptos-shadcn-dialog = { path = "../leptos/dialog", optional = true }
+leptos-shadcn-popover = { path = "../leptos/popover", optional = true }
+leptos-shadcn-tooltip = { path = "../leptos/tooltip", optional = true }
+leptos-shadcn-alert = { path = "../leptos/alert", optional = true }
+leptos-shadcn-badge = { path = "../leptos/badge", optional = true }
+leptos-shadcn-skeleton = { path = "../leptos/skeleton", optional = true }
+leptos-shadcn-progress = { path = "../leptos/progress", optional = true }
+leptos-shadcn-toast = { path = "../leptos/toast", optional = true }
+leptos-shadcn-table = { path = "../leptos/table", optional = true }
+leptos-shadcn-calendar = { path = "../leptos/calendar", optional = true }
+leptos-shadcn-date-picker = { path = "../leptos/date-picker", optional = true }
+leptos-shadcn-pagination = { path = "../leptos/pagination", optional = true }
+leptos-shadcn-slider = { path = "../leptos/slider", optional = true }
+leptos-shadcn-toggle = { path = "../leptos/toggle", optional = true }
+
+# Additional dependencies
+tailwind_fuse = "0.3"
+lucide-leptos = "0.1"
+gloo-timers = "0.3"
+
+[features]
+default = ["all-components"]
+all-components = []
+button = ["leptos-shadcn-button"]
+input = ["leptos-shadcn-input"]
+label = ["leptos-shadcn-label"]
+checkbox = ["leptos-shadcn-checkbox"]
+switch = ["leptos-shadcn-switch"]
+radio-group = ["leptos-shadcn-radio-group"]
+select = ["leptos-shadcn-select"]
+textarea = ["leptos-shadcn-textarea"]
+card = ["leptos-shadcn-card"]
+separator = ["leptos-shadcn-separator"]
+tabs = ["leptos-shadcn-tabs"]
+accordion = ["leptos-shadcn-accordion"]
+dialog = ["leptos-shadcn-dialog"]
+popover = ["leptos-shadcn-popover"]
+tooltip = ["leptos-shadcn-tooltip"]
+alert = ["leptos-shadcn-alert"]
+badge = ["leptos-shadcn-badge"]
+skeleton = ["leptos-shadcn-skeleton"]
+progress = ["leptos-shadcn-progress"]
+toast = ["leptos-shadcn-toast"]
+table = ["leptos-shadcn-table"]
+calendar = ["leptos-shadcn-calendar"]
+date-picker = ["leptos-shadcn-date-picker"]
+pagination = ["leptos-shadcn-pagination"]
+slider = ["leptos-shadcn-slider"]
+toggle = ["leptos-shadcn-toggle"]
+
+[lib]
+name = "leptos_shadcn_ui"
+path = "src/lib.rs"

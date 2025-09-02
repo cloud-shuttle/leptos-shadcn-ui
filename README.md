@@ -28,8 +28,8 @@ A comprehensive collection of beautiful, accessible UI components built for [Lep
 
 ## 📦 Available Components
 
-### ✅ **Ready for Release (25 Components)**
-These components are fully tested and ready for production use:
+### ✅ **All 25 Components Ready for Release!**
+The main `leptos-shadcn-ui` package contains all these components and is ready for production use:
 
 #### **Form Components**
 - **Button** - Multiple variants (default, destructive, outline, secondary, ghost, link) and sizes
@@ -65,11 +65,11 @@ These components are fully tested and ready for production use:
 - **Slider** - Range slider input
 - **Toggle** - Toggle button component
 
-### 🚧 **In Development (27 Components)**
-These components are being updated for Leptos 0.8 compatibility:
+### 🚧 **Future Components (27 More)**
+Advanced components are being updated for Leptos 0.8 compatibility and will be added to future releases:
 - Form, Combobox, Command, Input OTP, Breadcrumb, Navigation Menu, Context Menu, Dropdown Menu, Menubar, Scroll Area, Aspect Ratio, Collapsible, Sheet, Drawer, Hover Card, Alert Dialog, Carousel, and more...
 
-**Note**: We're releasing the stable components first to get them into users' hands immediately, while continuing development on the advanced components.
+**Note**: All 25 current components are fully tested and working with Leptos v0.8.8!
 
 ## 🙏 Acknowledgments
 
@@ -95,25 +95,48 @@ leptos = "0.8.0"  # Must be 0.8.0 or higher
 leptos_router = "0.8.0"  # Must be 0.8.0 or higher
 ```
 
-### 2. Add Components to your `Cargo.toml`
+### 2. Add the Main Package to your `Cargo.toml`
 
 ```toml
 [dependencies]
-leptos-shadcn-button = { path = "path/to/leptos-shadcn-ui/packages/leptos/button" }
-leptos-shadcn-input = { path = "path/to/leptos-shadcn-ui/packages/leptos/input" }
-leptos-shadcn-card = { path = "path/to/leptos-shadcn-ui/packages/leptos/card" }
-leptos-shadcn-alert = { path = "path/to/leptos-shadcn-ui/packages/leptos/alert" }
-leptos-shadcn-label = { path = "path/to/leptos-shadcn-ui/packages/leptos/label" }
-leptos-shadcn-separator = { path = "path/to/leptos-shadcn-ui/packages/leptos/separator" }
+leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui" }
 ```
+
+**Or from crates.io (after release):**
+```toml
+[dependencies]
+leptos-shadcn-ui = "0.1.0"
+```
+
+### 3. Choose Your Components
+
+**All Components (Default):**
+```toml
+leptos-shadcn-ui = "0.1.0"
+# or
+leptos-shadcn-ui = { version = "0.1.0", features = ["all-components"] }
+```
+
+**Specific Components Only:**
+```toml
+leptos-shadcn-ui = { version = "0.1.0", features = ["button", "input", "card"] }
+```
+
+**Available Features:**
+- `button`, `input`, `label`, `checkbox`, `switch`, `radio-group`, `select`, `textarea`
+- `card`, `separator`, `tabs`, `accordion`, `dialog`, `popover`, `tooltip`
+- `alert`, `badge`, `skeleton`, `progress`, `toast`, `table`, `calendar`, `date-picker`, `pagination`
+- `slider`, `toggle`
 
 ### 2. Import and use in your Leptos components
 
 ```rust
 use leptos::*;
-use leptos_shadcn_button::{Button, ButtonVariant, ButtonSize};
-use leptos_shadcn_input::Input;
-use leptos_shadcn_card::{Card, CardHeader, CardTitle, CardContent};
+use leptos_shadcn_ui::{Button, ButtonVariant, ButtonSize, Input, Card, CardHeader, CardTitle, CardContent};
+
+// Or use the prelude for common components:
+// use leptos_shadcn_ui::prelude::*;
+```
 
 #[component]
 pub fn MyComponent() -> impl IntoView {

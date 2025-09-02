@@ -41,12 +41,33 @@ COMPONENTS=(
 echo "📦 Components to publish: ${#COMPONENTS[@]}"
 echo ""
 
+# Function to check if a crate is already published
+check_if_published() {
+    local package_name=$1
+    local version="0.1.0"
+    
+    # Check if the crate exists on crates.io
+    if cargo search "$package_name" --limit 1 | grep -q "^$package_name"; then
+        # Check if our specific version is already published
+        if cargo search "$package_name" --limit 10 | grep -q "$package_name = \"$version\""; then
+            return 0  # Already published
+        fi
+    fi
+    return 1  # Not published
+}
+
 # Function to publish a component
 publish_component() {
     local component=$1
     local package_name="leptos-shadcn-${component}"
     
     echo "📤 Publishing ${package_name}..."
+    
+    # Check if already published
+    if check_if_published "$package_name"; then
+        echo "  ✅ ${package_name} is already published on crates.io - skipping"
+        return 0
+    fi
     
     # Navigate to component directory
     cd "packages/leptos/${component}"
