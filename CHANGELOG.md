@@ -7,22 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] - 2025-01-02
 
-### 🎉 Initial Release - Leptos ShadCN UI Components
+### 🎉 Initial Release - Core Components Ready!
 
-This is the initial release of Leptos ShadCN UI Components, providing 52 fully-tested UI components built specifically for Leptos v0.8+.
+This release focuses on **25 stable, production-ready components** that are fully tested and working with Leptos v0.8+.
+
+#### ✅ **Components Released (25)**
+- **Form Components**: Button, Input, Label, Checkbox, Switch, Radio Group, Select, Textarea
+- **Layout Components**: Card, Separator, Tabs, Accordion, Dialog, Popover, Tooltip
+- **Feedback & Status**: Alert, Badge, Skeleton, Progress, Toast, Table, Calendar, Date Picker, Pagination
+- **Interactive Components**: Slider, Toggle
+
+#### 🚧 **Components In Development (27)**
+Advanced components are being updated for Leptos 0.8 compatibility and will be released in future versions:
+- Form, Combobox, Command, Input OTP, Breadcrumb, Navigation Menu, Context Menu, Dropdown Menu, Menubar, Scroll Area, Aspect Ratio, Collapsible, Sheet, Drawer, Hover Card, Alert Dialog, Carousel, and more...
 
 #### ✨ Added
-
-**Core UI Components (52 packages):**
-- **Form Components**: Button, Input, Label, Checkbox, Switch, Radio Group, Select, Textarea, Form
-- **Layout Components**: Card, Separator, Skeleton, Tabs, Accordion, Collapsible, Aspect Ratio
-- **Navigation**: Breadcrumb, Navigation Menu, Pagination, Tabs
-- **Feedback**: Alert, Alert Dialog, Progress, Toast, Skeleton
-- **Overlay**: Dialog, Popover, Tooltip, Sheet, Drawer, Hover Card
-- **Data Display**: Table, Badge, Calendar, Date Picker
-- **Input**: Input OTP, Slider, Toggle, Combobox, Command
-- **Utilities**: Utils, Registry, Error Boundary, Lazy Loading
-- **Advanced**: Context Menu, Dropdown Menu, Menubar, Scroll Area
 
 **Infrastructure:**
 - Complete workspace setup with 52 packages
@@ -43,9 +42,9 @@ This is the initial release of Leptos ShadCN UI Components, providing 52 fully-t
 
 #### 🧪 Testing
 
-- **Test Coverage**: 216 tests across all packages
-- **Component Testing**: Each component has comprehensive tests
-- **Integration Testing**: Full workspace integration tests
+- **Test Coverage**: Core components fully tested and verified working
+- **Component Testing**: Each released component has comprehensive tests
+- **Integration Testing**: Core components integration tested
 - **Browser Testing**: Components tested in browser environment
 - **Error Handling**: Robust error boundary and fallback mechanisms
 
@@ -72,10 +71,11 @@ This is the initial release of Leptos ShadCN UI Components, providing 52 fully-t
 
 #### 🌟 Highlights
 
-- **First Major Release**: Complete UI component library for Leptos
-- **Production Ready**: All components tested and ready for production use
+- **First Major Release**: Core UI component library for Leptos
+- **Production Ready**: 25 components tested and ready for production use
 - **Community Focused**: Built for the Leptos community with modern web standards
 - **Future Proof**: Designed to work with future Leptos v0.8.x releases
+- **Iterative Development**: Releasing stable components first, advanced components coming soon
 
 ---
 
@@ -95,7 +95,15 @@ Since this is the initial release, no migration is needed. However, ensure your 
 
 ## Known Issues
 
-None at this time. All 52 packages are fully tested and working.
+- **Advanced Components**: 27 advanced components are still being updated for Leptos 0.8 compatibility
+- **Core Components**: All 25 released components are fully tested and working
+- **Dependencies**: Some components may have dependency issues that are being resolved
+
+## Release Strategy
+
+- **Phase 1 (v0.1.0)**: Core components for immediate use ✅
+- **Phase 2 (v0.2.0)**: Advanced components after Leptos 0.8 updates
+- **Phase 3 (v0.3.0+)**: Full 52-component suite with advanced features
 
 ## Future Plans
 

@@ -1,8 +1,7 @@
 [package]
-name = "shadcn-ui-leptos-accordion"
+name = "leptos-shadcn-accordion"
 description = "Leptos port of shadcn/ui accordion"
 homepage = "https://shadcn-ui.rustforweb.org/components/accordion.html"
-publish = false
 
 authors.workspace = true
 edition.workspace = true

@@ -606,32 +606,32 @@ dependencies = [
  "gloo-timers",
  "js-sys",
  "leptos",
+ "leptos-shadcn-accordion",
+ "leptos-shadcn-alert",
+ "leptos-shadcn-badge",
+ "leptos-shadcn-button",
+ "leptos-shadcn-card",
+ "leptos-shadcn-checkbox",
+ "leptos-shadcn-dialog",
+ "leptos-shadcn-input",
+ "leptos-shadcn-label",
+ "leptos-shadcn-pagination",
+ "leptos-shadcn-popover",
+ "leptos-shadcn-progress",
+ "leptos-shadcn-radio-group",
+ "leptos-shadcn-select",
+ "leptos-shadcn-separator",
+ "leptos-shadcn-skeleton",
+ "leptos-shadcn-slider",
+ "leptos-shadcn-switch",
+ "leptos-shadcn-table",
+ "leptos-shadcn-tabs",
+ "leptos-shadcn-textarea",
+ "leptos-shadcn-toast",
+ "leptos-shadcn-tooltip",
  "leptos_router",
  "log",
  "lucide-leptos",
- "shadcn-ui-leptos-accordion",
- "shadcn-ui-leptos-alert",
- "shadcn-ui-leptos-badge",
- "shadcn-ui-leptos-button",
- "shadcn-ui-leptos-card",
- "shadcn-ui-leptos-checkbox",
- "shadcn-ui-leptos-dialog",
- "shadcn-ui-leptos-input",
- "shadcn-ui-leptos-label",
- "shadcn-ui-leptos-pagination",
- "shadcn-ui-leptos-popover",
- "shadcn-ui-leptos-progress",
- "shadcn-ui-leptos-radio-group",
- "shadcn-ui-leptos-select",
- "shadcn-ui-leptos-separator",
- "shadcn-ui-leptos-skeleton",
- "shadcn-ui-leptos-slider",
- "shadcn-ui-leptos-switch",
- "shadcn-ui-leptos-table",
- "shadcn-ui-leptos-tabs",
- "shadcn-ui-leptos-textarea",
- "shadcn-ui-leptos-toast",
- "shadcn-ui-leptos-tooltip",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",
@@ -1274,6 +1274,650 @@ checksum = "4f57b1ebc451fe9e7b6c7eba680fa8bc7313b410cc6c0f18481cb55a60ff3ac6"
 dependencies = [
  "leptos",
  "send_wrapper",
+]
+
+[[package]]
+name = "leptos-shadcn-accordion"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-alert"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-alert-dialog"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-aspect-ratio"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+]
+
+[[package]]
+name = "leptos-shadcn-badge"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-breadcrumb"
+version = "0.0.0"
+dependencies = [
+ "leptos",
+ "serde",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+]
+
+[[package]]
+name = "leptos-shadcn-button"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-calendar"
+version = "0.1.0"
+dependencies = [
+ "js-sys",
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-card"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-carousel"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-checkbox"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-collapsible"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-combobox"
+version = "0.0.0"
+dependencies = [
+ "gloo-timers",
+ "leptos",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.1.1",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-command"
+version = "0.0.0"
+dependencies = [
+ "leptos",
+ "serde",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-context-menu"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-date-picker"
+version = "0.1.0"
+dependencies = [
+ "js-sys",
+ "leptos",
+ "leptos-node-ref",
+ "leptos-shadcn-button",
+ "leptos-shadcn-calendar",
+ "leptos-shadcn-popover",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-dialog"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-drawer"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-dropdown-menu"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-error-boundary"
+version = "0.0.0"
+dependencies = [
+ "leptos",
+ "log",
+ "shadcn-ui-test-utils",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-form"
+version = "0.0.0"
+dependencies = [
+ "gloo-timers",
+ "leptos",
+ "leptos-shadcn-button",
+ "leptos-shadcn-input",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.1.1",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-hover-card"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-input"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-input-otp"
+version = "0.0.0"
+dependencies = [
+ "leptos",
+ "serde",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-label"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-lazy-loading"
+version = "0.0.0"
+dependencies = [
+ "leptos",
+]
+
+[[package]]
+name = "leptos-shadcn-menubar"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-navigation-menu"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-pagination"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-shadcn-button",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-popover"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-progress"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-radio-group"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+]
+
+[[package]]
+name = "leptos-shadcn-registry"
+version = "0.0.0"
+dependencies = [
+ "leptos",
+]
+
+[[package]]
+name = "leptos-shadcn-scroll-area"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-select"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-separator"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-sheet"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-skeleton"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-slider"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-switch"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-table"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-tabs"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-textarea"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-toast"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-toggle"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-tooltip"
+version = "0.1.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-utils"
+version = "0.1.0"
+dependencies = [
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
 ]
 
 [[package]]
@@ -2308,646 +2952,6 @@ dependencies = [
  "shadcn-registry",
  "shadcn-ui-test-utils",
  "tokio",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-accordion"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-alert"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-alert-dialog"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-aspect-ratio"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-badge"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-breadcrumb"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "serde",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-button"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-calendar"
-version = "0.1.0"
-dependencies = [
- "js-sys",
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "lucide-leptos",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-card"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-carousel"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-checkbox"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-collapsible"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-combobox"
-version = "0.0.0"
-dependencies = [
- "leptos",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.1.1",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-command"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "serde",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-context-menu"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-date-picker"
-version = "0.1.0"
-dependencies = [
- "js-sys",
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "lucide-leptos",
- "shadcn-ui-leptos-button",
- "shadcn-ui-leptos-calendar",
- "shadcn-ui-leptos-popover",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-dialog"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-drawer"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-dropdown-menu"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-error-boundary"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "log",
- "shadcn-ui-test-utils",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-form"
-version = "0.0.0"
-dependencies = [
- "leptos",
- "leptos-style",
- "shadcn-ui-leptos-button",
- "shadcn-ui-leptos-input",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.1.1",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-hover-card"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-input"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-input-otp"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "serde",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-label"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-lazy-loading"
-version = "0.0.1"
-dependencies = [
- "leptos",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-menubar"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-navigation-menu"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-pagination"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "lucide-leptos",
- "shadcn-ui-leptos-button",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-popover"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-progress"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-radio-group"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-registry"
-version = "0.0.1"
-dependencies = [
- "leptos",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-scroll-area"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-select"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-separator"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-sheet"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-skeleton"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-slider"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-switch"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-table"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-tabs"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-textarea"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-toast"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-toggle"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-tooltip"
-version = "0.1.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "shadcn-ui-leptos-utils"
-version = "0.1.0"
-dependencies = [
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
 ]
 
 [[package]]

@@ -28,18 +28,60 @@ A comprehensive collection of beautiful, accessible UI components built for [Lep
 
 ## 📦 Available Components
 
-### ✅ Core Components (Fully Implemented - 52 Packages!)
-- **Form Components**: Button, Input, Label, Checkbox, Switch, Radio Group, Select, Textarea, Form
-- **Layout Components**: Card, Separator, Skeleton, Tabs, Accordion, Collapsible, Aspect Ratio
-- **Navigation**: Breadcrumb, Navigation Menu, Pagination, Tabs
-- **Feedback**: Alert, Alert Dialog, Progress, Toast, Skeleton
-- **Overlay**: Dialog, Popover, Tooltip, Sheet, Drawer, Hover Card
-- **Data Display**: Table, Badge, Calendar, Date Picker
-- **Input**: Input OTP, Slider, Toggle, Combobox, Command
-- **Utilities**: Utils, Registry, Error Boundary, Lazy Loading
-- **Advanced**: Context Menu, Dropdown Menu, Menubar, Scroll Area
+### ✅ **Ready for Release (25 Components)**
+These components are fully tested and ready for production use:
 
-**All 52 packages are fully tested and working with Leptos v0.8.8!**
+#### **Form Components**
+- **Button** - Multiple variants (default, destructive, outline, secondary, ghost, link) and sizes
+- **Input** - Form input with various types and states
+- **Label** - Accessible form labels
+- **Checkbox** - Checkbox with proper accessibility
+- **Switch** - Toggle switch component
+- **Radio Group** - Radio button group with proper grouping
+- **Select** - Dropdown select component
+- **Textarea** - Multi-line text input
+
+#### **Layout Components**
+- **Card** - Content containers with header, content, and footer sections
+- **Separator** - Visual dividers for content organization
+- **Tabs** - Tabbed interface component
+- **Accordion** - Collapsible content sections
+- **Dialog** - Modal dialog component
+- **Popover** - Floating content overlay
+- **Tooltip** - Hover tooltip component
+
+#### **Feedback & Status**
+- **Alert** - Informational, warning, success, and error messages
+- **Badge** - Status indicators and labels
+- **Skeleton** - Loading placeholders
+- **Progress** - Progress bars and indicators
+- **Toast** - Notification toasts
+- **Table** - Data table component
+- **Calendar** - Date calendar component
+- **Date Picker** - Date selection component
+- **Pagination** - Page navigation component
+
+#### **Interactive Components**
+- **Slider** - Range slider input
+- **Toggle** - Toggle button component
+
+### 🚧 **In Development (27 Components)**
+These components are being updated for Leptos 0.8 compatibility:
+- Form, Combobox, Command, Input OTP, Breadcrumb, Navigation Menu, Context Menu, Dropdown Menu, Menubar, Scroll Area, Aspect Ratio, Collapsible, Sheet, Drawer, Hover Card, Alert Dialog, Carousel, and more...
+
+**Note**: We're releasing the stable components first to get them into users' hands immediately, while continuing development on the advanced components.
+
+## 🙏 Acknowledgments
+
+This project builds upon the excellent work of several open-source projects:
+
+- **[shadcn/ui](https://ui.shadcn.com/)** - The original React component library that inspired this port
+- **[Rust for Web shadcn](https://github.com/RustForWeb/shadcn-ui)** - The original Rust port of shadcn/ui components
+- **[Leptos](https://leptos.dev/)** - The modern Rust web framework that makes this possible
+
+We're grateful to the maintainers and contributors of these projects for their dedication to the Rust and web development communities.
+
+> **Note**: This repository was generated with the assistance of AI/LLM tools. While the code has been reviewed and tested, please report any issues you encounter.
 
 ## 🛠️ Installation
 
@@ -57,21 +99,21 @@ leptos_router = "0.8.0"  # Must be 0.8.0 or higher
 
 ```toml
 [dependencies]
-shadcn-ui-leptos-button = { path = "path/to/leptos-shadcn-ui/packages/leptos/button" }
-shadcn-ui-leptos-input = { path = "path/to/leptos-shadcn-ui/packages/leptos/input" }
-shadcn-ui-leptos-card = { path = "path/to/leptos-shadcn-ui/packages/leptos/card" }
-shadcn-ui-leptos-alert = { path = "path/to/leptos-shadcn-ui/packages/leptos/alert" }
-shadcn-ui-leptos-label = { path = "path/to/leptos-shadcn-ui/packages/leptos/label" }
-shadcn-ui-leptos-separator = { path = "path/to/leptos-shadcn-ui/packages/leptos/separator" }
+leptos-shadcn-button = { path = "path/to/leptos-shadcn-ui/packages/leptos/button" }
+leptos-shadcn-input = { path = "path/to/leptos-shadcn-ui/packages/leptos/input" }
+leptos-shadcn-card = { path = "path/to/leptos-shadcn-ui/packages/leptos/card" }
+leptos-shadcn-alert = { path = "path/to/leptos-shadcn-ui/packages/leptos/alert" }
+leptos-shadcn-label = { path = "path/to/leptos-shadcn-ui/packages/leptos/label" }
+leptos-shadcn-separator = { path = "path/to/leptos-shadcn-ui/packages/leptos/separator" }
 ```
 
 ### 2. Import and use in your Leptos components
 
 ```rust
 use leptos::*;
-use shadcn_ui_leptos_button::{Button, ButtonVariant, ButtonSize};
-use shadcn_ui_leptos_input::Input;
-use shadcn_ui_leptos_card::{Card, CardHeader, CardTitle, CardContent};
+use leptos_shadcn_button::{Button, ButtonVariant, ButtonSize};
+use leptos_shadcn_input::Input;
+use leptos_shadcn_card::{Card, CardHeader, CardTitle, CardContent};
 
 #[component]
 pub fn MyComponent() -> impl IntoView {

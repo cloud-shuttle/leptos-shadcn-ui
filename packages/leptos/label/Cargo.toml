@@ -1,8 +1,7 @@
 [package]
-name = "shadcn-ui-leptos-label"
+name = "leptos-shadcn-label"
 description = "Leptos port of shadcn/ui label"
 homepage = "https://shadcn-ui.rustforweb.org/components/label.html"
-publish = false
 
 authors.workspace = true
 edition.workspace = true

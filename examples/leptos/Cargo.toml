@@ -35,29 +35,29 @@ all_components = [
 ]
 
 # Individual component features
-button = ["dep:shadcn-ui-leptos-button"]
-input = ["dep:shadcn-ui-leptos-input"]
-label = ["dep:shadcn-ui-leptos-label"]
-card = ["dep:shadcn-ui-leptos-card"]
-separator = ["dep:shadcn-ui-leptos-separator"]
-alert = ["dep:shadcn-ui-leptos-alert"]
-badge = ["dep:shadcn-ui-leptos-badge"]
-checkbox = ["dep:shadcn-ui-leptos-checkbox"]
-switch = ["dep:shadcn-ui-leptos-switch"]
-radio-group = ["dep:shadcn-ui-leptos-radio-group"]
-select = ["dep:shadcn-ui-leptos-select"]
-textarea = ["dep:shadcn-ui-leptos-textarea"]
-tabs = ["dep:shadcn-ui-leptos-tabs"]
-accordion = ["dep:shadcn-ui-leptos-accordion"]
-dialog = ["dep:shadcn-ui-leptos-dialog"]
-popover = ["dep:shadcn-ui-leptos-popover"]
-tooltip = ["dep:shadcn-ui-leptos-tooltip"]
-toast = ["dep:shadcn-ui-leptos-toast"]
-skeleton = ["dep:shadcn-ui-leptos-skeleton"]
-progress = ["dep:shadcn-ui-leptos-progress"]
-slider = ["dep:shadcn-ui-leptos-slider"]
-table = ["dep:shadcn-ui-leptos-table"]
-pagination = ["dep:shadcn-ui-leptos-pagination"]
+button = ["dep:leptos-shadcn-button"]
+input = ["dep:leptos-shadcn-input"]
+label = ["dep:leptos-shadcn-label"]
+card = ["dep:leptos-shadcn-card"]
+separator = ["dep:leptos-shadcn-separator"]
+alert = ["dep:leptos-shadcn-alert"]
+badge = ["dep:leptos-shadcn-badge"]
+checkbox = ["dep:leptos-shadcn-checkbox"]
+switch = ["dep:leptos-shadcn-switch"]
+radio-group = ["dep:leptos-shadcn-radio-group"]
+select = ["dep:leptos-shadcn-select"]
+textarea = ["dep:leptos-shadcn-textarea"]
+tabs = ["dep:leptos-shadcn-tabs"]
+accordion = ["dep:leptos-shadcn-accordion"]
+dialog = ["dep:leptos-shadcn-dialog"]
+popover = ["dep:leptos-shadcn-popover"]
+tooltip = ["dep:leptos-shadcn-tooltip"]
+toast = ["dep:leptos-shadcn-toast"]
+skeleton = ["dep:leptos-shadcn-skeleton"]
+progress = ["dep:leptos-shadcn-progress"]
+slider = ["dep:leptos-shadcn-slider"]
+table = ["dep:leptos-shadcn-table"]
+pagination = ["dep:leptos-shadcn-pagination"]
 lucide-leptos = ["dep:lucide-leptos"]
 default_theme = []
 new_york_theme = []
@@ -72,29 +72,29 @@ leptos_router.workspace = true
 log.workspace = true
 
 # Include all available components
-shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
-shadcn-ui-leptos-input = { path = "../../packages/leptos/input", optional = true }
-shadcn-ui-leptos-label = { path = "../../packages/leptos/label", optional = true }
-shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
-shadcn-ui-leptos-separator = { path = "../../packages/leptos/separator", optional = true }
-shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert", optional = true }
-shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
-shadcn-ui-leptos-checkbox = { path = "../../packages/leptos/checkbox", optional = true }
-shadcn-ui-leptos-switch = { path = "../../packages/leptos/switch", optional = true }
-shadcn-ui-leptos-radio-group = { path = "../../packages/leptos/radio-group", optional = true }
-shadcn-ui-leptos-select = { path = "../../packages/leptos/select", optional = true }
-shadcn-ui-leptos-textarea = { path = "../../packages/leptos/textarea", optional = true }
-shadcn-ui-leptos-tabs = { path = "../../packages/leptos/tabs", optional = true }
-shadcn-ui-leptos-accordion = { path = "../../packages/leptos/accordion", optional = true }
-shadcn-ui-leptos-dialog = { path = "../../packages/leptos/dialog", optional = true }
-shadcn-ui-leptos-popover = { path = "../../packages/leptos/popover", optional = true }
-shadcn-ui-leptos-tooltip = { path = "../../packages/leptos/tooltip", optional = true }
-shadcn-ui-leptos-toast = { path = "../../packages/leptos/toast", optional = true }
-shadcn-ui-leptos-skeleton = { path = "../../packages/leptos/skeleton", optional = true }
-shadcn-ui-leptos-progress = { path = "../../packages/leptos/progress", optional = true }
-shadcn-ui-leptos-slider = { path = "../../packages/leptos/slider", optional = true }
-shadcn-ui-leptos-table = { path = "../../packages/leptos/table", optional = true }
-shadcn-ui-leptos-pagination = { path = "../../packages/leptos/pagination", optional = true }
+leptos-shadcn-button = { path = "../../packages/leptos/button", optional = true }
+leptos-shadcn-input = { path = "../../packages/leptos/input", optional = true }
+leptos-shadcn-label = { path = "../../packages/leptos/label", optional = true }
+leptos-shadcn-card = { path = "../../packages/leptos/card", optional = true }
+leptos-shadcn-separator = { path = "../../packages/leptos/separator", optional = true }
+leptos-shadcn-alert = { path = "../../packages/leptos/alert", optional = true }
+leptos-shadcn-badge = { path = "../../packages/leptos/badge", optional = true }
+leptos-shadcn-checkbox = { path = "../../packages/leptos/checkbox", optional = true }
+leptos-shadcn-switch = { path = "../../packages/leptos/switch", optional = true }
+leptos-shadcn-radio-group = { path = "../../packages/leptos/radio-group", optional = true }
+leptos-shadcn-select = { path = "../../packages/leptos/select", optional = true }
+leptos-shadcn-textarea = { path = "../../packages/leptos/textarea", optional = true }
+leptos-shadcn-tabs = { path = "../../packages/leptos/tabs", optional = true }
+leptos-shadcn-accordion = { path = "../../packages/leptos/accordion", optional = true }
+leptos-shadcn-dialog = { path = "../../packages/leptos/dialog", optional = true }
+leptos-shadcn-popover = { path = "../../packages/leptos/popover", optional = true }
+leptos-shadcn-tooltip = { path = "../../packages/leptos/tooltip", optional = true }
+leptos-shadcn-toast = { path = "../../packages/leptos/toast", optional = true }
+leptos-shadcn-skeleton = { path = "../../packages/leptos/skeleton", optional = true }
+leptos-shadcn-progress = { path = "../../packages/leptos/progress", optional = true }
+leptos-shadcn-slider = { path = "../../packages/leptos/slider", optional = true }
+leptos-shadcn-table = { path = "../../packages/leptos/table", optional = true }
+leptos-shadcn-pagination = { path = "../../packages/leptos/pagination", optional = true }
 
 # Include lucide-leptos for icons
 lucide-leptos = { workspace = true, optional = true }

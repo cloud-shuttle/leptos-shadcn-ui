@@ -1,12 +1,7 @@
 [package]
-name = "shadcn-ui-leptos-form"
-version = "0.0.0"
-edition = "2021"
+name = "leptos-shadcn-form"
 description = "Leptos port of shadcn/ui Form component"
-license = "MIT"
-repository = "https://github.com/RustForWeb/shadcn-ui"
-keywords = ["leptos", "ui", "form", "validation", "shadcn"]
-categories = ["wasm", "gui"]
+homepage = "https://shadcn-ui.rustforweb.org/components/form.html"
 
 [dependencies]
 leptos.workspace = true
@@ -14,8 +9,10 @@ leptos-style = "0.2"
 web-sys = { version = "0.3", features = ["HtmlFormElement", "HtmlInputElement", "HtmlElement", "Element", "Node", "Event", "EventTarget", "SubmitEvent"] }
 wasm-bindgen = "0.2"
 tailwind_fuse = "0.1"
-shadcn-ui-leptos-input = { path = "../input" }
-shadcn-ui-leptos-button = { path = "../button" }
+leptos-shadcn-input = { path = "../input" }
+leptos-shadcn-button = { path = "../button" }
+gloo-timers = "0.3"
+leptos-struct-component = "0.2"
 
 [dev-dependencies]
 shadcn-ui-test-utils = { path = "../../test-utils"}

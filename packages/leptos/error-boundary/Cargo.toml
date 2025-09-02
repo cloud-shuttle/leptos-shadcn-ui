@@ -1,13 +1,7 @@
 [package]
-name = "shadcn-ui-leptos-error-boundary"
-version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
+name = "leptos-shadcn-error-boundary"
 description = "Production-ready error boundary component for Leptos applications"
-keywords = ["leptos", "error-handling", "error-boundary", "production", "resilience"]
-categories = ["web-programming", "gui", "development-tools"]
+homepage = "https://shadcn-ui.rustforweb.org/components/error-boundary.html"
 
 [dependencies]
 leptos = { workspace = true, features = ["csr"] }

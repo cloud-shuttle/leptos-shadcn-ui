@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use tailwind_fuse::tw_merge;
-use shadcn_ui_leptos_calendar::{Calendar as CalendarComponent, CalendarDate};
-use shadcn_ui_leptos_button::{Button, ButtonVariant};
+use leptos_shadcn_calendar::{Calendar as CalendarComponent, CalendarDate};
+use leptos_shadcn_button::{Button, ButtonVariant};
 
 const DATE_PICKER_CLASS: &str = "w-full";
 const DATE_PICKER_TRIGGER_CLASS: &str = "w-full justify-start text-left font-normal";

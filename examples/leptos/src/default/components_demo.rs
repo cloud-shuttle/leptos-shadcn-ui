@@ -2,12 +2,12 @@ use leptos::*;
 use leptos::prelude::*;
 
 // Import only the core components that are known to work
-use shadcn_ui_leptos_button::{Button, ButtonVariant, ButtonSize};
-use shadcn_ui_leptos_input::Input;
-use shadcn_ui_leptos_card::{Card, CardHeader, CardTitle, CardDescription, CardContent};
-use shadcn_ui_leptos_alert::{Alert, AlertTitle, AlertDescription, AlertVariant};
-use shadcn_ui_leptos_label::Label;
-use shadcn_ui_leptos_separator::Separator;
+use leptos_shadcn_button::{Button, ButtonVariant, ButtonSize};
+use leptos_shadcn_input::Input;
+use leptos_shadcn_card::{Card, CardHeader, CardTitle, CardDescription, CardContent};
+use leptos_shadcn_alert::{Alert, AlertTitle, AlertDescription, AlertVariant};
+use leptos_shadcn_label::Label;
+use leptos_shadcn_separator::Separator;
 
 #[component]
 pub fn ComponentsDemo() -> impl IntoView {
