@@ -13,26 +13,13 @@
 //! 
 //! ## Usage
 //! 
-//! ```rust
-//! use leptos::*;
-//! use leptos_shadcn_ui::{Button, Input, Card, Alert};
+//! See the [README.md](../README.md) for complete installation and usage instructions.
 //! 
-//! #[component]
-//! pub fn MyComponent() -> impl IntoView {
-//!     view! {
-//!         <Card>
-//!             <CardHeader>
-//!                 <CardTitle>"Welcome"</CardTitle>
-//!             </CardHeader>
-//!             <CardContent>
-//!                 <div class="space-y-4">
-//!                     <Input placeholder="Enter your name" />
-//!                     <Button variant=ButtonVariant::Default>"Submit"</Button>
-//!                 </div>
-//!             </CardContent>
-//!         </Card>
-//!     }
-//! }
+//! **Note**: Make sure to enable the features for the components you want to use:
+//! 
+//! ```toml
+//! [dependencies]
+//! leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui", features = ["button", "input", "card"] }
 //! ```
 //! 
 //! ## Components
@@ -97,19 +84,36 @@ pub use leptos_shadcn_toast::default::*;
 #[cfg(feature = "table")]
 pub use leptos_shadcn_table::default::*;
 #[cfg(feature = "calendar")]
-pub use leptos_shadcn_calendar::default::*;
+pub use leptos_shadcn_calendar::*;
 #[cfg(feature = "date-picker")]
-pub use leptos_shadcn_date_picker::default::*;
+pub use leptos_shadcn_date_picker::*;
 #[cfg(feature = "pagination")]
-pub use leptos_shadcn_pagination::default::*;
+pub use leptos_shadcn_pagination::*;
 #[cfg(feature = "slider")]
 pub use leptos_shadcn_slider::default::*;
 #[cfg(feature = "toggle")]
 pub use leptos_shadcn_toggle::default::*;
 
+// Advanced components (newly fixed)
+#[cfg(feature = "form")]
+pub use leptos_shadcn_form::default::*;
+#[cfg(feature = "combobox")]
+pub use leptos_shadcn_combobox::default::*;
+#[cfg(feature = "command")]
+pub use leptos_shadcn_command::*;
+#[cfg(feature = "input-otp")]
+pub use leptos_shadcn_input_otp::*;
+#[cfg(feature = "breadcrumb")]
+pub use leptos_shadcn_breadcrumb::*;
+#[cfg(feature = "lazy-loading")]
+pub use leptos_shadcn_lazy_loading::*;
+#[cfg(feature = "error-boundary")]
+pub use leptos_shadcn_error_boundary::*;
+#[cfg(feature = "registry")]
+pub use leptos_shadcn_registry::*;
+
 // Re-export common types and utilities
 pub use tailwind_fuse::tw_merge;
-pub use lucide_leptos::*;
 
 // Module documentation
 #[cfg(feature = "all-components")]
@@ -152,7 +156,7 @@ pub mod prelude {
     #[cfg(feature = "dialog")]
     pub use super::{Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter};
     #[cfg(feature = "popover")]
-    pub use super::{Popover, PopoverTrigger, PopoverContent};
+    pub use super::Popover;
     #[cfg(feature = "tooltip")]
     pub use super::{Tooltip, TooltipContent, TooltipTrigger, TooltipProvider};
     
@@ -168,13 +172,13 @@ pub mod prelude {
     #[cfg(feature = "toast")]
     pub use super::{Toast, ToastProps};
     #[cfg(feature = "table")]
-    pub use super::{Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell};
+    pub use super::Table;
     #[cfg(feature = "calendar")]
-    pub use super::{Calendar, CalendarProps};
+    pub use super::{Calendar, CalendarDate};
     #[cfg(feature = "date-picker")]
-    pub use super::{DatePicker, DatePickerProps};
+    pub use super::DatePicker;
     #[cfg(feature = "pagination")]
-    pub use super::{Pagination, PaginationProps};
+    pub use super::Pagination;
     
     // Interactive components
     #[cfg(feature = "slider")]

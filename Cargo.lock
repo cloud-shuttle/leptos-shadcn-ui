@@ -1417,7 +1417,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-breadcrumb"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "leptos 0.8.8",
  "serde",
@@ -1514,7 +1514,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-combobox"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "gloo-timers",
  "leptos 0.8.8",
@@ -1529,7 +1529,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-command"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "leptos 0.8.8",
  "serde",
@@ -1618,7 +1618,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-error-boundary"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "leptos 0.8.8",
  "log",
@@ -1629,7 +1629,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-form"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "gloo-timers",
  "leptos 0.8.8",
@@ -1674,7 +1674,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-input-otp"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "leptos 0.8.8",
  "serde",
@@ -1701,7 +1701,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-lazy-loading"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "leptos 0.8.8",
 ]
@@ -1793,7 +1793,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-registry"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "leptos 0.8.8",
 ]
@@ -1990,18 +1990,26 @@ dependencies = [
  "leptos-shadcn-accordion",
  "leptos-shadcn-alert",
  "leptos-shadcn-badge",
+ "leptos-shadcn-breadcrumb",
  "leptos-shadcn-button",
  "leptos-shadcn-calendar",
  "leptos-shadcn-card",
  "leptos-shadcn-checkbox",
+ "leptos-shadcn-combobox",
+ "leptos-shadcn-command",
  "leptos-shadcn-date-picker",
  "leptos-shadcn-dialog",
+ "leptos-shadcn-error-boundary",
+ "leptos-shadcn-form",
  "leptos-shadcn-input",
+ "leptos-shadcn-input-otp",
  "leptos-shadcn-label",
+ "leptos-shadcn-lazy-loading",
  "leptos-shadcn-pagination",
  "leptos-shadcn-popover",
  "leptos-shadcn-progress",
  "leptos-shadcn-radio-group",
+ "leptos-shadcn-registry",
  "leptos-shadcn-select",
  "leptos-shadcn-separator",
  "leptos-shadcn-skeleton",

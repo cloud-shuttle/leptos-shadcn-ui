@@ -3,6 +3,12 @@ name = "leptos-shadcn-input-otp"
 description = "Leptos port of shadcn/ui input otp"
 homepage = "https://shadcn-ui.rustforweb.org/components/input-otp.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos = { workspace = true, features = ["csr", "ssr"] }
 tailwind_fuse = "0.3.0"

@@ -26,10 +26,24 @@ A comprehensive collection of beautiful, accessible UI components built for [Lep
 - **Customizable**: Easy to customize with Tailwind CSS classes
 - **Lightweight**: Only includes the components you need
 
+## 📊 Current Status
+
+### ✅ **All 52 Components Ready for Production!**
+All components are now fully tested and working with Leptos v0.8.8:
+
+- **Form Components**: Button, Input, Label, Checkbox, Switch, Radio Group, Select, Textarea, Form, Combobox, Command, Input OTP
+- **Layout Components**: Card, Separator, Tabs, Accordion, Dialog, Popover, Tooltip, Sheet, Drawer, Hover Card, Aspect Ratio, Collapsible, Scroll Area
+- **Navigation Components**: Breadcrumb, Navigation Menu, Context Menu, Dropdown Menu, Menubar
+- **Feedback & Status**: Alert, Badge, Skeleton, Progress, Toast, Table, Calendar, Date Picker, Pagination, Alert Dialog
+- **Interactive Components**: Slider, Toggle, Carousel
+- **Advanced Components**: Lazy Loading, Error Boundary, Registry, Utils
+
+**🎉 The main package now includes all 52 components and is ready for production use!**
+
 ## 📦 Available Components
 
-### ✅ **All 25 Components Ready for Release!**
-The main `leptos-shadcn-ui` package contains all these components and is ready for production use:
+### ✅ **All 52 Components Ready for Production!**
+The main `leptos-shadcn-ui` package now contains **all 52 components** and is ready for production use!
 
 #### **Form Components**
 - **Button** - Multiple variants (default, destructive, outline, secondary, ghost, link) and sizes
@@ -40,6 +54,10 @@ The main `leptos-shadcn-ui` package contains all these components and is ready f
 - **Radio Group** - Radio button group with proper grouping
 - **Select** - Dropdown select component
 - **Textarea** - Multi-line text input
+- **Form** - Complete form system with validation and field management
+- **Combobox** - Advanced searchable dropdown with keyboard navigation
+- **Command** - Command palette for keyboard-driven navigation
+- **Input OTP** - One-time password input component
 
 #### **Layout Components**
 - **Card** - Content containers with header, content, and footer sections
@@ -49,6 +67,19 @@ The main `leptos-shadcn-ui` package contains all these components and is ready f
 - **Dialog** - Modal dialog component
 - **Popover** - Floating content overlay
 - **Tooltip** - Hover tooltip component
+- **Sheet** - Side panel component
+- **Drawer** - Bottom drawer component
+- **Hover Card** - Hover-triggered information cards
+- **Aspect Ratio** - Responsive aspect ratio containers
+- **Collapsible** - Collapsible content sections
+- **Scroll Area** - Custom scrollable areas
+
+#### **Navigation Components**
+- **Breadcrumb** - Navigation breadcrumbs
+- **Navigation Menu** - Main navigation component
+- **Context Menu** - Right-click context menus
+- **Dropdown Menu** - Dropdown navigation menus
+- **Menubar** - Application menubar component
 
 #### **Feedback & Status**
 - **Alert** - Informational, warning, success, and error messages
@@ -60,16 +91,20 @@ The main `leptos-shadcn-ui` package contains all these components and is ready f
 - **Calendar** - Date calendar component
 - **Date Picker** - Date selection component
 - **Pagination** - Page navigation component
+- **Alert Dialog** - Confirmation dialogs
 
 #### **Interactive Components**
 - **Slider** - Range slider input
 - **Toggle** - Toggle button component
+- **Carousel** - Image/content carousel
 
-### 🚧 **Future Components (27 More)**
-Advanced components are being updated for Leptos 0.8 compatibility and will be added to future releases:
-- Form, Combobox, Command, Input OTP, Breadcrumb, Navigation Menu, Context Menu, Dropdown Menu, Menubar, Scroll Area, Aspect Ratio, Collapsible, Sheet, Drawer, Hover Card, Alert Dialog, Carousel, and more...
+#### **Advanced Components**
+- **Lazy Loading** - Dynamic component loading system
+- **Error Boundary** - Runtime error handling and recovery
+- **Registry** - Feature-based component registry
+- **Utils** - Utility functions and helpers
 
-**Note**: All 25 current components are fully tested and working with Leptos v0.8.8!
+**🎉 All 52 components are fully tested and working with Leptos v0.8.8!**
 
 ## 🙏 Acknowledgments
 
@@ -95,40 +130,45 @@ leptos = "0.8.0"  # Must be 0.8.0 or higher
 leptos_router = "0.8.0"  # Must be 0.8.0 or higher
 ```
 
-### 2. Add the Main Package to your `Cargo.toml`
+### 2. Clone the Repository
+
+```bash
+git clone https://github.com/cloud-shuttle/leptos-shadcn-ui.git
+cd leptos-shadcn-ui
+```
+
+### 3. Add the Main Package to your `Cargo.toml`
 
 ```toml
 [dependencies]
 leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui" }
 ```
 
-**Or from crates.io (after release):**
-```toml
-[dependencies]
-leptos-shadcn-ui = "0.1.0"
-```
+**Note**: The main package is available from source and includes all 52 components. All components are fully tested and working with Leptos v0.8.8!
 
-### 3. Choose Your Components
+### 4. Choose Your Components
 
 **All Components (Default):**
 ```toml
-leptos-shadcn-ui = "0.1.0"
+leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui" }
 # or
-leptos-shadcn-ui = { version = "0.1.0", features = ["all-components"] }
+leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui", features = ["all-components"] }
 ```
 
 **Specific Components Only:**
 ```toml
-leptos-shadcn-ui = { version = "0.1.0", features = ["button", "input", "card"] }
+leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui", features = ["button", "input", "card"] }
 ```
 
 **Available Features:**
-- `button`, `input`, `label`, `checkbox`, `switch`, `radio-group`, `select`, `textarea`
-- `card`, `separator`, `tabs`, `accordion`, `dialog`, `popover`, `tooltip`
-- `alert`, `badge`, `skeleton`, `progress`, `toast`, `table`, `calendar`, `date-picker`, `pagination`
-- `slider`, `toggle`
+- **Form Components**: `button`, `input`, `label`, `checkbox`, `switch`, `radio-group`, `select`, `textarea`, `form`, `combobox`, `command`, `input-otp`
+- **Layout Components**: `card`, `separator`, `tabs`, `accordion`, `dialog`, `popover`, `tooltip`, `sheet`, `drawer`, `hover-card`, `aspect-ratio`, `collapsible`, `scroll-area`
+- **Navigation Components**: `breadcrumb`, `navigation-menu`, `context-menu`, `dropdown-menu`, `menubar`
+- **Feedback & Status**: `alert`, `badge`, `skeleton`, `progress`, `toast`, `table`, `calendar`, `date-picker`, `pagination`, `alert-dialog`
+- **Interactive Components**: `slider`, `toggle`, `carousel`
+- **Advanced Components**: `lazy-loading`, `error-boundary`, `registry`, `utils`
 
-### 2. Import and use in your Leptos components
+### 5. Import and use in your Leptos components
 
 ```rust
 use leptos::*;
@@ -244,6 +284,16 @@ leptos-shadcn-ui/
 ├── examples/
 │   └── leptos/           # Leptos demo application
 └── docs/                 # Documentation
+
+## 📋 **Current Development Status**
+
+**🎉 Major Milestone Achieved**: All 52 components are now working and ready for production!
+
+1. **Phase 1 (Complete ✅)**: 25 core components were ready and working
+2. **Phase 2 (Complete ✅)**: 27 advanced components have been successfully updated for Leptos 0.8
+3. **Phase 3 (Current)**: All components are now available in the main package
+
+**Users can now install from source** and get access to all 52 components immediately!
 ```
 
 ## 🔧 Development

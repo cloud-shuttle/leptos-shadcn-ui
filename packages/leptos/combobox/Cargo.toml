@@ -3,6 +3,12 @@ name = "leptos-shadcn-combobox"
 description = "Leptos port of shadcn/ui Combobox component"
 homepage = "https://shadcn-ui.rustforweb.org/components/combobox.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos.workspace = true
 leptos-style = "0.2"
@@ -17,7 +23,7 @@ shadcn-ui-test-utils = { path = "../../test-utils"}
 wasm-bindgen-test = { workspace = true }
 
 [lib]
-name = "shadcn_ui_leptos_combobox"
+name = "leptos_shadcn_combobox"
 path = "src/lib.rs"
 
 [[example]]

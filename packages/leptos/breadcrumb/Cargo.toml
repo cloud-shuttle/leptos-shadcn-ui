@@ -3,6 +3,12 @@ name = "leptos-shadcn-breadcrumb"
 description = "Leptos port of shadcn/ui breadcrumb"
 homepage = "https://shadcn-ui.rustforweb.org/components/breadcrumb.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos = { workspace = true, features = ["csr", "ssr"] }
 tailwind_fuse = "0.3.0"

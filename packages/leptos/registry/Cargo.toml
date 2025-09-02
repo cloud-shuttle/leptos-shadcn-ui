@@ -3,6 +3,12 @@ name = "leptos-shadcn-registry"
 description = "Feature-based component registry for shadcn/ui Leptos components"
 homepage = "https://shadcn-ui.rustforweb.org/components/registry.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos.workspace = true
 

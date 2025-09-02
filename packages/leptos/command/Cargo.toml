@@ -3,6 +3,12 @@ name = "leptos-shadcn-command"
 description = "Leptos port of shadcn/ui command"
 homepage = "https://shadcn-ui.rustforweb.org/components/command.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos = { workspace = true, features = ["csr", "ssr"] }
 tailwind_fuse = "0.3.0"

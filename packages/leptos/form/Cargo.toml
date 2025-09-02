@@ -3,6 +3,12 @@ name = "leptos-shadcn-form"
 description = "Leptos port of shadcn/ui Form component"
 homepage = "https://shadcn-ui.rustforweb.org/components/form.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos.workspace = true
 leptos-style = "0.2"
@@ -19,7 +25,7 @@ shadcn-ui-test-utils = { path = "../../test-utils"}
 wasm-bindgen-test = { workspace = true }
 
 [lib]
-name = "shadcn_ui_leptos_form"
+name = "leptos_shadcn_form"
 path = "src/lib.rs"
 
 [[example]]

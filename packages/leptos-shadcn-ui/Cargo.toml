@@ -47,6 +47,16 @@ leptos-shadcn-pagination = { path = "../leptos/pagination", optional = true }
 leptos-shadcn-slider = { path = "../leptos/slider", optional = true }
 leptos-shadcn-toggle = { path = "../leptos/toggle", optional = true }
 
+# Advanced components (newly fixed)
+leptos-shadcn-form = { path = "../leptos/form", optional = true }
+leptos-shadcn-combobox = { path = "../leptos/combobox", optional = true }
+leptos-shadcn-command = { path = "../leptos/command", optional = true }
+leptos-shadcn-input-otp = { path = "../leptos/input-otp", optional = true }
+leptos-shadcn-breadcrumb = { path = "../leptos/breadcrumb", optional = true }
+leptos-shadcn-lazy-loading = { path = "../leptos/lazy-loading", optional = true }
+leptos-shadcn-error-boundary = { path = "../leptos/error-boundary", optional = true }
+leptos-shadcn-registry = { path = "../leptos/registry", optional = true }
+
 # Additional dependencies
 tailwind_fuse = "0.3"
 lucide-leptos = "0.1"
@@ -54,7 +64,13 @@ gloo-timers = "0.3"
 
 [features]
 default = ["all-components"]
-all-components = []
+all-components = [
+    "button", "input", "label", "checkbox", "switch", "radio-group", "select", "textarea",
+    "card", "separator", "tabs", "accordion", "dialog", "popover", "tooltip",
+    "alert", "badge", "skeleton", "progress", "toast", "table", "calendar", "date-picker", "pagination",
+    "slider", "toggle",
+    "form", "combobox", "command", "input-otp", "breadcrumb", "lazy-loading", "error-boundary", "registry"
+]
 button = ["leptos-shadcn-button"]
 input = ["leptos-shadcn-input"]
 label = ["leptos-shadcn-label"]
@@ -81,6 +97,16 @@ date-picker = ["leptos-shadcn-date-picker"]
 pagination = ["leptos-shadcn-pagination"]
 slider = ["leptos-shadcn-slider"]
 toggle = ["leptos-shadcn-toggle"]
+
+# Advanced component features
+form = ["leptos-shadcn-form"]
+combobox = ["leptos-shadcn-combobox"]
+command = ["leptos-shadcn-command"]
+input-otp = ["leptos-shadcn-input-otp"]
+breadcrumb = ["leptos-shadcn-breadcrumb"]
+lazy-loading = ["leptos-shadcn-lazy-loading"]
+error-boundary = ["leptos-shadcn-error-boundary"]
+registry = ["leptos-shadcn-registry"]
 
 [lib]
 name = "leptos_shadcn_ui"

@@ -3,6 +3,12 @@ name = "leptos-shadcn-lazy-loading"
 description = "Lazy loading system for shadcn/ui Leptos components"
 homepage = "https://shadcn-ui.rustforweb.org/components/lazy-loading.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos.workspace = true
 

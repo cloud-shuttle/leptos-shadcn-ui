@@ -3,6 +3,12 @@ name = "leptos-shadcn-error-boundary"
 description = "Production-ready error boundary component for Leptos applications"
 homepage = "https://shadcn-ui.rustforweb.org/components/error-boundary.html"
 
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
 [dependencies]
 leptos = { workspace = true, features = ["csr"] }
 log = "0.4"
