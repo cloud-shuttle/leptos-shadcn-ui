@@ -19,43 +19,43 @@ leptos-node-ref = "0.2"
 leptos-struct-component = "0.2"
 leptos-style = "0.2"
 
-# Individual component packages (internal workspace dependencies)
-leptos-shadcn-button = { path = "../leptos/button", optional = true }
-leptos-shadcn-input = { path = "../leptos/input", optional = true }
-leptos-shadcn-label = { path = "../leptos/label", optional = true }
-leptos-shadcn-checkbox = { path = "../leptos/checkbox", optional = true }
-leptos-shadcn-switch = { path = "../leptos/switch", optional = true }
-leptos-shadcn-radio-group = { path = "../leptos/radio-group", optional = true }
-leptos-shadcn-select = { path = "../leptos/select", optional = true }
-leptos-shadcn-textarea = { path = "../leptos/textarea", optional = true }
-leptos-shadcn-card = { path = "../leptos/card", optional = true }
-leptos-shadcn-separator = { path = "../leptos/separator", optional = true }
-leptos-shadcn-tabs = { path = "../leptos/tabs", optional = true }
-leptos-shadcn-accordion = { path = "../leptos/accordion", optional = true }
-leptos-shadcn-dialog = { path = "../leptos/dialog", optional = true }
-leptos-shadcn-popover = { path = "../leptos/popover", optional = true }
-leptos-shadcn-tooltip = { path = "../leptos/tooltip", optional = true }
-leptos-shadcn-alert = { path = "../leptos/alert", optional = true }
-leptos-shadcn-badge = { path = "../leptos/badge", optional = true }
-leptos-shadcn-skeleton = { path = "../leptos/skeleton", optional = true }
-leptos-shadcn-progress = { path = "../leptos/progress", optional = true }
-leptos-shadcn-toast = { path = "../leptos/toast", optional = true }
-leptos-shadcn-table = { path = "../leptos/table", optional = true }
-leptos-shadcn-calendar = { path = "../leptos/calendar", optional = true }
-leptos-shadcn-date-picker = { path = "../leptos/date-picker", optional = true }
-leptos-shadcn-pagination = { path = "../leptos/pagination", optional = true }
-leptos-shadcn-slider = { path = "../leptos/slider", optional = true }
-leptos-shadcn-toggle = { path = "../leptos/toggle", optional = true }
+# Individual component packages (workspace dependencies)
+leptos-shadcn-button = { workspace = true, optional = true }
+leptos-shadcn-input = { workspace = true, optional = true }
+leptos-shadcn-label = { workspace = true, optional = true }
+leptos-shadcn-checkbox = { workspace = true, optional = true }
+leptos-shadcn-switch = { workspace = true, optional = true }
+leptos-shadcn-radio-group = { workspace = true, optional = true }
+leptos-shadcn-select = { workspace = true, optional = true }
+leptos-shadcn-textarea = { workspace = true, optional = true }
+leptos-shadcn-card = { workspace = true, optional = true }
+leptos-shadcn-separator = { workspace = true, optional = true }
+leptos-shadcn-tabs = { workspace = true, optional = true }
+leptos-shadcn-accordion = { workspace = true, optional = true }
+leptos-shadcn-dialog = { workspace = true, optional = true }
+leptos-shadcn-popover = { workspace = true, optional = true }
+leptos-shadcn-tooltip = { workspace = true, optional = true }
+leptos-shadcn-alert = { workspace = true, optional = true }
+leptos-shadcn-badge = { workspace = true, optional = true }
+leptos-shadcn-skeleton = { workspace = true, optional = true }
+leptos-shadcn-progress = { workspace = true, optional = true }
+leptos-shadcn-toast = { workspace = true, optional = true }
+leptos-shadcn-table = { workspace = true, optional = true }
+leptos-shadcn-calendar = { workspace = true, optional = true }
+leptos-shadcn-date-picker = { workspace = true, optional = true }
+leptos-shadcn-pagination = { workspace = true, optional = true }
+leptos-shadcn-slider = { workspace = true, optional = true }
+leptos-shadcn-toggle = { workspace = true, optional = true }
 
-# Advanced components (newly fixed)
-leptos-shadcn-form = { path = "../leptos/form", optional = true }
-leptos-shadcn-combobox = { path = "../leptos/combobox", optional = true }
-leptos-shadcn-command = { path = "../leptos/command", optional = true }
-leptos-shadcn-input-otp = { path = "../leptos/input-otp", optional = true }
-leptos-shadcn-breadcrumb = { path = "../leptos/breadcrumb", optional = true }
-leptos-shadcn-lazy-loading = { path = "../leptos/lazy-loading", optional = true }
-leptos-shadcn-error-boundary = { path = "../leptos/error-boundary", optional = true }
-leptos-shadcn-registry = { path = "../leptos/registry", optional = true }
+# Advanced components (workspace dependencies)
+leptos-shadcn-form = { workspace = true, optional = true }
+leptos-shadcn-combobox = { workspace = true, optional = true }
+leptos-shadcn-command = { workspace = true, optional = true }
+leptos-shadcn-input-otp = { workspace = true, optional = true }
+leptos-shadcn-breadcrumb = { workspace = true, optional = true }
+leptos-shadcn-lazy-loading = { workspace = true, optional = true }
+leptos-shadcn-error-boundary = { workspace = true, optional = true }
+leptos-shadcn-registry = { workspace = true, optional = true }
 
 # Additional dependencies
 tailwind_fuse = "0.3"

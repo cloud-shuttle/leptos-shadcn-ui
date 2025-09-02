@@ -139,12 +139,19 @@ cd leptos-shadcn-ui
 
 ### 3. Add the Main Package to your `Cargo.toml`
 
+**From crates.io (Recommended):**
+```toml
+[dependencies]
+leptos-shadcn-ui = "0.1.0"
+```
+
+**From source (Development):**
 ```toml
 [dependencies]
 leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui" }
 ```
 
-**Note**: The main package is available from source and includes all 52 components. All components are fully tested and working with Leptos v0.8.8!
+**Note**: The main package includes all 52 components and is now available on crates.io! All components are fully tested and working with Leptos v0.8.8!
 
 ### 4. Choose Your Components
 

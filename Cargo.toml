@@ -99,3 +99,41 @@ env_logger = "0.11"
 log = "0.4"
 console_log = "1.0"
 shadcn-ui-test-utils = { path = "packages/test-utils" }
+
+# Individual component packages
+leptos-shadcn-button = { path = "packages/leptos/button" }
+leptos-shadcn-input = { path = "packages/leptos/input" }
+leptos-shadcn-label = { path = "packages/leptos/label" }
+leptos-shadcn-checkbox = { path = "packages/leptos/checkbox" }
+leptos-shadcn-switch = { path = "packages/leptos/switch" }
+leptos-shadcn-radio-group = { path = "packages/leptos/radio-group" }
+leptos-shadcn-select = { path = "packages/leptos/select" }
+leptos-shadcn-textarea = { path = "packages/leptos/textarea" }
+leptos-shadcn-card = { path = "packages/leptos/card" }
+leptos-shadcn-separator = { path = "packages/leptos/separator" }
+leptos-shadcn-tabs = { path = "packages/leptos/tabs" }
+leptos-shadcn-accordion = { path = "packages/leptos/accordion" }
+leptos-shadcn-dialog = { path = "packages/leptos/dialog" }
+leptos-shadcn-popover = { path = "packages/leptos/popover" }
+leptos-shadcn-tooltip = { path = "packages/leptos/tooltip" }
+leptos-shadcn-alert = { path = "packages/leptos/alert" }
+leptos-shadcn-badge = { path = "packages/leptos/badge" }
+leptos-shadcn-skeleton = { path = "packages/leptos/skeleton" }
+leptos-shadcn-progress = { path = "packages/leptos/progress" }
+leptos-shadcn-toast = { path = "packages/leptos/toast" }
+leptos-shadcn-table = { path = "packages/leptos/table" }
+leptos-shadcn-calendar = { path = "packages/leptos/calendar" }
+leptos-shadcn-date-picker = { path = "packages/leptos/date-picker" }
+leptos-shadcn-pagination = { path = "packages/leptos/pagination" }
+leptos-shadcn-slider = { path = "packages/leptos/slider" }
+leptos-shadcn-toggle = { path = "packages/leptos/toggle" }
+
+# Advanced components
+leptos-shadcn-form = { path = "packages/leptos/form" }
+leptos-shadcn-combobox = { path = "packages/leptos/combobox" }
+leptos-shadcn-command = { path = "packages/leptos/command" }
+leptos-shadcn-input-otp = { path = "packages/leptos/input-otp" }
+leptos-shadcn-breadcrumb = { path = "packages/leptos/breadcrumb" }
+leptos-shadcn-lazy-loading = { path = "packages/leptos/lazy-loading" }
+leptos-shadcn-error-boundary = { path = "packages/leptos/error-boundary" }
+leptos-shadcn-registry = { path = "packages/leptos/registry" }
