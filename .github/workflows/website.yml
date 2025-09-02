@@ -1,0 +1,135 @@
+name: Website
+on:
+    pull_request: {}
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: false
+
+jobs:
+    book-test:
+        name: Test Book
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v5
+
+            - name: Set up Rust toolchain
+              uses: actions-rust-lang/setup-rust-toolchain@v1
+              with:
+                  target: wasm32-unknown-unknown
+
+            - name: Install Cargo Binary Install
+              uses: cargo-bins/cargo-binstall@main
+
+            - name: Install mdBook
+              run: cargo binstall --force -y mdbook mdbook-tabs mdbook-trunk
+
+            - name: Run tests
+              run: mdbook test
+              working-directory: book
+
+    book-build:
+        name: Build Book
+        needs: book-test
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v5
+              with:
+                  fetch-depth: 0
+
+            - name: Set up Rust toolchain
+              uses: actions-rust-lang/setup-rust-toolchain@v1
+              with:
+                  target: wasm32-unknown-unknown
+
+            - name: Install Cargo Binary Install
+              uses: cargo-bins/cargo-binstall@main
+
+            - name: Install mdBook and Trunk
+              run: cargo binstall --force -y mdbook mdbook-tabs mdbook-trunk trunk
+
+            - name: Install Node.js dependencies
+              run: npm ci
+
+            - name: Build Book
+              run: mdbook build
+              working-directory: book
+
+            - name: Combine Book Outputs
+              run: mdbook-trunk combine
+              working-directory: book
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: book
+                  path: book/dist
+                  retention-days: 1
+                  if-no-files-found: error
+
+    registry-build:
+        name: Build Registry
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v5
+              with:
+                  fetch-depth: 0
+
+            - name: Set up Rust toolchain
+              uses: actions-rust-lang/setup-rust-toolchain@v1
+              with:
+                  target: wasm32-unknown-unknown
+
+            - name: Build Registry
+              run: cargo run -p scripts --bin build_registry
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: registry
+                  path: dist
+                  retention-days: 1
+                  if-no-files-found: error
+
+    deploy:
+        name: Deploy
+        needs: [book-build, registry-build]
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
+
+        steps:
+            - uses: actions/checkout@v5
+              with:
+                  fetch-depth: 0
+
+            - name: Download artifacts
+              uses: actions/download-artifact@v5
+              with:
+                  path: dist
+                  merge-multiple: true
+
+            - name: Setup Pages
+              uses: actions/configure-pages@v5
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: dist
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4

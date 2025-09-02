@@ -1,0 +1,100 @@
+# Leptos ShadCN UI Components
+# 
+# 🚨 MANDATORY: This project requires Leptos v0.8+ and is NOT compatible with earlier versions.
+# 
+# This project provides ShadCN UI components for Leptos v0.8+.
+# It is not compatible with earlier versions of Leptos due to breaking changes
+# in the v0.8 release.
+#
+# ✅ SUPPORTED: Leptos v0.8.0, v0.8.1, v0.8.2, v0.8.3, v0.8.4, v0.8.5, v0.8.6, v0.8.7, v0.8.8+
+# ❌ NOT SUPPORTED: Leptos v0.7.x, v0.6.x, or any earlier versions
+#
+[workspace]
+resolver = "2"
+members = [
+    "packages/leptos/accordion",
+    "packages/leptos/alert",
+    "packages/leptos/alert-dialog",
+    "packages/leptos/aspect-ratio",
+    "packages/leptos/badge",
+    "packages/leptos/breadcrumb",
+    "packages/leptos/button",
+    "packages/leptos/calendar",
+    "packages/leptos/card",
+    "packages/leptos/carousel",
+    "packages/leptos/checkbox",
+    "packages/leptos/collapsible",
+    "packages/leptos/combobox",
+    "packages/leptos/command",
+    "packages/leptos/context-menu",
+    "packages/leptos/date-picker",
+    "packages/leptos/dialog",
+    "packages/leptos/drawer",
+    "packages/leptos/dropdown-menu",
+    "packages/leptos/error-boundary",
+    "packages/leptos/form",
+    "packages/leptos/hover-card",
+    "packages/leptos/input",
+    "packages/leptos/input-otp",
+    "packages/leptos/label",
+    "packages/leptos/lazy-loading",
+    "packages/leptos/menubar",
+    "packages/leptos/navigation-menu",
+    "packages/leptos/pagination",
+    "packages/leptos/popover",
+    "packages/leptos/progress",
+    "packages/leptos/radio-group",
+    "packages/leptos/registry",
+    "packages/leptos/scroll-area",
+    "packages/leptos/select",
+    "packages/leptos/separator",
+    "packages/leptos/sheet",
+    "packages/leptos/skeleton",
+    "packages/leptos/slider",
+    "packages/leptos/switch",
+    "packages/leptos/table",
+    "packages/leptos/tabs",
+    "packages/leptos/textarea",
+    "packages/leptos/toast",
+    "packages/leptos/toggle",
+    "packages/leptos/tooltip",
+    "packages/leptos/utils",
+    "packages/registry",
+    "packages/shadcn",
+    "packages/test-utils",
+    "packages/component-generator",
+    "scripts",
+    "examples/leptos"
+]
+
+[workspace.package]
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+version = "0.1.0"
+
+[workspace.dependencies]
+leptos = "0.8"
+leptos_router = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+leptos-node-ref = "0.2.0"
+leptos-struct-component = "0.2.0"
+leptos-style = "0.2.0"
+tailwind_fuse = { version = "0.3.2", features = ["variant"] }
+web-sys = "0.3"
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+wasm-bindgen-test = "0.3"
+console_error_panic_hook = "0.1"
+lucide-leptos = "2.32.0"
+anyhow = "1.0"
+handlebars = "6.3.2"
+regex = "1.10"
+clap = { version = "4.5.46", features = ["derive"] }
+tokio = { version = "1.47.1", features = ["full"] }
+env_logger = "0.11"
+log = "0.4"
+console_log = "1.0"
+shadcn-ui-test-utils = { path = "packages/test-utils" }

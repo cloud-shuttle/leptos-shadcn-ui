@@ -1,0 +1,16 @@
+[package]
+name = "shadcn"
+description = "Rust port of shadcn CLI."
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+clap = { version = "4.5.4", features = ["cargo", "derive"] }
+spinners = "4.1.1"
+tokio.workspace = true
+shadcn-ui-component-generator = { path = "../component-generator" }

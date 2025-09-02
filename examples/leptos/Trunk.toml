@@ -1,0 +1,3 @@
+# Production build optimizations
+# Note: Trunk doesn't support all these optimizations in TOML
+# We'll use Cargo.toml profiles instead for WASM optimization

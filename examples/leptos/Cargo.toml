@@ -1,0 +1,107 @@
+[package]
+name = "enhanced-lazy-loading-demo"
+description = "Enhanced lazy loading system with advanced search, filters, and professional UI"
+publish = false
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/your-username/enhanced-lazy-loading"
+keywords = ["leptos", "lazy-loading", "component-library", "ui-components"]
+categories = ["web-programming", "gui", "development-tools"]
+
+
+
+# Production build profiles with aggressive optimization
+[profile.release]
+opt-level = 3
+codegen-units = 1
+strip = true
+incremental = false
+lto = true
+
+[profile.release.package."*"]
+opt-level = 3
+codegen-units = 1
+strip = true
+
+# Feature sets for different optimization levels
+[features]
+default = ["all_components"]
+essential = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme"]
+essential_with_icons = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme", "lucide-leptos"]
+all_components = [
+    "button", "input", "label", "card", "separator", "alert", "default_theme", "new_york_theme"
+]
+
+# Individual component features
+button = ["dep:shadcn-ui-leptos-button"]
+input = ["dep:shadcn-ui-leptos-input"]
+label = ["dep:shadcn-ui-leptos-label"]
+card = ["dep:shadcn-ui-leptos-card"]
+separator = ["dep:shadcn-ui-leptos-separator"]
+alert = ["dep:shadcn-ui-leptos-alert"]
+badge = ["dep:shadcn-ui-leptos-badge"]
+checkbox = ["dep:shadcn-ui-leptos-checkbox"]
+switch = ["dep:shadcn-ui-leptos-switch"]
+radio-group = ["dep:shadcn-ui-leptos-radio-group"]
+select = ["dep:shadcn-ui-leptos-select"]
+textarea = ["dep:shadcn-ui-leptos-textarea"]
+tabs = ["dep:shadcn-ui-leptos-tabs"]
+accordion = ["dep:shadcn-ui-leptos-accordion"]
+dialog = ["dep:shadcn-ui-leptos-dialog"]
+popover = ["dep:shadcn-ui-leptos-popover"]
+tooltip = ["dep:shadcn-ui-leptos-tooltip"]
+toast = ["dep:shadcn-ui-leptos-toast"]
+skeleton = ["dep:shadcn-ui-leptos-skeleton"]
+progress = ["dep:shadcn-ui-leptos-progress"]
+slider = ["dep:shadcn-ui-leptos-slider"]
+table = ["dep:shadcn-ui-leptos-table"]
+pagination = ["dep:shadcn-ui-leptos-pagination"]
+lucide-leptos = ["dep:lucide-leptos"]
+default_theme = []
+new_york_theme = []
+
+
+
+[dependencies]
+console_error_panic_hook.workspace = true
+console_log.workspace = true
+leptos = { workspace = true, features = ["csr"] }
+leptos_router.workspace = true
+log.workspace = true
+
+# Include all available components
+shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
+shadcn-ui-leptos-input = { path = "../../packages/leptos/input", optional = true }
+shadcn-ui-leptos-label = { path = "../../packages/leptos/label", optional = true }
+shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
+shadcn-ui-leptos-separator = { path = "../../packages/leptos/separator", optional = true }
+shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert", optional = true }
+shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
+shadcn-ui-leptos-checkbox = { path = "../../packages/leptos/checkbox", optional = true }
+shadcn-ui-leptos-switch = { path = "../../packages/leptos/switch", optional = true }
+shadcn-ui-leptos-radio-group = { path = "../../packages/leptos/radio-group", optional = true }
+shadcn-ui-leptos-select = { path = "../../packages/leptos/select", optional = true }
+shadcn-ui-leptos-textarea = { path = "../../packages/leptos/textarea", optional = true }
+shadcn-ui-leptos-tabs = { path = "../../packages/leptos/tabs", optional = true }
+shadcn-ui-leptos-accordion = { path = "../../packages/leptos/accordion", optional = true }
+shadcn-ui-leptos-dialog = { path = "../../packages/leptos/dialog", optional = true }
+shadcn-ui-leptos-popover = { path = "../../packages/leptos/popover", optional = true }
+shadcn-ui-leptos-tooltip = { path = "../../packages/leptos/tooltip", optional = true }
+shadcn-ui-leptos-toast = { path = "../../packages/leptos/toast", optional = true }
+shadcn-ui-leptos-skeleton = { path = "../../packages/leptos/skeleton", optional = true }
+shadcn-ui-leptos-progress = { path = "../../packages/leptos/progress", optional = true }
+shadcn-ui-leptos-slider = { path = "../../packages/leptos/slider", optional = true }
+shadcn-ui-leptos-table = { path = "../../packages/leptos/table", optional = true }
+shadcn-ui-leptos-pagination = { path = "../../packages/leptos/pagination", optional = true }
+
+# Include lucide-leptos for icons
+lucide-leptos = { workspace = true, optional = true }
+gloo-timers = { version = "0.3.0", features = ["futures"] }
+
+# WASM loading and dynamic import support
+wasm-bindgen = "0.2"
+web-sys = "0.3"
+js-sys = "0.3"
+wasm-bindgen-futures = "0.4"
