@@ -17,7 +17,7 @@ leptos-style.workspace = true
 tailwind_fuse.workspace = true
 web-sys.workspace = true
 lucide-leptos = { workspace = true, features = ["navigation"] }
-leptos-shadcn-button = { path = "../button" }
+leptos-shadcn-button = "0.1.0"
 
 [features]
 default = []
