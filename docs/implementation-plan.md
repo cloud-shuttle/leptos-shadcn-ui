@@ -1,26 +1,17 @@
-# Complete Implementation Plan: Rust shadcn/ui Feature Parity
+# Complete Implementation Plan: Leptos shadcn/ui Completion
 
-## 📋 **Gap Analysis Summary**
+## 📋 **Current Status Summary**
 
 **Current Status:**
-- **Leptos**: 44/51 components (86% coverage) ✅ Near Complete!
-- **Yew**: 20/51 components (39% coverage)
-- **Target**: 51/51 components (100% coverage) for both frameworks
+- **Leptos**: 47/51 components (92% coverage) ✅ Near Complete!
+- **Target**: 51/51 components (100% coverage) for Leptos framework
 
 **Updated Priority Matrix:**
 
-### **🎯 Leptos: Final 7 Components** (86% → 100%)
+### **🎯 Leptos: Final 4 Components** (92% → 100%)
 - [ ] avatar, data-table, chart, resizable, sidebar, sonner, typography
 
-### **🔄 Yew: Bridge Gap** (39% → 86%)
-Missing 25 components from Leptos:
-- [ ] accordion, alert-dialog, calendar, carousel, collapsible
-- [ ] combobox, command, context-menu, date-picker, drawer
-- [ ] dropdown-menu, form, hover-card, input-otp, menubar
-- [ ] navigation-menu, popover, progress, scroll-area, sheet
-- [ ] slider, tabs, toast, toggle, utils
-
-### **✅ Completed Components (44/51)**
+### **✅ Completed Components (47/51)**
 **Form & Input**: checkbox, radio-group, select, combobox, form, date-picker, input-otp, slider, toggle, switch, input, label, textarea
 **Navigation**: navigation-menu, menubar, tabs, breadcrumb, command, context-menu, hover-card
 **Overlay**: dialog, alert-dialog, sheet, drawer, dropdown-menu, popover, tooltip, toast  
@@ -30,9 +21,31 @@ Missing 25 components from Leptos:
 
 ## 🎯 **Implementation Phases**
 
-### **Phase 1: Leptos Completion (1 week)** ✅ 86% → 100%
+### **Phase 1: Foundation Enhancement (1-2 weeks)** ✅ Infrastructure & Tooling
 
-#### Week 1: Final 7 Components for Leptos
+#### Week 1: Registry & Infrastructure
+```bash
+# Enhance component registry system
+- Optimize registry_ui.rs with complete component definitions
+- Implement dependency resolution system
+- Add theme variant management
+- Improve code generation pipeline
+```
+
+#### Week 2: Testing & Quality Infrastructure
+```bash
+# Enhance testing and quality systems
+- Automated testing integration
+- Component validation framework
+- Performance benchmarking tools
+- Documentation generation system
+```
+
+**Deliverable:** Robust foundation for rapid component development
+
+### **Phase 2: Leptos Completion (2-3 weeks)** ✅ 92% → 100%
+
+#### Week 3-4: Final Components for Leptos
 ```bash
 # Complete shadcn/ui spec for Leptos
 - avatar: User profile image component
@@ -46,97 +59,18 @@ Missing 25 components from Leptos:
 
 **Deliverable:** Leptos reaches 51/51 components (100% shadcn/ui coverage)
 
-### **Phase 2: Yew Bridge Gap (3 weeks)** ✅ 39% → 86%
+### **Phase 3: Advanced Features & Optimization (2-3 weeks)**
 
-#### Week 2-4: Port 25 Leptos Components to Yew
+#### Week 5-6: Advanced Features
 ```bash
-# Systematic porting from working Leptos implementations
-# Tier 1: Core Infrastructure (Week 2)
-- accordion, alert-dialog, collapsible, form, utils
-
-# Tier 2: Navigation & Menus (Week 3)  
-- dropdown-menu, navigation-menu, menubar, context-menu, command
-
-# Tier 3: Advanced UI (Week 4)
-- calendar, carousel, date-picker, drawer, sheet, popover
-- hover-card, input-otp, progress, scroll-area, slider
-- tabs, toast, toggle
-- checkbox - radio button selection
-- radio-group - grouped radio buttons  
-- select - dropdown selection
-- combobox - searchable dropdown
-- slider - range input control
+# Enhanced functionality
+- Advanced theme system
+- Animation library integration
+- Accessibility enhancements
+- Performance optimizations
 ```
 
-**Deliverable:** Both frameworks at 20/51 components
-
-### **Phase 3: Navigation & Overlay (3 weeks)**
-
-#### Week 5: Navigation Components
-```bash
-# Navigation Suite (4 components)
-- navigation-menu - main site navigation
-- menubar - application menu bar
-- tabs - tabbed interface
-- command - command palette/search
-```
-
-#### Week 6-7: Overlay Components  
-```bash
-# Modal & Overlay Suite (8 components)
-- dialog - modal dialogs
-- alert-dialog - confirmation dialogs
-- sheet - slide-out panels
-- dropdown-menu - context menus
-- popover - floating content
-- tooltip - hover information
-- toast - notifications
-- drawer - mobile-friendly slides
-```
-
-**Deliverable:** Both frameworks at 32/51 components
-
-### **Phase 4: Layout & Display (2 weeks)**
-
-#### Week 8: Layout Components
-```bash
-# Layout Management (7 components)
-- accordion - expandable sections
-- collapsible - show/hide content
-- resizable - adjustable panels
-- scroll-area - custom scrollbars
-- sidebar - navigation sidebar
-- hover-card - content preview
-- context-menu - right-click menus
-```
-
-#### Week 9: Display Components
-```bash
-# Content Display (6 components)  
-- calendar - date selection
-- progress - loading indicators
-- typography - text styling
-- carousel - image/content slider
-- sonner - toast notifications
-- toggle/toggle-group - button toggles
-```
-
-**Deliverable:** Both frameworks at 45/51 components
-
-### **Phase 5: Advanced Features (2 weeks)**
-
-#### Week 10: Complex Components
-```bash
-# Advanced Components (6 components)
-- chart - data visualization
-- data-table - sortable/filterable tables
-- form - form validation wrapper
-- react-hook-form - form state management
-- date-picker - calendar input
-- input-otp - one-time password input
-```
-
-#### Week 11: Quality Assurance & Documentation
+#### Week 7: Quality Assurance & Documentation
 ```bash
 # Final polish and documentation
 - Cross-browser testing suite
@@ -146,7 +80,7 @@ Missing 25 components from Leptos:
 - API consistency validation
 ```
 
-**Deliverable:** Both frameworks at 51/51 components (100% parity)
+**Deliverable:** Production-ready, fully-featured Leptos shadcn/ui ecosystem
 
 ## 🛠 **Technical Implementation Strategy**
 
@@ -163,46 +97,29 @@ src/
 └── tests.rs        // Unit tests
 ```
 
-#### 2. Framework-Specific Implementation
-```rust
-// Yew implementation pattern
-#[function_component]
-pub fn Button(props: &ButtonProps) -> Html {
-    let classes = use_button_classes(props);
-    html! { <button class={classes}>{&props.children}</button> }
-}
-
-// Leptos implementation pattern  
-#[component]
-pub fn Button(props: ButtonProps) -> impl IntoView {
-    let classes = create_button_classes(props);
-    view! { <button class=classes>{props.children}</button> }
-}
-```
-
-#### 3. Registry Integration
+#### 2. Registry Integration
 ```rust
 // Add component to registry_ui.rs
 RegistryEntry {
-    name: "checkbox".into(),
+    name: "avatar".into(),
     r#type: RegistryItemType::Ui,
-    description: Some("Checkbox input control".into()),
+    description: Some("User profile image component".into()),
     dependencies: Some(vec!["web-sys".into()]),
     files: Some(vec![
         RegistryItemFile {
-            path: "ui/checkbox.rs".into(),
+            path: "ui/avatar.rs".into(),
             r#type: RegistryItemType::Ui,
             target: None,
         }
     ]),
-    category: Some("forms".into()),
+    category: Some("display".into()),
 }
 ```
 
 ### **Quality Gates**
 
 #### Per-Component Checklist
-- [ ] Both framework implementations completed
+- [ ] Component implementation completed
 - [ ] Default and New York themes implemented  
 - [ ] Props API consistency validated
 - [ ] Unit tests written and passing
@@ -211,31 +128,29 @@ RegistryEntry {
 - [ ] Cross-browser compatibility verified
 
 #### Milestone Validation
-- [ ] Framework parity maintained (Leptos == Yew component count)
 - [ ] Registry metadata complete and accurate
-- [ ] CLI commands functional for all new components
-- [ ] Theme consistency across frameworks
+- [ ] CLI commands functional for all components
+- [ ] Theme consistency across all components
 - [ ] Performance benchmarks within acceptable ranges
 
 ## 📊 **Resource Requirements**
 
 ### **Development Team Structure**
 - **Lead Architect**: Registry and infrastructure design
-- **Leptos Specialist**: Framework-specific implementations  
-- **Yew Specialist**: Framework-specific implementations
+- **Component Developer**: Leptos component implementations  
 - **QA Engineer**: Testing and validation
 - **Technical Writer**: Documentation and guides
 
 ### **Timeline Summary**
-- **Total Duration**: 11 weeks
-- **Major Milestones**: 5 phases
-- **Component Implementation**: ~4.6 components/week average
+- **Total Duration**: 7 weeks
+- **Major Milestones**: 3 phases
+- **Component Implementation**: ~1 component/week average
 - **Quality Gates**: Built into each phase
-- **Buffer Time**: 10% contingency included
+- **Buffer Time**: 15% contingency included
 
 ### **Success Metrics**
-- **Feature Parity**: 51/51 components in both frameworks
-- **API Consistency**: 100% matching interfaces
+- **Feature Parity**: 51/51 components in Leptos framework
+- **API Consistency**: 100% consistent interfaces
 - **Theme Accuracy**: Visual parity with original shadcn/ui
 - **Performance**: WASM bundle size < 50KB per component
 - **Developer Experience**: < 5min component installation time
@@ -249,36 +164,21 @@ cargo new packages/test-utils --lib
 cargo new packages/component-generator --lib
 # Update registry_ui.rs with complete component list
 
-# Week 2: Leptos Parity
-rust-shadcn add aspect-ratio --framework leptos
-rust-shadcn add avatar --framework leptos
-rust-shadcn add breadcrumb --framework leptos
-rust-shadcn add input --framework leptos
-rust-shadcn add label --framework leptos
-rust-shadcn add pagination --framework leptos
-rust-shadcn add separator --framework leptos
-rust-shadcn add skeleton --framework leptos
-rust-shadcn add switch --framework leptos
-rust-shadcn add table --framework leptos
-rust-shadcn add textarea --framework leptos
+# Week 2: Quality Infrastructure
+cargo test --workspace --verbose
+cargo tarpaulin --workspace --out html
 ```
 
-### **Phase 2-5 Commands**
+### **Phase 2 Commands**
 ```bash
-# Tier 1 Critical (Weeks 3-4)
-rust-shadcn add checkbox --framework all
-rust-shadcn add radio-group --framework all
-rust-shadcn add select --framework all
-rust-shadcn add combobox --framework all
-rust-shadcn add slider --framework all
-
-# Navigation Suite (Week 5)
-rust-shadcn add navigation-menu --framework all
-rust-shadcn add menubar --framework all
-rust-shadcn add tabs --framework all
-rust-shadcn add command --framework all
-
-# Continue for all remaining components...
+# Week 3-4: Final Components
+rust-shadcn add avatar --framework leptos
+rust-shadcn add data-table --framework leptos
+rust-shadcn add chart --framework leptos
+rust-shadcn add resizable --framework leptos
+rust-shadcn add sidebar --framework leptos
+rust-shadcn add sonner --framework leptos
+rust-shadcn add typography --framework leptos
 ```
 
 ### **Testing Commands**
@@ -287,7 +187,6 @@ rust-shadcn add command --framework all
 cargo test --workspace
 wasm-pack test --headless --firefox
 npx playwright test
-cargo test parity_tests --workspace
 
 # Generate coverage reports
 cargo tarpaulin --workspace --out html
@@ -296,7 +195,7 @@ cargo tarpaulin --workspace --out html
 ### **Quality Assurance Commands**
 ```bash
 # Component validation
-rust-shadcn validate --all-frameworks
+rust-shadcn validate --all-components
 rust-shadcn test --coverage --visual-regression
 rust-shadcn benchmark --performance
 
@@ -305,4 +204,4 @@ rust-shadcn docs generate --all-components
 rust-shadcn docs validate --completeness
 ```
 
-This comprehensive plan provides a structured approach to achieving 100% feature parity with systematic quality gates, testing strategies, and clear success criteria.
+This focused plan provides a structured approach to achieving 100% Leptos shadcn/ui completion with systematic quality gates, testing strategies, and clear success criteria.

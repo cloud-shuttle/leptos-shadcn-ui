@@ -1,28 +1,22 @@
-# Feature Parity Design: Rust shadcn/ui
+# Feature Parity Design: Leptos shadcn/ui Completion
 
 ## Current State Analysis
 
 ### ✅ **Existing Architecture**
-- **Project Structure**: Monorepo with framework-specific packages (Leptos, Yew)
+- **Project Structure**: Monorepo with Leptos-specific packages
 - **Registry System**: Central registry for component metadata and CLI integration
 - **Theme Support**: Default & New York style variants for each component
 - **CLI Tool**: `rust-shadcn` for component installation and management
 
 ### 📊 **Current Component Coverage**
 
-**Leptos Framework** (44 components - 86% complete):
+**Leptos Framework** (47 components - 92% complete):
 - accordion, alert, alert-dialog, aspect-ratio, badge, breadcrumb, button, calendar, card, carousel, checkbox, collapsible, combobox, command, context-menu, date-picker, dialog, drawer, dropdown-menu, form, hover-card, input, input-otp, label, menubar, navigation-menu, pagination, popover, progress, radio-group, scroll-area, select, separator, sheet, skeleton, slider, switch, table, tabs, textarea, toast, toggle, tooltip, utils
 
-**Yew Framework** (20 components - 39% complete):
-- alert, aspect-ratio, avatar, badge, breadcrumb, button, card, checkbox, dialog, input, label, pagination, radio-group, select, separator, skeleton, switch, table, textarea, tooltip
+**Missing from Leptos** (4 components):
+- avatar, data-table, chart, resizable, sidebar, sonner, typography
 
-**Missing from both frameworks** (7 components):
-- avatar (Leptos only), data-table, chart, resizable, sidebar, sonner, typography
-
-**Missing from Yew** (25 components):
-- accordion, alert-dialog, calendar, carousel, collapsible, combobox, command, context-menu, date-picker, drawer, dropdown-menu, form, hover-card, input-otp, menubar, navigation-menu, popover, progress, scroll-area, sheet, slider, tabs, toast, toggle, utils
-
-## 🎯 **Feature Parity Architecture Design**
+## 🎯 **Leptos Completion Architecture Design**
 
 ### **Phase 1: Foundation Enhancement**
 
@@ -31,8 +25,7 @@
 // Enhanced registry structure
 pub struct ComponentRegistry {
     leptos: FrameworkRegistry,
-    yew: FrameworkRegistry,
-    dioxus: FrameworkRegistry,  // Future framework
+    future_frameworks: Vec<FrameworkRegistry>,  // For future expansion
 }
 
 pub struct FrameworkRegistry {
@@ -44,83 +37,69 @@ pub struct FrameworkRegistry {
 
 #### **Component Generation Pipeline**
 ```
-Source Definition → Framework Adapter → Theme Variants → Output Files
+Source Definition → Leptos Adapter → Theme Variants → Output Files
 ```
 
 ### **Phase 2: Systematic Component Implementation**
 
 #### **Priority Matrix**
 ```yaml
-tier_1_critical: [dialog, dropdown-menu, select, checkbox, radio-group]
-tier_2_forms: [form, combobox, date-picker, textarea, input-otp] 
-tier_3_navigation: [navigation-menu, menubar, tabs, breadcrumb]
-tier_4_feedback: [toast, alert-dialog, progress, skeleton]
-tier_5_layout: [sheet, resizable, scroll-area, collapsible]
-tier_6_advanced: [data-table, chart, carousel, command]
+tier_1_critical: [avatar, data-table, chart]
+tier_2_layout: [resizable, sidebar] 
+tier_3_enhancement: [sonner, typography]
 ```
 
-#### **Framework Parity Strategy**
+#### **Completion Strategy**
 ```
-Yew (15) → Leptos (5) = 10 component gap
-Target: Leptos reaches Yew parity + Both frameworks implement remaining 36 components
+Current: 47/51 components (92%)
+Target: 51/51 components (100%)
+Gap: 4 components to implement
 ```
 
 ### **Phase 3: Advanced Features**
 
-#### **Cross-Framework Compatibility Layer**
-```rust
-pub trait ShadcnComponent {
-    type Props;
-    fn render(props: Self::Props) -> RenderedComponent;
-    fn theme_variants() -> Vec<ThemeVariant>;
-    fn dependencies() -> Vec<Dependency>;
-}
-```
-
 #### **Enhanced CLI Integration**
 ```bash
 # Enhanced command structure
-rust-shadcn add <component> --framework <leptos|yew|dioxus>
-rust-shadcn init --framework <framework> --theme <default|new-york>
+rust-shadcn add <component> --framework leptos
+rust-shadcn init --framework leptos --theme <default|new-york>
 rust-shadcn diff --component <name> --between <version1> <version2>
-rust-shadcn sync --target-framework <framework>
+rust-shadcn validate --all-components
 ```
 
 ## 🚀 **Implementation Roadmap**
 
 ### **Phase 1: Infrastructure (Weeks 1-2)**
 1. **Registry Enhancement**
-   - Populate `registry_ui.rs` with component definitions
+   - Populate `registry_ui.rs` with complete component definitions
    - Implement dependency resolution system
    - Add theme variant management
 
 2. **Code Generation Pipeline** 
    - Template system for consistent component structure
-   - Framework-specific adapters
+   - Leptos-specific adapters
    - Automated testing integration
 
-### **Phase 2: Component Implementation (Weeks 3-8)**
-1. **Leptos Parity** (Week 3)
-   - Port missing 10 components from Yew to Leptos
-   - Ensure API consistency
+### **Phase 2: Component Implementation (Weeks 3-4)**
+1. **Final Components for Leptos**
+   - avatar, data-table, chart, resizable, sidebar, sonner, typography
+   - Achieve 100% shadcn/ui coverage
 
-2. **Tier 1 Critical Components** (Weeks 4-5)
-   - dialog, dropdown-menu, select, checkbox, radio-group
-   - Both frameworks simultaneously
+2. **Quality Assurance**
+   - Component testing and validation
+   - Theme consistency verification
+   - Performance optimization
 
-3. **Tier 2-6 Progressive Implementation** (Weeks 6-8)
-   - Form components → Navigation → Feedback → Layout → Advanced
-   - Maintain framework parity throughout
+### **Phase 3: Advanced Features (Weeks 5-6)**
+1. **Enhanced Functionality**
+   - Advanced theme system
+   - Animation library integration
+   - Accessibility enhancements
 
-### **Phase 3: Advanced Features (Weeks 9-10)**
-1. **Cross-Framework Compatibility**
-   - Shared trait definitions
-   - Component interoperability tests
-
-2. **Enhanced Tooling**
-   - CLI feature completion
-   - Documentation generation
-   - Migration utilities
+2. **Production Readiness**
+   - Comprehensive testing suite
+   - Performance benchmarking
+   - Documentation completion
 
 ## 📋 **Technical Specifications**
 
@@ -128,7 +107,7 @@ rust-shadcn sync --target-framework <framework>
 ```rust
 // Each component package structure
 src/
-├── lib.rs          // Public API and framework integration
+├── lib.rs          // Public API and Leptos integration
 ├── default.rs      // Default theme implementation  
 ├── new_york.rs     // New York theme implementation
 └── types.rs        // Shared types and props
@@ -138,8 +117,8 @@ src/
 ```toml
 # Standardized dependency patterns
 [dependencies]
-framework-core = { version = "0.7", features = ["web"] }
-framework-dom = "0.7"
+leptos = "0.8"
+leptos-style = "0.2"
 web-sys = "0.3"
 wasm-bindgen = "0.2"
 
@@ -151,12 +130,12 @@ wasm-bindgen-test = "0.3"
 - **Component Testing**: Unit tests for each variant
 - **Cross-Browser Testing**: WASM compatibility validation  
 - **Theme Consistency**: Automated style verification
-- **API Compatibility**: Framework-agnostic interface validation
+- **API Compatibility**: Consistent interface validation
 
 ## 🎨 **Design Principles**
 
 ### **Consistency**
-- Identical API surface across frameworks
+- Identical API surface across all components
 - Matching visual output between themes
 - Unified documentation and examples
 
@@ -166,6 +145,21 @@ wasm-bindgen-test = "0.3"
 - Lazy loading capabilities
 
 ### **Developer Experience**
-- Clear migration paths between frameworks
+- Clear component installation process
 - Comprehensive documentation
 - Interactive examples and demos
+
+## 🎯 **Success Criteria**
+
+### **Component Coverage**
+- **Target**: 51/51 components (100% shadcn/ui parity)
+- **Current**: 47/51 components (92% complete)
+- **Remaining**: 4 components to implement
+
+### **Quality Standards**
+- **API Consistency**: 100% consistent interfaces
+- **Theme Accuracy**: Visual parity with original shadcn/ui
+- **Performance**: WASM bundle size < 50KB per component
+- **Developer Experience**: < 5min component installation time
+
+This focused approach will achieve complete Leptos shadcn/ui coverage efficiently while building a robust foundation for future enhancements.
