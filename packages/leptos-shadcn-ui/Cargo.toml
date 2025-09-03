@@ -7,7 +7,7 @@ homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
 repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
 license = "MIT"
 authors = ["CloudShuttle <info@cloudshuttle.com>"]
-keywords = ["leptos", "ui", "components", "shadcn", "web", "wasm", "rust"]
+keywords = ["leptos", "ui", "components", "shadcn", "web"]
 categories = ["wasm", "gui", "web-programming"]
 readme = "../../README.md"
 
