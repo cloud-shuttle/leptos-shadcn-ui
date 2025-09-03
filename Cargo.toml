@@ -61,10 +61,10 @@ members = [
     "packages/leptos/alert-dialog",
     "packages/leptos/avatar",
     
-    # Components with internal dependencies (now safe to include)
+    # Components with internal dependencies (publishing in sequence)
     "packages/leptos/calendar",      # Depends on published components
-    "packages/leptos/date-picker",   # Depends on calendar, popover, button
-    "packages/leptos/pagination",    # Depends on button
+    # "packages/leptos/date-picker",   # Will add after calendar is published
+    # "packages/leptos/pagination",    # Will add after calendar is published
     
     "scripts/run_quality_assessment",
     "scripts/generate_component_tests"
