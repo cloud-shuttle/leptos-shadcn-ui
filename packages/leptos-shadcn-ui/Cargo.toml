@@ -9,7 +9,7 @@ license = "MIT"
 authors = ["CloudShuttle <info@cloudshuttle.com>"]
 keywords = ["leptos", "ui", "components", "shadcn", "web", "wasm", "rust"]
 categories = ["wasm", "gui", "web-programming"]
-readme = "README.md"
+readme = "../../README.md"
 
 [dependencies]
 # Core Leptos dependencies
