@@ -18,9 +18,9 @@ tailwind_fuse.workspace = true
 web-sys.workspace = true
 js-sys.workspace = true
 lucide-leptos.workspace = true
-leptos-shadcn-calendar = { path = "../calendar" }
-leptos-shadcn-popover = { path = "../popover" }
-leptos-shadcn-button = { path = "../button" }
+leptos-shadcn-calendar = "0.1.0"
+leptos-shadcn-popover = "0.1.0"
+leptos-shadcn-button = "0.1.0"
 
 [features]
 default = []
