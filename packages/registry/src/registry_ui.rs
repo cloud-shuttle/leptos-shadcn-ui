@@ -102,7 +102,7 @@ fn create_complete_registry() -> Registry {
     ]
 }
 
-/// Creates the complete Leptos registry with all 51 components
+/// Creates the complete Leptos registry with all 50 actually implemented components
 fn create_leptos_registry() -> Registry {
     vec![
         // Form & Input Components (12 total) - ALL COMPLETED ✅
@@ -138,38 +138,31 @@ fn create_leptos_registry() -> Registry {
         create_ui_component("tooltip", "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.", "overlay", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("toast", "A succinct message that is displayed temporarily.", "overlay", vec!["tailwind_fuse", "web-sys"]),
 
-        // Layout Components (7 total) - ALL COMPLETED ✅
+        // Layout Components (5 total) - MOSTLY COMPLETED ✅
         create_ui_component("accordion", "A vertically stacked set of interactive headings that each reveal a section of content.", "layout", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("collapsible", "An interactive component which can be expanded/collapsed.", "layout", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("scroll-area", "Augments native scroll functionality for custom, cross-browser styling.", "layout", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("separator", "Visually or semantically separates content.", "layout", vec!["tailwind_fuse"]),
         create_ui_component("aspect-ratio", "Displays content within a desired ratio.", "layout", vec!["tailwind_fuse"]),
         // MISSING: resizable, sidebar
-        create_ui_component("resizable", "Accessible resizable panel groups and layouts with keyboard support.", "layout", vec!["tailwind_fuse", "web-sys"]),
-        create_ui_component("sidebar", "Composable, themeable, multi-level sidebar navigation component.", "layout", vec!["tailwind_fuse", "web-sys"]),
 
         // Display Components (8 total) - MOSTLY COMPLETED ✅
         create_ui_component("alert", "Displays a callout for user attention.", "display", vec!["tailwind_fuse"]),
+        create_ui_component("avatar", "An image element with a fallback for representing the user.", "display", vec!["tailwind_fuse"]),
         create_ui_component("badge", "Displays a badge or a component that looks like a badge.", "display", vec!["tailwind_fuse"]),
         create_ui_component("card", "Displays a card with header, content, and footer.", "display", vec!["tailwind_fuse"]),
         create_ui_component("calendar", "A date field component that allows users to enter and edit date.", "display", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("progress", "Displays an indicator showing the completion progress of a task.", "display", vec!["tailwind_fuse"]),
         create_ui_component("skeleton", "Use to show a placeholder while content is loading.", "display", vec!["tailwind_fuse"]),
         create_ui_component("table", "A responsive table component.", "display", vec!["tailwind_fuse"]),
-        // MISSING: avatar
-        create_ui_component("avatar", "An image element with a fallback for representing the user.", "display", vec!["tailwind_fuse"]),
 
-        // Advanced Components (9 total) - MOSTLY COMPLETED ✅
+        // Advanced Components (7 total) - MOSTLY COMPLETED ✅
         create_ui_component("carousel", "A carousel with motion and swipe built using Embla.", "advanced", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("date-picker", "A date picker component with range and multiple selection.", "advanced", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("hover-card", "For sighted users to preview content available behind a link.", "advanced", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("input-otp", "Accessible one-time password component with copy paste functionality.", "advanced", vec!["tailwind_fuse", "web-sys"]),
         create_ui_component("utils", "Utility functions and helpers for the component library.", "advanced", vec!["tailwind_fuse"]),
         // MISSING: chart, data-table, sonner, typography
-        create_ui_component("chart", "Recharts components built using Recharts and designed to work seamlessly with shadcn/ui.", "advanced", vec!["tailwind_fuse", "web-sys"]),
-        create_ui_component("data-table", "Powerful table and datagrids built using TanStack Table.", "advanced", vec!["tailwind_fuse", "web-sys"]),
-        create_ui_component("sonner", "An opinionated toast component for React.", "advanced", vec!["tailwind_fuse", "web-sys"]),
-        create_ui_component("typography", "Styles for headings, paragraphs, lists...etc", "advanced", vec!["tailwind_fuse"]),
     ]
 }
 

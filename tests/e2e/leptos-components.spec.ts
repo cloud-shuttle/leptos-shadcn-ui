@@ -444,7 +444,8 @@ test.describe('Leptos Components - Comprehensive E2E Testing', () => {
         await expect(page.locator('body')).toBeVisible();
         
         // Check that main content is still accessible
-        const mainContent = page.locator('main, [role="main"], body > *').first();
+        // Skip script tags and look for actual content elements
+        const mainContent = page.locator('main, [role="main"], .app-main, .app, h1, .card').first();
         await expect(mainContent).toBeVisible();
       }
     });

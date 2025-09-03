@@ -1,0 +1,37 @@
+# Test configuration for skeleton component
+
+[test]
+# Enable all test types
+compilation_tests = true
+runtime_tests = false  # Requires WASM runtime
+accessibility_tests = true
+theme_tests = true
+performance_tests = false
+
+# Test timeouts
+test_timeout_seconds = 30
+
+# Output verbosity
+verbose_output = false
+
+# Quality thresholds
+min_quality_score = 0.8
+min_test_coverage = 0.8
+min_documentation_quality = 0.7
+
+# Required accessibility features
+required_accessibility_features = [
+    "aria-label",
+    "keyboard-navigation", 
+    "focus-management"
+]
+
+# Theme requirements
+required_themes = ["default", "new_york"]
+
+# Performance benchmarks
+performance_benchmarks = [
+    "render_time < 16ms",
+    "memory_usage < 1MB",
+    "bundle_size < 10KB"
+]

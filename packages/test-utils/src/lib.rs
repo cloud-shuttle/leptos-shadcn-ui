@@ -9,6 +9,7 @@ pub mod quality_checker;
 pub mod visual_regression;
 pub mod leptos_testing;
 pub mod test_templates;
+pub mod automated_testing;
 
 use std::collections::HashMap;
 
@@ -92,6 +93,11 @@ impl QualityResult {
             issues,
             recommendations: vec![],
         }
+    }
+    
+    pub fn with_quality_score(mut self, quality_score: f64) -> Self {
+        self.quality_score = quality_score;
+        self
     }
     
     pub fn with_recommendations(mut self, recommendations: Vec<String>) -> Self {

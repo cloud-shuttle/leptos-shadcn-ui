@@ -75,7 +75,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command: 'cd book-examples/leptos && trunk serve --port 8082',
+      command: 'cd examples/leptos && trunk serve --port 8082',
       port: 8082,
       reuseExistingServer: !process.env.CI,
       timeout: 120 * 1000,

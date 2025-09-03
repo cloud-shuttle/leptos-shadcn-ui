@@ -7,7 +7,7 @@ authors.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-version.workspace = true
+version = "0.2.0"
 
 [dependencies]
 tailwind_fuse.workspace = true
@@ -22,5 +22,5 @@ default = []
 new_york = []
 
 [dev-dependencies]
-shadcn-ui-test-utils = { path = "../../test-utils"}
+shadcn-ui-test-utils = { path = "../../test-utils", version = "0.2.0" }
 wasm-bindgen-test = { workspace = true }

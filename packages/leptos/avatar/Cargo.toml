@@ -1,0 +1,19 @@
+[package]
+name = "leptos-shadcn-avatar"
+description = "Avatar component for Leptos shadcn/ui"
+version = "0.2.0"
+edition = "2021"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+license = "MIT"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+publish = false
+
+[dependencies]
+leptos = { workspace = true }
+leptos-style = { workspace = true }
+tailwind_fuse = { workspace = true }
+web-sys = { workspace = true }
+wasm-bindgen = { workspace = true }
+
+[dev-dependencies]
+wasm-bindgen-test = { workspace = true }

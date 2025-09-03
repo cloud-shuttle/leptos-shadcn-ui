@@ -7,7 +7,7 @@ authors.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-version.workspace = true
+version = "0.2.0"
 
 [dependencies]
 leptos.workspace = true
@@ -18,14 +18,14 @@ tailwind_fuse.workspace = true
 web-sys.workspace = true
 js-sys.workspace = true
 lucide-leptos.workspace = true
-leptos-shadcn-calendar = "0.1.0"
-leptos-shadcn-popover = "0.1.0"
-leptos-shadcn-button = "0.1.0"
+leptos-shadcn-calendar = { path = "../calendar" }
+leptos-shadcn-popover = { path = "../popover" }
+leptos-shadcn-button = { path = "../button" }
 
 [features]
 default = []
 new_york = []
 
 [dev-dependencies]
-shadcn-ui-test-utils = { path = "../../test-utils" }
+shadcn-ui-test-utils = { path = "../../test-utils" , version = "0.2.0" }
 wasm-bindgen-test = { workspace = true }
