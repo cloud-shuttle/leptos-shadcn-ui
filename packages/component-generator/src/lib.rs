@@ -1,7 +1,7 @@
 //! Component generation utilities for shadcn-ui.
 //!
 //! This package provides tools for generating consistent component implementations
-//! across different Rust web frameworks (Leptos, Yew, Dioxus).
+//! for the Leptos framework, with support for future framework expansion.
 
 pub mod generator;
 pub mod templates;
@@ -14,8 +14,9 @@ use std::collections::HashMap;
 #[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub enum Framework {
     Leptos,
-    Yew,
-    Dioxus,
+    // Future frameworks can be added here
+    // Yew,      // Removed - focusing on Leptos completion
+    // Dioxus,   // Planned for future expansion
 }
 
 /// Component generation configuration
@@ -48,7 +49,7 @@ impl ComponentGenerator {
         
         // Register built-in templates
         handlebars.register_template_string("leptos_component", include_str!("templates/leptos_component.hbs"))?;
-        handlebars.register_template_string("yew_component", include_str!("templates/yew_component.hbs"))?;
+        // handlebars.register_template_string("yew_component", include_str!("templates/yew_component.hbs"))?; // Removed
         handlebars.register_template_string("lib_rs", include_str!("templates/lib_rs.hbs"))?;
         
         Ok(Self {
@@ -59,8 +60,7 @@ impl ComponentGenerator {
     pub fn generate_component(&self, config: &ComponentConfig) -> Result<String> {
         let template_name = match config.framework {
             Framework::Leptos => "leptos_component",
-            Framework::Yew => "yew_component",
-            Framework::Dioxus => "dioxus_component",
+            // Future frameworks will be handled here
         };
         
         self.template_engine.render(template_name, config)

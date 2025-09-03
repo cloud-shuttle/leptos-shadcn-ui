@@ -36,8 +36,7 @@ impl Generator {
     fn generate_cargo_toml(config: &ComponentConfig) -> Result<String> {
         let framework_name = match config.framework {
             Framework::Leptos => "leptos",
-            Framework::Yew => "yew", 
-            Framework::Dioxus => "dioxus",
+            // Future frameworks will be handled here
         };
         
         Ok(format!(
@@ -76,8 +75,7 @@ wasm-bindgen-test = {{ workspace = true }}
         let component_title = config.name.chars().next().unwrap().to_uppercase().chain(config.name.chars().skip(1)).collect::<String>();
         let framework_title = match config.framework {
             Framework::Leptos => "Leptos",
-            Framework::Yew => "Yew",
-            Framework::Dioxus => "Dioxus",
+            // Future frameworks will be handled here
         };
         
         Ok(format!(
