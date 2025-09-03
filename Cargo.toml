@@ -64,6 +64,7 @@ members = [
     "packages/shadcn",
     "packages/test-utils",
     "packages/component-generator",
+    "packages/cli",
     "scripts",
     "examples/leptos"
 ]

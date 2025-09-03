@@ -1,0 +1,34 @@
+[package]
+name = "rust-shadcn"
+description = "CLI tool for managing Leptos shadcn/ui components"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/yourusername/leptos-shadcn-ui"
+publish = false
+
+[[bin]]
+name = "rust-shadcn"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.0", features = ["derive"] }
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+reqwest = { version = "0.11", features = ["json"] }
+indicatif = "0.17"
+console = "0.15"
+dialoguer = "0.11"
+tempfile = "3.0"
+walkdir = "2.0"
+
+# Internal dependencies
+shadcn-registry = { path = "../registry" }
+shadcn-ui-component-generator = { path = "../component-generator" }
+shadcn-ui-test-utils = { path = "../test-utils" }
+
+[dev-dependencies]
+tempfile = "3.0"
