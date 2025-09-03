@@ -19,43 +19,44 @@ leptos-node-ref = "0.2"
 leptos-struct-component = "0.2"
 leptos-style = "0.2"
 
-# Individual component packages (workspace dependencies)
-leptos-shadcn-button = { workspace = true, optional = true }
-leptos-shadcn-input = { workspace = true, optional = true }
-leptos-shadcn-label = { workspace = true, optional = true }
-leptos-shadcn-checkbox = { workspace = true, optional = true }
-leptos-shadcn-switch = { workspace = true, optional = true }
-leptos-shadcn-radio-group = { workspace = true, optional = true }
-leptos-shadcn-select = { workspace = true, optional = true }
-leptos-shadcn-textarea = { workspace = true, optional = true }
-leptos-shadcn-card = { workspace = true, optional = true }
-leptos-shadcn-separator = { workspace = true, optional = true }
-leptos-shadcn-tabs = { workspace = true, optional = true }
-leptos-shadcn-accordion = { workspace = true, optional = true }
-leptos-shadcn-dialog = { workspace = true, optional = true }
-leptos-shadcn-popover = { workspace = true, optional = true }
-leptos-shadcn-tooltip = { workspace = true, optional = true }
-leptos-shadcn-alert = { workspace = true, optional = true }
-leptos-shadcn-badge = { workspace = true, optional = true }
-leptos-shadcn-skeleton = { workspace = true, optional = true }
-leptos-shadcn-progress = { workspace = true, optional = true }
-leptos-shadcn-toast = { workspace = true, optional = true }
-leptos-shadcn-table = { workspace = true, optional = true }
-leptos-shadcn-calendar = { workspace = true, optional = true }
-leptos-shadcn-date-picker = { workspace = true, optional = true }
-leptos-shadcn-pagination = { workspace = true, optional = true }
-leptos-shadcn-slider = { workspace = true, optional = true }
-leptos-shadcn-toggle = { workspace = true, optional = true }
+# Individual component packages (published versions)
+leptos-shadcn-button = { version = "0.1.0", optional = true }
+leptos-shadcn-input = { version = "0.1.0", optional = true }
+leptos-shadcn-label = { version = "0.1.0", optional = true }
+leptos-shadcn-checkbox = { version = "0.1.0", optional = true }
+leptos-shadcn-switch = { version = "0.1.0", optional = true }
+leptos-shadcn-radio-group = { version = "0.1.0", optional = true }
+leptos-shadcn-select = { version = "0.1.0", optional = true }
+leptos-shadcn-textarea = { version = "0.1.0", optional = true }
+leptos-shadcn-card = { version = "0.1.0", optional = true }
+leptos-shadcn-separator = { version = "0.1.0", optional = true }
+leptos-shadcn-tabs = { version = "0.1.0", optional = true }
+leptos-shadcn-accordion = { version = "0.1.0", optional = true }
+leptos-shadcn-dialog = { version = "0.1.0", optional = true }
+leptos-shadcn-popover = { version = "0.1.0", optional = true }
+leptos-shadcn-tooltip = { version = "0.1.0", optional = true }
+leptos-shadcn-alert = { version = "0.1.0", optional = true }
+leptos-shadcn-badge = { version = "0.1.0", optional = true }
+leptos-shadcn-skeleton = { version = "0.1.0", optional = true }
+leptos-shadcn-progress = { version = "0.1.0", optional = true }
+leptos-shadcn-toast = { version = "0.1.0", optional = true }
+leptos-shadcn-table = { version = "0.1.0", optional = true }
+leptos-shadcn-calendar = { version = "0.1.0", optional = true }
+leptos-shadcn-date-picker = { version = "0.1.0", optional = true }
+leptos-shadcn-pagination = { version = "0.1.0", optional = true }
+leptos-shadcn-slider = { version = "0.1.0", optional = true }
+leptos-shadcn-toggle = { version = "0.1.0", optional = true }
+leptos-shadcn-carousel = { version = "0.1.0", optional = true }
 
-# Advanced components (workspace dependencies)
-leptos-shadcn-form = { workspace = true, optional = true }
-leptos-shadcn-combobox = { workspace = true, optional = true }
-leptos-shadcn-command = { workspace = true, optional = true }
-leptos-shadcn-input-otp = { workspace = true, optional = true }
-leptos-shadcn-breadcrumb = { workspace = true, optional = true }
-leptos-shadcn-lazy-loading = { workspace = true, optional = true }
-leptos-shadcn-error-boundary = { workspace = true, optional = true }
-leptos-shadcn-registry = { workspace = true, optional = true }
+# Advanced components (published versions)
+leptos-shadcn-form = { version = "0.1.0", optional = true }
+leptos-shadcn-combobox = { version = "0.1.0", optional = true }
+leptos-shadcn-command = { version = "0.1.0", optional = true }
+leptos-shadcn-input-otp = { version = "0.1.0", optional = true }
+leptos-shadcn-breadcrumb = { version = "0.1.0", optional = true }
+leptos-shadcn-lazy-loading = { version = "0.1.0", optional = true }
+leptos-shadcn-error-boundary = { version = "0.1.0", optional = true }
+leptos-shadcn-registry = { version = "0.1.0", optional = true }
 
 # Additional dependencies
 tailwind_fuse = "0.3"
@@ -68,7 +69,7 @@ all-components = [
     "button", "input", "label", "checkbox", "switch", "radio-group", "select", "textarea",
     "card", "separator", "tabs", "accordion", "dialog", "popover", "tooltip",
     "alert", "badge", "skeleton", "progress", "toast", "table", "calendar", "date-picker", "pagination",
-    "slider", "toggle",
+    "slider", "toggle", "carousel",
     "form", "combobox", "command", "input-otp", "breadcrumb", "lazy-loading", "error-boundary", "registry"
 ]
 button = ["leptos-shadcn-button"]
@@ -97,6 +98,7 @@ date-picker = ["leptos-shadcn-date-picker"]
 pagination = ["leptos-shadcn-pagination"]
 slider = ["leptos-shadcn-slider"]
 toggle = ["leptos-shadcn-toggle"]
+carousel = ["leptos-shadcn-carousel"]
 
 # Advanced component features
 form = ["leptos-shadcn-form"]
