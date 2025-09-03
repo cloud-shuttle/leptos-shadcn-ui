@@ -16,7 +16,7 @@ members = [
     "packages/cli",
     "packages/test-utils",
     "packages/component-generator",
-    "packages/leptos-shadcn-ui",
+    # "packages/leptos-shadcn-ui",  # Temporarily excluded for testing
     "packages/leptos/button",
     "packages/leptos/input",
     "packages/leptos/label",
