@@ -1,12 +1,13 @@
 [package]
 name = "leptos-shadcn-avatar"
-description = "Avatar component for Leptos shadcn/ui"
+description = "Leptos port of shadcn/ui avatar"
+homepage = "https://shadcn-ui.rustforweb.org/components/avatar.html"
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
 version = "0.2.0"
-edition = "2021"
-authors = ["CloudShuttle <info@cloudshuttle.com>"]
-license = "MIT"
-repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
-publish = false
+publish = true
 
 [dependencies]
 leptos = { workspace = true }
