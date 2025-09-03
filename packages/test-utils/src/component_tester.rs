@@ -1,9 +1,7 @@
-//! Component testing utilities for validation and comparison.
+//! Component testing utilities for Leptos shadcn/ui components.
 
-use crate::{Framework, Theme, TestResult, ParityResult};
+use crate::{Framework, Theme, TestResult};
 use std::collections::HashMap;
-// Remove unused import
-// use wasm_bindgen_test::*;
 
 /// Generic component tester that validates component behavior
 pub struct ComponentTester {
@@ -35,7 +33,7 @@ impl ComponentTester {
     
     /// Test basic component rendering
     pub fn test_rendering(&self) -> TestResult {
-        // This would be implemented with framework-specific rendering logic
+        // This would be implemented with Leptos-specific rendering logic
         TestResult::success(format!(
             "{} component renders successfully with {:?} theme",
             self.component_name, self.theme
@@ -78,13 +76,13 @@ impl ComponentTester {
     }
 }
 
-/// Cross-framework component comparison
-pub struct ComponentComparator {
+/// Component quality assessment
+pub struct ComponentQualityAssessor {
     pub component_name: String,
     pub testers: Vec<ComponentTester>,
 }
 
-impl ComponentComparator {
+impl ComponentQualityAssessor {
     pub fn new(component_name: impl Into<String>) -> Self {
         Self {
             component_name: component_name.into(),
@@ -92,60 +90,11 @@ impl ComponentComparator {
         }
     }
     
-    pub fn add_framework(mut self, framework: Framework, theme: Theme) -> Self {
-        let tester = ComponentTester::new(&self.component_name, framework)
+    pub fn add_theme_variant(mut self, theme: Theme) -> Self {
+        let tester = ComponentTester::new(&self.component_name, Framework::Leptos)
             .with_theme(theme);
         self.testers.push(tester);
         self
-    }
-    
-    /// Compare component implementations across frameworks
-    pub fn compare_frameworks(&self) -> ParityResult {
-        if self.testers.len() < 2 {
-            return ParityResult::with_differences(vec![
-                "Need at least 2 framework implementations to compare".to_string()
-            ]);
-        }
-        
-        let mut differences = Vec::new();
-        
-        // Compare each pair of framework implementations
-        for i in 0..self.testers.len() {
-            for j in (i + 1)..self.testers.len() {
-                let tester1 = &self.testers[i];
-                let tester2 = &self.testers[j];
-                
-                // Compare properties
-                if tester1.properties.len() != tester2.properties.len() {
-                    differences.push(format!(
-                        "Property count mismatch: {:?} has {}, {:?} has {}",
-                        tester1.framework,
-                        tester1.properties.len(),
-                        tester2.framework,
-                        tester2.properties.len()
-                    ));
-                }
-                
-                // Compare specific properties
-                for (key, value1) in &tester1.properties {
-                    if let Some(value2) = tester2.properties.get(key) {
-                        if value1 != value2 {
-                            differences.push(format!(
-                                "Property '{}' differs: {:?}='{}', {:?}='{}'",
-                                key, tester1.framework, value1, tester2.framework, value2
-                            ));
-                        }
-                    } else {
-                        differences.push(format!(
-                            "Property '{}' missing in {:?} implementation",
-                            key, tester2.framework
-                        ));
-                    }
-                }
-            }
-        }
-        
-        ParityResult::with_differences(differences)
     }
 }
 
@@ -155,31 +104,40 @@ mod tests {
     
     #[test]
     fn component_tester_creation() {
-        let tester = ComponentTester::new("button", Framework::Yew)
+        let tester = ComponentTester::new("button", Framework::Leptos)
             .with_theme(Theme::NewYork)
             .with_property("variant", "primary")
             .with_property("size", "large");
             
         assert_eq!(tester.component_name, "button");
-        assert_eq!(tester.framework, Framework::Yew);
+        assert_eq!(tester.framework, Framework::Leptos);
         assert_eq!(tester.theme, Theme::NewYork);
         assert_eq!(tester.properties.get("variant"), Some(&"primary".to_string()));
     }
     
     #[test]
-    fn parity_comparison_success() {
-        let mut comparator = ComponentComparator::new("button");
-        comparator.testers.push(
-            ComponentTester::new("button", Framework::Yew)
-                .with_property("variant", "primary")
-        );
-        comparator.testers.push(
-            ComponentTester::new("button", Framework::Leptos)
-                .with_property("variant", "primary")
-        );
+    fn theme_variant_assessment() {
+        let assessor = ComponentQualityAssessor::new("button")
+            .add_theme_variant(Theme::Default)
+            .add_theme_variant(Theme::NewYork);
         
-        let result = comparator.compare_frameworks();
-        assert!(result.frameworks_match);
-        assert_eq!(result.score, 1.0);
+        assert_eq!(assessor.testers.len(), 2);
+        assert_eq!(assessor.testers[0].theme, Theme::Default);
+        assert_eq!(assessor.testers[1].theme, Theme::NewYork);
+        
+        // Test that all testers use Leptos framework
+        for tester in &assessor.testers {
+            assert_eq!(tester.framework, Framework::Leptos);
+        }
+    }
+    
+    #[test]
+    fn component_rendering_test() {
+        let tester = ComponentTester::new("button", Framework::Leptos);
+        let result = tester.test_rendering();
+        
+        assert!(result.passed);
+        assert!(result.message.contains("button component renders successfully"));
+        assert_eq!(result.details.get("framework"), Some(&"Leptos".to_string()));
     }
 }
