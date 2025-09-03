@@ -17,6 +17,8 @@ members = [
     "packages/test-utils",
     "packages/component-generator",
     # "packages/leptos-shadcn-ui",  # Temporarily excluded for testing
+    
+    # Basic components (no internal dependencies)
     "packages/leptos/button",
     "packages/leptos/input",
     "packages/leptos/label",
@@ -38,9 +40,6 @@ members = [
     "packages/leptos/progress",
     "packages/leptos/toast",
     "packages/leptos/table",
-    "packages/leptos/calendar",
-    "packages/leptos/date-picker",
-    "packages/leptos/pagination",
     "packages/leptos/slider",
     "packages/leptos/toggle",
     "packages/leptos/carousel",
@@ -61,6 +60,12 @@ members = [
     "packages/leptos/drawer",
     "packages/leptos/alert-dialog",
     "packages/leptos/avatar",
+    
+    # Temporarily excluded due to internal dependencies
+    # "packages/leptos/calendar",      # Will publish after basic components
+    # "packages/leptos/date-picker",   # Depends on calendar, popover, button
+    # "packages/leptos/pagination",    # Depends on button
+    
     "scripts/run_quality_assessment",
     "scripts/generate_component_tests"
 ]
