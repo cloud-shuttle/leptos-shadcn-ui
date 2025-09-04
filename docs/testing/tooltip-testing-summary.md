@@ -315,8 +315,8 @@ The `.github/workflows/test-tooltip.yml` workflow provides:
 ### Related Documents
 
 - [`testing-infrastructure.md`](./testing-infrastructure.md) - Detailed testing documentation
-- [`architecture.md`](./architecture.md) - System architecture overview
-- [`component-generator.md`](./component-generator.md) - Component generation guide
+- [`architecture.md`](../architecture/architecture.md) - System architecture overview
+- [`component-generator.md`](../development/component-generator.md) - Component generation guide
 
 ### API Documentation
 

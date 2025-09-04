@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_style::Style;
 
-const BADGE_CLASS: &str = "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2";
+pub const BADGE_CLASS: &str = "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2";
 
 /// Badge variant types
 #[derive(Debug, Clone, PartialEq)]

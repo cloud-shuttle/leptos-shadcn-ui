@@ -1,12 +1,12 @@
 use leptos::prelude::*;
 use leptos_style::Style;
 
-const CARD_CLASS: &str = "rounded-lg border bg-card text-card-foreground shadow-sm";
-const CARD_HEADER_CLASS: &str = "flex flex-col space-y-1.5 p-6";
-const CARD_TITLE_CLASS: &str = "text-2xl font-semibold leading-none tracking-tight";
-const CARD_DESCRIPTION_CLASS: &str = "text-sm text-muted-foreground";
-const CARD_CONTENT_CLASS: &str = "p-6 pt-0";
-const CARD_FOOTER_CLASS: &str = "flex items-center p-6 pt-0";
+pub const CARD_CLASS: &str = "rounded-lg border bg-card text-card-foreground shadow-sm";
+pub const CARD_HEADER_CLASS: &str = "flex flex-col space-y-1.5 p-6";
+pub const CARD_TITLE_CLASS: &str = "text-2xl font-semibold leading-none tracking-tight";
+pub const CARD_DESCRIPTION_CLASS: &str = "text-sm text-muted-foreground";
+pub const CARD_CONTENT_CLASS: &str = "p-6 pt-0";
+pub const CARD_FOOTER_CLASS: &str = "flex items-center p-6 pt-0";
 
 #[component]
 pub fn Card(

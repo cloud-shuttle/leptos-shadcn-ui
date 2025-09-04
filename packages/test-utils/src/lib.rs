@@ -10,6 +10,7 @@ pub mod visual_regression;
 pub mod leptos_testing;
 pub mod test_templates;
 pub mod automated_testing;
+pub mod dom_testing;
 
 use std::collections::HashMap;
 

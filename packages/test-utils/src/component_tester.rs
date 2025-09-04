@@ -113,7 +113,7 @@ impl ComponentTester {
     /// Run comprehensive test suite for the component
     pub fn run_test_suite(&self) -> TestSuiteResult {
         let mut results = Vec::new();
-        let mut start_time = std::time::Instant::now();
+        let start_time = std::time::Instant::now();
         
         // Compilation tests
         if self.test_config.enable_compilation_tests {

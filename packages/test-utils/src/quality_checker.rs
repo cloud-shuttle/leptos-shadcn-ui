@@ -1,8 +1,8 @@
 //! Component quality checking utilities for Leptos shadcn/ui components.
 
-use crate::QualityResult;
+use crate::{Framework, Theme, TestResult, QualityResult};
 use std::collections::HashMap;
-use std::path::Path;
+use std::sync::{Arc, Mutex};
 
 /// Component API specification for quality validation
 #[derive(Debug, Clone)]

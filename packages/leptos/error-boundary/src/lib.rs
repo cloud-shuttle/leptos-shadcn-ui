@@ -4,7 +4,7 @@
 //! It focuses on graceful degradation and user experience rather than complex error boundaries.
 
 use leptos::prelude::*;
-use std::panic::PanicInfo;
+use std::panic::PanicHookInfo;
 
 /// Simple error information for production use
 #[derive(Clone, Debug)]
@@ -52,10 +52,10 @@ pub fn ErrorBoundary(
     #[prop(into)] children: Children,
 ) -> impl IntoView {
     let (has_error, set_has_error) = signal(false);
-    let (error_info, set_error_info) = signal(None::<ErrorInfo>);
+    let (_error_info, set_error_info) = signal(None::<ErrorInfo>);
     
     // Set up panic hook for production error handling
-    std::panic::set_hook(Box::new(move |panic_info: &PanicInfo<'_>| {
+    std::panic::set_hook(Box::new(move |panic_info: &PanicHookInfo<'_>| {
         log::error!("Panic caught: {:?}", panic_info);
         
         let error = ErrorInfo {
@@ -69,7 +69,7 @@ pub fn ErrorBoundary(
     
     // Render children or error fallback using a different approach
     if has_error.get() {
-        if let Some(error) = error_info.get() {
+        if let Some(error) = _error_info.get() {
             view! { <ErrorFallback error_info=error /> }.into_any()
         } else {
             view! { <ErrorFallback error_info=ErrorInfo { message: "An error occurred".to_string(), technical_details: None } /> }.into_any()
@@ -82,7 +82,7 @@ pub fn ErrorBoundary(
 /// Hook for manual error handling
 pub fn use_error_handler() -> (ReadSignal<bool>, WriteSignal<bool>, WriteSignal<Option<ErrorInfo>>) {
     let (has_error, set_has_error) = signal(false);
-    let (error_info, set_error_info) = signal(None::<ErrorInfo>);
+    let (_error_info, set_error_info) = signal(None::<ErrorInfo>);
     
     (has_error, set_has_error, set_error_info)
 }

@@ -11,11 +11,12 @@ version = "0.2.0"
 
 [dependencies]
 wasm-bindgen-test = "0.3"
-web-sys = { workspace = true, features = ["console", "Document", "Element", "HtmlElement"] }
+web-sys = { workspace = true, features = ["console", "Document", "Element", "HtmlElement", "Window", "Performance", "PerformanceTiming"] }
 js-sys = "0.3"
 console_error_panic_hook = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
+uuid = { version = "1.0", features = ["v4"] }
 
 # Framework-specific testing
 leptos = { workspace = true }

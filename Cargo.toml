@@ -65,6 +65,8 @@ members = [
     "packages/leptos/calendar",      # Depends on published components
     "packages/leptos/date-picker",   # Depends on calendar, popover, button
     "packages/leptos/pagination",    # Depends on button
+    "packages/leptos/error-boundary", # Error handling component
+    "packages/leptos/lazy-loading",   # Lazy loading system
     
     "scripts/run_quality_assessment",
     "scripts/generate_component_tests"

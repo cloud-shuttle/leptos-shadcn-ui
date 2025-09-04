@@ -1,9 +1,9 @@
 use leptos::prelude::*;
 use leptos_style::Style;
 
-const ALERT_CLASS: &str = "relative w-full rounded-lg border p-4";
-const ALERT_TITLE_CLASS: &str = "mb-1 font-medium leading-none tracking-tight";
-const ALERT_DESCRIPTION_CLASS: &str = "text-sm [&_p]:leading-relaxed";
+pub const ALERT_CLASS: &str = "relative w-full rounded-lg border p-4";
+pub const ALERT_TITLE_CLASS: &str = "mb-1 font-medium leading-none tracking-tight";
+pub const ALERT_DESCRIPTION_CLASS: &str = "text-sm [&_p]:leading-relaxed";
 
 /// Alert variant types
 #[derive(Debug, Clone, PartialEq)]

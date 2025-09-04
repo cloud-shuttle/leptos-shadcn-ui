@@ -428,4 +428,4 @@ RUST_LOG=debug cargo run -p shadcn -- generate --name "test" --framework "leptos
 - Support all theme variants
 - Maintain consistent styling approach
 
-For more information, see the [Contributing Guide](../CONTRIBUTING.md).
+For more information, see the [Contributing Guide](../README.md#contributing).

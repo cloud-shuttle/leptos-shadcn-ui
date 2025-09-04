@@ -1,10 +1,10 @@
 use leptos::prelude::*;
 use leptos_style::Style;
 
-const PROGRESS_CLASS: &str = "relative w-full overflow-hidden rounded-full bg-secondary";
-const PROGRESS_INDICATOR_CLASS: &str = "h-full w-full flex-1 bg-primary transition-all";
+pub const PROGRESS_CLASS: &str = "relative w-full overflow-hidden rounded-full bg-secondary";
+pub const PROGRESS_INDICATOR_CLASS: &str = "h-full w-full flex-1 bg-primary transition-all";
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Debug)]
 pub enum ProgressVariant {
     Default,
     Success,
@@ -32,7 +32,7 @@ impl From<String> for ProgressVariant {
 }
 
 impl ProgressVariant {
-    fn indicator_class(&self) -> &'static str {
+    pub fn indicator_class(&self) -> &'static str {
         match self {
             ProgressVariant::Default => "bg-primary",
             ProgressVariant::Success => "bg-green-500",

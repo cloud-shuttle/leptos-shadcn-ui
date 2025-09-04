@@ -1,9 +1,9 @@
 use leptos::prelude::*;
 use leptos_style::Style;
 
-const SKELETON_CLASS: &str = "animate-pulse rounded-md bg-muted";
+pub const SKELETON_CLASS: &str = "animate-pulse rounded-md bg-muted";
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Debug)]
 pub enum SkeletonVariant {
     Default,
     Text,
@@ -33,7 +33,7 @@ impl From<String> for SkeletonVariant {
 }
 
 impl SkeletonVariant {
-    fn base_class(&self) -> &'static str {
+    pub fn base_class(&self) -> &'static str {
         match self {
             SkeletonVariant::Default => "h-4 w-full",
             SkeletonVariant::Text => "h-4 w-full",
@@ -45,7 +45,7 @@ impl SkeletonVariant {
     }
 }
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Clone, Copy, PartialEq, Debug)]
 pub enum SkeletonSize {
     Sm,
     Md,
@@ -71,7 +71,7 @@ impl From<String> for SkeletonSize {
 }
 
 impl SkeletonSize {
-    fn height_class(&self) -> &'static str {
+    pub fn height_class(&self) -> &'static str {
         match self {
             SkeletonSize::Sm => "h-2",
             SkeletonSize::Md => "h-4",

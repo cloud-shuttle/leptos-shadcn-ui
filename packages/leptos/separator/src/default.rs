@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_style::Style;
 
-const SEPARATOR_CLASS: &str = "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
+pub const SEPARATOR_CLASS: &str = "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70";
 
 #[component]
 pub fn Separator(
