@@ -42,9 +42,9 @@ leptos-shadcn-skeleton = { version = "0.6.0", optional = true }
 leptos-shadcn-progress = { version = "0.6.0", optional = true }
 leptos-shadcn-toast = { path = "../leptos/toast", version = "0.6.0", optional = true }
 leptos-shadcn-table = { path = "../leptos/table", version = "0.6.0", optional = true }
-leptos-shadcn-calendar = { path = "../leptos/calendar", version = "0.6.0", optional = true }
-leptos-shadcn-date-picker = { path = "../leptos/date-picker", version = "0.6.0", optional = true }
-leptos-shadcn-pagination = { path = "../leptos/pagination", version = "0.6.0", optional = true }
+leptos-shadcn-calendar = { version = "0.6.0", optional = true }
+leptos-shadcn-date-picker = { version = "0.6.0", optional = true }
+leptos-shadcn-pagination = { version = "0.6.0", optional = true }
 leptos-shadcn-slider = { path = "../leptos/slider", version = "0.6.0", optional = true }
 leptos-shadcn-toggle = { path = "../leptos/toggle", version = "0.6.0", optional = true }
 leptos-shadcn-carousel = { path = "../leptos/carousel", version = "0.6.0", optional = true }
