@@ -407,6 +407,12 @@ cargo run -p leptos-shadcn-performance-audit --bin performance-audit -- --help
 
 This project is licensed under the MIT License - see the [LICENSE](../../LICENSE) file for details.
 
+## 📚 Additional Resources
+
+- **[Quick Start Guide](QUICK_START.md)** - Get started in 5 minutes
+- **[API Reference](API.md)** - Complete programmatic API documentation
+- **[Examples](../../examples/)** - Working code examples
+
 ---
 
 **🎯 Monitor, Optimize, and Scale your Leptos applications with the Performance Audit System!**
