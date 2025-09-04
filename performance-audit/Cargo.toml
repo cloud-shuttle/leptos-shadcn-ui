@@ -8,7 +8,7 @@ repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
 license = "MIT"
 authors = ["CloudShuttle <info@cloudshuttle.com>"]
 keywords = ["leptos", "performance", "audit", "monitoring", "benchmark"]
-categories = ["development-tools", "performance"]
+categories = ["development-tools", "web-programming"]
 
 [dependencies]
 # Core dependencies
