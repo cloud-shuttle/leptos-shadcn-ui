@@ -7,7 +7,7 @@ authors.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-version = "0.3.1"
+version = "0.4.0"
 
 [dependencies]
 leptos.workspace = true

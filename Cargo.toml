@@ -60,6 +60,7 @@ members = [
     "packages/leptos/drawer",
     "packages/leptos/alert-dialog",
     "packages/leptos/avatar",
+    "packages/leptos/resizable",
     
     # Components with internal dependencies (publishing in sequence)
     "packages/leptos/calendar",      # Depends on published components

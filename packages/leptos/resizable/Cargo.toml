@@ -1,7 +1,7 @@
 [package]
-name = "leptos-shadcn-scroll-area"
-description = "Leptos port of shadcn/ui scroll-area"
-homepage = "https://shadcn-ui.rustforweb.org/components/scroll-area.html"
+name = "leptos-shadcn-resizable"
+description = "Leptos port of shadcn/ui resizable"
+homepage = "https://shadcn-ui.rustforweb.org/components/resizable.html"
 
 authors.workspace = true
 edition.workspace = true
