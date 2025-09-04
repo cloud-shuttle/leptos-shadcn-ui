@@ -204,7 +204,7 @@ mod tests {
         let _element = harness.render(|| {
             view! {
                 <button class="btn-primary">{"Test Button"}</button>
-            }
+            }.into_any()
         });
         
         // Test that button rendered correctly
