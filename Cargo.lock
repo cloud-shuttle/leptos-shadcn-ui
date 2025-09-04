@@ -2031,23 +2031,23 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-error-boundary"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9c35909088998b088fef66091f4c2e1c83fd322bcc0ddd55422c309646cadbe6"
-dependencies = [
- "leptos",
- "log",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-error-boundary"
 version = "0.4.0"
 dependencies = [
  "leptos",
  "log",
  "shadcn-ui-test-utils",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-error-boundary"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9e8a4a7ca71c11ab9dc7c8ed83cb663f1be17c8df5dc986453f59c7d6585ce89"
+dependencies = [
+ "leptos",
+ "log",
  "web-sys",
 ]
 
@@ -2211,9 +2211,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-lazy-loading"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b8eedcc270e01da2525360c8291e5af83e4d05c7e59fe6b797a3c21dd36085d8"
+version = "0.4.0"
 dependencies = [
  "leptos",
 ]
@@ -2221,6 +2219,8 @@ dependencies = [
 [[package]]
 name = "leptos-shadcn-lazy-loading"
 version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8c15e13c1824f88a6a8796b96042a9fe8dbfc4c5984fb37c41a0fbec2ece9f0"
 dependencies = [
  "leptos",
 ]
@@ -2814,7 +2814,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-ui"
-version = "0.4.0"
+version = "0.4.1"
 dependencies = [
  "gloo-timers",
  "leptos",
@@ -2839,13 +2839,13 @@ dependencies = [
  "leptos-shadcn-dialog 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-drawer 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-dropdown-menu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-error-boundary 0.3.0",
+ "leptos-shadcn-error-boundary 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-form 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-hover-card 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-input 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-input-otp 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-label 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-lazy-loading 0.3.0",
+ "leptos-shadcn-lazy-loading 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-menubar 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-navigation-menu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-pagination 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
