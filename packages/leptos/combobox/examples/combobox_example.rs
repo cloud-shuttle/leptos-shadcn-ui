@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use shadcn_ui_leptos_combobox::{Combobox, ComboboxOption};
+use leptos_shadcn_combobox::{Combobox, ComboboxOption};
 
 #[component]
 pub fn ComboboxExample() -> impl IntoView {
