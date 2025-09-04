@@ -835,8 +835,8 @@ dependencies = [
  "leptos-shadcn-pagination 0.6.0",
  "leptos-shadcn-popover 0.6.0",
  "leptos-shadcn-progress 0.6.0",
- "leptos-shadcn-radio-group",
- "leptos-shadcn-select",
+ "leptos-shadcn-radio-group 0.6.0",
+ "leptos-shadcn-select 0.6.0",
  "leptos-shadcn-separator 0.6.0",
  "leptos-shadcn-skeleton 0.6.0",
  "leptos-shadcn-slider",
@@ -2611,6 +2611,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-popover"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ed420b373ec240d9c100344bf83b68e86b56bef6e7a9512ad4c53396605c5465"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-progress"
 version = "0.6.0"
 dependencies = [
@@ -2649,6 +2663,19 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+]
+
+[[package]]
+name = "leptos-shadcn-radio-group"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fae3b663230e35680937c0a319ba29024a184172196cfc14f1c0aac4402611e2"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
 ]
 
 [[package]]
@@ -2713,6 +2740,20 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-select"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "356c43a001017e886bd82653662f2f79c81955eee383d280f9e0b1b89e943db2"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2966,13 +3007,13 @@ dependencies = [
  "leptos-shadcn-navigation-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-pagination 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-popover 0.6.0",
+ "leptos-shadcn-popover 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-progress 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-radio-group",
+ "leptos-shadcn-radio-group 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-registry",
  "leptos-shadcn-resizable",
  "leptos-shadcn-scroll-area 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-select",
+ "leptos-shadcn-select 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-separator 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-sheet",
  "leptos-shadcn-skeleton 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
