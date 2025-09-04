@@ -841,10 +841,10 @@ dependencies = [
  "leptos-shadcn-skeleton 0.6.0",
  "leptos-shadcn-slider 0.6.0",
  "leptos-shadcn-switch 0.6.0",
- "leptos-shadcn-table",
+ "leptos-shadcn-table 0.6.0",
  "leptos-shadcn-tabs 0.6.0",
- "leptos-shadcn-textarea",
- "leptos-shadcn-toast",
+ "leptos-shadcn-textarea 0.6.0",
+ "leptos-shadcn-toast 0.6.0",
  "leptos-shadcn-tooltip",
  "leptos_router",
  "log",
@@ -2926,6 +2926,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-table"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "79e008a4afca2824ea01e73153bd8bb4bb43db7c1518ee711152ca0a69607c19"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-tabs"
 version = "0.6.0"
 dependencies = [
@@ -2968,6 +2982,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-textarea"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d40b5a23f776b493c9160dd8a492aa3350b206459938477b5efc2ef090dd9d4b"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-toast"
 version = "0.6.0"
 dependencies = [
@@ -2980,6 +3008,22 @@ dependencies = [
  "tailwind_fuse 0.3.2",
  "uuid",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-toast"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "077d3c7800ab10c6ba971105db5eafe848b5dc8778eaa000c2be6083b8d6259a"
+dependencies = [
+ "gloo-timers",
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "uuid",
  "web-sys",
 ]
 
@@ -3061,10 +3105,10 @@ dependencies = [
  "leptos-shadcn-skeleton 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-slider 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-switch 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-table",
+ "leptos-shadcn-table 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-tabs 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-textarea",
- "leptos-shadcn-toast",
+ "leptos-shadcn-textarea 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-toast 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-toggle",
  "leptos-shadcn-tooltip",
  "leptos-struct-component",
