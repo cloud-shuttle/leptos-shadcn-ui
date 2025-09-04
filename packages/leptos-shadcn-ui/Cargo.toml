@@ -68,7 +68,7 @@ leptos-shadcn-drawer = { version = "0.4.0", optional = true }
 leptos-shadcn-alert-dialog = { version = "0.4.0", optional = true }
 leptos-shadcn-avatar = { version = "0.4.0", optional = true }
 leptos-shadcn-resizable = { version = "0.4.0", optional = true }
-# leptos-shadcn-performance-audit = { version = "0.1.0", optional = true }
+leptos-shadcn-performance-audit = { version = "0.1.0", optional = true }
 
 # Additional packages (published dependencies for v0.4.0 release)
 leptos-shadcn-error-boundary = { version = "0.4.0", optional = true }
@@ -88,7 +88,7 @@ all-components = [
     "slider", "toggle", "carousel",
     "form", "combobox", "command", "input-otp", "breadcrumb", "navigation-menu", "context-menu", 
     "dropdown-menu", "menubar", "hover-card", "aspect-ratio", "collapsible", "scroll-area", 
-    "sheet", "drawer", "alert-dialog", "avatar", "resizable", "error-boundary", "lazy-loading"
+    "sheet", "drawer", "alert-dialog", "avatar", "resizable", "error-boundary", "lazy-loading", "performance-audit"
 ]
 
 # Individual component features
@@ -137,7 +137,7 @@ drawer = ["leptos-shadcn-drawer"]
 alert-dialog = ["leptos-shadcn-alert-dialog"]
 avatar = ["leptos-shadcn-avatar"]
 resizable = ["leptos-shadcn-resizable"]
-# performance-audit = ["leptos-shadcn-performance-audit"]
+performance-audit = ["leptos-shadcn-performance-audit"]
 error-boundary = ["leptos-shadcn-error-boundary"]
 lazy-loading = ["leptos-shadcn-lazy-loading"]
 registry = ["leptos-shadcn-registry"]

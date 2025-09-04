@@ -2561,6 +2561,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-performance-audit"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4623ef142a25ad444260778176483a9b4ee49f42012bd1f8c743250725c27179"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "clap",
+ "env_logger",
+ "futures",
+ "glob",
+ "log",
+ "nalgebra",
+ "serde",
+ "serde_json",
+ "statistical",
+ "thiserror 1.0.69",
+ "tokio",
+ "walkdir",
+]
+
+[[package]]
 name = "leptos-shadcn-popover"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3098,6 +3120,7 @@ dependencies = [
  "leptos-shadcn-menubar 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-navigation-menu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-pagination 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-popover 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-progress 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-radio-group 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
