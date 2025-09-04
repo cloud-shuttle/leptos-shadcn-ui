@@ -60,13 +60,13 @@ leptos-shadcn-context-menu = { path = "../leptos/context-menu", version = "0.6.0
 leptos-shadcn-dropdown-menu = { path = "../leptos/dropdown-menu", version = "0.6.0", optional = true }
 leptos-shadcn-menubar = { path = "../leptos/menubar", version = "0.6.0", optional = true }
 leptos-shadcn-hover-card = { path = "../leptos/hover-card", version = "0.6.0", optional = true }
-leptos-shadcn-aspect-ratio = { path = "../leptos/aspect-ratio", version = "0.6.0", optional = true }
-leptos-shadcn-collapsible = { path = "../leptos/collapsible", version = "0.6.0", optional = true }
-leptos-shadcn-scroll-area = { path = "../leptos/scroll-area", version = "0.6.0", optional = true }
+leptos-shadcn-aspect-ratio = { version = "0.6.0", optional = true }
+leptos-shadcn-collapsible = { version = "0.6.0", optional = true }
+leptos-shadcn-scroll-area = { version = "0.6.0", optional = true }
 leptos-shadcn-sheet = { path = "../leptos/sheet", version = "0.6.0", optional = true }
 leptos-shadcn-drawer = { path = "../leptos/drawer", version = "0.6.0", optional = true }
 leptos-shadcn-alert-dialog = { version = "0.6.0", optional = true }
-leptos-shadcn-avatar = { path = "../leptos/avatar", version = "0.6.0", optional = true }
+leptos-shadcn-avatar = { version = "0.6.0", optional = true }
 leptos-shadcn-resizable = { path = "../leptos/resizable", version = "0.6.0", optional = true }
 leptos-shadcn-performance-audit = { version = "0.1.0", optional = true }
 

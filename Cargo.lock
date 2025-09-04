@@ -834,11 +834,11 @@ dependencies = [
  "leptos-shadcn-label 0.6.0",
  "leptos-shadcn-pagination",
  "leptos-shadcn-popover 0.6.0",
- "leptos-shadcn-progress",
+ "leptos-shadcn-progress 0.6.0",
  "leptos-shadcn-radio-group",
  "leptos-shadcn-select",
  "leptos-shadcn-separator 0.6.0",
- "leptos-shadcn-skeleton",
+ "leptos-shadcn-skeleton 0.6.0",
  "leptos-shadcn-slider",
  "leptos-shadcn-switch 0.6.0",
  "leptos-shadcn-table",
@@ -1716,6 +1716,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-alert-dialog"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "97d90daef8355cc975d9a295c21417fc2b475d969cec07a5e52fb498e3a29623"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-aspect-ratio"
 version = "0.6.0"
 dependencies = [
@@ -2334,6 +2349,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-progress"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e44fe0dd4baf20dfc95cd3eb1258c43fbd63e803d7dc92f688757e1c45961a23"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-radio-group"
 version = "0.6.0"
 dependencies = [
@@ -2450,6 +2479,20 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-skeleton"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a364db0a319c23a6da71db10453ea8a23be696953acdf46983d572620a7c63ce"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2604,7 +2647,7 @@ dependencies = [
  "leptos-node-ref",
  "leptos-shadcn-accordion 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-alert 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-alert-dialog",
+ "leptos-shadcn-alert-dialog 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-aspect-ratio",
  "leptos-shadcn-avatar",
  "leptos-shadcn-badge 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2634,7 +2677,7 @@ dependencies = [
  "leptos-shadcn-pagination",
  "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-popover 0.6.0",
- "leptos-shadcn-progress",
+ "leptos-shadcn-progress 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-radio-group",
  "leptos-shadcn-registry",
  "leptos-shadcn-resizable",
@@ -2642,7 +2685,7 @@ dependencies = [
  "leptos-shadcn-select",
  "leptos-shadcn-separator 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-sheet",
- "leptos-shadcn-skeleton",
+ "leptos-shadcn-skeleton 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-slider",
  "leptos-shadcn-switch 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-table",
