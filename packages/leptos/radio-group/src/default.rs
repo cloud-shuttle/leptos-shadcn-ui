@@ -133,7 +133,7 @@ pub fn RadioGroupItem(
     
     view! {
         <button
-            type="button"
+            r#type="button"
             role="radio"
             aria-checked=aria_checked
             data-state=data_state

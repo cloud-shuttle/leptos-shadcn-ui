@@ -30,7 +30,7 @@ pub fn Checkbox(
 
     view! {
         <input
-            type="checkbox"
+            r#type="checkbox"
             checked=checked
             disabled=disabled
             class=computed_class

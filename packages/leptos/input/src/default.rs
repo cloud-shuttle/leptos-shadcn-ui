@@ -32,7 +32,7 @@ pub fn Input(
 
     view! {
         <input
-            type=input_type.get().unwrap_or_else(|| "text".to_string())
+            r#type=input_type.get().unwrap_or_else(|| "text".to_string())
             value=value.get().unwrap_or_default()
             placeholder=placeholder.get().unwrap_or_default()
             disabled=disabled

@@ -128,7 +128,7 @@ pub fn Switch(
 
     view! {
         <button
-            type="button"
+            r#type="button"
             role="switch"
             aria-checked={move || checked.get()}
             data-state={state_attr}

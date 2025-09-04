@@ -157,7 +157,7 @@ pub fn Slider(
                     />
                 </div>
                 <input
-                    type="range"
+                    r#type="range"
                     min={min_value}
                     max={max_value}
                     step={step_value}

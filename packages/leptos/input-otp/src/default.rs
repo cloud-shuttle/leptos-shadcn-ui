@@ -133,7 +133,7 @@ pub fn InputOtp(
             view! {
                 <div class={slot_class}>
                     <input
-                        type="text"
+                        r#type="text"
                         class="absolute inset-0 w-full h-full text-center bg-transparent border-none outline-none focus:outline-none"
                         value={char_value.clone()}
                         maxlength="1"

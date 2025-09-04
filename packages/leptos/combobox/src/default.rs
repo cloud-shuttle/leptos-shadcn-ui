@@ -156,7 +156,7 @@ pub fn Combobox(
     view! {
         <div class="relative w-full">
             <input
-                type="text"
+                r#type="text"
                 class=computed_class
                 id=id.get().unwrap_or_default()
                 style=move || style.get().to_string()
@@ -170,7 +170,7 @@ pub fn Combobox(
             />
             
             <button
-                type="button"
+                r#type="button"
                 class="absolute right-3 top-1/2 -translate-y-1/2"
                 on:click=move |_| set_is_open.set(!is_open.get())
                 disabled=disabled
