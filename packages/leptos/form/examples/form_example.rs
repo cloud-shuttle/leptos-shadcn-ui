@@ -1,8 +1,8 @@
 use leptos::prelude::*;
-use shadcn_ui_leptos_form::{Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription};
-use shadcn_ui_leptos_form::default::FormData;
-use shadcn_ui_leptos_input::Input;
-use shadcn_ui_leptos_button::Button;
+use leptos_shadcn_form::{Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription};
+use leptos_shadcn_form::default::FormData;
+use leptos_shadcn_input::Input;
+use leptos_shadcn_button::Button;
 
 #[component]
 pub fn FormExample() -> impl IntoView {

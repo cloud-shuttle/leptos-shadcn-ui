@@ -1,6 +1,6 @@
 [package]
 name = "leptos-shadcn-ui"
-version = "0.3.5"
+version = "0.4.0"
 edition = "2021"
 description = "A comprehensive collection of beautiful, accessible UI components built for Leptos v0.8+, inspired by shadcn/ui. Core components with 100% test coverage, automated testing infrastructure, and production-ready quality standards. Focus on reliable, well-tested components without external icon dependencies. Fully compatible with Leptos v0.8 attribute system."
 homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
