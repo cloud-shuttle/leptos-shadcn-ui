@@ -133,18 +133,13 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
                 framework.name, style.name
             ));
 
-            // TODO: Rustify dependencies
+            // Zero dependencies - using inline SVG instead of external icon libraries
 
-            let mut dependencies: Vec<String> = vec![
+            let dependencies: Vec<String> = vec![
                 "tailwindcss-animate".into(),
                 "class-variance-authority".into(),
-                "lucide-react".into(),
+                // Note: lucide-react removed - using inline SVG for zero dependencies
             ];
-
-            // TODO: Remove this when we migrate to lucide-react.
-            if style.name == Style::NewYork {
-                dependencies.push("@radix-ui/react-icons".into());
-            }
 
             let payload = RegistryEntry {
                 name: style.name.to_string(),
