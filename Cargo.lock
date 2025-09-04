@@ -2114,6 +2114,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-context-menu"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ca8858ea429b9897b6efef6724316bdbb657481a36d063589aa87ad0c6949614"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-date-picker"
 version = "0.6.0"
 dependencies = [
@@ -2203,6 +2218,20 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-dropdown-menu"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1adda782b0bc63527235bfc8391fa3582a054113b87e5aa02a4110177e17f6c3"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2377,6 +2406,20 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-menubar"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "961fb1d27cf20002d5e5259b2469b586dcc83e9471ba11ab286c8c8b88b7889d"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2842,11 +2885,11 @@ dependencies = [
  "leptos-shadcn-collapsible 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-combobox 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-command 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-context-menu",
+ "leptos-shadcn-context-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-date-picker 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-dialog 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-drawer",
- "leptos-shadcn-dropdown-menu",
+ "leptos-shadcn-dropdown-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-error-boundary 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-form 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-hover-card",
@@ -2854,7 +2897,7 @@ dependencies = [
  "leptos-shadcn-input-otp",
  "leptos-shadcn-label 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-lazy-loading",
- "leptos-shadcn-menubar",
+ "leptos-shadcn-menubar 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-navigation-menu",
  "leptos-shadcn-pagination 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
