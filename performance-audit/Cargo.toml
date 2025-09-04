@@ -1,0 +1,68 @@
+[package]
+name = "leptos-shadcn-performance-audit"
+version = "0.1.0"
+edition = "2021"
+description = "Performance audit and monitoring system for leptos-shadcn-ui components"
+homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+license = "MIT"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+keywords = ["leptos", "performance", "audit", "monitoring", "benchmark"]
+categories = ["development-tools", "performance"]
+
+[dependencies]
+# Core dependencies
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+
+# File system and path handling
+walkdir = "2.0"
+glob = "0.3"
+
+# Time and duration handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# Async runtime
+futures = "0.3"
+
+# Logging
+log = "0.4"
+env_logger = "0.10"
+
+# Statistics and math
+statistical = "0.1"
+nalgebra = "0.32"
+
+[dev-dependencies]
+# Testing dependencies
+criterion = "0.5"
+proptest = "1.0"
+tempfile = "3.0"
+
+# Async testing
+tokio-test = "0.4"
+
+# [[bench]]
+# name = "performance_benchmarks"
+# harness = false
+
+[features]
+default = ["monitoring", "benchmarks"]
+monitoring = []
+benchmarks = []
+cli = ["indicatif"]
+web = ["wasm-bindgen", "web-sys"]
+
+# CLI dependencies
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+clap = { version = "4.0", features = ["derive"] }
+indicatif = { version = "0.17", optional = true }
+
+# Web dependencies (optional)
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = { version = "0.2", optional = true }
+web-sys = { version = "0.3", optional = true }
+js-sys = { version = "0.3", optional = true }

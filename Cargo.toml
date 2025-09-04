@@ -17,6 +17,7 @@ members = [
     "packages/test-utils",
     "packages/component-generator",
     "packages/leptos-shadcn-ui",  # Re-added for final publishing
+    "performance-audit",  # Performance audit system
     
     # Basic components (no internal dependencies)
     "packages/leptos/button",
