@@ -134,7 +134,7 @@ pub fn InputOtp(
                         class="absolute inset-0 w-full h-full text-center bg-transparent border-none outline-none focus:outline-none"
                         value={char_value.clone()}
                         maxlength="1"
-                        disabled=is_disabled
+                        disabled=move || is_disabled.get()
                         aria-label={format!("Digit {}", i + 1)}
                         on:keydown={
                             let handle_keydown = handle_keydown.clone();

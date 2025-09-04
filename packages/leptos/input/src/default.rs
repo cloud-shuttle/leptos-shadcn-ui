@@ -35,8 +35,8 @@ pub fn Input(
             r#type=input_type.get().unwrap_or_else(|| "text".to_string())
             value=value.get().unwrap_or_default()
             placeholder=placeholder.get().unwrap_or_default()
-            disabled=disabled
-            class=computed_class
+            disabled=move || disabled.get()
+            class=move || computed_class.get()
             id=id.get().unwrap_or_default()
             style=move || style.get().to_string()
             on:input=handle_input

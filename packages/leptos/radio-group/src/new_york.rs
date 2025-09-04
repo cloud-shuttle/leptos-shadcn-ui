@@ -135,13 +135,13 @@ pub fn RadioGroupItem(
         <button
             r#type="button"
             role="radio"
-            aria-checked=aria_checked
-            data-state=data_state
-            data-disabled=data_disabled
-            class=computed_class
+            aria-checked=move || aria_checked.get()
+            data-state=move || data_state.get()
+            data-disabled=move || data_disabled.get()
+            class=move || computed_class.get()
             id=id.get().unwrap_or_default()
             style=move || style.get().to_string()
-            disabled=is_disabled
+            disabled=move || is_disabled.get()
             on:click=handle_click
         >
             <div class=RADIO_INDICATOR_CLASS>

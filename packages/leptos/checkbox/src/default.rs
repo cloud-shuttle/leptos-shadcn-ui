@@ -31,9 +31,9 @@ pub fn Checkbox(
     view! {
         <input
             r#type="checkbox"
-            checked=checked
-            disabled=disabled
-            class=computed_class
+            checked=move || checked.get()
+            disabled=move || disabled.get()
+            class=move || computed_class.get()
             id=id.get().unwrap_or_default()
             style=move || style.get().to_string()
             on:change=handle_change

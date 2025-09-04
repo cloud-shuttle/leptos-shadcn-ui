@@ -130,15 +130,15 @@ pub fn Switch(
         <button
             r#type="button"
             role="switch"
-            aria-checked={move || checked.get()}
-            data-state={state_attr}
-            disabled=disabled
-            class=computed_class
+            aria-checked=move || checked.get()
+            data-state=move || state_attr.get()
+            disabled=move || disabled.get()
+            class=move || computed_class.get()
             id=id.get().unwrap_or_default()
             style=move || style.get().to_string()
             on:click=handle_change
         >
-            <span class=computed_thumb_class data-state={state_attr} />
+            <span class=move || computed_thumb_class.get() data-state=move || state_attr.get() />
         </button>
     }
 }

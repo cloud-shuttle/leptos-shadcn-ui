@@ -157,11 +157,11 @@ pub fn Combobox(
         <div class="relative w-full">
             <input
                 r#type="text"
-                class=computed_class
+                class=move || computed_class.get()
                 id=id.get().unwrap_or_default()
                 style=move || style.get().to_string()
                 placeholder=placeholder.get().unwrap_or_default()
-                disabled=disabled
+                disabled=move || disabled.get()
                 value=move || current_value.get()
                 on:input=handle_input_change
                 on:keydown=handle_keydown
@@ -173,7 +173,7 @@ pub fn Combobox(
                 r#type="button"
                 class="absolute right-3 top-1/2 -translate-y-1/2"
                 on:click=move |_| set_is_open.set(!is_open.get())
-                disabled=disabled
+                disabled=move || disabled.get()
             >
                 <svg
                     class="h-4 w-4 opacity-50"

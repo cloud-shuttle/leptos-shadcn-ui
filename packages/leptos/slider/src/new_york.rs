@@ -146,13 +146,13 @@ pub fn Slider(
     view! {
         <div class="w-full space-y-2">
             <div
-                class=computed_class
+                class=move || computed_class.get()
                 id=id.get().unwrap_or_default()
                 style=move || style.get().to_string()
             >
                 <div class={format!("{} {}", SLIDER_TRACK_CLASS, track_class)}>
                     <div
-                        class=computed_range_class
+                        class=move || computed_range_class.get()
                         style={move || format!("width: {}%", progress_percentage.get())}
                     />
                 </div>
@@ -162,12 +162,12 @@ pub fn Slider(
                     max={max_value}
                     step={step_value}
                     value={move || value.get()}
-                    disabled=disabled
+                    disabled=move || disabled.get()
                     class="absolute inset-0 h-full w-full opacity-0 cursor-pointer"
                     on:input=handle_change
                 />
                 <div
-                    class=computed_thumb_class
+                    class=move || computed_thumb_class.get()
                     style={move || format!("left: {}%", progress_percentage.get())}
                 />
             </div>
@@ -237,13 +237,13 @@ pub fn RangeSlider(
     view! {
         <div class="w-full space-y-2">
             <div
-                class=computed_class
+                class=move || computed_class.get()
                 id=id.get().unwrap_or_default()
                 style=move || style.get().to_string()
             >
                 <div class={format!("{} {}", SLIDER_TRACK_CLASS, track_class)}>
                     <div
-                        class=computed_range_class
+                        class=move || computed_range_class.get()
                         style={move || {
                             let (min_p, max_p) = range_percentage.get();
                             format!("left: {}%; width: {}%", min_p, max_p - min_p)
@@ -251,11 +251,11 @@ pub fn RangeSlider(
                     />
                 </div>
                 <div
-                    class=computed_thumb_class
+                    class=move || computed_thumb_class.get()
                     style={move || format!("left: {}%", range_percentage.get().0)}
                 />
                 <div
-                    class=computed_thumb_class
+                    class=move || computed_thumb_class.get()
                     style={move || format!("left: {}%", range_percentage.get().1)}
                 />
             </div>
