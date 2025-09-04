@@ -1,6 +1,6 @@
 [package]
 name = "leptos-shadcn-ui"
-version = "0.2.1"
+version = "0.3.0"
 edition = "2021"
 description = "A comprehensive collection of beautiful, accessible UI components built for Leptos v0.8+, inspired by shadcn/ui. Modern Rust implementation with 100% test coverage, automated testing infrastructure, and production-ready quality standards."
 homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
@@ -20,53 +20,58 @@ leptos-node-ref = "0.2"
 leptos-struct-component = "0.2"
 leptos-style = "0.2"
 
-# Individual component packages (published dependencies for v0.2.0 release)
-leptos-shadcn-button = { version = "0.2.0", optional = true }
-leptos-shadcn-input = { version = "0.2.0", optional = true }
-leptos-shadcn-label = { version = "0.2.0", optional = true }
-leptos-shadcn-checkbox = { version = "0.2.0", optional = true }
-leptos-shadcn-switch = { version = "0.2.0", optional = true }
-leptos-shadcn-radio-group = { version = "0.2.0", optional = true }
-leptos-shadcn-select = { version = "0.2.0", optional = true }
-leptos-shadcn-textarea = { version = "0.2.0", optional = true }
-leptos-shadcn-card = { version = "0.2.0", optional = true }
-leptos-shadcn-separator = { version = "0.2.0", optional = true }
-leptos-shadcn-tabs = { version = "0.2.0", optional = true }
-leptos-shadcn-accordion = { version = "0.2.0", optional = true }
-leptos-shadcn-dialog = { version = "0.2.0", optional = true }
-leptos-shadcn-popover = { version = "0.2.0", optional = true }
-leptos-shadcn-tooltip = { version = "0.2.0", optional = true }
-leptos-shadcn-alert = { version = "0.2.0", optional = true }
-leptos-shadcn-badge = { version = "0.2.0", optional = true }
-leptos-shadcn-skeleton = { version = "0.2.0", optional = true }
-leptos-shadcn-progress = { version = "0.2.0", optional = true }
-leptos-shadcn-toast = { version = "0.2.0", optional = true }
-leptos-shadcn-table = { version = "0.2.0", optional = true }
-leptos-shadcn-calendar = { version = "0.2.0", optional = true }
-leptos-shadcn-date-picker = { version = "0.2.0", optional = true }
-leptos-shadcn-pagination = { version = "0.2.0", optional = true }
-leptos-shadcn-slider = { version = "0.2.0", optional = true }
-leptos-shadcn-toggle = { version = "0.2.0", optional = true }
-leptos-shadcn-carousel = { version = "0.2.0", optional = true }
+# Individual component packages (published dependencies for v0.3.0 release)
+leptos-shadcn-button = { version = "0.3.0", optional = true }
+leptos-shadcn-input = { version = "0.3.0", optional = true }
+leptos-shadcn-label = { version = "0.3.0", optional = true }
+leptos-shadcn-checkbox = { version = "0.3.0", optional = true }
+leptos-shadcn-switch = { version = "0.3.0", optional = true }
+leptos-shadcn-radio-group = { version = "0.3.0", optional = true }
+leptos-shadcn-select = { version = "0.3.0", optional = true }
+leptos-shadcn-textarea = { version = "0.3.0", optional = true }
+leptos-shadcn-card = { version = "0.3.0", optional = true }
+leptos-shadcn-separator = { version = "0.3.0", optional = true }
+leptos-shadcn-tabs = { version = "0.3.0", optional = true }
+leptos-shadcn-accordion = { version = "0.3.0", optional = true }
+leptos-shadcn-dialog = { version = "0.3.0", optional = true }
+leptos-shadcn-popover = { version = "0.3.0", optional = true }
+leptos-shadcn-tooltip = { version = "0.3.0", optional = true }
+leptos-shadcn-alert = { version = "0.3.0", optional = true }
+leptos-shadcn-badge = { version = "0.3.0", optional = true }
+leptos-shadcn-skeleton = { version = "0.3.0", optional = true }
+leptos-shadcn-progress = { version = "0.3.0", optional = true }
+leptos-shadcn-toast = { version = "0.3.0", optional = true }
+leptos-shadcn-table = { version = "0.3.0", optional = true }
+leptos-shadcn-calendar = { version = "0.3.0", optional = true }
+leptos-shadcn-date-picker = { version = "0.3.0", optional = true }
+leptos-shadcn-pagination = { version = "0.3.0", optional = true }
+leptos-shadcn-slider = { version = "0.3.0", optional = true }
+leptos-shadcn-toggle = { version = "0.3.0", optional = true }
+leptos-shadcn-carousel = { version = "0.3.0", optional = true }
 
-# Advanced components (published dependencies for v0.2.0 release)
-leptos-shadcn-form = { version = "0.2.0", optional = true }
-leptos-shadcn-combobox = { version = "0.2.0", optional = true }
-leptos-shadcn-command = { version = "0.2.0", optional = true }
-leptos-shadcn-input-otp = { version = "0.2.0", optional = true }
-leptos-shadcn-breadcrumb = { version = "0.2.0", optional = true }
-leptos-shadcn-navigation-menu = { version = "0.2.0", optional = true }
-leptos-shadcn-context-menu = { version = "0.2.0", optional = true }
-leptos-shadcn-dropdown-menu = { version = "0.2.0", optional = true }
-leptos-shadcn-menubar = { version = "0.2.0", optional = true }
-leptos-shadcn-hover-card = { version = "0.2.0", optional = true }
-leptos-shadcn-aspect-ratio = { version = "0.2.0", optional = true }
-leptos-shadcn-collapsible = { version = "0.2.0", optional = true }
-leptos-shadcn-scroll-area = { version = "0.2.0", optional = true }
-leptos-shadcn-sheet = { version = "0.2.0", optional = true }
-leptos-shadcn-drawer = { version = "0.2.0", optional = true }
-leptos-shadcn-alert-dialog = { version = "0.2.0", optional = true }
-leptos-shadcn-avatar = { version = "0.2.0", optional = true }
+# Advanced components (published dependencies for v0.3.0 release)
+leptos-shadcn-form = { version = "0.3.0", optional = true }
+leptos-shadcn-combobox = { version = "0.3.0", optional = true }
+leptos-shadcn-command = { version = "0.3.0", optional = true }
+leptos-shadcn-input-otp = { version = "0.3.0", optional = true }
+leptos-shadcn-breadcrumb = { version = "0.3.0", optional = true }
+leptos-shadcn-navigation-menu = { version = "0.3.0", optional = true }
+leptos-shadcn-context-menu = { version = "0.3.0", optional = true }
+leptos-shadcn-dropdown-menu = { version = "0.3.0", optional = true }
+leptos-shadcn-menubar = { version = "0.3.0", optional = true }
+leptos-shadcn-hover-card = { version = "0.3.0", optional = true }
+leptos-shadcn-aspect-ratio = { version = "0.3.0", optional = true }
+leptos-shadcn-collapsible = { version = "0.3.0", optional = true }
+leptos-shadcn-scroll-area = { version = "0.3.0", optional = true }
+leptos-shadcn-sheet = { version = "0.3.0", optional = true }
+leptos-shadcn-drawer = { version = "0.3.0", optional = true }
+leptos-shadcn-alert-dialog = { version = "0.3.0", optional = true }
+leptos-shadcn-avatar = { version = "0.3.0", optional = true }
+
+# Additional packages (published dependencies for v0.3.0 release)
+leptos-shadcn-error-boundary = { version = "0.3.0", optional = true }
+leptos-shadcn-lazy-loading = { version = "0.3.0", optional = true }
+leptos-shadcn-registry = { version = "0.1.0", optional = true }
 
 # Additional dependencies
 tailwind_fuse = "0.3"
@@ -82,7 +87,7 @@ all-components = [
     "slider", "toggle", "carousel",
     "form", "combobox", "command", "input-otp", "breadcrumb", "navigation-menu", "context-menu", 
     "dropdown-menu", "menubar", "hover-card", "aspect-ratio", "collapsible", "scroll-area", 
-    "sheet", "drawer", "alert-dialog", "avatar"
+    "sheet", "drawer", "alert-dialog", "avatar", "error-boundary", "lazy-loading"
 ]
 
 # Individual component features
@@ -130,6 +135,9 @@ sheet = ["leptos-shadcn-sheet"]
 drawer = ["leptos-shadcn-drawer"]
 alert-dialog = ["leptos-shadcn-alert-dialog"]
 avatar = ["leptos-shadcn-avatar"]
+error-boundary = ["leptos-shadcn-error-boundary"]
+lazy-loading = ["leptos-shadcn-lazy-loading"]
+registry = ["leptos-shadcn-registry"]
 
 # Modern Rust features
 modern-rust = []
