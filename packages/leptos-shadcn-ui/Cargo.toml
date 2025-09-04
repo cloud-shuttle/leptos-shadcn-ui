@@ -31,13 +31,13 @@ leptos-shadcn-select = { path = "../leptos/select", version = "0.6.0", optional 
 leptos-shadcn-textarea = { path = "../leptos/textarea", version = "0.6.0", optional = true }
 leptos-shadcn-card = { version = "0.6.0", optional = true }
 leptos-shadcn-separator = { version = "0.6.0", optional = true }
-leptos-shadcn-tabs = { path = "../leptos/tabs", version = "0.6.0", optional = true }
-leptos-shadcn-accordion = { path = "../leptos/accordion", version = "0.6.0", optional = true }
+leptos-shadcn-tabs = { version = "0.6.0", optional = true }
+leptos-shadcn-accordion = { version = "0.6.0", optional = true }
 leptos-shadcn-dialog = { version = "0.6.0", optional = true }
 leptos-shadcn-popover = { path = "../leptos/popover", version = "0.6.0", optional = true }
 leptos-shadcn-tooltip = { path = "../leptos/tooltip", version = "0.6.0", optional = true }
-leptos-shadcn-alert = { path = "../leptos/alert", version = "0.6.0", optional = true }
-leptos-shadcn-badge = { path = "../leptos/badge", version = "0.6.0", optional = true }
+leptos-shadcn-alert = { version = "0.6.0", optional = true }
+leptos-shadcn-badge = { version = "0.6.0", optional = true }
 leptos-shadcn-skeleton = { path = "../leptos/skeleton", version = "0.6.0", optional = true }
 leptos-shadcn-progress = { path = "../leptos/progress", version = "0.6.0", optional = true }
 leptos-shadcn-toast = { path = "../leptos/toast", version = "0.6.0", optional = true }
