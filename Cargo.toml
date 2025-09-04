@@ -18,6 +18,7 @@ members = [
     "packages/component-generator",
     "packages/leptos-shadcn-ui",  # Re-added for final publishing
     "performance-audit",  # Performance audit system
+    "leptos_v0_8_test_app",  # Leptos v0.8 compatibility test app
     
     # Basic components (no internal dependencies)
     "packages/leptos/button",
@@ -74,14 +75,14 @@ members = [
     
     "scripts/run_quality_assessment",
     "scripts/generate_component_tests"
-]
+, "leptos_v0_8_test_app"]
 
 [workspace.package]
 authors = ["CloudShuttle <info@cloudshuttle.com>"]
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
-version = "0.5.0"
+version = "0.6.0"
 
 [workspace.dependencies]
 leptos = "0.8"

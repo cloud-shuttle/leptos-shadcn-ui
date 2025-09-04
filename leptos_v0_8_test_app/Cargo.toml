@@ -1,0 +1,13 @@
+[package]
+name = "leptos_v0_8_test_app"
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+leptos = "0.8"
+leptos-shadcn-ui = { path = "../packages/leptos-shadcn-ui", features = ["all-components"] }
+leptos_router = "0.8"
+console_error_panic_hook = "0.1"
