@@ -2438,6 +2438,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-lazy-loading"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5acc30ac01b175f354ee1f1827887b9b1b53e0a085fd8690daa927966b9e2ebf"
+dependencies = [
+ "leptos",
+]
+
+[[package]]
 name = "leptos-shadcn-menubar"
 version = "0.6.0"
 dependencies = [
@@ -2938,7 +2947,7 @@ dependencies = [
  "leptos-shadcn-input 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-input-otp 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-label 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-lazy-loading",
+ "leptos-shadcn-lazy-loading 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-menubar 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-navigation-menu",
  "leptos-shadcn-pagination 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
