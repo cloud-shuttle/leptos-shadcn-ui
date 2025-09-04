@@ -10,6 +10,7 @@ Welcome to the comprehensive documentation for the leptos-shadcn-ui component li
 - ✅ **E2E Tests**: 129 Playwright tests covering all workflows
 - ✅ **Quality Standards**: Industry-best practices implemented
 - ✅ **Documentation**: Comprehensive guides and examples
+- ✅ **Performance Audit**: Complete TDD performance monitoring system
 
 ---
 
@@ -18,6 +19,7 @@ Welcome to the comprehensive documentation for the leptos-shadcn-ui component li
 ### **🚀 Getting Started**
 - **[Main README](../README.md)** - Project overview and quick start
 - **[Component Examples](../examples/)** - Working examples and demos
+- **[Performance Audit Quick Start](./performance-audit/QUICK_START.md)** - Performance monitoring quick start
 
 ### **🧪 Testing & Quality Assurance**
 - **[TDD Implementation](./tdd/)** - Complete Test-Driven Development documentation
@@ -38,6 +40,9 @@ Welcome to the comprehensive documentation for the leptos-shadcn-ui component li
 
 ### **🔧 Development & Tools**
 - **[Component Generator](./development/component-generator.md)** - Automated component creation
+- **[Performance Audit System](./performance-audit/)** - Performance monitoring and optimization
+  - **[Quick Start](./performance-audit/QUICK_START.md)** - Get started in 5 minutes
+  - **[Complete Documentation](./performance-audit/README.md)** - Full system documentation
 - **[Quality Assurance](./quality/)** - Defect tracking and quality metrics
   - **[Defects Register](./quality/defects-register.md)** - Issue tracking and resolution
 
