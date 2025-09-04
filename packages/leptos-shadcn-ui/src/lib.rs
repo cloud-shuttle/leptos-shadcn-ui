@@ -36,6 +36,12 @@
 //! ### Interactive Components
 //! - Slider, Toggle
 //! 
+//! ### Performance Monitoring
+//! - Performance Audit System - Comprehensive performance monitoring and optimization
+//! - Bundle Size Analysis - Component size tracking and optimization recommendations
+//! - Real-time Monitoring - Performance metrics collection and analysis
+//! - CLI Tool - Command-line interface for running audits and generating reports
+//! 
 //! ## License
 //! 
 //! MIT License - see the [LICENSE](../LICENSE) file for details.

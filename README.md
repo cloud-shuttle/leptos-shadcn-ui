@@ -16,6 +16,7 @@
 - ✅ **E2E Tests**: 129 Playwright tests covering all workflows  
 - ✅ **Quality Standards**: Industry-best practices implemented
 - ✅ **Documentation**: Comprehensive guides and examples
+- ✅ **Performance Audit**: Complete TDD performance monitoring system
 
 ---
 
@@ -28,6 +29,7 @@
 - **Accessibility First** - WCAG compliance built into every component
 - **Performance Optimized** - No memory leaks or performance bottlenecks
 - **Cross-Platform** - Works consistently across all major browsers and devices
+- **Performance Monitoring** - Built-in performance audit and optimization tools
 
 ## 🚀 **Quick Start**
 
@@ -60,6 +62,24 @@ pub fn MyForm() -> impl IntoView {
         </div>
     }
 }
+```
+
+### **Performance Monitoring**
+
+Monitor and optimize your component performance with the built-in audit system:
+
+```bash
+# Install the performance audit tool
+cargo install leptos-shadcn-performance-audit
+
+# Run comprehensive performance audit
+performance-audit audit
+
+# Analyze bundle sizes
+performance-audit bundle --components-path packages/leptos
+
+# Monitor real-time performance
+performance-audit monitor --duration 30s
 ```
 
 ### **Run Examples**

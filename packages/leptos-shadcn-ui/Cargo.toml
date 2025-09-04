@@ -1,6 +1,6 @@
 [package]
 name = "leptos-shadcn-ui"
-version = "0.4.1"
+version = "0.5.0"
 edition = "2021"
 description = "A comprehensive collection of beautiful, accessible UI components built for Leptos v0.8+, inspired by shadcn/ui. Core components with 100% test coverage, automated testing infrastructure, and production-ready quality standards. Focus on reliable, well-tested components without external icon dependencies. Fully compatible with Leptos v0.8 attribute system."
 homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
@@ -68,6 +68,7 @@ leptos-shadcn-drawer = { version = "0.4.0", optional = true }
 leptos-shadcn-alert-dialog = { version = "0.4.0", optional = true }
 leptos-shadcn-avatar = { version = "0.4.0", optional = true }
 leptos-shadcn-resizable = { version = "0.4.0", optional = true }
+# leptos-shadcn-performance-audit = { version = "0.1.0", optional = true }
 
 # Additional packages (published dependencies for v0.4.0 release)
 leptos-shadcn-error-boundary = { version = "0.4.0", optional = true }
@@ -136,6 +137,7 @@ drawer = ["leptos-shadcn-drawer"]
 alert-dialog = ["leptos-shadcn-alert-dialog"]
 avatar = ["leptos-shadcn-avatar"]
 resizable = ["leptos-shadcn-resizable"]
+# performance-audit = ["leptos-shadcn-performance-audit"]
 error-boundary = ["leptos-shadcn-error-boundary"]
 lazy-loading = ["leptos-shadcn-lazy-loading"]
 registry = ["leptos-shadcn-registry"]

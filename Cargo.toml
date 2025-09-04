@@ -81,7 +81,7 @@ authors = ["CloudShuttle <info@cloudshuttle.com>"]
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
-version = "0.4.0"
+version = "0.5.0"
 
 [workspace.dependencies]
 leptos = "0.8"
