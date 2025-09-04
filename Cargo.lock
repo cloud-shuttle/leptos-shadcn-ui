@@ -1941,7 +1941,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-error-boundary"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "leptos",
  "log",
@@ -2096,7 +2096,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-lazy-loading"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "leptos",
 ]
