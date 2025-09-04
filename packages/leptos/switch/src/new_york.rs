@@ -134,7 +134,7 @@ pub fn Switch(
             data-state=move || state_attr.get()
             disabled=move || disabled.get()
             class=move || computed_class.get()
-            id=id.get().unwrap_or_default()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
             on:click=handle_change
         >
@@ -223,8 +223,8 @@ pub fn SwitchThumb(
 
     view! {
         <span
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
             data-state={state_attr}
         />
@@ -245,8 +245,8 @@ pub fn SwitchLabel(
 
     view! {
         <label
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
         >
             {children.map(|c| c())}

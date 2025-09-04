@@ -17,6 +17,7 @@ pub fn DatePicker(
 ) -> impl IntoView {
     let is_open = RwSignal::new(false);
     let selected_date = RwSignal::new(selected.get());
+    let disabled_dates = RwSignal::new(disabled.get().unwrap_or_default());
     
     // Update selected date when prop changes
     Effect::new(move |_| {
@@ -83,7 +84,7 @@ pub fn DatePicker(
                                     cb.run(date);
                                 }
                             })
-                            disabled=disabled.get().unwrap_or_default()
+                            disabled=disabled_dates
                         />
                     </div>
                 }.into_any()
@@ -105,6 +106,7 @@ pub fn DatePickerWithRange(
     let range_start = RwSignal::new(from.get());
     let range_end = RwSignal::new(to.get());
     let selecting_end = RwSignal::new(false);
+    let disabled_dates = RwSignal::new(disabled.get().unwrap_or_default());
     
     // Update range when props change
     Effect::new(move |_| {
@@ -207,7 +209,7 @@ pub fn DatePickerWithRange(
                             on_select=Callback::new(move |date: CalendarDate| {
                                 handle_select(date);
                             })
-                            disabled=disabled.get().unwrap_or_default()
+                            disabled=disabled_dates
                         />
                     </div>
                 }.into_any()

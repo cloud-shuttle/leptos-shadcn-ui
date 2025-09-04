@@ -32,10 +32,10 @@ pub fn Textarea(
 
     view! {
         <textarea
-            placeholder=placeholder.get().unwrap_or_default()
+            placeholder=move || placeholder.get().unwrap_or_default()
             disabled=move || disabled.get()
             class=move || computed_class.get()
-            id=id.get().unwrap_or_default()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
             on:input=handle_input
         >

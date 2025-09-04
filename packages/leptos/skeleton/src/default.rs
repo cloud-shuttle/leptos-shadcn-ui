@@ -125,8 +125,8 @@ pub fn Skeleton(
 
     view! {
         <div
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=computed_style
         />
     }
@@ -152,7 +152,7 @@ pub fn SkeletonText(
     });
 
     view! {
-        <div class="space-y-2" id=id.get().unwrap_or_default() style=move || style.get().to_string()>
+        <div class="space-y-2" id=move || id.get().unwrap_or_default() style=move || style.get().to_string()>
             {move || (0..line_count).map(|i| {
                 let width_class = if i == line_count - 1 { "w-3/4" } else { "w-full" };
                 view! {
@@ -186,8 +186,8 @@ pub fn SkeletonAvatar(
 
     view! {
         <div
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
         />
     }
@@ -209,8 +209,8 @@ pub fn SkeletonCard(
 
     view! {
         <div
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
         />
     }

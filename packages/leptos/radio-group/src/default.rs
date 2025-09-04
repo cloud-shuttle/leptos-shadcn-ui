@@ -57,8 +57,8 @@ pub fn RadioGroup(
     
     view! {
         <div
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
             role="radiogroup"
         >
@@ -139,7 +139,7 @@ pub fn RadioGroupItem(
             data-state=move || data_state.get()
             data-disabled=move || data_disabled.get()
             class=move || computed_class.get()
-            id=id.get().unwrap_or_default()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
             disabled=move || is_disabled.get()
             on:click=handle_click

@@ -84,8 +84,8 @@ pub fn Progress(
     view! {
         <div class="w-full space-y-2">
             <div
-                class=computed_class
-                id=id.get().unwrap_or_default()
+                class=move || computed_class.get()
+                id=move || id.get().unwrap_or_default()
                 style=move || style.get().to_string()
                 role="progressbar"
                 aria-valuenow={move || value.get()}
@@ -194,7 +194,7 @@ pub fn ProgressIndicator(
     view! {
         <div
             class=indicator_class
-            id=id.get().unwrap_or_default()
+            id=move || id.get().unwrap_or_default()
             style={move || format!("width: {}%; {}", progress_percentage.get(), style.get().to_string())}
         />
     }
@@ -221,8 +221,8 @@ pub fn ProgressLabel(
 
     view! {
         <div
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
         >
             <span>"Progress"</span>

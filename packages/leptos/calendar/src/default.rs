@@ -75,7 +75,7 @@ pub fn Calendar(
     });
     
     view! {
-        <div class=computed_class>
+        <div class=move || computed_class.get()>
             <div class="space-y-4">
                 <div class="flex items-center justify-between">
                     <button

@@ -16,8 +16,8 @@ pub fn Label(
 
     view! {
         <label
-            class=computed_class
-            id=id.get().unwrap_or_default()
+            class=move || computed_class.get()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
         >
             {children.map(|c| c())}

@@ -34,7 +34,7 @@ pub fn Checkbox(
             checked=move || checked.get()
             disabled=move || disabled.get()
             class=move || computed_class.get()
-            id=id.get().unwrap_or_default()
+            id=move || id.get().unwrap_or_default()
             style=move || style.get().to_string()
             on:change=handle_change
         />

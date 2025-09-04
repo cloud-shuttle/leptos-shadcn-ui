@@ -58,7 +58,7 @@ pub fn Accordion(
 
     view! {
         <div
-            class=computed_class
+            class=move || computed_class.get()
             data-orientation=move || match orientation.get() {
                 AccordionOrientation::Vertical => "vertical",
                 AccordionOrientation::Horizontal => "horizontal",
@@ -93,7 +93,7 @@ pub fn AccordionItem(
 
     view! {
         <div
-            class=computed_class
+            class=move || computed_class.get()
             data-state=move || if is_expanded.get() { "open" } else { "closed" }
             data-disabled=move || is_disabled.get()
         >
@@ -225,7 +225,7 @@ pub fn AccordionTrigger(
     } else {
         view! {
             <button
-                class=computed_class
+                class=move || computed_class.get()
                 data-state=move || if is_expanded.get() { "open" } else { "closed" }
                 disabled=is_disabled
                 aria-expanded=move || is_expanded.get()
@@ -277,7 +277,7 @@ pub fn AccordionContent(
 
     view! {
         <div
-            class=computed_class
+            class=move || computed_class.get()
             data-state=move || if is_expanded.get() { "open" } else { "closed" }
         >
             <div class="pb-4 pt-0">
