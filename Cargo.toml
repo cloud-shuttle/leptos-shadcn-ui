@@ -68,6 +68,8 @@ members = [
     "packages/leptos/error-boundary", # Error handling component
     "packages/leptos/lazy-loading",   # Lazy loading system
     
+    "examples/leptos",                # Example application
+    
     "scripts/run_quality_assessment",
     "scripts/generate_component_tests"
 ]
@@ -93,7 +95,6 @@ wasm-bindgen = "0.2"
 js-sys = "0.3"
 wasm-bindgen-test = "0.3"
 console_error_panic_hook = "0.1"
-lucide-leptos = "2.32.0"
 anyhow = "1.0"
 handlebars = "6.3.2"
 regex = "1.10"

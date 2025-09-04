@@ -1,12 +1,5 @@
 use leptos::prelude::*;
 
-#[cfg(feature = "lucide-leptos")]
-use lucide_leptos::{BellRing, Check};
-
-#[cfg(not(feature = "lucide-leptos"))]
-const BellRing: () = ();
-#[cfg(not(feature = "lucide-leptos"))]
-const Check: () = ();
 
 use crate::default::components::ui::{
     button::Button,
@@ -49,16 +42,10 @@ pub fn CardDemo() -> impl IntoView {
             </CardHeader>
             <CardContent class="grid gap-4">
                 <div class=" flex items-center space-x-4 rounded-md border p-4">
-                    {
-                        #[cfg(feature = "lucide-leptos")]
-                        {
-                            view! { <BellRing /> }
-                        }
-                        #[cfg(not(feature = "lucide-leptos"))]
-                        {
-                            view! { <span class="h-4 w-4">"🔔"</span> }
-                        }
-                    }
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                    </svg>
                     <div class="flex-1 space-y-1">
                         <p class="text-sm font-medium leading-none">
                             {"Push Notifications"}
@@ -94,16 +81,9 @@ pub fn CardDemo() -> impl IntoView {
             </CardContent>
             <CardFooter>
                 <Button class="w-full">
-                    {
-                        #[cfg(feature = "lucide-leptos")]
-                        {
-                            view! { <Check /> }
-                        }
-                        #[cfg(not(feature = "lucide-leptos"))]
-                        {
-                            view! { <span>"✓"</span> }
-                        }
-                    }
+                    <svg class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 6 9 17l-5-5"/>
+                    </svg>
                     {" Mark all as read"}
                 </Button>
             </CardFooter>

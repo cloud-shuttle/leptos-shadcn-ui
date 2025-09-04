@@ -1,10 +1,5 @@
 use leptos::prelude::*;
 
-#[cfg(feature = "lucide-leptos")]
-use lucide_leptos::Terminal;
-
-#[cfg(not(feature = "lucide-leptos"))]
-const Terminal: () = ();
 
 use crate::new_york::components::ui::alert::{Alert, AlertDescription, AlertTitle};
 
@@ -12,7 +7,10 @@ use crate::new_york::components::ui::alert::{Alert, AlertDescription, AlertTitle
 pub fn AlertDemo() -> impl IntoView {
     view! {
         <Alert>
-            <Terminal attr:class="h-4 w-4" />
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4,17 10,11 4,5"/>
+                <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
             <AlertTitle>"Heads up!"</AlertTitle>
             <AlertDescription>
                 "You can add components to your app using the cli."

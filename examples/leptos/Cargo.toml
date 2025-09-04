@@ -29,7 +29,7 @@ strip = true
 [features]
 default = ["all_components"]
 essential = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme"]
-essential_with_icons = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme", "lucide-leptos"]
+essential_with_icons = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme"]
 all_components = [
     "button", "input", "label", "card", "separator", "alert", "default_theme", "new_york_theme"
 ]
@@ -58,7 +58,6 @@ progress = ["dep:leptos-shadcn-progress"]
 slider = ["dep:leptos-shadcn-slider"]
 table = ["dep:leptos-shadcn-table"]
 pagination = ["dep:leptos-shadcn-pagination"]
-lucide-leptos = ["dep:lucide-leptos"]
 default_theme = []
 new_york_theme = []
 
@@ -96,8 +95,7 @@ leptos-shadcn-slider = { path = "../../packages/leptos/slider", optional = true 
 leptos-shadcn-table = { path = "../../packages/leptos/table", optional = true }
 leptos-shadcn-pagination = { path = "../../packages/leptos/pagination", optional = true }
 
-# Include lucide-leptos for icons
-lucide-leptos = { workspace = true, optional = true }
+# Icons are now handled with inline SVG (zero dependencies)
 gloo-timers = { version = "0.3.0", features = ["futures"] }
 
 # WASM loading and dynamic import support

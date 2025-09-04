@@ -34,7 +34,7 @@ pub fn LazyComponentWrapper(
                 name: "Alert".to_string(),
                 category: "Form & Input".to_string(),
                 estimated_size: "12KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Displays important messages to users".to_string(),
             },
             "Badge" => ComponentInfo {
@@ -55,7 +55,7 @@ pub fn LazyComponentWrapper(
                 name: "Combobox".to_string(),
                 category: "Form & Input".to_string(),
                 estimated_size: "25KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Searchable dropdown with custom options".to_string(),
             },
             "Form" => ComponentInfo {
@@ -83,7 +83,7 @@ pub fn LazyComponentWrapper(
                 name: "Select".to_string(),
                 category: "Form & Input".to_string(),
                 estimated_size: "22KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Dropdown selection component".to_string(),
             },
             "Slider" => ComponentInfo {
@@ -118,14 +118,14 @@ pub fn LazyComponentWrapper(
                 name: "Accordion".to_string(),
                 category: "Layout & Navigation".to_string(),
                 estimated_size: "28KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Collapsible content sections".to_string(),
             },
             "Breadcrumb" => ComponentInfo {
                 name: "Breadcrumb".to_string(),
                 category: "Layout & Navigation".to_string(),
                 estimated_size: "18KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Navigation breadcrumb trail".to_string(),
             },
             "Collapsible" => ComponentInfo {
@@ -139,21 +139,21 @@ pub fn LazyComponentWrapper(
                 name: "Command".to_string(),
                 category: "Layout & Navigation".to_string(),
                 estimated_size: "32KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Command palette interface".to_string(),
             },
             "Navigation Menu" => ComponentInfo {
                 name: "Navigation Menu".to_string(),
                 category: "Layout & Navigation".to_string(),
                 estimated_size: "40KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Complex navigation menu system".to_string(),
             },
             "Pagination" => ComponentInfo {
                 name: "Pagination".to_string(),
                 category: "Layout & Navigation".to_string(),
                 estimated_size: "25KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Page navigation controls".to_string(),
             },
             "Scroll Area" => ComponentInfo {
@@ -181,7 +181,7 @@ pub fn LazyComponentWrapper(
                 name: "Alert Dialog".to_string(),
                 category: "Overlay & Feedback".to_string(),
                 estimated_size: "35KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Modal dialog with actions".to_string(),
             },
             "Dialog" => ComponentInfo {
@@ -202,7 +202,7 @@ pub fn LazyComponentWrapper(
                 name: "Dropdown Menu".to_string(),
                 category: "Overlay & Feedback".to_string(),
                 estimated_size: "28KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Contextual dropdown menu".to_string(),
             },
             "Hover Card" => ComponentInfo {
@@ -216,7 +216,7 @@ pub fn LazyComponentWrapper(
                 name: "Menubar".to_string(),
                 category: "Overlay & Feedback".to_string(),
                 estimated_size: "45KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Horizontal menu bar".to_string(),
             },
             "Popover" => ComponentInfo {
@@ -237,7 +237,7 @@ pub fn LazyComponentWrapper(
                 name: "Toast".to_string(),
                 category: "Overlay & Feedback".to_string(),
                 estimated_size: "25KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Notification toast messages".to_string(),
             },
             "Tooltip" => ComponentInfo {
@@ -265,14 +265,14 @@ pub fn LazyComponentWrapper(
                 name: "Carousel".to_string(),
                 category: "Data & Media".to_string(),
                 estimated_size: "35KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Image/content carousel".to_string(),
             },
             "Context Menu" => ComponentInfo {
                 name: "Context Menu".to_string(),
                 category: "Data & Media".to_string(),
                 estimated_size: "30KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Right-click context menu".to_string(),
             },
             "Date Picker" => ComponentInfo {
@@ -293,7 +293,7 @@ pub fn LazyComponentWrapper(
                 name: "Table".to_string(),
                 category: "Data & Media".to_string(),
                 estimated_size: "40KB".to_string(),
-                dependencies: vec!["lucide-leptos".to_string()],
+                dependencies: vec!["inline-svg".to_string()],
                 description: "Data table with sorting".to_string(),
             },
             _ => ComponentInfo {

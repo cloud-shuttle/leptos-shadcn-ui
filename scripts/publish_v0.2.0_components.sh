@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Publish all individual components to v0.2.0
-# This script addresses the lucide-leptos compatibility issue
+# This script addresses the lucide-leptos compatibility issue (RESOLVED)
 
 set -e
 
 echo "🚀 Publishing all individual components to v0.2.0"
-echo "This addresses the lucide-leptos compatibility issue"
+echo "This addresses the lucide-leptos compatibility issue (RESOLVED)"
 echo ""
 
 # List of all component packages
@@ -120,4 +120,4 @@ echo "1. Update main package to use v0.2.0 dependencies"
 echo "2. Test compilation: cargo check --workspace"
 echo "3. Publish main package v0.2.1"
 echo ""
-echo "✅ lucide-leptos compatibility issue resolved!"
+echo "✅ lucide-leptos compatibility issue resolved with inline SVG!"
