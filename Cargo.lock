@@ -832,7 +832,7 @@ dependencies = [
  "leptos-shadcn-dialog 0.6.0",
  "leptos-shadcn-input 0.6.0",
  "leptos-shadcn-label 0.6.0",
- "leptos-shadcn-pagination",
+ "leptos-shadcn-pagination 0.6.0",
  "leptos-shadcn-popover 0.6.0",
  "leptos-shadcn-progress 0.6.0",
  "leptos-shadcn-radio-group",
@@ -1918,6 +1918,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-calendar"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "37cce1e32b96337b7fa43b4983a720b58d95b135c1cf9da2293f864b84f5d79b"
+dependencies = [
+ "js-sys",
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-card"
 version = "0.6.0"
 dependencies = [
@@ -2084,6 +2099,24 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-date-picker"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1c4096e348d01f5950186700c235a71ce1dd6d115a3a4d7a6d51117b8431586c"
+dependencies = [
+ "js-sys",
+ "leptos",
+ "leptos-node-ref",
+ "leptos-shadcn-button 0.3.0",
+ "leptos-shadcn-calendar 0.3.1",
+ "leptos-shadcn-popover 0.3.0",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2327,6 +2360,21 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-pagination"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "10c3eb5c2d1261642d2584fee77a06afc9edc9978122fe476b2a9b406b18453a"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-shadcn-button 0.3.0",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2741,7 +2789,7 @@ dependencies = [
  "leptos-shadcn-badge 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-breadcrumb 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-button 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-calendar 0.6.0",
+ "leptos-shadcn-calendar 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-card 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-carousel",
  "leptos-shadcn-checkbox 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2749,7 +2797,7 @@ dependencies = [
  "leptos-shadcn-combobox",
  "leptos-shadcn-command 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-context-menu",
- "leptos-shadcn-date-picker",
+ "leptos-shadcn-date-picker 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-dialog 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-drawer",
  "leptos-shadcn-dropdown-menu",
@@ -2762,7 +2810,7 @@ dependencies = [
  "leptos-shadcn-lazy-loading",
  "leptos-shadcn-menubar",
  "leptos-shadcn-navigation-menu",
- "leptos-shadcn-pagination",
+ "leptos-shadcn-pagination 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-popover 0.6.0",
  "leptos-shadcn-progress 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
