@@ -845,7 +845,7 @@ dependencies = [
  "leptos-shadcn-tabs 0.6.0",
  "leptos-shadcn-textarea 0.6.0",
  "leptos-shadcn-toast 0.6.0",
- "leptos-shadcn-tooltip",
+ "leptos-shadcn-tooltip 0.6.0",
  "leptos_router",
  "log",
  "wasm-bindgen",
@@ -3042,6 +3042,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-toggle"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb1cf824f37e7c9754c752efd9a3ee230037650c9dff3799d5b4e51ccbc00fe9"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-tooltip"
 version = "0.6.0"
 dependencies = [
@@ -3052,6 +3066,20 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-tooltip"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2dfd072cfc91f3aa7783209eb5ccba64395331e094a977bfc8db675a244ac30e"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -3109,8 +3137,8 @@ dependencies = [
  "leptos-shadcn-tabs 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-textarea 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-toast 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-toggle",
- "leptos-shadcn-tooltip",
+ "leptos-shadcn-toggle 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-tooltip 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "leptos_router",
