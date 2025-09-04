@@ -17,10 +17,9 @@ leptos-style.workspace = true
 tailwind_fuse.workspace = true
 web-sys.workspace = true
 js-sys.workspace = true
-lucide-leptos = "2.32.0"
-leptos-shadcn-calendar = "0.2.0"
-leptos-shadcn-popover = "0.2.0"
-leptos-shadcn-button = "0.2.0"
+leptos-shadcn-calendar = "0.3.0"
+leptos-shadcn-popover = "0.3.0"
+leptos-shadcn-button = "0.3.0"
 
 [features]
 default = []

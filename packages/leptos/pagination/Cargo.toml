@@ -16,8 +16,7 @@ leptos-struct-component.workspace = true
 leptos-style.workspace = true
 tailwind_fuse.workspace = true
 web-sys.workspace = true
-lucide-leptos = { version = "2.32.0", features = ["navigation"] }
-leptos-shadcn-button = "0.2.0"
+leptos-shadcn-button = "0.3.0"
 
 [features]
 default = []

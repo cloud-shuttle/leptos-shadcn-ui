@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 use tailwind_fuse::tw_merge;
-use lucide_leptos::{ChevronLeft, ChevronRight};
 
 const PAGINATION_CLASS: &str = "mx-auto flex w-full justify-center";
 const PAGINATION_CONTENT_CLASS: &str = "flex flex-row items-center gap-1";
@@ -250,7 +249,9 @@ pub fn PaginationPrevious(
             }
             aria-label="Go to previous page"
         >
-            <ChevronLeft />
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6"/>
+            </svg>
             {if let Some(children) = children {
                 children().into_any()
             } else {
@@ -293,7 +294,9 @@ pub fn PaginationNext(
             } else {
                 view! { <span>"Next"</span> }.into_any()
             }}
-            <ChevronRight />
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"/>
+            </svg>
         </button>
     }
 }
