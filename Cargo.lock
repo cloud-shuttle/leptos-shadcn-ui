@@ -2489,6 +2489,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-navigation-menu"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8d460144c199a5a210bd3e83b2f1f2e1a1610ed1b96a790505fb892a6c648f12"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse 0.3.2",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-pagination"
 version = "0.6.0"
 dependencies = [
@@ -2949,7 +2963,7 @@ dependencies = [
  "leptos-shadcn-label 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-lazy-loading 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-menubar 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-navigation-menu",
+ "leptos-shadcn-navigation-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-pagination 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-popover 0.6.0",
