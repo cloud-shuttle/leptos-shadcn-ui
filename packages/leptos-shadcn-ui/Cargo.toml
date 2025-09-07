@@ -27,13 +27,13 @@ leptos-shadcn-label = { version = "0.6.0", optional = true }
 leptos-shadcn-checkbox = { version = "0.6.0", optional = true }
 leptos-shadcn-switch = { version = "0.6.0", optional = true }
 leptos-shadcn-radio-group = { version = "0.6.0", optional = true }
-leptos-shadcn-select = { path = "../leptos/select", optional = true }
+leptos-shadcn-select = { version = "0.7.0", optional = true }
 leptos-shadcn-textarea = { version = "0.6.0", optional = true }
 leptos-shadcn-card = { version = "0.6.0", optional = true }
 leptos-shadcn-separator = { version = "0.6.0", optional = true }
 leptos-shadcn-tabs = { version = "0.6.0", optional = true }
 leptos-shadcn-accordion = { version = "0.6.0", optional = true }
-leptos-shadcn-dialog = { path = "../leptos/dialog", optional = true }
+leptos-shadcn-dialog = { version = "0.7.0", optional = true }
 leptos-shadcn-popover = { version = "0.6.0", optional = true }
 leptos-shadcn-tooltip = { version = "0.6.0", optional = true }
 leptos-shadcn-alert = { version = "0.6.0", optional = true }
@@ -50,7 +50,7 @@ leptos-shadcn-toggle = { version = "0.6.0", optional = true }
 leptos-shadcn-carousel = { version = "0.6.0", optional = true }
 
 # Advanced components (published dependencies for v0.4.0 release)
-leptos-shadcn-form = { path = "../leptos/form", optional = true }
+leptos-shadcn-form = { version = "0.7.0", optional = true }
 leptos-shadcn-combobox = { version = "0.6.0", optional = true }
 leptos-shadcn-command = { version = "0.6.0", optional = true }
 leptos-shadcn-input-otp = { version = "0.6.0", optional = true }
