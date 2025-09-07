@@ -16,6 +16,7 @@ leptos-struct-component.workspace = true
 leptos-style.workspace = true
 tailwind_fuse.workspace = true
 web-sys.workspace = true
+# leptos-shadcn-api-standards = { path = "../../api-standards" }
 
 [features]
 default = []
@@ -24,3 +25,12 @@ new_york = []
 [dev-dependencies]
 shadcn-ui-test-utils = { path = "../../test-utils" }
 wasm-bindgen-test = { workspace = true }
+web-sys = { version = "0.3", features = [
+  "console",
+  "HtmlElement", 
+  "HtmlButtonElement",
+  "Element",
+  "Node",
+  "Document",
+  "Window"
+] }
