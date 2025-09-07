@@ -829,14 +829,14 @@ dependencies = [
  "leptos-shadcn-button 0.6.0",
  "leptos-shadcn-card 0.6.0",
  "leptos-shadcn-checkbox 0.6.0",
- "leptos-shadcn-dialog 0.6.0",
+ "leptos-shadcn-dialog",
  "leptos-shadcn-input 0.6.1",
  "leptos-shadcn-label 0.6.0",
  "leptos-shadcn-pagination 0.6.0",
  "leptos-shadcn-popover 0.6.0",
  "leptos-shadcn-progress 0.6.0",
  "leptos-shadcn-radio-group 0.6.0",
- "leptos-shadcn-select 0.6.0",
+ "leptos-shadcn-select",
  "leptos-shadcn-separator 0.6.0",
  "leptos-shadcn-skeleton 0.6.0",
  "leptos-shadcn-slider 0.6.0",
@@ -950,6 +950,12 @@ checksum = "cb4cb245038516f5f85277875cdaa4f7d2c9a0fa0468de06ed190163b1581fcf"
 dependencies = [
  "percent-encoding",
 ]
+
+[[package]]
+name = "fuchsia-cprng"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
 
 [[package]]
 name = "futures"
@@ -2160,7 +2166,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-dialog"
-version = "0.6.0"
+version = "0.7.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2169,20 +2175,6 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-dialog"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e3e36cb4a5664833166db4b77d7e0a8ea51d8575395deafb9008287a0a1b298f"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2268,7 +2260,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-form"
-version = "0.6.0"
+version = "0.7.0"
 dependencies = [
  "gloo-timers",
  "leptos",
@@ -2280,23 +2272,6 @@ dependencies = [
  "tailwind_fuse 0.1.1",
  "wasm-bindgen",
  "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-form"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "700fbfe0b0bb419c1641c61af2574ec276da1adc3e9eab418f38fd10139f9dcd"
-dependencies = [
- "gloo-timers",
- "leptos",
- "leptos-shadcn-button 0.2.0",
- "leptos-shadcn-input 0.2.0",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.1.1",
- "wasm-bindgen",
  "web-sys",
 ]
 
@@ -2344,20 +2319,6 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-input"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ab6f8b817d5ab7762b9ae9ac8e2d1a66f312e7483221bc75dde9e7154d95a7a"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.3.2",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-input"
 version = "0.6.1"
 dependencies = [
  "leptos",
@@ -2368,6 +2329,21 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
+name = "leptos-shadcn-input"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9a7785c690e108ab7ee51c75e0bb22d24b4cebf3fd39b58ba322a73407fa3768"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "regex",
+ "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -2556,6 +2532,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-performance-audit"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4623ef142a25ad444260778176483a9b4ee49f42012bd1f8c743250725c27179"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "clap",
+ "env_logger",
+ "futures",
+ "glob",
+ "log",
+ "nalgebra",
+ "serde",
+ "serde_json",
+ "statistical",
+ "thiserror 1.0.69",
+ "tokio",
+ "walkdir",
+]
+
+[[package]]
 name = "leptos-shadcn-popover"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2718,7 +2716,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-select"
-version = "0.6.0"
+version = "0.7.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2727,20 +2725,6 @@ dependencies = [
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-select"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "356c43a001017e886bd82653662f2f79c81955eee383d280f9e0b1b89e943db2"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-struct-component",
- "leptos-style",
- "tailwind_fuse 0.3.2",
  "web-sys",
 ]
 
@@ -3058,7 +3042,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-ui"
-version = "0.6.0"
+version = "0.7.0"
 dependencies = [
  "gloo-timers",
  "leptos",
@@ -3080,27 +3064,27 @@ dependencies = [
  "leptos-shadcn-command 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-context-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-date-picker 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-dialog 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-dialog",
  "leptos-shadcn-drawer 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-dropdown-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-error-boundary 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-form 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-form",
  "leptos-shadcn-hover-card 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-input 0.6.0",
+ "leptos-shadcn-input 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-input-otp 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-label 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-lazy-loading 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-menubar 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-navigation-menu 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-pagination 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-performance-audit",
+ "leptos-shadcn-performance-audit 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-popover 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-progress 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-radio-group 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-registry",
  "leptos-shadcn-resizable 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-scroll-area 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "leptos-shadcn-select 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-select",
  "leptos-shadcn-separator 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-sheet 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-shadcn-skeleton 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -3414,8 +3398,8 @@ dependencies = [
  "approx",
  "matrixmultiply",
  "nalgebra-macros",
- "num-complex",
- "num-rational",
+ "num-complex 0.4.6",
+ "num-rational 0.4.2",
  "num-traits",
  "simba",
  "typenum",
@@ -3467,16 +3451,43 @@ dependencies = [
 
 [[package]]
 name = "num"
+version = "0.1.43"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c9bdb1fb680e609c2e0930c1866cafdd0be7e7c7a1ecf92aec71ed8d99d3e133"
+dependencies = [
+ "num-bigint 0.1.45",
+ "num-complex 0.1.44",
+ "num-integer",
+ "num-iter",
+ "num-rational 0.1.43",
+ "num-traits",
+]
+
+[[package]]
+name = "num"
 version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "35bd024e8b2ff75562e5f34e7f4905839deb4b22955ef5e73d2fea1b9813cb23"
 dependencies = [
- "num-bigint",
- "num-complex",
+ "num-bigint 0.4.6",
+ "num-complex 0.4.6",
  "num-integer",
  "num-iter",
- "num-rational",
+ "num-rational 0.4.2",
  "num-traits",
+]
+
+[[package]]
+name = "num-bigint"
+version = "0.1.45"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1357c02fa1d647dd0769ef5bc2bf86281f064231c09c192a46c71246e3ec9258"
+dependencies = [
+ "autocfg",
+ "num-integer",
+ "num-traits",
+ "rand 0.4.6",
+ "rustc-serialize",
 ]
 
 [[package]]
@@ -3487,6 +3498,17 @@ checksum = "a5e44f723f1133c9deac646763579fdb3ac745e418f2a7af9cd0c431da1f20b9"
 dependencies = [
  "num-integer",
  "num-traits",
+]
+
+[[package]]
+name = "num-complex"
+version = "0.1.44"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17cf384bef067563c44d41028840dbecc7f06f2aa5d7881a81dfb0fc7c72f202"
+dependencies = [
+ "autocfg",
+ "num-traits",
+ "rustc-serialize",
 ]
 
 [[package]]
@@ -3541,11 +3563,24 @@ dependencies = [
 
 [[package]]
 name = "num-rational"
+version = "0.1.43"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fbfff0773e8a07fb033d726b9ff1327466709820788e5298afce4d752965ff1e"
+dependencies = [
+ "autocfg",
+ "num-bigint 0.1.45",
+ "num-integer",
+ "num-traits",
+ "rustc-serialize",
+]
+
+[[package]]
+name = "num-rational"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f83d14da390562dca69fc84082e73e548e1ad308d24accdedd2720017cb37824"
 dependencies = [
- "num-bigint",
+ "num-bigint 0.4.6",
  "num-integer",
  "num-traits",
 ]
@@ -3612,7 +3647,7 @@ version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "76ad52d2df48145ad942141e24a6ac23bd8ecfd668a024917bb8ea18853ed29e"
 dependencies = [
- "num",
+ "num 0.4.3",
  "ordered-float",
  "serde",
  "serde_json",
@@ -4006,6 +4041,29 @@ checksum = "69cdb34c158ceb288df11e18b4bd39de994f6657d83847bdffdbd7f346754b0f"
 
 [[package]]
 name = "rand"
+version = "0.3.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "64ac302d8f83c0c1974bf758f6b041c6c8ada916fbb44a609158ca8b064cc76c"
+dependencies = [
+ "libc",
+ "rand 0.4.6",
+]
+
+[[package]]
+name = "rand"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "552840b97013b1a26992c11eac34bdd778e464601a4c2054b5f0bff7c6761293"
+dependencies = [
+ "fuchsia-cprng",
+ "libc",
+ "rand_core 0.3.1",
+ "rdrand",
+ "winapi",
+]
+
+[[package]]
+name = "rand"
 version = "0.8.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404"
@@ -4033,6 +4091,21 @@ dependencies = [
  "ppv-lite86",
  "rand_core 0.9.3",
 ]
+
+[[package]]
+name = "rand_core"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7a6fdeb83b075e8266dcc8762c22776f6877a63111121f5f8c7411e5be7eed4b"
+dependencies = [
+ "rand_core 0.4.2",
+]
+
+[[package]]
+name = "rand_core"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9c33a3c44ca05fa6f1807d8e6743f3824e8509beca625669633be0acbdf509dc"
 
 [[package]]
 name = "rand_core"
@@ -4085,6 +4158,15 @@ checksum = "22e18b0f0062d30d4230b2e85ff77fdfe4326feb054b9783a3460d8435c8ab91"
 dependencies = [
  "crossbeam-deque",
  "crossbeam-utils",
+]
+
+[[package]]
+name = "rdrand"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "678054eb77286b51581ba43620cc911abf02758c91f93f479767aed0f90458b2"
+dependencies = [
+ "rand_core 0.3.1",
 ]
 
 [[package]]
@@ -4284,6 +4366,12 @@ name = "rustc-hash"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "357703d41365b4b27c590e3ed91eabb1b663f07c4c084095e60cbed4362dff0d"
+
+[[package]]
+name = "rustc-serialize"
+version = "0.3.25"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fe834bc780604f4674073badbad26d7219cadfb4a2275802db12cbae17498401"
 
 [[package]]
 name = "rustc_version"
@@ -4668,7 +4756,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "061507c94fc6ab4ba1c9a0305018408e312e17c041eb63bef8aa726fa33aceae"
 dependencies = [
  "approx",
- "num-complex",
+ "num-complex 0.4.6",
  "num-traits",
  "paste",
  "wide",
@@ -4720,6 +4808,16 @@ name = "stable_deref_trait"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
+
+[[package]]
+name = "statistical"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c139942f46d96c53b28420a2cdfb374629f122656bd9daef7fc221ed4d8ec228"
+dependencies = [
+ "num 0.1.43",
+ "rand 0.3.23",
+]
 
 [[package]]
 name = "strsim"
@@ -5437,6 +5535,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "winapi"
+version = "0.3.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+dependencies = [
+ "winapi-i686-pc-windows-gnu",
+ "winapi-x86_64-pc-windows-gnu",
+]
+
+[[package]]
+name = "winapi-i686-pc-windows-gnu"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+
+[[package]]
 name = "winapi-util"
 version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5444,6 +5558,12 @@ checksum = "0978bf7171b3d90bac376700cb56d606feb40f251a475a5d6634613564460b22"
 dependencies = [
  "windows-sys 0.60.2",
 ]
+
+[[package]]
+name = "winapi-x86_64-pc-windows-gnu"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 
 [[package]]
 name = "windows-core"

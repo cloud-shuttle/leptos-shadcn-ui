@@ -1,0 +1,59 @@
+[package]
+name = "leptos-shadcn-performance-testing"
+version = "0.1.0"
+edition = "2021"
+description = "Performance regression testing suite for leptos-shadcn-ui components"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+license = "MIT"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+keywords = ["leptos", "performance", "testing", "benchmarks", "regression"]
+categories = ["development-tools", "web-programming"]
+
+[dependencies]
+# Core dependencies
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Performance measurement
+criterion = { version = "0.5", features = ["html_reports"] }
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+instant = "0.1"
+
+# Statistics
+statistical = "1.0"
+
+# File system operations
+walkdir = "2.0"
+ignore = "0.4"
+
+# System information
+sysinfo = "0.30"
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+[dev-dependencies]
+tempfile = "3.0"
+tokio-test = "0.4"
+pretty_assertions = "1.0"
+
+[features]
+default = ["benchmarks", "regression", "reporting"]
+benchmarks = []
+regression = []
+reporting = []
+ci-integration = []
+
+[[bin]]
+name = "perf-test"
+path = "src/bin/performance_tester.rs"
+
+[[bench]]
+name = "component_benchmarks"
+harness = false

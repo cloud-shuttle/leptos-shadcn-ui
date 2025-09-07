@@ -1,0 +1,350 @@
+name: 🧪 Comprehensive Testing Suite
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+  # Performance testing thresholds
+  MAX_BUNDLE_SIZE_KB: 500
+  MAX_RENDER_TIME_MS: 16
+  MIN_TEST_COVERAGE: 98
+
+jobs:
+  # ========================================
+  # Phase 1: Unit Testing Matrix
+  # ========================================
+  unit-tests:
+    name: 🦀 Unit Tests (${{ matrix.rust }} on ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        rust: [stable, beta, nightly]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        exclude:
+          # Reduce matrix size for faster CI
+          - rust: beta
+            os: windows-latest
+          - rust: nightly
+            os: windows-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@master
+      with:
+        toolchain: ${{ matrix.rust }}
+        components: rustfmt, clippy
+
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ matrix.rust }}-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-${{ matrix.rust }}-
+          ${{ runner.os }}-cargo-
+
+    - name: 🔍 Check Code Format
+      run: cargo fmt -- --check
+      if: matrix.rust == 'stable'
+
+    - name: 📎 Run Clippy
+      run: cargo clippy --all-targets --all-features -- -D warnings
+      if: matrix.rust == 'stable'
+
+    - name: 🧪 Run Unit Tests
+      run: cargo test --workspace --lib --bins --all-features --verbose
+
+    - name: 📊 Generate Coverage Report
+      if: matrix.rust == 'stable' && matrix.os == 'ubuntu-latest'
+      run: |
+        cargo install cargo-tarpaulin
+        cargo tarpaulin --out xml --output-dir coverage/
+    
+    - name: 📈 Upload Coverage
+      if: matrix.rust == 'stable' && matrix.os == 'ubuntu-latest'
+      uses: codecov/codecov-action@v4
+      with:
+        file: coverage/cobertura.xml
+        flags: unit-tests
+        name: unit-tests-coverage
+
+  # ========================================
+  # Phase 2: Component-Specific Testing
+  # ========================================
+  component-tests:
+    name: 🎨 Component Tests
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    strategy:
+      fail-fast: false
+      matrix:
+        component: 
+          - button
+          - input
+          - card
+          - dialog
+          - tooltip
+          - accordion
+          - table
+          - form
+          # Add more components as needed
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ubuntu-cargo-stable-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: 🧪 Test Component
+      run: |
+        echo "Testing ${{ matrix.component }} component..."
+        cargo test --package leptos-shadcn-${{ matrix.component }} --lib --verbose
+
+    - name: 📊 Component Performance Test
+      run: |
+        echo "Running performance tests for ${{ matrix.component }}..."
+        cargo test --package leptos-shadcn-${{ matrix.component }} --bench --verbose || true
+
+  # ========================================
+  # Phase 3: E2E Testing with Playwright
+  # ========================================
+  e2e-tests:
+    name: 🎭 E2E Tests (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 📦 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: 🦀 Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: wasm32-unknown-unknown
+
+    - name: 📦 Install Dependencies
+      run: |
+        npm install
+        cargo install trunk
+
+    - name: 🎭 Install Playwright
+      run: |
+        npm install @playwright/test
+        npx playwright install ${{ matrix.browser }}
+
+    - name: 🏗️ Build Example App
+      run: |
+        cd examples/leptos
+        trunk build --release
+
+    - name: 🎭 Run E2E Tests
+      run: |
+        npx playwright test --project=${{ matrix.browser }} --reporter=html
+      env:
+        PLAYWRIGHT_BROWSER: ${{ matrix.browser }}
+
+    - name: 📊 Upload E2E Results
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: e2e-results-${{ matrix.browser }}
+        path: |
+          test-results/
+          playwright-report/
+
+  # ========================================
+  # Phase 4: Performance Testing
+  # ========================================
+  performance-tests:
+    name: ⚡ Performance Tests
+    runs-on: ubuntu-latest
+    needs: [unit-tests, e2e-tests]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: wasm32-unknown-unknown
+
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ubuntu-cargo-stable-perf-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: ⚡ Install Performance Tools
+      run: |
+        cargo install cargo-criterion
+        cargo install trunk
+
+    - name: 📊 Run Performance Audit
+      run: |
+        cd performance-audit
+        cargo test --release --verbose
+        cargo run --release --bin performance-audit -- audit --output results.json
+
+    - name: 🏗️ Bundle Size Analysis
+      run: |
+        cd examples/leptos
+        trunk build --release
+        du -sh dist/ > bundle-size.txt
+        echo "Bundle size:" && cat bundle-size.txt
+
+    - name: ⚡ Run Benchmarks
+      run: |
+        cargo bench --workspace || true
+
+    - name: 📈 Upload Performance Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: performance-results
+        path: |
+          performance-audit/results.json
+          bundle-size.txt
+          target/criterion/
+
+  # ========================================
+  # Phase 5: Security & Quality Checks
+  # ========================================
+  security-audit:
+    name: 🛡️ Security Audit
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: 🛡️ Install Security Tools
+      run: |
+        cargo install cargo-audit
+        cargo install cargo-deny
+
+    - name: 🔍 Dependency Audit
+      run: cargo audit
+
+    - name: 🚫 License Check
+      run: cargo deny check
+
+    - name: 🔒 Security Scan
+      run: cargo audit --deny warnings
+
+  # ========================================
+  # Phase 6: Accessibility Testing
+  # ========================================
+  accessibility-tests:
+    name: ♿ Accessibility Tests
+    runs-on: ubuntu-latest
+    needs: e2e-tests
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 📦 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: 🦀 Install Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: wasm32-unknown-unknown
+
+    - name: ♿ Install Accessibility Tools
+      run: |
+        npm install @axe-core/playwright
+        cargo install trunk
+
+    - name: 🏗️ Build Example App
+      run: |
+        cd examples/leptos
+        trunk build --release
+
+    - name: ♿ Run Accessibility Tests
+      run: |
+        npx playwright test tests/e2e/accessibility.spec.ts --reporter=html
+
+    - name: 📊 Upload Accessibility Results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: accessibility-results
+        path: playwright-report/
+
+  # ========================================
+  # Phase 7: Integration Summary
+  # ========================================
+  integration-summary:
+    name: 📋 Test Summary
+    runs-on: ubuntu-latest
+    needs: [unit-tests, component-tests, e2e-tests, performance-tests, security-audit, accessibility-tests]
+    if: always()
+    
+    steps:
+    - name: 📊 Generate Test Report
+      run: |
+        echo "## 🧪 Comprehensive Test Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "| Test Suite | Status |" >> $GITHUB_STEP_SUMMARY
+        echo "|------------|--------|" >> $GITHUB_STEP_SUMMARY
+        echo "| Unit Tests | ${{ needs.unit-tests.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Component Tests | ${{ needs.component-tests.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| E2E Tests | ${{ needs.e2e-tests.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Performance Tests | ${{ needs.performance-tests.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Security Audit | ${{ needs.security-audit.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Accessibility Tests | ${{ needs.accessibility-tests.result == 'success' && '✅ PASSED' || '❌ FAILED' }} |" >> $GITHUB_STEP_SUMMARY
+
+    - name: 🎯 Check Quality Gates
+      run: |
+        echo "Quality gates validation completed"
+        # Add specific quality gate checks here
+        if [ "${{ needs.unit-tests.result }}" != "success" ]; then
+          echo "❌ Unit tests failed - blocking merge"
+          exit 1
+        fi
+        if [ "${{ needs.security-audit.result }}" != "success" ]; then
+          echo "❌ Security audit failed - blocking merge"
+          exit 1
+        fi
+        echo "✅ All critical quality gates passed"

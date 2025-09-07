@@ -1,0 +1,56 @@
+[package]
+name = "leptos-shadcn-doc-automation"
+version = "0.1.0"
+edition = "2021"
+description = "Automated documentation generation system for leptos-shadcn-ui components"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+license = "MIT"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+keywords = ["leptos", "documentation", "automation", "components"]
+categories = ["development-tools", "web-programming"]
+
+[dependencies]
+# Core dependencies
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "1.0"
+
+# File system operations
+walkdir = "2.0"
+ignore = "0.4"
+
+# Template processing
+handlebars = "6.0"
+pulldown-cmark = "0.11"
+
+# Code parsing
+syn = { version = "2.0", features = ["full", "extra-traits"] }
+quote = "1.0"
+proc-macro2 = "1.0"
+
+# HTML generation
+html-escape = "0.2"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+
+# Logging
+log = "0.4"
+env_logger = "0.11"
+
+[dev-dependencies]
+tempfile = "3.0"
+tokio-test = "0.4"
+pretty_assertions = "1.0"
+
+[features]
+default = ["gallery", "api-docs"]
+gallery = []
+api-docs = []
+testing = []
+
+[[bin]]
+name = "doc-gen"
+path = "src/bin/doc_generator.rs"

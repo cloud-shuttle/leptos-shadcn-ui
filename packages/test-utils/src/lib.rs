@@ -11,6 +11,8 @@ pub mod leptos_testing;
 pub mod test_templates;
 pub mod automated_testing;
 pub mod dom_testing;
+pub mod property_testing;
+pub mod snapshot_testing;
 
 use std::collections::HashMap;
 
