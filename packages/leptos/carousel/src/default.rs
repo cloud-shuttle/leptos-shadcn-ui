@@ -24,7 +24,7 @@ pub struct CarouselApi {
 
 #[component]
 pub fn Carousel(
-    #[prop(into, optional)] orientation: Signal<CarouselOrientation>,
+    #[prop(into, optional)] orientation: MaybeProp<Signal<CarouselOrientation>>,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
@@ -61,7 +61,9 @@ pub fn Carousel(
         can_scroll_next,
     };
     
-    provide_context(orientation);
+    // Provide default orientation if none is provided
+    let orientation_signal = orientation.get().unwrap_or_else(|| Signal::derive(|| CarouselOrientation::default()));
+    provide_context(orientation_signal);
     provide_context(api);
     provide_context(selected_index);
     provide_context(total_items);

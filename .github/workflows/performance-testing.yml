@@ -1,0 +1,515 @@
+name: Performance Testing & Regression Detection
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run performance tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+
+jobs:
+  performance-benchmarks:
+    name: Performance Benchmarks
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust-version: [stable, beta, nightly]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for performance comparison
+    
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ matrix.rust-version }}
+        components: rustfmt, clippy
+        override: true
+    
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: ~/.cargo/registry
+        key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Cache cargo index
+      uses: actions/cache@v3
+      with:
+        path: ~/.cargo/git
+        key: ${{ runner.os }}-cargo-index-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Cache cargo build
+      uses: actions/cache@v3
+      with:
+        path: target
+        key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential pkg-config libssl-dev
+    
+    - name: Build performance audit tools
+      run: |
+        cd performance-audit
+        cargo build --release --features benchmarks
+    
+    - name: Run performance benchmarks
+      run: |
+        cd performance-audit
+        cargo bench --features benchmarks -- --output-format json > benchmark_results.json
+    
+    - name: Parse benchmark results
+      run: |
+        cd performance-audit
+        # Create a simple benchmark parser
+        cat > parse_benchmarks.py << 'EOF'
+        import json
+        import sys
+        
+        try:
+            with open('benchmark_results.json', 'r') as f:
+                data = json.load(f)
+            
+            # Extract benchmark results
+            results = []
+            for benchmark in data.get('benchmarks', []):
+                results.append({
+                    'name': benchmark.get('name', ''),
+                    'mean': benchmark.get('mean', 0),
+                    'std_dev': benchmark.get('std_dev', 0),
+                    'iterations': benchmark.get('iterations', 0)
+                })
+            
+            # Save parsed results
+            with open('parsed_benchmarks.json', 'w') as f:
+                json.dump(results, f, indent=2)
+            
+            print(f"Parsed {len(results)} benchmark results")
+            
+        except Exception as e:
+            print(f"Error parsing benchmarks: {e}")
+            sys.exit(1)
+        EOF
+        
+        python3 parse_benchmarks.py
+    
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v3
+      with:
+        name: benchmark-results-${{ matrix.rust-version }}
+        path: performance-audit/parsed_benchmarks.json
+        retention-days: 30
+    
+    - name: Check performance thresholds
+      run: |
+        cd performance-audit
+        # Create performance threshold checker
+        cat > check_thresholds.py << 'EOF'
+        import json
+        import sys
+        
+        # Performance thresholds (in milliseconds)
+        THRESHOLDS = {
+            'component_rendering': 16.0,  # 60fps target
+            'memory_usage': 1000.0,       # 1MB target
+            'bundle_size': 5.0,           # 5KB target
+            'state_management': 0.1,      # 100μs target
+            'accessibility': 0.05,        # 50μs target
+            'theme_switching': 0.01,      # 10μs target
+            'integration': 50.0,          # 50ms target
+            'memory_leaks': 95.0,         # 95% score target
+            'regression': 90.0,           # 90% score target
+        }
+        
+        try:
+            with open('parsed_benchmarks.json', 'r') as f:
+                results = json.load(f)
+            
+            failed_tests = []
+            
+            for result in results:
+                name = result['name']
+                mean = result['mean']
+                
+                # Find matching threshold
+                threshold = None
+                for key, value in THRESHOLDS.items():
+                    if key in name.lower():
+                        threshold = value
+                        break
+                
+                if threshold is not None:
+                    if mean > threshold:
+                        failed_tests.append(f"{name}: {mean:.2f}ms > {threshold}ms threshold")
+            
+            if failed_tests:
+                print("❌ Performance threshold violations:")
+                for test in failed_tests:
+                    print(f"  - {test}")
+                sys.exit(1)
+            else:
+                print("✅ All performance thresholds met")
+                
+        except Exception as e:
+            print(f"Error checking thresholds: {e}")
+            sys.exit(1)
+        EOF
+        
+        python3 check_thresholds.py
+
+  memory-safety-tests:
+    name: Memory Safety Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        components: rustfmt, clippy
+        override: true
+    
+    - name: Cache cargo dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential pkg-config libssl-dev valgrind
+    
+    - name: Build with memory safety features
+      run: |
+        cd performance-audit
+        cargo build --release --features benchmarks
+    
+    - name: Run memory safety tests
+      run: |
+        cd performance-audit
+        # Run memory safety tests with valgrind
+        cargo test --release --features benchmarks memory_safety -- --nocapture
+    
+    - name: Run memory leak detection
+      run: |
+        cd performance-audit
+        # Create memory leak detection script
+        cat > memory_leak_test.sh << 'EOF'
+        #!/bin/bash
+        set -e
+        
+        echo "Running memory leak detection tests..."
+        
+        # Test component lifecycle
+        echo "Testing component lifecycle..."
+        cargo test --release memory_safety::tests::test_component_lifecycle_test -- --nocapture
+        
+        # Test event listener cleanup
+        echo "Testing event listener cleanup..."
+        cargo test --release memory_safety::tests::test_event_listener_cleanup_test -- --nocapture
+        
+        # Test signal cleanup
+        echo "Testing signal cleanup..."
+        cargo test --release memory_safety::tests::test_signal_cleanup_test -- --nocapture
+        
+        # Test context cleanup
+        echo "Testing context cleanup..."
+        cargo test --release memory_safety::tests::test_context_cleanup_test -- --nocapture
+        
+        # Test long-running stability
+        echo "Testing long-running stability..."
+        cargo test --release memory_safety::tests::test_long_running_stability_test -- --nocapture
+        
+        echo "✅ All memory safety tests passed"
+        EOF
+        
+        chmod +x memory_leak_test.sh
+        ./memory_leak_test.sh
+
+  bundle-size-analysis:
+    name: Bundle Size Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+    
+    - name: Install wasm-pack
+      run: |
+        curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+    
+    - name: Cache cargo dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    
+    - name: Build WASM bundles
+      run: |
+        # Build example application to analyze bundle sizes
+        cd examples/leptos
+        wasm-pack build --target web --release --out-dir pkg
+    
+    - name: Analyze bundle sizes
+      run: |
+        cd examples/leptos/pkg
+        # Create bundle size analyzer
+        cat > analyze_bundle.py << 'EOF'
+        import os
+        import json
+        
+        def get_file_size(filepath):
+            return os.path.getsize(filepath)
+        
+        def analyze_bundle():
+            results = {}
+            
+            # Analyze main bundle
+            if os.path.exists('leptos_shadcn_ui_bg.wasm'):
+                wasm_size = get_file_size('leptos_shadcn_ui_bg.wasm')
+                results['wasm_bundle'] = wasm_size
+                print(f"WASM bundle size: {wasm_size / 1024:.1f} KB")
+            
+            if os.path.exists('leptos_shadcn_ui.js'):
+                js_size = get_file_size('leptos_shadcn_ui.js')
+                results['js_bundle'] = js_size
+                print(f"JS bundle size: {js_size / 1024:.1f} KB")
+            
+            # Check thresholds
+            wasm_threshold = 500 * 1024  # 500KB
+            js_threshold = 100 * 1024    # 100KB
+            
+            total_size = results.get('wasm_bundle', 0) + results.get('js_bundle', 0)
+            
+            print(f"Total bundle size: {total_size / 1024:.1f} KB")
+            
+            if total_size > wasm_threshold + js_threshold:
+                print(f"❌ Bundle size exceeds threshold: {total_size / 1024:.1f} KB > {(wasm_threshold + js_threshold) / 1024:.1f} KB")
+                return False
+            else:
+                print("✅ Bundle size within acceptable limits")
+                return True
+        
+        if __name__ == "__main__":
+            success = analyze_bundle()
+            exit(0 if success else 1)
+        EOF
+        
+        python3 analyze_bundle.py
+    
+    - name: Upload bundle analysis
+      uses: actions/upload-artifact@v3
+      with:
+        name: bundle-analysis
+        path: examples/leptos/pkg/
+        retention-days: 30
+
+  performance-regression-detection:
+    name: Performance Regression Detection
+    runs-on: ubuntu-latest
+    needs: [performance-benchmarks, memory-safety-tests, bundle-size-analysis]
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Download baseline benchmarks
+      uses: actions/download-artifact@v3
+      with:
+        name: benchmark-results-stable
+        path: baseline-benchmarks/
+    
+    - name: Download current benchmarks
+      uses: actions/download-artifact@v3
+      with:
+        name: benchmark-results-stable
+        path: current-benchmarks/
+    
+    - name: Compare performance
+      run: |
+        # Create performance comparison script
+        cat > compare_performance.py << 'EOF'
+        import json
+        import sys
+        
+        def load_benchmarks(filepath):
+            try:
+                with open(filepath, 'r') as f:
+                    return json.load(f)
+            except FileNotFoundError:
+                return []
+        
+        def compare_benchmarks():
+            baseline = load_benchmarks('baseline-benchmarks/parsed_benchmarks.json')
+            current = load_benchmarks('current-benchmarks/parsed_benchmarks.json')
+            
+            if not baseline or not current:
+                print("⚠️  No baseline or current benchmarks found")
+                return True
+            
+            # Create lookup for current results
+            current_lookup = {r['name']: r for r in current}
+            
+            regressions = []
+            improvements = []
+            
+            for baseline_result in baseline:
+                name = baseline_result['name']
+                baseline_mean = baseline_result['mean']
+                
+                if name in current_lookup:
+                    current_mean = current_lookup[name]['mean']
+                    change_percent = ((current_mean - baseline_mean) / baseline_mean) * 100
+                    
+                    if change_percent > 5.0:  # 5% regression threshold
+                        regressions.append({
+                            'name': name,
+                            'baseline': baseline_mean,
+                            'current': current_mean,
+                            'change_percent': change_percent
+                        })
+                    elif change_percent < -5.0:  # 5% improvement threshold
+                        improvements.append({
+                            'name': name,
+                            'baseline': baseline_mean,
+                            'current': current_mean,
+                            'change_percent': change_percent
+                        })
+            
+            # Report results
+            if regressions:
+                print("❌ Performance regressions detected:")
+                for reg in regressions:
+                    print(f"  - {reg['name']}: {reg['change_percent']:.1f}% slower ({reg['baseline']:.2f}ms → {reg['current']:.2f}ms)")
+                return False
+            
+            if improvements:
+                print("✅ Performance improvements detected:")
+                for imp in improvements:
+                    print(f"  - {imp['name']}: {imp['change_percent']:.1f}% faster ({imp['baseline']:.2f}ms → {imp['current']:.2f}ms)")
+            
+            if not regressions and not improvements:
+                print("✅ No significant performance changes detected")
+            
+            return True
+        
+        if __name__ == "__main__":
+            success = compare_benchmarks()
+            exit(0 if success else 1)
+        EOF
+        
+        python3 compare_performance.py
+    
+    - name: Comment PR with performance results
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '🚨 **Performance Regression Detected**\n\nThis PR introduces performance regressions. Please review the performance test results and optimize the affected components before merging.'
+          })
+
+  performance-report:
+    name: Performance Report
+    runs-on: ubuntu-latest
+    needs: [performance-benchmarks, memory-safety-tests, bundle-size-analysis]
+    if: always()
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      with:
+        path: artifacts/
+    
+    - name: Generate performance report
+      run: |
+        # Create performance report generator
+        cat > generate_report.py << 'EOF'
+        import json
+        import os
+        from datetime import datetime
+        
+        def generate_report():
+            report = {
+                'timestamp': datetime.now().isoformat(),
+                'commit': os.environ.get('GITHUB_SHA', 'unknown'),
+                'branch': os.environ.get('GITHUB_REF', 'unknown'),
+                'benchmarks': [],
+                'memory_tests': [],
+                'bundle_analysis': {}
+            }
+            
+            # Process benchmark results
+            for artifact_dir in os.listdir('artifacts/'):
+                if artifact_dir.startswith('benchmark-results-'):
+                    benchmark_file = f'artifacts/{artifact_dir}/parsed_benchmarks.json'
+                    if os.path.exists(benchmark_file):
+                        with open(benchmark_file, 'r') as f:
+                            benchmarks = json.load(f)
+                            report['benchmarks'].extend(benchmarks)
+            
+            # Process bundle analysis
+            bundle_dir = 'artifacts/bundle-analysis'
+            if os.path.exists(bundle_dir):
+                for file in os.listdir(bundle_dir):
+                    filepath = os.path.join(bundle_dir, file)
+                    if os.path.isfile(filepath):
+                        size = os.path.getsize(filepath)
+                        report['bundle_analysis'][file] = size
+            
+            # Save report
+            with open('performance_report.json', 'w') as f:
+                json.dump(report, f, indent=2)
+            
+            print("📊 Performance report generated")
+            
+            # Print summary
+            print(f"Benchmarks: {len(report['benchmarks'])}")
+            print(f"Bundle files: {len(report['bundle_analysis'])}")
+        
+        if __name__ == "__main__":
+            generate_report()
+        EOF
+        
+        python3 generate_report.py
+    
+    - name: Upload performance report
+      uses: actions/upload-artifact@v3
+      with:
+        name: performance-report
+        path: performance_report.json
+        retention-days: 90

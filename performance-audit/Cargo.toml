@@ -45,9 +45,9 @@ tempfile = "3.0"
 # Async testing
 tokio-test = "0.4"
 
-# [[bench]]
-# name = "performance_benchmarks"
-# harness = false
+[[bench]]
+name = "component_benchmarks"
+harness = false
 
 [features]
 default = ["monitoring", "benchmarks"]

@@ -59,6 +59,7 @@ pub mod bundle_analysis;
 pub mod performance_monitoring;
 pub mod optimization_roadmap;
 pub mod benchmarks;
+pub mod memory_safety;
 
 use thiserror::Error;
 

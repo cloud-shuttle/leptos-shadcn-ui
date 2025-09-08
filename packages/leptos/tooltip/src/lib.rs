@@ -9,6 +9,8 @@ pub mod new_york;
 
 #[cfg(test)]
 mod tests;
+#[cfg(test)]
+mod tdd_tests;
 
 // Re-export the components for easy access
 pub use default::*;
