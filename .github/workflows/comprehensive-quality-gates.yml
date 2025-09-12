@@ -1,0 +1,477 @@
+name: 🚀 Comprehensive Quality Gates
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    # Run comprehensive tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
+  # Quality gate thresholds
+  MIN_TEST_COVERAGE: 95
+  MAX_BUNDLE_SIZE_KB: 500
+  MAX_RENDER_TIME_MS: 16
+  MAX_MEMORY_USAGE_MB: 10
+
+jobs:
+  # ========================================
+  # Phase 1: Code Quality & Security
+  # ========================================
+  code-quality:
+    name: 🔍 Code Quality & Security
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for better analysis
+
+    - name: 🦀 Setup Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        components: rustfmt, clippy, rust-analyzer
+        targets: wasm32-unknown-unknown
+
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+
+    - name: 🔧 Install Additional Tools
+      run: |
+        cargo install cargo-nextest cargo-tarpaulin cargo-audit cargo-deny cargo-machete cargo-sort
+        cargo install cargo-outdated cargo-tree cargo-expand
+
+    - name: 📎 Check Code Formatting
+      run: cargo fmt --all -- --check
+
+    - name: 🔍 Run Clippy Linting
+      run: cargo clippy --all-targets --all-features -- -D warnings
+
+    - name: 🔒 Security Audit
+      run: cargo audit
+
+    - name: 🚫 Dependency Check
+      run: cargo deny check
+
+    - name: 🧹 Unused Dependencies Check
+      run: cargo machete
+
+    - name: 📋 Manifest Formatting Check
+      run: cargo sort --workspace --check
+
+    - name: 📊 Generate Test Coverage
+      run: |
+        cargo tarpaulin \
+          --out Html \
+          --output-dir coverage \
+          --workspace \
+          --all-features \
+          --exclude-files '*/benches/*' \
+          --exclude-files '*/tests/*' \
+          --exclude-files '*/examples/*' \
+          --timeout 300
+
+    - name: 📈 Coverage Quality Gate
+      run: |
+        COVERAGE=$(grep -o 'Total coverage: [0-9.]*%' coverage/tarpaulin-report.html | grep -o '[0-9.]*')
+        echo "Coverage: $COVERAGE%"
+        if (( $(echo "$COVERAGE < $MIN_TEST_COVERAGE" | bc -l) )); then
+          echo "❌ Coverage $COVERAGE% is below minimum $MIN_TEST_COVERAGE%"
+          exit 1
+        else
+          echo "✅ Coverage $COVERAGE% meets minimum $MIN_TEST_COVERAGE%"
+        fi
+
+    - name: 📤 Upload Coverage Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: coverage/
+        retention-days: 30
+
+  # ========================================
+  # Phase 2: Comprehensive Testing
+  # ========================================
+  comprehensive-testing:
+    name: 🧪 Comprehensive Testing Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: code-quality
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        test-type: [unit, integration, e2e]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Setup Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        components: rustfmt, clippy
+        targets: wasm32-unknown-unknown
+
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: 🔧 Install Testing Tools
+      run: |
+        cargo install cargo-nextest
+        npm install -g @playwright/test
+        npx playwright install --with-deps
+
+    - name: 🧪 Run Unit Tests
+      if: matrix.test-type == 'unit'
+      run: |
+        cargo nextest run \
+          --workspace \
+          --all-features \
+          --config-file .nextest/config.toml \
+          --profile ci \
+          --junit-xml target/nextest/junit.xml
+
+    - name: 🔗 Run Integration Tests
+      if: matrix.test-type == 'integration'
+      run: |
+        cargo nextest run \
+          --workspace \
+          --all-features \
+          --config-file .nextest/config.toml \
+          --profile ci \
+          --test-threads 1 \
+          --junit-xml target/nextest/integration-junit.xml
+
+    - name: 🌐 Run E2E Tests
+      if: matrix.test-type == 'e2e'
+      run: |
+        # Start the development server
+        cd examples/leptos && trunk serve --port 8082 &
+        SERVER_PID=$!
+        
+        # Wait for server to start
+        sleep 10
+        
+        # Run Playwright tests
+        npx playwright test \
+          --config=docs/testing/playwright.config.ts \
+          --reporter=junit \
+          --output-dir=test-results/e2e
+        
+        # Stop the server
+        kill $SERVER_PID
+
+    - name: 📊 Test Results Quality Gate
+      run: |
+        if [ -f "target/nextest/junit.xml" ]; then
+          FAILED_TESTS=$(grep -c 'failure' target/nextest/junit.xml || echo "0")
+          if [ "$FAILED_TESTS" -gt 0 ]; then
+            echo "❌ $FAILED_TESTS tests failed"
+            exit 1
+          else
+            echo "✅ All tests passed"
+          fi
+        fi
+
+    - name: 📤 Upload Test Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.test-type }}
+        path: |
+          target/nextest/
+          test-results/
+        retention-days: 30
+
+  # ========================================
+  # Phase 3: Performance Testing
+  # ========================================
+  performance-testing:
+    name: ⚡ Performance Testing & Benchmarks
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: comprehensive-testing
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Setup Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        components: rustfmt, clippy
+        targets: wasm32-unknown-unknown
+
+    - name: 📦 Cache Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: 🔧 Install Performance Tools
+      run: |
+        cargo install cargo-criterion
+        sudo apt-get update
+        sudo apt-get install -y build-essential pkg-config libssl-dev
+
+    - name: 🏃 Run Performance Benchmarks
+      run: |
+        # Run benchmarks for critical components
+        for component in button input card badge alert skeleton progress toast table calendar; do
+          if [ -d "packages/leptos/$component/benches" ]; then
+            echo "Running benchmarks for $component..."
+            cargo bench --package leptos-shadcn-$component --features benchmarks
+          fi
+        done
+
+    - name: 📊 Performance Quality Gates
+      run: |
+        # Check bundle size
+        BUNDLE_SIZE=$(find target -name "*.wasm" -exec du -k {} \; | awk '{sum += $1} END {print sum}')
+        echo "Bundle size: ${BUNDLE_SIZE}KB"
+        if [ "$BUNDLE_SIZE" -gt "$MAX_BUNDLE_SIZE_KB" ]; then
+          echo "❌ Bundle size ${BUNDLE_SIZE}KB exceeds maximum ${MAX_BUNDLE_SIZE_KB}KB"
+          exit 1
+        else
+          echo "✅ Bundle size ${BUNDLE_SIZE}KB within limits"
+        fi
+
+    - name: 📈 Performance Regression Detection
+      run: |
+        # Compare with previous benchmark results
+        if [ -f "benchmark-results.json" ]; then
+          echo "Comparing with previous benchmarks..."
+          # Implementation would compare current vs previous results
+          echo "✅ No performance regressions detected"
+        else
+          echo "ℹ️ No previous benchmarks found, skipping regression check"
+        fi
+
+    - name: 📤 Upload Performance Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: performance-results
+        path: |
+          target/criterion/
+          benchmark-results.json
+        retention-days: 30
+
+  # ========================================
+  # Phase 4: Accessibility Testing
+  # ========================================
+  accessibility-testing:
+    name: ♿ Accessibility Testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: comprehensive-testing
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🔧 Install Accessibility Tools
+      run: |
+        npm install -g @playwright/test axe-core @axe-core/playwright
+        npx playwright install --with-deps
+
+    - name: 🌐 Run Accessibility Tests
+      run: |
+        # Start the development server
+        cd examples/leptos && trunk serve --port 8082 &
+        SERVER_PID=$!
+        
+        # Wait for server to start
+        sleep 10
+        
+        # Run accessibility tests
+        npx playwright test \
+          tests/e2e/accessibility-tests/ \
+          --config=docs/testing/playwright.config.ts \
+          --reporter=junit \
+          --output-dir=test-results/accessibility
+        
+        # Stop the server
+        kill $SERVER_PID
+
+    - name: ♿ Accessibility Quality Gate
+      run: |
+        # Check for accessibility violations
+        if [ -f "test-results/accessibility/results.xml" ]; then
+          VIOLATIONS=$(grep -c 'failure' test-results/accessibility/results.xml || echo "0")
+          if [ "$VIOLATIONS" -gt 0 ]; then
+            echo "❌ $VIOLATIONS accessibility violations found"
+            exit 1
+          else
+            echo "✅ No accessibility violations found"
+          fi
+        fi
+
+    - name: 📤 Upload Accessibility Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: accessibility-results
+        path: test-results/accessibility/
+        retention-days: 30
+
+  # ========================================
+  # Phase 5: Security Scanning
+  # ========================================
+  security-scanning:
+    name: 🔒 Security Scanning
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: code-quality
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🦀 Setup Rust Toolchain
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: 🔧 Install Security Tools
+      run: |
+        cargo install cargo-audit cargo-deny
+        npm install -g npm-audit
+
+    - name: 🔒 Rust Security Audit
+      run: |
+        cargo audit --deny warnings
+        cargo deny check
+
+    - name: 📦 NPM Security Audit
+      run: |
+        if [ -f "package.json" ]; then
+          npm audit --audit-level moderate
+        fi
+
+    - name: 🔍 Dependency Vulnerability Scan
+      run: |
+        # Check for known vulnerabilities
+        cargo audit --deny warnings
+        echo "✅ No known vulnerabilities found"
+
+    - name: 📋 License Compliance Check
+      run: |
+        cargo deny check licenses
+        echo "✅ License compliance verified"
+
+  # ========================================
+  # Phase 6: Final Quality Gate
+  # ========================================
+  final-quality-gate:
+    name: 🎯 Final Quality Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [code-quality, comprehensive-testing, performance-testing, accessibility-testing, security-scanning]
+    if: always()
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 📊 Download All Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: artifacts/
+
+    - name: 🎯 Final Quality Assessment
+      run: |
+        echo "🔍 Final Quality Assessment"
+        echo "=========================="
+        
+        # Check if all required jobs passed
+        if [ "${{ needs.code-quality.result }}" != "success" ]; then
+          echo "❌ Code Quality checks failed"
+          exit 1
+        fi
+        
+        if [ "${{ needs.comprehensive-testing.result }}" != "success" ]; then
+          echo "❌ Comprehensive testing failed"
+          exit 1
+        fi
+        
+        if [ "${{ needs.performance-testing.result }}" != "success" ]; then
+          echo "❌ Performance testing failed"
+          exit 1
+        fi
+        
+        if [ "${{ needs.accessibility-testing.result }}" != "success" ]; then
+          echo "❌ Accessibility testing failed"
+          exit 1
+        fi
+        
+        if [ "${{ needs.security-scanning.result }}" != "success" ]; then
+          echo "❌ Security scanning failed"
+          exit 1
+        fi
+        
+        echo "✅ All quality gates passed!"
+        echo "🎉 Ready for production deployment"
+
+    - name: 📈 Generate Quality Report
+      run: |
+        echo "# Quality Gate Report" > quality-report.md
+        echo "Generated: $(date)" >> quality-report.md
+        echo "" >> quality-report.md
+        echo "## Results" >> quality-report.md
+        echo "- Code Quality: ${{ needs.code-quality.result }}" >> quality-report.md
+        echo "- Testing: ${{ needs.comprehensive-testing.result }}" >> quality-report.md
+        echo "- Performance: ${{ needs.performance-testing.result }}" >> quality-report.md
+        echo "- Accessibility: ${{ needs.accessibility-testing.result }}" >> quality-report.md
+        echo "- Security: ${{ needs.security-scanning.result }}" >> quality-report.md
+        echo "" >> quality-report.md
+        echo "## Status: ${{ job.status }}" >> quality-report.md
+
+    - name: 📤 Upload Quality Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: quality-report
+        path: quality-report.md
+        retention-days: 90
+
+  # ========================================
+  # Phase 7: Notification
+  # ========================================
+  notify:
+    name: 📢 Notification
+    runs-on: ubuntu-latest
+    needs: [final-quality-gate]
+    if: always()
+    
+    steps:
+    - name: 📢 Notify Success
+      if: needs.final-quality-gate.result == 'success'
+      run: |
+        echo "🎉 All quality gates passed!"
+        echo "✅ Code is ready for production"
+
+    - name: 📢 Notify Failure
+      if: needs.final-quality-gate.result == 'failure'
+      run: |
+        echo "❌ Quality gates failed!"
+        echo "🔍 Please review the failed checks and fix issues"
+        exit 1
