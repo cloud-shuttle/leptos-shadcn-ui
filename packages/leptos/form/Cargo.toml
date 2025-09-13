@@ -7,7 +7,7 @@ authors.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-version = "0.7.0"
+version = "0.8.0"
 
 [dependencies]
 leptos.workspace = true
@@ -19,7 +19,7 @@ leptos-shadcn-input = "0.2.0"
 leptos-shadcn-button = "0.2.0"
 gloo-timers = "0.3"
 leptos-struct-component = "0.2"
-leptos-shadcn-signal-management = { path = "../../signal-management" }
+leptos-shadcn-signal-management = "0.1.0"
 
 [dev-dependencies]
 shadcn-ui-test-utils = { path = "../../test-utils" }

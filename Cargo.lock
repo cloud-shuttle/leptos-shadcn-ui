@@ -823,29 +823,29 @@ dependencies = [
  "gloo-timers",
  "js-sys",
  "leptos",
- "leptos-shadcn-accordion 0.7.0",
- "leptos-shadcn-alert 0.7.0",
- "leptos-shadcn-badge 0.7.0",
- "leptos-shadcn-button 0.7.0",
- "leptos-shadcn-card 0.7.0",
- "leptos-shadcn-checkbox 0.7.0",
- "leptos-shadcn-dialog 0.7.0",
- "leptos-shadcn-input 0.7.0",
- "leptos-shadcn-label 0.7.0",
- "leptos-shadcn-pagination 0.7.0",
- "leptos-shadcn-popover 0.7.0",
- "leptos-shadcn-progress 0.7.0",
- "leptos-shadcn-radio-group 0.7.0",
- "leptos-shadcn-select 0.7.0",
- "leptos-shadcn-separator 0.7.0",
- "leptos-shadcn-skeleton 0.7.0",
- "leptos-shadcn-slider 0.7.0",
- "leptos-shadcn-switch 0.7.0",
- "leptos-shadcn-table 0.7.0",
- "leptos-shadcn-tabs 0.7.0",
- "leptos-shadcn-textarea 0.7.0",
- "leptos-shadcn-toast 0.7.0",
- "leptos-shadcn-tooltip 0.7.0",
+ "leptos-shadcn-accordion 0.8.0",
+ "leptos-shadcn-alert 0.8.0",
+ "leptos-shadcn-badge 0.8.0",
+ "leptos-shadcn-button 0.8.0",
+ "leptos-shadcn-card 0.8.0",
+ "leptos-shadcn-checkbox 0.8.0",
+ "leptos-shadcn-dialog 0.8.0",
+ "leptos-shadcn-input 0.8.0",
+ "leptos-shadcn-label 0.8.0",
+ "leptos-shadcn-pagination 0.8.0",
+ "leptos-shadcn-popover 0.8.0",
+ "leptos-shadcn-progress 0.8.0",
+ "leptos-shadcn-radio-group 0.8.0",
+ "leptos-shadcn-select 0.8.0",
+ "leptos-shadcn-separator 0.8.0",
+ "leptos-shadcn-skeleton 0.8.0",
+ "leptos-shadcn-slider 0.8.0",
+ "leptos-shadcn-switch 0.8.0",
+ "leptos-shadcn-table 0.8.0",
+ "leptos-shadcn-tabs 0.8.0",
+ "leptos-shadcn-textarea 0.8.0",
+ "leptos-shadcn-toast 0.8.0",
+ "leptos-shadcn-tooltip 0.8.0",
  "leptos_router",
  "log",
  "wasm-bindgen",
@@ -1660,11 +1660,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-accordion"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1689,11 +1689,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-alert"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1719,11 +1719,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-alert-dialog"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1748,11 +1748,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-aspect-ratio"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1775,10 +1775,10 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-avatar"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-style",
  "tailwind_fuse 0.3.2",
  "wasm-bindgen",
@@ -1802,11 +1802,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-badge"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1828,10 +1828,10 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-breadcrumb"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-style",
  "serde",
  "shadcn-ui-test-utils",
@@ -1883,11 +1883,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-button"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1928,12 +1928,12 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-calendar"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "js-sys",
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1958,11 +1958,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-card"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -1987,11 +1987,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-carousel"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2016,11 +2016,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-checkbox"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2045,11 +2045,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-collapsible"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2075,11 +2075,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-combobox"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "gloo-timers",
  "leptos",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2103,10 +2103,10 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-command"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-style",
  "serde",
  "shadcn-ui-test-utils",
@@ -2132,11 +2132,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-context-menu"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2166,7 +2166,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-date-picker"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "js-sys",
  "leptos",
@@ -2174,22 +2174,7 @@ dependencies = [
  "leptos-shadcn-button 0.3.0",
  "leptos-shadcn-calendar 0.3.1",
  "leptos-shadcn-popover 0.3.0",
- "leptos-shadcn-signal-management",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-dialog"
-version = "0.7.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2213,6 +2198,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-dialog"
+version = "0.8.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-drawer"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2229,11 +2229,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-drawer"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2259,11 +2259,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-dropdown-menu"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2285,29 +2285,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-error-boundary"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "log",
  "shadcn-ui-test-utils",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-form"
-version = "0.7.0"
-dependencies = [
- "gloo-timers",
- "leptos",
- "leptos-shadcn-button 0.2.0",
- "leptos-shadcn-input 0.2.0",
- "leptos-shadcn-signal-management",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.1.1",
- "wasm-bindgen",
  "wasm-bindgen-test",
  "web-sys",
 ]
@@ -2330,6 +2312,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-form"
+version = "0.8.0"
+dependencies = [
+ "gloo-timers",
+ "leptos",
+ "leptos-shadcn-button 0.2.0",
+ "leptos-shadcn-input 0.2.0",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.1.1",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-hover-card"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2345,11 +2345,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-hover-card"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2389,11 +2389,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-input"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "regex",
@@ -2418,10 +2418,10 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-input-otp"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-style",
  "serde",
  "shadcn-ui-test-utils",
@@ -2447,11 +2447,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-label"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2471,7 +2471,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-lazy-loading"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
 ]
@@ -2492,11 +2492,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-menubar"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2521,11 +2521,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-navigation-menu"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2551,12 +2551,12 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-pagination"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
  "leptos-shadcn-button 0.3.0",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2645,11 +2645,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-popover"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2674,11 +2674,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-progress"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2702,11 +2702,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-radio-group"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2739,11 +2739,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-resizable"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2768,26 +2768,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-scroll-area"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
- "leptos-struct-component",
- "leptos-style",
- "shadcn-ui-test-utils",
- "tailwind_fuse 0.3.2",
- "wasm-bindgen-test",
- "web-sys",
-]
-
-[[package]]
-name = "leptos-shadcn-select"
-version = "0.7.0"
-dependencies = [
- "leptos",
- "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2811,6 +2796,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-select"
+version = "0.8.0"
+dependencies = [
+ "leptos",
+ "leptos-node-ref",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-struct-component",
+ "leptos-style",
+ "shadcn-ui-test-utils",
+ "tailwind_fuse 0.3.2",
+ "wasm-bindgen-test",
+ "web-sys",
+]
+
+[[package]]
 name = "leptos-shadcn-separator"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2826,11 +2826,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-separator"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2855,11 +2855,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-sheet"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2884,6 +2884,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "leptos-shadcn-signal-management"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5097c5171eb0be12bbf8fd736f4e669012657112865506a825480f2b013f6de"
+dependencies = [
+ "chrono",
+ "js-sys",
+ "leptos",
+ "serde",
+ "serde_json",
+ "thiserror 1.0.69",
+]
+
+[[package]]
 name = "leptos-shadcn-skeleton"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2899,11 +2913,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-skeleton"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2928,11 +2942,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-slider"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2957,11 +2971,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-switch"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -2986,11 +3000,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-table"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -3015,11 +3029,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-tabs"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -3044,11 +3058,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-textarea"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -3075,12 +3089,12 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-toast"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "gloo-timers",
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -3106,11 +3120,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-toggle"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -3135,11 +3149,11 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-tooltip"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "leptos",
  "leptos-node-ref",
- "leptos-shadcn-signal-management",
+ "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "leptos-struct-component",
  "leptos-style",
  "shadcn-ui-test-utils",
@@ -3172,11 +3186,11 @@ dependencies = [
  "leptos-shadcn-command 0.6.0",
  "leptos-shadcn-context-menu 0.6.0",
  "leptos-shadcn-date-picker 0.6.0",
- "leptos-shadcn-dialog 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-dialog 0.7.0",
  "leptos-shadcn-drawer 0.6.0",
  "leptos-shadcn-dropdown-menu 0.6.0",
  "leptos-shadcn-error-boundary 0.6.0",
- "leptos-shadcn-form 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-form 0.7.0",
  "leptos-shadcn-hover-card 0.6.0",
  "leptos-shadcn-input 0.6.1",
  "leptos-shadcn-input-otp 0.6.0",
@@ -3192,7 +3206,7 @@ dependencies = [
  "leptos-shadcn-registry",
  "leptos-shadcn-resizable 0.6.0",
  "leptos-shadcn-scroll-area 0.6.0",
- "leptos-shadcn-select 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "leptos-shadcn-select 0.7.0",
  "leptos-shadcn-separator 0.6.0",
  "leptos-shadcn-sheet 0.6.0",
  "leptos-shadcn-skeleton 0.6.0",
@@ -3368,7 +3382,7 @@ dependencies = [
 
 [[package]]
 name = "leptos_v0_8_test_app"
-version = "0.7.0"
+version = "0.8.0"
 dependencies = [
  "console_error_panic_hook",
  "leptos",
