@@ -71,6 +71,7 @@ members = [
     "packages/leptos/pagination",    # Depends on button
     "packages/leptos/error-boundary", # Error handling component
     "packages/leptos/lazy-loading",   # Lazy loading system
+    "packages/leptos/registry",       # Component registry
     
     "examples/leptos",                # Example application
     
