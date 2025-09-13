@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Storybook-specific styles */
+.sb-show-main {
+  background: transparent;
+}
+
+/* Component showcase styles */
+.component-showcase {
+  @apply p-4 space-y-4;
+}
+
+.component-variant {
+  @apply p-2 border rounded;
+}
+
+.component-state {
+  @apply p-2 border-2 border-dashed;
+}

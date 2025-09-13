@@ -1,0 +1,49 @@
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/leptos/Cargo.toml
+workspace: /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/Cargo.toml
+   Compiling leptos-shadcn-signal-management v0.1.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/signal-management)
+error[E0433]: failed to resolve: use of undeclared type `ArcRwSignal`
+   --> packages/signal-management/src/lib.rs:322:23
+    |
+322 |         let signal1 = ArcRwSignal::new(42);
+    |                       ^^^^^^^^^^^ use of undeclared type `ArcRwSignal`
+    |
+help: consider importing this struct
+    |
+235 +     use leptos::prelude::ArcRwSignal;
+    |
+
+error[E0433]: failed to resolve: use of undeclared type `ArcRwSignal`
+   --> packages/signal-management/src/lib.rs:323:23
+    |
+323 |         let signal2 = ArcRwSignal::new(42);
+    |                       ^^^^^^^^^^^ use of undeclared type `ArcRwSignal`
+    |
+help: consider importing this struct
+    |
+235 +     use leptos::prelude::ArcRwSignal;
+    |
+
+warning: unused variable: `detector`
+   --> packages/signal-management/src/lib.rs:199:13
+    |
+199 |         let detector = MemoryLeakDetector::new();
+    |             ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_detector`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `detector`
+   --> packages/signal-management/src/lib.rs:206:13
+    |
+206 |         let detector = MemoryLeakDetector::with_threshold(0.2);
+    |             ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_detector`
+
+warning: unused variable: `i`
+   --> packages/signal-management/src/lib.rs:287:13
+    |
+287 |         for i in 0..100 {
+    |             ^ help: if this is intentional, prefix it with an underscore: `_i`
+
+For more information about this error, try `rustc --explain E0433`.
+warning: `leptos-shadcn-signal-management` (lib test) generated 3 warnings
+error: could not compile `leptos-shadcn-signal-management` (lib test) due to 2 previous errors; 3 warnings emitted

@@ -1,249 +1,448 @@
-# Leptos 0.8.8 Migration Guide
+# Leptos 0.8.8 Signal Migration Guide
 
-## 🚨 **CRITICAL ISSUE IDENTIFIED**
+## Overview
 
-The project is currently experiencing compilation failures with Leptos 0.8.8 due to **version inconsistencies** in the dependency tree, not due to fundamental issues with Leptos 0.8.8 itself.
+This guide provides step-by-step instructions for migrating existing Leptos components to use the new 0.8.8 signal patterns with our signal management utilities.
 
-## 🔍 **Root Cause Analysis**
+## Migration Strategy
 
-### **Version Mismatch in Cargo.lock**
-The `Cargo.lock` file contains mixed Leptos versions:
-- **Main packages**: `leptos 0.8.8` ✅
-- **Some dependencies**: `leptos_config 0.7.8` ❌ (incompatible)
-- **Other dependencies**: `leptos_dom 0.8.6` ❌ (version mismatch)
+### Phase 1: Assessment
+1. **Identify Components**: List all components that need migration
+2. **Analyze Current Usage**: Understand current signal patterns
+3. **Plan Migration Order**: Prioritize components by complexity and usage
 
-### **Compilation Error Details**
-```
-error[E0308]: mismatched types
-   --> /Users/peterhanssens/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/leptos-0.8.8/src/hydration/mod.rs:138:5
-    |
-138 | /     view! {
-139 |         <link rel="modulepreload" href=format!("{root}/{pkg_path}/{js_file_name}.js") crossorigin...
-140 |         <link
-141 |             rel="preload"
-...   |
-149 |         </script>
-150 |     }
-    |_____^ expected a tuple with 3 elements, found one with 5 elements
-```
+### Phase 2: Core Migration
+1. **Update Signal Types**: Replace old signals with `ArcRwSignal` and `ArcMemo`
+2. **Implement Lifecycle Management**: Add signal tracking
+3. **Add Memory Management**: Implement memory monitoring
 
-**This error occurs because:**
-1. Some packages are compiled against Leptos 0.7.x APIs
-2. Other packages are compiled against Leptos 0.8.x APIs
-3. The type system cannot reconcile these different API expectations
+### Phase 3: Optimization
+1. **Performance Tuning**: Optimize signal usage patterns
+2. **Memory Optimization**: Implement cleanup strategies
+3. **Testing**: Comprehensive testing of migrated components
 
-## 🚀 **IMPLEMENTATION PLAN**
+## Step-by-Step Migration Process
 
-### **Phase 1: Fix Version Inconsistencies (CRITICAL)**
+### 1. Before Migration
 
-#### **Step 1.1: Update Workspace Dependencies**
-```toml
-[workspace.dependencies]
-# BEFORE (causing issues)
-leptos = "0.8.6"
-leptos_router = "0.8.6"
-
-# AFTER (fixed)
-leptos = "0.8.8"
-leptos_router = "0.8.8"
-```
-
-#### **Step 1.2: Clean Dependency Resolution**
-```bash
-# Remove existing lock file to force fresh resolution
-rm Cargo.lock
-
-# Clean build artifacts
-cargo clean
-
-# Rebuild with fresh dependencies
-cargo check --workspace
-```
-
-### **Phase 2: Fix Component Package Dependencies**
-
-#### **Step 2.1: Update All Component Cargo.toml Files**
-Ensure all `packages/leptos/*/Cargo.toml` use workspace versions:
-
-```toml
-# BEFORE (hardcoded versions)
-leptos = "0.8"
-leptos = "0.8.6"
-
-# AFTER (workspace inheritance)
-leptos.workspace = true
-leptos_router.workspace = true
-```
-
-#### **Step 2.2: Fix Specific Component Issues**
-
-##### **Error Boundary Component**
-**Problem**: Closure implements `FnOnce` instead of `FnMut`
-**Solution**: Clone `children` before moving into closure
-
+#### Current Component Structure
 ```rust
-// BEFORE (causes FnOnce error)
-move || {
-    if has_error.get() {
-        // ... error handling
-    } else {
-        children().into_any()  // ❌ moves children
+// OLD: Traditional Leptos component
+#[component]
+fn Button(
+    #[prop(optional)] variant: Option<ButtonVariant>,
+    #[prop(optional)] size: Option<ButtonSize>,
+    children: Children,
+) -> impl IntoView {
+    let (is_loading, set_loading) = signal(false);
+    let (is_disabled, set_disabled) = signal(false);
+    
+    let button_class = move || {
+        format!("btn btn-{} btn-{}", 
+            variant.unwrap_or_default(),
+            size.unwrap_or_default()
+        )
+    };
+    
+    view! {
+        <button
+            class=button_class
+            disabled=move || is_disabled.get()
+            on:click=move |_| {
+                set_loading.set(true);
+                // Handle click
+                set_loading.set(false);
+            }
+        >
+            {children()}
+        </button>
     }
 }
+```
 
-// AFTER (fixes FnMut requirement)
-{
-    let children = children.clone();
-    move || {
-        if has_error.get() {
-            // ... error handling
-        } else {
-            children().into_any()  // ✅ uses cloned reference
+### 2. After Migration
+
+#### New Component Structure with Signal Management
+```rust
+use leptos_shadcn_signal_management::*;
+
+#[component]
+fn Button(
+    #[prop(optional)] variant: Option<ButtonVariant>,
+    #[prop(optional)] size: Option<ButtonSize>,
+    children: Children,
+) -> impl IntoView {
+    // Create persistent signals using ArcRwSignal
+    let button_state = ArcRwSignal::new(ButtonState {
+        variant: variant.unwrap_or_default(),
+        size: size.unwrap_or_default(),
+        loading: false,
+        disabled: false,
+    });
+    
+    // Create computed signal using ArcMemo
+    let button_class = ArcMemo::new(move |_| {
+        let state = button_state.get();
+        format!("btn btn-{} btn-{}", state.variant, state.size)
+    });
+    
+    // Create theme manager for lifecycle management
+    let theme_manager = TailwindSignalManager::new();
+    theme_manager.track_signal(button_state.clone());
+    theme_manager.track_memo(button_class.clone());
+    
+    // Create memory manager for monitoring
+    let memory_manager = SignalMemoryManager::new();
+    
+    // Create event handler with proper signal management
+    let handle_click = {
+        let button_state = button_state.clone();
+        move |_| {
+            if !button_state.get().disabled && !button_state.get().loading {
+                button_state.update(|state| {
+                    state.loading = true;
+                });
+                
+                // Simulate async operation
+                button_state.update(|state| {
+                    state.loading = false;
+                });
+            }
         }
+    };
+    
+    view! {
+        <button
+            class=move || button_class.get()
+            disabled=move || button_state.get().disabled
+            on:click=handle_click
+        >
+            {children()}
+        </button>
+    }
+}
+
+#[derive(Debug, Clone, PartialEq)]
+struct ButtonState {
+    variant: ButtonVariant,
+    size: ButtonSize,
+    loading: bool,
+    disabled: bool,
+}
+```
+
+## Component-Specific Migration Examples
+
+### 1. Button Component Migration
+
+#### Before
+```rust
+let (is_loading, set_loading) = signal(false);
+let (is_disabled, set_disabled) = signal(false);
+```
+
+#### After
+```rust
+let button_state = ArcRwSignal::new(ButtonState {
+    loading: false,
+    disabled: false,
+    // ... other state
+});
+```
+
+### 2. Input Component Migration
+
+#### Before
+```rust
+let (value, set_value) = signal(String::new());
+let (error, set_error) = signal(None::<String>);
+```
+
+#### After
+```rust
+let input_state = ArcRwSignal::new(InputState {
+    value: String::new(),
+    error: None,
+    focused: false,
+    // ... other state
+});
+
+// Create validation state using ArcMemo
+let validation_state = ArcMemo::new(move |_| {
+    let state = input_state.get();
+    InputValidationState {
+        is_valid: state.error.is_none() && !state.value.is_empty(),
+        has_error: state.error.is_some(),
+        error_message: state.error.clone(),
+    }
+});
+```
+
+### 3. Form Component Migration
+
+#### Before
+```rust
+let (is_submitting, set_submitting) = signal(false);
+let (errors, set_errors) = signal(Vec::new());
+```
+
+#### After
+```rust
+let form_state = ArcRwSignal::new(FormState {
+    is_submitting: false,
+    errors: Vec::new(),
+    fields: HashMap::new(),
+    // ... other state
+});
+
+// Create form validation using ArcMemo
+let form_validation = ArcMemo::new(move |_| {
+    let state = form_state.get();
+    FormValidationState {
+        can_submit: state.is_valid && !state.is_submitting,
+        has_errors: !state.errors.is_empty(),
+        error_count: state.errors.len(),
+    }
+});
+```
+
+## Migration Checklist
+
+### ✅ Pre-Migration
+- [ ] Identify all components to migrate
+- [ ] Understand current signal usage patterns
+- [ ] Plan migration order and timeline
+- [ ] Set up testing environment
+
+### ✅ Core Migration
+- [ ] Replace `signal()` with `ArcRwSignal::new()`
+- [ ] Replace computed values with `ArcMemo::new()`
+- [ ] Add signal lifecycle management
+- [ ] Implement memory management
+- [ ] Update event handlers
+
+### ✅ Post-Migration
+- [ ] Run comprehensive tests
+- [ ] Performance benchmarking
+- [ ] Memory usage monitoring
+- [ ] Documentation updates
+
+## Common Migration Patterns
+
+### 1. State Consolidation
+```rust
+// OLD: Multiple separate signals
+let (loading, set_loading) = signal(false);
+let (disabled, set_disabled) = signal(false);
+let (variant, set_variant) = signal(ButtonVariant::Default);
+
+// NEW: Consolidated state
+let button_state = ArcRwSignal::new(ButtonState {
+    loading: false,
+    disabled: false,
+    variant: ButtonVariant::Default,
+});
+```
+
+### 2. Computed Values
+```rust
+// OLD: Function-based computed values
+let button_class = move || {
+    format!("btn btn-{}", variant.get())
+};
+
+// NEW: ArcMemo-based computed values
+let button_class = ArcMemo::new(move |_| {
+    let state = button_state.get();
+    format!("btn btn-{}", state.variant)
+});
+```
+
+### 3. Event Handlers
+```rust
+// OLD: Direct signal updates
+let handle_click = move |_| {
+    set_loading.set(true);
+    // ... async operation
+    set_loading.set(false);
+};
+
+// NEW: State-based updates
+let handle_click = {
+    let button_state = button_state.clone();
+    move |_| {
+        button_state.update(|state| {
+            state.loading = true;
+        });
+        // ... async operation
+        button_state.update(|state| {
+            state.loading = false;
+        });
+    }
+};
+```
+
+## Performance Optimization
+
+### 1. Signal Lifecycle Management
+```rust
+let manager = TailwindSignalManager::new();
+manager.track_signal(button_state.clone());
+manager.track_memo(button_class.clone());
+manager.apply_lifecycle_optimization();
+```
+
+### 2. Memory Management
+```rust
+let memory_manager = SignalMemoryManager::new();
+
+// Monitor memory pressure
+if let Some(pressure) = memory_manager.detect_memory_pressure() {
+    if pressure > MemoryPressureLevel::High {
+        memory_manager.perform_automatic_cleanup();
     }
 }
 ```
 
-##### **Lazy Loading Component**
-**Problem**: Type mismatches between `View<()>` and `impl IntoView`
-**Solution**: Consistent return type handling
-
+### 3. Batched Updates
 ```rust
-// BEFORE (type mismatch)
-pub fn LazyComponent() -> View<()> {
-    view! { <div>...</div> }
+let updater = BatchedSignalUpdater::new();
+updater.auto_tune_batch_size();
+```
+
+## Testing Migration
+
+### 1. Unit Tests
+```rust
+#[test]
+fn test_button_component_migration() {
+    let button_component = create_migrated_button_component();
+    assert!(button_component.is_some());
+}
+```
+
+### 2. Integration Tests
+```rust
+#[test]
+fn test_button_integration() {
+    let button_state = ArcRwSignal::new(ButtonState::default());
+    let button_class = ArcMemo::new(move |_| {
+        format!("btn btn-{}", button_state.get().variant)
+    });
+    
+    assert_eq!(button_class.get(), "btn btn-default");
+}
+```
+
+### 3. Performance Tests
+```rust
+#[test]
+fn test_button_performance() {
+    let start = std::time::Instant::now();
+    
+    for _ in 0..1000 {
+        let _button = create_migrated_button_component();
+    }
+    
+    let duration = start.elapsed();
+    assert!(duration.as_millis() < 100); // Should complete in < 100ms
+}
+```
+
+## Troubleshooting
+
+### Common Issues
+
+#### 1. Signal Ownership
+```rust
+// ❌ WRONG: Moving signal into closure
+let button_class = ArcMemo::new(move |_| {
+    button_state.get() // button_state moved here
+});
+
+// ✅ CORRECT: Clone signal before moving
+let button_state_for_class = button_state.clone();
+let button_class = ArcMemo::new(move |_| {
+    button_state_for_class.get()
+});
+```
+
+#### 2. Memory Leaks
+```rust
+// ❌ WRONG: Not tracking signals
+let signal = ArcRwSignal::new(42);
+// signal is not tracked, may cause memory leaks
+
+// ✅ CORRECT: Track signals for lifecycle management
+let manager = TailwindSignalManager::new();
+manager.track_signal(signal);
+```
+
+#### 3. Performance Issues
+```rust
+// ❌ WRONG: Creating signals in render loop
+view! {
+    {move || {
+        let signal = ArcRwSignal::new(42); // Created every render
+        signal.get()
+    }}
 }
 
-// AFTER (consistent types)
-pub fn LazyComponent() -> impl IntoView {
-    view! { <div>...</div> }
+// ✅ CORRECT: Create signals outside render loop
+let signal = ArcRwSignal::new(42);
+view! {
+    {move || signal.get()}
 }
 ```
 
-### **Phase 3: Update Example Application**
+## Migration Tools
 
-#### **Step 3.1: Fix Example Dependencies**
-Update `examples/leptos/Cargo.toml`:
-
-```toml
-[dependencies]
-# Use workspace versions
-leptos.workspace = true
-leptos_router.workspace = true
-
-# Ensure all component dependencies use workspace versions
-shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
-# ... other components
-```
-
-#### **Step 3.2: Fix Import Issues**
+### 1. Component Migrator
 ```rust
-// BEFORE (incorrect imports)
-use leptos_shadcn_ui::button::Button;
+let migrator = ComponentMigrator::new();
+migrator.mark_migrated("button");
+migrator.mark_migrated("input");
 
-// AFTER (correct imports)
-use shadcn_ui_leptos_button::Button;
+let status = migrator.status().get();
+println!("Migration progress: {:.1}%", migrator.progress_percentage());
 ```
 
-### **Phase 4: Test and Validate**
-
-#### **Step 4.1: Compilation Verification**
-```bash
-# Check entire workspace
-cargo check --workspace
-
-# Build example application
-cd examples/leptos
-cargo build
-
-# Run tests
-cargo test
+### 2. Migration Validation
+```rust
+let status = validate_all_component_migrations();
+assert!(status.all_migrated);
+assert_eq!(status.migrated_count, 46);
+assert_eq!(status.failed_count, 0);
 ```
 
-#### **Step 4.2: Runtime Testing**
-```bash
-# Start development server
-cd examples/leptos
-trunk serve
+## Best Practices
 
-# Verify components render correctly
-# Test interactive functionality
-# Check browser console for errors
-```
+### 1. Signal Design
+- Use `ArcRwSignal` for persistent state
+- Use `ArcMemo` for computed values
+- Consolidate related state into single signals
+- Track all signals for lifecycle management
 
-## 🛠️ **TROUBLESHOOTING CHECKLIST**
+### 2. Memory Management
+- Monitor memory pressure regularly
+- Implement automatic cleanup strategies
+- Use signal deduplication when possible
+- Enable adaptive memory management
 
-### **Before Starting**
-- [ ] Rust toolchain is up to date (1.89.0+)
-- [ ] Cargo is up to date (1.89.0+)
-- [ ] All changes are committed to version control
+### 3. Performance
+- Use batched updates for multiple changes
+- Auto-tune batch sizes for optimal performance
+- Apply lifecycle optimizations
+- Monitor performance metrics
 
-### **During Implementation**
-- [ ] Workspace dependencies updated to 0.8.8
-- [ ] Cargo.lock removed and regenerated
-- [ ] All component packages use `leptos.workspace = true`
-- [ ] Component compilation errors fixed
-- [ ] Example application compiles successfully
+### 4. Testing
+- Test all migration scenarios
+- Benchmark performance before and after
+- Monitor memory usage
+- Validate migration completeness
 
-### **After Implementation**
-- [ ] `cargo check --workspace` passes
-- [ ] Example application builds without errors
-- [ ] Demo renders correctly in browser
-- [ ] No console errors or warnings
-- [ ] All components function as expected
+## Conclusion
 
-## 🔧 **COMMON ISSUES AND SOLUTIONS**
+This migration guide provides a comprehensive approach to migrating Leptos components to the new 0.8.8 signal patterns. Follow the step-by-step process, use the provided examples, and leverage the migration tools to ensure a smooth transition.
 
-### **Issue 1: "expected a tuple with 3 elements, found one with 5 elements"**
-**Cause**: Mixed Leptos versions in dependency tree
-**Solution**: Clean Cargo.lock and ensure all packages use workspace versions
-
-### **Issue 2: "closure only implements FnOnce"**
-**Cause**: Moving values into closures that need to be `FnMut`
-**Solution**: Clone values before moving into closures
-
-### **Issue 3: "mismatched types" in view! macros**
-**Cause**: Inconsistent return types between components
-**Solution**: Use consistent `impl IntoView` return types
-
-### **Issue 4: "unresolved import" errors**
-**Cause**: Incorrect import paths or missing dependencies
-**Solution**: Verify import paths and ensure all dependencies are properly declared
-
-## 📋 **VERIFICATION COMMANDS**
-
-```bash
-# Check current Leptos version in use
-cargo tree -p leptos
-
-# Verify all packages use workspace versions
-grep -r "leptos = " packages/leptos/*/Cargo.toml
-
-# Check for version conflicts
-cargo check --workspace 2>&1 | grep -i "version"
-
-# Verify example compiles
-cd examples/leptos && cargo check
-```
-
-## 🎯 **SUCCESS CRITERIA**
-
-The migration is successful when:
-1. ✅ `cargo check --workspace` completes without errors
-2. ✅ Example application compiles successfully
-3. ✅ Demo renders correctly in browser
-4. ✅ All components function as expected
-5. ✅ No version conflicts in dependency tree
-6. ✅ Consistent Leptos 0.8.8 usage throughout project
-
-## 📚 **ADDITIONAL RESOURCES**
-
-- [Leptos 0.8 Migration Guide](https://leptos-rs.github.io/leptos/upgrading/0.8.html)
-- [Leptos GitHub Repository](https://github.com/leptos-rs/leptos)
-- [Cargo Workspace Documentation](https://doc.rust-lang.org/cargo/reference/workspaces.html)
-
----
-
-**Last Updated**: $(date)
-**Status**: In Progress
-**Target Completion**: Next development session
+For additional support, refer to the API documentation and test examples in the codebase.

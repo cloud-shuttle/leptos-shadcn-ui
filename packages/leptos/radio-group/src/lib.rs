@@ -4,6 +4,7 @@
 //!
 //! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/radio-group.html) for more documenation.
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
@@ -16,3 +17,7 @@ mod tests;
 
 #[cfg(test)]
 mod tdd_tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

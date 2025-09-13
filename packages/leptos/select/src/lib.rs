@@ -4,6 +4,7 @@
 //!
 //! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/select.html) for more documentation.
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
@@ -15,3 +16,7 @@ pub use new_york as select;
 
 #[cfg(test)]
 mod tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

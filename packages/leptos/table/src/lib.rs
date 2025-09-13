@@ -1,5 +1,6 @@
 //! Leptos port of shadcn/ui table
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 pub mod data_table;
@@ -19,3 +20,7 @@ mod tdd_tests;
 
 #[cfg(test)]
 mod data_table_tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

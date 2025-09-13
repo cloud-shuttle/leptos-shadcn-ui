@@ -19,6 +19,7 @@ leptos-shadcn-input = "0.2.0"
 leptos-shadcn-button = "0.2.0"
 gloo-timers = "0.3"
 leptos-struct-component = "0.2"
+leptos-shadcn-signal-management = { path = "../../signal-management" }
 
 [dev-dependencies]
 shadcn-ui-test-utils = { path = "../../test-utils" }

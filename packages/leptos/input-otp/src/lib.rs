@@ -37,7 +37,12 @@ pub fn InputOtp(
     }
 }
 
+pub mod signal_managed;
 pub mod prelude { pub use super::InputOtp; }
 
 #[cfg(test)]
 mod tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

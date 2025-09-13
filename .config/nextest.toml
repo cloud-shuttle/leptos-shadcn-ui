@@ -1,0 +1,98 @@
+# Nextest configuration for leptos-shadcn-ui
+# Following ADR-002: Testing Pyramid Strategy
+
+[profile.default]
+# Test execution settings
+retries = 2
+slow-timeout = "60s"
+test-timeout = "30s"
+leak-timeout = "5s"
+
+# Parallel execution
+threads-required = 1
+max-threads = 4
+
+# Output settings
+failure-output = "immediate-final"
+success-output = "immediate-final"
+status-level = "pass"
+
+[profile.ci]
+# CI-specific settings
+retries = 3
+slow-timeout = "120s"
+test-timeout = "60s"
+leak-timeout = "10s"
+
+# Parallel execution for CI
+threads-required = 1
+max-threads = 2
+
+# Output settings for CI
+failure-output = "immediate-final"
+success-output = "immediate-final"
+status-level = "pass"
+
+[profile.signal-management]
+# Signal management specific profile
+retries = 2
+slow-timeout = "90s"
+test-timeout = "45s"
+leak-timeout = "15s"
+
+# Parallel execution for signal management tests
+threads-required = 1
+max-threads = 3
+
+# Output settings for signal management tests
+failure-output = "immediate-final"
+success-output = "immediate-final"
+status-level = "pass"
+
+[profile.integration]
+# Integration tests profile
+retries = 1
+slow-timeout = "120s"
+test-timeout = "60s"
+leak-timeout = "10s"
+
+# Parallel execution for integration tests
+threads-required = 1
+max-threads = 2
+
+# Output settings for integration tests
+failure-output = "immediate-final"
+success-output = "immediate-final"
+status-level = "pass"
+
+[profile.wasm]
+# WASM tests profile
+retries = 2
+slow-timeout = "180s"
+test-timeout = "90s"
+leak-timeout = "20s"
+
+# Parallel execution for WASM tests (limited due to browser constraints)
+threads-required = 1
+max-threads = 1
+
+# Output settings for WASM tests
+failure-output = "immediate-final"
+success-output = "immediate-final"
+status-level = "pass"
+
+[profile.performance]
+# Performance tests profile
+retries = 1
+slow-timeout = "300s"
+test-timeout = "120s"
+leak-timeout = "30s"
+
+# Parallel execution for performance tests
+threads-required = 1
+max-threads = 1
+
+# Output settings for performance tests
+failure-output = "immediate-final"
+success-output = "immediate-final"
+status-level = "pass"

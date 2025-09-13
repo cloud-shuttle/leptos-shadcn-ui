@@ -2,6 +2,7 @@
 //! 
 //! Provides form building blocks with validation and accessibility features.
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
@@ -10,3 +11,7 @@ pub use default::{Form, FormField, FormItem, FormLabel, FormControl, FormMessage
 
 #[cfg(test)]
 mod tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

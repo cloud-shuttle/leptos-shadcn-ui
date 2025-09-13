@@ -12,3 +12,7 @@ mod default;
 
 #[cfg(test)]
 mod tests;
+
+// Signal-managed module and exports
+pub mod signal_managed;
+pub use signal_managed::*;

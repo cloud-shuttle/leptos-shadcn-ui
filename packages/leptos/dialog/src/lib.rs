@@ -1,5 +1,6 @@
 //! Leptos port of shadcn/ui dialog
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
@@ -14,3 +15,7 @@ pub use new_york::{
 
 #[cfg(test)]
 mod tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

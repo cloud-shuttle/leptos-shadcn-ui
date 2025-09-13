@@ -1,5 +1,6 @@
 //! Leptos port of shadcn/ui avatar
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
@@ -8,3 +9,7 @@ pub use new_york::{Avatar as AvatarNewYork, AvatarImage as AvatarImageNewYork, A
 
 #[cfg(test)]
 mod tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

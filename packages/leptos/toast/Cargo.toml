@@ -18,6 +18,7 @@ tailwind_fuse.workspace = true
 web-sys.workspace = true
 uuid = { version = "1.0", features = ["v4"] }
 gloo-timers = { version = "0.3", features = ["futures"] }
+leptos-shadcn-signal-management = { path = "../../signal-management" }
 
 [features]
 default = []

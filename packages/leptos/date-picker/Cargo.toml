@@ -20,6 +20,7 @@ js-sys.workspace = true
 leptos-shadcn-calendar = "0.3.0"
 leptos-shadcn-popover = "0.3.0"
 leptos-shadcn-button = "0.3.0"
+leptos-shadcn-signal-management = { path = "../../signal-management" }
 
 [features]
 default = []

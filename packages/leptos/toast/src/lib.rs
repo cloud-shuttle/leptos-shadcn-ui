@@ -1,5 +1,6 @@
 //! Leptos port of shadcn/ui toast
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 pub mod sonner;
@@ -22,3 +23,7 @@ mod sonner_tests;
 
 #[cfg(test)]
 mod sonner_advanced_tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

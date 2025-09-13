@@ -17,6 +17,7 @@ leptos-style.workspace = true
 tailwind_fuse.workspace = true
 web-sys.workspace = true
 leptos-shadcn-button = "0.3.0"
+leptos-shadcn-signal-management = { path = "../../signal-management" }
 
 [features]
 default = []

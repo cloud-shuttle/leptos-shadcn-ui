@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 use leptos_style::Style;
-use crate::*;
+use crate::default::*;
 
 #[cfg(test)]
 mod tdd_tests {
@@ -109,7 +109,7 @@ mod tdd_tests {
                     "Right-click me"
                 </ContextMenuTrigger>
                 <ContextMenuContent>
-                    <ContextMenuCheckboxItem checked=true>
+                    <ContextMenuCheckboxItem checked=RwSignal::new(true)>
                         "Checkbox Item"
                     </ContextMenuCheckboxItem>
                 </ContextMenuContent>
@@ -126,7 +126,7 @@ mod tdd_tests {
                     "Right-click me"
                 </ContextMenuTrigger>
                 <ContextMenuContent>
-                    <ContextMenuRadioGroup value="option1">
+                    <ContextMenuRadioGroup value=RwSignal::new("option1".to_string())>
                         <ContextMenuRadioItem value="option1">"Option 1"</ContextMenuRadioItem>
                         <ContextMenuRadioItem value="option2">"Option 2"</ContextMenuRadioItem>
                     </ContextMenuRadioGroup>
@@ -144,7 +144,7 @@ mod tdd_tests {
                     "Right-click me"
                 </ContextMenuTrigger>
                 <ContextMenuContent>
-                    <ContextMenuRadioGroup value="option1">
+                    <ContextMenuRadioGroup value=RwSignal::new("option1".to_string())>
                         <ContextMenuRadioItem value="option1" class=MaybeProp::from("custom-radio")>
                             "Custom Radio Item"
                         </ContextMenuRadioItem>

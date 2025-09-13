@@ -1,0 +1,1357 @@
+warning: profiles for the non root package will be ignored, specify profiles at the workspace root:
+package:   /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/leptos/Cargo.toml
+workspace: /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/Cargo.toml
+    Checking cfg-if v1.0.3
+    Checking once_cell v1.21.3
+    Checking memchr v2.7.5
+    Checking pin-project-lite v0.2.16
+    Checking unicode-ident v1.0.18
+    Checking libc v0.2.175
+    Checking futures-core v0.3.31
+    Checking serde v1.0.219
+    Checking futures-sink v0.3.31
+    Checking smallvec v1.15.1
+    Checking scopeguard v1.2.0
+    Checking slab v0.4.11
+    Checking futures-task v0.3.31
+    Checking futures-io v0.3.31
+    Checking wasm-bindgen-shared v0.2.101
+    Checking itoa v1.0.15
+    Checking futures-channel v0.3.31
+    Checking pin-utils v0.1.0
+    Checking lock_api v0.4.13
+    Checking zerofrom v0.1.6
+    Checking bytes v1.10.1
+    Checking stable_deref_trait v1.2.0
+    Checking thiserror v2.0.16
+    Checking ryu v1.0.20
+    Checking wasm-bindgen v0.2.101
+    Checking fnv v1.0.7
+    Checking yoke v0.8.0
+    Checking crossbeam-utils v0.8.21
+    Checking hashbrown v0.15.5
+    Checking equivalent v1.0.2
+    Checking litemap v0.8.0
+    Checking writeable v0.6.1
+    Checking parking v2.2.1
+    Checking regex-syntax v0.8.6
+    Checking zerovec v0.11.4
+    Checking zerotrie v0.2.2
+    Checking parking_lot_core v0.9.11
+    Checking num_cpus v1.17.0
+    Checking thiserror v1.0.69
+    Checking futures-util v0.3.31
+    Checking aho-corasick v1.1.3
+    Checking parking_lot v0.12.4
+    Checking icu_normalizer_data v2.0.0
+    Checking icu_properties_data v2.0.1
+    Checking concurrent-queue v2.5.0
+    Checking throw_error v0.3.0
+    Checking or_poisoned v0.1.0
+    Checking event-listener v5.4.1
+    Checking percent-encoding v2.3.2
+    Checking send_wrapper v0.6.0
+   Compiling server_fn_macro v0.8.7
+    Checking hashbrown v0.14.5
+    Checking form_urlencoded v1.2.2
+    Checking proc-macro2 v1.0.101
+    Checking event-listener-strategy v0.5.4
+    Checking indexmap v2.11.0
+    Checking async-lock v3.4.1
+    Checking slotmap v1.0.7
+    Checking js-sys v0.3.78
+    Checking utf8_iter v1.0.4
+    Checking same-file v1.0.6
+    Checking guardian v1.3.0
+    Checking dashmap v6.1.0
+    Checking rustc-hash v2.1.1
+    Checking either v1.15.0
+    Checking walkdir v2.5.0
+    Checking itertools v0.14.0
+    Checking anyhow v1.0.99
+    Checking tinystr v0.8.1
+    Checking potential_utf v0.1.3
+    Checking icu_collections v2.0.0
+    Checking quote v1.0.40
+    Checking icu_locale_core v2.0.0
+   Compiling tachys v0.2.7
+    Checking utf8-width v0.1.7
+    Checking winnow v0.7.13
+    Checking syn v2.0.106
+    Checking html-escape v0.2.13
+    Checking pin-project v1.1.10
+    Checking http v1.3.1
+    Checking either_of v0.1.6
+    Checking icu_provider v2.0.0
+   Compiling server_fn v0.8.6
+    Checking erased v0.1.2
+    Checking unicode-segmentation v1.12.0
+    Checking icu_normalizer v2.0.0
+    Checking regex-automata v0.4.10
+    Checking icu_properties v2.0.1
+    Checking yansi v1.0.1
+    Checking const_str_slice_concat v0.1.0
+    Checking drain_filter_polyfill v0.1.3
+    Checking serde_json v1.0.143
+    Checking oco_ref v0.2.1
+    Checking serde_spanned v1.0.0
+    Checking toml_datetime v0.7.0
+    Checking linear-map v1.2.0
+    Checking next_tuple v0.1.0
+    Checking serde_qs v0.15.0
+    Checking convert_case v0.6.0
+   Compiling server_fn_macro_default v0.8.5
+    Checking const_format v0.2.34
+   Compiling leptos_macro v0.8.8
+    Checking toml_parser v1.0.2
+    Checking xxhash-rust v0.8.15
+    Checking base64 v0.22.1
+    Checking inventory v0.3.21
+    Checking const-str v0.6.4
+    Checking pathdiff v0.2.3
+    Checking futures-executor v0.3.31
+    Checking typed-builder v0.21.2
+    Checking futures v0.3.31
+    Checking camino v1.1.12
+   Compiling leptos v0.8.8
+    Checking async-once-cell v0.5.4
+    Checking wasm_split_helpers v0.1.2
+   Compiling strsim v0.11.1
+   Compiling ident_case v1.0.1
+    Checking codee v0.3.2
+    Checking minimal-lexical v0.2.1
+   Compiling leptos-struct-component-macro v0.2.0
+    Checking idna_adapter v1.2.1
+   Compiling darling_core v0.20.11
+    Checking idna v1.1.0
+    Checking toml v0.9.5
+    Checking nom v7.1.3
+   Compiling num-traits v0.2.19
+    Checking core-foundation-sys v0.8.7
+   Compiling getrandom v0.3.3
+    Checking iana-time-zone v0.1.63
+    Checking mio v1.0.4
+    Checking url v2.5.7
+    Checking socket2 v0.6.0
+    Checking signal-hook-registry v1.4.6
+    Checking config v0.15.15
+   Compiling tokio-macros v2.5.0
+    Checking wasm-bindgen-futures v0.4.51
+    Checking web-sys v0.3.78
+    Checking any_spawner v0.3.0
+    Checking hydration_context v0.3.0
+    Checking chrono v0.4.41
+    Checking num-integer v0.1.46
+    Checking reactive_graph v0.2.6
+    Checking log v0.4.28
+    Checking tokio v1.47.1
+   Compiling rustix v1.0.8
+    Checking bitflags v2.9.4
+    Checking regex v1.11.2
+    Checking errno v0.3.13
+    Checking fastrand v2.3.0
+    Checking utf8parse v0.2.2
+    Checking anstyle-parse v0.2.7
+    Checking leptos_config v0.8.7
+    Checking anstyle v1.0.11
+    Checking colorchoice v1.0.4
+    Checking is_terminal_polyfill v1.70.1
+    Checking anstyle-query v1.1.4
+    Checking num-bigint v0.4.6
+    Checking anstream v0.6.20
+    Checking num-iter v0.1.45
+    Checking num-complex v0.4.6
+    Checking gloo-timers v0.3.0
+    Checking bytemuck v1.23.2
+    Checking clap_lex v0.7.5
+   Compiling heck v0.5.0
+    Checking proc-macro2-diagnostics v0.10.1
+    Checking rstml v0.12.1
+   Compiling clap_derive v4.5.47
+    Checking safe_arch v0.7.4
+    Checking rand v0.4.6
+    Checking clap_builder v4.5.47
+   Compiling matrixmultiply v0.3.10
+   Compiling num-bigint v0.1.45
+   Compiling zerocopy v0.8.27
+   Compiling darling_macro v0.20.11
+   Compiling darling v0.20.11
+    Checking rustc-serialize v0.3.25
+    Checking leptos_hot_reload v0.8.5
+    Checking tempfile v3.21.0
+   Compiling tailwind_fuse_macro v0.3.2
+    Checking reactive_stores v0.2.5
+    Checking wide v0.7.33
+    Checking approx v0.5.1
+    Checking num-rational v0.4.2
+    Checking rand_core v0.9.3
+    Checking tailwind_fuse v0.3.2
+    Checking uuid v1.18.1
+    Checking core-foundation v0.9.4
+   Compiling typenum v1.18.0
+   Compiling num-rational v0.1.43
+   Compiling num-complex v0.1.44
+   Compiling ucd-trie v0.1.7
+    Checking rawpointer v0.2.1
+    Checking tailwind_fuse v0.1.1
+    Checking security-framework-sys v2.14.0
+    Checking http v0.2.12
+   Compiling pest v2.8.1
+    Checking is-terminal v0.4.16
+    Checking tracing-core v0.1.34
+   Compiling nalgebra-macros v0.2.2
+    Checking humantime v2.2.0
+   Compiling native-tls v0.2.14
+   Compiling httparse v1.10.1
+    Checking clap v4.5.47
+    Checking termcolor v1.4.1
+    Checking tracing v0.1.41
+    Checking security-framework v2.11.1
+    Checking env_logger v0.10.2
+   Compiling derive_builder_core v0.20.2
+    Checking console_error_panic_hook v0.1.7
+    Checking wait-timeout v0.2.1
+   Compiling leptos_router v0.8.6
+    Checking simba v0.8.1
+    Checking bit-vec v0.8.0
+    Checking glob v0.3.3
+   Compiling system-configuration-sys v0.5.0
+    Checking try-lock v0.2.5
+    Checking quick-error v1.2.3
+    Checking bit-set v0.8.0
+    Checking want v0.3.1
+    Checking rusty-fork v0.3.0
+    Checking http-body v0.4.6
+    Checking num v0.1.43
+    Checking rand_xorshift v0.4.0
+    Checking rand v0.9.2
+   Compiling serde_with_macros v3.14.0
+    Checking rand v0.3.23
+    Checking socket2 v0.5.10
+   Compiling leptos_router_macro v0.8.5
+   Compiling pest_meta v2.8.1
+   Compiling portable-atomic v1.11.1
+    Checking ppv-lite86 v0.2.21
+   Compiling derive_builder_macro v0.20.2
+    Checking unicode-width v0.2.1
+    Checking num-modular v0.6.1
+    Checking tower-service v0.3.3
+    Checking rand_chacha v0.9.0
+    Checking httpdate v1.0.3
+    Checking lazy_static v1.5.0
+    Checking unarray v0.1.4
+    Checking console v0.15.11
+    Checking derive_builder v0.20.2
+    Checking proptest v1.7.0
+    Checking wasm-bindgen-test v0.3.51
+    Checking statistical v0.1.1
+    Checking serde_with v3.14.0
+    Checking num v0.4.3
+    Checking num-order v1.2.0
+    Checking ordered-float v3.9.2
+    Checking bitflags v1.3.2
+    Checking base64 v0.21.7
+    Checking system-configuration v0.5.1
+    Checking rustls-pemfile v1.0.4
+    Checking serde_urlencoded v0.7.1
+    Checking tokio-util v0.7.16
+   Compiling pest_generator v2.8.1
+    Checking tokio-native-tls v0.3.1
+    Checking online-statistics v0.2.6
+    Checking encoding_rs v0.8.35
+    Checking ipnet v2.11.0
+    Checking h2 v0.3.27
+    Checking shell-words v1.1.0
+    Checking number_prefix v0.4.0
+    Checking zeroize v1.8.1
+    Checking sync_wrapper v0.1.2
+    Checking mime v0.3.17
+    Checking indicatif v0.17.11
+    Checking dialoguer v0.11.0
+    Checking generate-component-tests v0.2.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/scripts/generate_component_tests)
+    Checking quality-assessment v0.2.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/scripts/run_quality_assessment)
+warning: unused import: `std::path::PathBuf`
+  --> scripts/run_quality_assessment/src/main.rs:11:5
+   |
+11 | use std::path::PathBuf;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `std::collections::HashMap`
+  --> scripts/run_quality_assessment/src/main.rs:12:5
+   |
+12 | use std::collections::HashMap;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: struct `TestResult` is never constructed
+  --> scripts/run_quality_assessment/src/main.rs:27:16
+   |
+27 |     pub struct TestResult {
+   |                ^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: fields `name` and `rust_features` are never read
+  --> scripts/run_quality_assessment/src/main.rs:39:13
+   |
+38 |     pub struct MockImplementation {
+   |                ------------------ fields in this struct
+39 |         pub name: String,
+   |             ^^^^
+...
+45 |         pub rust_features: Vec<String>,
+   |             ^^^^^^^^^^^^^
+   |
+   = note: `MockImplementation` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: `quality-assessment` (bin "quality-assessment") generated 4 warnings (run `cargo fix --bin "quality-assessment"` to apply 2 suggestions)
+   Compiling pest_derive v2.8.1
+    Checking handlebars v6.3.2
+    Checking shadcn-registry v0.2.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/registry)
+    Checking hyper v0.14.32
+    Checking nalgebra v0.32.6
+    Checking hyper-tls v0.5.0
+    Checking reqwest v0.11.27
+    Checking gloo-utils v0.2.0
+    Checking wasm-streams v0.4.2
+    Checking console_log v1.0.0
+    Checking gloo-net v0.6.0
+    Checking leptos-shadcn-performance-audit v0.1.0
+    Checking leptos-shadcn-performance-audit v0.1.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/performance-audit)
+warning: field `memory_snapshots` is never read
+   --> performance-audit/src/memory_safety.rs:107:5
+    |
+101 | pub struct MemorySafetyTester {
+    |            ------------------ field in this struct
+...
+107 |     memory_snapshots: Vec<MemorySnapshot>,
+    |     ^^^^^^^^^^^^^^^^
+    |
+    = note: `MemorySafetyTester` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` on by default
+
+warning: `leptos-shadcn-performance-audit` (lib) generated 1 warning
+    Checking leptos_server v0.8.5
+    Checking leptos_dom v0.8.6
+    Checking leptos-style v0.2.0
+    Checking leptos-struct-component v0.2.0
+    Checking leptos-node-ref v0.2.0
+    Checking leptos-shadcn-signal-management v0.1.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/signal-management)
+    Checking leptos-shadcn-lazy-loading v0.6.0
+    Checking leptos-shadcn-command v0.6.0
+    Checking leptos-shadcn-input-otp v0.6.0
+    Checking leptos-shadcn-error-boundary v0.6.0
+    Checking shadcn-ui-test-utils v0.2.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/test-utils)
+    Checking leptos-shadcn-breadcrumb v0.6.0
+warning: unused import: `std::path::PathBuf`
+ --> packages/test-utils/src/component_tester.rs:5:5
+  |
+5 | use std::path::PathBuf;
+  |     ^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `Framework`, `TestResult`, and `Theme`
+ --> packages/test-utils/src/quality_checker.rs:3:13
+  |
+3 | use crate::{Framework, Theme, TestResult, QualityResult};
+  |             ^^^^^^^^^  ^^^^^  ^^^^^^^^^^
+
+warning: unused imports: `Arc` and `Mutex`
+ --> packages/test-utils/src/quality_checker.rs:5:17
+  |
+5 | use std::sync::{Arc, Mutex};
+  |                 ^^^  ^^^^^
+
+    Checking leptos-shadcn-error-boundary v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/error-boundary)
+warning: unused import: `super::*`
+   --> packages/test-utils/src/property_testing.rs:299:9
+    |
+299 |     use super::*;
+    |         ^^^^^^^^
+
+    Checking leptos-shadcn-lazy-loading v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/lazy-loading)
+    Checking leptos-shadcn-button v0.3.0
+    Checking leptos-shadcn-popover v0.3.0
+    Checking leptos-shadcn-calendar v0.3.1
+    Checking leptos-shadcn-button v0.2.0
+warning: unused variable: `load`
+   --> packages/leptos/lazy-loading/src/lib.rs:158:9
+    |
+158 |     let load = move || {
+    |         ^^^^ help: if this is intentional, prefix it with an underscore: `_load`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+    Checking leptos-shadcn-input v0.2.0
+warning: `leptos-shadcn-lazy-loading` (lib) generated 1 warning
+    Checking leptos-shadcn-toggle v0.6.0
+    Checking leptos-shadcn-radio-group v0.6.0
+    Checking leptos-shadcn-dropdown-menu v0.6.0
+warning: method `leak_prevention_enabled` is never used
+   --> packages/signal-management/src/advanced_memory.rs:263:8
+    |
+261 | impl MemoryLeakDetector {
+    | ----------------------- method in this implementation
+262 |     /// Check if leak prevention is enabled
+263 |     fn leak_prevention_enabled(&self) -> bool {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: variant `Desc` is never constructed
+   --> packages/signal-management/src/component_migration.rs:443:5
+    |
+441 | enum SortDirection {
+    |      ------------- variant in this enum
+442 |     Asc,
+443 |     Desc,
+    |     ^^^^
+    |
+    = note: `SortDirection` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: variants `Success`, `Warning`, and `Error` are never constructed
+   --> packages/signal-management/src/component_migration.rs:473:5
+    |
+471 | enum ToastVariant {
+    |      ------------ variants in this enum
+472 |     Info,
+473 |     Success,
+    |     ^^^^^^^
+474 |     Warning,
+    |     ^^^^^^^
+475 |     Error,
+    |     ^^^^^
+    |
+    = note: `ToastVariant` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: variants `Week` and `Day` are never constructed
+   --> packages/signal-management/src/component_migration.rs:489:5
+    |
+487 | enum CalendarView {
+    |      ------------ variants in this enum
+488 |     Month,
+489 |     Week,
+    |     ^^^^
+490 |     Day,
+    |     ^^^
+    |
+    = note: `CalendarView` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: variable does not need to be mutable
+   --> packages/test-utils/src/component_tester.rs:327:13
+    |
+327 |         let mut start_time = std::time::Instant::now();
+    |             ----^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: `leptos-shadcn-signal-management` (lib) generated 4 warnings
+    Checking leptos-shadcn-navigation-menu v0.6.0
+    Checking leptos-shadcn-avatar v0.6.0
+    Checking leptos-shadcn-accordion v0.6.0
+    Checking leptos-shadcn-label v0.6.0
+    Checking leptos-shadcn-date-picker v0.6.0
+    Checking leptos-shadcn-pagination v0.6.0
+    Checking leptos-shadcn-form v0.7.0
+warning: unused variable: `max_memory_kb`
+   --> packages/test-utils/src/property_testing.rs:135:9
+    |
+135 |         max_memory_kb: u64
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_max_memory_kb`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `component`
+  --> packages/test-utils/src/snapshot_testing.rs:96:9
+   |
+96 |         component: V,
+   |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_component`
+
+    Checking leptos-shadcn-drawer v0.6.0
+    Checking leptos-shadcn-separator v0.6.0
+    Checking leptos-shadcn-checkbox v0.6.0
+    Checking leptos-shadcn-menubar v0.6.0
+    Checking leptos-shadcn-sheet v0.6.0
+    Checking leptos-shadcn-textarea v0.6.0
+    Checking leptos-shadcn-collapsible v0.6.0
+    Checking leptos-shadcn-switch v0.6.0
+warning: `shadcn-ui-test-utils` (lib) generated 7 warnings (run `cargo fix --lib -p shadcn-ui-test-utils` to apply 5 suggestions)
+    Checking leptos-shadcn-combobox v0.6.0
+    Checking leptos-shadcn-aspect-ratio v0.6.0
+    Checking leptos-shadcn-skeleton v0.6.0
+    Checking leptos-shadcn-card v0.6.0
+    Checking leptos-shadcn-tooltip v0.6.0
+    Checking leptos-shadcn-input v0.6.1
+    Checking leptos-shadcn-carousel v0.6.0
+    Checking leptos-shadcn-dialog v0.7.0
+    Checking leptos-shadcn-progress v0.6.0
+    Checking leptos-shadcn-alert-dialog v0.6.0
+    Checking leptos-shadcn-context-menu v0.6.0
+    Checking leptos-shadcn-badge v0.6.0
+    Checking leptos-shadcn-tabs v0.6.0
+    Checking leptos-shadcn-popover v0.6.0
+    Checking leptos-shadcn-calendar v0.6.0
+    Checking leptos-shadcn-alert v0.6.0
+    Checking leptos-shadcn-scroll-area v0.6.0
+    Checking leptos-shadcn-select v0.7.0
+    Checking leptos-shadcn-button v0.6.0
+    Checking leptos-shadcn-table v0.6.0
+    Checking leptos-shadcn-resizable v0.6.0
+    Checking leptos-shadcn-hover-card v0.6.0
+    Checking leptos-shadcn-slider v0.6.0
+    Checking leptos-shadcn-toast v0.6.0
+    Checking shadcn-ui-component-generator v0.2.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/component-generator)
+    Checking leptos-shadcn-card v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/card)
+    Checking leptos-shadcn-button v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/button)
+    Checking leptos-shadcn-label v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/label)
+    Checking leptos-shadcn-alert v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/alert)
+warning: unused variable: `label_state_for_disabled`
+  --> packages/leptos/label/src/signal_managed.rs:96:9
+   |
+96 |     let label_state_for_disabled = label_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_label_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+    Checking leptos-shadcn-input v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/input)
+    Checking leptos-shadcn-separator v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/separator)
+warning: unused variable: `alert_state_for_disabled`
+  --> packages/leptos/alert/src/signal_managed.rs:96:9
+   |
+96 |     let alert_state_for_disabled = alert_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_alert_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `children`
+  --> packages/leptos/button/src/signal_managed.rs:54:23
+   |
+54 |     #[prop(optional)] children: Option<Children>,
+   |                       ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_children`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `children`
+   --> packages/leptos/button/src/signal_managed.rs:191:23
+    |
+191 |     #[prop(optional)] children: Option<Children>,
+    |                       ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_children`
+
+warning: `leptos-shadcn-label` (lib) generated 1 warning
+    Checking rust-shadcn v0.2.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/cli)
+warning: unused variable: `separator_state_for_disabled`
+  --> packages/leptos/separator/src/signal_managed.rs:96:9
+   |
+96 |     let separator_state_for_disabled = separator_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_separator_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `is_validating`
+  --> packages/leptos/input/src/default.rs:26:10
+   |
+26 |     let (is_validating, set_is_validating) = signal(false);
+   |          ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_is_validating`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused import: `add::*`
+ --> packages/cli/src/commands/mod.rs:7:9
+  |
+7 | pub use add::*;
+  |         ^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `init::*`
+ --> packages/cli/src/commands/mod.rs:8:9
+  |
+8 | pub use init::*;
+  |         ^^^^^^^
+
+warning: unused import: `list::*`
+ --> packages/cli/src/commands/mod.rs:9:9
+  |
+9 | pub use list::*;
+  |         ^^^^^^^
+
+warning: unused import: `status::*`
+  --> packages/cli/src/commands/mod.rs:10:9
+   |
+10 | pub use status::*;
+   |         ^^^^^^^^^
+
+warning: unused import: `validate::*`
+  --> packages/cli/src/commands/mod.rs:11:9
+   |
+11 | pub use validate::*;
+   |         ^^^^^^^^^^^
+
+warning: function `is_rust_project` is never used
+ --> packages/cli/src/utils.rs:6:8
+  |
+6 | pub fn is_rust_project(path: &PathBuf) -> bool {
+  |        ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `get_project_root` is never used
+  --> packages/cli/src/utils.rs:11:8
+   |
+11 | pub fn get_project_root(path: &PathBuf) -> anyhow::Result<PathBuf> {
+   |        ^^^^^^^^^^^^^^^^
+
+warning: `rust-shadcn` (bin "rust-shadcn") generated 7 warnings (run `cargo fix --bin "rust-shadcn"` to apply 5 suggestions)
+    Checking leptos-shadcn-form v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/form)
+warning: `leptos-shadcn-button` (lib) generated 2 warnings
+    Checking leptos-shadcn-pagination v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/pagination)
+    Checking leptos-shadcn-date-picker v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/date-picker)
+warning: `leptos-shadcn-separator` (lib) generated 1 warning
+    Checking leptos-shadcn-radio-group v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/radio-group)
+    Checking leptos-shadcn-badge v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/badge)
+warning: `leptos-shadcn-alert` (lib) generated 1 warning
+    Checking leptos-shadcn-sheet v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/sheet)
+warning: unused variable: `badge_state_for_disabled`
+  --> packages/leptos/badge/src/signal_managed.rs:96:9
+   |
+96 |     let badge_state_for_disabled = badge_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_badge_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `radio_group_state_for_disabled`
+  --> packages/leptos/radio-group/src/signal_managed.rs:96:9
+   |
+96 |     let radio_group_state_for_disabled = radio_group_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_radio_group_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `handle_select`
+  --> packages/leptos/date-picker/src/default.rs:29:9
+   |
+29 |     let handle_select = move |date: CalendarDate| {
+   |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_handle_select`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+    Checking leptos-shadcn-table v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/table)
+warning: unused variable: `sheet_state_for_disabled`
+  --> packages/leptos/sheet/src/signal_managed.rs:96:9
+   |
+96 |     let sheet_state_for_disabled = sheet_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_sheet_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `form_state_for_disabled`
+  --> packages/leptos/form/src/signal_managed.rs:96:9
+   |
+96 |     let form_state_for_disabled = form_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_form_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `pagination_state_for_disabled`
+  --> packages/leptos/pagination/src/signal_managed.rs:96:9
+   |
+96 |     let pagination_state_for_disabled = pagination_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_pagination_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-badge` (lib) generated 1 warning
+    Checking leptos-shadcn-dialog v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/dialog)
+    Checking leptos-shadcn-aspect-ratio v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/aspect-ratio)
+warning: `leptos-shadcn-sheet` (lib) generated 1 warning
+    Checking leptos-shadcn-carousel v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/carousel)
+warning: unused variable: `table_state_for_disabled`
+  --> packages/leptos/table/src/signal_managed.rs:96:9
+   |
+96 |     let table_state_for_disabled = table_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_table_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-input` (lib) generated 1 warning
+    Checking leptos-shadcn-alert-dialog v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/alert-dialog)
+    Checking leptos-shadcn-avatar v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/avatar)
+warning: unused variable: `aspect_ratio_state_for_disabled`
+  --> packages/leptos/aspect-ratio/src/signal_managed.rs:96:9
+   |
+96 |     let aspect_ratio_state_for_disabled = aspect_ratio_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_aspect_ratio_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-date-picker` (lib) generated 1 warning
+    Checking leptos-shadcn-scroll-area v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/scroll-area)
+warning: unused variable: `carousel_state_for_disabled`
+  --> packages/leptos/carousel/src/signal_managed.rs:96:9
+   |
+96 |     let carousel_state_for_disabled = carousel_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_carousel_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `scroll_area_state_for_disabled`
+  --> packages/leptos/scroll-area/src/signal_managed.rs:96:9
+   |
+96 |     let scroll_area_state_for_disabled = scroll_area_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_scroll_area_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-pagination` (lib) generated 1 warning
+    Checking leptos-shadcn-textarea v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/textarea)
+warning: unused variable: `alert_dialog_state_for_disabled`
+  --> packages/leptos/alert-dialog/src/signal_managed.rs:96:9
+   |
+96 |     let alert_dialog_state_for_disabled = alert_dialog_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_alert_dialog_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-aspect-ratio` (lib) generated 1 warning
+    Checking leptos-shadcn-collapsible v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/collapsible)
+warning: `leptos-shadcn-radio-group` (lib) generated 1 warning
+    Checking leptos-shadcn-slider v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/slider)
+warning: unused variable: `dialog_state_for_disabled`
+  --> packages/leptos/dialog/src/signal_managed.rs:96:9
+   |
+96 |     let dialog_state_for_disabled = dialog_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_dialog_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `avatar_state_for_disabled`
+  --> packages/leptos/avatar/src/signal_managed.rs:96:9
+   |
+96 |     let avatar_state_for_disabled = avatar_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_avatar_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `variant`
+   --> packages/leptos/carousel/src/default.rs:142:29
+    |
+142 |     #[prop(into, optional)] variant: MaybeProp<String>,
+    |                             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_variant`
+
+warning: unused variable: `size`
+   --> packages/leptos/carousel/src/default.rs:143:29
+    |
+143 |     #[prop(into, optional)] size: MaybeProp<String>,
+    |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `collapsible_state_for_disabled`
+  --> packages/leptos/collapsible/src/signal_managed.rs:96:9
+   |
+96 |     let collapsible_state_for_disabled = collapsible_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_collapsible_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `variant`
+   --> packages/leptos/carousel/src/default.rs:197:29
+    |
+197 |     #[prop(into, optional)] variant: MaybeProp<String>,
+    |                             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_variant`
+
+warning: unused variable: `size`
+   --> packages/leptos/carousel/src/default.rs:198:29
+    |
+198 |     #[prop(into, optional)] size: MaybeProp<String>,
+    |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: `leptos-shadcn-scroll-area` (lib) generated 1 warning
+    Checking leptos-shadcn-switch v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/switch)
+warning: unused variable: `textarea_state_for_disabled`
+  --> packages/leptos/textarea/src/signal_managed.rs:96:9
+   |
+96 |     let textarea_state_for_disabled = textarea_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_textarea_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-form` (lib) generated 1 warning
+    Checking leptos-shadcn-context-menu v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/context-menu)
+warning: unused variable: `total_pages`
+   --> packages/leptos/table/src/data_table.rs:202:29
+    |
+202 |     #[prop(into, optional)] total_pages: MaybeProp<usize>,
+    |                             ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_total_pages`
+
+warning: unused variable: `row_height`
+   --> packages/leptos/table/src/data_table.rs:207:29
+    |
+207 |     #[prop(into, optional)] row_height: MaybeProp<u32>,
+    |                             ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_row_height`
+
+warning: unused variable: `visible_rows`
+   --> packages/leptos/table/src/data_table.rs:208:29
+    |
+208 |     #[prop(into, optional)] visible_rows: MaybeProp<usize>,
+    |                             ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_visible_rows`
+
+    Checking leptos-shadcn-ui v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos-shadcn-ui)
+warning: unused variable: `input_type`
+  --> packages/leptos/textarea/src/default.rs:13:29
+   |
+13 |     #[prop(into, optional)] input_type: MaybeProp<String>,
+   |                             ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_input_type`
+
+    Checking leptos_v0_8_test_app v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/leptos_v0_8_test_app)
+warning: `leptos-shadcn-carousel` (lib) generated 5 warnings
+    Checking enhanced-lazy-loading-demo v0.1.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/leptos)
+warning: unused variable: `input_type`
+  --> packages/leptos/textarea/src/new_york.rs:13:29
+   |
+13 |     #[prop(into, optional)] input_type: MaybeProp<String>,
+   |                             ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_input_type`
+
+warning: unused variable: `slider_state_for_disabled`
+  --> packages/leptos/slider/src/signal_managed.rs:96:9
+   |
+96 |     let slider_state_for_disabled = slider_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_slider_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `context_menu_state_for_disabled`
+  --> packages/leptos/context-menu/src/signal_managed.rs:96:9
+   |
+96 |     let context_menu_state_for_disabled = context_menu_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_context_menu_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `switch_state_for_disabled`
+  --> packages/leptos/switch/src/signal_managed.rs:96:9
+   |
+96 |     let switch_state_for_disabled = switch_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_switch_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-textarea` (lib) generated 3 warnings
+    Checking leptos-shadcn-checkbox v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/checkbox)
+warning: `leptos-shadcn-collapsible` (lib) generated 1 warning
+    Checking leptos-shadcn-accordion v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/accordion)
+    Checking leptos-shadcn-tooltip v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/tooltip)
+warning: `leptos-shadcn-avatar` (lib) generated 1 warning
+    Checking leptos-shadcn-combobox v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/combobox)
+warning: unused variable: `checkbox_state_for_disabled`
+  --> packages/leptos/checkbox/src/signal_managed.rs:96:9
+   |
+96 |     let checkbox_state_for_disabled = checkbox_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_checkbox_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-alert-dialog` (lib) generated 1 warning
+    Checking leptos-shadcn-hover-card v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/hover-card)
+warning: unused variable: `set_current_theme`
+ --> examples/leptos/src/app.rs:7:25
+  |
+7 |     let (current_theme, set_current_theme) = signal("default".to_string());
+  |                         ^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_current_theme`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `accordion_state_for_disabled`
+  --> packages/leptos/accordion/src/signal_managed.rs:96:9
+   |
+96 |     let accordion_state_for_disabled = accordion_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_accordion_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `combobox_state_for_disabled`
+  --> packages/leptos/combobox/src/signal_managed.rs:96:9
+   |
+96 |     let combobox_state_for_disabled = combobox_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_combobox_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `tooltip_state_for_disabled`
+  --> packages/leptos/tooltip/src/signal_managed.rs:96:9
+   |
+96 |     let tooltip_state_for_disabled = tooltip_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_tooltip_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `hover_card_state_for_disabled`
+  --> packages/leptos/hover-card/src/signal_managed.rs:96:9
+   |
+96 |     let hover_card_state_for_disabled = hover_card_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_hover_card_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-table` (lib) generated 4 warnings
+    Checking leptos-shadcn-popover v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/popover)
+warning: `leptos-shadcn-dialog` (lib) generated 1 warning
+    Checking leptos-shadcn-progress v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/progress)
+warning: `leptos-shadcn-checkbox` (lib) generated 1 warning
+    Checking leptos-shadcn-tabs v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/tabs)
+warning: unused variable: `popover_state_for_disabled`
+  --> packages/leptos/popover/src/signal_managed.rs:96:9
+   |
+96 |     let popover_state_for_disabled = popover_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_popover_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-hover-card` (lib) generated 1 warning
+    Checking leptos-shadcn-dropdown-menu v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/dropdown-menu)
+warning: unused variable: `progress_state_for_disabled`
+  --> packages/leptos/progress/src/signal_managed.rs:96:9
+   |
+96 |     let progress_state_for_disabled = progress_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_progress_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-accordion` (lib) generated 1 warning
+    Checking leptos-shadcn-breadcrumb v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/breadcrumb)
+warning: unused variable: `tabs_state_for_disabled`
+  --> packages/leptos/tabs/src/signal_managed.rs:96:9
+   |
+96 |     let tabs_state_for_disabled = tabs_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_tabs_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `dropdown_menu_state_for_disabled`
+  --> packages/leptos/dropdown-menu/src/signal_managed.rs:96:9
+   |
+96 |     let dropdown_menu_state_for_disabled = dropdown_menu_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_dropdown_menu_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-context-menu` (lib) generated 1 warning
+    Checking leptos-shadcn-select v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/select)
+warning: `leptos-shadcn-combobox` (lib) generated 1 warning
+    Checking leptos-shadcn-toast v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/toast)
+warning: `leptos-shadcn-popover` (lib) generated 1 warning
+    Checking leptos-shadcn-skeleton v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/skeleton)
+warning: `leptos-shadcn-tooltip` (lib) generated 1 warning
+    Checking leptos-shadcn-calendar v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/calendar)
+warning: `leptos-shadcn-switch` (lib) generated 1 warning
+    Checking leptos-shadcn-navigation-menu v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/navigation-menu)
+warning: unused variable: `navigation_menu_state_for_disabled`
+  --> packages/leptos/navigation-menu/src/signal_managed.rs:96:9
+   |
+96 |     let navigation_menu_state_for_disabled = navigation_menu_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_navigation_menu_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `breadcrumb_state_for_disabled`
+  --> packages/leptos/breadcrumb/src/signal_managed.rs:96:9
+   |
+96 |     let breadcrumb_state_for_disabled = breadcrumb_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_breadcrumb_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `mode`
+  --> packages/leptos/calendar/src/default.rs:45:29
+   |
+45 |     #[prop(into, optional)] mode: Signal<String>,
+   |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_mode`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `initial_focus`
+  --> packages/leptos/calendar/src/default.rs:49:29
+   |
+49 |     #[prop(into, optional)] initial_focus: Signal<bool>,
+   |                             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_initial_focus`
+
+warning: unused variable: `children`
+  --> packages/leptos/calendar/src/default.rs:51:23
+   |
+51 |     #[prop(optional)] children: Option<Children>,
+   |                       ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_children`
+
+warning: unused variable: `toast_state_for_disabled`
+  --> packages/leptos/toast/src/signal_managed.rs:96:9
+   |
+96 |     let toast_state_for_disabled = toast_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_toast_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `calendar_state_for_disabled`
+  --> packages/leptos/calendar/src/signal_managed.rs:96:9
+   |
+96 |     let calendar_state_for_disabled = calendar_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_calendar_state_for_disabled`
+
+warning: `leptos-shadcn-dropdown-menu` (lib) generated 1 warning
+    Checking leptos-shadcn-command v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/command)
+warning: unused variable: `skeleton_state_for_disabled`
+  --> packages/leptos/skeleton/src/signal_managed.rs:96:9
+   |
+96 |     let skeleton_state_for_disabled = skeleton_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_skeleton_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `select_state_for_disabled`
+  --> packages/leptos/select/src/signal_managed.rs:96:9
+   |
+96 |     let select_state_for_disabled = select_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_select_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-breadcrumb` (lib) generated 1 warning
+    Checking leptos-shadcn-input-otp v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/input-otp)
+warning: `leptos-shadcn-navigation-menu` (lib) generated 1 warning
+    Checking leptos-shadcn-drawer v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/drawer)
+warning: unused variable: `id`
+   --> packages/leptos/toast/src/sonner.rs:350:17
+    |
+350 |             let id = id.clone();
+    |                 ^^ help: if this is intentional, prefix it with an underscore: `_id`
+
+warning: `leptos-shadcn-calendar` (lib) generated 4 warnings
+    Checking leptos-shadcn-menubar v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/menubar)
+warning: unused variable: `input_otp_state_for_disabled`
+  --> packages/leptos/input-otp/src/signal_managed.rs:96:9
+   |
+96 |     let input_otp_state_for_disabled = input_otp_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_input_otp_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-slider` (lib) generated 1 warning
+    Checking leptos-shadcn-resizable v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/resizable)
+warning: unused variable: `menubar_state_for_disabled`
+  --> packages/leptos/menubar/src/signal_managed.rs:96:9
+   |
+96 |     let menubar_state_for_disabled = menubar_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_menubar_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> packages/leptos/resizable/src/default.rs:3:5
+  |
+3 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `command_state_for_disabled`
+  --> packages/leptos/command/src/signal_managed.rs:96:9
+   |
+96 |     let command_state_for_disabled = command_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_command_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> packages/leptos/resizable/src/resizable.rs:2:5
+  |
+2 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `leptos-shadcn-tabs` (lib) generated 1 warning
+    Checking leptos-shadcn-toggle v0.7.0 (/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/packages/leptos/toggle)
+warning: unused variable: `drawer_state_for_disabled`
+  --> packages/leptos/drawer/src/signal_managed.rs:96:9
+   |
+96 |     let drawer_state_for_disabled = drawer_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_drawer_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-input-otp` (lib) generated 1 warning
+warning: `leptos-shadcn-toast` (lib) generated 2 warnings
+warning: `leptos-shadcn-progress` (lib) generated 1 warning
+warning: unused variable: `toggle_state_for_disabled`
+  --> packages/leptos/toggle/src/signal_managed.rs:96:9
+   |
+96 |     let toggle_state_for_disabled = toggle_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_toggle_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `should_scale_background`
+   --> packages/leptos/drawer/src/default.rs:166:9
+    |
+166 |     let should_scale_background = expect_context::<Signal<bool>>();
+    |         ^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_should_scale_background`
+
+warning: unused variable: `resizable_state_for_disabled`
+  --> packages/leptos/resizable/src/signal_managed.rs:96:9
+   |
+96 |     let resizable_state_for_disabled = resizable_state.clone();
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_resizable_state_for_disabled`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `leptos-shadcn-menubar` (lib) generated 1 warning
+warning: `leptos-shadcn-command` (lib) generated 1 warning
+warning: `leptos-shadcn-skeleton` (lib) generated 1 warning
+warning: unused variable: `panel_sizes`
+  --> packages/leptos/resizable/src/default.rs:31:10
+   |
+31 |     let (panel_sizes, set_panel_sizes) = signal(Vec::<f64>::new());
+   |          ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_panel_sizes`
+
+warning: unused variable: `set_is_resizing`
+  --> packages/leptos/resizable/src/default.rs:32:23
+   |
+32 |     let (is_resizing, set_is_resizing) = signal(false);
+   |                       ^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_is_resizing`
+
+warning: unused variable: `set_resize_direction`
+  --> packages/leptos/resizable/src/default.rs:33:28
+   |
+33 |     let (resize_direction, set_resize_direction) = signal(direction.get().unwrap_or_default());
+   |                            ^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_resize_direction`
+
+warning: unused variable: `handle_resize`
+  --> packages/leptos/resizable/src/default.rs:51:9
+   |
+51 |     let handle_resize = move |sizes: Vec<f64>| {
+   |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_handle_resize`
+
+warning: unused variable: `keyboard_resize`
+  --> packages/leptos/resizable/src/default.rs:25:29
+   |
+25 |     #[prop(into, optional)] keyboard_resize: MaybeProp<bool>,
+   |                             ^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_keyboard_resize`
+
+warning: unused variable: `touch_support`
+  --> packages/leptos/resizable/src/default.rs:26:29
+   |
+26 |     #[prop(into, optional)] touch_support: MaybeProp<bool>,
+   |                             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_touch_support`
+
+warning: `leptos-shadcn-toggle` (lib) generated 1 warning
+warning: unused variable: `set_is_resizing`
+  --> packages/leptos/resizable/src/default.rs:89:23
+   |
+89 |     let (is_resizing, set_is_resizing) = signal(false);
+   |                       ^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_is_resizing`
+
+warning: unused variable: `handle_resize`
+   --> packages/leptos/resizable/src/default.rs:123:9
+    |
+123 |     let handle_resize = move |size: f64| {
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_handle_resize`
+
+warning: unused variable: `touch_support`
+   --> packages/leptos/resizable/src/default.rs:184:29
+    |
+184 |     #[prop(into, optional)] touch_support: MaybeProp<bool>,
+    |                             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_touch_support`
+
+warning: `leptos-shadcn-drawer` (lib) generated 2 warnings
+warning: unused variable: `panel_sizes`
+  --> packages/leptos/resizable/src/new_york.rs:30:10
+   |
+30 |     let (panel_sizes, set_panel_sizes) = signal(Vec::<f64>::new());
+   |          ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_panel_sizes`
+
+warning: unused variable: `set_is_resizing`
+  --> packages/leptos/resizable/src/new_york.rs:31:23
+   |
+31 |     let (is_resizing, set_is_resizing) = signal(false);
+   |                       ^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_is_resizing`
+
+warning: unused variable: `set_resize_direction`
+  --> packages/leptos/resizable/src/new_york.rs:32:28
+   |
+32 |     let (resize_direction, set_resize_direction) = signal(direction.get().unwrap_or_default());
+   |                            ^^^^^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_resize_direction`
+
+warning: unused variable: `handle_resize`
+  --> packages/leptos/resizable/src/new_york.rs:50:9
+   |
+50 |     let handle_resize = move |sizes: Vec<f64>| {
+   |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_handle_resize`
+
+warning: unused variable: `keyboard_resize`
+  --> packages/leptos/resizable/src/new_york.rs:24:29
+   |
+24 |     #[prop(into, optional)] keyboard_resize: MaybeProp<bool>,
+   |                             ^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_keyboard_resize`
+
+warning: unused variable: `touch_support`
+  --> packages/leptos/resizable/src/new_york.rs:25:29
+   |
+25 |     #[prop(into, optional)] touch_support: MaybeProp<bool>,
+   |                             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_touch_support`
+
+warning: unused variable: `component_name`
+  --> examples/leptos/src/dynamic_loader.rs:40:34
+   |
+40 |     pub fn load_component(&self, component_name: &str) -> Result<(), String> {
+   |                                  ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_component_name`
+
+warning: struct `Notification` is never constructed
+ --> examples/leptos/src/default/card/card.rs:9:8
+  |
+9 | struct Notification {
+  |        ^^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `notifications` is never used
+  --> examples/leptos/src/default/card/card.rs:15:4
+   |
+15 | fn notifications() -> Vec<Notification> {
+   |    ^^^^^^^^^^^^^
+
+warning: struct `Notification` is never constructed
+ --> examples/leptos/src/new_york/card/card.rs:9:8
+  |
+9 | struct Notification {
+  |        ^^^^^^^^^^^^
+
+warning: function `notifications` is never used
+  --> examples/leptos/src/new_york/card/card.rs:15:4
+   |
+15 | fn notifications() -> Vec<Notification> {
+   |    ^^^^^^^^^^^^^
+
+warning: struct `ComponentInfo` is never constructed
+ --> examples/leptos/src/lazy_loading.rs:9:8
+  |
+9 | struct ComponentInfo {
+  |        ^^^^^^^^^^^^^
+
+warning: field `name` is never read
+  --> examples/leptos/src/lazy_loading.rs:20:19
+   |
+18 | #[component]
+   | ------------ field in this struct
+19 | pub fn LazyComponentWrapper(
+20 |     #[prop(into)] name: String,
+   |                   ^^^^
+
+warning: field `children` is never read
+   --> examples/leptos/src/lazy_loading.rs:414:19
+    |
+412 | #[component]
+    | ------------ field in this struct
+413 | pub fn LazyLoadingProvider(
+414 |     #[prop(into)] children: Children,
+    |                   ^^^^^^^^
+
+warning: struct `ComponentModule` is never constructed
+ --> examples/leptos/src/dynamic_loader.rs:9:12
+  |
+9 | pub struct ComponentModule {
+  |            ^^^^^^^^^^^^^^^
+
+warning: struct `LoadingState` is never constructed
+  --> examples/leptos/src/dynamic_loader.rs:15:12
+   |
+15 | pub struct LoadingState {
+   |            ^^^^^^^^^^^^
+
+warning: struct `DynamicLoader` is never constructed
+  --> examples/leptos/src/dynamic_loader.rs:23:12
+   |
+23 | pub struct DynamicLoader {
+   |            ^^^^^^^^^^^^^
+
+warning: multiple associated items are never used
+  --> examples/leptos/src/dynamic_loader.rs:29:12
+   |
+28 | impl DynamicLoader {
+   | ------------------ associated items in this implementation
+29 |     pub fn new() -> Self {
+   |            ^^^
+...
+40 |     pub fn load_component(&self, component_name: &str) -> Result<(), String> {
+   |            ^^^^^^^^^^^^^^
+...
+46 |     pub fn is_component_loaded(&self, component_name: &str) -> bool {
+   |            ^^^^^^^^^^^^^^^^^^^
+...
+50 |     pub fn get_loaded_component(&self, component_name: &str) -> Option<ComponentModule> {
+   |            ^^^^^^^^^^^^^^^^^^^^
+...
+54 |     pub fn get_loading_progress(&self) -> f64 {
+   |            ^^^^^^^^^^^^^^^^^^^^
+...
+58 |     pub fn is_loading(&self) -> bool {
+   |            ^^^^^^^^^^
+...
+62 |     pub fn get_error(&self) -> Option<String> {
+   |            ^^^^^^^^^
+...
+66 |     pub fn clear_error(&self) {
+   |            ^^^^^^^^^^^
+...
+74 |     pub fn get_loaded_modules_count(&self) -> usize {
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^
+...
+78 |     pub fn get_total_loaded_size(&self) -> usize {
+   |            ^^^^^^^^^^^^^^^^^^^^^
+
+warning: field `name` is never read
+   --> examples/leptos/src/dynamic_loader.rs:181:5
+    |
+179 | #[component]
+    | ------------ field in this struct
+180 | pub fn DynamicComponentWrapper(
+181 |     name: String,
+    |     ^^^^
+
+warning: unused variable: `set_is_resizing`
+  --> packages/leptos/resizable/src/new_york.rs:88:23
+   |
+88 |     let (is_resizing, set_is_resizing) = signal(false);
+   |                       ^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_set_is_resizing`
+
+warning: unused variable: `handle_resize`
+   --> packages/leptos/resizable/src/new_york.rs:122:9
+    |
+122 |     let handle_resize = move |size: f64| {
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_handle_resize`
+
+warning: `enhanced-lazy-loading-demo` (bin "enhanced-lazy-loading-demo") generated 14 warnings
+warning: unused variable: `touch_support`
+   --> packages/leptos/resizable/src/new_york.rs:183:29
+    |
+183 |     #[prop(into, optional)] touch_support: MaybeProp<bool>,
+    |                             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_touch_support`
+
+warning: `leptos-shadcn-select` (lib) generated 1 warning
+warning: unused variable: `size_diff`
+   --> packages/leptos/resizable/src/resizable.rs:152:13
+    |
+152 |         let size_diff = new_size - old_size;
+    |             ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_size_diff`
+
+warning: unused variable: `direction`
+   --> packages/leptos/resizable/src/resizable.rs:185:9
+    |
+185 |         direction: ResizeDirection,
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_direction`
+
+warning: unused variable: `panel_index`
+   --> packages/leptos/resizable/src/resizable.rs:193:9
+    |
+193 |         panel_index: usize,
+    |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_panel_index`
+
+warning: `leptos-shadcn-resizable` (lib) generated 24 warnings (run `cargo fix --lib -p leptos-shadcn-resizable` to apply 2 suggestions)
+    Finished `release` profile [optimized] target(s) in 2m 28s

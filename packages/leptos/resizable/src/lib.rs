@@ -1,5 +1,6 @@
 //! Leptos port of shadcn/ui resizable
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 pub mod resizable;
@@ -15,3 +16,7 @@ mod tests;
 
 #[cfg(test)]
 mod resizable_tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

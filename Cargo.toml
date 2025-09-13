@@ -16,6 +16,7 @@ members = [
     "packages/cli",
     "packages/test-utils",
     "packages/component-generator",
+    "packages/signal-management",  # Signal lifecycle management for Leptos 0.8.8+
     "packages/leptos-shadcn-ui",  # Re-added for final publishing
     "performance-audit",  # Performance audit system
     "leptos_v0_8_test_app",  # Leptos v0.8 compatibility test app
@@ -107,6 +108,7 @@ env_logger = "0.11"
 log = "0.4"
 console_log = "1.0"
 shadcn-ui-test-utils = { path = "packages/test-utils" }
+leptos-shadcn-signal-management = { path = "packages/signal-management" }
 
 # Individual component packages
 leptos-shadcn-button = { path = "packages/leptos/button" }

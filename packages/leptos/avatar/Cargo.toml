@@ -15,6 +15,7 @@ leptos-style = { workspace = true }
 tailwind_fuse = { workspace = true }
 web-sys = { workspace = true }
 wasm-bindgen = { workspace = true }
+leptos-shadcn-signal-management = { path = "../../signal-management" }
 
 [dev-dependencies]
 wasm-bindgen-test = { workspace = true }

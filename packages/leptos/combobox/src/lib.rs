@@ -2,6 +2,7 @@
 //! 
 //! Provides an autocomplete input component with a list of suggestions.
 
+pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
@@ -12,3 +13,7 @@ pub use default::{Combobox, ComboboxOption};
 mod tests;
 #[cfg(test)]
 mod tdd_tests;
+
+
+// Signal-managed exports
+pub use signal_managed::*;

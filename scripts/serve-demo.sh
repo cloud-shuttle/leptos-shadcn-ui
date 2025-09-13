@@ -24,3 +24,4 @@ else
     echo "   Or use any other HTTP server to serve the demo directory"
     exit 1
 fi
+
