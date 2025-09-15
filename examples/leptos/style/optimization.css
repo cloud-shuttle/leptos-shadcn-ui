@@ -1,3 +1,45 @@
+/* CSS Variables for Theme Support */
+:root {
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent-color: #3b82f6;
+    --accent-bg: #dbeafe;
+    --accent-hover: #2563eb;
+    --muted-bg: #f8fafc;
+    --muted-color: #9ca3af;
+    --success-color: #059669;
+    --success-bg: #f0fdf4;
+    --error-color: #dc2626;
+    --error-bg: #fef2f2;
+    --error-hover: #b91c1c;
+    --warning-color: #d97706;
+    --warning-bg: #fef3c7;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --card-bg: #1e293b;
+        --border-color: #334155;
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --accent-color: #60a5fa;
+        --accent-bg: #1e3a8a;
+        --accent-hover: #3b82f6;
+        --muted-bg: #0f172a;
+        --muted-color: #64748b;
+        --success-color: #10b981;
+        --success-bg: #064e3b;
+        --error-color: #f87171;
+        --error-bg: #7f1d1d;
+        --error-hover: #dc2626;
+        --warning-color: #fbbf24;
+        --warning-bg: #78350f;
+    }
+}
+
 /* Bundle Optimization & Lazy Loading Styles */
 
 .app-container {

@@ -65,7 +65,7 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox 
                 options=options
-                on_change=Some(callback)
+                on_change=callback
             />
         };
         assert!(true, "Combobox with callback should render");
@@ -161,7 +161,7 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox 
                 options=options
-                on_open_change=Some(callback)
+                on_open_change=callback
             />
         };
         assert!(true, "Combobox with open callback should render");
@@ -556,7 +556,7 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox 
                 options=options
-                on_change=Some(callback)
+                on_change=callback
             />
         };
         assert!(true, "Callback execution should work");
@@ -573,7 +573,7 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox 
                 options=options
-                on_change=Some(change_callback)
+                on_change=change_callback
                 on_open_change=Some(open_callback)
             />
         };
@@ -649,7 +649,7 @@ mod tdd_tests {
                 disabled=disabled
                 open=open
                 style=style
-                on_change=Some(change_callback)
+                on_change=change_callback
                 on_open_change=Some(open_callback)
                 class=MaybeProp::from("combined-props")
                 id=MaybeProp::from("combined-combobox")

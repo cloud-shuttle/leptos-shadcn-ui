@@ -2,9 +2,10 @@
 
 ## 🎯 Release Overview
 **Version**: v0.1.0  
-**Release Type**: Initial Release - Core Components  
+**Release Type**: Initial Release - Core Components with WASM Support  
 **Components**: 25 production-ready components  
 **Target**: crates.io  
+**Key Feature**: tailwind-rs-core v0.4.0 integration for WASM compatibility  
 
 ## ✅ Pre-Release Checklist
 
@@ -20,8 +21,17 @@
 - [x] Package names updated to `leptos-shadcn-*` convention
 - [x] `publish = false` removed from all packages
 - [x] Workspace dependencies properly configured
+- [x] Updated to tailwind-rs-core v0.4.0 for WASM compatibility
+- [x] Fixed compilation errors in menubar, combobox, and drawer packages
 
-### 3. Component Testing
+### 3. WASM Integration & Dynamic Styling
+- [x] Updated to tailwind-rs-core v0.4.0 (WASM-compatible)
+- [x] Updated to tailwind-rs-wasm v0.4.0 for dynamic class generation
+- [x] Demo working with dynamic color API
+- [x] Fixed WASM compilation issues (removed tokio/mio dependencies)
+- [x] Tailwind CSS properly configured with safelist for dynamic classes
+
+### 4. Component Testing
 - [x] Button component - ✅ Working
 - [x] Input component - ✅ Working
 - [x] Label component - ✅ Working

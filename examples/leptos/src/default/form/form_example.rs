@@ -66,7 +66,7 @@ pub fn FormExample() -> impl IntoView {
                         <FormLabel for_field="name">"Name"</FormLabel>
                         <FormControl>
                             <Input
-                                id="name"
+                                id="form-name"
                                 placeholder="Enter your name"
                             />
                         </FormControl>
@@ -79,7 +79,7 @@ pub fn FormExample() -> impl IntoView {
                         <FormLabel for_field="email">"Email"</FormLabel>
                         <FormControl>
                             <Input
-                                id="email"
+                                id="form-email"
                                 input_type="email"
                                 placeholder="Enter your email"
                             />
@@ -96,7 +96,7 @@ pub fn FormExample() -> impl IntoView {
                         <FormLabel for_field="password">"Password"</FormLabel>
                         <FormControl>
                             <Input
-                                id="password"
+                                id="form-password"
                                 input_type="password"
                                 placeholder="Enter your password"
                             />

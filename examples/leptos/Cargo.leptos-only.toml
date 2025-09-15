@@ -1,0 +1,19 @@
+[package]
+name = "leptos-only-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+leptos = { version = "0.8", features = ["csr"] }
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+web-sys = "0.3"
+js-sys = "0.3"
+
+# WASM-compatible getrandom
+getrandom = { version = "0.2", features = ["js"] }
+
+# Binary target
+[[bin]]
+name = "leptos-only-test"
+path = "src/main.rs"

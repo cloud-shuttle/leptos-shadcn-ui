@@ -27,9 +27,9 @@ pub fn DialogExample() -> impl IntoView {
                 </DialogHeader>
                 <div class="grid gap-4 py-4">
                     <div class="grid grid-cols-4 items-center gap-4">
-                        <label class="text-right" for="name">"Name"</label>
+                        <label class="text-right" for="ny-dialog-name">"Name"</label>
                         <input
-                            id="name"
+                            id="ny-dialog-name"
                             value="Pedro Duarte"
                             class="col-span-3"
                         />

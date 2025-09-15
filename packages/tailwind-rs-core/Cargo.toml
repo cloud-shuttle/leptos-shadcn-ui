@@ -1,0 +1,46 @@
+[package]
+name = "tailwind-rs-core"
+version = "0.1.0"
+edition = "2021"
+description = "Type-safe Tailwind CSS class generation for Rust web frameworks"
+homepage = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+license = "MIT"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+keywords = ["tailwind", "css", "rust", "web", "styling", "type-safe"]
+categories = ["web-programming", "development-tools"]
+
+[dependencies]
+# Core dependencies
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "2.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# For class validation and merging
+regex = "1.0"
+indexmap = "2.0"
+
+# For dynamic class generation
+once_cell = "1.0"
+
+# Leptos integration (optional)
+leptos = { version = "0.8", optional = true }
+
+# Macros (optional)
+tailwind-rs-macros = { version = "0.3.0", optional = true }
+
+[dev-dependencies]
+# Testing
+criterion = "0.5"
+proptest = "1.0"
+
+# For macro testing
+trybuild = "1.0"
+
+[features]
+default = ["leptos", "validation", "macros"]
+leptos = ["dep:leptos"]
+validation = []
+macros = ["dep:tailwind-rs-macros"]

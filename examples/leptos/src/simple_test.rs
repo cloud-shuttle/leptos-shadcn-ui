@@ -1,29 +1,34 @@
 use leptos::*;
-use leptos::prelude::*;
+use tailwind_rs_core::Color;
 
 #[component]
 pub fn SimpleTest() -> impl IntoView {
     view! {
-        <div class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-8">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl font-bold text-center mb-8 text-blue-800">
-                    "🚀 Simple WASM Test"
-                </h1>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h2 class="text-2xl font-semibold mb-4 text-gray-800">
-                        "This is a simple test component"
-                    </h2>
-                    <p class="text-gray-600 mb-4">
-                        "If you can see this, WASM rendering is working!"
+        <div class="min-h-screen bg-white text-gray-900 p-8">
+            <h1 class="text-4xl font-bold mb-8">"Tailwind-RS-Core v0.3.0 Test"</h1>
+            
+            <div class="space-y-4">
+                <div class="p-4 bg-blue-100 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-2">"Color Test"</h2>
+                    <p class="text-gray-700">
+                        "Testing Color::Blue: " {Color::Blue.to_string()}
                     </p>
-                    <div class="bg-blue-100 p-4 rounded-lg">
-                        <p class="text-blue-800 font-medium">
-                            "✅ WASM is rendering correctly"
-                        </p>
-                    </div>
+                </div>
+                
+                <div class="p-4 bg-green-100 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-2">"Basic Styling"</h2>
+                    <p class="text-gray-700">
+                        "This should have a green background and proper text styling."
+                    </p>
+                </div>
+                
+                <div class="p-4 bg-red-100 rounded-lg">
+                    <h2 class="text-xl font-semibold mb-2">"Component Integration"</h2>
+                    <p class="text-gray-700">
+                        "If you can see this, the basic integration is working!"
+                    </p>
                 </div>
             </div>
         </div>
     }
 }
-

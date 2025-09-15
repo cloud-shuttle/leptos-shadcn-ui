@@ -1,19 +1,13 @@
-mod app;
-mod default;
-mod new_york;
-mod lazy_loading;
-mod bundle_analyzer;
-mod dynamic_loader;
-mod enhanced_demo;
+mod minimal_test;
 
 use leptos::*;
 use leptos::prelude::*;
 use leptos::mount::mount_to_body;
-use crate::app::App;
+use crate::minimal_test::MinimalTest;
 
 fn main() {
     // Set the page title
-    document().set_title("leptos-shadcn-ui Demo - Performance Champion");
+    document().set_title("Minimal Tailwind-RS-Core Test");
     
-    mount_to_body(|| view! { <App /> })
+    mount_to_body(|| view! { <MinimalTest /> })
 }

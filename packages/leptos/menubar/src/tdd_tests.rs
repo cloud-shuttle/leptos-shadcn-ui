@@ -55,7 +55,7 @@ mod tdd_tests {
             // Callback logic
         });
         let _menubar_view = view! {
-            <Menubar on_click=Some(callback)>
+            <Menubar on_click=callback>
                 "Clickable Menubar"
             </Menubar>
         };
@@ -471,7 +471,7 @@ mod tdd_tests {
             // Callback execution test
         });
         let _menubar_view = view! {
-            <Menubar on_click=Some(callback)>
+            <Menubar on_click=callback>
                 "Callback Menubar"
             </Menubar>
         };
@@ -537,7 +537,7 @@ mod tdd_tests {
                 size=MaybeProp::from("lg")
                 disabled=disabled
                 style=style
-                on_click=Some(callback)
+                on_click=callback
                 class=MaybeProp::from("combined-props")
                 id=MaybeProp::from("combined-menubar")
             >

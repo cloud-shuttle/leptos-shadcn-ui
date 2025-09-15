@@ -389,6 +389,7 @@ pub mod performance {
 mod tests {
     use super::*;
     use super::strategies::*;
+    use proptest::strategy::ValueTree;
     
     #[test]
     fn test_css_class_strategy() {

@@ -1,0 +1,25 @@
+{
+  "name": "leptos-shadcn-demo-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for Leptos ShadCN UI Demo",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:visual": "playwright test --grep @visual",
+    "test:interaction": "playwright test --grep @interaction",
+    "test:performance": "playwright test --grep @performance",
+    "test:tailwind": "playwright test --grep @tailwind-rs-core"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "playwright": "^1.40.0",
+    "tailwindcss": "^4.1.13",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

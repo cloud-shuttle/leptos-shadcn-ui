@@ -584,8 +584,8 @@ mod tests {
         let mut tree3 = tree1.clone();
         tree3.role = Some("link".to_string());
 
-        assert!(tester.accessibility_trees_match(&Some(tree1), &Some(tree2)));
-        assert!(!tester.accessibility_trees_match(&Some(tree1), &Some(tree3)));
+        assert!(tester.accessibility_trees_match(&Some(tree1.clone()), &Some(tree2)));
+        assert!(!tester.accessibility_trees_match(&Some(tree1.clone()), &Some(tree3)));
         assert!(tester.accessibility_trees_match(&None, &None));
         assert!(!tester.accessibility_trees_match(&Some(tree1), &None));
     }

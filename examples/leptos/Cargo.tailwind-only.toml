@@ -1,0 +1,19 @@
+[package]
+name = "tailwind-only-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tailwind-rs-core = "0.3.0"
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+web-sys = "0.3"
+js-sys = "0.3"
+
+# WASM-compatible getrandom
+getrandom = { version = "0.2", features = ["js"] }
+
+# Binary target
+[[bin]]
+name = "tailwind-only-test"
+path = "src/main.rs"

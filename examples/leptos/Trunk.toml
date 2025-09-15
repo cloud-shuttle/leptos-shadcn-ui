@@ -1,3 +1,18 @@
-# Production build optimizations
-# Note: Trunk doesn't support all these optimizations in TOML
-# We'll use Cargo.toml profiles instead for WASM optimization
+# Trunk configuration for Leptos ShadCN UI Demo
+[build]
+target = "index.html"
+dist = "dist"
+public_url = "/"
+
+[serve]
+port = 8080
+open = false
+watch = true
+
+[clean]
+dist = "dist"
+cargo = false
+
+# Workspace configuration
+[workspace]
+root = "."

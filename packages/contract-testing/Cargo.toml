@@ -1,0 +1,46 @@
+[package]
+name = "leptos-shadcn-contract-testing"
+version = "0.8.0"
+edition = "2021"
+description = "Contract testing framework for leptos-shadcn-ui components"
+license = "MIT"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+
+[dependencies]
+leptos = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+proptest = "1.0"
+semver = "1.0"
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+# Testing utilities
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread", "time"] }
+env_logger = "0.10"
+
+# Optional dependencies
+criterion = { version = "0.5", features = ["html_reports"], optional = true }
+wasm-bindgen-test = { version = "0.3", optional = true }
+web-sys = { version = "0.3", features = ["console"], optional = true }
+
+[dev-dependencies]
+tokio-test = "0.4"
+tempfile = "3.0"
+
+[features]
+default = ["validation", "performance-testing"]
+validation = []
+performance-testing = ["dep:criterion"]
+wasm-testing = ["dep:wasm-bindgen-test", "dep:web-sys"]
+
+[[bin]]
+name = "fix_dependencies"
+path = "src/bin/fix_dependencies.rs"
+
+# Benchmarks will be added later
+# [[bench]]
+# name = "contract_performance"
+# harness = false
+# required-features = ["performance-testing"]

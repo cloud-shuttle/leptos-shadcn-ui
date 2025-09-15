@@ -233,6 +233,7 @@ mod memory_management_tests {
 #[cfg(test)]
 mod advanced_memory_tests {
     use super::*;
+    use leptos::prelude::ArcRwSignal;
     
     // Test 1: Memory pressure detection
     #[test]

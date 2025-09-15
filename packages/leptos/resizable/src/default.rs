@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 use leptos_style::Style;
-use std::collections::HashMap;
 
 /// Resize direction for panels
 #[derive(Debug, Clone, Copy, PartialEq)]

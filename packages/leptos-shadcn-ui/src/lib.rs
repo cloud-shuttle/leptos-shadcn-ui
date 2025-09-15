@@ -90,7 +90,7 @@ pub use leptos_shadcn_toast::default::*;
 #[cfg(feature = "table")]
 pub use leptos_shadcn_table::default::*;
 #[cfg(feature = "calendar")]
-pub use leptos_shadcn_calendar::*;
+pub use leptos_shadcn_calendar::{default::*, Calendar, CalendarProps};
 #[cfg(feature = "date-picker")]
 pub use leptos_shadcn_date_picker::*;
 #[cfg(feature = "pagination")]
@@ -110,7 +110,7 @@ pub use leptos_shadcn_command::*;
 #[cfg(feature = "input-otp")]
 pub use leptos_shadcn_input_otp::*;
 #[cfg(feature = "breadcrumb")]
-pub use leptos_shadcn_breadcrumb::*;
+pub use leptos_shadcn_breadcrumb::{default::*, Breadcrumb, BreadcrumbProps};
 #[cfg(feature = "lazy-loading")]
 pub use leptos_shadcn_lazy_loading::*;
 #[cfg(feature = "error-boundary")]

@@ -136,4 +136,58 @@ mod tests {
         let error_result: Result<i32, &str> = Err("Error");
         assert_eq!(handle_error(error_result), None);
     }
+
+    #[test]
+    fn test_error_info_without_technical_details() {
+        let error = ErrorInfo {
+            message: "Simple error".to_string(),
+            technical_details: None,
+        };
+        
+        assert_eq!(error.message, "Simple error");
+        assert_eq!(error.technical_details, None);
+    }
+
+    #[test]
+    fn test_create_user_error_without_technical() {
+        let error = create_user_error("User message", None);
+        assert_eq!(error.message, "User message");
+        assert_eq!(error.technical_details, None);
+    }
+
+    #[test]
+    fn test_use_error_handler() {
+        let (has_error, set_has_error, set_error_info) = use_error_handler();
+        
+        // Initially no error
+        assert!(!has_error.get());
+        
+        // Set an error
+        let error = ErrorInfo {
+            message: "Test error".to_string(),
+            technical_details: None,
+        };
+        set_error_info.set(Some(error));
+        set_has_error.set(true);
+        
+        // Check error is set
+        assert!(has_error.get());
+    }
+
+    #[test]
+    fn test_error_info_clone_and_debug() {
+        let error = ErrorInfo {
+            message: "Test error".to_string(),
+            technical_details: Some("Technical".to_string()),
+        };
+        
+        let cloned = error.clone();
+        assert_eq!(error.message, cloned.message);
+        assert_eq!(error.technical_details, cloned.technical_details);
+        
+        // Test debug formatting
+        let debug_str = format!("{:?}", error);
+        assert!(debug_str.contains("Test error"));
+        assert!(debug_str.contains("Technical"));
+    }
 }

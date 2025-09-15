@@ -82,3 +82,24 @@
             'calt' 1;
     }
 }
+
+/* Manual classes for testing */
+.min-h-screen { min-height: 100vh; }
+.bg-white { background-color: rgb(255 255 255); }
+.bg-blue-100 { background-color: rgb(219 234 254); }
+.bg-green-100 { background-color: rgb(220 252 231); }
+.text-gray-900 { color: rgb(17 24 39); }
+.text-gray-700 { color: rgb(55 65 81); }
+.text-blue-800 { color: rgb(30 64 175); }
+.text-blue-700 { color: rgb(29 78 216); }
+.text-blue-600 { color: rgb(37 99 235); }
+.p-8 { padding: 2rem; }
+.p-4 { padding: 1rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-2 { margin-bottom: 0.5rem; }

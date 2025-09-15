@@ -1,0 +1,144 @@
+[package]
+name = "enhanced-lazy-loading-demo"
+description = "Enhanced lazy loading system with advanced search, filters, and professional UI"
+publish = false
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/your-username/enhanced-lazy-loading"
+keywords = ["leptos", "lazy-loading", "component-library", "ui-components"]
+categories = ["web-programming", "gui", "development-tools"]
+
+# Production build profiles with aggressive optimization
+[profile.release]
+opt-level = 3
+codegen-units = 1
+strip = true
+incremental = false
+lto = true
+
+[profile.release.package."*"]
+opt-level = 3
+codegen-units = 1
+strip = true
+
+# Feature sets for different optimization levels
+[features]
+default = []
+essential = []
+essential_with_icons = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme"]
+all_components = [
+    "button", "input", "label", "card", "separator", "alert", "badge", "checkbox", "switch", 
+    "radio-group", "select", "textarea", "tabs", "accordion", "dialog", "popover", "tooltip", 
+    "toast", "skeleton", "progress", "slider", "table", "pagination", "aspect-ratio", 
+    "alert-dialog", "scroll-area", "hover-card", "command", "breadcrumb", "dropdown-menu", 
+    "context-menu", "navigation-menu", "input-otp", "default_theme", "new_york_theme"
+]
+
+# Individual component features
+button = ["dep:leptos-shadcn-button"]
+input = ["dep:leptos-shadcn-input"]
+label = ["dep:leptos-shadcn-label"]
+card = ["dep:leptos-shadcn-card"]
+separator = ["dep:leptos-shadcn-separator"]
+alert = ["dep:leptos-shadcn-alert"]
+badge = ["dep:leptos-shadcn-badge"]
+checkbox = ["dep:leptos-shadcn-checkbox"]
+switch = ["dep:leptos-shadcn-switch"]
+radio-group = ["dep:leptos-shadcn-radio-group"]
+select = ["dep:leptos-shadcn-select"]
+textarea = ["dep:leptos-shadcn-textarea"]
+tabs = ["dep:leptos-shadcn-tabs"]
+accordion = ["dep:leptos-shadcn-accordion"]
+dialog = ["dep:leptos-shadcn-dialog"]
+popover = ["dep:leptos-shadcn-popover"]
+tooltip = ["dep:leptos-shadcn-tooltip"]
+toast = ["dep:leptos-shadcn-toast"]
+skeleton = ["dep:leptos-shadcn-skeleton"]
+progress = ["dep:leptos-shadcn-progress"]
+slider = ["dep:leptos-shadcn-slider"]
+table = ["dep:leptos-shadcn-table"]
+pagination = ["dep:leptos-shadcn-pagination"]
+aspect-ratio = ["dep:leptos-shadcn-aspect-ratio"]
+alert-dialog = ["dep:leptos-shadcn-alert-dialog"]
+scroll-area = ["dep:leptos-shadcn-scroll-area"]
+hover-card = ["dep:leptos-shadcn-hover-card"]
+command = ["dep:leptos-shadcn-command"]
+breadcrumb = ["dep:leptos-shadcn-breadcrumb"]
+dropdown-menu = ["dep:leptos-shadcn-dropdown-menu"]
+context-menu = ["dep:leptos-shadcn-context-menu"]
+navigation-menu = ["dep:leptos-shadcn-navigation-menu"]
+input-otp = ["dep:leptos-shadcn-input-otp"]
+default_theme = []
+new_york_theme = []
+
+[dependencies]
+console_error_panic_hook = "0.1"
+console_log = "1.0"
+leptos = { version = "0.8", features = ["csr"] }
+leptos_router = "0.8"
+log = "0.4"
+
+# Include all available components
+leptos-shadcn-button = { path = "../../packages/leptos/button", optional = true }
+leptos-shadcn-input = { path = "../../packages/leptos/input", optional = true }
+leptos-shadcn-label = { path = "../../packages/leptos/label", optional = true }
+leptos-shadcn-card = { path = "../../packages/leptos/card", optional = true }
+leptos-shadcn-separator = { path = "../../packages/leptos/separator", optional = true }
+leptos-shadcn-alert = { path = "../../packages/leptos/alert", optional = true }
+leptos-shadcn-badge = { path = "../../packages/leptos/badge", optional = true }
+leptos-shadcn-checkbox = { path = "../../packages/leptos/checkbox", optional = true }
+leptos-shadcn-switch = { path = "../../packages/leptos/switch", optional = true }
+leptos-shadcn-radio-group = { path = "../../packages/leptos/radio-group", optional = true }
+leptos-shadcn-select = { path = "../../packages/leptos/select", optional = true }
+leptos-shadcn-textarea = { path = "../../packages/leptos/textarea", optional = true }
+leptos-shadcn-tabs = { path = "../../packages/leptos/tabs", optional = true }
+leptos-shadcn-accordion = { path = "../../packages/leptos/accordion", optional = true }
+leptos-shadcn-dialog = { path = "../../packages/leptos/dialog", optional = true }
+leptos-shadcn-popover = { path = "../../packages/leptos/popover", optional = true }
+leptos-shadcn-tooltip = { path = "../../packages/leptos/tooltip", optional = true }
+leptos-shadcn-toast = { path = "../../packages/leptos/toast", optional = true }
+leptos-shadcn-skeleton = { path = "../../packages/leptos/skeleton", optional = true }
+leptos-shadcn-progress = { path = "../../packages/leptos/progress", optional = true }
+leptos-shadcn-slider = { path = "../../packages/leptos/slider", optional = true }
+leptos-shadcn-table = { path = "../../packages/leptos/table", optional = true }
+leptos-shadcn-pagination = { path = "../../packages/leptos/pagination", optional = true }
+leptos-shadcn-aspect-ratio = { path = "../../packages/leptos/aspect-ratio", optional = true }
+leptos-shadcn-alert-dialog = { path = "../../packages/leptos/alert-dialog", optional = true }
+leptos-shadcn-scroll-area = { path = "../../packages/leptos/scroll-area", optional = true }
+leptos-shadcn-hover-card = { path = "../../packages/leptos/hover-card", optional = true }
+leptos-shadcn-command = { path = "../../packages/leptos/command", optional = true }
+leptos-shadcn-breadcrumb = { path = "../../packages/leptos/breadcrumb", optional = true }
+leptos-shadcn-dropdown-menu = { path = "../../packages/leptos/dropdown-menu", optional = true }
+leptos-shadcn-context-menu = { path = "../../packages/leptos/context-menu", optional = true }
+leptos-shadcn-navigation-menu = { path = "../../packages/leptos/navigation-menu", optional = true }
+leptos-shadcn-input-otp = { path = "../../packages/leptos/input-otp", optional = true }
+
+# Icons are now handled with inline SVG (zero dependencies)
+gloo-timers = { version = "0.3.0", features = ["futures"] }
+
+# WASM loading and dynamic import support
+wasm-bindgen = "0.2"
+web-sys = "0.3"
+js-sys = "0.3"
+wasm-bindgen-futures = "0.4"
+
+# UUID support for WASM
+uuid = { version = "1.0", features = ["v4", "js"] }
+
+# Force getrandom to use WASM-compatible version
+getrandom = { version = "0.2", features = ["js"] }
+
+# WASM-specific configuration
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = { version = "0.2", features = ["js"] }
+
+# tailwind-rs-core for dynamic styling
+tailwind-rs-core = "0.3.0"
+tailwind-rs-leptos = "0.3.0"
+
+# Binary target for the demo
+[[bin]]
+name = "enhanced-lazy-loading-demo"
+path = "src/main.rs"

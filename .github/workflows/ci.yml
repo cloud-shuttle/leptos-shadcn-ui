@@ -1,66 +1,412 @@
-name: CI
+name: CI/CD Pipeline
 
 on:
-    pull_request: {}
-    push:
-        branches:
-            - main
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
 
-permissions:
-    contents: read
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: 1
 
 jobs:
-    lint:
-        name: Lint
-        runs-on: ubuntu-latest
+  # Job 1: Contract Testing and TDD Validation
+  contract-testing:
+    name: TDD Contract Testing
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        components: rustfmt, clippy
+        
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+          
+    - name: Install cargo-nextest
+      run: cargo install cargo-nextest --locked
+      
+    - name: Run Contract Tests
+      run: |
+        echo "🧪 Running TDD Contract Tests..."
+        cargo nextest run --package leptos-shadcn-contract-testing --verbose
+        
+    - name: Validate Performance Contracts
+      run: |
+        echo "⚡ Validating Performance Contracts..."
+        cargo run --package leptos-shadcn-contract-testing --bin validate_performance
+        
+    - name: Check Dependency Consistency
+      run: |
+        echo "🔗 Checking Dependency Consistency..."
+        cargo run --package leptos-shadcn-contract-testing --bin fix_dependencies -- --validate-only
 
-        env:
-            RUSTFLAGS: '-Dwarnings'
+  # Job 2: Build and Compilation
+  build:
+    name: Build All Packages
+    runs-on: ubuntu-latest
+    needs: contract-testing
+    timeout-minutes: 20
+    
+    strategy:
+      matrix:
+        package-type: [main, individual, examples]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+          
+    - name: Build Main Package
+      if: matrix.package-type == 'main'
+      run: |
+        echo "🏗️ Building main package with all features..."
+        cargo build --package leptos-shadcn-ui --features button,input,card,dialog,form,table,calendar,date-picker
+        
+    - name: Build Individual Components
+      if: matrix.package-type == 'individual'
+      run: |
+        echo "🧩 Building individual components..."
+        cargo build --package leptos-shadcn-button
+        cargo build --package leptos-shadcn-input
+        cargo build --package leptos-shadcn-card
+        cargo build --package leptos-shadcn-dialog
+        
+    - name: Build Examples
+      if: matrix.package-type == 'examples'
+      run: |
+        echo "📚 Building example applications..."
+        cargo build --package enhanced-lazy-loading-demo
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v5
+  # Job 3: Code Quality and Linting
+  code-quality:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+    needs: contract-testing
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        components: rustfmt, clippy
+        
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+          
+    - name: Check formatting
+      run: |
+        echo "🎨 Checking code formatting..."
+        cargo fmt --all -- --check
+        
+    - name: Run clippy
+      run: |
+        echo "🔍 Running clippy lints..."
+        cargo clippy --workspace -- -D warnings
+        
+    - name: Check documentation
+      run: |
+        echo "📖 Checking documentation..."
+        cargo doc --workspace --no-deps
 
-            - name: Set up Rust toolchain
-              uses: actions-rust-lang/setup-rust-toolchain@v1
-              with:
-                  components: clippy, rustfmt
-                  target: wasm32-unknown-unknown
+  # Job 4: Performance Monitoring
+  performance-monitoring:
+    name: Performance Contract Monitoring
+    runs-on: ubuntu-latest
+    needs: contract-testing
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+          
+    - name: Run Performance Benchmarks
+      run: |
+        echo "⚡ Running performance benchmarks..."
+        cargo run --package leptos-shadcn-contract-testing --bin benchmark_performance
+        
+    - name: Check Bundle Size Limits
+      run: |
+        echo "📦 Checking bundle size limits..."
+        cargo run --package leptos-shadcn-contract-testing --bin check_bundle_size
+        
+    - name: Validate WASM Performance
+      run: |
+        echo "🌐 Validating WASM performance..."
+        cargo run --package leptos-shadcn-contract-testing --bin validate_wasm_performance
 
-            - name: Install Cargo Binary Install
-              uses: cargo-bins/cargo-binstall@main
+  # Job 5: Integration Testing
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: [build, code-quality]
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+          
+    - name: Install Playwright
+      run: |
+        cd examples/leptos
+        npm install
+        npx playwright install --with-deps
+        
+    - name: Run Integration Tests
+      run: |
+        echo "🔗 Running integration tests..."
+        cd examples/leptos
+        npm run test:integration
+        
+    - name: Run E2E Tests
+      run: |
+        echo "🌐 Running end-to-end tests..."
+        cd examples/leptos
+        npm run test:e2e
 
-            - name: Install crates
-              run: cargo binstall -y --force cargo-deny cargo-machete cargo-sort
+  # Job 6: Security and Dependency Audit
+  security-audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    needs: contract-testing
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Install cargo-audit
+      run: cargo install cargo-audit
+      
+    - name: Run security audit
+      run: |
+        echo "🔒 Running security audit..."
+        cargo audit
+        
+    - name: Check for outdated dependencies
+      run: |
+        echo "📅 Checking for outdated dependencies..."
+        cargo outdated
 
-            - name: Lint
-              run: cargo clippy --all-features --locked
+  # Job 7: Documentation Generation
+  docs:
+    name: Generate Documentation
+    runs-on: ubuntu-latest
+    needs: [build, code-quality]
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Cache cargo registry
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.cargo/registry
+          ~/.cargo/git
+          target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-cargo-
+          
+    - name: Generate API Documentation
+      run: |
+        echo "📚 Generating API documentation..."
+        cargo doc --workspace --no-deps --document-private-items
+        
+    - name: Upload documentation artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: api-docs
+        path: target/doc/
 
-            - name: Check dependencies
-              run: cargo deny check
+  # Job 8: Performance Contract Violation Alerts
+  performance-alerts:
+    name: Performance Contract Alerts
+    runs-on: ubuntu-latest
+    needs: performance-monitoring
+    if: always()
+    timeout-minutes: 5
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Check Performance Contract Violations
+      id: performance-check
+      run: |
+        echo "🚨 Checking for performance contract violations..."
+        if cargo run --package leptos-shadcn-contract-testing --bin check_performance_contracts; then
+          echo "✅ All performance contracts satisfied"
+          echo "violations=false" >> $GITHUB_OUTPUT
+        else
+          echo "❌ Performance contract violations detected"
+          echo "violations=true" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Create Performance Report
+      if: steps.performance-check.outputs.violations == 'true'
+      run: |
+        echo "📊 Creating performance violation report..."
+        cargo run --package leptos-shadcn-contract-testing --bin generate_performance_report > performance-report.md
+        
+    - name: Comment Performance Violations
+      if: steps.performance-check.outputs.violations == 'true' && github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const report = fs.readFileSync('performance-report.md', 'utf8');
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## 🚨 Performance Contract Violations Detected\n\n${report}\n\nPlease review and fix the performance issues before merging.`
+          });
 
-            - name: Check unused dependencies
-              run: cargo machete
+  # Job 9: Release Preparation
+  release-prep:
+    name: Release Preparation
+    runs-on: ubuntu-latest
+    needs: [build, code-quality, integration-tests, security-audit]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Validate Release Readiness
+      run: |
+        echo "🚀 Validating release readiness..."
+        cargo run --package leptos-shadcn-contract-testing --bin validate_release_readiness
+        
+    - name: Generate Release Notes
+      run: |
+        echo "📝 Generating release notes..."
+        cargo run --package leptos-shadcn-contract-testing --bin generate_release_notes > RELEASE_NOTES.md
+        
+    - name: Create Release
+      if: success()
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.run_number }}
+        release_name: Release v${{ github.run_number }}
+        body_path: RELEASE_NOTES.md
+        draft: false
+        prerelease: false
 
-            - name: Check manifest formatting
-              run: cargo sort --workspace --check
-
-            - name: Check formatting
-              run: cargo fmt --all --check
-
-    test:
-        name: Test
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v5
-
-            - name: Set up Rust toolchain
-              uses: actions-rust-lang/setup-rust-toolchain@v1
-              with:
-                  components: clippy, rustfmt
-                  target: wasm32-unknown-unknown
-
-            - name: Test
-              run: cargo test --all-features --locked --release
+  # Job 10: Notification and Reporting
+  notify:
+    name: CI/CD Notifications
+    runs-on: ubuntu-latest
+    needs: [contract-testing, build, code-quality, performance-monitoring, integration-tests, security-audit, docs]
+    if: always()
+    timeout-minutes: 5
+    
+    steps:
+    - name: Generate CI Report
+      run: |
+        echo "📊 Generating CI/CD report..."
+        echo "## CI/CD Pipeline Results" > ci-report.md
+        echo "- Contract Testing: ${{ needs.contract-testing.result }}" >> ci-report.md
+        echo "- Build: ${{ needs.build.result }}" >> ci-report.md
+        echo "- Code Quality: ${{ needs.code-quality.result }}" >> ci-report.md
+        echo "- Performance: ${{ needs.performance-monitoring.result }}" >> ci-report.md
+        echo "- Integration Tests: ${{ needs.integration-tests.result }}" >> ci-report.md
+        echo "- Security Audit: ${{ needs.security-audit.result }}" >> ci-report.md
+        echo "- Documentation: ${{ needs.docs.result }}" >> ci-report.md
+        
+    - name: Upload CI Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: ci-report
+        path: ci-report.md

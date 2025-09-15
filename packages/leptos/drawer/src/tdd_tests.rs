@@ -631,7 +631,7 @@ mod tdd_tests {
                 open=open
                 direction=direction
                 should_scale_background=should_scale
-                on_open_change=Some(callback)
+                on_open_change=callback
             >
                 <DrawerTrigger class=MaybeProp::from("combined-props-trigger")>
                     "Combined Props Trigger"

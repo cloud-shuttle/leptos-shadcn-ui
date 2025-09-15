@@ -1,0 +1,21 @@
+[package]
+name = "tailwind-leptos-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+leptos = { version = "0.8", features = ["csr"] }
+tailwind-rs-core = "0.3.0"
+tailwind-rs-leptos = "0.3.0"
+console_error_panic_hook = "0.1"
+wasm-bindgen = "0.2"
+web-sys = "0.3"
+js-sys = "0.3"
+
+# WASM-compatible getrandom
+getrandom = { version = "0.2", features = ["js"] }
+
+# Binary target
+[[bin]]
+name = "tailwind-leptos-test"
+path = "src/main.rs"
