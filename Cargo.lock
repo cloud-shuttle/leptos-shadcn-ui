@@ -1736,7 +1736,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-accordion"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1751,7 +1751,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-alert"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1766,7 +1766,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-alert-dialog"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1811,7 +1811,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-avatar"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1824,7 +1824,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-badge"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1910,7 +1910,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-calendar"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "js-sys",
  "leptos",
@@ -1941,7 +1941,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-carousel"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1956,7 +1956,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-checkbox"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1971,7 +1971,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-collapsible"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1986,7 +1986,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-combobox"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "gloo-timers",
  "leptos",
@@ -2002,7 +2002,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-command"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2016,7 +2016,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-context-menu"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2053,7 +2053,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-date-picker"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "js-sys",
  "leptos",
@@ -2072,7 +2072,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-dialog"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2125,7 +2125,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-dropdown-menu"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2169,7 +2169,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-hover-card"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2198,7 +2198,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-input"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2214,7 +2214,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-input-otp"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2229,7 +2229,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-label"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2251,7 +2251,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-menubar"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2266,7 +2266,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-navigation-menu"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2359,7 +2359,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-popover"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2374,7 +2374,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-progress"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2389,7 +2389,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-radio-group"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2425,7 +2425,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-scroll-area"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2440,7 +2440,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-select"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2455,7 +2455,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-separator"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2470,7 +2470,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-sheet"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2514,7 +2514,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-skeleton"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2529,7 +2529,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-slider"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2544,7 +2544,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-switch"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2559,7 +2559,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-table"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2574,7 +2574,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-tabs"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2589,7 +2589,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-textarea"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2621,7 +2621,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-toggle"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2636,7 +2636,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-tooltip"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2664,7 +2664,7 @@ dependencies = [
  "leptos-shadcn-badge",
  "leptos-shadcn-breadcrumb",
  "leptos-shadcn-button 0.8.1",
- "leptos-shadcn-calendar 0.8.0",
+ "leptos-shadcn-calendar 0.8.1",
  "leptos-shadcn-card",
  "leptos-shadcn-carousel",
  "leptos-shadcn-checkbox",
@@ -2679,7 +2679,7 @@ dependencies = [
  "leptos-shadcn-error-boundary",
  "leptos-shadcn-form",
  "leptos-shadcn-hover-card",
- "leptos-shadcn-input 0.8.0",
+ "leptos-shadcn-input 0.8.1",
  "leptos-shadcn-input-otp",
  "leptos-shadcn-label",
  "leptos-shadcn-lazy-loading",
@@ -2687,7 +2687,7 @@ dependencies = [
  "leptos-shadcn-navigation-menu",
  "leptos-shadcn-pagination",
  "leptos-shadcn-performance-audit",
- "leptos-shadcn-popover 0.8.0",
+ "leptos-shadcn-popover 0.8.1",
  "leptos-shadcn-progress",
  "leptos-shadcn-radio-group",
  "leptos-shadcn-registry",
@@ -4491,7 +4491,7 @@ dependencies = [
  "leptos",
  "leptos-shadcn-button 0.8.1",
  "leptos-shadcn-card",
- "leptos-shadcn-input 0.8.0",
+ "leptos-shadcn-input 0.8.1",
  "leptos_meta",
  "leptos_router",
  "tailwind-rs-core 0.4.2",
