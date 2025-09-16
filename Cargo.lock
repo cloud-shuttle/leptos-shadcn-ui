@@ -1797,7 +1797,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-aspect-ratio"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2109,7 +2109,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-drawer"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
