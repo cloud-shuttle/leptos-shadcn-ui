@@ -1880,7 +1880,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-button"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -1926,7 +1926,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-card"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2663,7 +2663,7 @@ dependencies = [
  "leptos-shadcn-avatar",
  "leptos-shadcn-badge",
  "leptos-shadcn-breadcrumb",
- "leptos-shadcn-button 0.8.0",
+ "leptos-shadcn-button 0.8.1",
  "leptos-shadcn-calendar 0.8.0",
  "leptos-shadcn-card",
  "leptos-shadcn-carousel",
@@ -4489,7 +4489,7 @@ dependencies = [
  "getrandom 0.2.16",
  "js-sys",
  "leptos",
- "leptos-shadcn-button 0.8.0",
+ "leptos-shadcn-button 0.8.1",
  "leptos-shadcn-card",
  "leptos-shadcn-input 0.8.0",
  "leptos_meta",
