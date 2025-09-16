@@ -1839,7 +1839,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-breadcrumb"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2151,7 +2151,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-form"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "gloo-timers",
  "leptos",
@@ -2281,7 +2281,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-pagination"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2410,7 +2410,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-resizable"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "leptos",
  "leptos-node-ref",
@@ -2604,7 +2604,7 @@ dependencies = [
 
 [[package]]
 name = "leptos-shadcn-toast"
-version = "0.8.0"
+version = "0.8.1"
 dependencies = [
  "gloo-timers",
  "leptos",
