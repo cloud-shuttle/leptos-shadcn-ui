@@ -574,7 +574,7 @@ mod tdd_tests {
             <Combobox 
                 options=options
                 on_change=change_callback
-                on_open_change=Some(open_callback)
+                on_open_change=open_callback
             />
         };
         assert!(true, "Multiple callbacks should work");
@@ -650,7 +650,7 @@ mod tdd_tests {
                 open=open
                 style=style
                 on_change=change_callback
-                on_open_change=Some(open_callback)
+                on_open_change=open_callback
                 class=MaybeProp::from("combined-props")
                 id=MaybeProp::from("combined-combobox")
             />

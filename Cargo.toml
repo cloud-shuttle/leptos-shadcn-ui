@@ -18,9 +18,16 @@ members = [
     "packages/component-generator",
     "packages/signal-management",  # Signal lifecycle management for Leptos 0.8.8+
     "packages/contract-testing",  # TDD contract testing framework
+    "packages/api-standards",  # API standardization framework
+    "packages/doc-automation",  # Documentation automation
+    "packages/performance-testing",  # Performance testing utilities
+    "packages/shadcn",  # Core shadcn utilities
+    "packages/tailwind-rs-core",  # Tailwind CSS core utilities
+    "packages/tailwind-rs-core-macros",  # Tailwind CSS macros
     "packages/leptos-shadcn-ui",  # Re-added for final publishing
     "performance-audit",  # Performance audit system
     "leptos_v0_8_test_app",  # Leptos v0.8 compatibility test app
+    "examples/leptos",  # WASM demo application
     
     # Basic components (no internal dependencies)
     "packages/leptos/button",
@@ -86,7 +93,7 @@ authors = ["CloudShuttle <info@cloudshuttle.com>"]
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
-version = "0.8.0"
+version = "0.8.1"
 
 [workspace.dependencies]
 leptos = "0.8"
@@ -110,6 +117,7 @@ tokio = { version = "1.47.1", features = ["full"] }
 env_logger = "0.11"
 log = "0.4"
 console_log = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
 shadcn-ui-test-utils = { path = "packages/test-utils" }
 leptos-shadcn-signal-management = { path = "packages/signal-management" }
 leptos-shadcn-contract-testing = { path = "packages/contract-testing" }

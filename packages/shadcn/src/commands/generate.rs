@@ -41,10 +41,8 @@ pub async fn generate(args: GenerateArgs) -> Result<()> {
     // Parse framework
     let framework = match args.framework.to_lowercase().as_str() {
         "leptos" => Framework::Leptos,
-        "yew" => Framework::Yew,
-        "dioxus" => Framework::Dioxus,
         f => {
-            anyhow::bail!("Unsupported framework: {}. Supported: leptos, yew, dioxus", f);
+            anyhow::bail!("Unsupported framework: {}. Supported: leptos", f);
         }
     };
 
@@ -60,11 +58,7 @@ pub async fn generate(args: GenerateArgs) -> Result<()> {
     props.insert(
         "children".to_string(),
         PropConfig {
-            prop_type: match framework {
-                Framework::Leptos => "Children".to_string(),
-                Framework::Yew => "Html".to_string(),
-                Framework::Dioxus => "VNode".to_string(),
-            },
+            prop_type: "Children".to_string(),
             optional: true,
             default_value: None,
             description: Some("Child components".to_string()),
@@ -79,20 +73,12 @@ pub async fn generate(args: GenerateArgs) -> Result<()> {
         props,
         dependencies: vec![
             "tailwind_fuse".to_string(),
-            match framework {
-                Framework::Leptos => "leptos".to_string(),
-                Framework::Yew => "yew".to_string(),
-                Framework::Dioxus => "dioxus".to_string(),
-            },
+            "leptos".to_string(),
         ],
     };
 
     // Determine output directory
-    let framework_name = match framework {
-        Framework::Leptos => "leptos",
-        Framework::Yew => "yew",
-        Framework::Dioxus => "dioxus",
-    };
+    let framework_name = "leptos";
 
     let output_dir = if let Some(output) = args.output {
         Path::new(&output).to_path_buf()

@@ -1,186 +1,100 @@
-# 📚 **leptos-shadcn-ui Documentation**
+# Leptos ShadCN UI Documentation
 
-Welcome to the comprehensive documentation for the leptos-shadcn-ui component library. This library provides production-ready ShadCN UI components for Leptos v0.8+ applications.
+Welcome to the comprehensive documentation for the Leptos ShadCN UI component library. This documentation is organized to help you find the information you need quickly, whether you're just getting started or working on advanced features.
 
-## 🏆 **Project Status: 100% TDD Implementation Complete**
+## 📚 Documentation Structure
 
-**All 46 components are thoroughly tested and production-ready!**
+### 🚀 [Getting Started](./getting-started/README.md)
+Perfect for newcomers to the project:
+- [Installation Guide](./getting-started/installation.md)
+- [Your First Component](./getting-started/first-component.md)
+- [Basic Examples](./getting-started/examples/)
+- [Signal Management Examples](./getting-started/signal-management-examples.md)
 
-- ✅ **Unit Tests**: 300+ comprehensive tests (100% coverage)
-- ✅ **E2E Tests**: 129 Playwright tests covering all workflows
-- ✅ **Quality Standards**: Industry-best practices implemented
-- ✅ **Documentation**: Comprehensive guides and examples
-- ✅ **Performance Audit**: Complete TDD performance monitoring system
+### 🏗️ [Architecture](./architecture/README.md)
+Deep dive into the technical design:
+- [Design Decisions](./architecture/design-decisions/) - Architecture Decision Records (ADRs)
+- [Migration Guides](./architecture/migration-guides/) - Version upgrade guides
+- [Coverage Analysis](./architecture/coverage/) - Test coverage documentation
+- [Performance Analysis](./architecture/performance/) - Performance benchmarks and optimization
 
----
+### 🧩 [Components](./components/README.md)
+Component library reference:
+- [API Reference](./components/api-reference/)
+- [Examples](./components/examples/)
+- [Accessibility Guide](./components/accessibility/)
+- [Theming Guide](./components/theming/)
 
-## 📁 **Documentation Structure**
+### 🧪 [Testing](./testing/README.md)
+Comprehensive testing documentation:
+- [Testing Strategy](./testing/test-strategy.md)
+- [Unit Testing](./testing/unit-testing.md)
+- [Integration Testing](./testing/integration-testing.md)
+- [E2E Testing](./testing/e2e-testing.md)
+- [TDD Implementation](./testing/tdd/)
 
-### **🚀 Getting Started**
-- **[Main README](../README.md)** - Project overview and quick start
-- **[Component Examples](../examples/)** - Working examples and demos
-- **[Performance Audit Quick Start](./performance-audit/QUICK_START.md)** - Performance monitoring quick start
+### 📦 [Releases](./releases/README.md)
+Release management and version history:
+- [Changelog](./releases/changelog.md)
+- [Release Notes](./releases/release-notes/)
+- [Phase Completion Summaries](./releases/phase-completion/)
+- [Publishing Process](./releases/publishing/)
 
-### **🧪 Testing & Quality Assurance**
-- **[TDD Implementation](./tdd/)** - Complete Test-Driven Development documentation
-  - **[Execution Plan](./tdd/execution/)** - TDD strategy and implementation
-  - **[Validation Report](./tdd/validation/)** - Testing results and quality metrics
-  - **[Completion Summary](./tdd/completion/)** - Final achievement summary
-- **[Testing Infrastructure](./testing/)** - E2E testing and quality tools
-  - **[Testing Guide](./testing/TESTING_GUIDE.md)** - How to run tests
-  - **[Test Strategy](./testing/test-strategy.md)** - Testing approach and methodology
-  - **[Test Generation](./testing/test-generation-summary.md)** - Automated test creation
-  - **[Radio Group Testing](./testing/radio-group-testing-summary.md)** - Component-specific testing
-  - **[Playwright Config](./testing/playwright.config.ts)** - E2E test configuration
+### 🗺️ [Roadmap](./roadmap/README.md)
+Project planning and future direction:
+- [Version 1.0 Plan](./roadmap/v1.0-plan.md)
+- [Market Positioning](./roadmap/market-positioning-2025.md)
+- [Competitor Analysis](./roadmap/competitor-analysis-2024.md)
+- [React/Next.js Comparison](./roadmap/react-nextjs-comparison-2025.md)
 
-### **🏗️ Architecture & Design**
-- **[Architecture Overview](./architecture/architecture.md)** - System design and structure
-- **[Feature Parity Design](./architecture/feature-parity-design.md)** - Design system alignment
-- **[Leptos 0.8.8 Migration](./architecture/leptos-0.8.8-migration-guide.md)** - Framework migration guide
+### 🤝 [Contributing](./contributing/README.md)
+How to contribute to the project:
+- [Development Setup](./contributing/development-setup.md)
+- [Coding Standards](./contributing/coding-standards.md)
+- [Pull Request Process](./contributing/pull-request-process.md)
+- [Architecture Decision Records](./contributing/adr/)
 
-### **🔧 Development & Tools**
-- **[Component Generator](./development/component-generator.md)** - Automated component creation
-- **[Performance Audit System](./performance-audit/)** - Performance monitoring and optimization
-  - **[Quick Start](./performance-audit/QUICK_START.md)** - Get started in 5 minutes
-  - **[Complete Documentation](./performance-audit/README.md)** - Full system documentation
-- **[Quality Assurance](./quality/)** - Defect tracking and quality metrics
-  - **[Defects Register](./quality/defects-register.md)** - Issue tracking and resolution
+## 🎯 Quick Navigation
 
-### **📦 Release Management**
-- **[Release Checklist](./releases/RELEASE_CHECKLIST.md)** - Pre-release validation steps
-- **[Release Notes](./releases/RELEASE_NOTES.md)** - Version-specific changes
-- **[Release Summary](./releases/RELEASE_SUMMARY.md)** - Release overview and metrics
-- **[Changelog](./releases/CHANGELOG.md)** - Complete version history
+### For New Users
+1. Start with [Getting Started](./getting-started/README.md)
+2. Try the [Basic Examples](./getting-started/examples/)
+3. Read the [Component API Reference](./components/api-reference/)
 
-### **🎨 Component Documentation**
-- **[Demo Features](./components/DEMO_FEATURES.md)** - Showcase of component capabilities
-- **[Distribution Guide](./components/DISTRIBUTION_GUIDE.md)** - How to distribute components
-- **[Example Usage](./components/example-usage.md)** - Component usage examples
-- **[Leptos Demo](./components/leptos-demo.md)** - Framework-specific examples
+### For Developers
+1. Review [Architecture Overview](./architecture/README.md)
+2. Check [Testing Guidelines](./testing/README.md)
+3. Follow [Contributing Guidelines](./contributing/README.md)
 
----
+### For Maintainers
+1. Understand [Release Process](./releases/README.md)
+2. Review [Roadmap](./roadmap/README.md)
+3. Check [Performance Benchmarks](./architecture/performance/)
 
-## 🚀 **Quick Start**
+## 🔗 External Resources
 
-### **Installation**
-```bash
-# Add to your Cargo.toml
-[dependencies]
-leptos-shadcn-button = "0.2.0"
-leptos-shadcn-input = "0.2.0"
-leptos-shadcn-card = "0.2.0"
-# ... add more components as needed
-```
+- **GitHub Repository**: [leptos-shadcn-ui](https://github.com/your-org/leptos-shadcn-ui)
+- **Crates.io**: [leptos-shadcn-ui](https://crates.io/crates/leptos-shadcn-ui)
+- **Leptos Documentation**: [leptos.dev](https://leptos.dev)
+- **ShadCN UI**: [ui.shadcn.com](https://ui.shadcn.com)
 
-### **Basic Usage**
-```rust
-use leptos::*;
-use leptos_shadcn_button::Button;
-use leptos_shadcn_input::Input;
+## 📝 Documentation Standards
 
-#[component]
-pub fn MyForm() -> impl IntoView {
-    view! {
-        <div class="space-y-4">
-            <Input placeholder="Enter your name" />
-            <Button>"Submit"</Button>
-        </div>
-    }
-}
-```
+This documentation follows these principles:
+- **User-focused**: Organized by user journey and needs
+- **Comprehensive**: Covers all aspects of the project
+- **Up-to-date**: Regularly maintained and reviewed
+- **Accessible**: Clear language and good structure
+- **Searchable**: Well-organized with clear navigation
 
----
+## 🤝 Contributing to Documentation
 
-## 🧪 **Testing Your Components**
-
-### **Run Unit Tests**
-```bash
-# Test individual components
-cargo test --package leptos-shadcn-button --lib
-cargo test --package leptos-shadcn-input --lib
-
-# Test all components
-cargo test --workspace
-```
-
-### **Run E2E Tests**
-```bash
-# Install Playwright
-make install-playwright
-
-# Run all E2E tests
-make test-e2e
-
-# Run specific test categories
-make test-e2e-specific FILE=tests/e2e/accessibility.spec.ts
-```
+We welcome contributions to improve this documentation! Please see our [Contributing Guidelines](./contributing/README.md) for details on how to:
+- Report documentation issues
+- Suggest improvements
+- Submit documentation updates
+- Follow our writing standards
 
 ---
 
-## 📊 **Quality Metrics**
-
-### **Current Status**
-- **Components**: 46/46 (100% tested)
-- **Unit Tests**: 300+ tests passing
-- **E2E Tests**: 129 tests passing
-- **Test Coverage**: 100% for all components
-- **Quality Standards**: Production-ready
-
-### **Test Categories**
-- **Type Safety**: All enums, props, and types validated
-- **CSS Validation**: All styling classes verified
-- **Accessibility**: WCAG compliance and ARIA validation
-- **Behavior**: Event handling and state management
-- **Integration**: Cross-component compatibility
-- **Performance**: No memory leaks or bottlenecks
-
----
-
-## 🤝 **Contributing**
-
-### **Development Workflow**
-1. **Fork** the repository
-2. **Create** a feature branch
-3. **Implement** your changes with tests
-4. **Run** the test suite
-5. **Submit** a pull request
-
-### **Testing Requirements**
-- All new components must have comprehensive unit tests
-- E2E tests must pass for affected workflows
-- Accessibility standards must be maintained
-- Performance benchmarks must be met
-
----
-
-## 📞 **Support & Community**
-
-### **Resources**
-- **[GitHub Issues](https://github.com/cloud-shuttle/leptos-shadcn-ui/issues)** - Bug reports and feature requests
-- **[Discussions](https://github.com/cloud-shuttle/leptos-shadcn-ui/discussions)** - Community support
-- **[Documentation](https://shadcn-ui.rustforweb.org/)** - Component API reference
-
-### **Getting Help**
-- Check the [testing guide](./testing/TESTING_GUIDE.md) for common issues
-- Review the [defects register](./quality/defects-register.md) for known issues
-- Consult the [architecture documentation](./architecture/) for system design questions
-
----
-
-## 🏆 **Achievements**
-
-This project represents a **major achievement** in component library development:
-
-- **Industry-Leading Quality**: 100% test coverage with comprehensive validation
-- **Production Ready**: All components tested and validated for real-world use
-- **Accessibility First**: WCAG compliance built into every component
-- **Performance Optimized**: No memory leaks or performance bottlenecks
-- **Cross-Platform**: Works consistently across all major browsers and devices
-
-**Congratulations on achieving comprehensive TDD implementation!** 🎉
-
----
-
-**Last Updated**: December 2024  
-**Status**: ✅ **Production Ready**  
-**Version**: 0.2.0
+*Last updated: September 2025*

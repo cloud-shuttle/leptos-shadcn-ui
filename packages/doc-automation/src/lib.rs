@@ -5,13 +5,12 @@
 
 use std::path::PathBuf;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
 pub mod parser;
-pub mod generator;
-pub mod gallery;
+// pub mod generator;  // TODO: Implement
+// pub mod gallery;  // TODO: Implement
 pub mod templates;
-pub mod testing;
+// pub mod testing;  // TODO: Implement
 
 /// Configuration for documentation generation
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -129,11 +128,12 @@ pub struct DocGenerator {
 impl DocGenerator {
     /// Create a new documentation generator
     pub fn new(config: DocConfig) -> Result<Self, DocError> {
-        let mut handlebars = handlebars::Handlebars::new();
+        let handlebars = handlebars::Handlebars::new();
         
         // Register built-in helpers
-        handlebars.register_helper("format_code", Box::new(templates::format_code_helper));
-        handlebars.register_helper("markdown", Box::new(templates::markdown_helper));
+        // TODO: Implement template helpers
+        // handlebars.register_helper("format_code", Box::new(templates::format_code_helper));
+        // handlebars.register_helper("markdown", Box::new(templates::markdown_helper));
         
         Ok(Self {
             config,
@@ -188,7 +188,7 @@ impl DocGenerator {
         let mut components = Vec::new();
         
         for entry in walkdir::WalkDir::new(&self.config.components_dir) {
-            let entry = entry.map_err(DocError::FileSystem)?;
+            let entry = entry.map_err(|e| DocError::FileSystem(std::io::Error::new(std::io::ErrorKind::Other, e)))?;
             
             if entry.file_type().is_file() {
                 let path = entry.path();
@@ -204,18 +204,21 @@ impl DocGenerator {
     }
 
     /// Generate interactive component gallery
-    async fn generate_gallery(&self, components: &[ComponentMetadata]) -> Result<String, DocError> {
-        gallery::generate_gallery(components, &self.handlebars).await
+    async fn generate_gallery(&self, _components: &[ComponentMetadata]) -> Result<String, DocError> {
+        // TODO: Implement gallery generation
+        Ok("<html><body>Gallery placeholder</body></html>".to_string())
     }
 
     /// Generate API documentation
-    async fn generate_api_docs(&self, components: &[ComponentMetadata]) -> Result<String, DocError> {
-        generator::generate_api_docs(components, &self.handlebars).await
+    async fn generate_api_docs(&self, _components: &[ComponentMetadata]) -> Result<String, DocError> {
+        // TODO: Implement API docs generation
+        Ok("<html><body>API docs placeholder</body></html>".to_string())
     }
 
     /// Generate test reports
-    async fn generate_test_reports(&self, components: &[ComponentMetadata]) -> Result<String, DocError> {
-        testing::generate_test_reports(components, &self.handlebars).await
+    async fn generate_test_reports(&self, _components: &[ComponentMetadata]) -> Result<String, DocError> {
+        // TODO: Implement test reports generation
+        Ok("<html><body>Test reports placeholder</body></html>".to_string())
     }
 
     /// Write documentation to output directory

@@ -7,7 +7,7 @@ const DROPDOWN_MENU_CLASS: &str = "inline-flex items-center justify-center white
 pub fn DropdownMenu(
     #[prop(into, optional)] variant: MaybeProp<String>,
     #[prop(into, optional)] size: MaybeProp<String>,
-    #[prop(into, optional)] on_click: Option<Callback<()>>,
+    #[prop(into, optional)] on_click: MaybeProp<Callback<()>>,
     #[prop(into, optional)] disabled: Signal<bool>,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
@@ -17,7 +17,7 @@ pub fn DropdownMenu(
     let handle_click = {
         let on_click = on_click.clone();
         move |_| {
-            if let Some(callback) = &on_click {
+            if let Some(callback) = on_click.get() {
                 callback.run(());
             }
         }

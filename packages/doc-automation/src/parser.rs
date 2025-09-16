@@ -1,8 +1,8 @@
 //! Component source code parsing for documentation extraction
 
-use crate::{ComponentMetadata, PropMetadata, EventMetadata, ExampleMetadata, TestMetadata, AccessibilityInfo, PerformanceInfo, DocError};
+use crate::{ComponentMetadata, PropMetadata, ExampleMetadata, TestMetadata, AccessibilityInfo, PerformanceInfo, DocError};
 use std::path::Path;
-use syn::{File, Item, ItemStruct, ItemFn, Attribute, Expr, Lit};
+use syn::{Item, ItemStruct, ItemFn, Attribute};
 
 /// Parse a Rust component file to extract documentation metadata
 pub async fn parse_component_file(file_path: &Path) -> Result<Option<ComponentMetadata>, DocError> {
@@ -17,7 +17,7 @@ pub async fn parse_component_file(file_path: &Path) -> Result<Option<ComponentMe
     let mut component_name = None;
     let mut component_description = None;
     let mut props = Vec::new();
-    let mut events = Vec::new();
+    let events = Vec::new();
     let mut examples = Vec::new();
     let mut tests = Vec::new();
 
@@ -67,24 +67,14 @@ pub async fn parse_component_file(file_path: &Path) -> Result<Option<ComponentMe
 fn is_component_function(func: &ItemFn) -> bool {
     // Look for #[component] attribute
     func.attrs.iter().any(|attr| {
-        if let Ok(meta) = attr.parse_meta() {
-            if let syn::Meta::Path(path) = meta {
-                return path.is_ident("component");
-            }
-        }
-        false
+        attr.path().is_ident("component")
     })
 }
 
 /// Check if a function is a test
 fn is_test_function(func: &ItemFn) -> bool {
     func.attrs.iter().any(|attr| {
-        if let Ok(meta) = attr.parse_meta() {
-            if let syn::Meta::Path(path) = meta {
-                return path.is_ident("test");
-            }
-        }
-        false
+        attr.path().is_ident("test")
     })
 }
 
@@ -93,17 +83,19 @@ fn extract_doc_comment(attrs: &[Attribute]) -> Option<String> {
     let mut doc_lines = Vec::new();
     
     for attr in attrs {
-        if attr.path.is_ident("doc") {
-            if let Ok(syn::Meta::NameValue(meta)) = attr.parse_meta() {
-                if let syn::Lit::Str(lit_str) = meta.lit {
-                    let line = lit_str.value();
-                    // Remove leading space if present
-                    let trimmed = if line.starts_with(' ') {
-                        &line[1..]
-                    } else {
-                        &line
-                    };
-                    doc_lines.push(trimmed.to_string());
+        if attr.path().is_ident("doc") {
+            if let syn::Meta::NameValue(meta) = &attr.meta {
+                if let syn::Expr::Lit(expr_lit) = &meta.value {
+                    if let syn::Lit::Str(lit_str) = &expr_lit.lit {
+                        let line = lit_str.value();
+                        // Remove leading space if present
+                        let trimmed = if line.starts_with(' ') {
+                            &line[1..]
+                        } else {
+                            &line
+                        };
+                        doc_lines.push(trimmed.to_string());
+                    }
                 }
             }
         }

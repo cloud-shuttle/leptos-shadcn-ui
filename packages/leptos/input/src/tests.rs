@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use crate::default::{Input, INPUT_CLASS};
+    use crate::default::INPUT_CLASS;
     use leptos::prelude::*;
     use std::sync::{Arc, Mutex};
 
@@ -177,7 +177,7 @@ mod tests {
     
     #[test]
     fn test_enhanced_input_validation_system() {
-        use crate::validation::{InputValidator, ValidationContext, validation_builders};
+        use crate::validation::validation_builders;
         
         // Test email validation with the new system
         let email_validator = validation_builders::email_validator("email");

@@ -23,12 +23,12 @@ pub fn Input(
     #[prop(into, optional)] show_validation: Signal<bool>,
 ) -> impl IntoView {
     let (validation_result, set_validation_result) = signal(ValidationResult::new());
-    let (is_validating, set_is_validating) = signal(false);
+    let (_is_validating, _set_is_validating) = signal(false);
 
     let handle_input = {
         let on_change = on_change.clone();
         let set_validation_result = set_validation_result.clone();
-        let set_is_validating = set_is_validating.clone();
+        let _set_is_validating = _set_is_validating.clone();
         
         move |event: Event| {
             if let Some(callback) = &on_change {
@@ -39,10 +39,10 @@ pub fn Input(
                 
                 // TDD Enhancement: Real-time validation
                 if let Some(validator) = &validator {
-                    set_is_validating.set(true);
+                    _set_is_validating.set(true);
                     let result = validator.validate(&input_value);
                     set_validation_result.set(result);
-                    set_is_validating.set(false);
+                    _set_is_validating.set(false);
                 }
             }
         }

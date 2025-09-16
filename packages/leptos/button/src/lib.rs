@@ -20,3 +20,12 @@ pub use signal_managed::{SignalManagedButton, EnhancedButton, SignalManagedButto
 
 #[cfg(test)]
 mod tdd_tests;
+
+#[cfg(test)]
+mod implementation_tests;
+
+#[cfg(test)]
+mod new_york_tests;
+
+#[cfg(test)]
+mod variant_comparison_tests;

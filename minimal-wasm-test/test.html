@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal WASM Test</title>
+</head>
+<body>
+    <div id="loading">
+        <h1>Loading Minimal WASM Test...</h1>
+        <p>If you see this message, the WASM is still loading or there's an error.</p>
+    </div>
+    <script type="module">
+        console.log('Starting minimal WASM test...');
+        try {
+            const wasmModule = await import('./pkg/minimal_wasm_test.js');
+            console.log('WASM module loaded successfully');
+            console.log('Available exports:', Object.keys(wasmModule));
+            
+            // Initialize the WASM module
+            console.log('Initializing WASM module...');
+            await wasmModule.default();
+            console.log('WASM module initialized successfully');
+            
+            // Manually call main function
+            console.log('Calling main function manually...');
+            wasmModule.main();
+            console.log('Main function called successfully');
+        } catch (error) {
+            console.error('Error loading WASM:', error);
+            document.getElementById('loading').innerHTML = `
+                <div style="padding: 20px; text-align: center; color: red;">
+                    <h1>Error Loading WASM</h1>
+                    <p><strong>Error:</strong> ${error.message}</p>
+                    <p><strong>Stack:</strong> ${error.stack || 'No stack trace available'}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

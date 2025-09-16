@@ -14,3 +14,4 @@ tailwind_fuse.workspace = true
 [dev-dependencies]
 shadcn-ui-test-utils = { path = "../../test-utils" }
 wasm-bindgen-test = { workspace = true }
+leptos = { workspace = true }

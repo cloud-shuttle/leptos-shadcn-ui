@@ -19,7 +19,6 @@ thiserror = "1.0"
 
 # File system operations
 walkdir = "2.0"
-ignore = "0.4"
 
 # Template processing
 handlebars = "6.0"
@@ -28,7 +27,6 @@ pulldown-cmark = "0.11"
 # Code parsing
 syn = { version = "2.0", features = ["full", "extra-traits"] }
 quote = "1.0"
-proc-macro2 = "1.0"
 
 # HTML generation
 html-escape = "0.2"
@@ -36,9 +34,9 @@ html-escape = "0.2"
 # Time handling
 chrono = { version = "0.4", features = ["serde"] }
 
+
 # Logging
 log = "0.4"
-env_logger = "0.11"
 
 [dev-dependencies]
 tempfile = "3.0"

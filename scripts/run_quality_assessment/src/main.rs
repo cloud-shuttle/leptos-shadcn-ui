@@ -8,8 +8,7 @@
 //! 
 //! Last Updated: September 3rd, 2025
 
-use std::path::PathBuf;
-use std::collections::HashMap;
+// Unused imports removed - functionality not yet implemented
 
 // Mock the test-utils crate for demonstration
 mod mock_test_utils {
@@ -24,6 +23,7 @@ mod mock_test_utils {
     }
     
     #[derive(Debug, Clone)]
+    #[allow(dead_code)]
     pub struct TestResult {
         pub passed: bool,
         pub message: String,
@@ -35,6 +35,7 @@ mod mock_test_utils {
     }
     
     #[derive(Debug, Clone)]
+    #[allow(dead_code)]
     pub struct MockImplementation {
         pub name: String,
         pub has_tests: bool,

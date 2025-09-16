@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leptos ShadCN UI Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(var(--destructive))",
+                            foreground: "hsl(var(--destructive-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                        popover: {
+                            DEFAULT: "hsl(var(--popover))",
+                            foreground: "hsl(var(--popover-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 222.2 47.4% 11.2%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 222.2 84% 4.9%;
+        }
+        
+        .dark {
+            --background: 222.2 84% 4.9%;
+            --foreground: 210 40% 98%;
+            --card: 222.2 84% 4.9%;
+            --card-foreground: 210 40% 98%;
+            --popover: 222.2 84% 4.9%;
+            --popover-foreground: 210 40% 98%;
+            --primary: 210 40% 98%;
+            --primary-foreground: 222.2 47.4% 11.2%;
+            --secondary: 217.2 32.6% 17.5%;
+            --secondary-foreground: 210 40% 98%;
+            --muted: 217.2 32.6% 17.5%;
+            --muted-foreground: 215 20.2% 65.1%;
+            --accent: 217.2 32.6% 17.5%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 62.8% 30.6%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 217.2 32.6% 17.5%;
+            --input: 217.2 32.6% 17.5%;
+            --ring: 212.7 26.8% 83.9%;
+        }
+        
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui;
+        }
+        
+        .btn {
+            @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+        }
+        
+        .btn-default {
+            @apply bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2;
+        }
+        
+        .btn-destructive {
+            @apply bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-4 py-2;
+        }
+        
+        .btn-outline {
+            @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2;
+        }
+        
+        .btn-secondary {
+            @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2;
+        }
+        
+        .btn-ghost {
+            @apply hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2;
+        }
+        
+        .btn-link {
+            @apply text-primary underline-offset-4 hover:underline h-10 px-4 py-2;
+        }
+        
+        .btn-sm {
+            @apply h-9 rounded-md px-3;
+        }
+        
+        .btn-lg {
+            @apply h-11 rounded-md px-8;
+        }
+        
+        .btn-icon {
+            @apply h-10 w-10;
+        }
+        
+        .card {
+            @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+        }
+        
+        .card-header {
+            @apply flex flex-col space-y-1.5 p-6;
+        }
+        
+        .card-title {
+            @apply text-2xl font-semibold leading-none tracking-tight;
+        }
+        
+        .card-description {
+            @apply text-sm text-muted-foreground;
+        }
+        
+        .card-content {
+            @apply p-6 pt-0;
+        }
+        
+        .card-footer {
+            @apply flex items-center p-6 pt-0;
+        }
+        
+        .input {
+            @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <div class="min-h-screen">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Leptos ShadCN UI Demo</h1>
+                <p class="text-lg text-muted-foreground mb-6">
+                    Interactive showcase of Leptos ShadCN UI components with New York variants
+                </p>
+                <button id="theme-toggle" class="btn btn-outline mb-8">
+                    <span id="theme-text">🌙 Dark Mode</span>
+                </button>
+            </div>
+
+            <!-- Counter Demo -->
+            <div class="card mb-8">
+                <div class="card-header">
+                    <h2 class="card-title">Counter Demo</h2>
+                    <p class="card-description">Interactive counter with different button variants</p>
+                </div>
+                <div class="card-content">
+                    <div class="text-center">
+                        <div id="counter" class="text-6xl font-bold mb-4">0</div>
+                        <div class="flex gap-2 justify-center">
+                            <button id="increment" class="btn btn-default">Increment</button>
+                            <button id="decrement" class="btn btn-secondary">Decrement</button>
+                            <button id="reset" class="btn btn-destructive">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Variants Demo -->
+            <div class="card mb-8">
+                <div class="card-header">
+                    <h2 class="card-title">Button Variants</h2>
+                    <p class="card-description">All available button variants and sizes</p>
+                </div>
+                <div class="card-content space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Variants</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="btn btn-default">Default</button>
+                            <button class="btn btn-destructive">Destructive</button>
+                            <button class="btn btn-outline">Outline</button>
+                            <button class="btn btn-secondary">Secondary</button>
+                            <button class="btn btn-ghost">Ghost</button>
+                            <button class="btn btn-link">Link</button>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Sizes</h3>
+                        <div class="flex flex-wrap gap-2 items-center">
+                            <button class="btn btn-default">Default</button>
+                            <button class="btn btn-default btn-sm">Small</button>
+                            <button class="btn btn-default btn-lg">Large</button>
+                            <button class="btn btn-default btn-icon">🎯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Demo -->
+            <div class="card mb-8">
+                <div class="card-header">
+                    <h2 class="card-title">Input Demo</h2>
+                    <p class="card-description">Interactive input with real-time value display</p>
+                </div>
+                <div class="card-content space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Enter some text:</label>
+                        <input id="demo-input" class="input w-full" placeholder="Type something here..." />
+                    </div>
+                    <div class="p-4 bg-muted rounded-md">
+                        <p class="text-sm text-muted-foreground">Current value:</p>
+                        <p id="input-value" class="font-mono"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Layout Demo -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Feature 1</h3>
+                        <p class="card-description">Description of the first feature</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-sm text-muted-foreground">
+                            This is a sample card content that demonstrates the card component layout and styling.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline btn-sm w-full">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Feature 2</h3>
+                        <p class="card-description">Description of the second feature</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-sm text-muted-foreground">
+                            Another sample card with different content to show the flexibility of the card component.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-default btn-sm w-full">Get Started</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Feature 3</h3>
+                        <p class="card-description">Description of the third feature</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-sm text-muted-foreground">
+                            A third card to complete the grid layout and demonstrate responsive design.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-secondary btn-sm w-full">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center text-sm text-muted-foreground">
+                <p>Built with Leptos and ShadCN UI</p>
+                <p class="mt-2">
+                    Components: Button, Card, Input | Variants: Default, New York | Theme: Light/Dark
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Counter functionality
+        let count = 0;
+        const counterElement = document.getElementById('counter');
+        const incrementBtn = document.getElementById('increment');
+        const decrementBtn = document.getElementById('decrement');
+        const resetBtn = document.getElementById('reset');
+
+        function updateCounter() {
+            counterElement.textContent = count;
+        }
+
+        incrementBtn.addEventListener('click', () => {
+            count++;
+            updateCounter();
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            count--;
+            updateCounter();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateCounter();
+        });
+
+        // Input functionality
+        const inputElement = document.getElementById('demo-input');
+        const inputValueElement = document.getElementById('input-value');
+
+        inputElement.addEventListener('input', (e) => {
+            inputValueElement.textContent = e.target.value;
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeText = document.getElementById('theme-text');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDark = body.classList.contains('dark');
+            themeText.textContent = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+        });
+
+        // Initialize
+        updateCounter();
+    </script>
+</body>
+</html>

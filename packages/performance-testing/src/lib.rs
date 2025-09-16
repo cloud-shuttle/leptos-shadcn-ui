@@ -6,11 +6,10 @@
 use std::path::PathBuf;
 use std::time::Duration;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
 
-pub mod benchmarks;
-pub mod regression;
-pub mod reporting;
+// pub mod benchmarks;  // TODO: Implement
+// pub mod regression;  // TODO: Implement
+// pub mod reporting;  // TODO: Implement
 pub mod system_info;
 
 /// Performance test configuration
@@ -231,8 +230,8 @@ impl PerformanceTestSuite {
 
         // Generate comprehensive report
         let report = PerformanceReport {
-            measurements,
-            regressions,
+            measurements: measurements.clone(),
+            regressions: regressions.clone(),
             system_info: self.system_info.clone(),
             config: self.config.clone(),
             timestamp: chrono::Utc::now(),
@@ -251,7 +250,7 @@ impl PerformanceTestSuite {
         let mut components = Vec::new();
         
         for entry in walkdir::WalkDir::new(&self.config.components_dir) {
-            let entry = entry.map_err(PerfTestError::FileSystem)?;
+            let entry = entry.map_err(|e| PerfTestError::FileSystem(std::io::Error::new(std::io::ErrorKind::Other, e)))?;
             
             if entry.file_type().is_dir() {
                 let dir_name = entry.file_name().to_string_lossy();
@@ -455,7 +454,7 @@ impl PerformanceTestSuite {
         ));
         
         let content = serde_json::to_string_pretty(report)?;
-        tokio::fs::write(&report_file, content).await?;
+        tokio::fs::write(&report_file, &content).await?;
         
         // Also save as latest report
         let latest_file = self.config.output_dir.join("latest_performance_report.json");

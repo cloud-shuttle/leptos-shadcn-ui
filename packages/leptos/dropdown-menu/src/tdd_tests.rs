@@ -55,7 +55,7 @@ mod tdd_tests {
             // Callback logic
         });
         let _dropdown_view = view! {
-            <DropdownMenu on_click=Some(callback)>
+            <DropdownMenu on_click=callback>
                 "Clickable Dropdown"
             </DropdownMenu>
         };
@@ -471,7 +471,7 @@ mod tdd_tests {
             // Callback execution test
         });
         let _dropdown_view = view! {
-            <DropdownMenu on_click=Some(callback)>
+            <DropdownMenu on_click=callback>
                 "Callback Dropdown"
             </DropdownMenu>
         };
@@ -484,8 +484,8 @@ mod tdd_tests {
         let callback2 = Callback::new(move |_| {});
         let _dropdown_view = view! {
             <div>
-                <DropdownMenu on_click=Some(callback1)>"Dropdown 1"</DropdownMenu>
-                <DropdownMenu on_click=Some(callback2)>"Dropdown 2"</DropdownMenu>
+                <DropdownMenu on_click=callback1>"Dropdown 1"</DropdownMenu>
+                <DropdownMenu on_click=callback2>"Dropdown 2"</DropdownMenu>
             </div>
         };
         assert!(true, "Multiple callbacks should work");
@@ -537,7 +537,7 @@ mod tdd_tests {
                 size=MaybeProp::from("lg")
                 disabled=disabled
                 style=style
-                on_click=Some(callback)
+                on_click=callback
                 class=MaybeProp::from("combined-props")
                 id=MaybeProp::from("combined-dropdown")
             >

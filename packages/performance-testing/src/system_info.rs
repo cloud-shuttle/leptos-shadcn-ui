@@ -8,7 +8,7 @@ pub fn gather_system_info() -> Result<SystemInfo, PerfTestError> {
     
     let os = format!("{} {}", 
         std::env::consts::OS, 
-        system.kernel_version().unwrap_or_else(|| "unknown".to_string())
+        sysinfo::System::kernel_version().unwrap_or_else(|| "unknown".to_string())
     );
     
     let cpu_model = system.cpus()
@@ -40,7 +40,7 @@ fn get_rust_version() -> String {
         .ok()
         .and_then(|output| String::from_utf8(output.stdout).ok())
         .map(|version| version.trim().to_string())
-        .unwrap_or_else(|| env!("RUSTC_VERSION").to_string())
+        .unwrap_or_else(|| "unknown".to_string())
 }
 
 /// Get Leptos version from Cargo.toml or environment

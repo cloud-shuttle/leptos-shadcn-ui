@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use crate::default::{Card, CARD_CLASS};
+    use crate::default::CARD_CLASS;
     use leptos::prelude::*;
 
     #[test]

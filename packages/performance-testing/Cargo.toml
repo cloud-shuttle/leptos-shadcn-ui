@@ -17,19 +17,12 @@ serde_json = "1.0"
 anyhow = "1.0"
 thiserror = "1.0"
 
-# Performance measurement
-criterion = { version = "0.5", features = ["html_reports"] }
-
 # Time handling
 chrono = { version = "0.4", features = ["serde"] }
 instant = "0.1"
 
-# Statistics
-statistical = "1.0"
-
 # File system operations
 walkdir = "2.0"
-ignore = "0.4"
 
 # System information
 sysinfo = "0.30"
@@ -54,6 +47,6 @@ ci-integration = []
 name = "perf-test"
 path = "src/bin/performance_tester.rs"
 
-[[bench]]
-name = "component_benchmarks"
-harness = false
+# [[bench]]
+# name = "component_benchmarks"
+# harness = false

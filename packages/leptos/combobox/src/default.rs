@@ -35,7 +35,7 @@ pub fn Combobox(
     #[prop(into, optional)] disabled: Signal<bool>,
     #[prop(into)] options: Vec<ComboboxOption>,
     #[prop(into, optional)] open: Signal<bool>,
-    #[prop(optional)] on_open_change: Option<Callback<bool>>,
+    #[prop(into, optional)] on_open_change: MaybeProp<Callback<bool>>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
@@ -49,7 +49,7 @@ pub fn Combobox(
     
     // Use external open state if provided, otherwise use internal
     let open_state = if open.get() { open } else { Signal::derive(move || is_open.get()) };
-    let _set_open = on_open_change.unwrap_or_else(|| Callback::new(move |value| set_is_open.set(value)));
+    let _set_open = on_open_change.get().unwrap_or_else(|| Callback::new(move |value| set_is_open.set(value)));
     
     // Use external value if provided, otherwise use internal
     let current_value = if let Some(val) = value.get() { Signal::derive(move || val.clone()) } else { Signal::derive(move || input_value.get()) };

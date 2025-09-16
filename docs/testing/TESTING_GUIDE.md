@@ -34,12 +34,30 @@ This guide covers the comprehensive testing infrastructure for our enhanced dyna
 - **Performance** (`performance.spec.ts`)
 - **Accessibility** (`accessibility.spec.ts`)
 
+### 4. **Implementation Testing** (New)
+- **Button Component Tests** (`implementation_tests.rs`) - 31 comprehensive tests
+- **Input Component Tests** (`implementation_tests.rs`) - 44 comprehensive tests
+- **Validation System Tests** - Complete validation framework testing
+- **Coverage**: 85%+ for critical component implementation logic
+
 ## 🛠️ Running Tests
 
 ### **Quick Start - Run All Tests**
 ```bash
 # From the project root directory
 ./tests/e2e/run-dynamic-loading-tests.sh
+```
+
+### **Run Implementation Tests**
+```bash
+# Button component implementation tests
+cargo test --package leptos-shadcn-button --lib implementation_tests
+
+# Input component implementation tests
+cargo test --package leptos-shadcn-input --lib implementation_tests
+
+# All implementation tests
+cargo test --lib implementation_tests
 ```
 
 ### **Run Specific Test Suites**
