@@ -26,3 +26,12 @@ pub use component_migration::*;
 #[cfg(test)]
 mod simple_tests;
 
+#[cfg(test)]
+mod signal_management_tests;
+
+#[cfg(test)]
+mod lifecycle_tests;
+
+#[cfg(test)]
+mod memory_management_tests;
+
