@@ -8,6 +8,7 @@ use crate::error::SignalManagementError;
 /// 
 /// This struct provides a mechanism to batch multiple signal updates
 /// together, reducing the number of reactive updates and improving performance.
+#[derive(Debug, Clone)]
 pub struct BatchedSignalUpdater {
     /// Queue of updates to be executed
     pub update_queue: ArcRwSignal<Vec<Box<dyn Fn() + Send + Sync>>>,
@@ -118,6 +119,20 @@ impl BatchedSignalUpdater {
             }
         }
         
+        Ok(())
+    }
+    
+    /// Clear all queued updates
+    pub fn clear_updates(&self) -> Result<(), SignalManagementError> {
+        self.update_queue.update(|queue| {
+            queue.clear();
+        });
+        Ok(())
+    }
+    
+    /// Stop batching mode
+    pub fn stop_batching(&self) -> Result<(), SignalManagementError> {
+        self.is_batching.set(false);
         Ok(())
     }
 }

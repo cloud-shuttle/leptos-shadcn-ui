@@ -153,7 +153,7 @@ pub async fn run_performance_audit(_config: PerformanceConfig) -> Result<Perform
     
     for (name, size_bytes) in components {
         let analysis = bundle_analysis::ComponentBundleAnalysis::new(name.to_string(), size_bytes);
-        bundle_results.add_component(analysis);
+        bundle_results.add_component_analysis(analysis);
     }
     
     // Create mock performance monitoring results

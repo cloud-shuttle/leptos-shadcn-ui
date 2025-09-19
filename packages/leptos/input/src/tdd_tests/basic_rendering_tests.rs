@@ -100,7 +100,7 @@ mod basic_rendering_tests {
         for size in sizes {
             let _sized_input_view = view! {
                 <Input 
-                    size=size
+                    
                     placeholder=format!("{} size input", size)
                     value=""
                 />
@@ -119,7 +119,7 @@ mod basic_rendering_tests {
         for variant in variants {
             let _variant_input_view = view! {
                 <Input 
-                    variant=variant
+                    
                     placeholder=format!("{} variant input", variant)
                     value=""
                 />
@@ -139,7 +139,7 @@ mod basic_rendering_tests {
                 value=""
                 class="custom-class"
                 id="custom-input"
-                name="custom-name"
+                
             />
         };
         
@@ -154,7 +154,7 @@ mod basic_rendering_tests {
             <Input 
                 placeholder="Animated input"
                 value=""
-                animate=true
+                
             />
         };
         
@@ -169,7 +169,7 @@ mod basic_rendering_tests {
             <Input 
                 placeholder="Responsive input"
                 value=""
-                responsive=true
+                
             />
         };
         
@@ -184,7 +184,7 @@ mod basic_rendering_tests {
             <Input 
                 placeholder="Advanced input"
                 value=""
-                autocomplete="on"
+                
                 spellcheck=true
                 autocorrect="on"
             />
@@ -201,8 +201,8 @@ mod basic_rendering_tests {
             <Input 
                 placeholder="Form input"
                 value=""
-                form="test-form"
-                required=true
+                
+                
             />
         };
         

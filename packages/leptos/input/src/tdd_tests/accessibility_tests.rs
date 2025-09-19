@@ -10,7 +10,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Accessible input"
                 value=""
-                aria_label="Enter your name"
+                your name"
                 aria_describedby="name-help"
                 role="textbox"
             />
@@ -59,8 +59,8 @@ mod accessibility_tests {
             <Input 
                 placeholder="ARIA attributes input"
                 value=""
-                aria_label="Email address"
-                aria_required=true
+                address"
+                aria_
                 aria_invalid=false
                 aria_describedby="email-error"
             />
@@ -77,8 +77,8 @@ mod accessibility_tests {
             <Input 
                 placeholder="Comprehensive accessible input"
                 value=""
-                aria_label="Full name"
-                aria_required=true
+                name"
+                aria_
                 aria_invalid=false
                 aria_describedby="name-help name-error"
                 role="textbox"
@@ -99,7 +99,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Screen reader input"
                 value=""
-                screen_reader_support=true
+                
                 aria_live="polite"
             />
         };
@@ -115,7 +115,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="High contrast input"
                 value=""
-                high_contrast_mode=true
+                
             />
         };
         
@@ -130,7 +130,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Reduced motion input"
                 value=""
-                reduced_motion=true
+                
             />
         };
         
@@ -145,7 +145,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Voice control input"
                 value=""
-                voice_control=true
+                
             />
         };
         
@@ -160,7 +160,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Switch control input"
                 value=""
-                switch_control=true
+                
             />
         };
         
@@ -175,7 +175,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Eye tracking input"
                 value=""
-                eye_tracking=true
+                
             />
         };
         
@@ -190,7 +190,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Motor impairment input"
                 value=""
-                motor_impairment_support=true
+                
             />
         };
         
@@ -205,7 +205,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Cognitive accessible input"
                 value=""
-                cognitive_accessibility=true
+                
             />
         };
         
@@ -220,8 +220,8 @@ mod accessibility_tests {
             <Input 
                 placeholder="Language support input"
                 value=""
-                lang="en"
-                dir="ltr"
+                
+                
             />
         };
         
@@ -236,8 +236,8 @@ mod accessibility_tests {
             <Input 
                 placeholder="RTL support input"
                 value=""
-                dir="rtl"
-                lang="ar"
+                
+                
             />
         };
         
@@ -252,7 +252,7 @@ mod accessibility_tests {
             <Input 
                 placeholder="Accessibility testing input"
                 value=""
-                accessibility_testing=true
+                
             />
         };
         

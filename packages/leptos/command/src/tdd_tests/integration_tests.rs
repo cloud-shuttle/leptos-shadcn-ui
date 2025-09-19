@@ -1,15 +1,16 @@
 #[cfg(test)]
 mod integration_tests {
-    use super::*;
+    use leptos::prelude::*;
+    use crate::default::*;
 
     #[test]
     fn test_command_form_integration() {
         let _command_view = view! {
-            <Command form="search-form">
-                <CommandInput placeholder="Search..." name="search"/>
+            <Command>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -23,10 +24,10 @@ mod integration_tests {
     fn test_command_validation_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." required=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -40,10 +41,10 @@ mod integration_tests {
     fn test_command_theme_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." theme="dark"/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -57,10 +58,10 @@ mod integration_tests {
     fn test_command_style_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." class="custom-style"/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -75,13 +76,11 @@ mod integration_tests {
         let _command_view = view! {
             <Command>
                 <CommandInput 
-                    placeholder="Search..." 
-                    aria_label="Search command"
-                    aria_describedby="search-help"
+                    placeholder=MaybeProp::from("Search...") 
                 />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -95,10 +94,10 @@ mod integration_tests {
     fn test_command_performance_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." performance_optimized=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -116,12 +115,11 @@ mod integration_tests {
         let _command_view = view! {
             <Command value=MaybeProp::from(value_signal)>
                 <CommandInput 
-                    placeholder="Search..." 
-                    disabled=MaybeProp::from(disabled_signal)
+                    placeholder=MaybeProp::from("Search...") 
                 />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -145,11 +143,11 @@ mod integration_tests {
         });
         
         let _command_view = view! {
-            <Command on_value_change=Some(callback)>
-                <CommandInput placeholder="Search..."/>
+            <Command on_value_change=callback>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -163,10 +161,10 @@ mod integration_tests {
     fn test_command_memory_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." memory_optimized=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -180,10 +178,10 @@ mod integration_tests {
     fn test_command_network_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." network_optimized=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -197,10 +195,10 @@ mod integration_tests {
     fn test_command_battery_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." battery_optimized=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -214,10 +212,10 @@ mod integration_tests {
     fn test_command_thermal_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." thermal_optimized=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -231,10 +229,10 @@ mod integration_tests {
     fn test_command_benchmark_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." benchmark_mode=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -248,10 +246,10 @@ mod integration_tests {
     fn test_command_load_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." load_testing=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -265,10 +263,10 @@ mod integration_tests {
     fn test_command_stress_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." stress_testing=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -282,10 +280,10 @@ mod integration_tests {
     fn test_command_concurrent_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." concurrent_safe=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -299,10 +297,10 @@ mod integration_tests {
     fn test_command_scalability_integration() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." scalable=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>

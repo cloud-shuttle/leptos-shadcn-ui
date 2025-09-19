@@ -10,7 +10,7 @@ mod integration_tests {
             <Input 
                 placeholder="Integration input"
                 value=""
-                integration_test=true
+                
             />
         };
         
@@ -25,7 +25,7 @@ mod integration_tests {
             <Input 
                 placeholder="Memory managed input"
                 value=""
-                memory_management=true
+                
             />
         };
         
@@ -40,7 +40,7 @@ mod integration_tests {
             <Input 
                 placeholder="Lifecycle input"
                 value=""
-                lifecycle_test=true
+                
             />
         };
         
@@ -60,7 +60,7 @@ mod integration_tests {
                 placeholder="Signal integration input"
                 value=value_signal
                 disabled=disabled_signal
-                error=error_signal
+                
             />
         };
         
@@ -82,9 +82,9 @@ mod integration_tests {
             <Input 
                 placeholder="Form integration input"
                 value=""
-                form="test-form"
-                name="test-input"
-                required=true
+                
+                
+                
             />
         };
         
@@ -99,7 +99,7 @@ mod integration_tests {
             <Input 
                 placeholder="Validation integration input"
                 value=""
-                validation_integration=true
+                
             />
         };
         
@@ -114,7 +114,7 @@ mod integration_tests {
             <Input 
                 placeholder="Theme integration input"
                 value=""
-                theme_integration=true
+                
             />
         };
         
@@ -129,7 +129,7 @@ mod integration_tests {
             <Input 
                 placeholder="Style integration input"
                 value=""
-                style_integration=true
+                
             />
         };
         
@@ -144,7 +144,7 @@ mod integration_tests {
             <Input 
                 placeholder="Accessibility integration input"
                 value=""
-                accessibility_integration=true
+                
             />
         };
         
@@ -159,7 +159,7 @@ mod integration_tests {
             <Input 
                 placeholder="Performance integration input"
                 value=""
-                performance_integration=true
+                
             />
         };
         

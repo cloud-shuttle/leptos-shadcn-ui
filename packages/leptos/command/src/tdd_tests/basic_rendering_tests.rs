@@ -1,15 +1,16 @@
 #[cfg(test)]
 mod basic_rendering_tests {
-    use super::*;
+    use leptos::prelude::*;
+    use crate::default::*;
 
     #[test]
     fn test_command_basic_rendering() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                         <CommandItem>"Calculator"</CommandItem>
@@ -25,10 +26,10 @@ mod basic_rendering_tests {
     fn test_command_with_value() {
         let _command_view = view! {
             <Command value=MaybeProp::from("initial")>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -44,11 +45,11 @@ mod basic_rendering_tests {
             // Callback logic
         });
         let _command_view = view! {
-            <Command on_value_change=Some(callback)>
-                <CommandInput placeholder="Search..."/>
+            <Command on_value_change=callback>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -61,10 +62,10 @@ mod basic_rendering_tests {
     fn test_command_with_class() {
         let _command_view = view! {
             <Command class=MaybeProp::from("custom-command")>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -76,11 +77,11 @@ mod basic_rendering_tests {
     #[test]
     fn test_command_with_label() {
         let _command_view = view! {
-            <Command label=MaybeProp::from("Search Command")>
-                <CommandInput placeholder="Search..."/>
+            <Command>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -92,11 +93,11 @@ mod basic_rendering_tests {
     #[test]
     fn test_command_with_form() {
         let _command_view = view! {
-            <Command form=MaybeProp::from("search-form")>
-                <CommandInput placeholder="Search..."/>
+            <Command>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -112,11 +113,11 @@ mod basic_rendering_tests {
             assert!(!value.is_empty() || value.is_empty());
         });
         let _command_view = view! {
-            <Command on_value_change=Some(callback)>
-                <CommandInput placeholder="Search..."/>
+            <Command on_value_change=callback>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -129,10 +130,10 @@ mod basic_rendering_tests {
     fn test_command_custom_styles() {
         let _command_view = view! {
             <Command class=MaybeProp::from("custom-styles")>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -149,14 +150,13 @@ mod basic_rendering_tests {
         let _command_view = view! {
             <Command 
                 value=MaybeProp::from("combined")
-                on_value_change=Some(callback)
+                on_value_change=callback
                 class=MaybeProp::from("combined-class")
-                label=MaybeProp::from("Combined Command")
             >
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -169,7 +169,7 @@ mod basic_rendering_tests {
     fn test_command_multiple_instances() {
         let _command_view1 = view! {
             <Command>
-                <CommandInput placeholder="Search 1..."/>
+                <CommandInput placeholder=MaybeProp::from("Search 1...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
                 </CommandList>
@@ -178,7 +178,7 @@ mod basic_rendering_tests {
         
         let _command_view2 = view! {
             <Command>
-                <CommandInput placeholder="Search 2..."/>
+                <CommandInput placeholder=MaybeProp::from("Search 2...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
                 </CommandList>
@@ -193,10 +193,10 @@ mod basic_rendering_tests {
         let value_signal = RwSignal::new("".to_string());
         let _command_view = view! {
             <Command value=MaybeProp::from(value_signal)>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -212,10 +212,10 @@ mod basic_rendering_tests {
     fn test_command_context_management() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -228,10 +228,10 @@ mod basic_rendering_tests {
     fn test_command_animations() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>

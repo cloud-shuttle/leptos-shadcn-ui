@@ -30,13 +30,14 @@ impl Default for MemoryStats {
 }
 
 /// Memory manager for tracking and managing signal memory usage
+#[derive(Debug, Clone)]
 pub struct SignalMemoryManager {
     /// Tracked signal groups
-    tracked_groups: ArcRwSignal<HashMap<String, SignalGroup>>,
+    pub tracked_groups: ArcRwSignal<HashMap<String, SignalGroup>>,
     /// Memory statistics
-    stats: ArcRwSignal<MemoryStats>,
+    pub stats: ArcRwSignal<MemoryStats>,
     /// Maximum memory usage threshold
-    max_memory_bytes: usize,
+    pub max_memory_bytes: usize,
     /// Memory limit for pressure detection
     pub memory_limit: usize,
     /// Adaptive management enabled flag
@@ -97,6 +98,36 @@ impl SignalGroup {
     /// Check if this group is empty
     pub fn is_empty(&self) -> bool {
         self.total_count() == 0
+    }
+    
+    /// Remove a signal from this group
+    pub fn remove_signal(&mut self, index: usize) -> Option<()> {
+        if index < self.signals.len() {
+            self.signals.remove(index);
+            Some(())
+        } else {
+            None
+        }
+    }
+    
+    /// Remove a memo from this group
+    pub fn remove_memo(&mut self, index: usize) -> Option<()> {
+        if index < self.memos.len() {
+            self.memos.remove(index);
+            Some(())
+        } else {
+            None
+        }
+    }
+    
+    /// Create a group with timestamp
+    pub fn with_timestamp(name: String, timestamp: f64) -> Self {
+        Self {
+            name,
+            signals: Vec::new(),
+            memos: Vec::new(),
+            created_at: timestamp,
+        }
     }
 }
 
@@ -256,6 +287,94 @@ impl SignalMemoryManager {
         let overhead = stats.tracked_groups * 512;
         
         base_usage + overhead
+    }
+    
+    /// Get total number of signals across all groups
+    pub fn total_signals(&self) -> usize {
+        self.tracked_groups.with(|groups| {
+            groups.values().map(|group| group.signal_count()).sum()
+        })
+    }
+    
+    /// Get total number of memos across all groups
+    pub fn total_memos(&self) -> usize {
+        self.tracked_groups.with(|groups| {
+            groups.values().map(|group| group.memo_count()).sum()
+        })
+    }
+    
+    /// Get memory usage in KB
+    pub fn memory_usage_kb(&self) -> f64 {
+        self.max_memory_bytes as f64 / 1024.0
+    }
+    
+    /// Add a signal to the default group
+    pub fn add_signal<T: Send + Sync + 'static>(&self, signal: ArcRwSignal<T>) -> Result<ArcRwSignal<T>, SignalManagementError> {
+        self.add_signal_to_group("default", signal)
+    }
+    
+    /// Add a memo to the default group
+    pub fn add_memo<T: Send + Sync + 'static>(&self, memo: ArcMemo<T>) -> Result<ArcMemo<T>, SignalManagementError> {
+        self.add_memo_to_group("default", memo)
+    }
+    
+    /// Cleanup a specific group
+    pub fn cleanup_group(&self, group_name: &str) -> Result<(), SignalManagementError> {
+        self.tracked_groups.update(|groups| {
+            groups.remove(group_name);
+        });
+        self.update_stats();
+        Ok(())
+    }
+    
+    /// Cleanup all groups
+    pub fn cleanup_all(&self) -> Result<(), SignalManagementError> {
+        self.tracked_groups.update(|groups| {
+            groups.clear();
+        });
+        self.update_stats();
+        Ok(())
+    }
+    
+    /// Create a manager with custom limits
+    pub fn with_limits(max_memory_bytes: usize, memory_limit: usize) -> Self {
+        Self {
+            tracked_groups: ArcRwSignal::new(HashMap::new()),
+            stats: ArcRwSignal::new(MemoryStats::default()),
+            max_memory_bytes,
+            memory_limit,
+            adaptive_management: false,
+        }
+    }
+    
+    /// Adaptive cleanup for low priority groups
+    pub fn cleanup_low_priority_groups(&self) -> Result<(), SignalManagementError> {
+        // Simple implementation - remove groups with no signals
+        self.tracked_groups.update(|groups| {
+            groups.retain(|_, group| !group.is_empty());
+        });
+        self.update_stats();
+        Ok(())
+    }
+    
+    /// Adaptive cleanup based on memory pressure
+    pub fn adaptive_cleanup(&self) -> Result<(), SignalManagementError> {
+        if self.max_memory_bytes > self.memory_limit {
+            self.cleanup_low_priority_groups()
+        } else {
+            Ok(())
+        }
+    }
+    
+    /// Update memory statistics
+    pub fn update_memory_stats(&self) -> Result<(), SignalManagementError> {
+        self.update_stats();
+        Ok(())
+    }
+    
+    /// Get memory statistics
+    pub fn get_memory_stats(&self) -> MemoryStats {
+        self.stats.get()
     }
 }
 

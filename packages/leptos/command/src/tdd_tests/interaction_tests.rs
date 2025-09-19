@@ -1,15 +1,16 @@
 #[cfg(test)]
 mod interaction_tests {
-    use super::*;
+    use leptos::prelude::*;
+    use crate::default::*;
 
     #[test]
     fn test_command_keyboard_navigation() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                         <CommandItem>"Calculator"</CommandItem>
@@ -24,10 +25,10 @@ mod interaction_tests {
     fn test_command_edge_cases() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder=""/>
+                <CommandInput placeholder=MaybeProp::from("")/>
                 <CommandList>
                     <CommandEmpty>""</CommandEmpty>
-                    <CommandGroup heading="">
+                    <CommandGroup heading=MaybeProp::from("")>
                         <CommandItem>""</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -43,10 +44,10 @@ mod interaction_tests {
         for i in 0..100 {
             let _command_view = view! {
                 <Command>
-                    <CommandInput placeholder=format!("Search {}...", i)/>
+                    <CommandInput placeholder=format!("Search {}...", i).into()/>
                     <CommandList>
                         <CommandEmpty>"No results found."</CommandEmpty>
-                        <CommandGroup heading="Suggestions">
+                        <CommandGroup heading=MaybeProp::from("Suggestions")>
                             <CommandItem>format!("Item {}", i)</CommandItem>
                         </CommandGroup>
                     </CommandList>
@@ -66,11 +67,11 @@ mod interaction_tests {
         });
         
         let _command_view = view! {
-            <Command on_value_change=Some(callback)>
-                <CommandInput placeholder="Search..."/>
+            <Command on_value_change=callback>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -85,10 +86,10 @@ mod interaction_tests {
         
         let _command_view = view! {
             <Command value=MaybeProp::from(value_signal)>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -107,10 +108,10 @@ mod interaction_tests {
     fn test_command_item_selection() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                         <CommandItem>"Calculator"</CommandItem>
@@ -125,10 +126,10 @@ mod interaction_tests {
     fn test_command_input_focus() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." autofocus=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -141,10 +142,10 @@ mod interaction_tests {
     fn test_command_search_filtering() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                         <CommandItem>"Calculator"</CommandItem>
@@ -159,17 +160,17 @@ mod interaction_tests {
     fn test_command_shortcut_handling() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>
                             "Calendar"
-                            <CommandShortcut>⌘K</CommandShortcut>
+                            <CommandShortcut>"⌘K"</CommandShortcut>
                         </CommandItem>
                         <CommandItem>
                             "Search Emoji"
-                            <CommandShortcut>⌘E</CommandShortcut>
+                            <CommandShortcut>"⌘E"</CommandShortcut>
                         </CommandItem>
                     </CommandGroup>
                 </CommandList>
@@ -182,11 +183,11 @@ mod interaction_tests {
     fn test_command_disabled_interactions() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." disabled=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
-                        <CommandItem disabled=true>"Disabled Item"</CommandItem>
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
+                        <CommandItem >"Disabled Item"</CommandItem>
                     </CommandGroup>
                 </CommandList>
             </Command>
@@ -198,10 +199,10 @@ mod interaction_tests {
     fn test_command_mouse_interactions() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -215,10 +216,10 @@ mod interaction_tests {
     fn test_command_touch_interactions() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..."/>
+                <CommandInput placeholder=MaybeProp::from("Search...")/>
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -232,10 +233,10 @@ mod interaction_tests {
     fn test_command_voice_interactions() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." voice_control=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                     </CommandGroup>
                 </CommandList>

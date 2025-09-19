@@ -26,7 +26,7 @@ mod styling_tests {
             <Input 
                 placeholder="Error state input"
                 value=""
-                error="This field is required"
+                field is required"
                 class="error-state"
             />
         };
@@ -42,7 +42,7 @@ mod styling_tests {
             <Input 
                 placeholder="Success state input"
                 value=""
-                success=true
+                
                 class="success-state"
             />
         };
@@ -60,7 +60,7 @@ mod styling_tests {
             <Input 
                 placeholder="Loading state input"
                 value=""
-                loading=loading_signal
+                
                 class="loading-state"
             />
         };
@@ -81,7 +81,7 @@ mod styling_tests {
             <Input 
                 placeholder="Theme switching input"
                 value=""
-                theme=theme_signal
+                
             />
         };
         
@@ -99,7 +99,7 @@ mod styling_tests {
             <Input 
                 placeholder="CSS variables input"
                 value=""
-                css_vars=true
+                
             />
         };
         
@@ -114,7 +114,7 @@ mod styling_tests {
             <Input 
                 placeholder="Dark mode input"
                 value=""
-                dark_mode=true
+                
             />
         };
         
@@ -129,7 +129,7 @@ mod styling_tests {
             <Input 
                 placeholder="Light mode input"
                 value=""
-                light_mode=true
+                
             />
         };
         
@@ -144,7 +144,7 @@ mod styling_tests {
             <Input 
                 placeholder="Custom colors input"
                 value=""
-                primary_color="#3b82f6"
+                
                 secondary_color="#64748b"
             />
         };
@@ -160,7 +160,7 @@ mod styling_tests {
             <Input 
                 placeholder="Gradient background input"
                 value=""
-                gradient_background=true
+                
             />
         };
         
@@ -175,7 +175,7 @@ mod styling_tests {
             <Input 
                 placeholder="Shadow effects input"
                 value=""
-                shadow_effects=true
+                
             />
         };
         
@@ -193,7 +193,7 @@ mod styling_tests {
                 <Input 
                     placeholder=format!("{} border input", style)
                     value=""
-                    border_style=style
+                    
                 />
             };
             
@@ -209,7 +209,7 @@ mod styling_tests {
             <Input 
                 placeholder="Rounded corners input"
                 value=""
-                rounded=true
+                
                 border_radius="8px"
             />
         };

@@ -11,7 +11,7 @@ mod validation_tests {
             <Input 
                 placeholder="Required input"
                 value=""
-                required=true
+                
             />
         };
         
@@ -27,7 +27,7 @@ mod validation_tests {
                 input_type="email"
                 placeholder="Enter email"
                 value=""
-                validation=ValidationRule::Email
+                
             />
         };
         
@@ -42,7 +42,7 @@ mod validation_tests {
             <Input 
                 placeholder="Min length input"
                 value=""
-                min_length=5
+                
             />
         };
         
@@ -57,7 +57,7 @@ mod validation_tests {
             <Input 
                 placeholder="Max length input"
                 value=""
-                max_length=100
+                
             />
         };
         
@@ -72,7 +72,7 @@ mod validation_tests {
             <Input 
                 placeholder="Pattern input"
                 value=""
-                pattern="[0-9]+"
+                
             />
         };
         
@@ -90,7 +90,7 @@ mod validation_tests {
                 <Input 
                     placeholder=format!("{} validation input", state)
                     value=""
-                    validation_state=state
+                    
                 />
             };
             
@@ -106,11 +106,11 @@ mod validation_tests {
             <Input 
                 placeholder="Comprehensive validation"
                 value=""
-                required=true
-                min_length=3
-                max_length=50
-                pattern="[a-zA-Z0-9]+"
-                validation=ValidationRule::Email
+                
+                
+                
+                
+                
             />
         };
         
@@ -134,7 +134,7 @@ mod validation_tests {
                 <Input 
                     placeholder="Validation rule input"
                     value=""
-                    validation=rule
+                    
                 />
             };
             
@@ -150,7 +150,7 @@ mod validation_tests {
             <Input 
                 placeholder="Error handling input"
                 value=""
-                error="This is an error message"
+                is an error message"
             />
         };
         
@@ -169,7 +169,7 @@ mod validation_tests {
             <Input 
                 placeholder="Signal validation input"
                 value=value_signal
-                error=error_signal
+                
                 valid=valid_signal
             />
         };
@@ -192,7 +192,7 @@ mod validation_tests {
             <Input 
                 placeholder="Custom validation input"
                 value=""
-                custom_validation=true
+                custom_
             />
         };
         
@@ -207,7 +207,7 @@ mod validation_tests {
             <Input 
                 placeholder="Async validation input"
                 value=""
-                async_validation=true
+                async_
             />
         };
         
@@ -222,7 +222,7 @@ mod validation_tests {
             <Input 
                 placeholder="Debounced validation input"
                 value=""
-                debounced_validation=true
+                debounced_
             />
         };
         

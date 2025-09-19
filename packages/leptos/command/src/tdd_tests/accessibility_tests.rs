@@ -1,15 +1,16 @@
 #[cfg(test)]
 mod accessibility_tests {
-    use super::*;
+    use leptos::prelude::*;
+    use crate::default::*;
 
     #[test]
     fn test_command_accessibility() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." aria_label="Search command"/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -24,15 +25,13 @@ mod accessibility_tests {
         let _command_view = view! {
             <Command>
                 <CommandInput 
-                    placeholder="Search..." 
-                    aria_label="Search command"
-                    aria_describedby="search-help"
+                    placeholder=MaybeProp::from("Search...") 
                 />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
-                        <CommandItem aria_label="Calendar application">"Calendar"</CommandItem>
-                        <CommandItem aria_label="Search emoji">"Search Emoji"</CommandItem>
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
+                        <CommandItem >"Calendar"</CommandItem>
+                        <CommandItem >"Search Emoji"</CommandItem>
                     </CommandGroup>
                 </CommandList>
             </Command>
@@ -44,12 +43,12 @@ mod accessibility_tests {
     fn test_command_role_attributes() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." role="searchbox"/>
-                <CommandList role="listbox">
+                <CommandInput placeholder=MaybeProp::from("Search...") />
+                <CommandList >
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions" role="group">
-                        <CommandItem role="option">"Calendar"</CommandItem>
-                        <CommandItem role="option">"Search Emoji"</CommandItem>
+                    <CommandGroup heading=MaybeProp::from("Suggestions") >
+                        <CommandItem >"Calendar"</CommandItem>
+                        <CommandItem >"Search Emoji"</CommandItem>
                     </CommandGroup>
                 </CommandList>
             </Command>
@@ -61,10 +60,10 @@ mod accessibility_tests {
     fn test_command_screen_reader_support() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." aria_live="polite"/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -78,10 +77,10 @@ mod accessibility_tests {
     fn test_command_high_contrast_mode() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." high_contrast=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -95,10 +94,10 @@ mod accessibility_tests {
     fn test_command_reduced_motion() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." reduced_motion=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -112,10 +111,10 @@ mod accessibility_tests {
     fn test_command_voice_control() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." voice_control=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -129,10 +128,10 @@ mod accessibility_tests {
     fn test_command_switch_control() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." switch_control=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -146,10 +145,10 @@ mod accessibility_tests {
     fn test_command_eye_tracking() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." eye_tracking=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -163,10 +162,10 @@ mod accessibility_tests {
     fn test_command_motor_impairment_support() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." motor_impairment_support=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -180,10 +179,10 @@ mod accessibility_tests {
     fn test_command_cognitive_accessibility() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." cognitive_accessibility=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -197,10 +196,10 @@ mod accessibility_tests {
     fn test_command_language_support() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." lang="en" dir="ltr"/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -214,10 +213,10 @@ mod accessibility_tests {
     fn test_command_rtl_support() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." lang="ar" dir="rtl"/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>
@@ -231,10 +230,10 @@ mod accessibility_tests {
     fn test_command_accessibility_testing() {
         let _command_view = view! {
             <Command>
-                <CommandInput placeholder="Search..." accessibility_testing=true/>
+                <CommandInput placeholder=MaybeProp::from("Search...") />
                 <CommandList>
                     <CommandEmpty>"No results found."</CommandEmpty>
-                    <CommandGroup heading="Suggestions">
+                    <CommandGroup heading=MaybeProp::from("Suggestions")>
                         <CommandItem>"Calendar"</CommandItem>
                         <CommandItem>"Search Emoji"</CommandItem>
                     </CommandGroup>

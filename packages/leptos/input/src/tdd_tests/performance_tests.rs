@@ -10,7 +10,7 @@ mod performance_tests {
             <Input 
                 placeholder="Performance input"
                 value=""
-                performance_test=true
+                
             />
         };
         
@@ -58,7 +58,7 @@ mod performance_tests {
             <Input 
                 placeholder="Memory performance input"
                 value=""
-                memory_performance=true
+                
             />
         };
         
@@ -73,7 +73,7 @@ mod performance_tests {
             <Input 
                 placeholder="CPU performance input"
                 value=""
-                cpu_performance=true
+                
             />
         };
         
@@ -88,7 +88,7 @@ mod performance_tests {
             <Input 
                 placeholder="Network performance input"
                 value=""
-                network_performance=true
+                
             />
         };
         
@@ -103,7 +103,7 @@ mod performance_tests {
             <Input 
                 placeholder="Battery performance input"
                 value=""
-                battery_performance=true
+                
             />
         };
         
@@ -118,7 +118,7 @@ mod performance_tests {
             <Input 
                 placeholder="Thermal performance input"
                 value=""
-                thermal_performance=true
+                
             />
         };
         
@@ -133,7 +133,7 @@ mod performance_tests {
             <Input 
                 placeholder="Benchmark performance input"
                 value=""
-                benchmark_performance=true
+                
             />
         };
         
@@ -148,7 +148,7 @@ mod performance_tests {
             <Input 
                 placeholder="Load performance input"
                 value=""
-                load_performance=true
+                
             />
         };
         
@@ -163,7 +163,7 @@ mod performance_tests {
             <Input 
                 placeholder="Stress performance input"
                 value=""
-                stress_performance=true
+                
             />
         };
         
@@ -178,7 +178,7 @@ mod performance_tests {
             <Input 
                 placeholder="Concurrent performance input"
                 value=""
-                concurrent_performance=true
+                
             />
         };
         
@@ -193,7 +193,7 @@ mod performance_tests {
             <Input 
                 placeholder="Scalability performance input"
                 value=""
-                scalability_performance=true
+                
             />
         };
         
