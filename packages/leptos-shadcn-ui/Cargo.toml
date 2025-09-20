@@ -21,59 +21,59 @@ leptos-struct-component = "0.2"
 leptos-style = "0.2"
 
 # Individual component packages (published dependencies for v0.9.0 release)
-leptos-shadcn-button = { version = "0.8.1", path = "../leptos/button", optional = true }
-leptos-shadcn-input = { version = "0.8.1", path = "../leptos/input", optional = true }
-leptos-shadcn-label = { version = "0.8.1", path = "../leptos/label", optional = true }
-leptos-shadcn-checkbox = { version = "0.8.1", path = "../leptos/checkbox", optional = true }
-leptos-shadcn-switch = { version = "0.8.1", path = "../leptos/switch", optional = true }
-leptos-shadcn-radio-group = { version = "0.8.1", path = "../leptos/radio-group", optional = true }
-leptos-shadcn-select = { version = "0.8.1", path = "../leptos/select", optional = true }
-leptos-shadcn-textarea = { version = "0.8.1", path = "../leptos/textarea", optional = true }
-leptos-shadcn-card = { version = "0.8.1", path = "../leptos/card", optional = true }
-leptos-shadcn-separator = { version = "0.8.1", path = "../leptos/separator", optional = true }
-leptos-shadcn-tabs = { version = "0.8.1", path = "../leptos/tabs", optional = true }
-leptos-shadcn-accordion = { version = "0.8.1", path = "../leptos/accordion", optional = true }
-leptos-shadcn-dialog = { version = "0.8.1", path = "../leptos/dialog", optional = true }
-leptos-shadcn-popover = { version = "0.8.1", path = "../leptos/popover", optional = true }
-leptos-shadcn-tooltip = { version = "0.8.1", path = "../leptos/tooltip", optional = true }
-leptos-shadcn-alert = { version = "0.8.1", path = "../leptos/alert", optional = true }
-leptos-shadcn-badge = { version = "0.8.1", path = "../leptos/badge", optional = true }
-leptos-shadcn-skeleton = { version = "0.8.1", path = "../leptos/skeleton", optional = true }
-leptos-shadcn-progress = { version = "0.8.1", path = "../leptos/progress", optional = true }
-leptos-shadcn-toast = { version = "0.8.1", path = "../leptos/toast", optional = true }
-leptos-shadcn-table = { version = "0.8.1", path = "../leptos/table", optional = true }
-leptos-shadcn-calendar = { version = "0.8.1", path = "../leptos/calendar", optional = true }
-leptos-shadcn-date-picker = { version = "0.8.1", path = "../leptos/date-picker", optional = true }
-leptos-shadcn-pagination = { version = "0.8.1", path = "../leptos/pagination", optional = true }
-leptos-shadcn-slider = { version = "0.8.1", path = "../leptos/slider", optional = true }
-leptos-shadcn-toggle = { version = "0.8.1", path = "../leptos/toggle", optional = true }
-leptos-shadcn-carousel = { version = "0.8.1", path = "../leptos/carousel", optional = true }
+leptos-shadcn-button = { version = "0.9.0", path = "../leptos/button", optional = true }
+leptos-shadcn-input = { version = "0.9.0", path = "../leptos/input", optional = true }
+leptos-shadcn-label = { version = "0.9.0", path = "../leptos/label", optional = true }
+leptos-shadcn-checkbox = { version = "0.9.0", path = "../leptos/checkbox", optional = true }
+leptos-shadcn-switch = { version = "0.9.0", path = "../leptos/switch", optional = true }
+leptos-shadcn-radio-group = { version = "0.9.0", path = "../leptos/radio-group", optional = true }
+leptos-shadcn-select = { version = "0.9.0", path = "../leptos/select", optional = true }
+leptos-shadcn-textarea = { version = "0.9.0", path = "../leptos/textarea", optional = true }
+leptos-shadcn-card = { version = "0.9.0", path = "../leptos/card", optional = true }
+leptos-shadcn-separator = { version = "0.9.0", path = "../leptos/separator", optional = true }
+leptos-shadcn-tabs = { version = "0.9.0", path = "../leptos/tabs", optional = true }
+leptos-shadcn-accordion = { version = "0.9.0", path = "../leptos/accordion", optional = true }
+leptos-shadcn-dialog = { version = "0.9.0", path = "../leptos/dialog", optional = true }
+leptos-shadcn-popover = { version = "0.9.0", path = "../leptos/popover", optional = true }
+leptos-shadcn-tooltip = { version = "0.9.0", path = "../leptos/tooltip", optional = true }
+leptos-shadcn-alert = { version = "0.9.0", path = "../leptos/alert", optional = true }
+leptos-shadcn-badge = { version = "0.9.0", path = "../leptos/badge", optional = true }
+leptos-shadcn-skeleton = { version = "0.9.0", path = "../leptos/skeleton", optional = true }
+leptos-shadcn-progress = { version = "0.9.0", path = "../leptos/progress", optional = true }
+leptos-shadcn-toast = { version = "0.9.0", path = "../leptos/toast", optional = true }
+leptos-shadcn-table = { version = "0.9.0", path = "../leptos/table", optional = true }
+leptos-shadcn-calendar = { version = "0.9.0", path = "../leptos/calendar", optional = true }
+leptos-shadcn-date-picker = { version = "0.9.0", path = "../leptos/date-picker", optional = true }
+leptos-shadcn-pagination = { version = "0.9.0", path = "../leptos/pagination", optional = true }
+leptos-shadcn-slider = { version = "0.9.0", path = "../leptos/slider", optional = true }
+leptos-shadcn-toggle = { version = "0.9.0", path = "../leptos/toggle", optional = true }
+leptos-shadcn-carousel = { version = "0.9.0", path = "../leptos/carousel", optional = true }
 
 # Advanced components (published dependencies for v0.9.0 release)
-leptos-shadcn-form = { version = "0.8.1", path = "../leptos/form", optional = true }
-leptos-shadcn-combobox = { version = "0.8.1", path = "../leptos/combobox", optional = true }
-leptos-shadcn-command = { version = "0.8.1", path = "../leptos/command", optional = true }
-leptos-shadcn-input-otp = { version = "0.8.1", path = "../leptos/input-otp", optional = true }
-leptos-shadcn-breadcrumb = { version = "0.8.1", path = "../leptos/breadcrumb", optional = true }
-leptos-shadcn-navigation-menu = { version = "0.8.1", path = "../leptos/navigation-menu", optional = true }
-leptos-shadcn-context-menu = { version = "0.8.1", path = "../leptos/context-menu", optional = true }
-leptos-shadcn-dropdown-menu = { version = "0.8.1", path = "../leptos/dropdown-menu", optional = true }
-leptos-shadcn-menubar = { version = "0.8.1", path = "../leptos/menubar", optional = true }
-leptos-shadcn-hover-card = { version = "0.8.1", path = "../leptos/hover-card", optional = true }
-leptos-shadcn-aspect-ratio = { version = "0.8.1", path = "../leptos/aspect-ratio", optional = true }
-leptos-shadcn-collapsible = { version = "0.8.1", path = "../leptos/collapsible", optional = true }
-leptos-shadcn-scroll-area = { version = "0.8.1", path = "../leptos/scroll-area", optional = true }
-leptos-shadcn-sheet = { version = "0.8.1", path = "../leptos/sheet", optional = true }
-leptos-shadcn-drawer = { version = "0.8.1", path = "../leptos/drawer", optional = true }
-leptos-shadcn-alert-dialog = { version = "0.8.1", path = "../leptos/alert-dialog", optional = true }
-leptos-shadcn-avatar = { version = "0.8.1", path = "../leptos/avatar", optional = true }
-leptos-shadcn-resizable = { version = "0.8.1", path = "../leptos/resizable", optional = true }
+leptos-shadcn-form = { version = "0.9.0", path = "../leptos/form", optional = true }
+leptos-shadcn-combobox = { version = "0.9.0", path = "../leptos/combobox", optional = true }
+leptos-shadcn-command = { version = "0.9.0", path = "../leptos/command", optional = true }
+leptos-shadcn-input-otp = { version = "0.9.0", path = "../leptos/input-otp", optional = true }
+leptos-shadcn-breadcrumb = { version = "0.9.0", path = "../leptos/breadcrumb", optional = true }
+leptos-shadcn-navigation-menu = { version = "0.9.0", path = "../leptos/navigation-menu", optional = true }
+leptos-shadcn-context-menu = { version = "0.9.0", path = "../leptos/context-menu", optional = true }
+leptos-shadcn-dropdown-menu = { version = "0.9.0", path = "../leptos/dropdown-menu", optional = true }
+leptos-shadcn-menubar = { version = "0.9.0", path = "../leptos/menubar", optional = true }
+leptos-shadcn-hover-card = { version = "0.9.0", path = "../leptos/hover-card", optional = true }
+leptos-shadcn-aspect-ratio = { version = "0.9.0", path = "../leptos/aspect-ratio", optional = true }
+leptos-shadcn-collapsible = { version = "0.9.0", path = "../leptos/collapsible", optional = true }
+leptos-shadcn-scroll-area = { version = "0.9.0", path = "../leptos/scroll-area", optional = true }
+leptos-shadcn-sheet = { version = "0.9.0", path = "../leptos/sheet", optional = true }
+leptos-shadcn-drawer = { version = "0.9.0", path = "../leptos/drawer", optional = true }
+leptos-shadcn-alert-dialog = { version = "0.9.0", path = "../leptos/alert-dialog", optional = true }
+leptos-shadcn-avatar = { version = "0.9.0", path = "../leptos/avatar", optional = true }
+leptos-shadcn-resizable = { version = "0.9.0", path = "../leptos/resizable", optional = true }
 leptos-shadcn-performance-audit = { version = "0.1.0", path = "../../performance-audit", optional = true }
 
 # Additional packages (published dependencies for v0.9.0 release)
-leptos-shadcn-error-boundary = { version = "0.8.1", path = "../leptos/error-boundary", optional = true }
-leptos-shadcn-lazy-loading = { version = "0.8.1", path = "../leptos/lazy-loading", optional = true }
-leptos-shadcn-registry = { version = "0.8.0", path = "../leptos/registry", optional = true }
+leptos-shadcn-error-boundary = { version = "0.9.0", path = "../leptos/error-boundary", optional = true }
+leptos-shadcn-lazy-loading = { version = "0.9.0", path = "../leptos/lazy-loading", optional = true }
+leptos-shadcn-registry = { version = "0.9.0", path = "../leptos/registry", optional = true }
 
 # Additional dependencies
 tailwind_fuse = "0.3"
