@@ -73,7 +73,7 @@ leptos-shadcn-performance-audit = { version = "0.1.0", path = "../../performance
 # Additional packages (published dependencies for v0.9.0 release)
 leptos-shadcn-error-boundary = { version = "0.8.1", path = "../leptos/error-boundary", optional = true }
 leptos-shadcn-lazy-loading = { version = "0.8.1", path = "../leptos/lazy-loading", optional = true }
-leptos-shadcn-registry = { version = "0.8.1", path = "../leptos/registry", optional = true }
+leptos-shadcn-registry = { version = "0.8.0", path = "../leptos/registry", optional = true }
 
 # Additional dependencies
 tailwind_fuse = "0.3"
