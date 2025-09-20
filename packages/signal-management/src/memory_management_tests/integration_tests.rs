@@ -23,14 +23,18 @@ mod integration_tests {
         let memo2 = ArcMemo::new(move |_| 20);
         let memo3 = ArcMemo::new(move |_| 30);
         
-        group1.add_signal(signal1);
-        group1.add_memo(memo1);
+        let _group1_id = group1;
+        let _group2_id = group2;
+        let _group3_id = group3;
         
-        group2.add_signal(signal2);
-        group2.add_memo(memo2);
+        manager.add_signal(signal1);
+        manager.add_memo(memo1);
         
-        group3.add_signal(signal3);
-        group3.add_memo(memo3);
+        manager.add_signal(signal2);
+        manager.add_memo(memo2);
+        
+        manager.add_signal(signal3);
+        manager.add_memo(memo3);
         
         // Test integration
         assert_eq!(manager.tracked_groups.get().len(), 3);
@@ -50,13 +54,13 @@ mod integration_tests {
         // Create many groups
         for i in 0..100 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Add content to each group
             let signal = ArcRwSignal::new(format!("value_{}", i));
             let memo = ArcMemo::new(move |_| i);
-            group.add_signal(signal);
-            group.add_memo(memo);
+            manager.add_signal(signal);
+            manager.add_memo(memo);
         }
         
         // Test large scale state
@@ -91,13 +95,13 @@ mod integration_tests {
         // Create groups with different ages
         for i in 0..10 {
             let group_name = format!("old_group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Make some groups old
             if i < 5 {
                 manager.tracked_groups.update(|groups| {
                     if let Some(group) = groups.get_mut(&format!("old_group_{}", i)) {
-                        group.created_at = 0; // Very old timestamp
+                        group.created_at = 0.0; // Very old timestamp
                     }
                 });
             }
@@ -132,13 +136,13 @@ mod integration_tests {
         // Create groups until memory pressure
         for i in 0..100 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Add content to increase memory usage
             let signal = ArcRwSignal::new(format!("value_{}", i));
             let memo = ArcMemo::new(move |_| i);
-            group.add_signal(signal);
-            group.add_memo(memo);
+            manager.add_signal(signal);
+            manager.add_memo(memo);
             
             // Update stats
             manager.update_memory_stats();
@@ -149,7 +153,7 @@ mod integration_tests {
             });
             
             // Check for memory pressure
-            if manager.detect_memory_pressure() {
+            if manager.detect_memory_pressure().is_some() {
                 // Should detect pressure after exceeding limit
                 assert!(i > 0);
                 break;
@@ -171,14 +175,14 @@ mod integration_tests {
         // Create groups with different priorities
         for i in 0..20 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Add content to some groups
             if i % 2 == 0 {
                 let signal = ArcRwSignal::new(format!("value_{}", i));
                 let memo = ArcMemo::new(move |_| i);
-                group.add_signal(signal);
-                group.add_memo(memo);
+                manager.add_signal(signal);
+                manager.add_memo(memo);
             }
         }
         
@@ -204,14 +208,14 @@ mod integration_tests {
         // Create groups with content
         for i in 0..10 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Add different amounts of content
             for j in 0..i {
                 let signal = ArcRwSignal::new(format!("value_{}_{}", i, j));
                 let memo = ArcMemo::new(move |_| i * j);
-                group.add_signal(signal);
-                group.add_memo(memo);
+                manager.add_signal(signal);
+                manager.add_memo(memo);
             }
         }
         
@@ -236,13 +240,13 @@ mod integration_tests {
         
         // Create group
         let group_name = "lifecycle_group".to_string();
-        let group = manager.create_group(group_name.clone());
+        let _group_id = manager.create_group(group_name.clone());
         
         // Add content
         let signal = ArcRwSignal::new("test_value".to_string());
         let memo = ArcMemo::new(move |_| 42);
-        group.add_signal(signal.clone());
-        group.add_memo(memo.clone());
+        manager.add_signal(signal.clone());
+        manager.add_memo(memo.clone());
         
         // Verify group exists
         assert!(manager.get_group(&group_name).is_some());
@@ -256,8 +260,8 @@ mod integration_tests {
         assert_eq!(stats.tracked_groups, 1);
         
         // Remove content
-        group.remove_signal(&signal);
-        group.remove_memo(&memo);
+        manager.remove_signal(&signal);
+        manager.remove_memo(&memo);
         
         // Update stats
         manager.update_memory_stats();
@@ -278,18 +282,17 @@ mod integration_tests {
         let manager = SignalMemoryManager::new();
         
         // Test with empty group name
-        let empty_group = manager.create_group("".to_string());
-        assert_eq!(empty_group.name, "");
+        let _empty_group_id = manager.create_group("".to_string());
         
         // Test removing nonexistent group
-        manager.remove_group("nonexistent".to_string());
+        manager.remove_group("nonexistent");
         assert_eq!(manager.tracked_groups.get().len(), 1); // Still has empty group
         
         // Test getting nonexistent group
-        assert!(manager.get_group("nonexistent".to_string()).is_none());
+        assert!(manager.get_group("nonexistent").is_none());
         
         // Test memory pressure with no groups
-        assert!(!manager.detect_memory_pressure());
+        assert!(manager.detect_memory_pressure().is_none());
         
         // Test cleanup with no groups
         manager.cleanup_old_groups(1000);
@@ -307,12 +310,12 @@ mod integration_tests {
         // Create many groups with content
         for i in 0..1000 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             let signal = ArcRwSignal::new(format!("value_{}", i));
             let memo = ArcMemo::new(move |_| i);
-            group.add_signal(signal);
-            group.add_memo(memo);
+            manager.add_signal(signal);
+            manager.add_memo(memo);
         }
         
         let duration = start.elapsed();

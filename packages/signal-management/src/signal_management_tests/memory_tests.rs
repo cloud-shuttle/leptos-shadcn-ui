@@ -11,7 +11,7 @@ mod memory_tests {
         // Test initial state
         assert_eq!(manager.total_signals(), 0);
         assert_eq!(manager.total_memos(), 0);
-        assert_eq!(manager.memory_usage_kb(), 0);
+        assert_eq!(manager.memory_usage_kb(), 0.0);
     }
 
     #[test]
@@ -22,7 +22,7 @@ mod memory_tests {
         // Test default state
         assert_eq!(manager.total_signals(), 0);
         assert_eq!(manager.total_memos(), 0);
-        assert_eq!(manager.memory_usage_kb(), 0);
+        assert_eq!(manager.memory_usage_kb(), 0.0);
     }
 
     #[test]
@@ -58,8 +58,10 @@ mod memory_tests {
         
         // Add memos
         let signal = ArcRwSignal::new(42);
-        let memo1 = ArcMemo::new(move |_| signal.get() * 2);
-        let memo2 = ArcMemo::new(move |_| signal.get() * 3);
+        let signal_clone1 = signal.clone();
+        let signal_clone2 = signal.clone();
+        let memo1 = ArcMemo::new(move |_| signal_clone1.get() * 2);
+        let memo2 = ArcMemo::new(move |_| signal_clone2.get() * 3);
         
         manager.add_memo(memo1.clone());
         assert_eq!(manager.total_memos(), 1);
@@ -128,7 +130,7 @@ mod memory_tests {
         let mut manager = SignalMemoryManager::new();
         
         // Test initial memory usage
-        assert_eq!(manager.memory_usage_kb(), 0);
+        assert_eq!(manager.memory_usage_kb(), 0.0);
         
         // Add signals and test memory usage
         for i in 0..100 {
@@ -137,7 +139,7 @@ mod memory_tests {
         }
         
         // Test memory usage increased
-        assert!(manager.memory_usage_kb() > 0);
+        assert!(manager.memory_usage_kb() > 0.0);
         
         // Test total signals
         assert_eq!(manager.total_signals(), 100);
@@ -249,7 +251,7 @@ mod memory_tests {
         
         // Test initial memory usage
         let initial_memory = manager.memory_usage_kb();
-        assert_eq!(initial_memory, 0);
+        assert_eq!(initial_memory, 0.0);
         
         // Add signals and track memory usage
         let mut memory_usage = Vec::new();
@@ -266,6 +268,6 @@ mod memory_tests {
         }
         
         // Test final memory usage
-        assert!(manager.memory_usage_kb() > 0);
+        assert!(manager.memory_usage_kb() > 0.0);
     }
 }

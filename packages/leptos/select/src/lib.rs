@@ -14,11 +14,13 @@ pub use default::*;
 #[cfg(feature = "new_york")]
 pub use new_york as select;
 
+// Real focused tests (replaces 891-line bloated file)
 #[cfg(test)]
 mod tests;
 
+// Legacy tests (will be removed)
 #[cfg(test)]
-mod implementation_tests;
+mod implementation_tests_legacy;
 
 
 // Signal-managed exports

@@ -93,6 +93,134 @@ test-e2e-codegen: ## Generate E2E test code
 	@echo "🔄 Generating E2E test code..."
 	pnpm playwright codegen http://127.0.0.1:8080
 
+# WASM Testing
+test-wasm: ## Run comprehensive WASM browser tests
+	@echo "🧪 Running WASM browser tests..."
+	./scripts/run-wasm-tests.sh
+
+test-wasm-browsers: ## Run WASM tests on specific browsers (usage: make test-wasm-browsers BROWSERS=chromium,firefox)
+	@if [ -z "$(BROWSERS)" ]; then \
+		echo "❌ Please specify BROWSERS. Usage: make test-wasm-browsers BROWSERS=chromium,firefox"; \
+		exit 1; \
+	fi
+	@echo "🧪 Running WASM tests on $(BROWSERS)..."
+	./scripts/run-wasm-tests.sh -b "$(BROWSERS)"
+
+test-wasm-headed: ## Run WASM tests in headed mode
+	@echo "🧪 Running WASM tests in headed mode..."
+	./scripts/run-wasm-tests.sh -H
+
+test-wasm-parallel: ## Run WASM tests in parallel
+	@echo "🧪 Running WASM tests in parallel..."
+	./scripts/run-wasm-tests.sh -p
+
+test-wasm-verbose: ## Run WASM tests with verbose output
+	@echo "🧪 Running WASM tests with verbose output..."
+	./scripts/run-wasm-tests.sh -v
+
+# Enhanced E2E Testing
+test-e2e-enhanced: ## Run enhanced E2E tests with comprehensive reporting
+	@echo "🎭 Running enhanced E2E tests..."
+	pnpm playwright test --config=playwright.config.ts
+
+test-e2e-ci: ## Run E2E tests in CI mode
+	@echo "🚀 Running E2E tests in CI mode..."
+	CI=true pnpm playwright test --config=playwright.config.ts
+
+test-e2e-debug: ## Run E2E tests in debug mode
+	@echo "🐛 Running E2E tests in debug mode..."
+	DEBUG=true HEADLESS=false pnpm playwright test --config=playwright.config.ts
+
+test-e2e-performance: ## Run E2E performance tests only
+	@echo "📈 Running E2E performance tests..."
+	pnpm playwright test --project=performance-tests
+
+test-e2e-accessibility: ## Run E2E accessibility tests only
+	@echo "♿ Running E2E accessibility tests..."
+	pnpm playwright test --project=accessibility-tests
+
+test-e2e-wasm: ## Run E2E WASM tests only
+	@echo "🧪 Running E2E WASM tests..."
+	pnpm playwright test --project=wasm-tests
+
+test-e2e-report: ## Generate comprehensive E2E test report
+	@echo "📊 Generating E2E test report..."
+	pnpm playwright show-report
+
+# Performance Benchmarking
+benchmark: ## Run performance benchmarks
+	@echo "🏃 Running performance benchmarks..."
+	./scripts/run-performance-benchmarks.sh benchmark
+
+benchmark-components: ## Run benchmarks for specific components (usage: make benchmark-components COMPONENTS=button,input)
+	@if [ -z "$(COMPONENTS)" ]; then \
+		echo "❌ Please specify COMPONENTS. Usage: make benchmark-components COMPONENTS=button,input"; \
+		exit 1; \
+	fi
+	@echo "🏃 Running benchmarks for $(COMPONENTS)..."
+	./scripts/run-performance-benchmarks.sh benchmark -c "$(COMPONENTS)"
+
+benchmark-html: ## Run benchmarks and generate HTML report
+	@echo "🏃 Running benchmarks with HTML report..."
+	./scripts/run-performance-benchmarks.sh benchmark -f html -o test-results/performance/benchmark-report.html
+
+regression-test: ## Run performance regression tests
+	@echo "📊 Running performance regression tests..."
+	./scripts/run-performance-benchmarks.sh regression
+
+regression-update: ## Run regression tests and update baseline
+	@echo "📊 Running regression tests with baseline update..."
+	./scripts/run-performance-benchmarks.sh regression -u
+
+performance-monitor: ## Start automated performance monitoring
+	@echo "📈 Starting automated performance monitoring..."
+	./scripts/run-performance-benchmarks.sh monitor
+
+performance-monitor-alerts: ## Start monitoring with alerts enabled
+	@echo "📈 Starting performance monitoring with alerts..."
+	./scripts/run-performance-benchmarks.sh monitor -a
+
+setup-baseline: ## Setup performance baseline
+	@echo "🔧 Setting up performance baseline..."
+	./scripts/run-performance-benchmarks.sh setup
+
+performance-report: ## Generate performance report
+	@echo "📄 Generating performance report..."
+	./scripts/run-performance-benchmarks.sh report
+
+# Accessibility Automation
+accessibility-audit: ## Run comprehensive accessibility audit
+	@echo "♿ Running accessibility audit..."
+	./scripts/run-accessibility-audit.sh
+
+accessibility-audit-wcag: ## Run accessibility audit with specific WCAG level (usage: make accessibility-audit-wcag LEVEL=AAA)
+	@if [ -z "$(LEVEL)" ]; then \
+		echo "❌ Please specify LEVEL. Usage: make accessibility-audit-wcag LEVEL=AAA"; \
+		exit 1; \
+	fi
+	@echo "♿ Running accessibility audit with WCAG $(LEVEL)..."
+	./scripts/run-accessibility-audit.sh -l "$(LEVEL)"
+
+accessibility-audit-components: ## Run accessibility audit for specific components (usage: make accessibility-audit-components COMPONENTS=button,input)
+	@if [ -z "$(COMPONENTS)" ]; then \
+		echo "❌ Please specify COMPONENTS. Usage: make accessibility-audit-components COMPONENTS=button,input"; \
+		exit 1; \
+	fi
+	@echo "♿ Running accessibility audit for $(COMPONENTS)..."
+	./scripts/run-accessibility-audit.sh -c "$(COMPONENTS)"
+
+accessibility-audit-html: ## Run accessibility audit and generate HTML report
+	@echo "♿ Running accessibility audit with HTML report..."
+	./scripts/run-accessibility-audit.sh -f html -o test-results/accessibility/accessibility-report.html
+
+accessibility-audit-verbose: ## Run accessibility audit with verbose output
+	@echo "♿ Running accessibility audit with verbose output..."
+	./scripts/run-accessibility-audit.sh -v
+
+accessibility-audit-focus: ## Run accessibility audit focusing on focus management
+	@echo "♿ Running accessibility audit focusing on focus management..."
+	./scripts/run-accessibility-audit.sh --no-color-contrast --no-screen-reader
+
 # Production Readiness
 analyze-bundle: ## Analyze bundle sizes and optimization opportunities
 	@echo "📦 Analyzing bundle sizes for production readiness..."

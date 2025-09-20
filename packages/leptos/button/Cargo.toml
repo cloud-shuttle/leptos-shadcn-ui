@@ -26,6 +26,9 @@ new_york = []
 [dev-dependencies]
 shadcn-ui-test-utils = { path = "../../test-utils" }
 wasm-bindgen-test = { workspace = true }
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+getrandom = { workspace = true }
 web-sys = { version = "0.3", features = [
   "console",
   "HtmlElement", 
@@ -33,5 +36,11 @@ web-sys = { version = "0.3", features = [
   "Element",
   "Node",
   "Document",
-  "Window"
+  "Window",
+  "MouseEvent",
+  "KeyboardEvent",
+  "KeyboardEventInit",
+  "TouchEvent",
+  "Event",
+  "EventTarget"
 ] }

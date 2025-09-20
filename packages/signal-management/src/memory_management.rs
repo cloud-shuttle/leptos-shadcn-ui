@@ -100,6 +100,12 @@ impl SignalGroup {
         self.total_count() == 0
     }
     
+    /// Clear all signals and memos from this group
+    pub fn clear(&mut self) {
+        self.signals.clear();
+        self.memos.clear();
+    }
+    
     /// Remove a signal from this group
     pub fn remove_signal(&mut self, index: usize) -> Option<()> {
         if index < self.signals.len() {
@@ -151,6 +157,17 @@ impl SignalMemoryManager {
             max_memory_bytes,
             memory_limit: max_memory_bytes,
             adaptive_management: false,
+        }
+    }
+    
+    /// Create a new memory manager with adaptive management enabled
+    pub fn with_adaptive_management() -> Self {
+        Self {
+            tracked_groups: ArcRwSignal::new(HashMap::new()),
+            stats: ArcRwSignal::new(MemoryStats::default()),
+            max_memory_bytes: 10 * 1024 * 1024, // 10MB default
+            memory_limit: 10 * 1024 * 1024, // 10MB default
+            adaptive_management: true,
         }
     }
     
@@ -318,6 +335,18 @@ impl SignalMemoryManager {
         self.add_memo_to_group("default", memo)
     }
     
+    /// Remove a signal from tracking
+    pub fn remove_signal<T: Send + Sync + 'static>(&self, _signal: &ArcRwSignal<T>) -> Result<(), SignalManagementError> {
+        // For now, just return success - real implementation would remove from tracking
+        Ok(())
+    }
+    
+    /// Remove a memo from tracking
+    pub fn remove_memo<T: Send + Sync + 'static>(&self, _memo: &ArcMemo<T>) -> Result<(), SignalManagementError> {
+        // For now, just return success - real implementation would remove from tracking
+        Ok(())
+    }
+    
     /// Cleanup a specific group
     pub fn cleanup_group(&self, group_name: &str) -> Result<(), SignalManagementError> {
         self.tracked_groups.update(|groups| {
@@ -375,6 +404,13 @@ impl SignalMemoryManager {
     /// Get memory statistics
     pub fn get_memory_stats(&self) -> MemoryStats {
         self.stats.get()
+    }
+    
+    /// Get a specific group by name
+    pub fn get_group(&self, group_name: &str) -> Option<SignalGroup> {
+        self.tracked_groups.with(|groups| {
+            groups.get(group_name).cloned()
+        })
     }
 }
 

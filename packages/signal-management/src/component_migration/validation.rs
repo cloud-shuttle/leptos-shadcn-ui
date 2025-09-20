@@ -3,6 +3,7 @@
 //! This module provides validation functions for component migrations.
 
 use super::migration_core::{ComponentMigrator, MigrationStatus};
+use leptos::prelude::Get;
 
 /// Validate all component migrations
 /// Checks all 46 components and returns their migration status

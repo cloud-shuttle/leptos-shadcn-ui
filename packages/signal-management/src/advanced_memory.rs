@@ -5,6 +5,7 @@ use leptos::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use crate::memory_management::{SignalMemoryManager, MemoryLeakDetector};
+use crate::error::SignalManagementError;
 use crate::lifecycle::TailwindSignalManager;
 use crate::batched_updates::BatchedSignalUpdater;
 
@@ -125,7 +126,7 @@ impl AdvancedMemoryManagement for SignalMemoryManager {
                 }
                 MemoryPressureLevel::Medium => {
                     // Perform moderate cleanup
-                    self.cleanup_old_groups();
+                    self.cleanup_old_groups(3600); // Cleanup groups older than 1 hour
                     true
                 }
                 _ => false,
@@ -249,10 +250,24 @@ impl SignalMemoryManager {
         // This would remove groups that haven't been accessed recently
     }
     
-    /// Cleanup old groups
-    fn cleanup_old_groups(&self) {
-        // Implementation for cleaning up old groups
-        // This would remove groups that are older than a certain threshold
+    /// Cleanup old groups based on age threshold (in seconds)
+    pub fn cleanup_old_groups(&self, max_age_seconds: u64) -> Result<usize, SignalManagementError> {
+        let current_time = js_sys::Date::now();
+        let threshold = current_time - (max_age_seconds as f64 * 1000.0);
+        let mut cleaned_count = 0;
+        
+        self.tracked_groups.update(|groups| {
+            groups.retain(|_, group| {
+                if group.created_at < threshold {
+                    cleaned_count += 1;
+                    false // Remove old group
+                } else {
+                    true // Keep group
+                }
+            });
+        });
+        
+        Ok(cleaned_count)
     }
 }
 

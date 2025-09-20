@@ -60,6 +60,8 @@ pub mod performance_monitoring;
 pub mod optimization_roadmap;
 pub mod benchmarks;
 pub mod memory_safety;
+pub mod regression_testing;
+pub mod automated_monitoring;
 
 use thiserror::Error;
 

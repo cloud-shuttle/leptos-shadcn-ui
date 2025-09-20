@@ -46,9 +46,13 @@ mod memory_manager_tests {
         let manager = SignalMemoryManager::new();
         let group_name = "test_group".to_string();
         
-        let group = manager.create_group(group_name.clone());
+        let group_id = manager.create_group(group_name.clone());
+        assert!(group_id.is_ok());
         
-        // Test group was created
+        // Test group was created (verify via manager's tracking)
+        let group = manager.get_group(&group_name);
+        assert!(group.is_some());
+        let group = group.unwrap();
         assert_eq!(group.name, group_name);
         assert_eq!(group.signals.len(), 0);
         assert_eq!(group.memos.len(), 0);
@@ -117,12 +121,13 @@ mod memory_manager_tests {
         let manager = SignalMemoryManager::new();
         let group_name = "test_group".to_string();
         
-        let group = manager.create_group(group_name.clone());
+        let _group_id = manager.create_group(group_name.clone());
         let signal = ArcRwSignal::new("test_value".to_string());
         let memo = ArcMemo::new(move |_| 42);
         
-        group.add_signal(signal);
-        group.add_memo(memo);
+        // Add signal and memo to manager instead
+        manager.add_signal(signal);
+        manager.add_memo(memo);
         
         manager.update_memory_stats();
         let stats = manager.get_memory_stats();
@@ -141,7 +146,7 @@ mod memory_manager_tests {
         let manager = SignalMemoryManager::with_limits(max_memory, memory_limit);
         
         // Test initial state
-        assert!(!manager.detect_memory_pressure());
+        assert!(manager.detect_memory_pressure().is_none());
         
         // Simulate memory pressure
         manager.stats.update(|stats| {
@@ -149,7 +154,7 @@ mod memory_manager_tests {
         });
         
         // Test memory pressure is detected
-        assert!(manager.detect_memory_pressure());
+        assert!(manager.detect_memory_pressure().is_some());
     }
 
     #[test]
@@ -164,7 +169,7 @@ mod memory_manager_tests {
         // Simulate old timestamp
         manager.tracked_groups.update(|groups| {
             if let Some(group) = groups.get_mut(&group_name) {
-                group.created_at = 0; // Very old timestamp
+                group.created_at = 0.0; // Very old timestamp
             }
         });
         
@@ -241,11 +246,15 @@ mod memory_manager_tests {
         let manager = SignalMemoryManager::new();
         
         // Test with empty group name
-        let empty_group = manager.create_group("".to_string());
-        assert_eq!(empty_group.name, "");
+        let empty_group_id = manager.create_group("".to_string());
+        assert!(empty_group_id.is_ok());
+        
+        let empty_group = manager.get_group("");
+        assert!(empty_group.is_some());
+        assert_eq!(empty_group.unwrap().name, "");
         
         // Test removing nonexistent group
-        manager.remove_group("nonexistent".to_string());
+        manager.remove_group("nonexistent");
         assert_eq!(manager.tracked_groups.get().len(), 1); // Still has empty group
     }
 
@@ -264,7 +273,7 @@ mod memory_manager_tests {
         assert!(manager.tracked_groups.get().contains_key("group3"));
         
         // Test removing one group
-        manager.remove_group("group2".to_string());
+        manager.remove_group("group2");
         assert_eq!(manager.tracked_groups.get().len(), 2);
         assert!(!manager.tracked_groups.get().contains_key("group2"));
     }
@@ -283,11 +292,11 @@ mod memory_manager_tests {
         manager.stats.update(|stats| {
             stats.estimated_memory_bytes = memory_limit - 1;
         });
-        assert!(!manager.detect_memory_pressure());
+        assert!(manager.detect_memory_pressure().is_none());
         
         manager.stats.update(|stats| {
             stats.estimated_memory_bytes = memory_limit + 1;
         });
-        assert!(manager.detect_memory_pressure());
+        assert!(manager.detect_memory_pressure().is_some());
     }
 }

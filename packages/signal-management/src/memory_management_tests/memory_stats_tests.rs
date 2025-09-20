@@ -248,15 +248,15 @@ mod memory_stats_tests {
     fn test_memory_stats_overflow_protection() {
         // Test MemoryStats overflow protection
         let stats = MemoryStats {
-            active_signals: u32::MAX,
-            active_memos: u32::MAX,
-            estimated_memory_bytes: u64::MAX,
-            tracked_groups: u32::MAX,
+            active_signals: usize::MAX,
+            active_memos: usize::MAX,
+            estimated_memory_bytes: usize::MAX,
+            tracked_groups: usize::MAX,
         };
         
-        assert_eq!(stats.active_signals, u32::MAX);
-        assert_eq!(stats.active_memos, u32::MAX);
-        assert_eq!(stats.estimated_memory_bytes, u64::MAX);
-        assert_eq!(stats.tracked_groups, u32::MAX);
+        assert_eq!(stats.active_signals, usize::MAX);
+        assert_eq!(stats.active_memos, usize::MAX);
+        assert_eq!(stats.estimated_memory_bytes, usize::MAX);
+        assert_eq!(stats.tracked_groups, usize::MAX);
     }
 }

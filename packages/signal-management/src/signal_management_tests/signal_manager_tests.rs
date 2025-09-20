@@ -138,7 +138,8 @@ mod signal_manager_tests {
         
         // Track a memo
         let test_signal = ArcRwSignal::new(42);
-        let test_memo = ArcMemo::new(move |_| test_signal.get() * 2);
+        let test_signal_clone = test_signal.clone();
+        let test_memo = ArcMemo::new(move |_| test_signal_clone.get() * 2);
         let tracked_memo = manager.track_memo(test_memo.clone());
         
         // Test tracking count increased
@@ -192,9 +193,11 @@ mod signal_manager_tests {
         // Track multiple memos
         let signal1 = ArcRwSignal::new(10);
         let signal2 = ArcRwSignal::new(20);
+        let signal1_clone = signal1.clone();
+        let signal2_clone = signal2.clone();
         
-        let memo1 = ArcMemo::new(move |_| signal1.get() * 2);
-        let memo2 = ArcMemo::new(move |_| signal2.get() * 3);
+        let memo1 = ArcMemo::new(move |_| signal1_clone.get() * 2);
+        let memo2 = ArcMemo::new(move |_| signal2_clone.get() * 3);
         
         let tracked1 = manager.track_memo(memo1.clone());
         let tracked2 = manager.track_memo(memo2.clone());
@@ -222,8 +225,9 @@ mod signal_manager_tests {
         // Track signals and memos
         let signal1 = ArcRwSignal::new("test".to_string());
         let signal2 = ArcRwSignal::new(42);
+        let signal2_clone = signal2.clone();
         
-        let memo = ArcMemo::new(move |_| signal2.get() * 2);
+        let memo = ArcMemo::new(move |_| signal2_clone.get() * 2);
         
         let tracked_signal = manager.track_signal(signal1.clone());
         let tracked_memo = manager.track_memo(memo.clone());

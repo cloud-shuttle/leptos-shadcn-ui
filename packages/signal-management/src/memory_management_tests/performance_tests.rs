@@ -32,14 +32,14 @@ mod performance_tests {
         // Create groups with signals and memos
         for i in 0..100 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
-            // Add signals and memos to each group
+            // Add signals and memos to manager
             for j in 0..10 {
                 let signal = ArcRwSignal::new(format!("value_{}_{}", i, j));
                 let memo = ArcMemo::new(move |_| i * j);
-                group.add_signal(signal);
-                group.add_memo(memo);
+                manager.add_signal(signal);
+                manager.add_memo(memo);
             }
         }
         
@@ -154,12 +154,12 @@ mod performance_tests {
         // Create some groups with content
         for i in 0..100 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             let signal = ArcRwSignal::new(format!("value_{}", i));
             let memo = ArcMemo::new(move |_| i);
-            group.add_signal(signal);
-            group.add_memo(memo);
+            manager.add_signal(signal);
+            manager.add_memo(memo);
         }
         
         let start = std::time::Instant::now();
@@ -208,14 +208,14 @@ mod performance_tests {
         // Create many groups with many signals/memos
         for i in 0..100 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Add many signals and memos to each group
             for j in 0..100 {
                 let signal = ArcRwSignal::new(format!("value_{}_{}", i, j));
                 let memo = ArcMemo::new(move |_| i * j);
-                group.add_signal(signal);
-                group.add_memo(memo);
+                manager.add_signal(signal);
+                manager.add_memo(memo);
             }
         }
         
@@ -238,12 +238,12 @@ mod performance_tests {
         // Create groups with old timestamps
         for i in 0..100 {
             let group_name = format!("old_group_{}", i);
-            let group = manager.create_group(group_name);
+            let _group_id = manager.create_group(group_name);
             
             // Simulate old timestamp
             manager.tracked_groups.update(|groups| {
                 if let Some(group) = groups.get_mut(&format!("old_group_{}", i)) {
-                    group.created_at = 0; // Very old timestamp
+                    group.created_at = 0.0; // Very old timestamp
                 }
             });
         }
@@ -290,13 +290,13 @@ mod performance_tests {
         // Simulate concurrent operations
         for i in 0..100 {
             let group_name = format!("group_{}", i);
-            let group = manager.create_group(group_name.clone());
+            let _group_id = manager.create_group(group_name.clone());
             
             // Add content
             let signal = ArcRwSignal::new(format!("value_{}", i));
             let memo = ArcMemo::new(move |_| i);
-            group.add_signal(signal);
-            group.add_memo(memo);
+            manager.add_signal(signal);
+            manager.add_memo(memo);
             
             // Update stats
             manager.update_memory_stats();

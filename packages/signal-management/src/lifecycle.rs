@@ -93,6 +93,7 @@ impl Default for ResponsiveConfig {
 /// 
 /// This struct provides centralized management of signal lifecycles,
 /// ensuring proper disposal and memory management in Leptos 0.8.8+
+#[derive(Clone, Debug)]
 pub struct TailwindSignalManager {
     /// Theme signal that persists across component disposal
     theme_signal: ArcRwSignal<Theme>,
@@ -187,6 +188,7 @@ impl Default for TailwindSignalManager {
 }
 
 /// Signal cleanup utility for proper memory management
+#[derive(Clone, Debug)]
 pub struct SignalCleanup {
     signals: Vec<ArcRwSignal<()>>,
     memos: Vec<ArcMemo<()>>,
@@ -226,9 +228,11 @@ impl SignalCleanup {
     }
     
     /// Cleanup all tracked signals and memos
-    pub fn cleanup(self) -> Result<(), SignalManagementError> {
-        // Signals and memos will be automatically disposed when this struct is dropped
+    pub fn cleanup(&mut self) -> Result<(), SignalManagementError> {
+        // Clear the tracked signals and memos - they will be automatically disposed
         // due to Leptos 0.8.8's ownership tree
+        self.signals.clear();
+        self.memos.clear();
         Ok(())
     }
 }

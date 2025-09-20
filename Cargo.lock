@@ -1882,6 +1882,8 @@ dependencies = [
 name = "leptos-shadcn-button"
 version = "0.8.1"
 dependencies = [
+ "getrandom 0.2.16",
+ "js-sys",
  "leptos",
  "leptos-node-ref",
  "leptos-shadcn-signal-management 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1889,6 +1891,7 @@ dependencies = [
  "leptos-style",
  "shadcn-ui-test-utils",
  "tailwind_fuse 0.3.2",
+ "wasm-bindgen-futures",
  "wasm-bindgen-test",
  "web-sys",
 ]

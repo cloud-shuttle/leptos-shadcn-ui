@@ -56,8 +56,10 @@ mod cleanup_tests {
         
         // Track memos
         let signal = ArcRwSignal::new(42);
-        let memo1 = ArcMemo::new(move |_| signal.get() * 2);
-        let memo2 = ArcMemo::new(move |_| signal.get() * 3);
+        let signal_clone1 = signal.clone();
+        let signal_clone2 = signal.clone();
+        let memo1 = ArcMemo::new(move |_| signal_clone1.get() * 2);
+        let memo2 = ArcMemo::new(move |_| signal_clone2.get() * 3);
         
         cleanup.track_memo(memo1.clone());
         assert_eq!(cleanup.memos_count(), 1);
@@ -128,7 +130,7 @@ mod cleanup_tests {
         cleanup.track_signal(signal.clone());
         
         // Test first cleanup
-        cleanup.cleanup();
+        cleanup.cleanup().unwrap();
         assert_eq!(cleanup.signals_count(), 0);
         
         // Track more signals
@@ -136,7 +138,7 @@ mod cleanup_tests {
         cleanup.track_signal(signal2.clone());
         
         // Test second cleanup
-        cleanup.cleanup();
+        cleanup.cleanup().unwrap();
         assert_eq!(cleanup.signals_count(), 0);
     }
 
@@ -178,7 +180,7 @@ mod cleanup_tests {
         assert_eq!(cleanup.signals_count(), 100);
         
         // Test cleanup
-        cleanup.cleanup();
+        cleanup.cleanup().unwrap();
         assert_eq!(cleanup.signals_count(), 0);
     }
 
@@ -198,7 +200,7 @@ mod cleanup_tests {
         assert_eq!(cleanup.memos_count(), 100);
         
         // Test cleanup
-        cleanup.cleanup();
+        cleanup.cleanup().unwrap();
         assert_eq!(cleanup.memos_count(), 0);
     }
 

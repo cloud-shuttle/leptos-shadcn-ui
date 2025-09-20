@@ -68,7 +68,10 @@ mod performance_tests {
         assert_eq!(tracked_signal.get(), "updated_value");
         
         // Test batched updates
-        batched_updater.queue_update(signal.clone(), "batched_value".to_string());
+        let signal_clone = signal.clone();
+        batched_updater.queue_update(move || {
+            signal_clone.set("batched_value".to_string());
+        }).unwrap();
         batched_updater.flush_updates();
         assert_eq!(signal.get(), "batched_value");
         
@@ -198,7 +201,10 @@ mod performance_tests {
         
         for i in 0..1000 {
             let signal = ArcRwSignal::new(format!("initial_{}", i));
-            batched_updater.queue_update(signal, format!("update_{}", i));
+            let signal_clone = signal.clone();
+            batched_updater.queue_update(move || {
+                signal_clone.set(format!("update_{}", i));
+            }).unwrap();
         }
         
         let queue_duration = start.elapsed();
@@ -225,7 +231,7 @@ mod performance_tests {
         
         // Test initial memory usage
         let initial_memory = memory_manager.memory_usage_kb();
-        assert_eq!(initial_memory, 0);
+        assert_eq!(initial_memory, 0.0);
         
         // Test memory usage with many signals
         for i in 0..1000 {
@@ -240,7 +246,7 @@ mod performance_tests {
         // Test memory cleanup
         memory_manager.cleanup_all();
         let cleaned_memory = memory_manager.memory_usage_kb();
-        assert_eq!(cleaned_memory, 0);
+        assert_eq!(cleaned_memory, 0.0);
     }
 
     #[test]
@@ -260,7 +266,10 @@ mod performance_tests {
             cleanup.track_signal(signal.clone());
             
             // Queue batched updates
-            batched_updater.queue_update(signal, format!("update_{}", i));
+            let signal_clone = signal.clone();
+            batched_updater.queue_update(move || {
+                signal_clone.set(format!("update_{}", i));
+            }).unwrap();
         }
         
         let duration = start.elapsed();

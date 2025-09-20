@@ -1,0 +1,382 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+
+env:
+  NODE_VERSION: '18'
+  RUST_VERSION: 'stable'
+
+jobs:
+  e2e-tests:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+        include:
+          - browser: chromium
+            display: ':99'
+          - browser: firefox
+            display: ':99'
+          - browser: webkit
+            display: ':99'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+          target: wasm32-unknown-unknown
+          override: true
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libasound2-dev \
+            libatk-bridge2.0-dev \
+            libdrm2 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxrandr2 \
+            libgbm1 \
+            libxss1 \
+            libnss3-dev \
+            libgconf-2-4
+      
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm playwright install --with-deps ${{ matrix.browser }}
+      
+      - name: Build WASM target
+        run: |
+          rustup target add wasm32-unknown-unknown
+          cargo build --workspace --target wasm32-unknown-unknown
+      
+      - name: Build test application
+        run: |
+          cd minimal-wasm-test
+          wasm-pack build --target web --out-dir pkg
+          cd ..
+      
+      - name: Start test server
+        run: |
+          cd examples/leptos
+          trunk serve --port 8082 &
+          sleep 10
+        env:
+          DISPLAY: ${{ matrix.display }}
+      
+      - name: Run E2E tests
+        run: |
+          pnpm playwright test \
+            --project=${{ matrix.browser }} \
+            --reporter=html,json,junit \
+            --output-dir=test-results/${{ matrix.browser }} \
+            --timeout=30000
+        env:
+          DISPLAY: ${{ matrix.display }}
+          CI: true
+      
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-test-results-${{ matrix.browser }}
+          path: |
+            test-results/${{ matrix.browser }}/
+            test-results/
+          retention-days: 30
+      
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-screenshots-${{ matrix.browser }}
+          path: test-results/${{ matrix.browser }}/screenshots/
+          retention-days: 7
+      
+      - name: Upload videos
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-videos-${{ matrix.browser }}
+          path: test-results/${{ matrix.browser }}/videos/
+          retention-days: 7
+      
+      - name: Upload traces
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-traces-${{ matrix.browser }}
+          path: test-results/${{ matrix.browser }}/traces/
+          retention-days: 7
+
+  wasm-tests:
+    name: WASM Browser Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit, "Mobile Chrome", "Mobile Safari"]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm playwright install --with-deps
+      
+      - name: Build WASM application
+        run: |
+          cd minimal-wasm-test
+          wasm-pack build --target web --out-dir pkg
+          cd ..
+      
+      - name: Start test server
+        run: |
+          cd examples/leptos
+          trunk serve --port 8082 &
+          sleep 10
+      
+      - name: Run WASM tests
+        run: |
+          ./scripts/run-wasm-tests.sh -b "${{ matrix.browser }}" -v
+        env:
+          CI: true
+          WASM_MAX_INIT_TIME: 8000
+          WASM_MAX_FIRST_PAINT: 4000
+          WASM_MAX_FCP: 5000
+      
+      - name: Upload WASM test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wasm-test-results-${{ matrix.browser }}
+          path: test-results/wasm-tests/
+          retention-days: 30
+
+  performance-tests:
+    name: Performance Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: wasm32-unknown-unknown
+          override: true
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm playwright install --with-deps chromium
+      
+      - name: Build application
+        run: |
+          cd minimal-wasm-test
+          wasm-pack build --target web --out-dir pkg
+          cd ..
+      
+      - name: Start test server
+        run: |
+          cd examples/leptos
+          trunk serve --port 8082 &
+          sleep 10
+      
+      - name: Run performance tests
+        run: |
+          pnpm playwright test tests/e2e/performance.spec.ts \
+            --project=chromium \
+            --reporter=json \
+            --output-dir=test-results/performance
+        env:
+          CI: true
+      
+      - name: Upload performance results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: performance-test-results
+          path: test-results/performance/
+          retention-days: 30
+
+  accessibility-tests:
+    name: Accessibility Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          pnpm install
+          pnpm playwright install --with-deps chromium
+      
+      - name: Start test server
+        run: |
+          cd examples/leptos
+          trunk serve --port 8082 &
+          sleep 10
+      
+      - name: Run accessibility tests
+        run: |
+          pnpm playwright test tests/e2e/accessibility.spec.ts \
+            --project=chromium \
+            --reporter=json \
+            --output-dir=test-results/accessibility
+        env:
+          CI: true
+      
+      - name: Upload accessibility results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: accessibility-test-results
+          path: test-results/accessibility/
+          retention-days: 30
+
+  test-summary:
+    name: Test Summary
+    runs-on: ubuntu-latest
+    needs: [e2e-tests, wasm-tests, performance-tests, accessibility-tests]
+    if: always()
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: all-results/
+      
+      - name: Generate test summary
+        run: |
+          echo "# Test Summary" > test-summary.md
+          echo "" >> test-summary.md
+          echo "## E2E Tests" >> test-summary.md
+          echo "- Status: ${{ needs.e2e-tests.result }}" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "## WASM Tests" >> test-summary.md
+          echo "- Status: ${{ needs.wasm-tests.result }}" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "## Performance Tests" >> test-summary.md
+          echo "- Status: ${{ needs.performance-tests.result }}" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "## Accessibility Tests" >> test-summary.md
+          echo "- Status: ${{ needs.accessibility-tests.result }}" >> test-summary.md
+          echo "" >> test-summary.md
+          echo "## Overall Status" >> test-summary.md
+          if [[ "${{ needs.e2e-tests.result }}" == "success" && "${{ needs.wasm-tests.result }}" == "success" && "${{ needs.performance-tests.result }}" == "success" && "${{ needs.accessibility-tests.result }}" == "success" ]]; then
+            echo "✅ All tests passed!" >> test-summary.md
+          else
+            echo "❌ Some tests failed!" >> test-summary.md
+          fi
+      
+      - name: Upload test summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-summary
+          path: test-summary.md
+          retention-days: 30
+      
+      - name: Comment on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = fs.readFileSync('test-summary.md', 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: summary
+            });
+
+  notify-failure:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: [e2e-tests, wasm-tests, performance-tests, accessibility-tests]
+    if: failure()
+    
+    steps:
+      - name: Notify Slack
+        if: env.SLACK_WEBHOOK_URL
+        uses: 8398a7/action-slack@v3
+        with:
+          status: failure
+          text: 'E2E tests failed on ${{ github.ref }}'
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+      
+      - name: Notify Email
+        if: env.EMAIL_RECIPIENTS
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: 'E2E Tests Failed - ${{ github.repository }}'
+          body: 'E2E tests failed on branch ${{ github.ref }}. Please check the test results.'
+          to: ${{ env.EMAIL_RECIPIENTS }}

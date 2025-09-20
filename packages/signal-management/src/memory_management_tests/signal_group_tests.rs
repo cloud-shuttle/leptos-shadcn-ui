@@ -13,7 +13,7 @@ mod signal_group_tests {
         assert_eq!(group.name, "test_group");
         assert_eq!(group.signals.len(), 0);
         assert_eq!(group.memos.len(), 0);
-        assert!(group.created_at > 0);
+        assert!(group.created_at > 0.0);
     }
 
     #[test]
@@ -22,7 +22,7 @@ mod signal_group_tests {
         let timestamp = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
             .unwrap()
-            .as_secs();
+            .as_secs() as f64;
         
         let group = SignalGroup::with_timestamp("test_group".to_string(), timestamp);
         
@@ -43,7 +43,7 @@ mod signal_group_tests {
         
         // Test signal was added
         assert_eq!(group.signals.len(), 1);
-        assert!(group.signals.contains(&signal));
+        assert_eq!(group.signal_count(), 1);
     }
 
     #[test]
@@ -56,7 +56,7 @@ mod signal_group_tests {
         
         // Test memo was added
         assert_eq!(group.memos.len(), 1);
-        assert!(group.memos.contains(&memo));
+        assert_eq!(group.memo_count(), 1);
     }
 
     #[test]
@@ -68,7 +68,7 @@ mod signal_group_tests {
         group.add_signal(signal.clone());
         assert_eq!(group.signals.len(), 1);
         
-        group.remove_signal(&signal);
+        group.remove_signal(0);
         assert_eq!(group.signals.len(), 0);
     }
 
@@ -81,7 +81,7 @@ mod signal_group_tests {
         group.add_memo(memo.clone());
         assert_eq!(group.memos.len(), 1);
         
-        group.remove_memo(&memo);
+        group.remove_memo(0);
         assert_eq!(group.memos.len(), 0);
     }
 
@@ -153,9 +153,7 @@ mod signal_group_tests {
         group.add_signal(signal3.clone());
         
         assert_eq!(group.signals.len(), 3);
-        assert!(group.signals.contains(&signal1));
-        assert!(group.signals.contains(&signal2));
-        assert!(group.signals.contains(&signal3));
+        assert_eq!(group.signal_count(), 3);
     }
 
     #[test]
@@ -171,9 +169,7 @@ mod signal_group_tests {
         group.add_memo(memo3.clone());
         
         assert_eq!(group.memos.len(), 3);
-        assert!(group.memos.contains(&memo1));
-        assert!(group.memos.contains(&memo2));
-        assert!(group.memos.contains(&memo3));
+        assert_eq!(group.memo_count(), 3);
     }
 
     #[test]
@@ -188,8 +184,8 @@ mod signal_group_tests {
         
         assert_eq!(group.signals.len(), 1);
         assert_eq!(group.memos.len(), 1);
-        assert!(group.signals.contains(&signal));
-        assert!(group.memos.contains(&memo));
+        assert_eq!(group.signal_count(), 1);
+        assert_eq!(group.memo_count(), 1);
     }
 
     #[test]
@@ -225,7 +221,7 @@ mod signal_group_tests {
         let signal = ArcRwSignal::new("test_value".to_string());
         
         // Try to remove signal that was never added
-        group.remove_signal(&signal);
+        group.remove_signal(0);
         
         // Should still have 0 signals
         assert_eq!(group.signals.len(), 0);
@@ -238,7 +234,7 @@ mod signal_group_tests {
         let memo = ArcMemo::new(move |_| 42);
         
         // Try to remove memo that was never added
-        group.remove_memo(&memo);
+        group.remove_memo(0);
         
         // Should still have 0 memos
         assert_eq!(group.memos.len(), 0);

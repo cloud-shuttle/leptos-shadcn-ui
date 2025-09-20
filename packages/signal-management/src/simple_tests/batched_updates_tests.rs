@@ -33,10 +33,16 @@ mod batched_updates_tests {
         
         // Queue updates
         let signal = ArcRwSignal::new("initial".to_string());
-        updater.queue_update(signal.clone(), "update1".to_string());
+        let signal_clone1 = signal.clone();
+        updater.queue_update(move || {
+            signal_clone1.set("update1".to_string());
+        }).unwrap();
         assert_eq!(updater.queue_size(), 1);
         
-        updater.queue_update(signal.clone(), "update2".to_string());
+        let signal_clone2 = signal.clone();
+        updater.queue_update(move || {
+            signal_clone2.set("update2".to_string());
+        }).unwrap();
         assert_eq!(updater.queue_size(), 2);
         
         // Test signal still has original value
@@ -79,8 +85,14 @@ mod batched_updates_tests {
         let signal1 = ArcRwSignal::new("initial1".to_string());
         let signal2 = ArcRwSignal::new("initial2".to_string());
         
-        updater.queue_update(signal1.clone(), "update1".to_string());
-        updater.queue_update(signal2.clone(), "update2".to_string());
+        let signal1_clone = signal1.clone();
+        updater.queue_update(move || {
+            signal1_clone.set("update1".to_string());
+        }).unwrap();
+        let signal2_clone = signal2.clone();
+        updater.queue_update(move || {
+            signal2_clone.set("update2".to_string());
+        }).unwrap();
         
         // Test queue size
         assert_eq!(updater.queue_size(), 2);
@@ -109,8 +121,14 @@ mod batched_updates_tests {
         let signal1 = ArcRwSignal::new("initial1".to_string());
         let signal2 = ArcRwSignal::new("initial2".to_string());
         
-        updater.queue_update(signal1.clone(), "update1".to_string());
-        updater.queue_update(signal2.clone(), "update2".to_string());
+        let signal1_clone = signal1.clone();
+        updater.queue_update(move || {
+            signal1_clone.set("update1".to_string());
+        }).unwrap();
+        let signal2_clone = signal2.clone();
+        updater.queue_update(move || {
+            signal2_clone.set("update2".to_string());
+        }).unwrap();
         
         // Test queue size
         assert_eq!(updater.queue_size(), 2);
@@ -136,13 +154,22 @@ mod batched_updates_tests {
         let signal2 = ArcRwSignal::new("initial2".to_string());
         let signal3 = ArcRwSignal::new("initial3".to_string());
         
-        updater.queue_update(signal1.clone(), "update1".to_string());
+        let signal1_clone = signal1.clone();
+        updater.queue_update(move || {
+            signal1_clone.set("update1".to_string());
+        }).unwrap();
         assert_eq!(updater.queue_size(), 1);
         
-        updater.queue_update(signal2.clone(), "update2".to_string());
+        let signal2_clone = signal2.clone();
+        updater.queue_update(move || {
+            signal2_clone.set("update2".to_string());
+        }).unwrap();
         assert_eq!(updater.queue_size(), 2);
         
-        updater.queue_update(signal3.clone(), "update3".to_string());
+        let signal3_clone = signal3.clone();
+        updater.queue_update(move || {
+            signal3_clone.set("update3".to_string());
+        }).unwrap();
         
         // Test automatic flush
         assert_eq!(updater.queue_size(), 0);
@@ -161,9 +188,18 @@ mod batched_updates_tests {
         let signal2 = ArcRwSignal::new("initial2".to_string());
         let signal3 = ArcRwSignal::new("initial3".to_string());
         
-        updater.queue_update(signal1.clone(), "update1".to_string());
-        updater.queue_update(signal2.clone(), "update2".to_string());
-        updater.queue_update(signal3.clone(), "update3".to_string());
+        let signal1_clone = signal1.clone();
+        updater.queue_update(move || {
+            signal1_clone.set("update1".to_string());
+        }).unwrap();
+        let signal2_clone = signal2.clone();
+        updater.queue_update(move || {
+            signal2_clone.set("update2".to_string());
+        }).unwrap();
+        let signal3_clone = signal3.clone();
+        updater.queue_update(move || {
+            signal3_clone.set("update3".to_string());
+        }).unwrap();
         
         // Test queue size
         assert_eq!(updater.queue_size(), 3);
@@ -185,9 +221,18 @@ mod batched_updates_tests {
         // Queue multiple updates for same signal
         let signal = ArcRwSignal::new("initial".to_string());
         
-        updater.queue_update(signal.clone(), "update1".to_string());
-        updater.queue_update(signal.clone(), "update2".to_string());
-        updater.queue_update(signal.clone(), "update3".to_string());
+        let signal_clone1 = signal.clone();
+        updater.queue_update(move || {
+            signal_clone1.set("update1".to_string());
+        }).unwrap();
+        let signal_clone2 = signal.clone();
+        updater.queue_update(move || {
+            signal_clone2.set("update2".to_string());
+        }).unwrap();
+        let signal_clone3 = signal.clone();
+        updater.queue_update(move || {
+            signal_clone3.set("update3".to_string());
+        }).unwrap();
         
         // Test queue size
         assert_eq!(updater.queue_size(), 3);
@@ -204,7 +249,10 @@ mod batched_updates_tests {
         // Test updater cloning behavior
         let mut updater1 = BatchedSignalUpdater::new();
         let signal = ArcRwSignal::new("test".to_string());
-        updater1.queue_update(signal, "update".to_string());
+        let signal_clone = signal.clone();
+        updater1.queue_update(move || {
+            signal_clone.set("update".to_string());
+        }).unwrap();
         
         // Test cloning
         let updater2 = updater1.clone();
@@ -232,7 +280,10 @@ mod batched_updates_tests {
         
         for i in 0..1000 {
             let signal = ArcRwSignal::new(format!("initial_{}", i));
-            updater.queue_update(signal, format!("update_{}", i));
+            let signal_clone = signal.clone();
+            updater.queue_update(move || {
+                signal_clone.set(format!("update_{}", i));
+            }).unwrap();
         }
         
         let queue_duration = start.elapsed();
@@ -263,7 +314,10 @@ mod batched_updates_tests {
         // Queue many updates
         for i in 0..1000 {
             let signal = ArcRwSignal::new(format!("initial_{}", i));
-            updater.queue_update(signal, format!("update_{}", i));
+            let signal_clone = signal.clone();
+            updater.queue_update(move || {
+                signal_clone.set(format!("update_{}", i));
+            }).unwrap();
         }
         
         // Test queue size

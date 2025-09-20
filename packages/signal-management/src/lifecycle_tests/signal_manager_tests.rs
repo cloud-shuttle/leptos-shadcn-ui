@@ -138,7 +138,8 @@ mod signal_manager_tests {
         
         // Track a memo
         let test_signal = ArcRwSignal::new(42);
-        let test_memo = ArcMemo::new(move |_| test_signal.get() * 2);
+        let test_signal_clone = test_signal.clone();
+        let test_memo = ArcMemo::new(move |_| test_signal_clone.get() * 2);
         let tracked_memo = manager.track_memo(test_memo.clone());
         
         // Test tracking count increased

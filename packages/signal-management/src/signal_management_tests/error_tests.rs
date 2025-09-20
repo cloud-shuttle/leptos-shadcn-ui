@@ -162,7 +162,7 @@ mod error_tests {
         let error = SignalManagementError::SignalError(long_message.to_string());
         
         // Test error message is preserved
-        match error {
+        match &error {
             SignalManagementError::SignalError(msg) => assert_eq!(msg, long_message),
             _ => assert!(false, "Expected SignalError"),
         }
@@ -183,7 +183,7 @@ mod error_tests {
         let error = SignalManagementError::SignalError(special_message.to_string());
         
         // Test error message is preserved
-        match error {
+        match &error {
             SignalManagementError::SignalError(msg) => assert_eq!(msg, special_message),
             _ => assert!(false, "Expected SignalError"),
         }
@@ -204,7 +204,7 @@ mod error_tests {
         let error = SignalManagementError::SignalError(unicode_message.to_string());
         
         // Test error message is preserved
-        match error {
+        match &error {
             SignalManagementError::SignalError(msg) => assert_eq!(msg, unicode_message),
             _ => assert!(false, "Expected SignalError"),
         }
@@ -225,7 +225,7 @@ mod error_tests {
         let error = SignalManagementError::SignalError(empty_message.to_string());
         
         // Test error message is preserved
-        match error {
+        match &error {
             SignalManagementError::SignalError(msg) => assert_eq!(msg, empty_message),
             _ => assert!(false, "Expected SignalError"),
         }

@@ -79,6 +79,93 @@ This document outlines a comprehensive 4-week plan to achieve 90%+ test coverage
 
 **Status**: ✅ **COMPLETED** - Added 44 comprehensive implementation tests covering validation system, input types, accessibility, form integration, and edge cases.
 
+## Signal Management Test Fixes - Session 5 Update
+
+### Progress Summary
+**Date**: Current Session  
+**Focus**: Signal Management Test Error Resolution  
+**Approach**: Targeted Manual Fixes
+
+### Error Reduction Progress
+- **Initial State**: 500 test errors
+- **Current State**: 271 test errors  
+- **Total Fixed**: 229 errors (46% reduction)
+- **Remaining**: 271 errors
+
+### Key Fixes Applied
+
+#### 1. Queue Update API Alignment
+**Issue**: Tests were using incorrect `queue_update` API calls
+**Solution**: Converted from `queue_update(signal, value)` to proper closure-based calls
+**Files Fixed**:
+- `packages/signal-management/src/simple_tests/batched_updates_tests.rs`
+- `packages/signal-management/src/signal_management_tests/batched_updates_tests.rs`
+- `packages/signal-management/src/signal_management_tests/performance_tests.rs`
+
+**Example Fix**:
+```rust
+// Before (incorrect)
+updater.queue_update(signal.clone(), "update1".to_string());
+
+// After (correct)
+let signal_clone = signal.clone();
+updater.queue_update(move || {
+    signal_clone.set("update1".to_string());
+}).unwrap();
+```
+
+#### 2. Missing Method Implementation
+**Issue**: Tests calling non-existent `get_group()` method
+**Solution**: Added missing method to `SignalMemoryManager`
+**Implementation**:
+```rust
+/// Get a specific group by name
+pub fn get_group(&self, group_name: &str) -> Option<SignalGroup> {
+    self.tracked_groups.with(|groups| {
+        groups.get(group_name).cloned()
+    })
+}
+```
+
+#### 3. Moved Value Issues
+**Issue**: `cleanup.cleanup()` takes ownership, but tests try to use cleanup afterwards
+**Solution**: Clone cleanup before calling cleanup method
+**Pattern**:
+```rust
+// Before (causes moved value error)
+cleanup.cleanup();
+assert_eq!(cleanup.signals_count(), 0);
+
+// After (fixed)
+cleanup.clone().cleanup();
+assert_eq!(cleanup.signals_count(), 0);
+```
+
+### Error Pattern Analysis
+**Remaining Error Types**:
+1. **Type Mismatches** (49 errors) - String literal type issues
+2. **Moved Value Issues** (48 errors) - Ownership problems with cleanup
+3. **Type Comparisons** (12 errors) - f64 vs integer comparisons
+4. **Missing Methods** (13 errors) - API mismatches
+
+### Strategy Refinements
+1. **Targeted Manual Fixes**: Avoid broad batch operations that introduce new issues
+2. **Systematic Approach**: Fix one error pattern at a time
+3. **Validation**: Test progress after each set of fixes
+4. **Revert When Needed**: Use git to revert problematic changes
+
+### Next Steps
+1. **Continue Moved Value Fixes**: Address remaining cleanup ownership issues
+2. **Type Comparison Fixes**: Convert integer comparisons to float comparisons
+3. **Missing Method Implementation**: Add remaining missing API methods
+4. **Type Mismatch Resolution**: Fix string literal type issues
+
+### Lessons Learned
+1. **Batch Operations Risk**: sed commands can introduce syntax errors
+2. **Manual Approach Works**: Targeted fixes are more reliable
+3. **Progress Tracking**: Regular error count monitoring is essential
+4. **Git Safety Net**: Reverting problematic changes maintains progress
+
 #### Day 5-7: Card Component Enhancement
 **Current**: 71.4% coverage (90/126 lines)
 **Target**: 85% coverage (107/126 lines)
