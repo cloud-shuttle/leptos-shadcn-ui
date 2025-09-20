@@ -25,7 +25,7 @@ mod real_tests {
     fn test_popover_with_props() {
         mount_to_body(|| {
             view! {
-                <Popover class="test-class">
+                <Popover class="test-class".into()>
                     "popover with props"
                 </Popover>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_popover_responsive_behavior() {
         mount_to_body(|| {
             view! {
-                <Popover class="test-responsive">
+                <Popover class="test-responsive".into()>
                     "Responsive popover"
                 </Popover>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_popover_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout"><Popover>
+                <div class="test-layout".into()><Popover>
                         "Layout popover"
                     </Popover></div>
             }
@@ -105,7 +105,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Popover 
-                    class="test-responsive" 
+                    class="test-responsive".into() 
                     
                     style="width: 100%; max-width: 500px;">
                     "Responsive popover"
@@ -125,7 +125,7 @@ mod real_tests {
     fn test_popover_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container"><Popover class="test-layout-item">
+                <div class="test-layout-container".into()><Popover class="test-layout-item".into()>
                         "Layout popover"
                     </Popover></div>
             }

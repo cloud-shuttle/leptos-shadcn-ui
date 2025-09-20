@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <ContextMenu 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test context-menu"
                 </ContextMenu>
             }

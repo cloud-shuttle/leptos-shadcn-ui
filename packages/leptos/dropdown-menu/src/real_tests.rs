@@ -25,7 +25,7 @@ mod real_tests {
     fn test_dropdown_menu_with_props() {
         mount_to_body(|| {
             view! {
-                <DropdownMenu class="test-class">
+                <DropdownMenu class="test-class".into()>
                     "dropdown-menu with props"
                 </DropdownMenu>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_dropdown_menu_interaction() {
         mount_to_body(|| {
             view! {
-                <DropdownMenu class="test-interaction">
+                <DropdownMenu class="test-interaction".into()>
                     "Interactive dropdown-menu"
                 </DropdownMenu>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_dropdown_menu_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <DropdownMenu class="test-focus">
+                <DropdownMenu class="test-focus".into()>
                     "Focusable dropdown-menu"
                 </DropdownMenu>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_dropdown_menu_accessibility() {
         mount_to_body(|| {
             view! {
-                <DropdownMenu class="test-a11y">
+                <DropdownMenu class="test-a11y".into()>
                     "Accessible dropdown-menu"
                 </DropdownMenu>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_dropdown_menu_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <DropdownMenu class="test-dom-render">
+                <DropdownMenu class="test-dom-render".into()>
                     "DOM Test dropdown-menu"
                 </DropdownMenu>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_dropdown_menu_class_application() {
         mount_to_body(|| {
             view! {
-                <DropdownMenu class="test-class-application custom-class">
+                <DropdownMenu class="test-class-application custom-class".into()>
                     "Class Test dropdown-menu"
                 </DropdownMenu>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <DropdownMenu 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test dropdown-menu"
                 </DropdownMenu>
             }

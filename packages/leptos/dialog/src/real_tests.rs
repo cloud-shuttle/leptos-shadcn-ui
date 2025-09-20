@@ -89,7 +89,7 @@ mod real_tests {
     fn test_dialog_layout_integration_2() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout"><Dialog>
+                <div class="test-layout".into()><Dialog>
                         "Layout dialog"
                     </Dialog></div>
             }
@@ -105,7 +105,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Dialog 
-                    class="test-responsive">
+                    class="test-responsive".into()>
                     "Responsive dialog"
                 </Dialog>
             }
@@ -123,7 +123,7 @@ mod real_tests {
     fn test_dialog_layout_integration_2() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container"><Dialog>
+                <div class="test-layout-container".into()><Dialog>
                         "Layout dialog"
                     </Dialog></div>
             }

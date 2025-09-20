@@ -25,7 +25,7 @@ mod real_tests {
     fn test_form_with_props() {
         mount_to_body(|| {
             view! {
-                <Form class="test-class">
+                <Form class="test-class".into()>
                     "form with props"
                 </Form>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_form_validation_state_2() {
         mount_to_body(|| {
             view! {
-                <Form class="test-validation">
+                <Form class="test-validation".into()>
                     "Valid form"
                 </Form>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_form_form_integration_2() {
         mount_to_body(|| {
             view! {
-                <form class="test-form"><Form  class="test-form-field">
+                <form class="test-form".into()><Form  class="test-form-field".into()>
                         "Form form"
                     </Form></form>
             }
@@ -123,7 +123,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Form 
-                    class="test-validation">
+                    class="test-validation".into()>
                     "Valid form"
                 </Form>
             }

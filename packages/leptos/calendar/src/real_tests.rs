@@ -25,7 +25,7 @@ mod real_tests {
     fn test_calendar_with_props() {
         mount_to_body(|| {
             view! {
-                <Calendar class="test-class">
+                <Calendar class="test-class".into()>
                     "calendar with props"
                 </Calendar>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_calendar_interaction() {
         mount_to_body(|| {
             view! {
-                <Calendar class="test-interaction">
+                <Calendar class="test-interaction".into()>
                     "Interactive calendar"
                 </Calendar>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_calendar_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Calendar class="test-focus">
+                <Calendar class="test-focus".into()>
                     "Focusable calendar"
                 </Calendar>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_calendar_accessibility() {
         mount_to_body(|| {
             view! {
-                <Calendar class="test-a11y">
+                <Calendar class="test-a11y".into()>
                     "Accessible calendar"
                 </Calendar>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_calendar_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Calendar class="test-dom-render">
+                <Calendar class="test-dom-render".into()>
                     "DOM Test calendar"
                 </Calendar>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_calendar_class_application() {
         mount_to_body(|| {
             view! {
-                <Calendar class="test-class-application custom-class">
+                <Calendar class="test-class-application custom-class".into()>
                     "Class Test calendar"
                 </Calendar>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Calendar 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test calendar"
                 </Calendar>
             }

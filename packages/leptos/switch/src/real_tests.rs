@@ -25,7 +25,7 @@ mod real_tests {
     fn test_switch_with_props() {
         mount_to_body(|| {
             view! {
-                <Switch class="test-class">
+                <Switch class="test-class".into()>
                     "switch with props"
                 </Switch>
             }
@@ -77,7 +77,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Switch 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move |_| click_count.update(|count| *count += 1)>
                     "Clickable switch"
                 </Switch>
@@ -93,7 +93,7 @@ mod real_tests {
     fn test_switch_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Switch class="test-hover">
+                <Switch class="test-hover".into()>
                     "Hoverable switch"
                 </Switch>
             }
@@ -111,7 +111,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Switch 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable switch"
                 </Switch>
@@ -133,7 +133,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Switch 
-                    class="test-focus">
+                    class="test-focus".into()>
                     "Focusable switch"
                 </Switch>
             }

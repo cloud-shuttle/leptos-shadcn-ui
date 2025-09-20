@@ -25,7 +25,7 @@ mod real_tests {
     fn test_alert_with_props() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-class">
+                <Alert class="test-class".into()>
                     "alert with props"
                 </Alert>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_alert_interaction() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-interaction">
+                <Alert class="test-interaction".into()>
                     "Interactive alert"
                 </Alert>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_alert_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-focus">
+                <Alert class="test-focus".into()>
                     "Focusable alert"
                 </Alert>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_alert_accessibility() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-a11y">
+                <Alert class="test-a11y".into()>
                     "Accessible alert"
                 </Alert>
             }
@@ -120,7 +120,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Alert 
-                    class="test-responsive">
+                    class="test-responsive".into()>
                     "Responsive alert"
                 </Alert>
             }
@@ -138,7 +138,7 @@ mod real_tests {
     fn test_alert_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container"><Alert class="test-layout-item">
+                <div class="test-layout-container".into()><Alert class="test-layout-item".into()>
                         "Layout alert"
                     </Alert></div>
             }

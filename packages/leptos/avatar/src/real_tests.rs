@@ -25,7 +25,7 @@ mod real_tests {
     fn test_avatar_with_props() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-class" id="test-id">
+                <Avatar class="test-class".into() id="test-id">
                     "avatar with props"
                 </Avatar>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_avatar_interaction() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-interaction">
+                <Avatar class="test-interaction".into()>
                     "Interactive avatar"
                 </Avatar>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_avatar_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-focus">
+                <Avatar class="test-focus".into()>
                     "Focusable avatar"
                 </Avatar>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_avatar_accessibility() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-a11y">
+                <Avatar class="test-a11y".into()>
                     "Accessible avatar"
                 </Avatar>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_avatar_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-dom-render">
+                <Avatar class="test-dom-render".into()>
                     "DOM Test avatar"
                 </Avatar>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_avatar_class_application() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-class-application custom-class">
+                <Avatar class="test-class-application custom-class".into()>
                     "Class Test avatar"
                 </Avatar>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Avatar 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test avatar"
                 </Avatar>
             }

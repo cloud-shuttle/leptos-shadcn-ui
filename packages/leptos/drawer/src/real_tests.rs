@@ -25,7 +25,7 @@ mod real_tests {
     fn test_drawer_with_props() {
         mount_to_body(|| {
             view! {
-                <Drawer class="test-class">
+                <Drawer class="test-class".into()>
                     "drawer with props"
                 </Drawer>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_drawer_responsive_behavior() {
         mount_to_body(|| {
             view! {
-                <Drawer class="test-responsive">
+                <Drawer class="test-responsive".into()>
                     "Responsive drawer"
                 </Drawer>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_drawer_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout"><Drawer>
+                <div class="test-layout".into()><Drawer>
                         "Layout drawer"
                     </Drawer></div>
             }
@@ -105,7 +105,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Drawer 
-                    class="test-responsive" 
+                    class="test-responsive".into() 
                     
                     style="width: 100%; max-width: 500px;">
                     "Responsive drawer"
@@ -125,7 +125,7 @@ mod real_tests {
     fn test_drawer_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container"><Drawer class="test-layout-item">
+                <div class="test-layout-container".into()><Drawer class="test-layout-item".into()>
                         "Layout drawer"
                     </Drawer></div>
             }

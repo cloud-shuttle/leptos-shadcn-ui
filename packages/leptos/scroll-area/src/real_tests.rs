@@ -25,7 +25,7 @@ mod real_tests {
     fn test_scroll_area_with_props() {
         mount_to_body(|| {
             view! {
-                <ScrollArea class="test-class">
+                <ScrollArea class="test-class".into()>
                     "scroll-area with props"
                 </ScrollArea>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_scroll_area_interaction() {
         mount_to_body(|| {
             view! {
-                <ScrollArea class="test-interaction">
+                <ScrollArea class="test-interaction".into()>
                     "Interactive scroll-area"
                 </ScrollArea>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_scroll_area_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <ScrollArea class="test-focus">
+                <ScrollArea class="test-focus".into()>
                     "Focusable scroll-area"
                 </ScrollArea>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_scroll_area_accessibility() {
         mount_to_body(|| {
             view! {
-                <ScrollArea class="test-a11y">
+                <ScrollArea class="test-a11y".into()>
                     "Accessible scroll-area"
                 </ScrollArea>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_scroll_area_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <ScrollArea class="test-dom-render">
+                <ScrollArea class="test-dom-render".into()>
                     "DOM Test scroll-area"
                 </ScrollArea>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_scroll_area_class_application() {
         mount_to_body(|| {
             view! {
-                <ScrollArea class="test-class-application custom-class">
+                <ScrollArea class="test-class-application custom-class".into()>
                     "Class Test scroll-area"
                 </ScrollArea>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <ScrollArea 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test scroll-area"
                 </ScrollArea>
             }

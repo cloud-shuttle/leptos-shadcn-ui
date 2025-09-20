@@ -25,7 +25,7 @@ mod real_tests {
     fn test_collapsible_with_props() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-class">
+                <Collapsible class="test-class".into()>
                     "collapsible with props"
                 </Collapsible>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_collapsible_interaction() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-interaction">
+                <Collapsible class="test-interaction".into()>
                     "Interactive collapsible"
                 </Collapsible>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_collapsible_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-focus">
+                <Collapsible class="test-focus".into()>
                     "Focusable collapsible"
                 </Collapsible>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_collapsible_accessibility() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-a11y">
+                <Collapsible class="test-a11y".into()>
                     "Accessible collapsible"
                 </Collapsible>
             }
@@ -122,7 +122,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Collapsible 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable collapsible"
                 </Collapsible>
@@ -144,7 +144,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Collapsible 
-                    class="test-focus">
+                    class="test-focus".into()>
                     "Focusable collapsible"
                 </Collapsible>
             }

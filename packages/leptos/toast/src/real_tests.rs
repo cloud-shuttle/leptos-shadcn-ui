@@ -23,7 +23,7 @@ mod real_tests {
     fn test_toast_with_props() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-class"></Toast>
+                <Toast class="test-class".into()></Toast>
             }
         });
         
@@ -70,7 +70,7 @@ mod real_tests {
     fn test_toast_interaction() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-interaction"></Toast>
+                <Toast class="test-interaction".into()></Toast>
             }
         });
         
@@ -83,7 +83,7 @@ mod real_tests {
     fn test_toast_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-focus"></Toast>
+                <Toast class="test-focus".into()></Toast>
             }
         });
         
@@ -96,7 +96,7 @@ mod real_tests {
     fn test_toast_accessibility() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-a11y"></Toast>
+                <Toast class="test-a11y".into()></Toast>
             }
         });
         
@@ -109,7 +109,7 @@ mod real_tests {
     fn test_toast_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-dom-render"></Toast>
+                <Toast class="test-dom-render".into()></Toast>
             }
         });
         
@@ -125,7 +125,7 @@ mod real_tests {
     fn test_toast_class_application() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-class-application custom-class"></Toast>
+                <Toast class="test-class-application custom-class".into()></Toast>
             }
         });
         
@@ -142,7 +142,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Toast 
-                    class="test-attributes"></Toast>
+                    class="test-attributes".into()></Toast>
             }
         });
         

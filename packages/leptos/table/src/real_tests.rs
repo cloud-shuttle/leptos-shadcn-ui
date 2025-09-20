@@ -26,7 +26,7 @@ mod real_tests {
     fn test_table_with_props() {
         mount_to_body(|| {
             view! {
-                <Table class="test-class">
+                <Table class="test-class".into()>
                     "table with props"
                 </Table>
             }
@@ -122,7 +122,7 @@ mod real_tests {
     fn test_table_interaction() {
         mount_to_body(|| {
             view! {
-                <Table class="test-interaction">
+                <Table class="test-interaction".into()>
                     "Interactive table"
                 </Table>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_table_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Table class="test-focus">
+                <Table class="test-focus".into()>
                     "Focusable table"
                 </Table>
             }
@@ -152,7 +152,7 @@ mod real_tests {
     fn test_table_accessibility() {
         mount_to_body(|| {
             view! {
-                <Table class="test-a11y">
+                <Table class="test-a11y".into()>
                     "Accessible table"
                 </Table>
             }
@@ -167,7 +167,7 @@ mod real_tests {
     fn test_table_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Table class="test-dom-render">
+                <Table class="test-dom-render".into()>
                     "DOM Test table"
                 </Table>
             }
@@ -185,7 +185,7 @@ mod real_tests {
     fn test_table_class_application() {
         mount_to_body(|| {
             view! {
-                <Table class="test-class-application custom-class">
+                <Table class="test-class-application custom-class".into()>
                     "Class Test table"
                 </Table>
             }
@@ -204,7 +204,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Table 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test table"
                 </Table>
             }

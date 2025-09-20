@@ -25,7 +25,7 @@ mod real_tests {
     fn test_label_with_props() {
         mount_to_body(|| {
             view! {
-                <Label class="test-class">
+                <Label class="test-class".into()>
                     "label with props"
                 </Label>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_label_interaction() {
         mount_to_body(|| {
             view! {
-                <Label class="test-interaction">
+                <Label class="test-interaction".into()>
                     "Interactive label"
                 </Label>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_label_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Label class="test-focus">
+                <Label class="test-focus".into()>
                     "Focusable label"
                 </Label>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_label_accessibility() {
         mount_to_body(|| {
             view! {
-                <Label class="test-a11y">
+                <Label class="test-a11y".into()>
                     "Accessible label"
                 </Label>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_label_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Label class="test-dom-render">
+                <Label class="test-dom-render".into()>
                     "DOM Test label"
                 </Label>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_label_class_application() {
         mount_to_body(|| {
             view! {
-                <Label class="test-class-application custom-class">
+                <Label class="test-class-application custom-class".into()>
                     "Class Test label"
                 </Label>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Label 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test label"
                 </Label>
             }

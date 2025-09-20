@@ -25,7 +25,7 @@ mod real_tests {
     fn test_navigation_menu_with_props() {
         mount_to_body(|| {
             view! {
-                <NavigationMenu class="test-class">
+                <NavigationMenu class="test-class".into()>
                     "navigation-menu with props"
                 </NavigationMenu>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_navigation_menu_interaction() {
         mount_to_body(|| {
             view! {
-                <NavigationMenu class="test-interaction">
+                <NavigationMenu class="test-interaction".into()>
                     "Interactive navigation-menu"
                 </NavigationMenu>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_navigation_menu_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <NavigationMenu class="test-focus">
+                <NavigationMenu class="test-focus".into()>
                     "Focusable navigation-menu"
                 </NavigationMenu>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_navigation_menu_accessibility() {
         mount_to_body(|| {
             view! {
-                <NavigationMenu class="test-a11y">
+                <NavigationMenu class="test-a11y".into()>
                     "Accessible navigation-menu"
                 </NavigationMenu>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_navigation_menu_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <NavigationMenu class="test-dom-render">
+                <NavigationMenu class="test-dom-render".into()>
                     "DOM Test navigation-menu"
                 </NavigationMenu>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_navigation_menu_class_application() {
         mount_to_body(|| {
             view! {
-                <NavigationMenu class="test-class-application custom-class">
+                <NavigationMenu class="test-class-application custom-class".into()>
                     "Class Test navigation-menu"
                 </NavigationMenu>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <NavigationMenu 
-                    class="test-attributes">
+                    class="test-attributes".into()>
                     "Attribute Test navigation-menu"
                 </NavigationMenu>
             }
