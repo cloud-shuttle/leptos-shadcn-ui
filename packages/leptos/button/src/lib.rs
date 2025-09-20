@@ -19,20 +19,15 @@ pub use signal_managed::{SignalManagedButton, EnhancedButton, SignalManagedButto
 // mod tdd_tests_simplified;
 
 // Real working tests (replaces placeholders)
-#[cfg(test)]
+
 mod tests_simple;
 
-#[cfg(test)]
-
 // Keep legacy tests for now (will phase out)
-#[cfg(test)]
+
 mod tdd_tests;
 
-#[cfg(test)]
 mod implementation_tests;
 
-#[cfg(test)]
 mod new_york_tests;
 
-#[cfg(test)]
 mod variant_comparison_tests;

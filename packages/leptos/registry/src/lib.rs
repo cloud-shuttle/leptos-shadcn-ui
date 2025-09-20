@@ -164,7 +164,6 @@ macro_rules! include_component_module {
     };
 }
 
-#[cfg(test)]
 mod tests {
     use super::*;
 

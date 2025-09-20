@@ -10,7 +10,6 @@ mod new_york;
 #[cfg(not(feature = "new_york"))]
 mod default;
 
-
 mod tests;
 
 mod tdd_tests;
@@ -18,5 +17,3 @@ mod tdd_tests;
 // Signal-managed module and exports
 pub mod signal_managed;
 pub use signal_managed::*;
-
-#[cfg(test)]

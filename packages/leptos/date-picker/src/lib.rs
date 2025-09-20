@@ -12,15 +12,11 @@ mod default;
 
 pub mod signal_managed;
 
-
 mod tests;
 
 mod tdd_tests;
-
 
 mod advanced_date_picker_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

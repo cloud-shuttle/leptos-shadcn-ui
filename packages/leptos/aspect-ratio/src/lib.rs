@@ -14,8 +14,6 @@ pub use default::*;
 #[cfg(feature = "new_york")]
 pub use new_york as aspect_ratio;
 
-#[cfg(test)]
-
 mod tests;
 
 // Signal-managed exports

@@ -13,16 +13,12 @@ pub use validation::{
 };
 pub use signal_managed::{SignalManagedInput, EnhancedInput, SignalManagedInputState};
 
-#[cfg(test)]
 mod tests_real;
-
-#[cfg(test)]
 
 // Legacy tests (temporarily disabled due to syntax errors)
 // #[cfg(test)]
 // mod tests;
 
-#[cfg(test)]
 mod leptos_v0_8_compatibility_tests;
 
 // #[cfg(test)]

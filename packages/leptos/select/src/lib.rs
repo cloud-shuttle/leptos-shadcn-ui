@@ -28,8 +28,5 @@ mod tests {
 
 mod implementation_tests_legacy;
 
-
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

@@ -14,8 +14,6 @@ pub use new_york::{
     CollapsibleContent as CollapsibleContentNewYork,
 };
 
-#[cfg(test)]
-
 mod tests;
 
 // Signal-managed exports

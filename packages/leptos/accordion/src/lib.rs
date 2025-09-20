@@ -18,13 +18,9 @@ pub use new_york::{
     AccordionOrientation as AccordionOrientationNewYork,
 };
 
-#[cfg(test)]
 mod tests;
 
-#[cfg(test)]
 mod tdd_tests;
-
-#[cfg(test)]
 
 // Signal-managed exports
 pub use signal_managed::*;

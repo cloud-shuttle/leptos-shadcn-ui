@@ -12,12 +12,9 @@ mod default;
 
 pub mod signal_managed;
 
-
 mod tests;
 
 mod tdd_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

@@ -23,8 +23,6 @@ pub use new_york::{
     AlertDialogOverlay as AlertDialogOverlayNewYork,
 };
 
-#[cfg(test)]
-
 mod tests;
 
 // Signal-managed exports

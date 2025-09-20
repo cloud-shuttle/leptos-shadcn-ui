@@ -10,8 +10,6 @@ mod new_york;
 #[cfg(not(feature = "new_york"))]
 mod default;
 
-#[cfg(test)]
-
 mod tests;
 
 // Signal-managed module and exports

@@ -12,16 +12,10 @@ pub use signal_managed::{
     SignalManagedCardContent, SignalManagedCardFooter
 };
 
-#[cfg(test)]
 mod tests;
 
-#[cfg(test)]
 mod tdd_tests;
 
-#[cfg(test)]
-
-#[cfg(test)]
 mod implementation_tests;
 
-#[cfg(test)]
 mod new_york_tests;

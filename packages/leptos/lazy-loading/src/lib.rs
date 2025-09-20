@@ -10,8 +10,6 @@ use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;
 
-
-
 /// Lazy component loader that manages dynamic imports
 #[derive(Clone)]
 pub struct LazyComponentLoader {
@@ -228,8 +226,6 @@ impl BundleAnalysis {
         }
     }
 }
-
-#[cfg(test)]
 
 mod tests {
     use super::*;

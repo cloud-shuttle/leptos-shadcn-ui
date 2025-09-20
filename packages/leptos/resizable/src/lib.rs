@@ -11,14 +11,9 @@ pub use resizable::{
     ResizeDirection, ResizableState, ResizableConfig
 };
 
-
 mod tests;
-
 
 mod resizable_tests;
 
-
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

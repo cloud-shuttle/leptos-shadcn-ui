@@ -13,13 +13,9 @@ pub use new_york::{
     SkeletonVariant as SkeletonVariantNewYork, SkeletonSize as SkeletonSizeNewYork
 };
 
-
 mod tests;
 
 mod tdd_tests;
 
-
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

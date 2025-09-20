@@ -13,10 +13,7 @@ pub use new_york::{
     DialogFooter as DialogFooterNewYork, DialogClose as DialogCloseNewYork
 };
 
-#[cfg(test)]
-
 mod tests;
-
 
 // Signal-managed exports
 pub use signal_managed::*;

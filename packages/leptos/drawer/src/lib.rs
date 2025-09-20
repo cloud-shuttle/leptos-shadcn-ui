@@ -25,12 +25,9 @@ pub use new_york::{
     DrawerDirection as DrawerDirectionNewYork,
 };
 
-
 mod tests;
 
 mod tdd_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

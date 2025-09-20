@@ -13,13 +13,9 @@ pub use new_york::{
     ProgressVariant as ProgressVariantNewYork
 };
 
-
 mod tests;
 
 mod tdd_tests;
 
-
 // Signal-managed exports
 pub use signal_managed::*;
-
-#[cfg(test)]

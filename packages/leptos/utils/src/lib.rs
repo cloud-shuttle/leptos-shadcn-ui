@@ -10,5 +10,4 @@ pub mod new_york;
 // Re-export the main utility functions for convenience
 pub use default::{cn, cn_flexible};
 
-#[cfg(test)]
 mod tests;

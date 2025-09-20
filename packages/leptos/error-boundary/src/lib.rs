@@ -106,8 +106,6 @@ pub fn handle_error<T>(result: Result<T, impl std::fmt::Debug>) -> Option<T> {
     }
 }
 
-#[cfg(test)]
-
 mod tests {
     use super::*;
 
