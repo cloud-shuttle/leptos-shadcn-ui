@@ -25,7 +25,7 @@ mod real_tests {
     fn test_avatar_with_props() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-class".into() id="test-id">
+                <Avatar class="test-class" id="test-id">
                     "avatar with props"
                 </Avatar>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_avatar_interaction() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-interaction".into()>
+                <Avatar class="test-interaction">
                     "Interactive avatar"
                 </Avatar>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_avatar_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-focus".into()>
+                <Avatar class="test-focus">
                     "Focusable avatar"
                 </Avatar>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_avatar_accessibility() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-a11y".into() >
+                <Avatar class="test-a11y">
                     "Accessible avatar"
                 </Avatar>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_avatar_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-dom-render".into()>
+                <Avatar class="test-dom-render">
                     "DOM Test avatar"
                 </Avatar>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_avatar_class_application() {
         mount_to_body(|| {
             view! {
-                <Avatar class="test-class-application custom-class".into()>
+                <Avatar class="test-class-application custom-class">
                     "Class Test avatar"
                 </Avatar>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Avatar 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test avatar"
                 </Avatar>
             }

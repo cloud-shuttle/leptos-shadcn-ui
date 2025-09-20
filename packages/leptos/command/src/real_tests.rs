@@ -25,7 +25,7 @@ mod real_tests {
     fn test_command_with_props() {
         mount_to_body(|| {
             view! {
-                <Command class="test-class".into()>
+                <Command class="test-class">
                     "command with props"
                 </Command>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_command_interaction() {
         mount_to_body(|| {
             view! {
-                <Command class="test-interaction".into()>
+                <Command class="test-interaction">
                     "Interactive command"
                 </Command>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_command_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Command class="test-focus".into()>
+                <Command class="test-focus">
                     "Focusable command"
                 </Command>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_command_accessibility() {
         mount_to_body(|| {
             view! {
-                <Command class="test-a11y".into() >
+                <Command class="test-a11y">
                     "Accessible command"
                 </Command>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_command_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Command class="test-dom-render".into()>
+                <Command class="test-dom-render">
                     "DOM Test command"
                 </Command>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_command_class_application() {
         mount_to_body(|| {
             view! {
-                <Command class="test-class-application custom-class".into()>
+                <Command class="test-class-application custom-class">
                     "Class Test command"
                 </Command>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Command 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test command"
                 </Command>
             }

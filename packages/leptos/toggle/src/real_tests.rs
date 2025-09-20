@@ -15,7 +15,6 @@ mod real_tests {
                 </Toggle>
             }
         });
-        
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector("div").unwrap();
         assert!(element.is_some(), "toggle should render in DOM");
@@ -25,12 +24,11 @@ mod real_tests {
     fn test_toggle_with_props() {
         mount_to_body(|| {
             view! {
-                <Toggle class="test-class".into()>
+                <Toggle class="test-class">
                     "toggle with props"
                 </Toggle>
             }
         });
-        
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector("div").unwrap();
         assert!(element.is_some(), "toggle with props should render");
@@ -51,7 +49,6 @@ mod real_tests {
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
         });
-        
         callback.run(());
         assert!(callback_triggered.get(), "toggle callback should be triggered");
     }
@@ -72,7 +69,6 @@ mod real_tests {
 
     #[wasm_bindgen_test]
     });
-        
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector(".test-click").unwrap();
         assert!(element.is_some(), "toggle should render for click test");
@@ -82,12 +78,11 @@ mod real_tests {
     fn test_toggle_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Toggle class="test-hover".into() >
+                <Toggle class="test-hover">
                     "Hoverable toggle"
                 </Toggle>
             }
         });
-        
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector(".test-hover").unwrap();
         assert!(element.is_some(), "toggle should render for hover test");
@@ -95,7 +90,6 @@ mod real_tests {
 
     #[wasm_bindgen_test]
     });
-        
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector(".test-click").unwrap().unwrap();
         
@@ -111,14 +105,11 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Toggle 
-                    class="test-focus".into()
-                    
-                >
+                    class="test-focus">
                     "Focusable toggle"
                 </Toggle>
             }
         });
-        
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector(".test-focus").unwrap().unwrap();
         

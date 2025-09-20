@@ -25,7 +25,7 @@ mod real_tests {
     fn test_checkbox_with_props() {
         mount_to_body(|| {
             view! {
-                <Checkbox class="test-class".into()>
+                <Checkbox class="test-class">
                     "checkbox with props"
                 </Checkbox>
             }

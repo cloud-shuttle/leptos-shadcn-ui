@@ -25,7 +25,7 @@ mod real_tests {
     fn test_menubar_with_props() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-class".into()>
+                <Menubar class="test-class">
                     "menubar with props"
                 </Menubar>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_menubar_interaction() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-interaction".into()>
+                <Menubar class="test-interaction">
                     "Interactive menubar"
                 </Menubar>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_menubar_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-focus".into()>
+                <Menubar class="test-focus">
                     "Focusable menubar"
                 </Menubar>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_menubar_accessibility() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-a11y".into() >
+                <Menubar class="test-a11y">
                     "Accessible menubar"
                 </Menubar>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_menubar_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-dom-render".into()>
+                <Menubar class="test-dom-render">
                     "DOM Test menubar"
                 </Menubar>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_menubar_class_application() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-class-application custom-class".into()>
+                <Menubar class="test-class-application custom-class">
                     "Class Test menubar"
                 </Menubar>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Menubar 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test menubar"
                 </Menubar>
             }

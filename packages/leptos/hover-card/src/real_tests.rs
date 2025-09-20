@@ -25,7 +25,7 @@ mod real_tests {
     fn test_hover_card_with_props() {
         mount_to_body(|| {
             view! {
-                <HoverCard class="test-class".into()>
+                <HoverCard class="test-class">
                     "hover-card with props"
                 </HoverCard>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_hover_card_responsive_behavior() {
         mount_to_body(|| {
             view! {
-                <HoverCard class="test-responsive".into() >
+                <HoverCard class="test-responsive">
                     "Responsive hover-card"
                 </HoverCard>
             }
@@ -89,11 +89,9 @@ mod real_tests {
     fn test_hover_card_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout".into()>
-                    <HoverCard>
+                <div class="test-layout"><HoverCard>
                         "Layout hover-card"
-                    </HoverCard>
-                </div>
+                    </HoverCard></div>
             }
         });
         
@@ -107,10 +105,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <HoverCard 
-                    class="test-responsive".into() 
+                    class="test-responsive" 
                     
-                    style="width: 100%; max-width: 500px;"
-                >
+                    style="width: 100%; max-width: 500px;">
                     "Responsive hover-card"
                 </HoverCard>
             }
@@ -128,11 +125,9 @@ mod real_tests {
     fn test_hover_card_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container".into()>
-                    <HoverCard class="test-layout-item".into()>
+                <div class="test-layout-container"><HoverCard class="test-layout-item">
                         "Layout hover-card"
-                    </HoverCard>
-                </div>
+                    </HoverCard></div>
             }
         });
         

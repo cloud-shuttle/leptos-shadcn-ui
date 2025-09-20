@@ -25,7 +25,7 @@ mod real_tests {
     fn test_input_otp_with_props() {
         mount_to_body(|| {
             view! {
-                <InputOTP class="test-class".into()>
+                <InputOTP class="test-class">
                     "input-otp with props"
                 </InputOTP>
             }
@@ -74,11 +74,9 @@ mod real_tests {
     fn test_input_otp_form_integration() {
         mount_to_body(|| {
             view! {
-                <form>
-                    <InputOTP name="test-field">
+                <form><InputOTP>
                         "Form input-otp"
-                    </InputOTP>
-                </form>
+                    </InputOTP></form>
             }
         });
         
@@ -91,7 +89,7 @@ mod real_tests {
     fn test_input_otp_validation_state() {
         mount_to_body(|| {
             view! {
-                <InputOTP class="test-validation".into() >
+                <InputOTP class="test-validation">
                     "Valid input-otp"
                 </InputOTP>
             }
@@ -106,11 +104,9 @@ mod real_tests {
     fn test_input_otp_form_integration() {
         mount_to_body(|| {
             view! {
-                <form class="test-form".into()>
-                    <InputOTP name="test-field" class="test-form-field".into()>
+                <form class="test-form"><InputOTP  class="test-form-field">
                         "Form input-otp"
-                    </InputOTP>
-                </form>
+                    </InputOTP></form>
             }
         });
         
@@ -127,10 +123,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <InputOTP 
-                    class="test-validation".into() 
+                    class="test-validation" 
                     
-                    data_error="false"
-                >
+                    data_error="false">
                     "Valid input-otp"
                 </InputOTP>
             }

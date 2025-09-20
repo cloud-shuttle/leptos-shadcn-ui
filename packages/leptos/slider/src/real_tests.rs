@@ -25,7 +25,7 @@ mod real_tests {
     fn test_slider_with_props() {
         mount_to_body(|| {
             view! {
-                <Slider class="test-class".into()>
+                <Slider class="test-class">
                     "slider with props"
                 </Slider>
             }
@@ -77,9 +77,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Slider 
-                    class="test-click".into()
-                    on_click=move |_| click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move |_| click_count.update(|count| *count += 1)>
                     "Clickable slider"
                 </Slider>
             }
@@ -94,7 +93,7 @@ mod real_tests {
     fn test_slider_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Slider class="test-hover".into() >
+                <Slider class="test-hover">
                     "Hoverable slider"
                 </Slider>
             }
@@ -112,9 +111,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Slider 
-                    class="test-click".into()
-                    on_click=move || click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable slider"
                 </Slider>
             }
@@ -135,9 +133,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Slider 
-                    class="test-focus".into()
-                    tabindex="0"
-                >
+                    class="test-focus">
                     "Focusable slider"
                 </Slider>
             }

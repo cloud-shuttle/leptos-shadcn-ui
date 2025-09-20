@@ -25,7 +25,7 @@ mod real_tests {
     fn test_sheet_with_props() {
         mount_to_body(|| {
             view! {
-                <Sheet class="test-class".into()>
+                <Sheet class="test-class">
                     "sheet with props"
                 </Sheet>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_sheet_responsive_behavior() {
         mount_to_body(|| {
             view! {
-                <Sheet class="test-responsive".into() >
+                <Sheet class="test-responsive">
                     "Responsive sheet"
                 </Sheet>
             }
@@ -89,11 +89,9 @@ mod real_tests {
     fn test_sheet_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout".into()>
-                    <Sheet>
+                <div class="test-layout"><Sheet>
                         "Layout sheet"
-                    </Sheet>
-                </div>
+                    </Sheet></div>
             }
         });
         
@@ -107,10 +105,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Sheet 
-                    class="test-responsive".into() 
+                    class="test-responsive" 
                     
-                    style="width: 100%; max-width: 500px;"
-                >
+                    style="width: 100%; max-width: 500px;">
                     "Responsive sheet"
                 </Sheet>
             }
@@ -128,11 +125,9 @@ mod real_tests {
     fn test_sheet_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container".into()>
-                    <Sheet class="test-layout-item".into()>
+                <div class="test-layout-container"><Sheet class="test-layout-item">
                         "Layout sheet"
-                    </Sheet>
-                </div>
+                    </Sheet></div>
             }
         });
         

@@ -26,7 +26,7 @@ mod real_tests {
     fn test_table_with_props() {
         mount_to_body(|| {
             view! {
-                <Table class="test-class".into()>
+                <Table class="test-class">
                     "table with props"
                 </Table>
             }
@@ -122,7 +122,7 @@ mod real_tests {
     fn test_table_interaction() {
         mount_to_body(|| {
             view! {
-                <Table class="test-interaction".into()>
+                <Table class="test-interaction">
                     "Interactive table"
                 </Table>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_table_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Table class="test-focus".into()>
+                <Table class="test-focus">
                     "Focusable table"
                 </Table>
             }
@@ -152,7 +152,7 @@ mod real_tests {
     fn test_table_accessibility() {
         mount_to_body(|| {
             view! {
-                <Table class="test-a11y".into() >
+                <Table class="test-a11y">
                     "Accessible table"
                 </Table>
             }
@@ -167,7 +167,7 @@ mod real_tests {
     fn test_table_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Table class="test-dom-render".into()>
+                <Table class="test-dom-render">
                     "DOM Test table"
                 </Table>
             }
@@ -185,7 +185,7 @@ mod real_tests {
     fn test_table_class_application() {
         mount_to_body(|| {
             view! {
-                <Table class="test-class-application custom-class".into()>
+                <Table class="test-class-application custom-class">
                     "Class Test table"
                 </Table>
             }
@@ -204,10 +204,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Table 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test table"
                 </Table>
             }

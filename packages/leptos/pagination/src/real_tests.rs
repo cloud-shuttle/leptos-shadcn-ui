@@ -25,7 +25,7 @@ mod real_tests {
     fn test_pagination_with_props() {
         mount_to_body(|| {
             view! {
-                <Pagination class="test-class".into()>
+                <Pagination class="test-class">
                     "pagination with props"
                 </Pagination>
             }
@@ -71,13 +71,13 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_pagination_click_handling() {
+    fn test_pagination_click_handling_2() {
         let click_count = RwSignal::new(0);
         
         mount_to_body(move || {
             view! {
                 <Pagination 
-                    class="test-click".into()
+                    class="test-click"
                     }
         });
         
@@ -90,7 +90,7 @@ mod real_tests {
     fn test_pagination_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Pagination class="test-hover".into() >
+                <Pagination class="test-hover">
                     "Hoverable pagination"
                 </Pagination>
             }
@@ -102,13 +102,13 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_pagination_click_handling() {
+    fn test_pagination_click_handling_2() {
         let click_count = RwSignal::new(0);
         
         mount_to_body(move || {
             view! {
                 <Pagination 
-                    class="test-click".into()
+                    class="test-click"
                     }
         });
         
@@ -127,9 +127,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Pagination 
-                    class="test-focus".into()
-                    
-                >
+                    class="test-focus">
                     "Focusable pagination"
                 </Pagination>
             }

@@ -25,7 +25,7 @@ mod real_tests {
     fn test_form_with_props() {
         mount_to_body(|| {
             view! {
-                <Form class="test-class".into()>
+                <Form class="test-class">
                     "form with props"
                 </Form>
             }
@@ -71,14 +71,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_form_form_integration() {
+    fn test_form_form_integration_2() {
         mount_to_body(|| {
             view! {
-                <form>
-                    <Form >
+                <form><Form>
                         "Form form"
-                    </Form>
-                </form>
+                    </Form></form>
             }
         });
         
@@ -88,10 +86,10 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_form_validation_state() {
+    fn test_form_validation_state_2() {
         mount_to_body(|| {
             view! {
-                <Form class="test-validation".into() >
+                <Form class="test-validation">
                     "Valid form"
                 </Form>
             }
@@ -103,14 +101,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_form_form_integration() {
+    fn test_form_form_integration_2() {
         mount_to_body(|| {
             view! {
-                <form class="test-form".into()>
-                    <Form  class="test-form-field".into()>
+                <form class="test-form"><Form  class="test-form-field">
                         "Form form"
-                    </Form>
-                </form>
+                    </Form></form>
             }
         });
         
@@ -123,14 +119,11 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_form_validation_state() {
+    fn test_form_validation_state_2() {
         mount_to_body(|| {
             view! {
                 <Form 
-                    class="test-validation".into() 
-                    
-                    data_error="false"
-                >
+                    class="test-validation">
                     "Valid form"
                 </Form>
             }

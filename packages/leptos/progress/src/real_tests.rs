@@ -25,7 +25,7 @@ mod real_tests {
     fn test_progress_with_props() {
         mount_to_body(|| {
             view! {
-                <Progress class="test-class".into()>
+                <Progress class="test-class">
                     "progress with props"
                 </Progress>
             }
@@ -77,9 +77,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Progress 
-                    class="test-click".into()
-                    on_click=move |_| click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move |_| click_count.update(|count| *count += 1)>
                     "Clickable progress"
                 </Progress>
             }
@@ -94,7 +93,7 @@ mod real_tests {
     fn test_progress_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Progress class="test-hover".into() >
+                <Progress class="test-hover">
                     "Hoverable progress"
                 </Progress>
             }
@@ -112,9 +111,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Progress 
-                    class="test-click".into()
-                    on_click=move || click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable progress"
                 </Progress>
             }
@@ -135,9 +133,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Progress 
-                    class="test-focus".into()
-                    tabindex="0"
-                >
+                    class="test-focus">
                     "Focusable progress"
                 </Progress>
             }

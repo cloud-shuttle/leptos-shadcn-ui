@@ -25,7 +25,7 @@ mod real_tests {
     fn test_resizable_with_props() {
         mount_to_body(|| {
             view! {
-                <ResizablePanel class="test-class".into()>
+                <ResizablePanel class="test-class">
                     "resizable with props"
                 </ResizablePanel>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_resizable_interaction() {
         mount_to_body(|| {
             view! {
-                <ResizablePanel class="test-interaction".into()>
+                <ResizablePanel class="test-interaction">
                     "Interactive resizable"
                 </ResizablePanel>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_resizable_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <ResizablePanel class="test-focus".into()>
+                <ResizablePanel class="test-focus">
                     "Focusable resizable"
                 </ResizablePanel>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_resizable_accessibility() {
         mount_to_body(|| {
             view! {
-                <ResizablePanel class="test-a11y".into() >
+                <ResizablePanel class="test-a11y">
                     "Accessible resizable"
                 </ResizablePanel>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_resizable_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <ResizablePanel class="test-dom-render".into()>
+                <ResizablePanel class="test-dom-render">
                     "DOM Test resizable"
                 </ResizablePanel>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_resizable_class_application() {
         mount_to_body(|| {
             view! {
-                <ResizablePanel class="test-class-application custom-class".into()>
+                <ResizablePanel class="test-class-application custom-class">
                     "Class Test resizable"
                 </ResizablePanel>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <ResizablePanel 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test resizable"
                 </ResizablePanel>
             }

@@ -25,7 +25,7 @@ mod real_tests {
     fn test_error_boundary_with_props() {
         mount_to_body(|| {
             view! {
-                <ErrorBoundary class="test-class".into()>
+                <ErrorBoundary class="test-class">
                     "error-boundary with props"
                 </ErrorBoundary>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_error_boundary_interaction() {
         mount_to_body(|| {
             view! {
-                <ErrorBoundary class="test-interaction".into()>
+                <ErrorBoundary class="test-interaction">
                     "Interactive error-boundary"
                 </ErrorBoundary>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_error_boundary_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <ErrorBoundary class="test-focus".into()>
+                <ErrorBoundary class="test-focus">
                     "Focusable error-boundary"
                 </ErrorBoundary>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_error_boundary_accessibility() {
         mount_to_body(|| {
             view! {
-                <ErrorBoundary class="test-a11y".into() >
+                <ErrorBoundary class="test-a11y">
                     "Accessible error-boundary"
                 </ErrorBoundary>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_error_boundary_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <ErrorBoundary class="test-dom-render".into()>
+                <ErrorBoundary class="test-dom-render">
                     "DOM Test error-boundary"
                 </ErrorBoundary>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_error_boundary_class_application() {
         mount_to_body(|| {
             view! {
-                <ErrorBoundary class="test-class-application custom-class".into()>
+                <ErrorBoundary class="test-class-application custom-class">
                     "Class Test error-boundary"
                 </ErrorBoundary>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test error-boundary"
                 </ErrorBoundary>
             }

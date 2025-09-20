@@ -25,7 +25,7 @@ mod real_tests {
     fn test_breadcrumb_with_props() {
         mount_to_body(|| {
             view! {
-                <Breadcrumb class="test-class".into() id="test-id">
+                <Breadcrumb class="test-class" id="test-id">
                     "breadcrumb with props"
                 </Breadcrumb>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_breadcrumb_interaction() {
         mount_to_body(|| {
             view! {
-                <Breadcrumb class="test-interaction".into()>
+                <Breadcrumb class="test-interaction">
                     "Interactive breadcrumb"
                 </Breadcrumb>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_breadcrumb_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Breadcrumb class="test-focus".into()>
+                <Breadcrumb class="test-focus">
                     "Focusable breadcrumb"
                 </Breadcrumb>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_breadcrumb_accessibility() {
         mount_to_body(|| {
             view! {
-                <Breadcrumb class="test-a11y".into() >
+                <Breadcrumb class="test-a11y">
                     "Accessible breadcrumb"
                 </Breadcrumb>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_breadcrumb_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Breadcrumb class="test-dom-render".into()>
+                <Breadcrumb class="test-dom-render">
                     "DOM Test breadcrumb"
                 </Breadcrumb>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_breadcrumb_class_application() {
         mount_to_body(|| {
             view! {
-                <Breadcrumb class="test-class-application custom-class".into()>
+                <Breadcrumb class="test-class-application custom-class">
                     "Class Test breadcrumb"
                 </Breadcrumb>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Breadcrumb 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test breadcrumb"
                 </Breadcrumb>
             }

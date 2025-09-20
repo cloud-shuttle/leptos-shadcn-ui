@@ -23,7 +23,7 @@ mod real_tests {
     fn test_combobox_with_props() {
         mount_to_body(|| {
             view! {
-                <Combobox class="test-class".into() options=vec![]></Combobox>
+                <Combobox class="test-class" options=vec![]></Combobox>
             }
         });
         
@@ -70,7 +70,7 @@ mod real_tests {
     fn test_combobox_interaction() {
         mount_to_body(|| {
             view! {
-                <Combobox class="test-interaction".into() options=vec![]></Combobox>
+                <Combobox class="test-interaction" options=vec![]></Combobox>
             }
         });
         
@@ -83,7 +83,7 @@ mod real_tests {
     fn test_combobox_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Combobox class="test-focus".into() options=vec![]></Combobox>
+                <Combobox class="test-focus" options=vec![]></Combobox>
             }
         });
         
@@ -96,7 +96,7 @@ mod real_tests {
     fn test_combobox_accessibility() {
         mount_to_body(|| {
             view! {
-                <Combobox class="test-a11y".into()  options=vec![]></Combobox>
+                <Combobox class="test-a11y"  options=vec![]></Combobox>
             }
         });
         
@@ -109,7 +109,7 @@ mod real_tests {
     fn test_combobox_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Combobox class="test-dom-render".into() options=vec![]></Combobox>
+                <Combobox class="test-dom-render" options=vec![]></Combobox>
             }
         });
         
@@ -125,9 +125,7 @@ mod real_tests {
     fn test_combobox_class_application() {
         mount_to_body(|| {
             view! {
-                <Combobox class="test-class-application custom-class".into() options=vec![]>
-                    
-                </Combobox>
+                <Combobox class="test-class-application custom-class" options=vec![]></Combobox>
             }
         });
         
@@ -144,7 +142,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Combobox 
-                    class="test-attributes".into()
+                    class="test-attributes"
                     
                  options=vec![]></Combobox>
             }

@@ -25,7 +25,7 @@ mod real_tests {
     fn test_aspect_ratio_with_props() {
         mount_to_body(|| {
             view! {
-                <AspectRatio class="test-class".into()>
+                <AspectRatio class="test-class">
                     "aspect-ratio with props"
                 </AspectRatio>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_aspect_ratio_interaction() {
         mount_to_body(|| {
             view! {
-                <AspectRatio class="test-interaction".into()>
+                <AspectRatio class="test-interaction">
                     "Interactive aspect-ratio"
                 </AspectRatio>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_aspect_ratio_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <AspectRatio class="test-focus".into()>
+                <AspectRatio class="test-focus">
                     "Focusable aspect-ratio"
                 </AspectRatio>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_aspect_ratio_accessibility() {
         mount_to_body(|| {
             view! {
-                <AspectRatio class="test-a11y".into() >
+                <AspectRatio class="test-a11y">
                     "Accessible aspect-ratio"
                 </AspectRatio>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_aspect_ratio_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <AspectRatio class="test-dom-render".into()>
+                <AspectRatio class="test-dom-render">
                     "DOM Test aspect-ratio"
                 </AspectRatio>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_aspect_ratio_class_application() {
         mount_to_body(|| {
             view! {
-                <AspectRatio class="test-class-application custom-class".into()>
+                <AspectRatio class="test-class-application custom-class">
                     "Class Test aspect-ratio"
                 </AspectRatio>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <AspectRatio 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test aspect-ratio"
                 </AspectRatio>
             }

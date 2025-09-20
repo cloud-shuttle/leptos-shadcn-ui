@@ -25,7 +25,7 @@ mod real_tests {
     fn test_badge_with_props() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-class".into() id="test-id">
+                <Badge class="test-class" id="test-id">
                     "badge with props"
                 </Badge>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_badge_interaction() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-interaction".into()>
+                <Badge class="test-interaction">
                     "Interactive badge"
                 </Badge>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_badge_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-focus".into()>
+                <Badge class="test-focus">
                     "Focusable badge"
                 </Badge>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_badge_accessibility() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-a11y".into() >
+                <Badge class="test-a11y">
                     "Accessible badge"
                 </Badge>
             }
@@ -120,10 +120,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Badge 
-                    class="test-responsive".into() 
+                    class="test-responsive" 
                     
-                    style="width: 100%; max-width: 500px;"
-                >
+                    style="width: 100%; max-width: 500px;">
                     "Responsive badge"
                 </Badge>
             }
@@ -141,11 +140,9 @@ mod real_tests {
     fn test_badge_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container".into()>
-                    <Badge class="test-layout-item".into()>
+                <div class="test-layout-container"><Badge class="test-layout-item">
                         "Layout badge"
-                    </Badge>
-                </div>
+                    </Badge></div>
             }
         });
         

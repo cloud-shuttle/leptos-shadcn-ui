@@ -10,9 +10,7 @@ mod real_tests {
     fn test_toast_renders() {
         mount_to_body(|| {
             view! {
-                <Toast>
-                    
-                </Toast>
+                <Toast></Toast>
             }
         });
         
@@ -25,7 +23,7 @@ mod real_tests {
     fn test_toast_with_props() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-class".into()></Toast>
+                <Toast class="test-class"></Toast>
             }
         });
         
@@ -72,7 +70,7 @@ mod real_tests {
     fn test_toast_interaction() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-interaction".into()></Toast>
+                <Toast class="test-interaction"></Toast>
             }
         });
         
@@ -85,7 +83,7 @@ mod real_tests {
     fn test_toast_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-focus".into()></Toast>
+                <Toast class="test-focus"></Toast>
             }
         });
         
@@ -98,7 +96,7 @@ mod real_tests {
     fn test_toast_accessibility() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-a11y".into() ></Toast>
+                <Toast class="test-a11y"></Toast>
             }
         });
         
@@ -111,7 +109,7 @@ mod real_tests {
     fn test_toast_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-dom-render".into()></Toast>
+                <Toast class="test-dom-render"></Toast>
             }
         });
         
@@ -127,7 +125,7 @@ mod real_tests {
     fn test_toast_class_application() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-class-application custom-class".into()></Toast>
+                <Toast class="test-class-application custom-class"></Toast>
             }
         });
         
@@ -144,9 +142,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Toast 
-                    class="test-attributes".into()
-                    
-                ></Toast>
+                    class="test-attributes"></Toast>
             }
         });
         

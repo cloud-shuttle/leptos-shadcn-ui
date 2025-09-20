@@ -153,7 +153,7 @@ mod real_tests {
     fn test_input_css_classes() {
         mount_to_body(|| {
             view! {
-                <Input class="custom-class".into() />
+                <Input class="custom-class" />
             }
         });
         

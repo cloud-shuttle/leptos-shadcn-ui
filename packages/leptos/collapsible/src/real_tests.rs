@@ -25,7 +25,7 @@ mod real_tests {
     fn test_collapsible_with_props() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-class".into()>
+                <Collapsible class="test-class">
                     "collapsible with props"
                 </Collapsible>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_collapsible_interaction() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-interaction".into()>
+                <Collapsible class="test-interaction">
                     "Interactive collapsible"
                 </Collapsible>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_collapsible_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-focus".into()>
+                <Collapsible class="test-focus">
                     "Focusable collapsible"
                 </Collapsible>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_collapsible_accessibility() {
         mount_to_body(|| {
             view! {
-                <Collapsible class="test-a11y".into() >
+                <Collapsible class="test-a11y">
                     "Accessible collapsible"
                 </Collapsible>
             }
@@ -122,9 +122,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Collapsible 
-                    class="test-click".into()
-                    on_click=move || click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable collapsible"
                 </Collapsible>
             }
@@ -145,9 +144,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Collapsible 
-                    class="test-focus".into()
-                    tabindex="0"
-                >
+                    class="test-focus">
                     "Focusable collapsible"
                 </Collapsible>
             }

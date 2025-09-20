@@ -25,7 +25,7 @@ mod real_tests {
     fn test_carousel_with_props() {
         mount_to_body(|| {
             view! {
-                <Carousel class="test-class".into()>
+                <Carousel class="test-class">
                     "carousel with props"
                 </Carousel>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_carousel_interaction() {
         mount_to_body(|| {
             view! {
-                <Carousel class="test-interaction".into()>
+                <Carousel class="test-interaction">
                     "Interactive carousel"
                 </Carousel>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_carousel_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Carousel class="test-focus".into()>
+                <Carousel class="test-focus">
                     "Focusable carousel"
                 </Carousel>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_carousel_accessibility() {
         mount_to_body(|| {
             view! {
-                <Carousel class="test-a11y".into() >
+                <Carousel class="test-a11y">
                     "Accessible carousel"
                 </Carousel>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_carousel_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Carousel class="test-dom-render".into()>
+                <Carousel class="test-dom-render">
                     "DOM Test carousel"
                 </Carousel>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_carousel_class_application() {
         mount_to_body(|| {
             view! {
-                <Carousel class="test-class-application custom-class".into()>
+                <Carousel class="test-class-application custom-class">
                     "Class Test carousel"
                 </Carousel>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Carousel 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test carousel"
                 </Carousel>
             }

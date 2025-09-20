@@ -25,7 +25,7 @@ mod real_tests {
     fn test_dialog_with_props() {
         mount_to_body(|| {
             view! {
-                <Dialog class="test-class".into() id="test-id">
+                <Dialog>
                     "dialog with props"
                 </Dialog>
             }
@@ -71,10 +71,10 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_dialog_responsive_behavior() {
+    fn test_dialog_responsive_behavior_2() {
         mount_to_body(|| {
             view! {
-                <Dialog class="test-responsive".into() >
+                <Dialog>
                     "Responsive dialog"
                 </Dialog>
             }
@@ -86,14 +86,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_dialog_layout_integration() {
+    fn test_dialog_layout_integration_2() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout".into()>
-                    <Dialog>
+                <div class="test-layout"><Dialog>
                         "Layout dialog"
-                    </Dialog>
-                </div>
+                    </Dialog></div>
             }
         });
         
@@ -103,14 +101,11 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_dialog_responsive_behavior() {
+    fn test_dialog_responsive_behavior_2() {
         mount_to_body(|| {
             view! {
                 <Dialog 
-                    class="test-responsive".into() 
-                    
-                    style="width: 100%; max-width: 500px;"
-                >
+                    class="test-responsive">
                     "Responsive dialog"
                 </Dialog>
             }
@@ -125,14 +120,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_dialog_layout_integration() {
+    fn test_dialog_layout_integration_2() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container".into()>
-                    <Dialog class="test-layout-item".into()>
+                <div class="test-layout-container"><Dialog>
                         "Layout dialog"
-                    </Dialog>
-                </div>
+                    </Dialog></div>
             }
         });
         

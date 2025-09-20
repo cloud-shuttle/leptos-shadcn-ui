@@ -25,7 +25,7 @@ mod real_tests {
     fn test_label_with_props() {
         mount_to_body(|| {
             view! {
-                <Label class="test-class".into()>
+                <Label class="test-class">
                     "label with props"
                 </Label>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_label_interaction() {
         mount_to_body(|| {
             view! {
-                <Label class="test-interaction".into()>
+                <Label class="test-interaction">
                     "Interactive label"
                 </Label>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_label_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Label class="test-focus".into()>
+                <Label class="test-focus">
                     "Focusable label"
                 </Label>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_label_accessibility() {
         mount_to_body(|| {
             view! {
-                <Label class="test-a11y".into() >
+                <Label class="test-a11y">
                     "Accessible label"
                 </Label>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_label_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Label class="test-dom-render".into()>
+                <Label class="test-dom-render">
                     "DOM Test label"
                 </Label>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_label_class_application() {
         mount_to_body(|| {
             view! {
-                <Label class="test-class-application custom-class".into()>
+                <Label class="test-class-application custom-class">
                     "Class Test label"
                 </Label>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Label 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test label"
                 </Label>
             }

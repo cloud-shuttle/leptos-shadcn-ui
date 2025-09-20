@@ -25,7 +25,7 @@ mod real_tests {
     fn test_skeleton_with_props() {
         mount_to_body(|| {
             view! {
-                <Skeleton class="test-class".into()>
+                <Skeleton class="test-class">
                     "skeleton with props"
                 </Skeleton>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_skeleton_interaction() {
         mount_to_body(|| {
             view! {
-                <Skeleton class="test-interaction".into()>
+                <Skeleton class="test-interaction">
                     "Interactive skeleton"
                 </Skeleton>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_skeleton_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Skeleton class="test-focus".into()>
+                <Skeleton class="test-focus">
                     "Focusable skeleton"
                 </Skeleton>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_skeleton_accessibility() {
         mount_to_body(|| {
             view! {
-                <Skeleton class="test-a11y".into() >
+                <Skeleton class="test-a11y">
                     "Accessible skeleton"
                 </Skeleton>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_skeleton_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Skeleton class="test-dom-render".into()>
+                <Skeleton class="test-dom-render">
                     "DOM Test skeleton"
                 </Skeleton>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_skeleton_class_application() {
         mount_to_body(|| {
             view! {
-                <Skeleton class="test-class-application custom-class".into()>
+                <Skeleton class="test-class-application custom-class">
                     "Class Test skeleton"
                 </Skeleton>
             }
@@ -156,10 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Skeleton 
-                    class="test-attributes".into()
-                    
-                    
-                >
+                    class="test-attributes">
                     "Attribute Test skeleton"
                 </Skeleton>
             }

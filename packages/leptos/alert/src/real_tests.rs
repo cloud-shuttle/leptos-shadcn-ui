@@ -25,7 +25,7 @@ mod real_tests {
     fn test_alert_with_props() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-class".into()>
+                <Alert class="test-class">
                     "alert with props"
                 </Alert>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_alert_interaction() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-interaction".into()>
+                <Alert class="test-interaction">
                     "Interactive alert"
                 </Alert>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_alert_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-focus".into()>
+                <Alert class="test-focus">
                     "Focusable alert"
                 </Alert>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_alert_accessibility() {
         mount_to_body(|| {
             view! {
-                <Alert class="test-a11y".into() >
+                <Alert class="test-a11y">
                     "Accessible alert"
                 </Alert>
             }
@@ -120,10 +120,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Alert 
-                    class="test-responsive".into() 
-                    
-                    
-                >
+                    class="test-responsive">
                     "Responsive alert"
                 </Alert>
             }
@@ -141,11 +138,9 @@ mod real_tests {
     fn test_alert_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container".into()>
-                    <Alert class="test-layout-item".into()>
+                <div class="test-layout-container"><Alert class="test-layout-item">
                         "Layout alert"
-                    </Alert>
-                </div>
+                    </Alert></div>
             }
         });
         

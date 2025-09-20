@@ -25,7 +25,7 @@ mod real_tests {
     fn test_tooltip_with_props() {
         mount_to_body(|| {
             view! {
-                <Tooltip class="test-class".into()>
+                <Tooltip class="test-class">
                     "tooltip with props"
                 </Tooltip>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_tooltip_responsive_behavior() {
         mount_to_body(|| {
             view! {
-                <Tooltip class="test-responsive".into() >
+                <Tooltip class="test-responsive">
                     "Responsive tooltip"
                 </Tooltip>
             }
@@ -89,11 +89,9 @@ mod real_tests {
     fn test_tooltip_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout".into()>
-                    <Tooltip>
+                <div class="test-layout"><Tooltip>
                         "Layout tooltip"
-                    </Tooltip>
-                </div>
+                    </Tooltip></div>
             }
         });
         
@@ -107,10 +105,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Tooltip 
-                    class="test-responsive".into() 
+                    class="test-responsive" 
                     
-                    style="width: 100%; max-width: 500px;"
-                >
+                    style="width: 100%; max-width: 500px;">
                     "Responsive tooltip"
                 </Tooltip>
             }
@@ -128,11 +125,9 @@ mod real_tests {
     fn test_tooltip_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container".into()>
-                    <Tooltip class="test-layout-item".into()>
+                <div class="test-layout-container"><Tooltip class="test-layout-item">
                         "Layout tooltip"
-                    </Tooltip>
-                </div>
+                    </Tooltip></div>
             }
         });
         

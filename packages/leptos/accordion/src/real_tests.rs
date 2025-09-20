@@ -25,7 +25,7 @@ mod real_tests {
     fn test_accordion_with_props() {
         mount_to_body(|| {
             view! {
-                <Accordion class="test-class".into()>
+                <Accordion class="test-class">
                     "accordion with props"
                 </Accordion>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_accordion_interaction() {
         mount_to_body(|| {
             view! {
-                <Accordion class="test-interaction".into()>
+                <Accordion class="test-interaction">
                     "Interactive accordion"
                 </Accordion>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_accordion_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Accordion class="test-focus".into()>
+                <Accordion class="test-focus">
                     "Focusable accordion"
                 </Accordion>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_accordion_accessibility() {
         mount_to_body(|| {
             view! {
-                <Accordion class="test-a11y".into() >
+                <Accordion class="test-a11y">
                     "Accessible accordion"
                 </Accordion>
             }
@@ -122,9 +122,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Accordion 
-                    class="test-click".into()
-                    on_click=move || click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable accordion"
                 </Accordion>
             }
@@ -145,9 +144,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Accordion 
-                    class="test-focus".into()
-                    tabindex="0"
-                >
+                    class="test-focus">
                     "Focusable accordion"
                 </Accordion>
             }

@@ -23,7 +23,7 @@ mod real_tests {
     fn test_date_picker_with_props() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-class".into()></DatePicker>
+                <DatePicker class="test-class"></DatePicker>
             }
         });
         
@@ -70,7 +70,7 @@ mod real_tests {
     fn test_date_picker_interaction() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-interaction".into()></DatePicker>
+                <DatePicker class="test-interaction"></DatePicker>
             }
         });
         
@@ -83,7 +83,7 @@ mod real_tests {
     fn test_date_picker_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-focus".into()></DatePicker>
+                <DatePicker class="test-focus"></DatePicker>
             }
         });
         
@@ -96,7 +96,7 @@ mod real_tests {
     fn test_date_picker_accessibility() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-a11y".into() ></DatePicker>
+                <DatePicker class="test-a11y"></DatePicker>
             }
         });
         
@@ -109,7 +109,7 @@ mod real_tests {
     fn test_date_picker_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-dom-render".into()></DatePicker>
+                <DatePicker class="test-dom-render"></DatePicker>
             }
         });
         
@@ -125,7 +125,7 @@ mod real_tests {
     fn test_date_picker_class_application() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-class-application custom-class".into()></DatePicker>
+                <DatePicker class="test-class-application custom-class"></DatePicker>
             }
         });
         
@@ -142,10 +142,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <DatePicker 
-                    class="test-attributes".into()
-                    
-                    
-                ></DatePicker>
+                    class="test-attributes"></DatePicker>
             }
         });
         

@@ -25,7 +25,7 @@ mod real_tests {
     fn test_tabs_with_props() {
         mount_to_body(|| {
             view! {
-                <Tabs class="test-class".into()>
+                <Tabs class="test-class">
                     "tabs with props"
                 </Tabs>
             }
@@ -77,9 +77,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Tabs 
-                    class="test-click".into()
-                    on_click=move |_| click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move |_| click_count.update(|count| *count += 1)>
                     "Clickable tabs"
                 </Tabs>
             }
@@ -94,7 +93,7 @@ mod real_tests {
     fn test_tabs_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Tabs class="test-hover".into() >
+                <Tabs class="test-hover">
                     "Hoverable tabs"
                 </Tabs>
             }
@@ -112,9 +111,8 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Tabs 
-                    class="test-click".into()
-                    on_click=move || click_count.update(|count| *count += 1)
-                >
+                    class="test-click"
+                    on_click=move || click_count.update(|count| *count += 1)>
                     "Clickable tabs"
                 </Tabs>
             }
@@ -135,9 +133,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Tabs 
-                    class="test-focus".into()
-                    tabindex="0"
-                >
+                    class="test-focus">
                     "Focusable tabs"
                 </Tabs>
             }

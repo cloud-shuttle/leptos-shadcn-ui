@@ -25,7 +25,7 @@ mod real_tests {
     fn test_button_with_props() {
         mount_to_body(|| {
             view! {
-                <Button class="test-class".into() id="test-id">
+                <Button class="test-class" id="test-id">
                     "button with props"
                 </Button>
             }
@@ -165,7 +165,7 @@ mod real_tests {
     fn test_button_css_classes() {
         mount_to_body(|| {
             view! {
-                <Button class="custom-class".into() variant=ButtonVariant::Destructive>
+                <Button class="custom-class" variant=ButtonVariant::Destructive>
                     "Styled Button"
                 </Button>
             }

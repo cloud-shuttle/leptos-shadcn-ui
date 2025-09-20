@@ -25,7 +25,7 @@ mod real_tests {
     fn test_card_with_props() {
         mount_to_body(|| {
             view! {
-                <Card class="test-class".into() id="test-id">
+                <Card class="test-class" id="test-id">
                     "card with props"
                 </Card>
             }
