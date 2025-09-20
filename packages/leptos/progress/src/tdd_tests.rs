@@ -11,7 +11,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) />
         };
-        assert!(true, "Progress component exists and can be imported");
     }
 
     #[test]
@@ -20,7 +19,6 @@ mod tdd_tests {
             <Progress value=Signal::derive(|| 25.0) variant=ProgressVariant::Default />
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Progress should render successfully");
     }
 
     #[test]
@@ -28,7 +26,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 75.0)/>
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -36,7 +33,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 100.0) variant=ProgressVariant::Success/>
         };
-        assert!(true, "Success variant should work");
     }
 
     #[test]
@@ -44,7 +40,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 60.0) variant=ProgressVariant::Warning/>
         };
-        assert!(true, "Warning variant should work");
     }
 
     #[test]
@@ -52,7 +47,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 20.0) variant=ProgressVariant::Destructive/>
         };
-        assert!(true, "Destructive variant should work");
     }
 
     #[test]
@@ -60,7 +54,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 40.0) variant=ProgressVariant::Info/>
         };
-        assert!(true, "Info variant should work");
     }
 
     #[test]
@@ -70,7 +63,6 @@ mod tdd_tests {
             let _progress_view = view! {
                 <Progress value=Signal::derive(|| 50.0) size=*size/>
             };
-            assert!(true, "Progress size should be supported");
         }
     }
 
@@ -81,7 +73,6 @@ mod tdd_tests {
             let _progress_view = view! {
                 <Progress value=Signal::derive(move || value as f64)/>
             };
-            assert!(true, "Progress value should be supported");
         }
     }
 
@@ -92,7 +83,6 @@ mod tdd_tests {
             <Progress value=Signal::derive(|| 50.0) class=custom_class/>
         };
         assert_eq!(custom_class, "custom-progress-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -102,7 +92,6 @@ mod tdd_tests {
             <Progress value=Signal::derive(|| 50.0) id=custom_id/>
         };
         assert_eq!(custom_id, "custom-progress-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -110,7 +99,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) />
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -118,7 +106,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) id="accessible-progress" class="focus-visible:ring-2" />
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -126,7 +113,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) id="aria-progress" />
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -134,7 +120,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) class="focus-visible:outline-none focus-visible:ring-2" />
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -142,7 +127,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) class="focus-visible:ring-2 focus-visible:ring-offset-2" />
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -150,7 +134,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) class="animate-in fade-in-0" />
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -158,7 +141,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) class="sm:w-32 md:w-48 lg:w-64" />
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -166,7 +148,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) class="bg-background text-foreground dark:bg-background-dark dark:text-foreground-dark" />
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -174,7 +155,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Default size="md" class="validated-progress" id="validated-progress" />
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -182,7 +162,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Destructive />
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -190,7 +169,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) />
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -198,7 +176,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) />
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -212,7 +189,6 @@ mod tdd_tests {
                 id="integration-test"
             />
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -226,7 +202,6 @@ mod tdd_tests {
                 id="workflow-test"
             />
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -240,7 +215,6 @@ mod tdd_tests {
                 id="advanced-progress"
             />
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -252,7 +226,6 @@ mod tdd_tests {
                 class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             />
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -264,7 +237,6 @@ mod tdd_tests {
                 id="custom-props-test"
             />
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -278,7 +250,6 @@ mod tdd_tests {
                 id="form-progress"
             />
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -292,7 +263,6 @@ mod tdd_tests {
                 <Progress value=Signal::derive(|| 0.0) variant=ProgressVariant::Destructive size="sm" />
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -300,7 +270,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 0.0) class="" id="" />
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -308,7 +277,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 0.0) variant=ProgressVariant::Default class="indeterminate-progress" />
         };
-        assert!(true, "Indeterminate progress should be supported");
     }
 
     #[test]
@@ -316,7 +284,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Default class="progress-with-label" />
         };
-        assert!(true, "Progress with label should be supported");
     }
 
     #[test]
@@ -324,7 +291,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 75.0) variant=ProgressVariant::Success class="progress-with-percentage" />
         };
-        assert!(true, "Progress with percentage should be supported");
     }
 
     #[test]
@@ -332,7 +298,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Info class="state-managed-progress" />
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -340,7 +305,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Default class="context-managed-progress" />
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -348,7 +312,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Success size="lg" />
         };
-        assert!(true, "Variant and size combinations should work");
     }
 
     #[test]
@@ -358,7 +321,6 @@ mod tdd_tests {
             <Progress value=progress_value/>
         };
         assert_eq!(progress_value.get(), 25.0, "Dynamic content should work");
-        assert!(true, "Dynamic content renders successfully");
     }
 
     #[test]
@@ -368,7 +330,6 @@ mod tdd_tests {
             <Progress value=Signal::derive(|| 50.0) />
         };
         assert!(show_progress.get(), "Conditional rendering should work");
-        assert!(true, "Conditional rendering renders successfully");
     }
 
     #[test]
@@ -376,7 +337,6 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Default class="animate-pulse animate-bounce" />
         };
-        assert!(true, "Animation variants should be supported");
     }
 
     #[test]
@@ -384,6 +344,5 @@ mod tdd_tests {
         let _progress_view = view! {
             <Progress value=Signal::derive(|| 50.0) variant=ProgressVariant::Default class="content-placeholder" />
         };
-        assert!(true, "Content placeholder should be supported");
     }
 }

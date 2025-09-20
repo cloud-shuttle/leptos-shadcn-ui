@@ -17,7 +17,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Accordion component exists and can be imported");
     }
 
     #[test]
@@ -28,7 +27,6 @@ mod tdd_tests {
                 <AccordionContent>"Test Content"</AccordionContent>
             </AccordionItem>
         };
-        assert!(true, "AccordionItem component exists and can be imported");
     }
 
     #[test]
@@ -36,7 +34,6 @@ mod tdd_tests {
         let _trigger_view = view! {
             <AccordionTrigger>"Trigger"</AccordionTrigger>
         };
-        assert!(true, "AccordionTrigger component exists and can be imported");
     }
 
     #[test]
@@ -44,7 +41,6 @@ mod tdd_tests {
         let _content_view = view! {
             <AccordionContent>"Content"</AccordionContent>
         };
-        assert!(true, "AccordionContent component exists and can be imported");
     }
 
     #[test]
@@ -59,7 +55,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(accordion_type.get(), AccordionType::Single, "Single type should be supported");
-        assert!(true, "Single accordion type renders successfully");
     }
 
     #[test]
@@ -74,7 +69,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(accordion_type.get(), AccordionType::Multiple, "Multiple type should be supported");
-        assert!(true, "Multiple accordion type renders successfully");
     }
 
     #[test]
@@ -89,7 +83,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(orientation.get(), AccordionOrientation::Vertical, "Vertical orientation should be supported");
-        assert!(true, "Vertical orientation renders successfully");
     }
 
     #[test]
@@ -104,7 +97,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(orientation.get(), AccordionOrientation::Horizontal, "Horizontal orientation should be supported");
-        assert!(true, "Horizontal orientation renders successfully");
     }
 
     #[test]
@@ -119,7 +111,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert!(collapsible.get(), "Collapsible property should be supported");
-        assert!(true, "Collapsible accordion renders successfully");
     }
 
     #[test]
@@ -134,7 +125,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert!(disabled.get(), "Disabled state should be supported");
-        assert!(true, "Disabled accordion renders successfully");
     }
 
     #[test]
@@ -147,7 +137,6 @@ mod tdd_tests {
             </AccordionItem>
         };
         assert!(item_disabled.get(), "Item disabled state should be supported");
-        assert!(true, "Disabled accordion item renders successfully");
     }
 
     #[test]
@@ -162,7 +151,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(value.get(), vec!["item1".to_string()], "Value management should work");
-        assert!(true, "Value management renders successfully");
     }
 
     #[test]
@@ -182,7 +170,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(default_value, vec!["item1".to_string(), "item2".to_string()], "Default value should be supported");
-        assert!(true, "Default value renders successfully");
     }
 
     #[test]
@@ -204,7 +191,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Value change callback should be supported");
     }
 
     #[test]
@@ -219,7 +205,6 @@ mod tdd_tests {
             </Accordion>
         };
         assert_eq!(custom_class, "custom-accordion-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -240,7 +225,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Multiple accordion items should render successfully");
     }
 
     #[test]
@@ -254,7 +238,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Click handling should be supported");
     }
 
     #[test]
@@ -268,7 +251,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -282,7 +264,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -296,7 +277,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -310,7 +290,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -320,7 +299,6 @@ mod tdd_tests {
             <AccordionContent force_mount=force_mount>"Content"</AccordionContent>
         };
         assert!(force_mount.get(), "Force mount should be supported");
-        assert!(true, "Force mount renders successfully");
     }
 
     #[test]
@@ -334,7 +312,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "As child prop should be supported");
     }
 
     #[test]
@@ -348,7 +325,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "State management should work correctly");
     }
 
     #[test]
@@ -362,7 +338,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -380,7 +355,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -407,7 +381,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -421,7 +394,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -435,7 +407,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -449,7 +420,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -463,7 +433,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -477,7 +446,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -491,7 +459,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -505,7 +472,6 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -523,6 +489,5 @@ mod tdd_tests {
                 </AccordionItem>
             </Accordion>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 }

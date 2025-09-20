@@ -275,7 +275,7 @@ mod tests {
         let mut results = BundleAnalysisResults::default();
         let analysis = ComponentBundleAnalysis::new("button".to_string(), 2048);
         
-        results.add_component(analysis);
+        results.add_component_analysis(analysis);
         
         assert_eq!(results.component_analyses.len(), 1);
         assert_eq!(results.total_bundle_size_bytes, 2048);
@@ -290,9 +290,9 @@ mod tests {
         let mut results = BundleAnalysisResults::default();
         
         // Add small component
-        results.add_component(ComponentBundleAnalysis::new("button".to_string(), 2048));
+        results.add_component_analysis(ComponentBundleAnalysis::new("button".to_string(), 2048));
         // Add large component
-        results.add_component(ComponentBundleAnalysis::new("large".to_string(), 8192));
+        results.add_component_analysis(ComponentBundleAnalysis::new("large".to_string(), 8192));
         
         assert_eq!(results.component_analyses.len(), 2);
         assert_eq!(results.total_bundle_size_bytes, 10240);
@@ -308,8 +308,8 @@ mod tests {
         let mut results = BundleAnalysisResults::default();
         
         // Add components that meet targets
-        results.add_component(ComponentBundleAnalysis::new("button".to_string(), 2048));
-        results.add_component(ComponentBundleAnalysis::new("input".to_string(), 1536));
+        results.add_component_analysis(ComponentBundleAnalysis::new("button".to_string(), 2048));
+        results.add_component_analysis(ComponentBundleAnalysis::new("input".to_string(), 1536));
         
         // Should meet targets if efficiency score is high enough
         // (This test will need to be updated when we implement the actual scoring)
@@ -321,7 +321,7 @@ mod tests {
         let mut results = BundleAnalysisResults::default();
         
         // Add oversized component
-        results.add_component(ComponentBundleAnalysis::new("large".to_string(), 8192));
+        results.add_component_analysis(ComponentBundleAnalysis::new("large".to_string(), 8192));
         
         let recommendations = results.get_optimization_recommendations();
         assert!(!recommendations.is_empty());

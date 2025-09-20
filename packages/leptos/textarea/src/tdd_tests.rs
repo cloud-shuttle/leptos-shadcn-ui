@@ -17,7 +17,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement proper rendering
-        assert!(true, "Textarea should render successfully");
     }
 
     #[test]
@@ -31,7 +30,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement value handling
-        assert!(true, "Textarea with value should render successfully");
     }
 
     #[test]
@@ -45,7 +43,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement placeholder support
-        assert!(true, "Textarea with placeholder should render successfully");
     }
 
     #[test]
@@ -81,7 +78,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom styling
-        assert!(true, "Textarea with custom styling should render successfully");
     }
 
     #[test]
@@ -104,7 +100,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement textarea variants
-            assert!(true, "Textarea variant '{}' should render", variant);
         }
     }
 
@@ -128,7 +123,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement textarea sizes
-            assert!(true, "Textarea size '{}' should render", size);
         }
     }
 
@@ -144,7 +138,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement accessibility features
-        assert!(true, "Accessible textarea should render successfully");
     }
 
     #[test]
@@ -159,7 +152,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement form integration
-        assert!(true, "Form textarea should render successfully");
     }
 
     #[test]
@@ -182,7 +174,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement validation states
-            assert!(true, "Textarea validation state '{}' should render", state);
         }
     }
 
@@ -219,7 +210,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement keyboard navigation
-        assert!(true, "Keyboard navigation textarea should render successfully");
     }
 
     #[test]
@@ -234,7 +224,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement focus management
-        assert!(true, "Focus management textarea should render successfully");
     }
 
     #[test]
@@ -249,7 +238,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement ARIA attributes
-        assert!(true, "ARIA textarea should render successfully");
     }
 
     #[test]
@@ -264,7 +252,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement animation support
-        assert!(true, "Animated textarea should render successfully");
     }
 
     #[test]
@@ -279,7 +266,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement memory management
-        assert!(true, "Memory test textarea should render successfully");
     }
 
     #[test]
@@ -294,7 +280,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement responsive design
-        assert!(true, "Responsive textarea should render successfully");
     }
 
     #[test]
@@ -309,7 +294,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom properties
-        assert!(true, "Custom props textarea should render successfully");
     }
 
     #[test]
@@ -379,7 +363,6 @@ mod tdd_tests {
             };
             
             // Each validation feature should be supported
-            assert!(true, "Validation feature '{}' should be supported", feature);
         }
     }
 
@@ -405,7 +388,6 @@ mod tdd_tests {
             };
             
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 
@@ -430,7 +412,6 @@ mod tdd_tests {
             };
             
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 
@@ -456,7 +437,6 @@ mod tdd_tests {
             };
             
             // Each integration scenario should work
-            assert!(true, "Integration scenario '{}' should work", scenario);
         }
     }
 
@@ -472,7 +452,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error handling
-        assert!(true, "Error handling textarea should render successfully");
     }
 
     #[test]
@@ -535,7 +514,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement auto-resize
-        assert!(true, "Auto-resize textarea should render successfully");
     }
 
     #[test]
@@ -550,7 +528,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement character count
-        assert!(true, "Character count textarea should render successfully");
     }
 
     #[test]
@@ -565,6 +542,5 @@ mod tdd_tests {
         };
         
         // Complete workflow should work
-        assert!(true, "Complete workflow textarea should render successfully");
     }
 }

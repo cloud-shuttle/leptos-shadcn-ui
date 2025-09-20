@@ -16,7 +16,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement proper rendering
-        assert!(true, "Checkbox should render successfully");
     }
 
     #[test]
@@ -86,7 +85,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom styling
-        assert!(true, "Checkbox with custom styling should render successfully");
     }
 
     #[test]
@@ -110,7 +108,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement checkbox variants
-            assert!(true, "Checkbox variant '{}' should render", variant);
         }
     }
 
@@ -133,7 +130,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement checkbox sizes
-            assert!(true, "Checkbox size '{}' should render", size);
         }
     }
 
@@ -148,7 +144,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement accessibility features
-        assert!(true, "Accessible checkbox should render successfully");
     }
 
     #[test]
@@ -162,7 +157,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement form integration
-        assert!(true, "Form checkbox should render successfully");
     }
 
     #[test]
@@ -176,7 +170,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement required state
-        assert!(true, "Required checkbox should render successfully");
     }
 
     #[test]
@@ -190,7 +183,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement optional state
-        assert!(true, "Optional checkbox should render successfully");
     }
 
     #[test]
@@ -204,7 +196,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error state
-        assert!(true, "Error checkbox should render successfully");
     }
 
     #[test]
@@ -218,7 +209,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement success state
-        assert!(true, "Success checkbox should render successfully");
     }
 
     #[test]
@@ -232,7 +222,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement warning state
-        assert!(true, "Warning checkbox should render successfully");
     }
 
     #[test]
@@ -247,7 +236,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement loading state
-        assert!(true, "Loading checkbox should render successfully");
     }
 
     #[test]
@@ -301,7 +289,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement keyboard navigation
-        assert!(true, "Keyboard navigation checkbox should render successfully");
     }
 
     #[test]
@@ -315,7 +302,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement focus management
-        assert!(true, "Focus management checkbox should render successfully");
     }
 
     #[test]
@@ -329,7 +315,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement ARIA attributes
-        assert!(true, "ARIA checkbox should render successfully");
     }
 
     #[test]
@@ -343,7 +328,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement animation support
-        assert!(true, "Animated checkbox should render successfully");
     }
 
     #[test]
@@ -357,7 +341,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement memory management
-        assert!(true, "Memory test checkbox should render successfully");
     }
 
     #[test]
@@ -371,7 +354,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement responsive design
-        assert!(true, "Responsive checkbox should render successfully");
     }
 
     #[test]
@@ -385,7 +367,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom properties
-        assert!(true, "Custom props checkbox should render successfully");
     }
 
     #[test]
@@ -443,7 +424,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement group functionality
-        assert!(true, "Group checkbox should render successfully");
     }
 
     #[test]
@@ -457,7 +437,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement indeterminate state
-        assert!(true, "Indeterminate checkbox should render successfully");
     }
 
     #[test]
@@ -481,7 +460,6 @@ mod tdd_tests {
             };
             
             // Each validation feature should be supported
-            assert!(true, "Validation feature '{}' should be supported", feature);
         }
     }
 
@@ -506,7 +484,6 @@ mod tdd_tests {
             };
             
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 
@@ -529,7 +506,6 @@ mod tdd_tests {
             };
             
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 
@@ -554,7 +530,6 @@ mod tdd_tests {
             };
             
             // Each integration scenario should work
-            assert!(true, "Integration scenario '{}' should work", scenario);
         }
     }
 
@@ -569,7 +544,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error handling
-        assert!(true, "Error handling checkbox should render successfully");
     }
 
     #[test]

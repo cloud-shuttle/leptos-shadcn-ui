@@ -20,7 +20,6 @@ mod tdd_tests {
             <Combobox options=options/>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic combobox should render successfully");
     }
 
     #[test]
@@ -35,7 +34,6 @@ mod tdd_tests {
                 value=MaybeProp::from("option1")
             />
         };
-        assert!(true, "Combobox with value should render");
     }
 
     #[test]
@@ -50,7 +48,6 @@ mod tdd_tests {
                 placeholder=MaybeProp::from("Select an option")
             />
         };
-        assert!(true, "Combobox with placeholder should render");
     }
 
     #[test]
@@ -68,7 +65,6 @@ mod tdd_tests {
                 on_change=callback
             />
         };
-        assert!(true, "Combobox with callback should render");
     }
 
     #[test]
@@ -84,7 +80,6 @@ mod tdd_tests {
                 disabled=disabled
             />
         };
-        assert!(true, "Disabled combobox should render");
     }
 
     #[test]
@@ -99,7 +94,6 @@ mod tdd_tests {
                 class=MaybeProp::from("custom-combobox")
             />
         };
-        assert!(true, "Combobox with custom class should render");
     }
 
     #[test]
@@ -114,7 +108,6 @@ mod tdd_tests {
                 id=MaybeProp::from("combobox-id")
             />
         };
-        assert!(true, "Combobox with id should render");
     }
 
     #[test]
@@ -130,7 +123,6 @@ mod tdd_tests {
                 style=style
             />
         };
-        assert!(true, "Combobox with style should render");
     }
 
     #[test]
@@ -146,7 +138,6 @@ mod tdd_tests {
                 open=open
             />
         };
-        assert!(true, "Combobox with open state should render");
     }
 
     #[test]
@@ -164,7 +155,6 @@ mod tdd_tests {
                 on_open_change=callback
             />
         };
-        assert!(true, "Combobox with open callback should render");
     }
 
     // Options Tests
@@ -174,7 +164,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Combobox with empty options should render");
     }
 
     #[test]
@@ -185,7 +174,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Combobox with single option should render");
     }
 
     #[test]
@@ -200,7 +188,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Combobox with multiple options should render");
     }
 
     #[test]
@@ -213,7 +200,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Combobox with disabled options should render");
     }
 
     #[test]
@@ -227,7 +213,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Combobox with mixed options should render");
     }
 
     // State Management Tests
@@ -240,7 +225,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -255,7 +239,6 @@ mod tdd_tests {
                 class=MaybeProp::from("context-managed-combobox")
             />
         };
-        assert!(true, "Context management should work");
     }
 
     // Animation and Transitions Tests
@@ -271,7 +254,6 @@ mod tdd_tests {
                 class=MaybeProp::from("animate-in fade-in-0")
             />
         };
-        assert!(true, "Animations should be supported");
     }
 
     #[test]
@@ -286,7 +268,6 @@ mod tdd_tests {
                 class=MaybeProp::from("content-placeholder")
             />
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     // Accessibility Tests
@@ -302,7 +283,6 @@ mod tdd_tests {
                 class=MaybeProp::from("focus-visible:ring-2")
             />
         };
-        assert!(true, "Accessibility should be supported");
     }
 
     #[test]
@@ -317,7 +297,6 @@ mod tdd_tests {
                 class=MaybeProp::from("focus-visible:outline-none focus-visible:ring-2")
             />
         };
-        assert!(true, "Comprehensive accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -333,7 +312,6 @@ mod tdd_tests {
                 class=MaybeProp::from("keyboard-navigable")
             />
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -348,7 +326,6 @@ mod tdd_tests {
                 class=MaybeProp::from("focus-managed")
             />
         };
-        assert!(true, "Focus management should work");
     }
 
     // Advanced Interactions Tests
@@ -364,7 +341,6 @@ mod tdd_tests {
                 class=MaybeProp::from("advanced-interactions")
             />
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     // Form Integration Tests
@@ -380,7 +356,6 @@ mod tdd_tests {
                 class=MaybeProp::from("form-integration-combobox")
             />
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -395,7 +370,6 @@ mod tdd_tests {
                 class=MaybeProp::from("error-handling")
             />
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -410,7 +384,6 @@ mod tdd_tests {
                 class=MaybeProp::from("validated-combobox")
             />
         };
-        assert!(true, "Validation should work");
     }
 
     // Integration Tests
@@ -426,7 +399,6 @@ mod tdd_tests {
                 class=MaybeProp::from("integration-combobox")
             />
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -441,7 +413,6 @@ mod tdd_tests {
                 class=MaybeProp::from("workflow-combobox")
             />
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     // Edge Cases and Error Handling
@@ -454,7 +425,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -466,7 +436,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Long option text should be handled");
     }
 
     #[test]
@@ -478,7 +447,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Special characters should be handled");
     }
 
     // Performance Tests
@@ -491,7 +459,6 @@ mod tdd_tests {
         let _combobox_view = view! {
             <Combobox options=options/>
         };
-        assert!(true, "Performance should be acceptable");
     }
 
     // Integration with other components
@@ -507,7 +474,6 @@ mod tdd_tests {
                 <Combobox options=options/>
             </div>
         };
-        assert!(true, "Combobox with label should work");
     }
 
     #[test]
@@ -521,7 +487,6 @@ mod tdd_tests {
                 <Combobox options=options/>
             </form>
         };
-        assert!(true, "Combobox in form should work");
     }
 
     #[test]
@@ -540,7 +505,6 @@ mod tdd_tests {
                 <Combobox options=options2 class=MaybeProp::from("combobox-2")/>
             </div>
         };
-        assert!(true, "Combobox group should work");
     }
 
     // Callback Tests
@@ -559,7 +523,6 @@ mod tdd_tests {
                 on_change=callback
             />
         };
-        assert!(true, "Callback execution should work");
     }
 
     #[test]
@@ -577,7 +540,6 @@ mod tdd_tests {
                 on_open_change=open_callback
             />
         };
-        assert!(true, "Multiple callbacks should work");
     }
 
     // Disabled State Tests
@@ -594,7 +556,6 @@ mod tdd_tests {
                 disabled=disabled
             />
         };
-        assert!(true, "Disabled state should work");
     }
 
     #[test]
@@ -610,7 +571,6 @@ mod tdd_tests {
                 disabled=disabled
             />
         };
-        assert!(true, "Enabled state should work");
     }
 
     // Style Tests
@@ -627,7 +587,6 @@ mod tdd_tests {
                 style=style
             />
         };
-        assert!(true, "Custom styles should work");
     }
 
     #[test]
@@ -655,6 +614,5 @@ mod tdd_tests {
                 id=MaybeProp::from("combined-combobox")
             />
         };
-        assert!(true, "Combined props should work");
     }
 }

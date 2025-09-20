@@ -18,7 +18,6 @@ mod integration_tests {
         };
         
         // Should integrate properly with forms
-        assert!(true, "Form integration should be implemented");
     }
 
     #[test]
@@ -36,7 +35,6 @@ mod integration_tests {
         };
         
         // Should integrate with modal components
-        assert!(true, "Modal integration should be implemented");
     }
 
     #[test]
@@ -54,7 +52,6 @@ mod integration_tests {
         };
         
         // Should integrate with dropdown components
-        assert!(true, "Dropdown integration should be implemented");
     }
 
     #[test]
@@ -72,7 +69,6 @@ mod integration_tests {
         };
         
         // Should integrate with accordion components
-        assert!(true, "Accordion integration should be implemented");
     }
 
     #[test]
@@ -90,7 +86,6 @@ mod integration_tests {
         };
         
         // Should integrate with tab components
-        assert!(true, "Tab integration should be implemented");
     }
 
     #[test]
@@ -108,7 +103,6 @@ mod integration_tests {
         };
         
         // Should integrate with carousel components
-        assert!(true, "Carousel integration should be implemented");
     }
 
     #[test]
@@ -126,7 +120,6 @@ mod integration_tests {
         };
         
         // Should integrate with theme system
-        assert!(true, "Theme integration should be implemented");
     }
 
     #[test]
@@ -144,7 +137,6 @@ mod integration_tests {
         };
         
         // Should integrate with validation system
-        assert!(true, "Validation integration should be implemented");
     }
 
     #[test]
@@ -162,7 +154,6 @@ mod integration_tests {
         };
         
         // Should integrate with style system
-        assert!(true, "Style integration should be implemented");
     }
 
     #[test]
@@ -180,6 +171,5 @@ mod integration_tests {
         };
         
         // Should integrate with accessibility system
-        assert!(true, "Accessibility integration should be implemented");
     }
 }

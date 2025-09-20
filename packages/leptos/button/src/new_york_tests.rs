@@ -176,7 +176,6 @@ mod new_york_tests {
         }
         
         // Test passes if no panic occurs
-        assert!(true);
     }
 
     #[test]
@@ -377,7 +376,6 @@ mod new_york_tests {
         let cloned_callback = original_callback.clone();
         
         // Both should be valid callbacks
-        assert!(true); // Test passes if no panic occurs during clone
     }
 
     #[test]
@@ -472,7 +470,6 @@ mod new_york_tests {
         let _ = callback;
         
         // Test passes if no memory leaks or panics occur
-        assert!(true);
     }
 
     #[test]

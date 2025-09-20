@@ -11,12 +11,15 @@ pub use new_york::{
     Tabs as TabsNewYork, TabsList as TabsListNewYork, TabsTrigger as TabsTriggerNewYork, TabsContent as TabsContentNewYork
 };
 
-#[cfg(test)]
+
 mod tests;
 
-#[cfg(test)]
+
 mod tdd_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

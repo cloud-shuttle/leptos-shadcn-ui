@@ -15,7 +15,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement performance testing
-        assert!(true, "Performance input should render");
     }
 
     #[test]
@@ -63,7 +62,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement memory performance testing
-        assert!(true, "Memory performance input should render");
     }
 
     #[test]
@@ -78,7 +76,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement CPU performance testing
-        assert!(true, "CPU performance input should render");
     }
 
     #[test]
@@ -93,7 +90,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement network performance testing
-        assert!(true, "Network performance input should render");
     }
 
     #[test]
@@ -108,7 +104,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement battery performance testing
-        assert!(true, "Battery performance input should render");
     }
 
     #[test]
@@ -123,7 +118,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement thermal performance testing
-        assert!(true, "Thermal performance input should render");
     }
 
     #[test]
@@ -138,7 +132,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement benchmark performance testing
-        assert!(true, "Benchmark performance input should render");
     }
 
     #[test]
@@ -153,7 +146,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement load performance testing
-        assert!(true, "Load performance input should render");
     }
 
     #[test]
@@ -168,7 +160,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement stress performance testing
-        assert!(true, "Stress performance input should render");
     }
 
     #[test]
@@ -183,7 +174,6 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement concurrent performance testing
-        assert!(true, "Concurrent performance input should render");
     }
 
     #[test]
@@ -198,6 +188,5 @@ mod performance_tests {
         };
         
         // This test will fail initially - we need to implement scalability performance testing
-        assert!(true, "Scalability performance input should render");
     }
 }

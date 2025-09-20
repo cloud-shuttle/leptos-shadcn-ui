@@ -11,7 +11,6 @@ mod tdd_tests {
         // Test basic radio group rendering
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "RadioGroup component exists and can be imported");
     }
 
     #[test]
@@ -19,7 +18,6 @@ mod tdd_tests {
         // Test radio group with initial value
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "RadioGroup with initial value component exists");
     }
 
     #[test]
@@ -64,7 +62,6 @@ mod tdd_tests {
         // Test radio group with custom styling
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "RadioGroup with custom styling component exists");
     }
 
     #[test]
@@ -81,7 +78,6 @@ mod tdd_tests {
         
         for variant in radio_group_variants {
             // Each variant should be supported
-            assert!(true, "RadioGroup variant '{}' should be supported", variant);
         }
     }
 
@@ -97,7 +93,6 @@ mod tdd_tests {
         
         for size in radio_group_sizes {
             // Each size should be supported
-            assert!(true, "RadioGroup size '{}' should be supported", size);
         }
     }
 
@@ -106,7 +101,6 @@ mod tdd_tests {
         // Test accessibility features
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Accessible RadioGroup component exists");
     }
 
     #[test]
@@ -114,7 +108,6 @@ mod tdd_tests {
         // Test radio group form integration
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Form RadioGroup component exists");
     }
 
     #[test]
@@ -124,7 +117,6 @@ mod tdd_tests {
         
         for orientation in orientations {
             // Each orientation should be supported
-            assert!(true, "RadioGroup orientation '{}' should be supported", orientation);
         }
     }
 
@@ -159,7 +151,6 @@ mod tdd_tests {
         // Test keyboard navigation
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Keyboard navigation RadioGroup component exists");
     }
 
     #[test]
@@ -167,7 +158,6 @@ mod tdd_tests {
         // Test focus management
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Focus management RadioGroup component exists");
     }
 
     #[test]
@@ -175,7 +165,6 @@ mod tdd_tests {
         // Test ARIA attributes
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "ARIA RadioGroup component exists");
     }
 
     #[test]
@@ -183,7 +172,6 @@ mod tdd_tests {
         // Test radio group animation support
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Animated RadioGroup component exists");
     }
 
     #[test]
@@ -191,7 +179,6 @@ mod tdd_tests {
         // Test radio group memory management
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Memory test RadioGroup component exists");
     }
 
     #[test]
@@ -199,7 +186,6 @@ mod tdd_tests {
         // Test radio group responsive design
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Responsive RadioGroup component exists");
     }
 
     #[test]
@@ -207,7 +193,6 @@ mod tdd_tests {
         // Test radio group custom properties
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Custom props RadioGroup component exists");
     }
 
     #[test]
@@ -245,7 +230,6 @@ mod tdd_tests {
         // Test radio group with multiple items
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "RadioGroup with multiple items component exists");
     }
 
     #[test]
@@ -262,7 +246,6 @@ mod tdd_tests {
         
         for feature in validation_features {
             // Each validation feature should be supported
-            assert!(true, "Validation feature '{}' should be supported", feature);
         }
     }
 
@@ -280,7 +263,6 @@ mod tdd_tests {
         
         for feature in a11y_features {
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 
@@ -296,7 +278,6 @@ mod tdd_tests {
         
         for feature in perf_features {
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 
@@ -314,7 +295,6 @@ mod tdd_tests {
         
         for scenario in integration_scenarios {
             // Each integration scenario should work
-            assert!(true, "Integration scenario '{}' should work", scenario);
         }
     }
 
@@ -323,7 +303,6 @@ mod tdd_tests {
         // Test radio group error handling
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Error handling RadioGroup component exists");
     }
 
     #[test]
@@ -364,7 +343,6 @@ mod tdd_tests {
         // Test radio group context management
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Context RadioGroup component exists");
     }
 
     #[test]
@@ -372,6 +350,5 @@ mod tdd_tests {
         // Test complete radio group workflow
         // For now, just test that the components exist and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "Complete workflow RadioGroup component exists");
     }
 }

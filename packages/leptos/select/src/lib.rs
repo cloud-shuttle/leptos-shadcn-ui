@@ -15,13 +15,22 @@ pub use default::*;
 pub use new_york as select;
 
 // Real focused tests (replaces 891-line bloated file)
-#[cfg(test)]
-mod tests;
+
+mod tests {
+    pub mod class_constants_tests;
+    pub mod state_management_tests;
+    pub mod callback_tests;
+    pub mod item_logic_tests;
+    pub mod accessibility_tests;
+}
 
 // Legacy tests (will be removed)
-#[cfg(test)]
+
 mod implementation_tests_legacy;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

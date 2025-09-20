@@ -19,6 +19,9 @@ mod tests;
 mod tdd_tests;
 
 #[cfg(test)]
+mod real_tests;
+
+#[cfg(test)]
 mod implementation_tests;
 
 #[cfg(test)]

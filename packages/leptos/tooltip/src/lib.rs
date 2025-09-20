@@ -8,9 +8,9 @@ pub mod signal_managed;
 pub mod default;
 pub mod new_york;
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
 // Re-export the components for easy access
@@ -22,3 +22,6 @@ pub use new_york as tooltip;
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

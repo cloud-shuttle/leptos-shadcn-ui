@@ -27,10 +27,13 @@ pub use new_york::{
     ContextMenuShortcut as ContextMenuShortcutNewYork,
 };
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

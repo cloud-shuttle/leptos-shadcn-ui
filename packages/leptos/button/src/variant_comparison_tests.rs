@@ -346,7 +346,6 @@ mod variant_comparison_tests {
         ];
 
         // If we get here without compilation errors, the APIs are consistent
-        assert!(true, "Both themes should provide consistent APIs");
     }
 
     #[test]

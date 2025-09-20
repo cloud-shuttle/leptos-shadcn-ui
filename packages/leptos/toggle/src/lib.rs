@@ -7,11 +7,14 @@ pub mod new_york;
 pub use default::{Toggle};
 pub use new_york::{Toggle as ToggleNewYork};
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

@@ -17,7 +17,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement accessibility features
-        assert!(true, "Accessible input should render");
     }
 
     #[test]
@@ -33,7 +32,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement keyboard navigation
-        assert!(true, "Keyboard navigation input should render");
     }
 
     #[test]
@@ -49,7 +47,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement focus management
-        assert!(true, "Focus managed input should render");
     }
 
     #[test]
@@ -67,7 +64,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement ARIA attributes
-        assert!(true, "ARIA attributes input should render");
     }
 
     #[test]
@@ -89,7 +85,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement comprehensive accessibility
-        assert!(true, "Comprehensive accessible input should render");
     }
 
     #[test]
@@ -105,7 +100,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement screen reader support
-        assert!(true, "Screen reader input should render");
     }
 
     #[test]
@@ -120,7 +114,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement high contrast mode
-        assert!(true, "High contrast input should render");
     }
 
     #[test]
@@ -135,7 +128,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement reduced motion
-        assert!(true, "Reduced motion input should render");
     }
 
     #[test]
@@ -150,7 +142,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement voice control
-        assert!(true, "Voice control input should render");
     }
 
     #[test]
@@ -165,7 +156,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement switch control
-        assert!(true, "Switch control input should render");
     }
 
     #[test]
@@ -180,7 +170,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement eye tracking
-        assert!(true, "Eye tracking input should render");
     }
 
     #[test]
@@ -195,7 +184,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement motor impairment support
-        assert!(true, "Motor impairment input should render");
     }
 
     #[test]
@@ -210,7 +198,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement cognitive accessibility
-        assert!(true, "Cognitive accessible input should render");
     }
 
     #[test]
@@ -226,7 +213,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement language support
-        assert!(true, "Language support input should render");
     }
 
     #[test]
@@ -242,7 +228,6 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement RTL support
-        assert!(true, "RTL support input should render");
     }
 
     #[test]
@@ -257,6 +242,5 @@ mod accessibility_tests {
         };
         
         // This test will fail initially - we need to implement accessibility testing
-        assert!(true, "Accessibility testing input should render");
     }
 }

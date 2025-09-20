@@ -728,7 +728,6 @@ mod tests {
         
         // Error handling should be graceful
         // Note: This test will fail initially as we need to implement error boundaries
-        assert!(true, "Error handling should be implemented");
     }
 
     #[wasm_bindgen_test]

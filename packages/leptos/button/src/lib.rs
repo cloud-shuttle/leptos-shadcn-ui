@@ -22,6 +22,9 @@ pub use signal_managed::{SignalManagedButton, EnhancedButton, SignalManagedButto
 #[cfg(test)]
 mod tests_simple;
 
+#[cfg(test)]
+mod real_tests;
+
 // Keep legacy tests for now (will phase out)
 #[cfg(test)]
 mod tdd_tests;

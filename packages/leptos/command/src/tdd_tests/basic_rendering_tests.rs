@@ -19,7 +19,6 @@ mod basic_rendering_tests {
             </Command>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic command should render successfully");
     }
 
     #[test]
@@ -36,7 +35,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with value should render successfully");
     }
 
     #[test]
@@ -55,7 +53,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with callback should render successfully");
     }
 
     #[test]
@@ -71,7 +68,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with custom class should render successfully");
     }
 
     #[test]
@@ -87,7 +83,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with label should render successfully");
     }
 
     #[test]
@@ -103,7 +98,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with form should render successfully");
     }
 
     #[test]
@@ -123,7 +117,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command callback execution should work");
     }
 
     #[test]
@@ -139,7 +132,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with custom styles should render successfully");
     }
 
     #[test]
@@ -162,7 +154,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with combined props should render successfully");
     }
 
     #[test]
@@ -185,7 +176,6 @@ mod basic_rendering_tests {
             </Command>
         };
         
-        assert!(true, "Multiple command instances should render successfully");
     }
 
     #[test]
@@ -221,7 +211,6 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command context management should work");
     }
 
     #[test]
@@ -237,6 +226,5 @@ mod basic_rendering_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command animations should work");
     }
 }

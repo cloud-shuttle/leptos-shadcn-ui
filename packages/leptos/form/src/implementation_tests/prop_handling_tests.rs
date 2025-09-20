@@ -91,7 +91,6 @@ mod prop_handling_tests {
         // Test callback absence
         let no_callback: Option<Callback<FormData>> = None;
         if let None = no_callback {
-            assert!(true, "No callback should be present");
         }
     }
 

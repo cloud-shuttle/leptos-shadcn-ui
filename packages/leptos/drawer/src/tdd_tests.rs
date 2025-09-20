@@ -31,7 +31,6 @@ mod tdd_tests {
             </Drawer>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic drawer should render successfully");
     }
 
     #[test]
@@ -47,7 +46,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer trigger should render successfully");
     }
 
     #[test]
@@ -63,7 +61,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer content should render successfully");
     }
 
     #[test]
@@ -81,7 +78,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer header should render successfully");
     }
 
     #[test]
@@ -100,7 +96,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer footer should render successfully");
     }
 
     #[test]
@@ -120,7 +115,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer title should render successfully");
     }
 
     #[test]
@@ -140,7 +134,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer description should render successfully");
     }
 
     #[test]
@@ -160,7 +153,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer close should render successfully");
     }
 
     #[test]
@@ -177,7 +169,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer overlay should render successfully");
     }
 
     #[test]
@@ -195,7 +186,6 @@ mod tdd_tests {
                 </DrawerPortal>
             </Drawer>
         };
-        assert!(true, "Drawer portal should render successfully");
     }
 
     // Direction Tests
@@ -213,7 +203,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Top direction drawer should render successfully");
     }
 
     #[test]
@@ -230,7 +219,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Bottom direction drawer should render successfully");
     }
 
     #[test]
@@ -247,7 +235,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Left direction drawer should render successfully");
     }
 
     #[test]
@@ -264,7 +251,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Right direction drawer should render successfully");
     }
 
     // State Management Tests
@@ -282,7 +268,6 @@ mod tdd_tests {
             </Drawer>
         };
         assert!(open.get(), "Drawer should be open");
-        assert!(true, "Open state should work");
     }
 
     #[test]
@@ -299,7 +284,6 @@ mod tdd_tests {
             </Drawer>
         };
         assert!(!open.get(), "Drawer should be closed");
-        assert!(true, "Closed state should work");
     }
 
     #[test]
@@ -323,7 +307,6 @@ mod tdd_tests {
         open.set(false);
         assert!(!open.get(), "Drawer should be closed after state change");
         
-        assert!(true, "State change should work");
     }
 
     // Callback Tests
@@ -343,7 +326,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Open change callback should work");
     }
 
     // Complex Content Tests
@@ -377,7 +359,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Complex drawer content should render successfully");
     }
 
     #[test]
@@ -409,7 +390,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer with forms should render successfully");
     }
 
     // Multiple Instances Tests
@@ -437,7 +417,6 @@ mod tdd_tests {
                 </Drawer>
             </div>
         };
-        assert!(true, "Multiple drawer instances should work");
     }
 
     // Nested Drawer Tests
@@ -466,7 +445,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Nested drawer should render successfully");
     }
 
     // Animation and Transitions Tests
@@ -483,7 +461,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer animations should be supported");
     }
 
     // Accessibility Tests
@@ -500,7 +477,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -517,7 +493,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer keyboard navigation should work");
     }
 
     // Edge Cases and Error Handling
@@ -534,7 +509,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer edge cases should be handled gracefully");
     }
 
     #[test]
@@ -549,7 +523,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Empty drawer content should work");
     }
 
     // Performance Tests
@@ -566,7 +539,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Drawer performance should be acceptable");
     }
 
     // Integration with other components
@@ -584,7 +556,6 @@ mod tdd_tests {
                 </Drawer>
             </div>
         };
-        assert!(true, "Drawer with label should work");
     }
 
     #[test]
@@ -600,7 +571,6 @@ mod tdd_tests {
                 </Drawer>
             </form>
         };
-        assert!(true, "Drawer in form should work");
     }
 
     // Style Tests
@@ -617,7 +587,6 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Custom drawer styles should work");
     }
 
     #[test]
@@ -641,6 +610,5 @@ mod tdd_tests {
                 </DrawerContent>
             </Drawer>
         };
-        assert!(true, "Combined drawer props should work");
     }
 }

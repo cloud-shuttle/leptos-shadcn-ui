@@ -11,7 +11,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge>"Basic badge"</Badge>
         };
-        assert!(true, "Badge component exists and can be imported");
     }
 
     #[test]
@@ -20,7 +19,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Default>"Default variant"</Badge>
         };
-        assert!(true, "Badge variant should be supported");
     }
 
     #[test]
@@ -28,7 +26,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge>"Default variant badge"</Badge>
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -36,7 +33,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Secondary>"Secondary badge"</Badge>
         };
-        assert!(true, "Secondary variant should work");
     }
 
     #[test]
@@ -44,7 +40,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Destructive>"Destructive badge"</Badge>
         };
-        assert!(true, "Destructive variant should work");
     }
 
     #[test]
@@ -52,7 +47,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Outline>"Outline badge"</Badge>
         };
-        assert!(true, "Outline variant should work");
     }
 
     #[test]
@@ -60,7 +54,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Default>"Success badge"</Badge>
         };
-        assert!(true, "Success variant should work");
     }
 
     #[test]
@@ -68,7 +61,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Default>"Warning badge"</Badge>
         };
-        assert!(true, "Warning variant should work");
     }
 
     #[test]
@@ -76,7 +68,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge variant=BadgeVariant::Default>"Info badge"</Badge>
         };
-        assert!(true, "Info variant should work");
     }
 
     #[test]
@@ -85,7 +76,6 @@ mod tdd_tests {
             <Badge>"Size test"</Badge>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Badge should render successfully");
     }
 
     #[test]
@@ -95,7 +85,6 @@ mod tdd_tests {
             <Badge class=custom_class>"Custom styled badge"</Badge>
         };
         assert_eq!(custom_class, "custom-badge-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -105,7 +94,6 @@ mod tdd_tests {
             <Badge id=custom_id>"Badge with ID"</Badge>
         };
         assert_eq!(custom_id, "custom-badge-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -118,7 +106,6 @@ mod tdd_tests {
                 <em>"italic text"</em>
             </Badge>
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -128,7 +115,6 @@ mod tdd_tests {
                 "Accessible badge"
             </Badge>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -138,7 +124,6 @@ mod tdd_tests {
                 "ARIA compliant badge"
             </Badge>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -148,7 +133,6 @@ mod tdd_tests {
                 "Keyboard navigable badge"
             </Badge>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -158,7 +142,6 @@ mod tdd_tests {
                 "Focus managed badge"
             </Badge>
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -168,7 +151,6 @@ mod tdd_tests {
                 "Animated badge"
             </Badge>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -178,7 +160,6 @@ mod tdd_tests {
                 "Responsive badge"
             </Badge>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -188,7 +169,6 @@ mod tdd_tests {
                 "Themed badge"
             </Badge>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -198,7 +178,6 @@ mod tdd_tests {
                 "Validated badge"
             </Badge>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -208,7 +187,6 @@ mod tdd_tests {
                 "Error handling badge"
             </Badge>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -216,7 +194,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge>"Memory managed badge"</Badge>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -224,7 +201,6 @@ mod tdd_tests {
         let _badge_view = view! {
             <Badge>"Performance optimized badge"</Badge>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -239,7 +215,6 @@ mod tdd_tests {
                 "Integration test badge"
             </Badge>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -255,7 +230,6 @@ mod tdd_tests {
                 "Complete workflow badge"
             </Badge>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -269,7 +243,6 @@ mod tdd_tests {
                 "Advanced interactions badge"
             </Badge>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -284,7 +257,6 @@ mod tdd_tests {
                 "Comprehensively accessible badge"
             </Badge>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -298,7 +270,6 @@ mod tdd_tests {
                 "Custom properties badge"
             </Badge>
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -313,7 +284,6 @@ mod tdd_tests {
                 "Form integrated badge"
             </Badge>
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -327,7 +297,6 @@ mod tdd_tests {
                 <Badge variant=BadgeVariant::Default>"Badge 5"</Badge>
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -337,7 +306,6 @@ mod tdd_tests {
                 "Edge case badge"
             </Badge>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -350,7 +318,6 @@ mod tdd_tests {
                 </div>
             </Badge>
         };
-        assert!(true, "Dismissible badges should be supported");
     }
 
     #[test]
@@ -363,7 +330,6 @@ mod tdd_tests {
                 </div>
             </Badge>
         };
-        assert!(true, "Badges with icons should be supported");
     }
 
     #[test]
@@ -373,7 +339,6 @@ mod tdd_tests {
                 <span class="count">"99+"</span>
             </Badge>
         };
-        assert!(true, "Badges with count should be supported");
     }
 
     #[test]
@@ -383,7 +348,6 @@ mod tdd_tests {
                 "State managed badge"
             </Badge>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -393,7 +357,6 @@ mod tdd_tests {
                 "Context managed badge"
             </Badge>
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -405,7 +368,6 @@ mod tdd_tests {
                 </div>
             </Badge>
         };
-        assert!(true, "Click handling should be supported");
     }
 
     #[test]
@@ -417,7 +379,6 @@ mod tdd_tests {
                 </div>
             </Badge>
         };
-        assert!(true, "Keyboard handling should be supported");
     }
 
     #[test]
@@ -427,7 +388,6 @@ mod tdd_tests {
                 "Variant and size combination"
             </Badge>
         };
-        assert!(true, "Variant and size combinations should work");
     }
 
     #[test]
@@ -439,6 +399,5 @@ mod tdd_tests {
             </Badge>
         };
         assert_eq!(count.get(), 5, "Dynamic content should work");
-        assert!(true, "Dynamic content renders successfully");
     }
 }

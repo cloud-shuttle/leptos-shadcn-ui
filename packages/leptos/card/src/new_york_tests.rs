@@ -474,7 +474,6 @@ mod new_york_tests {
         let _ = signal;
         
         // Test passes if no memory leaks or panics occur
-        assert!(true);
     }
 
     #[test]

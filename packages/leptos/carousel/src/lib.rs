@@ -19,10 +19,13 @@ pub use new_york::{
     CarouselApi as CarouselApiNewYork,
 };
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

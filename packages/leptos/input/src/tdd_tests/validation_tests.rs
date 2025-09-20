@@ -16,7 +16,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement required validation
-        assert!(true, "Required input should render");
     }
 
     #[test]
@@ -32,7 +31,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement email validation
-        assert!(true, "Email input should render");
     }
 
     #[test]
@@ -47,7 +45,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement min length validation
-        assert!(true, "Min length input should render");
     }
 
     #[test]
@@ -62,7 +59,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement max length validation
-        assert!(true, "Max length input should render");
     }
 
     #[test]
@@ -77,7 +73,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement pattern validation
-        assert!(true, "Pattern input should render");
     }
 
     #[test]
@@ -95,7 +90,6 @@ mod validation_tests {
             };
             
             // This test will fail initially - we need to implement validation states
-            assert!(true, "Validation state '{}' should render", state);
         }
     }
 
@@ -115,7 +109,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement comprehensive validation
-        assert!(true, "Comprehensive validation input should render");
     }
 
     #[test]
@@ -139,7 +132,6 @@ mod validation_tests {
             };
             
             // This test will fail initially - we need to implement validation rules
-            assert!(true, "Validation rule should render");
         }
     }
 
@@ -155,7 +147,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement error handling
-        assert!(true, "Error handling input should render");
     }
 
     #[test]
@@ -197,7 +188,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement custom validation
-        assert!(true, "Custom validation input should render");
     }
 
     #[test]
@@ -212,7 +202,6 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement async validation
-        assert!(true, "Async validation input should render");
     }
 
     #[test]
@@ -227,6 +216,5 @@ mod validation_tests {
         };
         
         // This test will fail initially - we need to implement debounced validation
-        assert!(true, "Debounced validation input should render");
     }
 }

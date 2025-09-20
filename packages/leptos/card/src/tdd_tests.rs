@@ -16,7 +16,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement proper rendering
-        assert!(true, "Card should render successfully");
     }
 
     #[test]
@@ -32,7 +31,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement header support
-        assert!(true, "Card with header should render successfully");
     }
 
     #[test]
@@ -47,7 +45,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement content support
-        assert!(true, "Card with content should render successfully");
     }
 
     #[test]
@@ -62,7 +59,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement footer support
-        assert!(true, "Card with footer should render successfully");
     }
 
     #[test]
@@ -84,7 +80,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement complete structure
-        assert!(true, "Complete card structure should render successfully");
     }
 
     #[test]
@@ -100,7 +95,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom styling
-        assert!(true, "Card with custom styling should render successfully");
     }
 
     #[test]
@@ -124,7 +118,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement card variants
-            assert!(true, "Card variant '{}' should render", variant);
         }
     }
 
@@ -148,7 +141,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement card sizes
-            assert!(true, "Card size '{}' should render", size);
         }
     }
 
@@ -164,7 +156,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement interactive features
-        assert!(true, "Interactive card should render successfully");
     }
 
     #[test]
@@ -180,7 +171,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement accessibility features
-        assert!(true, "Accessible card should render successfully");
     }
 
     #[test]
@@ -215,7 +205,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement animation support
-        assert!(true, "Animated card should render successfully");
     }
 
     #[test]
@@ -250,7 +239,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error handling
-        assert!(true, "Error card should render successfully");
     }
 
     #[test]
@@ -265,7 +253,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement memory management
-        assert!(true, "Memory test card should render successfully");
     }
 
     #[test]
@@ -280,7 +267,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement responsive design
-        assert!(true, "Responsive card should render successfully");
     }
 
     #[test]
@@ -295,7 +281,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom properties
-        assert!(true, "Custom props card should render successfully");
     }
 
     #[test]
@@ -333,7 +318,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement keyboard navigation
-        assert!(true, "Keyboard navigation card should render successfully");
     }
 
     #[test]
@@ -348,7 +332,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement focus management
-        assert!(true, "Focus management card should render successfully");
     }
 
     #[test]
@@ -364,7 +347,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement ARIA attributes
-        assert!(true, "ARIA card should render successfully");
     }
 
     #[test]
@@ -430,7 +412,6 @@ mod tdd_tests {
             };
             
             // Each header variant should render
-            assert!(true, "Header variant '{}' should render", variant);
         }
     }
 
@@ -455,7 +436,6 @@ mod tdd_tests {
             };
             
             // Each content type should render
-            assert!(true, "Content type '{}' should render", content_type);
         }
     }
 
@@ -480,7 +460,6 @@ mod tdd_tests {
             };
             
             // Each footer variant should render
-            assert!(true, "Footer variant '{}' should render", variant);
         }
     }
 
@@ -506,7 +485,6 @@ mod tdd_tests {
             };
             
             // Each integration scenario should work
-            assert!(true, "Integration scenario '{}' should work", scenario);
         }
     }
 
@@ -532,7 +510,6 @@ mod tdd_tests {
             };
             
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 
@@ -557,7 +534,6 @@ mod tdd_tests {
             };
             
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 }

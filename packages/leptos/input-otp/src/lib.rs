@@ -41,6 +41,7 @@ pub mod signal_managed;
 pub mod prelude { pub use super::InputOtp; }
 
 #[cfg(test)]
+mod real_tests;
 mod tests;
 
 

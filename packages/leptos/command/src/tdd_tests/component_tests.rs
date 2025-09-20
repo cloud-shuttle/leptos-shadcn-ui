@@ -13,7 +13,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command input should render successfully");
     }
 
     #[test]
@@ -26,7 +25,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command input with placeholder should render successfully");
     }
 
     #[test]
@@ -39,7 +37,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command list should render successfully");
     }
 
     #[test]
@@ -57,7 +54,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command list with items should render successfully");
     }
 
     #[test]
@@ -70,7 +66,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command empty should render successfully");
     }
 
     #[test]
@@ -83,7 +78,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command empty with custom message should render successfully");
     }
 
     #[test]
@@ -100,7 +94,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command group should render successfully");
     }
 
     #[test]
@@ -117,7 +110,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command group with heading should render successfully");
     }
 
     #[test]
@@ -138,7 +130,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Multiple command groups should render successfully");
     }
 
     #[test]
@@ -154,7 +145,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command item should render successfully");
     }
 
     #[test]
@@ -173,7 +163,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command item with shortcut should render successfully");
     }
 
     #[test]
@@ -189,7 +178,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Disabled command item should render successfully");
     }
 
     #[test]
@@ -208,7 +196,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command shortcut should render successfully");
     }
 
     #[test]
@@ -228,7 +215,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command separator should render successfully");
     }
 
     #[test]
@@ -254,7 +240,6 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Complex command structure should render successfully");
     }
 
     #[test]
@@ -267,6 +252,5 @@ mod component_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command with empty list should render successfully");
     }
 }

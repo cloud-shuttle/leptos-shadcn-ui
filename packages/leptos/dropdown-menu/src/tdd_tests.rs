@@ -16,7 +16,6 @@ mod tdd_tests {
             <DropdownMenu/>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic dropdown menu should render successfully");
     }
 
     #[test]
@@ -26,7 +25,6 @@ mod tdd_tests {
                 "Dropdown Menu"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with children should render");
     }
 
     #[test]
@@ -36,7 +34,6 @@ mod tdd_tests {
                 "Default Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with variant should render");
     }
 
     #[test]
@@ -46,7 +43,6 @@ mod tdd_tests {
                 "Small Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with size should render");
     }
 
     #[test]
@@ -59,7 +55,6 @@ mod tdd_tests {
                 "Clickable Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with callback should render");
     }
 
     #[test]
@@ -70,7 +65,6 @@ mod tdd_tests {
                 "Disabled Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Disabled dropdown menu should render");
     }
 
     #[test]
@@ -80,7 +74,6 @@ mod tdd_tests {
                 "Custom Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with custom class should render");
     }
 
     #[test]
@@ -90,7 +83,6 @@ mod tdd_tests {
                 "Dropdown with ID"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with id should render");
     }
 
     #[test]
@@ -101,7 +93,6 @@ mod tdd_tests {
                 "Styled Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with style should render");
     }
 
     #[test]
@@ -113,7 +104,6 @@ mod tdd_tests {
                 <DropdownMenu class=MaybeProp::from("dropdown-3")>"Dropdown 3"</DropdownMenu>
             </div>
         };
-        assert!(true, "Multiple dropdown menu instances should work");
     }
 
     // Variant Tests
@@ -124,7 +114,6 @@ mod tdd_tests {
                 "Default Variant"
             </DropdownMenu>
         };
-        assert!(true, "Default variant should be supported");
     }
 
     #[test]
@@ -134,7 +123,6 @@ mod tdd_tests {
                 "Destructive Variant"
             </DropdownMenu>
         };
-        assert!(true, "Destructive variant should be supported");
     }
 
     #[test]
@@ -144,7 +132,6 @@ mod tdd_tests {
                 "Outline Variant"
             </DropdownMenu>
         };
-        assert!(true, "Outline variant should be supported");
     }
 
     #[test]
@@ -154,7 +141,6 @@ mod tdd_tests {
                 "Secondary Variant"
             </DropdownMenu>
         };
-        assert!(true, "Secondary variant should be supported");
     }
 
     #[test]
@@ -164,7 +150,6 @@ mod tdd_tests {
                 "Ghost Variant"
             </DropdownMenu>
         };
-        assert!(true, "Ghost variant should be supported");
     }
 
     #[test]
@@ -174,7 +159,6 @@ mod tdd_tests {
                 "Link Variant"
             </DropdownMenu>
         };
-        assert!(true, "Link variant should be supported");
     }
 
     // Size Tests
@@ -185,7 +169,6 @@ mod tdd_tests {
                 "Default Size"
             </DropdownMenu>
         };
-        assert!(true, "Default size should be supported");
     }
 
     #[test]
@@ -195,7 +178,6 @@ mod tdd_tests {
                 "Small Size"
             </DropdownMenu>
         };
-        assert!(true, "Small size should be supported");
     }
 
     #[test]
@@ -205,7 +187,6 @@ mod tdd_tests {
                 "Large Size"
             </DropdownMenu>
         };
-        assert!(true, "Large size should be supported");
     }
 
     #[test]
@@ -215,7 +196,6 @@ mod tdd_tests {
                 "Icon Size"
             </DropdownMenu>
         };
-        assert!(true, "Icon size should be supported");
     }
 
     // State Management Tests
@@ -226,7 +206,6 @@ mod tdd_tests {
                 "State Managed Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -236,7 +215,6 @@ mod tdd_tests {
                 "Context Managed Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Context management should work");
     }
 
     // Animation and Transitions Tests
@@ -247,7 +225,6 @@ mod tdd_tests {
                 "Animated Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Animations should be supported");
     }
 
     #[test]
@@ -257,7 +234,6 @@ mod tdd_tests {
                 "Placeholder Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     // Accessibility Tests
@@ -268,7 +244,6 @@ mod tdd_tests {
                 "Accessible Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Accessibility should be supported");
     }
 
     #[test]
@@ -278,7 +253,6 @@ mod tdd_tests {
                 "Comprehensive Accessible Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Comprehensive accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -289,7 +263,6 @@ mod tdd_tests {
                 "Keyboard Navigable Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -299,7 +272,6 @@ mod tdd_tests {
                 "Focus Managed Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Focus management should work");
     }
 
     // Advanced Interactions Tests
@@ -310,7 +282,6 @@ mod tdd_tests {
                 "Advanced Interactions Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     // Form Integration Tests
@@ -321,7 +292,6 @@ mod tdd_tests {
                 "Form Integration Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -331,7 +301,6 @@ mod tdd_tests {
                 "Error Handling Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -341,7 +310,6 @@ mod tdd_tests {
                 "Validated Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Validation should work");
     }
 
     // Integration Tests
@@ -352,7 +320,6 @@ mod tdd_tests {
                 "Integration Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -362,7 +329,6 @@ mod tdd_tests {
                 "Workflow Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     // Edge Cases and Error Handling
@@ -373,7 +339,6 @@ mod tdd_tests {
                 ""
             </DropdownMenu>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -381,7 +346,6 @@ mod tdd_tests {
         let _dropdown_view = view! {
             <DropdownMenu/>
         };
-        assert!(true, "Empty children should work");
     }
 
     #[test]
@@ -391,7 +355,6 @@ mod tdd_tests {
                 "This is a very long dropdown menu text that should be handled properly"
             </DropdownMenu>
         };
-        assert!(true, "Long text should be handled");
     }
 
     // Performance Tests
@@ -402,7 +365,6 @@ mod tdd_tests {
                 "Performance Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Performance should be acceptable");
     }
 
     // Integration with other components
@@ -414,7 +376,6 @@ mod tdd_tests {
                 <DropdownMenu>"Dropdown Button"</DropdownMenu>
             </div>
         };
-        assert!(true, "Dropdown menu with label should work");
     }
 
     #[test]
@@ -424,7 +385,6 @@ mod tdd_tests {
                 <DropdownMenu>"Form Dropdown"</DropdownMenu>
             </form>
         };
-        assert!(true, "Dropdown menu in form should work");
     }
 
     #[test]
@@ -436,7 +396,6 @@ mod tdd_tests {
                 <DropdownMenu class=MaybeProp::from("dropdown-3")>"Option 3"</DropdownMenu>
             </div>
         };
-        assert!(true, "Dropdown menu group should work");
     }
 
     // Complex Content Tests
@@ -448,7 +407,6 @@ mod tdd_tests {
                 "Icon Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with icon should work");
     }
 
     #[test]
@@ -461,7 +419,6 @@ mod tdd_tests {
                 </div>
             </DropdownMenu>
         };
-        assert!(true, "Dropdown menu with complex children should work");
     }
 
     // Callback Tests
@@ -475,7 +432,6 @@ mod tdd_tests {
                 "Callback Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Callback execution should work");
     }
 
     #[test]
@@ -488,7 +444,6 @@ mod tdd_tests {
                 <DropdownMenu on_click=callback2>"Dropdown 2"</DropdownMenu>
             </div>
         };
-        assert!(true, "Multiple callbacks should work");
     }
 
     // Disabled State Tests
@@ -500,7 +455,6 @@ mod tdd_tests {
                 "Disabled Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Disabled state should work");
     }
 
     #[test]
@@ -511,7 +465,6 @@ mod tdd_tests {
                 "Enabled Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Enabled state should work");
     }
 
     // Style Tests
@@ -523,7 +476,6 @@ mod tdd_tests {
                 "Styled Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Custom styles should work");
     }
 
     #[test]
@@ -544,6 +496,5 @@ mod tdd_tests {
                 "Combined Props Dropdown"
             </DropdownMenu>
         };
-        assert!(true, "Combined props should work");
     }
 }

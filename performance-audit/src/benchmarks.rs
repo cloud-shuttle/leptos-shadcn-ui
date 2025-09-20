@@ -8,7 +8,7 @@ use std::time::{Duration, Instant};
 use serde::{Deserialize, Serialize};
 
 /// Benchmark result for a single test
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct BenchmarkResult {
     /// Benchmark name
     pub name: String,
@@ -65,7 +65,7 @@ impl BenchmarkResult {
 }
 
 /// Benchmark suite results
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct BenchmarkSuiteResults {
     /// Individual benchmark results
     pub benchmark_results: HashMap<String, BenchmarkResult>,
@@ -151,7 +151,7 @@ impl BenchmarkSuiteResults {
 }
 
 /// Performance trend over time
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct PerformanceTrend {
     /// Component name
     pub component_name: String,
@@ -166,7 +166,7 @@ pub struct PerformanceTrend {
 }
 
 /// Trend direction
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub enum TrendDirection {
     Improving,
     Degrading,

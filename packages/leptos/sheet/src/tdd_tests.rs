@@ -18,7 +18,6 @@ mod tdd_tests {
             </Sheet>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic sheet should render successfully");
     }
 
     #[test]
@@ -31,7 +30,6 @@ mod tdd_tests {
                 </div>
             </Sheet>
         };
-        assert!(true, "Sheet with children should render successfully");
     }
 
     #[test]
@@ -41,7 +39,6 @@ mod tdd_tests {
                 "Custom Sheet"
             </Sheet>
         };
-        assert!(true, "Sheet with custom class should render successfully");
     }
 
     #[test]
@@ -51,7 +48,6 @@ mod tdd_tests {
                 "Sheet with ID"
             </Sheet>
         };
-        assert!(true, "Sheet with id should render successfully");
     }
 
     #[test]
@@ -62,7 +58,6 @@ mod tdd_tests {
                 "Styled Sheet"
             </Sheet>
         };
-        assert!(true, "Sheet with style should render successfully");
     }
 
     #[test]
@@ -74,7 +69,6 @@ mod tdd_tests {
                 <Sheet class=MaybeProp::from("sheet-3")>"Sheet 3"</Sheet>
             </div>
         };
-        assert!(true, "Multiple sheet instances should work");
     }
 
     // Complex Content Tests
@@ -101,7 +95,6 @@ mod tdd_tests {
                 </div>
             </Sheet>
         };
-        assert!(true, "Sheet with complex content should render successfully");
     }
 
     #[test]
@@ -121,7 +114,6 @@ mod tdd_tests {
                 </form>
             </Sheet>
         };
-        assert!(true, "Sheet with forms should render successfully");
     }
 
     #[test]
@@ -151,7 +143,6 @@ mod tdd_tests {
                 </table>
             </Sheet>
         };
-        assert!(true, "Sheet with tables should render successfully");
     }
 
     // State Management Tests
@@ -162,7 +153,6 @@ mod tdd_tests {
                 "State Managed Sheet"
             </Sheet>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -172,7 +162,6 @@ mod tdd_tests {
                 "Context Managed Sheet"
             </Sheet>
         };
-        assert!(true, "Context management should work");
     }
 
     // Animation and Transitions Tests
@@ -183,7 +172,6 @@ mod tdd_tests {
                 "Animated Sheet"
             </Sheet>
         };
-        assert!(true, "Animations should be supported");
     }
 
     #[test]
@@ -193,7 +181,6 @@ mod tdd_tests {
                 "Placeholder Sheet"
             </Sheet>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     // Accessibility Tests
@@ -204,7 +191,6 @@ mod tdd_tests {
                 "Accessible Sheet"
             </Sheet>
         };
-        assert!(true, "Accessibility should be supported");
     }
 
     #[test]
@@ -214,7 +200,6 @@ mod tdd_tests {
                 "Comprehensive Accessible Sheet"
             </Sheet>
         };
-        assert!(true, "Comprehensive accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -225,7 +210,6 @@ mod tdd_tests {
                 "Keyboard Navigable Sheet"
             </Sheet>
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -235,7 +219,6 @@ mod tdd_tests {
                 "Focus Managed Sheet"
             </Sheet>
         };
-        assert!(true, "Focus management should work");
     }
 
     // Advanced Interactions Tests
@@ -246,7 +229,6 @@ mod tdd_tests {
                 "Advanced Interactions Sheet"
             </Sheet>
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     // Form Integration Tests
@@ -257,7 +239,6 @@ mod tdd_tests {
                 "Form Integration Sheet"
             </Sheet>
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -267,7 +248,6 @@ mod tdd_tests {
                 "Error Handling Sheet"
             </Sheet>
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -277,7 +257,6 @@ mod tdd_tests {
                 "Validated Sheet"
             </Sheet>
         };
-        assert!(true, "Validation should work");
     }
 
     // Integration Tests
@@ -288,7 +267,6 @@ mod tdd_tests {
                 "Integration Sheet"
             </Sheet>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -298,7 +276,6 @@ mod tdd_tests {
                 "Workflow Sheet"
             </Sheet>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     // Edge Cases and Error Handling
@@ -309,7 +286,6 @@ mod tdd_tests {
                 ""
             </Sheet>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -317,7 +293,6 @@ mod tdd_tests {
         let _sheet_view = view! {
             <Sheet/>
         };
-        assert!(true, "Empty children should work");
     }
 
     #[test]
@@ -327,7 +302,6 @@ mod tdd_tests {
                 "This is a very long sheet text that should be handled properly and should not cause any issues with rendering or layout"
             </Sheet>
         };
-        assert!(true, "Long text should be handled");
     }
 
     // Performance Tests
@@ -338,7 +312,6 @@ mod tdd_tests {
                 "Performance Sheet"
             </Sheet>
         };
-        assert!(true, "Performance should be acceptable");
     }
 
     // Integration with other components
@@ -350,7 +323,6 @@ mod tdd_tests {
                 <Sheet>"Labeled Sheet"</Sheet>
             </div>
         };
-        assert!(true, "Sheet with label should work");
     }
 
     #[test]
@@ -360,7 +332,6 @@ mod tdd_tests {
                 <Sheet>"Form Sheet"</Sheet>
             </form>
         };
-        assert!(true, "Sheet in form should work");
     }
 
     #[test]
@@ -372,7 +343,6 @@ mod tdd_tests {
                 <Sheet class=MaybeProp::from("sheet-3")>"Sheet 3"</Sheet>
             </div>
         };
-        assert!(true, "Sheet group should work");
     }
 
     // Layout Tests
@@ -384,7 +354,6 @@ mod tdd_tests {
                 <div class="flex-shrink-0">"Fixed Footer"</div>
             </Sheet>
         };
-        assert!(true, "Sheet with flex layout should work");
     }
 
     #[test]
@@ -397,7 +366,6 @@ mod tdd_tests {
                 <div>"Grid Item 4"</div>
             </Sheet>
         };
-        assert!(true, "Sheet with grid layout should work");
     }
 
     // Responsive Tests
@@ -408,7 +376,6 @@ mod tdd_tests {
                 "Responsive Sheet"
             </Sheet>
         };
-        assert!(true, "Responsive sheet should work");
     }
 
     // Style Tests
@@ -423,7 +390,6 @@ mod tdd_tests {
                 "Custom Styled Sheet"
             </Sheet>
         };
-        assert!(true, "Custom styles should work");
     }
 
     #[test]
@@ -438,7 +404,6 @@ mod tdd_tests {
                 "Combined Props Sheet"
             </Sheet>
         };
-        assert!(true, "Combined props should work");
     }
 
     // Content Types Tests
@@ -450,7 +415,6 @@ mod tdd_tests {
                 <p>"Sheet with image content"</p>
             </Sheet>
         };
-        assert!(true, "Sheet with images should work");
     }
 
     #[test]
@@ -464,7 +428,6 @@ mod tdd_tests {
                 </div>
             </Sheet>
         };
-        assert!(true, "Sheet with buttons should work");
     }
 
     #[test]
@@ -478,6 +441,5 @@ mod tdd_tests {
                 </div>
             </Sheet>
         };
-        assert!(true, "Sheet with inputs should work");
     }
 }

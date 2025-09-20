@@ -11,7 +11,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Basic calendar"</Calendar>
         };
-        assert!(true, "Calendar component exists and can be imported");
     }
 
     #[test]
@@ -21,7 +20,6 @@ mod tdd_tests {
             let _calendar_view = view! {
                 <Calendar>"Variant: " {variant}</Calendar>
             };
-            assert!(true, "Calendar variant should be supported");
         }
     }
 
@@ -30,7 +28,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Default variant calendar"</Calendar>
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -38,7 +35,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Compact calendar"</Calendar>
         };
-        assert!(true, "Compact variant should work");
     }
 
     #[test]
@@ -46,7 +42,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Expanded calendar"</Calendar>
         };
-        assert!(true, "Expanded variant should work");
     }
 
     #[test]
@@ -54,7 +49,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Minimal calendar"</Calendar>
         };
-        assert!(true, "Minimal variant should work");
     }
 
     #[test]
@@ -64,7 +58,6 @@ mod tdd_tests {
             let _calendar_view = view! {
                 <Calendar>"Size: " {size}</Calendar>
             };
-            assert!(true, "Calendar size should be supported");
         }
     }
 
@@ -75,7 +68,6 @@ mod tdd_tests {
             <Calendar class=custom_class>"Custom styled calendar"</Calendar>
         };
         assert_eq!(custom_class, "custom-calendar-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -85,7 +77,6 @@ mod tdd_tests {
             <Calendar>"Calendar with ID"</Calendar>
         };
         assert_eq!(custom_id, "custom-calendar-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -96,7 +87,6 @@ mod tdd_tests {
                 <span>"nested content"</span>
             </Calendar>
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -106,7 +96,6 @@ mod tdd_tests {
                 "Accessible calendar"
             </Calendar>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -116,7 +105,6 @@ mod tdd_tests {
                 "ARIA compliant calendar"
             </Calendar>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -126,7 +114,6 @@ mod tdd_tests {
                 "Keyboard navigable calendar"
             </Calendar>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -136,7 +123,6 @@ mod tdd_tests {
                 "Focus managed calendar"
             </Calendar>
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -146,7 +132,6 @@ mod tdd_tests {
                 "Animated calendar"
             </Calendar>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -156,7 +141,6 @@ mod tdd_tests {
                 "Responsive calendar"
             </Calendar>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -166,7 +150,6 @@ mod tdd_tests {
                 "Themed calendar"
             </Calendar>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -176,7 +159,6 @@ mod tdd_tests {
                 "Validated calendar"
             </Calendar>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -186,7 +168,6 @@ mod tdd_tests {
                 "Error handling calendar"
             </Calendar>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -194,7 +175,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Memory managed calendar"</Calendar>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -202,7 +182,6 @@ mod tdd_tests {
         let _calendar_view = view! {
             <Calendar>"Performance optimized calendar"</Calendar>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -214,7 +193,6 @@ mod tdd_tests {
                 "Integration test calendar"
             </Calendar>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -226,7 +204,6 @@ mod tdd_tests {
                 "Complete workflow calendar"
             </Calendar>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -238,7 +215,6 @@ mod tdd_tests {
                 "Advanced interactions calendar"
             </Calendar>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -250,7 +226,6 @@ mod tdd_tests {
                 "Comprehensively accessible calendar"
             </Calendar>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -262,7 +237,6 @@ mod tdd_tests {
                 "Custom properties calendar"
             </Calendar>
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -274,7 +248,6 @@ mod tdd_tests {
                 "Form integrated calendar"
             </Calendar>
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -288,7 +261,6 @@ mod tdd_tests {
                 <Calendar>"Calendar 5"</Calendar>
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -298,7 +270,6 @@ mod tdd_tests {
                 ""
             </Calendar>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -308,7 +279,6 @@ mod tdd_tests {
                 "Date selection calendar"
             </Calendar>
         };
-        assert!(true, "Date selection should be supported");
     }
 
     #[test]
@@ -318,7 +288,6 @@ mod tdd_tests {
                 "Month navigation calendar"
             </Calendar>
         };
-        assert!(true, "Month navigation should be supported");
     }
 
     #[test]
@@ -328,7 +297,6 @@ mod tdd_tests {
                 "Year navigation calendar"
             </Calendar>
         };
-        assert!(true, "Year navigation should be supported");
     }
 
     #[test]
@@ -338,7 +306,6 @@ mod tdd_tests {
                 "State managed calendar"
             </Calendar>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -348,7 +315,6 @@ mod tdd_tests {
                 "Context managed calendar"
             </Calendar>
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -360,7 +326,6 @@ mod tdd_tests {
                 </div>
             </Calendar>
         };
-        assert!(true, "Click handling should be supported");
     }
 
     #[test]
@@ -372,7 +337,6 @@ mod tdd_tests {
                 </div>
             </Calendar>
         };
-        assert!(true, "Keyboard handling should be supported");
     }
 
     #[test]
@@ -382,7 +346,6 @@ mod tdd_tests {
                 "Variant and size combination"
             </Calendar>
         };
-        assert!(true, "Variant and size combinations should work");
     }
 
     #[test]
@@ -394,7 +357,6 @@ mod tdd_tests {
             </Calendar>
         };
         assert_eq!(current_month.get(), "January", "Dynamic content should work");
-        assert!(true, "Dynamic content renders successfully");
     }
 
     #[test]
@@ -406,7 +368,6 @@ mod tdd_tests {
             </Calendar>
         };
         assert!(show_calendar.get(), "Conditional rendering should work");
-        assert!(true, "Conditional rendering renders successfully");
     }
 
     #[test]
@@ -416,7 +377,6 @@ mod tdd_tests {
                 "Animated calendar"
             </Calendar>
         };
-        assert!(true, "Animation variants should be supported");
     }
 
     #[test]
@@ -426,7 +386,6 @@ mod tdd_tests {
                 "Content placeholder calendar"
             </Calendar>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     #[test]
@@ -436,7 +395,6 @@ mod tdd_tests {
                 "Week start calendar"
             </Calendar>
         };
-        assert!(true, "Week start configuration should be supported");
     }
 
     #[test]
@@ -446,7 +404,6 @@ mod tdd_tests {
                 "Locale calendar"
             </Calendar>
         };
-        assert!(true, "Locale support should be implemented");
     }
 
     #[test]
@@ -456,7 +413,6 @@ mod tdd_tests {
                 "Range selection calendar"
             </Calendar>
         };
-        assert!(true, "Range selection should be supported");
     }
 
     #[test]
@@ -466,7 +422,6 @@ mod tdd_tests {
                 "Disabled dates calendar"
             </Calendar>
         };
-        assert!(true, "Disabled dates should be supported");
     }
 
     #[test]
@@ -476,6 +431,5 @@ mod tdd_tests {
                 "Highlighted dates calendar"
             </Calendar>
         };
-        assert!(true, "Highlighted dates should be supported");
     }
 }

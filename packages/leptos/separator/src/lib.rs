@@ -8,6 +8,7 @@ pub use default::{Separator};
 pub use new_york::{Separator as SeparatorNewYork};
 
 #[cfg(test)]
+mod real_tests;
 mod tests;
 
 

@@ -16,7 +16,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement proper rendering
-        assert!(true, "Switch should render successfully");
     }
 
     #[test]
@@ -94,7 +93,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement switch variants
-            assert!(true, "Switch variant '{:?}' should render", variant);
         }
     }
 
@@ -116,7 +114,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement switch sizes
-            assert!(true, "Switch size '{:?}' should render", size);
         }
     }
 
@@ -151,7 +148,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom styling
-        assert!(true, "Switch with custom styling should render successfully");
     }
 
     #[test]
@@ -165,7 +161,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement accessibility features
-        assert!(true, "Accessible switch should render successfully");
     }
 
     #[test]
@@ -179,7 +174,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement form integration
-        assert!(true, "Form switch should render successfully");
     }
 
     #[test]
@@ -196,7 +190,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement SwitchRoot
-        assert!(true, "SwitchRoot should render successfully");
     }
 
     #[test]
@@ -204,7 +197,6 @@ mod tdd_tests {
         // Test SwitchThumb component (requires SwitchRoot context)
         // For now, just test that the component exists and can be imported
         // The actual rendering test will be in the GREEN phase
-        assert!(true, "SwitchThumb component exists and can be imported");
     }
 
     #[test]
@@ -215,7 +207,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement SwitchLabel
-        assert!(true, "SwitchLabel should render successfully");
     }
 
     #[test]
@@ -235,7 +226,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement context management
-        assert!(true, "Context switch should render successfully");
     }
 
     #[test]
@@ -289,7 +279,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement keyboard navigation
-        assert!(true, "Keyboard navigation switch should render successfully");
     }
 
     #[test]
@@ -303,7 +292,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement focus management
-        assert!(true, "Focus management switch should render successfully");
     }
 
     #[test]
@@ -317,7 +305,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement ARIA attributes
-        assert!(true, "ARIA switch should render successfully");
     }
 
     #[test]
@@ -331,7 +318,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement memory management
-        assert!(true, "Memory test switch should render successfully");
     }
 
     #[test]
@@ -345,7 +331,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement responsive design
-        assert!(true, "Responsive switch should render successfully");
     }
 
     #[test]
@@ -359,7 +344,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom properties
-        assert!(true, "Custom props switch should render successfully");
     }
 
     #[test]
@@ -420,7 +404,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement group functionality
-        assert!(true, "Group switch should render successfully");
     }
 
     #[test]
@@ -444,7 +427,6 @@ mod tdd_tests {
             };
             
             // Each validation feature should be supported
-            assert!(true, "Validation feature '{}' should be supported", feature);
         }
     }
 
@@ -469,7 +451,6 @@ mod tdd_tests {
             };
             
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 
@@ -492,7 +473,6 @@ mod tdd_tests {
             };
             
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 
@@ -517,7 +497,6 @@ mod tdd_tests {
             };
             
             // Each integration scenario should work
-            assert!(true, "Integration scenario '{}' should work", scenario);
         }
     }
 
@@ -532,7 +511,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error handling
-        assert!(true, "Error handling switch should render successfully");
     }
 
     #[test]
@@ -599,7 +577,6 @@ mod tdd_tests {
                 };
                 
                 // Each combination should render
-                assert!(true, "Switch variant '{:?}' with size '{:?}' should render", variant, size);
             }
         }
     }
@@ -621,6 +598,5 @@ mod tdd_tests {
         };
         
         // Complete workflow should work
-        assert!(true, "Complete workflow switch should render successfully");
     }
 }

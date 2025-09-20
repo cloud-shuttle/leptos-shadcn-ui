@@ -5,7 +5,7 @@
 
 use std::collections::HashMap;
 use std::path::Path;
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use std::time::{SystemTime, UNIX_EPOCH};
 use serde::{Deserialize, Serialize};
 use crate::benchmarks::{BenchmarkResult, BenchmarkSuiteResults};
 use crate::PerformanceAuditError;
@@ -480,7 +480,7 @@ impl RegressionTester {
     /// Get environment information
     fn get_environment_info(&self) -> EnvironmentInfo {
         EnvironmentInfo {
-            rust_version: env!("RUSTC_VERSION").to_string(),
+            rust_version: std::env::var("RUSTC_VERSION").unwrap_or_else(|_| "unknown".to_string()),
             target_arch: std::env::consts::ARCH.to_string(),
             os_info: format!("{} {}", std::env::consts::OS, std::env::consts::FAMILY),
             cpu_info: "Unknown".to_string(), // Would be populated with actual CPU info

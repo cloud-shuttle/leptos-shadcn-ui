@@ -11,7 +11,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert>"Basic alert message"</Alert>
         };
-        assert!(true, "Alert component exists and can be imported");
     }
 
     #[test]
@@ -19,7 +18,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert variant=AlertVariant::Default>"Default variant"</Alert>
         };
-        assert!(true, "Alert variant should be supported");
     }
 
     #[test]
@@ -27,7 +25,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert>"Default variant alert"</Alert>
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -35,7 +32,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert variant=AlertVariant::Destructive>"Destructive alert"</Alert>
         };
-        assert!(true, "Destructive variant should work");
     }
 
     #[test]
@@ -43,7 +39,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert variant=AlertVariant::Warning>"Warning alert"</Alert>
         };
-        assert!(true, "Warning variant should work");
     }
 
     #[test]
@@ -51,7 +46,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert variant=AlertVariant::Success>"Success alert"</Alert>
         };
-        assert!(true, "Success variant should work");
     }
 
     #[test]
@@ -59,7 +53,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert variant=AlertVariant::Default>"Info alert"</Alert>
         };
-        assert!(true, "Info variant should work");
     }
 
     #[test]
@@ -69,7 +62,6 @@ mod tdd_tests {
             <Alert class=custom_class>"Custom styled alert"</Alert>
         };
         assert_eq!(custom_class, "custom-alert-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -79,7 +71,6 @@ mod tdd_tests {
             <Alert id=custom_id>"Alert with ID"</Alert>
         };
         assert_eq!(custom_id, "custom-alert-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -91,7 +82,6 @@ mod tdd_tests {
                 <button>"Action Button"</button>
             </Alert>
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -101,7 +91,6 @@ mod tdd_tests {
                 "Accessible alert message"
             </Alert>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -111,7 +100,6 @@ mod tdd_tests {
                 "ARIA compliant alert"
             </Alert>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -121,7 +109,6 @@ mod tdd_tests {
                 "Keyboard navigable alert"
             </Alert>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -131,7 +118,6 @@ mod tdd_tests {
                 "Focus managed alert"
             </Alert>
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -141,7 +127,6 @@ mod tdd_tests {
                 "Animated alert"
             </Alert>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -151,7 +136,6 @@ mod tdd_tests {
                 "Responsive alert"
             </Alert>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -161,7 +145,6 @@ mod tdd_tests {
                 "Themed alert"
             </Alert>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -171,7 +154,6 @@ mod tdd_tests {
                 "Validated alert"
             </Alert>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -181,7 +163,6 @@ mod tdd_tests {
                 "Error handling alert"
             </Alert>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -189,7 +170,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert>"Memory managed alert"</Alert>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -197,7 +177,6 @@ mod tdd_tests {
         let _alert_view = view! {
             <Alert>"Performance optimized alert"</Alert>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -211,7 +190,6 @@ mod tdd_tests {
                 "Integration test alert"
             </Alert>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -225,7 +203,6 @@ mod tdd_tests {
                 "Complete workflow alert"
             </Alert>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -239,7 +216,6 @@ mod tdd_tests {
                 "Advanced interactions alert"
             </Alert>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -252,7 +228,6 @@ mod tdd_tests {
                 "Comprehensively accessible alert"
             </Alert>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -265,7 +240,6 @@ mod tdd_tests {
                 "Custom properties alert"
             </Alert>
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -279,7 +253,6 @@ mod tdd_tests {
                 "Form integrated alert"
             </Alert>
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -293,7 +266,6 @@ mod tdd_tests {
                 <Alert variant=AlertVariant::Default>"Alert 5"</Alert>
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -303,7 +275,6 @@ mod tdd_tests {
                 ""
             </Alert>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -316,7 +287,6 @@ mod tdd_tests {
                 </div>
             </Alert>
         };
-        assert!(true, "Dismissible alerts should be supported");
     }
 
     #[test]
@@ -329,7 +299,6 @@ mod tdd_tests {
                 </div>
             </Alert>
         };
-        assert!(true, "Alerts with icons should be supported");
     }
 
     #[test]
@@ -345,7 +314,6 @@ mod tdd_tests {
                 </div>
             </Alert>
         };
-        assert!(true, "Alerts with actions should be supported");
     }
 
     #[test]
@@ -355,7 +323,6 @@ mod tdd_tests {
                 "State managed alert"
             </Alert>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -365,7 +332,6 @@ mod tdd_tests {
                 "Context managed alert"
             </Alert>
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -377,7 +343,6 @@ mod tdd_tests {
                 </div>
             </Alert>
         };
-        assert!(true, "Click handling should be supported");
     }
 
     #[test]
@@ -389,6 +354,5 @@ mod tdd_tests {
                 </div>
             </Alert>
         };
-        assert!(true, "Keyboard handling should be supported");
     }
 }

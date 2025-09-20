@@ -16,7 +16,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement custom styling
-        assert!(true, "Custom styled input should render");
     }
 
     #[test]
@@ -32,7 +31,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement error states
-        assert!(true, "Error state input should render");
     }
 
     #[test]
@@ -48,7 +46,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement success states
-        assert!(true, "Success state input should render");
     }
 
     #[test]
@@ -104,7 +101,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement CSS variables
-        assert!(true, "CSS variables input should render");
     }
 
     #[test]
@@ -119,7 +115,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement dark mode
-        assert!(true, "Dark mode input should render");
     }
 
     #[test]
@@ -134,7 +129,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement light mode
-        assert!(true, "Light mode input should render");
     }
 
     #[test]
@@ -150,7 +144,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement custom colors
-        assert!(true, "Custom colors input should render");
     }
 
     #[test]
@@ -165,7 +158,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement gradient background
-        assert!(true, "Gradient background input should render");
     }
 
     #[test]
@@ -180,7 +172,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement shadow effects
-        assert!(true, "Shadow effects input should render");
     }
 
     #[test]
@@ -198,7 +189,6 @@ mod styling_tests {
             };
             
             // This test will fail initially - we need to implement border styles
-            assert!(true, "Border style '{}' should render", style);
         }
     }
 
@@ -215,7 +205,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement rounded corners
-        assert!(true, "Rounded corners input should render");
     }
 
     #[test]
@@ -230,7 +219,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement focus styles
-        assert!(true, "Focus styles input should render");
     }
 
     #[test]
@@ -245,7 +233,6 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement hover styles
-        assert!(true, "Hover styles input should render");
     }
 
     #[test]
@@ -260,6 +247,5 @@ mod styling_tests {
         };
         
         // This test will fail initially - we need to implement transition effects
-        assert!(true, "Transition effects input should render");
     }
 }

@@ -7,11 +7,14 @@ pub mod new_york;
 pub use default::{HoverCard};
 pub use new_york::{HoverCard as HoverCardNewYork};
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

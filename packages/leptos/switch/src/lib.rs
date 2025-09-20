@@ -13,15 +13,18 @@ pub use new_york::{
     SwitchVariant as SwitchVariantNewYork, SwitchSize as SwitchSizeNewYork
 };
 
-#[cfg(test)]
+
 mod tests;
 
-#[cfg(test)]
+
 mod tdd_tests;
 
-#[cfg(test)]
+
 mod implementation_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

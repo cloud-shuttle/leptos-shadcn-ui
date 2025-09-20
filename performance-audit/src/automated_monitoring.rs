@@ -5,9 +5,9 @@
 
 use std::collections::HashMap;
 use std::sync::Arc;
-use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tokio::sync::RwLock;
-use tokio::time::{interval, sleep};
+use tokio::time::interval;
 use serde::{Deserialize, Serialize};
 use crate::PerformanceAuditError;
 
@@ -146,6 +146,17 @@ pub enum AlertSeverity {
     High,
     /// Critical severity
     Critical,
+}
+
+impl std::fmt::Display for AlertSeverity {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            AlertSeverity::Low => write!(f, "LOW"),
+            AlertSeverity::Medium => write!(f, "MEDIUM"),
+            AlertSeverity::High => write!(f, "HIGH"),
+            AlertSeverity::Critical => write!(f, "CRITICAL"),
+        }
+    }
 }
 
 /// Performance trend analysis
@@ -747,7 +758,7 @@ mod tests {
         let monitor = AutomatedMonitor::new(config);
         
         // Test that monitor is created successfully
-        assert!(monitor.is_monitoring.read().await);
+        assert!(*monitor.is_monitoring.read().await);
     }
 
     #[tokio::test]

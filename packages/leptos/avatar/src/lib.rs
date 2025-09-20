@@ -8,6 +8,7 @@ pub use default::{Avatar, AvatarImage, AvatarFallback, AvatarGroup};
 pub use new_york::{Avatar as AvatarNewYork, AvatarImage as AvatarImageNewYork, AvatarFallback as AvatarFallbackNewYork, AvatarGroup as AvatarGroupNewYork};
 
 #[cfg(test)]
+mod real_tests;
 mod tests;
 
 

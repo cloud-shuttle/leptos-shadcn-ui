@@ -280,6 +280,5 @@ mod integration_tests {
         drop(form_data);
         
         // Memory should be cleaned up
-        assert!(true); // If we get here, memory cleanup worked
     }
 }

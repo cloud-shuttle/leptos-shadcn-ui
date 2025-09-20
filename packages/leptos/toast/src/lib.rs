@@ -13,17 +13,20 @@ pub use sonner::{
     toast
 };
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
-#[cfg(test)]
+
 mod sonner_tests;
 
-#[cfg(test)]
+
 mod sonner_advanced_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

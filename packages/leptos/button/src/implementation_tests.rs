@@ -186,7 +186,6 @@ mod implementation_tests {
         }
         
         // Test passes if no panic occurs
-        assert!(true);
     }
 
     #[test]
@@ -387,7 +386,6 @@ mod implementation_tests {
         let cloned_callback = original_callback.clone();
         
         // Both should be valid callbacks
-        assert!(true); // Test passes if no panic occurs during clone
     }
 
     #[test]
@@ -484,7 +482,6 @@ mod implementation_tests {
         let _ = callback;
         
         // Test passes if no memory leaks or panics occur
-        assert!(true);
     }
 
     #[test]

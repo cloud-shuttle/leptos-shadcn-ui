@@ -20,7 +20,6 @@ mod tdd_tests {
             </ContextMenu>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic context menu should render successfully");
     }
 
     #[test]
@@ -32,7 +31,6 @@ mod tdd_tests {
                 </ContextMenuTrigger>
             </ContextMenu>
         };
-        assert!(true, "Context menu trigger should render successfully");
     }
 
     #[test]
@@ -48,7 +46,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu content should render successfully");
     }
 
     #[test]
@@ -65,7 +62,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu item should render successfully");
     }
 
     #[test]
@@ -82,7 +78,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu separator should render successfully");
     }
 
     #[test]
@@ -98,7 +93,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu label should render successfully");
     }
 
     #[test]
@@ -115,7 +109,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu checkbox item should render successfully");
     }
 
     #[test]
@@ -133,7 +126,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu radio group should render successfully");
     }
 
     #[test]
@@ -152,7 +144,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu radio item should render successfully");
     }
 
     #[test]
@@ -175,7 +166,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu sub should render successfully");
     }
 
     #[test]
@@ -197,7 +187,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu sub trigger should render successfully");
     }
 
     #[test]
@@ -219,7 +208,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu sub content should render successfully");
     }
 
     #[test]
@@ -237,7 +225,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context menu shortcut should render successfully");
     }
 
     // Complex Content Tests
@@ -273,7 +260,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Complex context menu structure should render successfully");
     }
 
     #[test]
@@ -298,7 +284,6 @@ mod tdd_tests {
                 </ContextMenu>
             </div>
         };
-        assert!(true, "Multiple context menu instances should work");
     }
 
     // State Management Tests
@@ -314,7 +299,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -329,7 +313,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Context management should work");
     }
 
     // Animation and Transitions Tests
@@ -345,7 +328,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Animations should be supported");
     }
 
     #[test]
@@ -360,7 +342,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     // Accessibility Tests
@@ -376,7 +357,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Accessibility should be supported");
     }
 
     #[test]
@@ -391,7 +371,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Comprehensive accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -407,7 +386,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -422,7 +400,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Focus management should work");
     }
 
     // Advanced Interactions Tests
@@ -438,7 +415,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     // Form Integration Tests
@@ -454,7 +430,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -469,7 +444,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -484,7 +458,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Validation should work");
     }
 
     // Integration Tests
@@ -500,7 +473,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -515,7 +487,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     // Edge Cases and Error Handling
@@ -531,7 +502,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -545,7 +515,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Empty content should work");
     }
 
     #[test]
@@ -560,7 +529,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Long text should be handled");
     }
 
     // Performance Tests
@@ -576,7 +544,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Performance should be acceptable");
     }
 
     // Integration with other components
@@ -593,7 +560,6 @@ mod tdd_tests {
                 </ContextMenu>
             </div>
         };
-        assert!(true, "Context menu with label should work");
     }
 
     #[test]
@@ -608,7 +574,6 @@ mod tdd_tests {
                 </ContextMenu>
             </form>
         };
-        assert!(true, "Context menu in form should work");
     }
 
     // Callback Tests
@@ -624,7 +589,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Callback execution should work");
     }
 
     // Style Tests
@@ -640,7 +604,6 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Custom styles should work");
     }
 
     #[test]
@@ -657,6 +620,5 @@ mod tdd_tests {
                 </ContextMenuContent>
             </ContextMenu>
         };
-        assert!(true, "Combined props should work");
     }
 }

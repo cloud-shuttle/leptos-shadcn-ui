@@ -16,7 +16,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement proper rendering
-        assert!(true, "Label should render successfully");
     }
 
     #[test]
@@ -29,7 +28,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement text content
-        assert!(true, "Label with text should render successfully");
     }
 
     #[test]
@@ -42,7 +40,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement HTML content
-        assert!(true, "Label with HTML content should render successfully");
     }
 
     #[test]
@@ -58,7 +55,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom styling
-        assert!(true, "Label with custom styling should render successfully");
     }
 
     #[test]
@@ -83,7 +79,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement label variants
-            assert!(true, "Label variant '{}' should render", variant);
         }
     }
 
@@ -108,7 +103,6 @@ mod tdd_tests {
             };
             
             // This test will fail initially - we need to implement label sizes
-            assert!(true, "Label size '{}' should render", size);
         }
     }
 
@@ -124,7 +118,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement accessibility features
-        assert!(true, "Accessible label should render successfully");
     }
 
     #[test]
@@ -139,7 +132,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement form association
-        assert!(true, "Form label should render successfully");
     }
 
     #[test]
@@ -154,7 +146,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement required indicator
-        assert!(true, "Required label should render successfully");
     }
 
     #[test]
@@ -169,7 +160,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement optional indicator
-        assert!(true, "Optional label should render successfully");
     }
 
     #[test]
@@ -184,7 +174,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error state
-        assert!(true, "Error label should render successfully");
     }
 
     #[test]
@@ -199,7 +188,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement success state
-        assert!(true, "Success label should render successfully");
     }
 
     #[test]
@@ -214,7 +202,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement warning state
-        assert!(true, "Warning label should render successfully");
     }
 
     #[test]
@@ -229,7 +216,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement disabled state
-        assert!(true, "Disabled label should render successfully");
     }
 
     #[test]
@@ -244,7 +230,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement loading state
-        assert!(true, "Loading label should render successfully");
     }
 
     #[test]
@@ -301,7 +286,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement keyboard navigation
-        assert!(true, "Keyboard navigation label should render successfully");
     }
 
     #[test]
@@ -316,7 +300,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement focus management
-        assert!(true, "Focus management label should render successfully");
     }
 
     #[test]
@@ -331,7 +314,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement ARIA attributes
-        assert!(true, "ARIA label should render successfully");
     }
 
     #[test]
@@ -346,7 +328,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement animation support
-        assert!(true, "Animated label should render successfully");
     }
 
     #[test]
@@ -361,7 +342,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement memory management
-        assert!(true, "Memory test label should render successfully");
     }
 
     #[test]
@@ -376,7 +356,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement responsive design
-        assert!(true, "Responsive label should render successfully");
     }
 
     #[test]
@@ -391,7 +370,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement custom properties
-        assert!(true, "Custom props label should render successfully");
     }
 
     #[test]
@@ -429,7 +407,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement form integration
-        assert!(true, "Form integration label should render successfully");
     }
 
     #[test]
@@ -454,7 +431,6 @@ mod tdd_tests {
             };
             
             // Each validation feature should be supported
-            assert!(true, "Validation feature '{}' should be supported", feature);
         }
     }
 
@@ -480,7 +456,6 @@ mod tdd_tests {
             };
             
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 
@@ -504,7 +479,6 @@ mod tdd_tests {
             };
             
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 
@@ -530,7 +504,6 @@ mod tdd_tests {
             };
             
             // Each integration scenario should work
-            assert!(true, "Integration scenario '{}' should work", scenario);
         }
     }
 
@@ -546,7 +519,6 @@ mod tdd_tests {
         };
         
         // This test will fail initially - we need to implement error handling
-        assert!(true, "Error handling label should render successfully");
     }
 
     #[test]
@@ -592,7 +564,6 @@ mod tdd_tests {
             };
             
             // Each content type should render
-            assert!(true, "Content type '{}' should render", content_type);
         }
     }
 
@@ -616,7 +587,6 @@ mod tdd_tests {
             };
             
             // Each alignment variant should render
-            assert!(true, "Alignment variant '{}' should render", alignment);
         }
     }
 }

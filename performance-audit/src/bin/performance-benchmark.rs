@@ -11,6 +11,7 @@ use leptos_shadcn_performance_audit::{
     PerformanceAuditError,
 };
 use std::time::Duration;
+use tokio::time::sleep;
 use std::path::PathBuf;
 
 #[derive(Parser)]
@@ -190,7 +191,7 @@ async fn run_benchmarks(
         "json" => {
             let json_output = serde_json::to_string_pretty(&results)?;
             if let Some(output_path) = output {
-                std::fs::write(output_path, json_output)?;
+                std::fs::write(&output_path, json_output)?;
                 println!("✅ Results saved to {:?}", output_path);
             } else {
                 println!("{}", json_output);
@@ -199,7 +200,7 @@ async fn run_benchmarks(
         "html" => {
             let html_output = generate_html_report(&results);
             if let Some(output_path) = output {
-                std::fs::write(output_path, html_output)?;
+                std::fs::write(&output_path, html_output)?;
                 println!("✅ HTML report saved to {:?}", output_path);
             } else {
                 println!("{}", html_output);
@@ -358,11 +359,11 @@ async fn generate_report(
     match format.as_str() {
         "html" => {
             let html_report = generate_html_report(&results);
-            std::fs::write(output, html_report)?;
+            std::fs::write(&output, html_report)?;
         }
         "markdown" => {
             let markdown_report = generate_markdown_report(&results);
-            std::fs::write(output, markdown_report)?;
+            std::fs::write(&output, markdown_report)?;
         }
         _ => {
             return Err(format!("Unsupported format: {}", format).into());

@@ -20,9 +20,9 @@ async fn test_bundle_size_analysis_comprehensive() {
     let medium_component = bundle_analysis::ComponentBundleAnalysis::new("input".to_string(), 4096); // 4KB
     let large_component = bundle_analysis::ComponentBundleAnalysis::new("table".to_string(), 8192); // 8KB
     
-    bundle_results.add_component(small_component);
-    bundle_results.add_component(medium_component);
-    bundle_results.add_component(large_component);
+    bundle_results.add_component_analysis(small_component);
+    bundle_results.add_component_analysis(medium_component);
+    bundle_results.add_component_analysis(large_component);
     
     // Verify bundle analysis results
     assert_eq!(bundle_results.component_analyses.len(), 3);
@@ -103,7 +103,7 @@ async fn test_optimization_roadmap_generation() {
     // Create mock bundle analysis results
     let mut bundle_results = bundle_analysis::BundleAnalysisResults::default();
     let large_component = bundle_analysis::ComponentBundleAnalysis::new("table".to_string(), 8192); // 8KB
-    bundle_results.add_component(large_component);
+    bundle_results.add_component_analysis(large_component);
     
     // Create mock performance monitoring results
     let mut performance_results = performance_monitoring::PerformanceMonitoringResults::default();
@@ -235,7 +235,7 @@ async fn test_performance_audit_with_real_components() {
             component_name.to_string(), 
             bundle_size
         );
-        bundle_results.add_component(component_analysis);
+        bundle_results.add_component_analysis(component_analysis);
         
         // Performance monitoring - vary performance
         let render_time = Duration::from_millis(5 + (i * 2) as u64); // 5ms, 7ms, 9ms, etc.
@@ -300,7 +300,7 @@ async fn test_performance_audit_edge_cases() {
         "huge-component".to_string(), 
         10 * 1024 * 1024 // 10MB
     );
-    extreme_bundle_results.add_component(huge_component);
+    extreme_bundle_results.add_component_analysis(huge_component);
     
     let mut extreme_performance_results = performance_monitoring::PerformanceMonitoringResults::default();
     let mut extreme_metrics = performance_monitoring::ComponentPerformanceMetrics::new(

@@ -1,4 +1,3 @@
-// Real tests for Input component (replacing 70+ assert!(true) placeholders)
 #[cfg(test)]
 mod input_tests {
     use crate::default::{Input, INPUT_CLASS, INPUT_ERROR_CLASS};

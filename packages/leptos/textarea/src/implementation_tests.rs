@@ -184,7 +184,6 @@ mod implementation_tests {
         // Test callback absence
         let no_callback: Option<Callback<String>> = None;
         if let None = no_callback {
-            assert!(true, "No callback should be present");
         }
     }
 
@@ -470,7 +469,6 @@ mod implementation_tests {
         drop(textareas);
         
         // Test passes if no memory leaks or panics occur
-        assert!(true);
     }
 
     #[test]

@@ -17,7 +17,6 @@ mod performance_tests {
         };
         
         // Should have performance optimizations
-        assert!(true, "Performance optimizations should be implemented");
     }
 
     #[test]
@@ -43,7 +42,6 @@ mod performance_tests {
             };
             
             // Each performance feature should be implemented
-            assert!(true, "Performance feature '{}' should be implemented", feature);
         }
     }
 
@@ -61,7 +59,6 @@ mod performance_tests {
         };
         
         // Should have good memory performance
-        assert!(true, "Memory performance should be optimized");
     }
 
     #[test]
@@ -78,7 +75,6 @@ mod performance_tests {
         };
         
         // Should have good CPU performance
-        assert!(true, "CPU performance should be optimized");
     }
 
     #[test]
@@ -95,7 +91,6 @@ mod performance_tests {
         };
         
         // Should have good network performance
-        assert!(true, "Network performance should be optimized");
     }
 
     #[test]
@@ -112,7 +107,6 @@ mod performance_tests {
         };
         
         // Should have good battery performance
-        assert!(true, "Battery performance should be optimized");
     }
 
     #[test]
@@ -129,7 +123,6 @@ mod performance_tests {
         };
         
         // Should have good thermal performance
-        assert!(true, "Thermal performance should be optimized");
     }
 
     #[test]
@@ -146,7 +139,6 @@ mod performance_tests {
         };
         
         // Should have good benchmark performance
-        assert!(true, "Benchmark performance should be optimized");
     }
 
     #[test]
@@ -163,7 +155,6 @@ mod performance_tests {
         };
         
         // Should have good load performance
-        assert!(true, "Load performance should be optimized");
     }
 
     #[test]
@@ -180,7 +171,6 @@ mod performance_tests {
         };
         
         // Should have good stress performance
-        assert!(true, "Stress performance should be optimized");
     }
 
     #[test]
@@ -197,7 +187,6 @@ mod performance_tests {
         };
         
         // Should have good concurrent performance
-        assert!(true, "Concurrent performance should be optimized");
     }
 
     #[test]
@@ -214,6 +203,5 @@ mod performance_tests {
         };
         
         // Should have good scalability performance
-        assert!(true, "Scalability performance should be optimized");
     }
 }

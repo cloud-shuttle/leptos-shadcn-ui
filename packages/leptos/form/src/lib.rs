@@ -9,12 +9,15 @@ pub mod new_york;
 // Re-export common types
 pub use default::{Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDescription};
 
-#[cfg(test)]
+
 mod tests;
 
-#[cfg(test)]
+
 mod implementation_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

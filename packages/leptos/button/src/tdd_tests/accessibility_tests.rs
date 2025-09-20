@@ -18,7 +18,6 @@ mod accessibility_tests {
         };
         
         // Should have enhanced accessibility
-        assert!(true, "Accessibility enhancements should be implemented");
     }
 
     #[test]
@@ -35,7 +34,6 @@ mod accessibility_tests {
         };
         
         // Should support keyboard navigation
-        assert!(true, "Keyboard navigation should be implemented");
     }
 
     #[test]
@@ -52,7 +50,6 @@ mod accessibility_tests {
         };
         
         // Should have proper focus management
-        assert!(true, "Focus management should be implemented");
     }
 
     #[test]
@@ -70,7 +67,6 @@ mod accessibility_tests {
         };
         
         // Should have proper ARIA attributes
-        assert!(true, "ARIA attributes should be implemented");
     }
 
     #[test]
@@ -97,7 +93,6 @@ mod accessibility_tests {
             };
             
             // Each accessibility feature should be supported
-            assert!(true, "Accessibility feature '{}' should be supported", feature);
         }
     }
 }

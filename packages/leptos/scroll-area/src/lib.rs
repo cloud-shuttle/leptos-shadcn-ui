@@ -8,6 +8,7 @@ pub use default::{ScrollArea};
 pub use new_york::{ScrollArea as ScrollAreaNewYork};
 
 #[cfg(test)]
+mod real_tests;
 mod tests;
 
 

@@ -155,7 +155,6 @@ mod tests {
         // Context should provide open state and setter
         assert!(!open.get(), "Context should provide initial open state");
         // Note: Callback doesn't have is_some() method, it's always valid
-        assert!(true, "Context should provide set_open callback");
     }
 
     #[test]

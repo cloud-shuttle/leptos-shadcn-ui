@@ -18,7 +18,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command keyboard navigation should work");
     }
 
     #[test]
@@ -34,7 +33,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command edge cases should handle empty values");
     }
 
     #[test]
@@ -77,7 +75,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command callback handling should work");
     }
 
     #[test]
@@ -119,7 +116,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command item selection should work");
     }
 
     #[test]
@@ -135,7 +131,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command input focus should work");
     }
 
     #[test]
@@ -153,7 +148,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command search filtering should work");
     }
 
     #[test]
@@ -176,7 +170,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command shortcut handling should work");
     }
 
     #[test]
@@ -192,7 +185,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command disabled interactions should work");
     }
 
     #[test]
@@ -209,7 +201,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command mouse interactions should work");
     }
 
     #[test]
@@ -226,7 +217,6 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command touch interactions should work");
     }
 
     #[test]
@@ -242,6 +232,5 @@ mod interaction_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command voice interactions should work");
     }
 }

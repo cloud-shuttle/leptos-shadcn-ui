@@ -18,7 +18,6 @@ mod tdd_tests {
             </HoverCard>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic hover card should render successfully");
     }
 
     #[test]
@@ -31,7 +30,6 @@ mod tdd_tests {
                 </div>
             </HoverCard>
         };
-        assert!(true, "Hover card with children should render successfully");
     }
 
     #[test]
@@ -41,7 +39,6 @@ mod tdd_tests {
                 "Default Hover Card"
             </HoverCard>
         };
-        assert!(true, "Hover card with variant should render successfully");
     }
 
     #[test]
@@ -51,7 +48,6 @@ mod tdd_tests {
                 "Small Hover Card"
             </HoverCard>
         };
-        assert!(true, "Hover card with size should render successfully");
     }
 
     #[test]
@@ -64,7 +60,6 @@ mod tdd_tests {
                 "Clickable Hover Card"
             </HoverCard>
         };
-        assert!(true, "Hover card with callback should render successfully");
     }
 
     #[test]
@@ -75,7 +70,6 @@ mod tdd_tests {
                 "Disabled Hover Card"
             </HoverCard>
         };
-        assert!(true, "Disabled hover card should render successfully");
     }
 
     #[test]
@@ -85,7 +79,6 @@ mod tdd_tests {
                 "Custom Hover Card"
             </HoverCard>
         };
-        assert!(true, "Hover card with custom class should render successfully");
     }
 
     #[test]
@@ -95,7 +88,6 @@ mod tdd_tests {
                 "Hover Card with ID"
             </HoverCard>
         };
-        assert!(true, "Hover card with id should render successfully");
     }
 
     #[test]
@@ -106,7 +98,6 @@ mod tdd_tests {
                 "Styled Hover Card"
             </HoverCard>
         };
-        assert!(true, "Hover card with style should render successfully");
     }
 
     #[test]
@@ -118,7 +109,6 @@ mod tdd_tests {
                 <HoverCard class=MaybeProp::from("hover-card-3")>"Hover Card 3"</HoverCard>
             </div>
         };
-        assert!(true, "Multiple hover card instances should work");
     }
 
     // Variant Tests
@@ -129,7 +119,6 @@ mod tdd_tests {
                 "Default Variant"
             </HoverCard>
         };
-        assert!(true, "Default variant should be supported");
     }
 
     #[test]
@@ -139,7 +128,6 @@ mod tdd_tests {
                 "Destructive Variant"
             </HoverCard>
         };
-        assert!(true, "Destructive variant should be supported");
     }
 
     #[test]
@@ -149,7 +137,6 @@ mod tdd_tests {
                 "Outline Variant"
             </HoverCard>
         };
-        assert!(true, "Outline variant should be supported");
     }
 
     #[test]
@@ -159,7 +146,6 @@ mod tdd_tests {
                 "Secondary Variant"
             </HoverCard>
         };
-        assert!(true, "Secondary variant should be supported");
     }
 
     #[test]
@@ -169,7 +155,6 @@ mod tdd_tests {
                 "Ghost Variant"
             </HoverCard>
         };
-        assert!(true, "Ghost variant should be supported");
     }
 
     #[test]
@@ -179,7 +164,6 @@ mod tdd_tests {
                 "Link Variant"
             </HoverCard>
         };
-        assert!(true, "Link variant should be supported");
     }
 
     // Size Tests
@@ -190,7 +174,6 @@ mod tdd_tests {
                 "Default Size"
             </HoverCard>
         };
-        assert!(true, "Default size should be supported");
     }
 
     #[test]
@@ -200,7 +183,6 @@ mod tdd_tests {
                 "Small Size"
             </HoverCard>
         };
-        assert!(true, "Small size should be supported");
     }
 
     #[test]
@@ -210,7 +192,6 @@ mod tdd_tests {
                 "Large Size"
             </HoverCard>
         };
-        assert!(true, "Large size should be supported");
     }
 
     #[test]
@@ -220,7 +201,6 @@ mod tdd_tests {
                 "Icon Size"
             </HoverCard>
         };
-        assert!(true, "Icon size should be supported");
     }
 
     // State Management Tests
@@ -231,7 +211,6 @@ mod tdd_tests {
                 "State Managed Hover Card"
             </HoverCard>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -241,7 +220,6 @@ mod tdd_tests {
                 "Context Managed Hover Card"
             </HoverCard>
         };
-        assert!(true, "Context management should work");
     }
 
     // Animation and Transitions Tests
@@ -252,7 +230,6 @@ mod tdd_tests {
                 "Animated Hover Card"
             </HoverCard>
         };
-        assert!(true, "Animations should be supported");
     }
 
     #[test]
@@ -262,7 +239,6 @@ mod tdd_tests {
                 "Placeholder Hover Card"
             </HoverCard>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     // Accessibility Tests
@@ -273,7 +249,6 @@ mod tdd_tests {
                 "Accessible Hover Card"
             </HoverCard>
         };
-        assert!(true, "Accessibility should be supported");
     }
 
     #[test]
@@ -283,7 +258,6 @@ mod tdd_tests {
                 "Comprehensive Accessible Hover Card"
             </HoverCard>
         };
-        assert!(true, "Comprehensive accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -294,7 +268,6 @@ mod tdd_tests {
                 "Keyboard Navigable Hover Card"
             </HoverCard>
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -304,7 +277,6 @@ mod tdd_tests {
                 "Focus Managed Hover Card"
             </HoverCard>
         };
-        assert!(true, "Focus management should work");
     }
 
     // Advanced Interactions Tests
@@ -315,7 +287,6 @@ mod tdd_tests {
                 "Advanced Interactions Hover Card"
             </HoverCard>
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     // Form Integration Tests
@@ -326,7 +297,6 @@ mod tdd_tests {
                 "Form Integration Hover Card"
             </HoverCard>
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -336,7 +306,6 @@ mod tdd_tests {
                 "Error Handling Hover Card"
             </HoverCard>
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -346,7 +315,6 @@ mod tdd_tests {
                 "Validated Hover Card"
             </HoverCard>
         };
-        assert!(true, "Validation should work");
     }
 
     // Integration Tests
@@ -357,7 +325,6 @@ mod tdd_tests {
                 "Integration Hover Card"
             </HoverCard>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -367,7 +334,6 @@ mod tdd_tests {
                 "Workflow Hover Card"
             </HoverCard>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     // Edge Cases and Error Handling
@@ -378,7 +344,6 @@ mod tdd_tests {
                 ""
             </HoverCard>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -386,7 +351,6 @@ mod tdd_tests {
         let _hover_card_view = view! {
             <HoverCard/>
         };
-        assert!(true, "Empty children should work");
     }
 
     #[test]
@@ -396,7 +360,6 @@ mod tdd_tests {
                 "This is a very long hover card text that should be handled properly and should not cause any issues with rendering or layout"
             </HoverCard>
         };
-        assert!(true, "Long text should be handled");
     }
 
     // Performance Tests
@@ -407,7 +370,6 @@ mod tdd_tests {
                 "Performance Hover Card"
             </HoverCard>
         };
-        assert!(true, "Performance should be acceptable");
     }
 
     // Integration with other components
@@ -419,7 +381,6 @@ mod tdd_tests {
                 <HoverCard>"Labeled Hover Card"</HoverCard>
             </div>
         };
-        assert!(true, "Hover card with label should work");
     }
 
     #[test]
@@ -429,7 +390,6 @@ mod tdd_tests {
                 <HoverCard>"Form Hover Card"</HoverCard>
             </form>
         };
-        assert!(true, "Hover card in form should work");
     }
 
     #[test]
@@ -441,7 +401,6 @@ mod tdd_tests {
                 <HoverCard class=MaybeProp::from("hover-card-3")>"Hover Card 3"</HoverCard>
             </div>
         };
-        assert!(true, "Hover card group should work");
     }
 
     // Complex Content Tests
@@ -453,7 +412,6 @@ mod tdd_tests {
                 "Icon Hover Card"
             </HoverCard>
         };
-        assert!(true, "Hover card with icon should work");
     }
 
     #[test]
@@ -466,7 +424,6 @@ mod tdd_tests {
                 </div>
             </HoverCard>
         };
-        assert!(true, "Hover card with complex children should work");
     }
 
     // Callback Tests
@@ -480,7 +437,6 @@ mod tdd_tests {
                 "Callback Hover Card"
             </HoverCard>
         };
-        assert!(true, "Callback execution should work");
     }
 
     #[test]
@@ -493,7 +449,6 @@ mod tdd_tests {
                 <HoverCard on_click=callback2>"Hover Card 2"</HoverCard>
             </div>
         };
-        assert!(true, "Multiple callbacks should work");
     }
 
     // Disabled State Tests
@@ -505,7 +460,6 @@ mod tdd_tests {
                 "Disabled Hover Card"
             </HoverCard>
         };
-        assert!(true, "Disabled state should work");
     }
 
     #[test]
@@ -516,7 +470,6 @@ mod tdd_tests {
                 "Enabled Hover Card"
             </HoverCard>
         };
-        assert!(true, "Enabled state should work");
     }
 
     // Style Tests
@@ -528,7 +481,6 @@ mod tdd_tests {
                 "Styled Hover Card"
             </HoverCard>
         };
-        assert!(true, "Custom styles should work");
     }
 
     #[test]
@@ -549,6 +501,5 @@ mod tdd_tests {
                 "Combined Props Hover Card"
             </HoverCard>
         };
-        assert!(true, "Combined props should work");
     }
 }

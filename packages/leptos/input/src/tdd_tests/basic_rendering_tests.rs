@@ -14,7 +14,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement proper rendering
-        assert!(true, "Input should render successfully");
     }
 
     #[test]
@@ -28,7 +27,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement value handling
-        assert!(true, "Input with value should render successfully");
     }
 
     #[test]
@@ -42,7 +40,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement placeholder support
-        assert!(true, "Input with placeholder should render successfully");
     }
 
     #[test]
@@ -88,7 +85,6 @@ mod basic_rendering_tests {
             };
             
             // This test will fail initially - we need to implement input types
-            assert!(true, "Input type '{}' should render", input_type);
         }
     }
 
@@ -107,7 +103,6 @@ mod basic_rendering_tests {
             };
             
             // This test will fail initially - we need to implement size support
-            assert!(true, "Input size '{}' should render", size);
         }
     }
 
@@ -126,7 +121,6 @@ mod basic_rendering_tests {
             };
             
             // This test will fail initially - we need to implement variant support
-            assert!(true, "Input variant '{}' should render", variant);
         }
     }
 
@@ -144,7 +138,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement custom properties
-        assert!(true, "Input with custom properties should render");
     }
 
     #[test]
@@ -159,7 +152,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement animation support
-        assert!(true, "Input with animation should render");
     }
 
     #[test]
@@ -174,7 +166,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement responsive design
-        assert!(true, "Input with responsive design should render");
     }
 
     #[test]
@@ -191,7 +182,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement advanced interactions
-        assert!(true, "Input with advanced interactions should render");
     }
 
     #[test]
@@ -207,7 +197,6 @@ mod basic_rendering_tests {
         };
         
         // This test will fail initially - we need to implement form integration
-        assert!(true, "Input with form integration should render");
     }
 
     #[test]

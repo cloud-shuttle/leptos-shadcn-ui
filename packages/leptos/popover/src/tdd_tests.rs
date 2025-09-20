@@ -13,7 +13,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Click me"</Popover>
         };
-        assert!(true, "Popover component exists and can be imported");
     }
 
     #[test]
@@ -21,7 +20,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover variant="default">"Default variant"</Popover>
         };
-        assert!(true, "Popover variant should be supported");
     }
 
     #[test]
@@ -29,7 +27,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover size="default">"Default size"</Popover>
         };
-        assert!(true, "Popover size should be supported");
     }
 
     #[test]
@@ -37,7 +34,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Default variant"</Popover>
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -45,7 +41,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Default size"</Popover>
         };
-        assert!(true, "Default size should work");
     }
 
     #[test]
@@ -53,7 +48,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Disabled popover"</Popover>
         };
-        assert!(true, "Disabled state should be supported");
     }
 
     #[test]
@@ -61,7 +55,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Enabled popover"</Popover>
         };
-        assert!(true, "Enabled state should be supported");
     }
 
     #[test]
@@ -76,7 +69,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover on_click=on_click>"Click me"</Popover>
         };
-        assert!(true, "Click handling should be supported");
     }
 
     #[test]
@@ -86,7 +78,6 @@ mod tdd_tests {
             <Popover class=custom_class>"Custom styled popover"</Popover>
         };
         assert_eq!(custom_class, "custom-popover-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -96,7 +87,6 @@ mod tdd_tests {
             <Popover id=custom_id>"Popover with ID"</Popover>
         };
         assert_eq!(custom_id, "custom-popover-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -105,7 +95,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover style=custom_style>"Styled popover"</Popover>
         };
-        assert!(true, "Custom style should be supported");
     }
 
     #[test]
@@ -116,7 +105,6 @@ mod tdd_tests {
                 <strong>"Bold text"</strong>
             </Popover>
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -126,7 +114,6 @@ mod tdd_tests {
                 "Variant and size combination"
             </Popover>
         };
-        assert!(true, "Variant and size combinations should work");
     }
 
     #[test]
@@ -136,7 +123,6 @@ mod tdd_tests {
                 "Accessible popover"
             </Popover>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -146,7 +132,6 @@ mod tdd_tests {
                 "ARIA compliant popover"
             </Popover>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -156,7 +141,6 @@ mod tdd_tests {
                 "Keyboard navigable popover"
             </Popover>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -166,7 +150,6 @@ mod tdd_tests {
                 "Focus managed popover"
             </Popover>
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -174,7 +157,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"State managed popover"</Popover>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -184,7 +166,6 @@ mod tdd_tests {
                 "Animated popover"
             </Popover>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -194,7 +175,6 @@ mod tdd_tests {
                 "Responsive popover"
             </Popover>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -204,7 +184,6 @@ mod tdd_tests {
                 "Themed popover"
             </Popover>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -214,7 +193,6 @@ mod tdd_tests {
                 "Validated popover"
             </Popover>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -224,7 +202,6 @@ mod tdd_tests {
                 "Error handling popover"
             </Popover>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -232,7 +209,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Memory managed popover"</Popover>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -240,7 +216,6 @@ mod tdd_tests {
         let _popover_view = view! {
             <Popover>"Performance optimized popover"</Popover>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -255,7 +230,6 @@ mod tdd_tests {
                 "Integration test popover"
             </Popover>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -270,7 +244,6 @@ mod tdd_tests {
                 "Complete workflow popover"
             </Popover>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -284,7 +257,6 @@ mod tdd_tests {
                 "🚀"
             </Popover>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -298,7 +270,6 @@ mod tdd_tests {
                 "Comprehensively accessible popover"
             </Popover>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -313,7 +284,6 @@ mod tdd_tests {
                 "Custom properties popover"
             </Popover>
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -327,7 +297,6 @@ mod tdd_tests {
                 "Form integrated popover"
             </Popover>
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -339,7 +308,6 @@ mod tdd_tests {
                 <Popover variant="outline" size="icon">"🚀"</Popover>
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -354,6 +322,5 @@ mod tdd_tests {
                 ""
             </Popover>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 }

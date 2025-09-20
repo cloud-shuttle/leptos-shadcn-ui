@@ -11,6 +11,7 @@ mod new_york;
 mod default;
 
 #[cfg(test)]
+mod real_tests;
 mod tests;
 
 // Signal-managed module and exports

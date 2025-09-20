@@ -11,7 +11,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton />
         };
-        assert!(true, "Skeleton component exists and can be imported");
     }
 
     #[test]
@@ -20,7 +19,6 @@ mod tdd_tests {
             <Skeleton variant=SkeletonVariant::Default />
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Skeleton should render successfully");
     }
 
     #[test]
@@ -28,7 +26,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton />
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -36,7 +33,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Text />
         };
-        assert!(true, "Text variant should work");
     }
 
     #[test]
@@ -44,7 +40,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Avatar />
         };
-        assert!(true, "Circular variant should work");
     }
 
     #[test]
@@ -52,7 +47,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default />
         };
-        assert!(true, "Rectangular variant should work");
     }
 
     #[test]
@@ -60,7 +54,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default />
         };
-        assert!(true, "Rounded variant should work");
     }
 
     #[test]
@@ -69,7 +62,6 @@ mod tdd_tests {
             <Skeleton size=SkeletonSize::Md />
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Skeleton should render successfully");
     }
 
     #[test]
@@ -79,7 +71,6 @@ mod tdd_tests {
             <Skeleton class=custom_class />
         };
         assert_eq!(custom_class, "custom-skeleton-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -89,7 +80,6 @@ mod tdd_tests {
             <Skeleton id=custom_id />
         };
         assert_eq!(custom_id, "custom-skeleton-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -97,7 +87,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton />
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -105,7 +94,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton id="accessible-skeleton" class="sr-only" />
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -113,7 +101,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton id="aria-skeleton" />
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -121,7 +108,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton class="animate-pulse" />
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -129,7 +115,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton class="sm:w-16 md:w-32 lg:w-48" />
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -137,7 +122,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton class="bg-muted dark:bg-muted-dark" />
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -145,7 +129,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default size=SkeletonSize::Md class="validated-skeleton" id="validated-skeleton" />
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -153,7 +136,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default />
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -161,7 +143,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton />
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -169,7 +150,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton />
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -182,7 +162,6 @@ mod tdd_tests {
                 id="integration-test"
             />
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -195,7 +174,6 @@ mod tdd_tests {
                 id="workflow-test"
             />
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -208,7 +186,6 @@ mod tdd_tests {
                 id="advanced-skeleton"
             />
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -219,7 +196,6 @@ mod tdd_tests {
                 class="sr-only"
             />
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -230,7 +206,6 @@ mod tdd_tests {
                 id="custom-props-test"
             />
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -243,7 +218,6 @@ mod tdd_tests {
                 id="form-skeleton"
             />
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -257,7 +231,6 @@ mod tdd_tests {
                 <Skeleton variant=SkeletonVariant::Default size=SkeletonSize::Md />
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -265,7 +238,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton class="" id="" />
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -273,7 +245,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Text class="loading-skeleton" />
         };
-        assert!(true, "Loading state should be supported");
     }
 
     #[test]
@@ -281,7 +252,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default class="w-32 h-8" />
         };
-        assert!(true, "Skeletons with dimensions should be supported");
     }
 
     #[test]
@@ -289,7 +259,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Text class="placeholder-skeleton" />
         };
-        assert!(true, "Skeletons with placeholder should be supported");
     }
 
     #[test]
@@ -297,7 +266,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default class="state-managed-skeleton" />
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -305,7 +273,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Default class="context-managed-skeleton" />
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -313,7 +280,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Avatar size=SkeletonSize::Lg />
         };
-        assert!(true, "Variant and size combinations should work");
     }
 
     #[test]
@@ -323,7 +289,6 @@ mod tdd_tests {
             <Skeleton variant=SkeletonVariant::Text />
         };
         assert!(loading.get(), "Dynamic content should work");
-        assert!(true, "Dynamic content renders successfully");
     }
 
     #[test]
@@ -333,7 +298,6 @@ mod tdd_tests {
             <Skeleton variant=SkeletonVariant::Default />
         };
         assert!(show_skeleton.get(), "Conditional rendering should work");
-        assert!(true, "Conditional rendering renders successfully");
     }
 
     #[test]
@@ -341,7 +305,6 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Text class="animate-pulse animate-bounce" />
         };
-        assert!(true, "Animation variants should be supported");
     }
 
     #[test]
@@ -349,6 +312,5 @@ mod tdd_tests {
         let _skeleton_view = view! {
             <Skeleton variant=SkeletonVariant::Text class="content-placeholder" />
         };
-        assert!(true, "Content placeholder should be supported");
     }
 }

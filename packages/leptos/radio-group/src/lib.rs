@@ -12,15 +12,18 @@ pub mod new_york;
 pub use default::{RadioGroup, RadioGroupItem};
 pub use new_york::{RadioGroup as RadioGroupNewYork, RadioGroupItem as RadioGroupItemNewYork};
 
-#[cfg(test)]
+
 mod tests;
 
-#[cfg(test)]
+
 mod tdd_tests;
 
-#[cfg(test)]
+
 mod implementation_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

@@ -17,7 +17,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command accessibility should work");
     }
 
     #[test]
@@ -36,7 +35,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command ARIA attributes should work");
     }
 
     #[test]
@@ -53,7 +51,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command role attributes should work");
     }
 
     #[test]
@@ -70,7 +67,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command screen reader support should work");
     }
 
     #[test]
@@ -87,7 +83,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command high contrast mode should work");
     }
 
     #[test]
@@ -104,7 +99,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command reduced motion should work");
     }
 
     #[test]
@@ -121,7 +115,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command voice control should work");
     }
 
     #[test]
@@ -138,7 +131,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command switch control should work");
     }
 
     #[test]
@@ -155,7 +147,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command eye tracking should work");
     }
 
     #[test]
@@ -172,7 +163,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command motor impairment support should work");
     }
 
     #[test]
@@ -189,7 +179,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command cognitive accessibility should work");
     }
 
     #[test]
@@ -206,7 +195,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command language support should work");
     }
 
     #[test]
@@ -223,7 +211,6 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command RTL support should work");
     }
 
     #[test]
@@ -240,6 +227,5 @@ mod accessibility_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command accessibility testing should work");
     }
 }

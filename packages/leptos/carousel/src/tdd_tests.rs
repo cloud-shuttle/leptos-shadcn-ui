@@ -17,7 +17,6 @@ mod tdd_tests {
             </Carousel>
         };
         // GREEN PHASE: Verify actual rendering behavior
-        assert!(true, "Basic carousel should render successfully");
     }
 
     #[test]
@@ -28,7 +27,6 @@ mod tdd_tests {
                 <div>"Horizontal carousel content"</div>
             </Carousel>
         };
-        assert!(true, "Carousel with orientation should render");
     }
 
     #[test]
@@ -38,7 +36,6 @@ mod tdd_tests {
                 <div>"Classed carousel content"</div>
             </Carousel>
         };
-        assert!(true, "Carousel with class should render");
     }
 
     #[test]
@@ -48,7 +45,6 @@ mod tdd_tests {
                 <div>"Content Item"</div>
             </Carousel>
         };
-        assert!(true, "Carousel content should render");
     }
 
     #[test]
@@ -58,7 +54,6 @@ mod tdd_tests {
                 <div class="custom-content">"Content with Class"</div>
             </Carousel>
         };
-        assert!(true, "Carousel content with class should render");
     }
 
     #[test]
@@ -68,7 +63,6 @@ mod tdd_tests {
                 <div>"Basic Item"</div>
             </Carousel>
         };
-        assert!(true, "Carousel item should render");
     }
 
     #[test]
@@ -78,7 +72,6 @@ mod tdd_tests {
                 <div class="custom-item">"Item with Class"</div>
             </Carousel>
         };
-        assert!(true, "Carousel item with class should render");
     }
 
     #[test]
@@ -89,7 +82,6 @@ mod tdd_tests {
                 <button>"Previous"</button>
             </Carousel>
         };
-        assert!(true, "Carousel previous should render");
     }
 
     #[test]
@@ -100,7 +92,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Carousel next should render");
     }
 
     // Orientation Tests
@@ -115,7 +106,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Horizontal orientation should work");
     }
 
     #[test]
@@ -129,7 +119,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Vertical orientation should work");
     }
 
     // Multiple Items Tests
@@ -144,7 +133,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Multiple items should work");
     }
 
     #[test]
@@ -160,7 +148,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Many items should work");
     }
 
     // Navigation Tests
@@ -174,7 +161,6 @@ mod tdd_tests {
                 <button class="next-btn">"Next"</button>
             </Carousel>
         };
-        assert!(true, "Navigation buttons should work");
     }
 
     #[test]
@@ -186,7 +172,6 @@ mod tdd_tests {
                 <button>"Previous"</button>
             </Carousel>
         };
-        assert!(true, "Previous with callback should work");
     }
 
     #[test]
@@ -198,7 +183,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Next with callback should work");
     }
 
     // Complex Content Tests
@@ -218,7 +202,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Complex items should work");
     }
 
     #[test]
@@ -235,7 +218,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Carousel with images should work");
     }
 
     // State Management Tests
@@ -247,7 +229,6 @@ mod tdd_tests {
                 <div>"State Item 2"</div>
             </Carousel>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -257,7 +238,6 @@ mod tdd_tests {
                 <div>"Context Item"</div>
             </Carousel>
         };
-        assert!(true, "Context management should work");
     }
 
     // Animation and Transitions Tests
@@ -268,7 +248,6 @@ mod tdd_tests {
                 <div>"Animated Item"</div>
             </Carousel>
         };
-        assert!(true, "Animations should be supported");
     }
 
     #[test]
@@ -278,7 +257,6 @@ mod tdd_tests {
                 <div class="content-placeholder">"Placeholder Item"</div>
             </Carousel>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 
     // Accessibility Tests
@@ -291,7 +269,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Accessibility should be supported");
     }
 
     #[test]
@@ -303,7 +280,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Comprehensive accessibility should be supported");
     }
 
     // Keyboard Navigation Tests
@@ -316,7 +292,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -328,7 +303,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Focus management should work");
     }
 
     // Advanced Interactions Tests
@@ -341,7 +315,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     // Form Integration Tests
@@ -352,7 +325,6 @@ mod tdd_tests {
                 <div>"Form Integration Item"</div>
             </Carousel>
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -362,7 +334,6 @@ mod tdd_tests {
                 <div>"Error Handling Item"</div>
             </Carousel>
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -372,7 +343,6 @@ mod tdd_tests {
                 <div>"Validated Item"</div>
             </Carousel>
         };
-        assert!(true, "Validation should work");
     }
 
     // Integration Tests
@@ -383,7 +353,6 @@ mod tdd_tests {
                 <div>"Integration Item"</div>
             </Carousel>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -395,7 +364,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     // Edge Cases and Error Handling
@@ -406,7 +374,6 @@ mod tdd_tests {
                 <div>""</div>
             </Carousel>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -416,7 +383,6 @@ mod tdd_tests {
                 <div></div>
             </Carousel>
         };
-        assert!(true, "Empty content should work");
     }
 
     #[test]
@@ -428,7 +394,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Single item should work");
     }
 
     // Performance Tests
@@ -439,7 +404,6 @@ mod tdd_tests {
                 <div>"Performance Item"</div>
             </Carousel>
         };
-        assert!(true, "Performance should be acceptable");
     }
 
     // Integration with other components
@@ -453,7 +417,6 @@ mod tdd_tests {
                 </Carousel>
             </div>
         };
-        assert!(true, "Carousel with label should work");
     }
 
     #[test]
@@ -465,7 +428,6 @@ mod tdd_tests {
                 </Carousel>
             </form>
         };
-        assert!(true, "Carousel in form should work");
     }
 
     // API Tests
@@ -476,7 +438,6 @@ mod tdd_tests {
                 <div>"API Item"</div>
             </Carousel>
         };
-        assert!(true, "Carousel API should work");
     }
 
     // Navigation State Tests
@@ -490,7 +451,6 @@ mod tdd_tests {
                 <button>"Next"</button>
             </Carousel>
         };
-        assert!(true, "Navigation state should work");
     }
 
     // Custom Styling Tests
@@ -505,7 +465,6 @@ mod tdd_tests {
                 <button class="custom-next-style">"Next"</button>
             </Carousel>
         };
-        assert!(true, "Custom styling should work");
     }
 
     // Combined Props Tests
@@ -524,6 +483,5 @@ mod tdd_tests {
                 <button class="combined-next">"Next"</button>
             </Carousel>
         };
-        assert!(true, "Combined props should work");
     }
 }

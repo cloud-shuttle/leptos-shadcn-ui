@@ -17,7 +17,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command form integration should work");
     }
 
     #[test]
@@ -34,7 +33,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command validation integration should work");
     }
 
     #[test]
@@ -51,7 +49,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command theme integration should work");
     }
 
     #[test]
@@ -68,7 +65,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command style integration should work");
     }
 
     #[test]
@@ -87,7 +83,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command accessibility integration should work");
     }
 
     #[test]
@@ -104,7 +99,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command performance integration should work");
     }
 
     #[test]
@@ -154,7 +148,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command callback integration should work");
     }
 
     #[test]
@@ -171,7 +164,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command memory integration should work");
     }
 
     #[test]
@@ -188,7 +180,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command network integration should work");
     }
 
     #[test]
@@ -205,7 +196,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command battery integration should work");
     }
 
     #[test]
@@ -222,7 +212,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command thermal integration should work");
     }
 
     #[test]
@@ -239,7 +228,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command benchmark integration should work");
     }
 
     #[test]
@@ -256,7 +244,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command load integration should work");
     }
 
     #[test]
@@ -273,7 +260,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command stress integration should work");
     }
 
     #[test]
@@ -290,7 +276,6 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command concurrent integration should work");
     }
 
     #[test]
@@ -307,6 +292,5 @@ mod integration_tests {
                 </CommandList>
             </Command>
         };
-        assert!(true, "Command scalability integration should work");
     }
 }

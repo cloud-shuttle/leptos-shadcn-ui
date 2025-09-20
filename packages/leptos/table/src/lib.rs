@@ -13,14 +13,17 @@ pub use data_table::{
     ColumnFilter, RowAction
 };
 
-#[cfg(test)]
+
 mod tests;
-#[cfg(test)]
+
 mod tdd_tests;
 
-#[cfg(test)]
+
 mod data_table_tests;
 
 
 // Signal-managed exports
 pub use signal_managed::*;
+
+#[cfg(test)]
+mod real_tests;

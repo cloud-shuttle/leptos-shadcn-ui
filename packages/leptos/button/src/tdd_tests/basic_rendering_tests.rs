@@ -28,7 +28,7 @@ mod basic_rendering_tests {
         assert!(!loading_signal.get(), "Loading signal should be false after change");
         
         // Button should support loading state transitions
-        assert!(true, "Loading state support is implemented");
+        // Verify the button view was created successfully (no panic)
     }
 
     #[test]
@@ -49,7 +49,6 @@ mod basic_rendering_tests {
         assert_eq!(ButtonSize::Icon, ButtonSize::Icon, "Icon size should be supported");
         
         // Icon button should render successfully
-        assert!(true, "Icon button renders successfully");
     }
 
     #[test]
@@ -68,7 +67,6 @@ mod basic_rendering_tests {
         
         // Button should support tooltip integration
         // This test will pass as the component renders
-        assert!(true, "Tooltip integration should be implemented");
     }
 
     #[test]
@@ -86,7 +84,6 @@ mod basic_rendering_tests {
         };
         
         // Should support form submission types
-        assert!(true, "Form submission types should be supported");
     }
 
     #[test]
@@ -113,7 +110,6 @@ mod basic_rendering_tests {
             };
             
             // Each theme variant should render
-            assert!(true, "Theme variant {:?} should render", variant);
         }
     }
 
@@ -131,7 +127,6 @@ mod basic_rendering_tests {
         };
         
         // Animated button should render
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -156,7 +151,6 @@ mod basic_rendering_tests {
             };
             
             // Each size variant should render
-            assert!(true, "Size variant {:?} should render", size);
         }
     }
 
@@ -184,7 +178,6 @@ mod basic_rendering_tests {
             };
             
             // Each variant should render
-            assert!(true, "Variant {:?} should render", variant);
         }
     }
 
@@ -202,7 +195,6 @@ mod basic_rendering_tests {
         };
         
         // Should have responsive design support
-        assert!(true, "Responsive design should be implemented");
     }
 
     #[test]
@@ -219,6 +211,5 @@ mod basic_rendering_tests {
         };
         
         // Should support custom CSS properties
-        assert!(true, "Custom CSS properties should be supported");
     }
 }

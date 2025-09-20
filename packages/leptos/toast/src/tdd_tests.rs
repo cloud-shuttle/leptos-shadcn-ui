@@ -11,7 +11,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast>"Basic toast message"</Toast>
         };
-        assert!(true, "Toast component exists and can be imported");
     }
 
     #[test]
@@ -21,7 +20,6 @@ mod tdd_tests {
             let _toast_view = view! {
                 <Toast variant=variant>"Variant: " {variant}</Toast>
             };
-            assert!(true, "Toast variant should be supported");
         }
     }
 
@@ -30,7 +28,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast>"Default variant toast"</Toast>
         };
-        assert!(true, "Default variant should work");
     }
 
     #[test]
@@ -38,7 +35,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast variant="success">"Success toast"</Toast>
         };
-        assert!(true, "Success variant should work");
     }
 
     #[test]
@@ -46,7 +42,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast variant="warning">"Warning toast"</Toast>
         };
-        assert!(true, "Warning variant should work");
     }
 
     #[test]
@@ -54,7 +49,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast variant="destructive">"Destructive toast"</Toast>
         };
-        assert!(true, "Destructive variant should work");
     }
 
     #[test]
@@ -62,7 +56,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast variant="info">"Info toast"</Toast>
         };
-        assert!(true, "Info variant should work");
     }
 
     #[test]
@@ -72,7 +65,6 @@ mod tdd_tests {
             let _toast_view = view! {
                 <Toast>"Duration: " {duration}</Toast>
             };
-            assert!(true, "Toast duration should be supported");
         }
     }
 
@@ -83,7 +75,6 @@ mod tdd_tests {
             <Toast class=custom_class>"Custom styled toast"</Toast>
         };
         assert_eq!(custom_class, "custom-toast-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -93,7 +84,6 @@ mod tdd_tests {
             <Toast id=custom_id>"Toast with ID"</Toast>
         };
         assert_eq!(custom_id, "custom-toast-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -109,7 +99,6 @@ mod tdd_tests {
                 </div>
             </Toast>
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -119,7 +108,6 @@ mod tdd_tests {
                 "Accessible toast message"
             </Toast>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -129,7 +117,6 @@ mod tdd_tests {
                 "ARIA compliant toast"
             </Toast>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -139,7 +126,6 @@ mod tdd_tests {
                 "Keyboard navigable toast"
             </Toast>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -149,7 +135,6 @@ mod tdd_tests {
                 "Focus managed toast"
             </Toast>
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -159,7 +144,6 @@ mod tdd_tests {
                 "Animated toast"
             </Toast>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -169,7 +153,6 @@ mod tdd_tests {
                 "Responsive toast"
             </Toast>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -179,7 +162,6 @@ mod tdd_tests {
                 "Themed toast"
             </Toast>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -189,7 +171,6 @@ mod tdd_tests {
                 "Validated toast"
             </Toast>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -199,7 +180,6 @@ mod tdd_tests {
                 "Error handling toast"
             </Toast>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -207,7 +187,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast>"Memory managed toast"</Toast>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -215,7 +194,6 @@ mod tdd_tests {
         let _toast_view = view! {
             <Toast>"Performance optimized toast"</Toast>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -229,7 +207,6 @@ mod tdd_tests {
                 "Integration test toast"
             </Toast>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -243,7 +220,6 @@ mod tdd_tests {
                 "Complete workflow toast"
             </Toast>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -257,7 +233,6 @@ mod tdd_tests {
                 "Advanced interactions toast"
             </Toast>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -270,7 +245,6 @@ mod tdd_tests {
                 "Comprehensively accessible toast"
             </Toast>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -283,7 +257,6 @@ mod tdd_tests {
                 "Custom properties toast"
             </Toast>
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -297,7 +270,6 @@ mod tdd_tests {
                 "Form integrated toast"
             </Toast>
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -311,7 +283,6 @@ mod tdd_tests {
                 <Toast variant="info">"Toast 5"</Toast>
             </div>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -321,7 +292,6 @@ mod tdd_tests {
                 ""
             </Toast>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 
     #[test]
@@ -334,7 +304,6 @@ mod tdd_tests {
                 </div>
             </Toast>
         };
-        assert!(true, "Dismissible toasts should be supported");
     }
 
     #[test]
@@ -347,7 +316,6 @@ mod tdd_tests {
                 </div>
             </Toast>
         };
-        assert!(true, "Toasts with icons should be supported");
     }
 
     #[test]
@@ -363,7 +331,6 @@ mod tdd_tests {
                 </div>
             </Toast>
         };
-        assert!(true, "Toasts with actions should be supported");
     }
 
     #[test]
@@ -373,7 +340,6 @@ mod tdd_tests {
                 "State managed toast"
             </Toast>
         };
-        assert!(true, "State management should work");
     }
 
     #[test]
@@ -383,7 +349,6 @@ mod tdd_tests {
                 "Context managed toast"
             </Toast>
         };
-        assert!(true, "Context management should work correctly");
     }
 
     #[test]
@@ -395,7 +360,6 @@ mod tdd_tests {
                 </div>
             </Toast>
         };
-        assert!(true, "Click handling should be supported");
     }
 
     #[test]
@@ -407,7 +371,6 @@ mod tdd_tests {
                 </div>
             </Toast>
         };
-        assert!(true, "Keyboard handling should be supported");
     }
 
     #[test]
@@ -417,7 +380,6 @@ mod tdd_tests {
                 "Variant and duration combination"
             </Toast>
         };
-        assert!(true, "Variant and duration combinations should work");
     }
 
     #[test]
@@ -429,7 +391,6 @@ mod tdd_tests {
             </Toast>
         };
         assert_eq!(message.get(), "Dynamic message", "Dynamic content should work");
-        assert!(true, "Dynamic content renders successfully");
     }
 
     #[test]
@@ -441,7 +402,6 @@ mod tdd_tests {
             </Toast>
         };
         assert!(show_toast.get(), "Conditional rendering should work");
-        assert!(true, "Conditional rendering renders successfully");
     }
 
     #[test]
@@ -451,7 +411,6 @@ mod tdd_tests {
                 "Animated toast"
             </Toast>
         };
-        assert!(true, "Animation variants should be supported");
     }
 
     #[test]
@@ -461,6 +420,5 @@ mod tdd_tests {
                 "Content placeholder toast"
             </Toast>
         };
-        assert!(true, "Content placeholder should be supported");
     }
 }

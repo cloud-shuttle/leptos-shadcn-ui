@@ -13,7 +13,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker/>
         };
-        assert!(true, "DatePicker component exists and can be imported");
     }
 
     #[test]
@@ -22,7 +21,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class=custom_class.into()/>
         };
-        assert!(true, "DatePicker should support custom styling");
     }
 
     #[test]
@@ -30,7 +28,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="custom-properties-date-picker".into()/>
         };
-        assert!(true, "DatePicker should support custom properties");
     }
 
     #[test]
@@ -38,7 +35,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="".into()/>
         };
-        assert!(true, "DatePicker should handle edge cases");
     }
 
     #[test]
@@ -48,7 +44,6 @@ mod tdd_tests {
             <DatePicker selected=selected_date.into()/>
         };
         assert!(selected_date.get().is_some(), "Dynamic content should work");
-        assert!(true, "Dynamic content renders successfully");
     }
 
     #[test]
@@ -63,7 +58,6 @@ mod tdd_tests {
             </Show>
         };
         assert!(show_picker.get(), "Conditional rendering should work");
-        assert!(true, "Conditional rendering renders successfully");
     }
 
     #[test]
@@ -75,7 +69,6 @@ mod tdd_tests {
                 <DatePicker class="picker-3".into()/>
             </div>
         };
-        assert!(true, "Multiple date picker instances should work");
     }
 
     #[test]
@@ -85,7 +78,6 @@ mod tdd_tests {
             <DatePicker selected=picker_state.into()/>
         };
         assert!(picker_state.get().is_some(), "State management should work");
-        assert!(true, "State management renders successfully");
     }
 
     #[test]
@@ -93,7 +85,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="context-managed-picker".into()/>
         };
-        assert!(true, "Context management should work");
     }
 
     #[test]
@@ -101,7 +92,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="animate-in fade-in-0".into()/>
         };
-        assert!(true, "Animation support should work");
     }
 
     #[test]
@@ -109,7 +99,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="content-placeholder".into()/>
         };
-        assert!(true, "Content placeholder should work");
     }
 
     #[test]
@@ -117,7 +106,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="focus-visible:ring-2".into()/>
         };
-        assert!(true, "Accessibility features should work");
     }
 
     #[test]
@@ -125,7 +113,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="focus-visible:outline-none focus-visible:ring-2".into()/>
         };
-        assert!(true, "Comprehensive accessibility should work");
     }
 
     #[test]
@@ -133,7 +120,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker/>
         };
-        assert!(true, "ARIA attributes should work");
     }
 
     #[test]
@@ -141,7 +127,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="keyboard-navigable".into()/>
         };
-        assert!(true, "Keyboard navigation should work");
     }
 
     #[test]
@@ -149,7 +134,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="focus-managed".into()/>
         };
-        assert!(true, "Focus management should work");
     }
 
     #[test]
@@ -157,7 +141,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="advanced-interactions".into()/>
         };
-        assert!(true, "Advanced interactions should work");
     }
 
     #[test]
@@ -165,7 +148,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="form-integration-date-picker".into()/>
         };
-        assert!(true, "Form integration should work");
     }
 
     #[test]
@@ -173,7 +155,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="error-handling".into()/>
         };
-        assert!(true, "Error handling should work");
     }
 
     #[test]
@@ -181,7 +162,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="validated-date-picker".into()/>
         };
-        assert!(true, "Validation should work");
     }
 
     #[test]
@@ -189,7 +169,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="integration-date-picker".into()/>
         };
-        assert!(true, "Integration scenarios should work");
     }
 
     #[test]
@@ -197,7 +176,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="performance-optimized".into()/>
         };
-        assert!(true, "Performance optimization should work");
     }
 
     #[test]
@@ -205,7 +183,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="memory-managed".into()/>
         };
-        assert!(true, "Memory management should work");
     }
 
     #[test]
@@ -213,7 +190,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="responsive-picker".into()/>
         };
-        assert!(true, "Responsive design should work");
     }
 
     #[test]
@@ -221,7 +197,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="theme-switchable".into()/>
         };
-        assert!(true, "Theme switching should work");
     }
 
     #[test]
@@ -229,7 +204,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="complete-workflow".into()/>
         };
-        assert!(true, "Complete workflow should work");
     }
 
     #[test]
@@ -237,7 +211,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="click-handling".into()/>
         };
-        assert!(true, "Click handling should work");
     }
 
     #[test]
@@ -245,7 +218,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="keyboard-handling".into()/>
         };
-        assert!(true, "Keyboard handling should work");
     }
 
     #[test]
@@ -253,7 +225,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="animation-variants".into()/>
         };
-        assert!(true, "Animation variants should work");
     }
 
     #[test]
@@ -261,7 +232,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="dismissible".into()/>
         };
-        assert!(true, "Dismissible functionality should work");
     }
 
     #[test]
@@ -269,7 +239,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="with-actions".into()/>
         };
-        assert!(true, "DatePicker with actions should work");
     }
 
     #[test]
@@ -277,7 +246,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="with-icon".into()/>
         };
-        assert!(true, "DatePicker with icon should work");
     }
 
     #[test]
@@ -285,7 +253,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker/>
         };
-        assert!(true, "DatePicker variants not fully implemented");
     }
 
     #[test]
@@ -293,7 +260,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker/>
         };
-        assert!(true, "DatePicker sizes not fully implemented");
     }
 
     #[test]
@@ -301,7 +267,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker/>
         };
-        assert!(true, "DatePicker variant combinations not fully implemented");
     }
 
     #[test]
@@ -309,7 +274,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="date-selection-picker".into()/>
         };
-        assert!(true, "Date selection functionality should work");
     }
 
     #[test]
@@ -317,7 +281,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="range-selection-picker".into()/>
         };
-        assert!(true, "Range selection functionality should work");
     }
 
     #[test]
@@ -325,7 +288,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="time-selection-picker".into()/>
         };
-        assert!(true, "Time selection functionality should work");
     }
 
     #[test]
@@ -333,7 +295,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="month-navigation-picker".into()/>
         };
-        assert!(true, "Month navigation functionality should work");
     }
 
     #[test]
@@ -341,7 +302,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="year-navigation-picker".into()/>
         };
-        assert!(true, "Year navigation functionality should work");
     }
 
     #[test]
@@ -349,7 +309,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="week-start-picker".into()/>
         };
-        assert!(true, "Week start functionality should work");
     }
 
     #[test]
@@ -357,7 +316,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="locale-picker".into()/>
         };
-        assert!(true, "Locale support functionality should work");
     }
 
     #[test]
@@ -365,7 +323,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="disabled-dates-picker".into()/>
         };
-        assert!(true, "Disabled dates functionality should work");
     }
 
     #[test]
@@ -373,7 +330,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="highlighted-dates-picker".into()/>
         };
-        assert!(true, "Highlighted dates functionality should work");
     }
 
     #[test]
@@ -381,7 +337,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="placeholder-picker".into()/>
         };
-        assert!(true, "Placeholder functionality should work");
     }
 
     #[test]
@@ -389,7 +344,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="clear-picker".into()/>
         };
-        assert!(true, "Clear functionality should work");
     }
 
     #[test]
@@ -397,7 +351,6 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="format-options-picker".into()/>
         };
-        assert!(true, "Format options functionality should work");
     }
 
     #[test]
@@ -405,6 +358,5 @@ mod tdd_tests {
         let _date_picker_view = view! {
             <DatePicker class="workflow-date-picker".into()/>
         };
-        assert!(true, "Workflow data picker should work");
     }
 }

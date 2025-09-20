@@ -18,7 +18,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Tooltip component exists and can be imported");
     }
 
     #[test]
@@ -28,7 +27,6 @@ mod tdd_tests {
                 <div>"Content with tooltip provider"</div>
             </TooltipProvider>
         };
-        assert!(true, "TooltipProvider component exists and can be imported");
     }
 
     #[test]
@@ -36,7 +34,6 @@ mod tdd_tests {
         let _trigger_view = view! {
             <TooltipTrigger>"Trigger"</TooltipTrigger>
         };
-        assert!(true, "TooltipTrigger component exists and can be imported");
     }
 
     #[test]
@@ -44,7 +41,6 @@ mod tdd_tests {
         let _content_view = view! {
             <TooltipContent>"Content"</TooltipContent>
         };
-        assert!(true, "TooltipContent component exists and can be imported");
     }
 
     #[test]
@@ -59,7 +55,6 @@ mod tdd_tests {
             </TooltipProvider>
         };
         assert!(open.get(), "Open state should be supported");
-        assert!(true, "Open state renders successfully");
     }
 
     #[test]
@@ -74,7 +69,6 @@ mod tdd_tests {
             </TooltipProvider>
         };
         assert!(!open.get(), "Closed state should be supported");
-        assert!(true, "Closed state renders successfully");
     }
 
     #[test]
@@ -89,7 +83,6 @@ mod tdd_tests {
             </TooltipProvider>
         };
         assert_eq!(delay.get(), 500, "Delay duration should be supported");
-        assert!(true, "Delay duration renders successfully");
     }
 
     #[test]
@@ -97,7 +90,6 @@ mod tdd_tests {
         let _content_view = view! {
             <TooltipContent _side=TooltipSide::Top>"Side: Top"</TooltipContent>
         };
-        assert!(true, "Tooltip side should be supported");
     }
 
     #[test]
@@ -105,7 +97,6 @@ mod tdd_tests {
         let _content_view = view! {
             <TooltipContent>"Default variant"</TooltipContent>
         };
-        assert!(true, "Tooltip variants should be supported");
     }
 
     #[test]
@@ -113,7 +104,6 @@ mod tdd_tests {
         let _content_view = view! {
             <TooltipContent _side_offset=10>"Offset content"</TooltipContent>
         };
-        assert!(true, "Side offset should be supported");
     }
 
     #[test]
@@ -128,7 +118,6 @@ mod tdd_tests {
             </TooltipProvider>
         };
         assert_eq!(custom_class, "custom-tooltip-class", "Custom styling should be supported");
-        assert!(true, "Custom styling renders successfully");
     }
 
     #[test]
@@ -143,7 +132,6 @@ mod tdd_tests {
             </TooltipProvider>
         };
         assert_eq!(custom_id, "custom-tooltip-id", "Custom ID should be supported");
-        assert!(true, "Custom ID renders successfully");
     }
 
     #[test]
@@ -157,7 +145,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Custom style should be supported");
     }
 
     #[test]
@@ -176,7 +163,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Children content should be supported");
     }
 
     #[test]
@@ -189,7 +175,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Mouse interactions should be supported");
     }
 
     #[test]
@@ -211,7 +196,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Open change callback should be supported");
     }
 
     #[test]
@@ -228,7 +212,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Accessibility features should be supported");
     }
 
     #[test]
@@ -245,7 +228,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "ARIA attributes should be supported");
     }
 
     #[test]
@@ -262,7 +244,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Keyboard navigation should be supported");
     }
 
     #[test]
@@ -279,7 +260,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Focus management should be supported");
     }
 
     #[test]
@@ -294,7 +274,6 @@ mod tdd_tests {
             </TooltipProvider>
         };
         assert!(!open.get(), "State management should work");
-        assert!(true, "State management renders successfully");
     }
 
     #[test]
@@ -309,7 +288,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Animation support should be implemented");
     }
 
     #[test]
@@ -326,7 +304,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Responsive design should be supported");
     }
 
     #[test]
@@ -343,7 +320,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Theme switching should be supported");
     }
 
     #[test]
@@ -360,7 +336,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Validation should be comprehensive");
     }
 
     #[test]
@@ -375,7 +350,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Error handling should be robust");
     }
 
     #[test]
@@ -388,7 +362,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Memory management should be efficient");
     }
 
     #[test]
@@ -401,7 +374,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Performance should be optimized");
     }
 
     #[test]
@@ -439,7 +411,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Integration scenarios should work correctly");
     }
 
     #[test]
@@ -477,7 +448,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Complete workflow should work correctly");
     }
 
     #[test]
@@ -494,7 +464,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Advanced interactions should work correctly");
     }
 
     #[test]
@@ -517,7 +486,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Accessibility should be comprehensive");
     }
 
     #[test]
@@ -543,7 +511,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Custom properties should be supported");
     }
 
     #[test]
@@ -566,7 +533,6 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Form integration should work correctly");
     }
 
     #[test]
@@ -589,7 +555,6 @@ mod tdd_tests {
                 </div>
             </TooltipProvider>
         };
-        assert!(true, "Multiple instances should work correctly");
     }
 
     #[test]
@@ -606,6 +571,5 @@ mod tdd_tests {
                 </Tooltip>
             </TooltipProvider>
         };
-        assert!(true, "Edge cases should be handled gracefully");
     }
 }

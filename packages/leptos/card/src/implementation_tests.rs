@@ -162,7 +162,6 @@ mod implementation_tests {
 
         // Test children absence logic
         if let None = no_children {
-            assert!(true, "No children should be present");
         }
 
         // Test children mapping logic for None case
@@ -404,7 +403,6 @@ mod implementation_tests {
         drop(cards);
         
         // Test passes if no memory leaks or panics occur
-        assert!(true);
     }
 
     #[test]

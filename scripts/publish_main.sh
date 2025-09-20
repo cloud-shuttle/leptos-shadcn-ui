@@ -12,7 +12,7 @@ echo "=============================================="
 cd packages/leptos-shadcn-ui
 
 echo "📦 Package: leptos-shadcn-ui"
-echo "📋 Version: 0.1.0"
+echo "📋 Version: 0.9.0"
 echo ""
 
 # Check if component compiles
@@ -34,7 +34,7 @@ if cargo check --quiet; then
             echo ""
             echo "📋 Users can now install with:"
             echo "   [dependencies]"
-            echo "   leptos-shadcn-ui = \"0.1.0\""
+            echo "   leptos-shadcn-ui = \"0.9.0\""
             echo ""
             echo "🔧 And use with:"
             echo "   use leptos_shadcn_ui::{Button, Input, Card};"
