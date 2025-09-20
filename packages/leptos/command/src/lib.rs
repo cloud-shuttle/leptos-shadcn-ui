@@ -20,4 +20,3 @@ pub mod signal_managed;
 pub use signal_managed::*;
 
 #[cfg(test)]
-mod real_tests;

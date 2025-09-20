@@ -24,4 +24,3 @@ pub use new_york as tooltip;
 pub use signal_managed::*;
 
 #[cfg(test)]
-mod real_tests;

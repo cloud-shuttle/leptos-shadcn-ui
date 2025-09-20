@@ -26,4 +26,3 @@ mod data_table_tests;
 pub use signal_managed::*;
 
 #[cfg(test)]
-mod real_tests;

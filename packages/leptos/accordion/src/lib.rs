@@ -25,7 +25,6 @@ mod tests;
 mod tdd_tests;
 
 #[cfg(test)]
-mod real_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;

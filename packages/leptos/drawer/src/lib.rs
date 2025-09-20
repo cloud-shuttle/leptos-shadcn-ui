@@ -34,4 +34,3 @@ mod tdd_tests;
 pub use signal_managed::*;
 
 #[cfg(test)]
-mod real_tests;

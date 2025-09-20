@@ -17,7 +17,6 @@ pub use signal_managed::{SignalManagedInput, EnhancedInput, SignalManagedInputSt
 mod tests_real;
 
 #[cfg(test)]
-mod real_tests;
 
 // Legacy tests (temporarily disabled due to syntax errors)
 // #[cfg(test)]

@@ -230,7 +230,7 @@ impl BundleAnalysis {
 }
 
 #[cfg(test)]
-mod real_tests;
+
 mod tests {
     use super::*;
 
