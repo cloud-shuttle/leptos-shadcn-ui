@@ -25,7 +25,7 @@ mod real_tests {
     fn test_menubar_with_props() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-class">
+                <Menubar class="test-class".into()>
                     "menubar with props"
                 </Menubar>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_menubar_interaction() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-interaction">
+                <Menubar class="test-interaction".into()>
                     "Interactive menubar"
                 </Menubar>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_menubar_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-focus">
+                <Menubar class="test-focus".into()>
                     "Focusable menubar"
                 </Menubar>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_menubar_accessibility() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-a11y" >
+                <Menubar class="test-a11y".into() >
                     "Accessible menubar"
                 </Menubar>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_menubar_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-dom-render">
+                <Menubar class="test-dom-render".into()>
                     "DOM Test menubar"
                 </Menubar>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_menubar_class_application() {
         mount_to_body(|| {
             view! {
-                <Menubar class="test-class-application custom-class">
+                <Menubar class="test-class-application custom-class".into()>
                     "Class Test menubar"
                 </Menubar>
             }
@@ -156,7 +156,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Menubar 
-                    class="test-attributes"
+                    class="test-attributes".into()
                     
                     
                 >

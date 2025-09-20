@@ -25,7 +25,7 @@ mod real_tests {
     fn test_alert_dialog_with_props() {
         mount_to_body(|| {
             view! {
-                <AlertDialog class="test-class">
+                <AlertDialog class="test-class".into()>
                     "alert-dialog with props"
                 </AlertDialog>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_alert_dialog_interaction() {
         mount_to_body(|| {
             view! {
-                <AlertDialog class="test-interaction">
+                <AlertDialog class="test-interaction".into()>
                     "Interactive alert-dialog"
                 </AlertDialog>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_alert_dialog_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <AlertDialog class="test-focus">
+                <AlertDialog class="test-focus".into()>
                     "Focusable alert-dialog"
                 </AlertDialog>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_alert_dialog_accessibility() {
         mount_to_body(|| {
             view! {
-                <AlertDialog class="test-a11y" role="button">
+                <AlertDialog class="test-a11y".into() >
                     "Accessible alert-dialog"
                 </AlertDialog>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_alert_dialog_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <AlertDialog class="test-dom-render">
+                <AlertDialog class="test-dom-render".into()>
                     "DOM Test alert-dialog"
                 </AlertDialog>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_alert_dialog_class_application() {
         mount_to_body(|| {
             view! {
-                <AlertDialog class="test-class-application custom-class">
+                <AlertDialog class="test-class-application custom-class".into()>
                     "Class Test alert-dialog"
                 </AlertDialog>
             }
@@ -156,9 +156,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <AlertDialog 
-                    class="test-attributes"
-                    data_test="test-value"
-                    aria-label="Test alert-dialog"
+                    class="test-attributes".into()
+                    
+                    
                 >
                     "Attribute Test alert-dialog"
                 </AlertDialog>

@@ -25,7 +25,7 @@ mod real_tests {
     fn test_toggle_with_props() {
         mount_to_body(|| {
             view! {
-                <Toggle class="test-class">
+                <Toggle class="test-class".into()>
                     "toggle with props"
                 </Toggle>
             }
@@ -82,7 +82,7 @@ mod real_tests {
     fn test_toggle_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Toggle class="test-hover" >
+                <Toggle class="test-hover".into() >
                     "Hoverable toggle"
                 </Toggle>
             }
@@ -111,7 +111,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Toggle 
-                    class="test-focus"
+                    class="test-focus".into()
                     
                 >
                     "Focusable toggle"

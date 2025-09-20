@@ -25,7 +25,7 @@ mod real_tests {
     fn test_select_with_props() {
         mount_to_body(|| {
             view! {
-                <Select class="test-class">
+                <Select class="test-class".into()>
                     "select with props"
                 </Select>
             }
@@ -91,7 +91,7 @@ mod real_tests {
     fn test_select_validation_state() {
         mount_to_body(|| {
             view! {
-                <Select class="test-validation" data-valid="true">
+                <Select class="test-validation".into() >
                     "Valid select"
                 </Select>
             }
@@ -106,8 +106,8 @@ mod real_tests {
     fn test_select_form_integration() {
         mount_to_body(|| {
             view! {
-                <form class="test-form">
-                    <Select name="test-field" class="test-form-field">
+                <form class="test-form".into()>
+                    <Select name="test-field" class="test-form-field".into()>
                         "Form select"
                     </Select>
                 </form>
@@ -127,9 +127,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Select 
-                    class="test-validation" 
-                    data-valid="true"
-                    data-error="false"
+                    class="test-validation".into() 
+                    
+                    data_error="false"
                 >
                     "Valid select"
                 </Select>

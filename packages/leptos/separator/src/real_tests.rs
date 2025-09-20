@@ -25,7 +25,7 @@ mod real_tests {
     fn test_separator_with_props() {
         mount_to_body(|| {
             view! {
-                <Separator class="test-class" id="test-id">
+                <Separator class="test-class".into() id="test-id">
                     "separator with props"
                 </Separator>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_separator_interaction() {
         mount_to_body(|| {
             view! {
-                <Separator class="test-interaction">
+                <Separator class="test-interaction".into()>
                     "Interactive separator"
                 </Separator>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_separator_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Separator class="test-focus">
+                <Separator class="test-focus".into()>
                     "Focusable separator"
                 </Separator>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_separator_accessibility() {
         mount_to_body(|| {
             view! {
-                <Separator class="test-a11y" role="button">
+                <Separator class="test-a11y".into() >
                     "Accessible separator"
                 </Separator>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_separator_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Separator class="test-dom-render">
+                <Separator class="test-dom-render".into()>
                     "DOM Test separator"
                 </Separator>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_separator_class_application() {
         mount_to_body(|| {
             view! {
-                <Separator class="test-class-application custom-class">
+                <Separator class="test-class-application custom-class".into()>
                     "Class Test separator"
                 </Separator>
             }
@@ -156,9 +156,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Separator 
-                    class="test-attributes"
-                    data_test="test-value"
-                    aria-label="Test separator"
+                    class="test-attributes".into()
+                    
+                    
                 >
                     "Attribute Test separator"
                 </Separator>

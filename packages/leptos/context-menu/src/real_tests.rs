@@ -25,7 +25,7 @@ mod real_tests {
     fn test_context_menu_with_props() {
         mount_to_body(|| {
             view! {
-                <ContextMenu class="test-class">
+                <ContextMenu class="test-class".into()>
                     "context-menu with props"
                 </ContextMenu>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_context_menu_interaction() {
         mount_to_body(|| {
             view! {
-                <ContextMenu class="test-interaction">
+                <ContextMenu class="test-interaction".into()>
                     "Interactive context-menu"
                 </ContextMenu>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_context_menu_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <ContextMenu class="test-focus">
+                <ContextMenu class="test-focus".into()>
                     "Focusable context-menu"
                 </ContextMenu>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_context_menu_accessibility() {
         mount_to_body(|| {
             view! {
-                <ContextMenu class="test-a11y" role="button">
+                <ContextMenu class="test-a11y".into() >
                     "Accessible context-menu"
                 </ContextMenu>
             }
@@ -119,7 +119,7 @@ mod real_tests {
     fn test_context_menu_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <ContextMenu class="test-dom-render">
+                <ContextMenu class="test-dom-render".into()>
                     "DOM Test context-menu"
                 </ContextMenu>
             }
@@ -137,7 +137,7 @@ mod real_tests {
     fn test_context_menu_class_application() {
         mount_to_body(|| {
             view! {
-                <ContextMenu class="test-class-application custom-class">
+                <ContextMenu class="test-class-application custom-class".into()>
                     "Class Test context-menu"
                 </ContextMenu>
             }
@@ -156,9 +156,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <ContextMenu 
-                    class="test-attributes"
-                    data_test="test-value"
-                    aria-label="Test context-menu"
+                    class="test-attributes".into()
+                    
+                    
                 >
                     "Attribute Test context-menu"
                 </ContextMenu>

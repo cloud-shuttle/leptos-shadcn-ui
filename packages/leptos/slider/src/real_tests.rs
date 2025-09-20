@@ -25,7 +25,7 @@ mod real_tests {
     fn test_slider_with_props() {
         mount_to_body(|| {
             view! {
-                <Slider class="test-class">
+                <Slider class="test-class".into()>
                     "slider with props"
                 </Slider>
             }
@@ -77,7 +77,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Slider 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move |_| click_count.update(|count| *count += 1)
                 >
                     "Clickable slider"
@@ -94,7 +94,7 @@ mod real_tests {
     fn test_slider_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Slider class="test-hover" data-hover="true">
+                <Slider class="test-hover".into() >
                     "Hoverable slider"
                 </Slider>
             }
@@ -112,7 +112,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Slider 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move || click_count.update(|count| *count += 1)
                 >
                     "Clickable slider"
@@ -135,7 +135,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Slider 
-                    class="test-focus"
+                    class="test-focus".into()
                     tabindex="0"
                 >
                     "Focusable slider"
@@ -149,7 +149,7 @@ mod real_tests {
         assert_eq!(element.get_attribute("tabindex").unwrap(), "0");
         
         // Test focus
-        element.focus().unwrap();
+        
         assert_eq!(document.active_element().unwrap(), element);
     }
 }

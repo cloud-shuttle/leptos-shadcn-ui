@@ -25,7 +25,7 @@ mod real_tests {
     fn test_radio_group_with_props() {
         mount_to_body(|| {
             view! {
-                <RadioGroup class="test-class">
+                <RadioGroup class="test-class".into()>
                     "radio-group with props"
                 </RadioGroup>
             }
@@ -75,7 +75,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <form>
-                    <RadioGroup name="test-field">
+                    <RadioGroup >
                         "Form radio-group"
                     </RadioGroup>
                 </form>
@@ -91,7 +91,7 @@ mod real_tests {
     fn test_radio_group_validation_state() {
         mount_to_body(|| {
             view! {
-                <RadioGroup class="test-validation" data-valid="true">
+                <RadioGroup class="test-validation".into() >
                     "Valid radio-group"
                 </RadioGroup>
             }
@@ -106,8 +106,8 @@ mod real_tests {
     fn test_radio_group_form_integration() {
         mount_to_body(|| {
             view! {
-                <form class="test-form">
-                    <RadioGroup name="test-field" class="test-form-field">
+                <form class="test-form".into()>
+                    <RadioGroup  class="test-form-field".into()>
                         "Form radio-group"
                     </RadioGroup>
                 </form>
@@ -127,9 +127,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <RadioGroup 
-                    class="test-validation" 
-                    data-valid="true"
-                    data-error="false"
+                    class="test-validation".into() 
+                    
+                    data_error="false"
                 >
                     "Valid radio-group"
                 </RadioGroup>

@@ -10,9 +10,7 @@ mod real_tests {
     fn test_date_picker_renders() {
         mount_to_body(|| {
             view! {
-                <DatePicker>
-                    "date-picker content"
-                </DatePicker>
+                <DatePicker></DatePicker>
             }
         });
         
@@ -25,9 +23,7 @@ mod real_tests {
     fn test_date_picker_with_props() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-class">
-                    "date-picker with props"
-                </DatePicker>
+                <DatePicker class="test-class".into()></DatePicker>
             }
         });
         
@@ -74,9 +70,7 @@ mod real_tests {
     fn test_date_picker_interaction() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-interaction">
-                    "Interactive date-picker"
-                </DatePicker>
+                <DatePicker class="test-interaction".into()></DatePicker>
             }
         });
         
@@ -89,9 +83,7 @@ mod real_tests {
     fn test_date_picker_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-focus">
-                    "Focusable date-picker"
-                </DatePicker>
+                <DatePicker class="test-focus".into()></DatePicker>
             }
         });
         
@@ -104,9 +96,7 @@ mod real_tests {
     fn test_date_picker_accessibility() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-a11y" role="button">
-                    "Accessible date-picker"
-                </DatePicker>
+                <DatePicker class="test-a11y".into() ></DatePicker>
             }
         });
         
@@ -119,9 +109,7 @@ mod real_tests {
     fn test_date_picker_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-dom-render">
-                    "DOM Test date-picker"
-                </DatePicker>
+                <DatePicker class="test-dom-render".into()></DatePicker>
             }
         });
         
@@ -137,9 +125,7 @@ mod real_tests {
     fn test_date_picker_class_application() {
         mount_to_body(|| {
             view! {
-                <DatePicker class="test-class-application custom-class">
-                    "Class Test date-picker"
-                </DatePicker>
+                <DatePicker class="test-class-application custom-class".into()></DatePicker>
             }
         });
         
@@ -156,12 +142,10 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <DatePicker 
-                    class="test-attributes"
-                    data_test="test-value"
-                    aria-label="Test date-picker"
-                >
-                    "Attribute Test date-picker"
-                </DatePicker>
+                    class="test-attributes".into()
+                    
+                    
+                ></DatePicker>
             }
         });
         

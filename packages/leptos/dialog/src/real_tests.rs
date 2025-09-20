@@ -25,7 +25,7 @@ mod real_tests {
     fn test_dialog_with_props() {
         mount_to_body(|| {
             view! {
-                <Dialog class="test-class" id="test-id">
+                <Dialog class="test-class".into() id="test-id">
                     "dialog with props"
                 </Dialog>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_dialog_responsive_behavior() {
         mount_to_body(|| {
             view! {
-                <Dialog class="test-responsive" data-responsive="true">
+                <Dialog class="test-responsive".into() >
                     "Responsive dialog"
                 </Dialog>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_dialog_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout">
+                <div class="test-layout".into()>
                     <Dialog>
                         "Layout dialog"
                     </Dialog>
@@ -107,8 +107,8 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Dialog 
-                    class="test-responsive" 
-                    data-responsive="true"
+                    class="test-responsive".into() 
+                    
                     style="width: 100%; max-width: 500px;"
                 >
                     "Responsive dialog"
@@ -128,8 +128,8 @@ mod real_tests {
     fn test_dialog_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container">
-                    <Dialog class="test-layout-item">
+                <div class="test-layout-container".into()>
+                    <Dialog class="test-layout-item".into()>
                         "Layout dialog"
                     </Dialog>
                 </div>

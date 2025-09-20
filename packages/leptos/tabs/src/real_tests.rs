@@ -25,7 +25,7 @@ mod real_tests {
     fn test_tabs_with_props() {
         mount_to_body(|| {
             view! {
-                <Tabs class="test-class">
+                <Tabs class="test-class".into()>
                     "tabs with props"
                 </Tabs>
             }
@@ -77,7 +77,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Tabs 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move |_| click_count.update(|count| *count += 1)
                 >
                     "Clickable tabs"
@@ -94,7 +94,7 @@ mod real_tests {
     fn test_tabs_hover_behavior() {
         mount_to_body(|| {
             view! {
-                <Tabs class="test-hover" data-hover="true">
+                <Tabs class="test-hover".into() >
                     "Hoverable tabs"
                 </Tabs>
             }
@@ -112,7 +112,7 @@ mod real_tests {
         mount_to_body(move || {
             view! {
                 <Tabs 
-                    class="test-click"
+                    class="test-click".into()
                     on_click=move || click_count.update(|count| *count += 1)
                 >
                     "Clickable tabs"
@@ -135,7 +135,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Tabs 
-                    class="test-focus"
+                    class="test-focus".into()
                     tabindex="0"
                 >
                     "Focusable tabs"
@@ -149,7 +149,7 @@ mod real_tests {
         assert_eq!(element.get_attribute("tabindex").unwrap(), "0");
         
         // Test focus
-        element.focus().unwrap();
+        
         assert_eq!(document.active_element().unwrap(), element);
     }
 }

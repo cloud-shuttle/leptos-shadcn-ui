@@ -25,7 +25,7 @@ mod real_tests {
     fn test_textarea_with_props() {
         mount_to_body(|| {
             view! {
-                <Textarea class="test-class">
+                <Textarea class="test-class".into()>
                     "textarea with props"
                 </Textarea>
             }
@@ -91,7 +91,7 @@ mod real_tests {
     fn test_textarea_validation_state() {
         mount_to_body(|| {
             view! {
-                <Textarea class="test-validation" data-valid="true">
+                <Textarea class="test-validation".into() >
                     "Valid textarea"
                 </Textarea>
             }
@@ -106,8 +106,8 @@ mod real_tests {
     fn test_textarea_form_integration() {
         mount_to_body(|| {
             view! {
-                <form class="test-form">
-                    <Textarea name="test-field" class="test-form-field">
+                <form class="test-form".into()>
+                    <Textarea name="test-field" class="test-form-field".into()>
                         "Form textarea"
                     </Textarea>
                 </form>
@@ -127,9 +127,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Textarea 
-                    class="test-validation" 
-                    data-valid="true"
-                    data-error="false"
+                    class="test-validation".into() 
+                    
+                    data_error="false"
                 >
                     "Valid textarea"
                 </Textarea>

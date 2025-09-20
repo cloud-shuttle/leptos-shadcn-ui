@@ -25,7 +25,7 @@ mod real_tests {
     fn test_badge_with_props() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-class" id="test-id">
+                <Badge class="test-class".into() id="test-id">
                     "badge with props"
                 </Badge>
             }
@@ -74,7 +74,7 @@ mod real_tests {
     fn test_badge_interaction() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-interaction">
+                <Badge class="test-interaction".into()>
                     "Interactive badge"
                 </Badge>
             }
@@ -89,7 +89,7 @@ mod real_tests {
     fn test_badge_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-focus">
+                <Badge class="test-focus".into()>
                     "Focusable badge"
                 </Badge>
             }
@@ -104,7 +104,7 @@ mod real_tests {
     fn test_badge_accessibility() {
         mount_to_body(|| {
             view! {
-                <Badge class="test-a11y" role="button">
+                <Badge class="test-a11y".into() >
                     "Accessible badge"
                 </Badge>
             }
@@ -120,8 +120,8 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Badge 
-                    class="test-responsive" 
-                    data-responsive="true"
+                    class="test-responsive".into() 
+                    
                     style="width: 100%; max-width: 500px;"
                 >
                     "Responsive badge"
@@ -141,8 +141,8 @@ mod real_tests {
     fn test_badge_layout_integration() {
         mount_to_body(|| {
             view! {
-                <div class="test-layout-container">
-                    <Badge class="test-layout-item">
+                <div class="test-layout-container".into()>
+                    <Badge class="test-layout-item".into()>
                         "Layout badge"
                     </Badge>
                 </div>

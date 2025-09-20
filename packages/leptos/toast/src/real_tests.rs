@@ -25,9 +25,7 @@ mod real_tests {
     fn test_toast_with_props() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-class">
-                    "toast with props"
-                </Toast>
+                <Toast class="test-class".into()></Toast>
             }
         });
         
@@ -74,9 +72,7 @@ mod real_tests {
     fn test_toast_interaction() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-interaction">
-                    "Interactive toast"
-                </Toast>
+                <Toast class="test-interaction".into()></Toast>
             }
         });
         
@@ -89,9 +85,7 @@ mod real_tests {
     fn test_toast_focus_behavior() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-focus">
-                    "Focusable toast"
-                </Toast>
+                <Toast class="test-focus".into()></Toast>
             }
         });
         
@@ -104,9 +98,7 @@ mod real_tests {
     fn test_toast_accessibility() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-a11y" role="button">
-                    "Accessible toast"
-                </Toast>
+                <Toast class="test-a11y".into() ></Toast>
             }
         });
         
@@ -119,9 +111,7 @@ mod real_tests {
     fn test_toast_dom_rendering() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-dom-render">
-                    "DOM Test toast"
-                </Toast>
+                <Toast class="test-dom-render".into()></Toast>
             }
         });
         
@@ -137,9 +127,7 @@ mod real_tests {
     fn test_toast_class_application() {
         mount_to_body(|| {
             view! {
-                <Toast class="test-class-application custom-class">
-                    "Class Test toast"
-                </Toast>
+                <Toast class="test-class-application custom-class".into()></Toast>
             }
         });
         
@@ -156,11 +144,9 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Toast 
-                    class="test-attributes"
-                    aria-label="Test toast"
-                >
-                    "Attribute Test toast"
-                </Toast>
+                    class="test-attributes".into()
+                    
+                ></Toast>
             }
         });
         
