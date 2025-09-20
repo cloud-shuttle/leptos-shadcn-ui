@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_radio-group_renders() {
+    fn test_radio_group_renders() {
         mount_to_body(|| {
             view! {
                 <RadioGroup>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_radio-group_with_props() {
+    fn test_radio_group_with_props() {
         mount_to_body(|| {
             view! {
                 <RadioGroup class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_radio-group_signal_state_management() {
+    fn test_radio_group_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "radio-group signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_radio-group_callback_functionality() {
+    fn test_radio_group_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_radio-group_class_handling() {
+    fn test_radio_group_class_handling() {
         let custom_class = "custom-radio-group-class";
         assert!(!custom_class.is_empty(), "radio-group should support custom classes");
         assert!(custom_class.contains("radio-group"), "Class should contain component name");
     }
 
     #[test]
-    fn test_radio-group_id_handling() {
+    fn test_radio_group_id_handling() {
         let custom_id = "custom-radio-group-id";
         assert!(!custom_id.is_empty(), "radio-group should support custom IDs");
         assert!(custom_id.contains("radio-group"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_radio-group_form_integration() {
+    fn test_radio_group_form_integration() {
         mount_to_body(|| {
             view! {
                 <form>
@@ -88,7 +88,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_radio-group_validation_state() {
+    fn test_radio_group_validation_state() {
         mount_to_body(|| {
             view! {
                 <RadioGroup class="test-validation" data-valid="true">
@@ -103,7 +103,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_radio-group_form_integration() {
+    fn test_radio_group_form_integration() {
         mount_to_body(|| {
             view! {
                 <form class="test-form">
@@ -123,7 +123,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_radio-group_validation_state() {
+    fn test_radio_group_validation_state() {
         mount_to_body(|| {
             view! {
                 <RadioGroup 

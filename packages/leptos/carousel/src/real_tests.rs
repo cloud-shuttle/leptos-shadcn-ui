@@ -157,7 +157,7 @@ mod real_tests {
             view! {
                 <Carousel 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test carousel"
                 >
                     "Attribute Test carousel"

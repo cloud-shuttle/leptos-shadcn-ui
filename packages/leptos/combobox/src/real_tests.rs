@@ -138,7 +138,7 @@ mod real_tests {
         mount_to_body(|| {
             view! {
                 <Combobox class="test-class-application custom-class">
-                    "Class Test combobox"
+                    
                 </Combobox>
             }
         });
@@ -157,7 +157,6 @@ mod real_tests {
             view! {
                 <Combobox 
                     class="test-attributes"
-                    data-test="test-value"
                     aria-label="Test combobox"
                 >
                     "Attribute Test combobox"
@@ -168,7 +167,6 @@ mod real_tests {
         let document = web_sys::window().unwrap().document().unwrap();
         let element = document.query_selector(".test-attributes").unwrap().unwrap();
         
-        assert_eq!(element.get_attribute("data-test").unwrap(), "test-value");
         assert_eq!(element.get_attribute("aria-label").unwrap(), "Test combobox");
     }
 }

@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_date-picker_renders() {
+    fn test_date_picker_renders() {
         mount_to_body(|| {
             view! {
                 <DatePicker>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_with_props() {
+    fn test_date_picker_with_props() {
         mount_to_body(|| {
             view! {
                 <DatePicker class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_date-picker_signal_state_management() {
+    fn test_date_picker_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "date-picker signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_date-picker_callback_functionality() {
+    fn test_date_picker_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_date-picker_class_handling() {
+    fn test_date_picker_class_handling() {
         let custom_class = "custom-date-picker-class";
         assert!(!custom_class.is_empty(), "date-picker should support custom classes");
         assert!(custom_class.contains("date-picker"), "Class should contain component name");
     }
 
     #[test]
-    fn test_date-picker_id_handling() {
+    fn test_date_picker_id_handling() {
         let custom_id = "custom-date-picker-id";
         assert!(!custom_id.is_empty(), "date-picker should support custom IDs");
         assert!(custom_id.contains("date-picker"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_interaction() {
+    fn test_date_picker_interaction() {
         mount_to_body(|| {
             view! {
                 <DatePicker class="test-interaction">
@@ -86,7 +86,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_focus_behavior() {
+    fn test_date_picker_focus_behavior() {
         mount_to_body(|| {
             view! {
                 <DatePicker class="test-focus">
@@ -101,7 +101,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_accessibility() {
+    fn test_date_picker_accessibility() {
         mount_to_body(|| {
             view! {
                 <DatePicker class="test-a11y" role="button">
@@ -116,7 +116,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_dom_rendering() {
+    fn test_date_picker_dom_rendering() {
         mount_to_body(|| {
             view! {
                 <DatePicker class="test-dom-render">
@@ -134,7 +134,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_class_application() {
+    fn test_date_picker_class_application() {
         mount_to_body(|| {
             view! {
                 <DatePicker class="test-class-application custom-class">
@@ -152,12 +152,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_date-picker_attribute_handling() {
+    fn test_date_picker_attribute_handling() {
         mount_to_body(|| {
             view! {
                 <DatePicker 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test date-picker"
                 >
                     "Attribute Test date-picker"

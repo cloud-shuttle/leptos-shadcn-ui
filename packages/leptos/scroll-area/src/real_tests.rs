@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_renders() {
+    fn test_scroll_area_renders() {
         mount_to_body(|| {
             view! {
                 <ScrollArea>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_with_props() {
+    fn test_scroll_area_with_props() {
         mount_to_body(|| {
             view! {
                 <ScrollArea class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_scroll-area_signal_state_management() {
+    fn test_scroll_area_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "scroll-area signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_scroll-area_callback_functionality() {
+    fn test_scroll_area_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_scroll-area_class_handling() {
+    fn test_scroll_area_class_handling() {
         let custom_class = "custom-scroll-area-class";
         assert!(!custom_class.is_empty(), "scroll-area should support custom classes");
         assert!(custom_class.contains("scroll-area"), "Class should contain component name");
     }
 
     #[test]
-    fn test_scroll-area_id_handling() {
+    fn test_scroll_area_id_handling() {
         let custom_id = "custom-scroll-area-id";
         assert!(!custom_id.is_empty(), "scroll-area should support custom IDs");
         assert!(custom_id.contains("scroll-area"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_interaction() {
+    fn test_scroll_area_interaction() {
         mount_to_body(|| {
             view! {
                 <ScrollArea class="test-interaction">
@@ -86,7 +86,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_focus_behavior() {
+    fn test_scroll_area_focus_behavior() {
         mount_to_body(|| {
             view! {
                 <ScrollArea class="test-focus">
@@ -101,7 +101,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_accessibility() {
+    fn test_scroll_area_accessibility() {
         mount_to_body(|| {
             view! {
                 <ScrollArea class="test-a11y" role="button">
@@ -116,7 +116,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_dom_rendering() {
+    fn test_scroll_area_dom_rendering() {
         mount_to_body(|| {
             view! {
                 <ScrollArea class="test-dom-render">
@@ -134,7 +134,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_class_application() {
+    fn test_scroll_area_class_application() {
         mount_to_body(|| {
             view! {
                 <ScrollArea class="test-class-application custom-class">
@@ -152,12 +152,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_scroll-area_attribute_handling() {
+    fn test_scroll_area_attribute_handling() {
         mount_to_body(|| {
             view! {
                 <ScrollArea 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test scroll-area"
                 >
                     "Attribute Test scroll-area"

@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_hover-card_renders() {
+    fn test_hover_card_renders() {
         mount_to_body(|| {
             view! {
                 <HoverCard>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_hover-card_with_props() {
+    fn test_hover_card_with_props() {
         mount_to_body(|| {
             view! {
                 <HoverCard class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_hover-card_signal_state_management() {
+    fn test_hover_card_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "hover-card signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_hover-card_callback_functionality() {
+    fn test_hover_card_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_hover-card_class_handling() {
+    fn test_hover_card_class_handling() {
         let custom_class = "custom-hover-card-class";
         assert!(!custom_class.is_empty(), "hover-card should support custom classes");
         assert!(custom_class.contains("hover-card"), "Class should contain component name");
     }
 
     #[test]
-    fn test_hover-card_id_handling() {
+    fn test_hover_card_id_handling() {
         let custom_id = "custom-hover-card-id";
         assert!(!custom_id.is_empty(), "hover-card should support custom IDs");
         assert!(custom_id.contains("hover-card"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_hover-card_responsive_behavior() {
+    fn test_hover_card_responsive_behavior() {
         mount_to_body(|| {
             view! {
                 <HoverCard class="test-responsive" data-responsive="true">
@@ -86,7 +86,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_hover-card_layout_integration() {
+    fn test_hover_card_layout_integration() {
         mount_to_body(|| {
             view! {
                 <div class="test-layout">
@@ -103,7 +103,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_hover-card_responsive_behavior() {
+    fn test_hover_card_responsive_behavior() {
         mount_to_body(|| {
             view! {
                 <HoverCard 
@@ -125,7 +125,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_hover-card_layout_integration() {
+    fn test_hover_card_layout_integration() {
         mount_to_body(|| {
             view! {
                 <div class="test-layout-container">

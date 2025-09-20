@@ -157,7 +157,7 @@ mod real_tests {
             view! {
                 <Label 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test label"
                 >
                     "Attribute Test label"

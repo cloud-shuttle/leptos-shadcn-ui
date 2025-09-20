@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_renders() {
+    fn test_aspect_ratio_renders() {
         mount_to_body(|| {
             view! {
                 <AspectRatio>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_with_props() {
+    fn test_aspect_ratio_with_props() {
         mount_to_body(|| {
             view! {
                 <AspectRatio class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_aspect-ratio_signal_state_management() {
+    fn test_aspect_ratio_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "aspect-ratio signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_aspect-ratio_callback_functionality() {
+    fn test_aspect_ratio_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_aspect-ratio_class_handling() {
+    fn test_aspect_ratio_class_handling() {
         let custom_class = "custom-aspect-ratio-class";
         assert!(!custom_class.is_empty(), "aspect-ratio should support custom classes");
         assert!(custom_class.contains("aspect-ratio"), "Class should contain component name");
     }
 
     #[test]
-    fn test_aspect-ratio_id_handling() {
+    fn test_aspect_ratio_id_handling() {
         let custom_id = "custom-aspect-ratio-id";
         assert!(!custom_id.is_empty(), "aspect-ratio should support custom IDs");
         assert!(custom_id.contains("aspect-ratio"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_interaction() {
+    fn test_aspect_ratio_interaction() {
         mount_to_body(|| {
             view! {
                 <AspectRatio class="test-interaction">
@@ -86,7 +86,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_focus_behavior() {
+    fn test_aspect_ratio_focus_behavior() {
         mount_to_body(|| {
             view! {
                 <AspectRatio class="test-focus">
@@ -101,7 +101,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_accessibility() {
+    fn test_aspect_ratio_accessibility() {
         mount_to_body(|| {
             view! {
                 <AspectRatio class="test-a11y" role="button">
@@ -116,7 +116,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_dom_rendering() {
+    fn test_aspect_ratio_dom_rendering() {
         mount_to_body(|| {
             view! {
                 <AspectRatio class="test-dom-render">
@@ -134,7 +134,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_class_application() {
+    fn test_aspect_ratio_class_application() {
         mount_to_body(|| {
             view! {
                 <AspectRatio class="test-class-application custom-class">
@@ -152,12 +152,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_aspect-ratio_attribute_handling() {
+    fn test_aspect_ratio_attribute_handling() {
         mount_to_body(|| {
             view! {
                 <AspectRatio 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test aspect-ratio"
                 >
                     "Attribute Test aspect-ratio"

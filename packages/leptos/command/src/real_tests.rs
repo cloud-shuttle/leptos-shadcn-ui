@@ -157,7 +157,7 @@ mod real_tests {
             view! {
                 <Command 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test command"
                 >
                     "Attribute Test command"

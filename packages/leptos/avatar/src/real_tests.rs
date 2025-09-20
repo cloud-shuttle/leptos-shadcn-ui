@@ -157,7 +157,7 @@ mod real_tests {
             view! {
                 <Avatar 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test avatar"
                 >
                     "Attribute Test avatar"

@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_with_props() {
+    fn test_error_boundary_with_props() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_error-boundary_signal_state_management() {
+    fn test_error_boundary_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "error-boundary signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_error-boundary_callback_functionality() {
+    fn test_error_boundary_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_error-boundary_class_handling() {
+    fn test_error_boundary_class_handling() {
         let custom_class = "custom-error-boundary-class";
         assert!(!custom_class.is_empty(), "error-boundary should support custom classes");
         assert!(custom_class.contains("error-boundary"), "Class should contain component name");
     }
 
     #[test]
-    fn test_error-boundary_id_handling() {
+    fn test_error_boundary_id_handling() {
         let custom_id = "custom-error-boundary-id";
         assert!(!custom_id.is_empty(), "error-boundary should support custom IDs");
         assert!(custom_id.contains("error-boundary"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_interaction() {
+    fn test_error_boundary_interaction() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary class="test-interaction">
@@ -86,7 +86,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_focus_behavior() {
+    fn test_error_boundary_focus_behavior() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary class="test-focus">
@@ -101,7 +101,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_accessibility() {
+    fn test_error_boundary_accessibility() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary class="test-a11y" role="button">
@@ -116,7 +116,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_dom_rendering() {
+    fn test_error_boundary_dom_rendering() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary class="test-dom-render">
@@ -134,7 +134,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_class_application() {
+    fn test_error_boundary_class_application() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary class="test-class-application custom-class">
@@ -152,12 +152,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_error-boundary_attribute_handling() {
+    fn test_error_boundary_attribute_handling() {
         mount_to_body(|| {
             view! {
                 <ErrorBoundary 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test error-boundary"
                 >
                     "Attribute Test error-boundary"

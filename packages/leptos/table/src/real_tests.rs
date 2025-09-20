@@ -205,7 +205,7 @@ mod real_tests {
             view! {
                 <Table 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test table"
                 >
                     "Attribute Test table"

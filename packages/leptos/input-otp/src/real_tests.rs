@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_input-otp_renders() {
+    fn test_input_otp_renders() {
         mount_to_body(|| {
             view! {
                 <InputOTP>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_input-otp_with_props() {
+    fn test_input_otp_with_props() {
         mount_to_body(|| {
             view! {
                 <InputOTP class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_input-otp_signal_state_management() {
+    fn test_input_otp_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "input-otp signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_input-otp_callback_functionality() {
+    fn test_input_otp_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_input-otp_class_handling() {
+    fn test_input_otp_class_handling() {
         let custom_class = "custom-input-otp-class";
         assert!(!custom_class.is_empty(), "input-otp should support custom classes");
         assert!(custom_class.contains("input-otp"), "Class should contain component name");
     }
 
     #[test]
-    fn test_input-otp_id_handling() {
+    fn test_input_otp_id_handling() {
         let custom_id = "custom-input-otp-id";
         assert!(!custom_id.is_empty(), "input-otp should support custom IDs");
         assert!(custom_id.contains("input-otp"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_input-otp_form_integration() {
+    fn test_input_otp_form_integration() {
         mount_to_body(|| {
             view! {
                 <form>
@@ -88,7 +88,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_input-otp_validation_state() {
+    fn test_input_otp_validation_state() {
         mount_to_body(|| {
             view! {
                 <InputOTP class="test-validation" data-valid="true">
@@ -103,7 +103,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_input-otp_form_integration() {
+    fn test_input_otp_form_integration() {
         mount_to_body(|| {
             view! {
                 <form class="test-form">
@@ -123,7 +123,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_input-otp_validation_state() {
+    fn test_input_otp_validation_state() {
         mount_to_body(|| {
             view! {
                 <InputOTP 

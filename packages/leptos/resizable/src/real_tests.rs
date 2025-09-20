@@ -157,7 +157,7 @@ mod real_tests {
             view! {
                 <ResizablePanel 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test resizable"
                 >
                     "Attribute Test resizable"

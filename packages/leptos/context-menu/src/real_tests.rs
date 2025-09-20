@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_context-menu_renders() {
+    fn test_context_menu_renders() {
         mount_to_body(|| {
             view! {
                 <ContextMenu>
@@ -22,7 +22,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_with_props() {
+    fn test_context_menu_with_props() {
         mount_to_body(|| {
             view! {
                 <ContextMenu class="test-class">
@@ -37,7 +37,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_context-menu_signal_state_management() {
+    fn test_context_menu_signal_state_management() {
         let signal = RwSignal::new(true);
         assert!(signal.get(), "context-menu signal should have initial value");
         
@@ -46,7 +46,7 @@ mod real_tests {
     }
 
     #[test]
-    fn test_context-menu_callback_functionality() {
+    fn test_context_menu_callback_functionality() {
         let callback_triggered = RwSignal::new(false);
         let callback = Callback::new(move |_| {
             callback_triggered.set(true);
@@ -57,21 +57,21 @@ mod real_tests {
     }
 
     #[test]
-    fn test_context-menu_class_handling() {
+    fn test_context_menu_class_handling() {
         let custom_class = "custom-context-menu-class";
         assert!(!custom_class.is_empty(), "context-menu should support custom classes");
         assert!(custom_class.contains("context-menu"), "Class should contain component name");
     }
 
     #[test]
-    fn test_context-menu_id_handling() {
+    fn test_context_menu_id_handling() {
         let custom_id = "custom-context-menu-id";
         assert!(!custom_id.is_empty(), "context-menu should support custom IDs");
         assert!(custom_id.contains("context-menu"), "ID should contain component name");
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_interaction() {
+    fn test_context_menu_interaction() {
         mount_to_body(|| {
             view! {
                 <ContextMenu class="test-interaction">
@@ -86,7 +86,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_focus_behavior() {
+    fn test_context_menu_focus_behavior() {
         mount_to_body(|| {
             view! {
                 <ContextMenu class="test-focus">
@@ -101,7 +101,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_accessibility() {
+    fn test_context_menu_accessibility() {
         mount_to_body(|| {
             view! {
                 <ContextMenu class="test-a11y" role="button">
@@ -116,7 +116,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_dom_rendering() {
+    fn test_context_menu_dom_rendering() {
         mount_to_body(|| {
             view! {
                 <ContextMenu class="test-dom-render">
@@ -134,7 +134,7 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_class_application() {
+    fn test_context_menu_class_application() {
         mount_to_body(|| {
             view! {
                 <ContextMenu class="test-class-application custom-class">
@@ -152,12 +152,12 @@ mod real_tests {
     }
 
     #[wasm_bindgen_test]
-    fn test_context-menu_attribute_handling() {
+    fn test_context_menu_attribute_handling() {
         mount_to_body(|| {
             view! {
                 <ContextMenu 
                     class="test-attributes"
-                    data-test="test-value"
+                    data_test="test-value"
                     aria-label="Test context-menu"
                 >
                     "Attribute Test context-menu"
