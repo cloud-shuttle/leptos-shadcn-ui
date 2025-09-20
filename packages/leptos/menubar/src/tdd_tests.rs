@@ -440,8 +440,8 @@ mod tdd_tests {
         let callback2 = Callback::new(move |_| {});
         let _menubar_view = view! {
             <div>
-                <Menubar on_click=Some(callback1)>"Menubar 1"</Menubar>
-                <Menubar on_click=Some(callback2)>"Menubar 2"</Menubar>
+                <Menubar on_click=callback1>"Menubar 1"</Menubar>
+                <Menubar on_click=callback2>"Menubar 2"</Menubar>
             </div>
         };
     }
