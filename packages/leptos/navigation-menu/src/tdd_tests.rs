@@ -51,7 +51,7 @@ mod tdd_tests {
             // Callback logic
         });
         let _nav_view = view! {
-            <NavigationMenu on_click=Some(callback)>
+            <NavigationMenu on_click=callback>
                 "Clickable Navigation"
             </NavigationMenu>
         };
@@ -428,7 +428,7 @@ mod tdd_tests {
             // Callback execution test
         });
         let _nav_view = view! {
-            <NavigationMenu on_click=Some(callback)>
+            <NavigationMenu on_click=callback>
                 "Callback Navigation"
             </NavigationMenu>
         };
@@ -440,8 +440,8 @@ mod tdd_tests {
         let callback2 = Callback::new(move |_| {});
         let _nav_view = view! {
             <div>
-                <NavigationMenu on_click=Some(callback1)>"Navigation 1"</NavigationMenu>
-                <NavigationMenu on_click=Some(callback2)>"Navigation 2"</NavigationMenu>
+                <NavigationMenu on_click=callback1>"Navigation 1"</NavigationMenu>
+                <NavigationMenu on_click=callback2>"Navigation 2"</NavigationMenu>
             </div>
         };
     }
@@ -489,7 +489,7 @@ mod tdd_tests {
                 size=MaybeProp::from("lg")
                 disabled=disabled
                 style=style
-                on_click=Some(callback)
+                on_click=callback
                 class=MaybeProp::from("combined-props")
                 id=MaybeProp::from("combined-navigation")
             >
