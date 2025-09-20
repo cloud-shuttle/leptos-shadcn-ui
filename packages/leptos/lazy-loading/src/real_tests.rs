@@ -7,7 +7,7 @@ mod real_tests {
     wasm_bindgen_test_configure!(run_in_browser);
 
     #[wasm_bindgen_test]
-    fn test_lazy-loading_renders() {
+    fn test_lazy_loading_renders() {
         mount_to_body(|| {
             view! {
                 <LazyLoading>
