@@ -6,7 +6,7 @@ authors = ["CloudShuttle <info@cloudshuttle.com>"]
 license = "MIT"
 repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
 description = "WASM-optimized ShadCN UI components for Leptos 0.8+ with minimal dependencies"
-keywords = ["leptos", "shadcn", "ui", "wasm", "webassembly", "components"]
+keywords = ["leptos", "shadcn", "ui", "wasm", "components"]
 categories = ["web-programming", "gui"]
 
 # WASM-optimized dependencies only
