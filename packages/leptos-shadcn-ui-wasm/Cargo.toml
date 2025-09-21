@@ -1,6 +1,6 @@
 [package]
 name = "leptos-shadcn-ui-wasm"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["CloudShuttle <info@cloudshuttle.com>"]
 license = "MIT"

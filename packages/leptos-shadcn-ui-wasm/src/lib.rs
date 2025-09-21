@@ -16,7 +16,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! leptos-shadcn-ui-wasm = "0.1"
+//! leptos-shadcn-ui-wasm = "0.2"
 //! ```
 //!
 //! ```rust
