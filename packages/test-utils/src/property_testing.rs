@@ -1,11 +1,15 @@
 // Property-based testing utilities for leptos-shadcn-ui components
 // Provides comprehensive property-based testing patterns for robust component validation
 
+// Only compile property testing for native targets (not WASM)
+#[cfg(not(target_arch = "wasm32"))]
 use proptest::prelude::*;
 use std::collections::HashMap;
 use leptos::IntoView;
 
 /// Property-based testing strategies for component props
+/// Only available on native targets (not WASM)
+#[cfg(not(target_arch = "wasm32"))]
 pub mod strategies {
     use super::*;
 
@@ -81,6 +85,8 @@ pub mod strategies {
 }
 
 /// Property-based testing assertions
+/// Only available on native targets (not WASM)
+#[cfg(not(target_arch = "wasm32"))]
 pub mod assertions {
     use leptos::prelude::*;
 
@@ -151,6 +157,8 @@ pub mod assertions {
 }
 
 /// Macro for creating property-based component tests
+/// Only available on native targets (not WASM)
+#[cfg(not(target_arch = "wasm32"))]
 #[macro_export]
 macro_rules! proptest_component {
     (
@@ -182,6 +190,8 @@ macro_rules! proptest_component {
 }
 
 /// Property-based testing for button-like components
+/// Only available on native targets (not WASM)
+#[cfg(not(target_arch = "wasm32"))]
 pub mod button_properties {
     use super::*;
     use super::strategies::*;
@@ -234,6 +244,8 @@ pub mod button_properties {
 }
 
 /// Property-based testing for form components
+/// Only available on native targets (not WASM)
+#[cfg(not(target_arch = "wasm32"))]
 pub mod form_properties {
     use super::*;
     use super::strategies::*;
@@ -415,5 +427,28 @@ mod tests {
         attrs.insert("aria-hidden".to_string(), "true".to_string());
         
         assert!(!assertions::assert_accessibility_compliance(&attrs));
+    }
+}
+
+// WASM-compatible alternative for property testing
+#[cfg(target_arch = "wasm32")]
+pub mod wasm_property_testing {
+    use wasm_bindgen::prelude::*;
+    use web_sys::*;
+    
+    /// WASM-compatible property testing using JavaScript
+    pub fn wasm_proptest<F>(test_fn: F) 
+    where
+        F: FnOnce() + 'static,
+    {
+        // For WASM, we'll use a simplified approach
+        // In a real implementation, this could use JavaScript-based property testing
+        test_fn();
+    }
+    
+    /// Generate random test data for WASM
+    pub fn generate_test_data() -> String {
+        use uuid::Uuid;
+        Uuid::new_v4().to_string()
     }
 }

@@ -1,0 +1,69 @@
+[package]
+name = "leptos-shadcn-ui-wasm"
+version = "0.1.0"
+edition = "2021"
+authors = ["CloudShuttle <info@cloudshuttle.com>"]
+license = "MIT"
+repository = "https://github.com/cloud-shuttle/leptos-shadcn-ui"
+description = "WASM-optimized ShadCN UI components for Leptos 0.8+ with minimal dependencies"
+keywords = ["leptos", "shadcn", "ui", "wasm", "webassembly", "components"]
+categories = ["web-programming", "gui"]
+
+# WASM-optimized dependencies only
+[dependencies]
+leptos = "0.8"
+
+# WASM-compatible utilities
+getrandom = { version = "0.2", features = ["js"] }
+uuid = { version = "1.0", features = ["v4", "js"] }
+
+# Core component dependencies
+leptos-shadcn-button = { path = "../leptos/button" }
+leptos-shadcn-input = { path = "../leptos/input" }
+leptos-shadcn-card = { path = "../leptos/card" }
+leptos-shadcn-label = { path = "../leptos/label" }
+leptos-shadcn-badge = { path = "../leptos/badge" }
+leptos-shadcn-avatar = { path = "../leptos/avatar" }
+leptos-shadcn-separator = { path = "../leptos/separator" }
+leptos-shadcn-skeleton = { path = "../leptos/skeleton" }
+leptos-shadcn-alert = { path = "../leptos/alert" }
+leptos-shadcn-alert-dialog = { path = "../leptos/alert-dialog" }
+
+# WASM-compatible dependencies
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["console", "Document", "Element", "HtmlElement", "Window", "Performance"] }
+console_error_panic_hook = "0.1"
+
+# WASM-compatible testing
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[features]
+default = ["all-components"]
+all-components = [
+    "button",
+    "input", 
+    "card",
+    "label",
+    "badge",
+    "avatar",
+    "separator",
+    "skeleton",
+    "alert",
+    "alert-dialog"
+]
+
+# Individual component features
+button = []
+input = []
+card = []
+label = []
+badge = []
+avatar = []
+separator = []
+skeleton = []
+alert = []
+alert-dialog = []
+
+# WASM-specific optimizations
+wasm-optimized = []

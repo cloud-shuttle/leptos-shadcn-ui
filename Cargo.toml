@@ -26,9 +26,11 @@ members = [
     "packages/tailwind-rs-core",  # Tailwind CSS core utilities
     "packages/tailwind-rs-core-macros",  # Tailwind CSS macros
     "packages/leptos-shadcn-ui",  # Re-added for final publishing
+    "packages/leptos-shadcn-ui-wasm",  # WASM-optimized version with minimal dependencies
     "performance-audit",  # Performance audit system
     "leptos_v0_8_test_app",  # Leptos v0.8 compatibility test app
     "examples/leptos",  # WASM demo application
+    "wasm-demo",  # Dedicated WASM demo for leptos-shadcn-ui-wasm
     
     # Basic components (no internal dependencies)
     "packages/leptos/button",

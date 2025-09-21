@@ -16,17 +16,29 @@ js-sys = "0.3"
 console_error_panic_hook = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
-uuid = { version = "1.0", features = ["v4"] }
+# ✅ FIXED: Add "js" feature for WASM compatibility
+uuid = { version = "1.0", features = ["v4", "js"] }
 
 # Framework-specific testing
 leptos = { workspace = true }
 
-# Property-based testing
-proptest = "1.4"
+# ✅ ADDED: WASM-compatible random generation
+getrandom = { version = "0.2", features = ["js"] }
 
 # Snapshot testing dependencies  
 chrono = { workspace = true }
-tempfile = "3.0"
 
 [features]
 default = []
+wasm-testing = []
+native-testing = []
+
+# Conditional dependencies for different targets
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+# WASM-specific testing utilities
+wasm-bindgen-futures = "0.4"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+# Native-only testing utilities
+proptest = "1.4"
+tempfile = "3.0"

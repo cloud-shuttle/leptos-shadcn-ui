@@ -16,24 +16,26 @@ semver = "1.0"
 anyhow = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
 
-# Testing utilities
-tokio = { version = "1.0", features = ["macros", "rt-multi-thread", "time"] }
-env_logger = "0.10"
+# Testing utilities (native only)
 
 # Optional dependencies
-criterion = { version = "0.5", features = ["html_reports"], optional = true }
 wasm-bindgen-test = { version = "0.3", optional = true }
 web-sys = { version = "0.3", features = ["console"], optional = true }
 
 [dev-dependencies]
-tokio-test = "0.4"
 tempfile = "3.0"
 
 [features]
-default = ["validation", "performance-testing"]
+default = ["validation"]
 validation = []
-performance-testing = ["dep:criterion"]
 wasm-testing = ["dep:wasm-bindgen-test", "dep:web-sys"]
+
+# Conditional dependencies for different targets
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread", "time"] }
+tokio-test = "0.4"
+criterion = { version = "0.5", features = ["html_reports"] }
+env_logger = "0.10"
 
 [[bin]]
 name = "fix_dependencies"
