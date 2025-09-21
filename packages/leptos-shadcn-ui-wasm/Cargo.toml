@@ -18,16 +18,16 @@ getrandom = { version = "0.2", features = ["js"] }
 uuid = { version = "1.0", features = ["v4", "js"] }
 
 # Core component dependencies
-leptos-shadcn-button = { path = "../leptos/button" }
-leptos-shadcn-input = { path = "../leptos/input" }
-leptos-shadcn-card = { path = "../leptos/card" }
-leptos-shadcn-label = { path = "../leptos/label" }
-leptos-shadcn-badge = { path = "../leptos/badge" }
-leptos-shadcn-avatar = { path = "../leptos/avatar" }
-leptos-shadcn-separator = { path = "../leptos/separator" }
-leptos-shadcn-skeleton = { path = "../leptos/skeleton" }
-leptos-shadcn-alert = { path = "../leptos/alert" }
-leptos-shadcn-alert-dialog = { path = "../leptos/alert-dialog" }
+leptos-shadcn-button = "0.9"
+leptos-shadcn-input = "0.9"
+leptos-shadcn-card = "0.9"
+leptos-shadcn-label = "0.9"
+leptos-shadcn-badge = "0.9"
+leptos-shadcn-avatar = "0.9"
+leptos-shadcn-separator = "0.9"
+leptos-shadcn-skeleton = "0.9"
+leptos-shadcn-alert = "0.9"
+leptos-shadcn-alert-dialog = "0.9"
 
 # WASM-compatible dependencies
 wasm-bindgen = "0.2"
