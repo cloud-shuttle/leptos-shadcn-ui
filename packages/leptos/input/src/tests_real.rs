@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod input_tests {
-    use crate::default::{Input, INPUT_CLASS, INPUT_ERROR_CLASS};
-    use crate::validation::{InputValidator, ValidationRule, ValidationResult};
+    use crate::default::{INPUT_CLASS, INPUT_ERROR_CLASS};
+    use crate::validation::{InputValidator, ValidationRule, ValidationResult, validation_builders};
     use leptos::prelude::*;
 
     #[test]
@@ -94,8 +94,8 @@ mod input_tests {
     fn input_validator_creation_and_validation() {
         // Test InputValidator functionality with builder pattern
         let validator = InputValidator::new("test_field")
-            .required()
-            .min_length(3);
+            .with_rule(ValidationRule::Required)
+            .with_rule(ValidationRule::MinLength(3));
         
         // Test empty value (should fail required)
         let result1 = validator.validate("");
@@ -114,7 +114,7 @@ mod input_tests {
 
     #[test]
     fn email_validation_logic() {
-        let validator = InputValidator::new("email_field").email();
+        let validator = validation_builders::email_validator("email_field");
         
         // Test invalid email formats
         let invalid_emails = vec![
@@ -147,8 +147,8 @@ mod input_tests {
     #[test]
     fn min_max_length_validation() {
         let validator = InputValidator::new("length_field")
-            .min_length(3)
-            .max_length(10);
+            .with_rule(ValidationRule::MinLength(3))
+            .with_rule(ValidationRule::MaxLength(10));
         
         // Test too short
         let result1 = validator.validate("ab");
@@ -173,7 +173,7 @@ mod input_tests {
     #[test]
     fn pattern_validation() {
         let validator = InputValidator::new("ssn_field")
-            .pattern("^\\d{3}-\\d{2}-\\d{4}$".to_string()); // SSN format
+            .with_rule(ValidationRule::Pattern("^\\d{3}-\\d{2}-\\d{4}$".to_string())); // SSN format
         
         // Test invalid patterns
         let invalid_patterns = vec![
@@ -197,9 +197,9 @@ mod input_tests {
     #[test]
     fn multiple_validation_rules() {
         let validator = InputValidator::new("password_field")
-            .required()
-            .min_length(8)
-            .pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)".to_string()); // Password pattern
+            .with_rule(ValidationRule::Required)
+            .with_rule(ValidationRule::MinLength(8))
+            .with_rule(ValidationRule::Pattern("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)".to_string())); // Password pattern
         
         // Test empty value (fails required)
         let result1 = validator.validate("");
@@ -228,9 +228,9 @@ mod input_tests {
     #[test]
     fn validation_error_messages() {
         let validator = InputValidator::new("test_field")
-            .required()
-            .min_length(5)
-            .email();
+            .with_rule(ValidationRule::Required)
+            .with_rule(ValidationRule::MinLength(5))
+            .with_rule(ValidationRule::Email);
         
         // Test that we get specific error messages
         let result = validator.validate("");
@@ -248,10 +248,10 @@ mod input_tests {
     fn validator_builder_pattern() {
         // Test fluent interface for building validators
         let validator = InputValidator::new("email_field")
-            .required()
-            .min_length(3)
-            .max_length(50)
-            .email();
+            .with_rule(ValidationRule::Required)
+            .with_rule(ValidationRule::MinLength(3))
+            .with_rule(ValidationRule::MaxLength(50))
+            .with_rule(ValidationRule::Email);
         
         // Test that the builder created a validator with correct rules
         let result1 = validator.validate(""); // Should fail required
@@ -268,7 +268,7 @@ mod input_tests {
     fn signal_integration() {
         // Test that signals work correctly with validation
         let value_signal = RwSignal::new("".to_string());
-        let validator = InputValidator::new("test_field").required();
+        let validator = validation_builders::required_validator("test_field");
         
         // Test reactive validation
         let is_valid = Signal::derive(move || {

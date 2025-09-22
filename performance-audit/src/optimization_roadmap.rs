@@ -155,13 +155,13 @@ impl OptimizationRoadmap {
         // Add to priority groups
         self.recommendations_by_priority
             .entry(priority)
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(id.clone());
         
         // Add to category groups
         self.recommendations_by_category
             .entry(category)
-            .or_insert_with(Vec::new)
+            .or_default()
             .push(id);
         
         self.recalculate_totals();
@@ -271,6 +271,12 @@ pub struct ImplementationPhase {
     pub effort_hours: f64,
     /// Phase expected impact
     pub expected_impact: f64,
+}
+
+impl Default for ImplementationPlan {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl ImplementationPlan {

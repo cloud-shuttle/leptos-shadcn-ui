@@ -185,7 +185,7 @@ impl RegressionTester {
         }
 
         let baseline_content = std::fs::read_to_string(baseline_path)
-            .map_err(|e| PerformanceAuditError::IoError(e))?;
+            .map_err(PerformanceAuditError::IoError)?;
         
         let baseline: PerformanceBaseline = serde_json::from_str(&baseline_content)
             .map_err(|e| PerformanceAuditError::ConfigurationError(
@@ -212,7 +212,7 @@ impl RegressionTester {
             if let Some(baseline_metrics) = baseline.component_baselines.get(&current_result.component_name) {
                 let regression_result = self.analyze_regression(
                     test_name,
-                    &current_result,
+                    current_result,
                     baseline_metrics,
                 )?;
                 regression_results.push(regression_result);
@@ -395,7 +395,7 @@ impl RegressionTester {
         // Ensure directory exists
         if let Some(parent) = results_path.parent() {
             std::fs::create_dir_all(parent)
-                .map_err(|e| PerformanceAuditError::IoError(e))?;
+                .map_err(PerformanceAuditError::IoError)?;
         }
 
         let results_json = serde_json::to_string_pretty(results)
@@ -404,7 +404,7 @@ impl RegressionTester {
             ))?;
 
         std::fs::write(results_path, results_json)
-            .map_err(|e| PerformanceAuditError::IoError(e))?;
+            .map_err(PerformanceAuditError::IoError)?;
 
         Ok(())
     }
@@ -421,7 +421,7 @@ impl RegressionTester {
         let mut total_score = 0.0;
         let mut component_count = 0;
 
-        for (_, result) in &current_results.benchmark_results {
+        for result in current_results.benchmark_results.values() {
             let metrics = PerformanceMetrics {
                 average_time_ms: result.average_time.as_secs_f64() * 1000.0,
                 memory_usage_bytes: result.memory_usage_bytes,
@@ -471,7 +471,7 @@ impl RegressionTester {
             ))?;
 
         std::fs::write(&self.config.baseline_path, baseline_json)
-            .map_err(|e| PerformanceAuditError::IoError(e))?;
+            .map_err(PerformanceAuditError::IoError)?;
 
         self.baseline = Some(baseline);
         Ok(())
@@ -509,7 +509,7 @@ impl RegressionTester {
         report.push_str(&format!("- **Regressions Detected**: {}\n", regressions));
         report.push_str(&format!("- **Critical Regressions**: {}\n", critical_regressions));
         report.push_str(&format!("- **Major Regressions**: {}\n", major_regressions));
-        report.push_str("\n");
+        report.push('\n');
 
         // Detailed results
         if !results.is_empty() {
@@ -529,7 +529,7 @@ impl RegressionTester {
                         report.push_str(&format!("- {}\n", rec));
                     }
                 }
-                report.push_str("\n");
+                report.push('\n');
             }
         }
 

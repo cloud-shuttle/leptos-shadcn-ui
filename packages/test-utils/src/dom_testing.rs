@@ -15,10 +15,16 @@ pub struct ComponentTestHarness {
     mount_point: String,
 }
 
+impl Default for ComponentTestHarness {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ComponentTestHarness {
     /// Create a new test harness with a unique mount point
     pub fn new() -> Self {
-        let mount_id = format!("test-mount-{}", uuid::Uuid::new_v4().to_string());
+        let mount_id = format!("test-mount-{}", uuid::Uuid::new_v4());
         Self {
             mount_point: mount_id,
         }
@@ -79,11 +85,10 @@ impl ComponentTestHarness {
     
     /// Cleanup the test harness
     pub fn cleanup(&self) {
-        if let Some(document) = web_sys::window().and_then(|w| w.document()) {
-            if let Some(element) = document.get_element_by_id(&self.mount_point) {
+        if let Some(document) = web_sys::window().and_then(|w| w.document())
+            && let Some(element) = document.get_element_by_id(&self.mount_point) {
                 element.remove();
             }
-        }
     }
 }
 

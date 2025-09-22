@@ -79,6 +79,9 @@ pub fn Form(
             class=computed_class
             style=move || style.get().to_string()
             on:submit=handle_submit
+            role="form"
+            aria-labelledby="form-title"
+            aria-describedby="form-description"
         >
             {children.map(|c| c())}
         </form>
@@ -91,15 +94,14 @@ pub fn FormField(
     #[prop(into)] name: String,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] invalid: Signal<bool>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     let computed_class = Signal::derive(move || {
         let base_class = "space-y-2";
-        if let Some(class) = class.get() {
-            format!("{} {}", base_class, class)
-        } else {
-            base_class.to_string()
-        }
+        let invalid_class = if invalid.get() { " data-invalid" } else { "" };
+        let custom_class = class.get().unwrap_or_default();
+        format!("{}{} {}", base_class, invalid_class, custom_class)
     });
     
     view! {
@@ -107,6 +109,8 @@ pub fn FormField(
             class=computed_class
             style=move || style.get().to_string()
             data-field=name
+            data-invalid=move || invalid.get().to_string()
+            aria-invalid=move || invalid.get().to_string()
         >
             {children.map(|c| c())}
         </div>
@@ -219,6 +223,8 @@ pub fn FormMessage(
                 }
             }
             style=move || style.get().to_string()
+            role="alert"
+            aria-live="polite"
         >
             {move || message.get().unwrap_or_default()}
         </p>
@@ -245,6 +251,7 @@ pub fn FormDescription(
         <p
             class=computed_class
             style=move || style.get().to_string()
+            id="form-description"
         >
             {children.map(|c| c())}
         </p>

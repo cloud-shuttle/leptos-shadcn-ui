@@ -188,7 +188,7 @@ impl DocGenerator {
         let mut components = Vec::new();
         
         for entry in walkdir::WalkDir::new(&self.config.components_dir) {
-            let entry = entry.map_err(|e| DocError::FileSystem(std::io::Error::new(std::io::ErrorKind::Other, e)))?;
+            let entry = entry.map_err(|e| DocError::FileSystem(std::io::Error::other(e)))?;
             
             if entry.file_type().is_file() {
                 let path = entry.path();

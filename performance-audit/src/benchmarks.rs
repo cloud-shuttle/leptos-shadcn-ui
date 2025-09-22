@@ -558,6 +558,12 @@ pub struct ComponentBenchmarkResult {
     pub meets_targets: bool,
 }
 
+impl Default for ComponentBenchmarker {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ComponentBenchmarker {
     /// Create a new component benchmarker
     pub fn new() -> Self {

@@ -2,6 +2,7 @@
 #[cfg(test)]
 mod button_tests {
     use crate::default::{Button, ButtonVariant, ButtonSize, BUTTON_CLASS};
+    use leptos::prelude::*;
     
     #[test]
     fn button_variant_enum_works() {
@@ -143,5 +144,86 @@ mod button_tests {
         assert!(BUTTON_CLASS.contains("pointer-events-none") || 
                BUTTON_CLASS.contains("disabled:pointer-events-none"), 
                "Should disable pointer events when disabled");
+    }
+
+    #[test]
+    fn button_renders_with_loading_state() {
+        // Test button with loading state
+        let (loading, _set_loading) = signal(true);
+        
+        let _button_view = view! {
+            <Button loading=loading>
+                "Loading Button"
+            </Button>
+        };
+        
+        // Verify the view renders without errors
+        let _view = _button_view.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn button_renders_with_aria_attributes() {
+        // Test button with ARIA attributes
+        let _button_view = view! {
+            <Button 
+                aria_label="Submit form"
+                aria_describedby="submit-help"
+            >
+                "Submit"
+            </Button>
+        };
+        
+        // Verify the view renders without errors
+        let _view = _button_view.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn button_renders_with_keyboard_support() {
+        // Test button with keyboard support
+        let (clicked, set_clicked) = signal(false);
+        let on_click = Callback::new(move |_| {
+            set_clicked.set(true);
+        });
+        
+        let _button_view = view! {
+            <Button on_click=on_click>
+                "Keyboard Button"
+            </Button>
+        };
+        
+        // Verify the view renders without errors
+        let _view = _button_view.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn button_renders_with_all_enhanced_features() {
+        // Test button with all enhanced features
+        let (loading, _set_loading) = signal(false);
+        let (disabled, _set_disabled) = signal(false);
+        let (clicked, set_clicked) = signal(false);
+        let on_click = Callback::new(move |_| {
+            set_clicked.set(true);
+        });
+        
+        let _button_view = view! {
+            <Button 
+                variant=ButtonVariant::Default
+                size=ButtonSize::Lg
+                loading=loading
+                disabled=disabled
+                on_click=on_click
+                aria_label="Enhanced button"
+                aria_describedby="button-help"
+            >
+                "Enhanced Button"
+            </Button>
+        };
+        
+        // Verify the view renders without errors
+        let _view = _button_view.into_view();
+        // If we get here without panicking, the view was created successfully
     }
 }

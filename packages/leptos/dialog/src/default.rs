@@ -1,4 +1,4 @@
-use leptos::{ev::MouseEvent, prelude::*};
+use leptos::{ev::{MouseEvent, KeyboardEvent}, prelude::*};
 use leptos_node_ref::AnyNodeRef;
 use leptos_struct_component::{StructComponent, struct_component};
 use leptos_style::Style;
@@ -33,7 +33,11 @@ pub fn Dialog(
     });
 
     view! {
-        <div>
+        <div on:keydown=move |event: KeyboardEvent| {
+            if event.key() == "Escape" {
+                set_open.run(false);
+            }
+        }>
             {children.map(|c| c())}
         </div>
     }
@@ -117,6 +121,11 @@ pub fn DialogContent(
                     class={content_class}
                     style={move || style.get().to_string()}
                     on:click=|e: MouseEvent| e.stop_propagation()
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="dialog-title"
+                    aria-describedby="dialog-description"
+                    tabindex="-1"
                 >
                     {children.map(|c| c())}
                 </div>
@@ -155,7 +164,10 @@ pub fn DialogTitle(
     });
 
     view! {
-        <h2 class={title_class}>
+        <h2 
+            class={title_class}
+            id="dialog-title"
+        >
             {children.map(|c| c())}
         </h2>
     }
@@ -172,7 +184,10 @@ pub fn DialogDescription(
     });
 
     view! {
-        <p class={description_class}>
+        <p 
+            class={description_class}
+            id="dialog-description"
+        >
             {children.map(|c| c())}
         </p>
     }

@@ -1,8 +1,7 @@
 //! Component quality checking utilities for Leptos shadcn/ui components.
 
-use crate::{Framework, Theme, TestResult, QualityResult};
+use crate::QualityResult;
 use std::collections::HashMap;
-use std::sync::{Arc, Mutex};
 
 /// Component API specification for quality validation
 #[derive(Debug, Clone)]
@@ -67,6 +66,12 @@ impl Default for QualityThresholds {
                 "focus-management".to_string(),
             ],
         }
+    }
+}
+
+impl Default for QualityChecker {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -379,7 +384,7 @@ impl QualityChecker {
         let high_quality = results.iter().filter(|r| r.quality_score >= 0.8).count();
         let needs_improvement = results.iter().filter(|r| r.quality_score < 0.6).count();
         
-        report.push_str(&format!("📊 Overall Statistics:\n"));
+        report.push_str(&"📊 Overall Statistics:\n".to_string());
         report.push_str(&format!("  - Total Components: {}\n", total_components));
         report.push_str(&format!("  - Average Quality Score: {:.1}%\n", avg_score * 100.0));
         report.push_str(&format!("  - High Quality (≥80%): {}\n", high_quality));
@@ -402,7 +407,7 @@ impl QualityChecker {
                     report.push_str(&format!("    - Recommendation: {}\n", rec));
                 }
             }
-            report.push_str("\n");
+            report.push('\n');
         }
         
         report

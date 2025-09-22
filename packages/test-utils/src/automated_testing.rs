@@ -105,14 +105,13 @@ impl AutomatedTestManager {
             let entry = entry?;
             let path = entry.path();
             
-            if path.is_dir() {
-                if let Some(component_name) = path.file_name() {
+            if path.is_dir()
+                && let Some(component_name) = path.file_name() {
                     let component_name = component_name.to_string_lossy();
                     if component_name != "shadcn-ui" { // Skip the main package
                         components.push(component_name.to_string());
                     }
                 }
-            }
         }
         
         Ok(components)

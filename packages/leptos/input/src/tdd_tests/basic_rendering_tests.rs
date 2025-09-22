@@ -175,9 +175,6 @@ mod basic_rendering_tests {
             <Input 
                 placeholder="Advanced input"
                 value=""
-                
-                spellcheck=true
-                autocorrect="on"
             />
         };
         

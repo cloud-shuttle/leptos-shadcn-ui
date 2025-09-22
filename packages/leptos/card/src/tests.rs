@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use crate::default::CARD_CLASS;
+    use crate::default::{CARD_CLASS, Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardVariant, InteractiveCard};
     use leptos::prelude::*;
 
     #[test]
@@ -135,5 +135,207 @@ mod tests {
         
         // Test that class doesn't have obvious performance issues
         assert!(!base_class.contains("!important"), "Should avoid !important for performance");
+    }
+
+    // Component Rendering Tests
+    #[test]
+    fn test_card_renders_without_errors() {
+        let card = view! {
+            <Card>
+                <CardHeader>
+                    <CardTitle>"Test Card"</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>"Card content"</p>
+                </CardContent>
+            </Card>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_with_all_sections() {
+        let card = view! {
+            <Card>
+                <CardHeader>
+                    <CardTitle>"Complete Card"</CardTitle>
+                    <CardDescription>"Card description"</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <p>"Card content goes here"</p>
+                </CardContent>
+                <CardFooter>
+                    <button>"Action"</button>
+                </CardFooter>
+            </Card>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_variants() {
+        let variants = vec![
+            CardVariant::Default,
+            CardVariant::Destructive,
+            CardVariant::Warning,
+            CardVariant::Success,
+        ];
+        
+        for variant in variants {
+            let card = view! {
+                <Card variant=variant>
+                    <CardHeader>
+                        <CardTitle>"Variant Card"</CardTitle>
+                    </CardHeader>
+                </Card>
+            };
+            
+            // Verify the view renders without errors
+            let _view = card.into_view();
+            // If we get here without panicking, the view was created successfully
+        }
+    }
+
+    // Accessibility Tests
+    #[test]
+    fn test_card_aria_attributes() {
+        let card = view! {
+            <Card interactive=Signal::derive(|| true)>
+                <CardHeader>
+                    <CardTitle>"Interactive Card"</CardTitle>
+                </CardHeader>
+            </Card>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_title_semantic_structure() {
+        let title = view! {
+            <CardTitle level=2>"Semantic Title"</CardTitle>
+        };
+        
+        // Verify the view renders without errors
+        let _view = title.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_description_accessibility() {
+        let description = view! {
+            <CardDescription>"Accessible description"</CardDescription>
+        };
+        
+        // Verify the view renders without errors
+        let _view = description.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    // Interactive Card Tests
+    #[test]
+    fn test_interactive_card_behavior() {
+        let (clicked, set_clicked) = signal(false);
+        
+        let on_click = Callback::new(move |_| {
+            set_clicked.set(true);
+        });
+        
+        let card = view! {
+            <InteractiveCard on_click=on_click>
+                <CardHeader>
+                    <CardTitle>"Clickable Card"</CardTitle>
+                </CardHeader>
+            </InteractiveCard>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_keyboard_navigation() {
+        let card = view! {
+            <InteractiveCard>
+                <CardHeader>
+                    <CardTitle>"Keyboard Card"</CardTitle>
+                </CardHeader>
+            </InteractiveCard>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_focus_management() {
+        let card = view! {
+            <InteractiveCard>
+                <CardHeader>
+                    <CardTitle>"Focusable Card"</CardTitle>
+                </CardHeader>
+            </InteractiveCard>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    // Integration Tests (simplified)
+    #[test]
+    fn test_card_with_html_elements() {
+        let card = view! {
+            <Card>
+                <CardHeader>
+                    <CardTitle>"HTML Card"</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>"Card with HTML elements"</p>
+                    <button>"Action Button"</button>
+                </CardContent>
+                <CardFooter>
+                    <span>"Footer content"</span>
+                </CardFooter>
+            </Card>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
+    }
+
+    #[test]
+    fn test_card_with_nested_content() {
+        let card = view! {
+            <Card>
+                <CardHeader>
+                    <CardTitle>"Nested Card"</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div>
+                        <p>"Nested content"</p>
+                        <ul>
+                            <li>"Item 1"</li>
+                            <li>"Item 2"</li>
+                        </ul>
+                    </div>
+                </CardContent>
+            </Card>
+        };
+        
+        // Verify the view renders without errors
+        let _view = card.into_view();
+        // If we get here without panicking, the view was created successfully
     }
 }

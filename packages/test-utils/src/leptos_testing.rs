@@ -90,7 +90,7 @@ impl LeptosTestUtils {
 
     /// Test component interaction (clicks, focus, etc.)
     pub fn test_component_interaction(interaction_type: &str) -> TestResult {
-        TestResult::success(&format!("Component {} interaction test passed", interaction_type))
+        TestResult::success(format!("Component {} interaction test passed", interaction_type))
             .with_detail("framework", "Leptos".to_string())
             .with_detail("interaction_type", interaction_type.to_string())
     }
@@ -228,7 +228,7 @@ impl ComponentTestBuilder {
 
     /// Build and run the test
     pub fn run(self) -> TestResult {
-        let mut result = TestResult::success(&format!("{} test passed", self.test_name));
+        let mut result = TestResult::success(format!("{} test passed", self.test_name));
         
         result = result.with_detail("test_name", self.test_name);
         result = result.with_detail("framework", "Leptos".to_string());
@@ -290,7 +290,7 @@ impl ComponentTestSuite {
     /// Get suite summary
     pub fn get_summary(&self) -> TestResult {
         let total_tests = self.tests.len();
-        TestResult::success(&format!("{} test suite completed", self.suite_name))
+        TestResult::success(format!("{} test suite completed", self.suite_name))
             .with_detail("suite_name", self.suite_name.clone())
             .with_detail("total_tests", total_tests.to_string())
             .with_detail("framework", "Leptos".to_string())

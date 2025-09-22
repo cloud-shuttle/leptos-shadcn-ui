@@ -51,6 +51,12 @@ pub struct TestRunner {
     coverage_data: HashMap<String, CoverageReport>,
 }
 
+impl Default for TestRunner {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl TestRunner {
     pub fn new() -> Self {
         Self {

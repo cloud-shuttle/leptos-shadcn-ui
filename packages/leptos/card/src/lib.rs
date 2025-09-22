@@ -4,7 +4,7 @@ pub mod default;
 pub mod new_york;
 pub mod signal_managed;
 
-pub use default::{Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter};
+pub use default::{Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardVariant, InteractiveCard};
 pub use new_york::{Card as CardNewYork, CardHeader as CardHeaderNewYork, CardTitle as CardTitleNewYork, CardDescription as CardDescriptionNewYork, CardContent as CardContentNewYork, CardFooter as CardFooterNewYork};
 pub use signal_managed::{
     SignalManagedCard, EnhancedCard, SignalManagedCardState,

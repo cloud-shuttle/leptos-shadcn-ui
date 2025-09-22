@@ -250,7 +250,7 @@ impl PerformanceTestSuite {
         let mut components = Vec::new();
         
         for entry in walkdir::WalkDir::new(&self.config.components_dir) {
-            let entry = entry.map_err(|e| PerfTestError::FileSystem(std::io::Error::new(std::io::ErrorKind::Other, e)))?;
+            let entry = entry.map_err(|e| PerfTestError::FileSystem(std::io::Error::other(e)))?;
             
             if entry.file_type().is_dir() {
                 let dir_name = entry.file_name().to_string_lossy();

@@ -308,7 +308,7 @@ pub mod form_properties {
 
 /// Integration testing utilities
 pub mod integration {
-    use super::*;
+    
 
     /// Test component interaction patterns
     pub fn test_component_composition<A, B, F>(

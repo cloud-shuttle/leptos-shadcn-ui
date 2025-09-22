@@ -1,0 +1,11 @@
+[package]
+name = "test-wasm-tailwind"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+leptos = "0.8"
+leptos-shadcn-ui-wasm = "0.2"
+tailwind-rs-wasm = "0.8.1"

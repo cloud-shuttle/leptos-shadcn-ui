@@ -2,7 +2,6 @@
 
 use crate::{Framework, Theme, TestResult, QualityResult};
 use std::collections::HashMap;
-use std::path::PathBuf;
 use std::process::Command;
 
 /// Generic component tester that validates component behavior
@@ -271,7 +270,7 @@ impl TestSuiteResult {
         let mut report = String::new();
         report.push_str(&format!("=== Test Suite Report: {} ===\n\n", self.component_name));
         
-        report.push_str(&format!("📊 Test Summary:\n"));
+        report.push_str(&"📊 Test Summary:\n".to_string());
         report.push_str(&format!("  - Total Tests: {}\n", self.total_tests));
         report.push_str(&format!("  - Passed: {}\n", self.passed_tests));
         report.push_str(&format!("  - Failed: {}\n", self.failed_tests));
@@ -303,6 +302,12 @@ pub struct ComponentTestRunner {
     pub results: HashMap<String, TestSuiteResult>,
 }
 
+impl Default for ComponentTestRunner {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl ComponentTestRunner {
     pub fn new() -> Self {
         Self {
@@ -324,7 +329,7 @@ impl ComponentTestRunner {
     
     /// Run tests for all registered components
     pub fn run_all_tests(&mut self) -> TestRunnerResult {
-        let mut start_time = std::time::Instant::now();
+        let start_time = std::time::Instant::now();
         let mut total_tests = 0;
         let mut total_passed = 0;
         let mut total_failed = 0;

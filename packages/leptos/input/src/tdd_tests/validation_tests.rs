@@ -142,7 +142,7 @@ mod validation_tests {
             <Input 
                 placeholder="Error handling input"
                 value=""
-                is an error message"
+                validation_error="This is an error message"
             />
         };
         
@@ -160,8 +160,7 @@ mod validation_tests {
             <Input 
                 placeholder="Signal validation input"
                 value=value_signal
-                
-                valid=valid_signal
+                validation_error=error_signal
             />
         };
         
@@ -183,7 +182,7 @@ mod validation_tests {
             <Input 
                 placeholder="Custom validation input"
                 value=""
-                custom_
+                class="custom-validation"
             />
         };
         
@@ -197,7 +196,7 @@ mod validation_tests {
             <Input 
                 placeholder="Async validation input"
                 value=""
-                async_
+                class="async-validation"
             />
         };
         
@@ -211,7 +210,7 @@ mod validation_tests {
             <Input 
                 placeholder="Debounced validation input"
                 value=""
-                debounced_
+                class="debounced-validation"
             />
         };
         

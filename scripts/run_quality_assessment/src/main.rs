@@ -182,7 +182,7 @@ mod mock_test_utils {
                     if result.quality_score >= 0.9 { "🥇" } else if result.quality_score >= 0.8 { "🥈" } else { "🥉" },
                     result.component_name, result.quality_score * 100.0));
             }
-            report.push_str("\n");
+            report.push('\n');
             
             // Components needing attention
             let needs_attention: Vec<_> = results.iter().filter(|r| r.quality_score < 0.7).collect();
@@ -199,7 +199,7 @@ mod mock_test_utils {
                     for rec in &result.recommendations {
                         report.push_str(&format!("    - Recommendation: {}\n", rec));
                     }
-                    report.push_str("\n");
+                    report.push('\n');
                 }
             }
             

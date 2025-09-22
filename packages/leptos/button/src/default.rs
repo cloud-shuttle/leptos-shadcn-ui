@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use leptos::ev::{MouseEvent, KeyboardEvent};
 use leptos_style::Style;
 
 pub const BUTTON_CLASS: &str = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
@@ -76,17 +77,32 @@ pub fn Button(
     #[prop(into, optional)] size: MaybeProp<ButtonSize>,
     #[prop(into, optional)] on_click: Option<Callback<()>>,
     #[prop(into, optional)] disabled: Signal<bool>,
+    #[prop(into, optional)] loading: Signal<bool>,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] aria_label: MaybeProp<String>,
+    #[prop(into, optional)] aria_describedby: MaybeProp<String>,
     #[prop(into, optional)] as_child: Option<Callback<ButtonChildProps, AnyView>>,
     #[prop(optional)] children: Option<Children>,
     ) -> impl IntoView {
     let handle_click = {
         let on_click = on_click.clone();
-        move |_| {
+        move |_: MouseEvent| {
             if let Some(callback) = &on_click {
                 callback.run(());
+            }
+        }
+    };
+
+    let handle_keydown = {
+        let on_click = on_click.clone();
+        move |event: KeyboardEvent| {
+            if event.key() == "Enter" || event.key() == " " {
+                event.prevent_default();
+                if let Some(callback) = &on_click {
+                    callback.run(());
+                }
             }
         }
     };
@@ -108,7 +124,8 @@ pub fn Button(
             ButtonSize::Icon => "h-10 w-10",
         };
         
-        format!("{} {} {} {}", BUTTON_CLASS, variant_class, size_class, class.get().unwrap_or_default())
+        let loading_class = if loading.get() { " opacity-50 cursor-not-allowed" } else { "" };
+        format!("{}{} {} {} {}", BUTTON_CLASS, loading_class, variant_class, size_class, class.get().unwrap_or_default())
     });
 
     // Implement as_child functionality using conditional rendering
@@ -132,9 +149,20 @@ pub fn Button(
                     class=move || computed_class.get()
                     id=move || id.get().unwrap_or_default()
                     style=move || style.get().to_string()
-                    disabled=move || disabled.get()
+                    disabled=move || disabled.get() || loading.get()
+                    aria-label=move || aria_label.get().unwrap_or_default()
+                    aria-describedby=move || aria_describedby.get().unwrap_or_default()
+                    aria-busy=move || loading.get().to_string()
                     on:click=handle_click
+                    on:keydown=handle_keydown
                 >
+                    {move || if loading.get() {
+                        view! {
+                            <span class="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" aria-hidden="true"></span>
+                        }.into_any()
+                    } else {
+                        view! {}.into_any()
+                    }}
                     {children.map(|c| c())}
                 </button>
             }.into_any()
