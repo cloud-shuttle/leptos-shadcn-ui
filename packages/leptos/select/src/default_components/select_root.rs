@@ -73,8 +73,8 @@ pub fn SelectTrigger(
     let set_open = expect_context::<Callback<bool>>();
     let disabled = expect_context::<Signal<bool>>();
     
-    let trigger_class = classes!(
-        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+    let trigger_class = format!(
+        "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 {}",
         class.get().unwrap_or_default()
     );
 
@@ -110,8 +110,8 @@ pub fn SelectValue(
 ) -> impl IntoView {
     let value_state = expect_context::<Signal<String>>();
     
-    let value_class = classes!(
-        "placeholder:text-muted-foreground",
+    let value_class = format!(
+        "placeholder:text-muted-foreground {}",
         class.get().unwrap_or_default()
     );
 

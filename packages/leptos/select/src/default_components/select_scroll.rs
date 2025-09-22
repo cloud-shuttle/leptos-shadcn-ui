@@ -11,8 +11,8 @@ pub fn SelectScrollUpButton(
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: MaybeProp<String>,
 ) -> impl IntoView {
-    let scroll_up_class = classes!(
-        "flex cursor-default items-center justify-center py-1",
+    let scroll_up_class = format!(
+        "flex cursor-default items-center justify-center py-1 {}",
         class.get().unwrap_or_default()
     );
 
@@ -50,8 +50,8 @@ pub fn SelectScrollDownButton(
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: MaybeProp<String>,
 ) -> impl IntoView {
-    let scroll_down_class = classes!(
-        "flex cursor-default items-center justify-center py-1",
+    let scroll_down_class = format!(
+        "flex cursor-default items-center justify-center py-1 {}",
         class.get().unwrap_or_default()
     );
 

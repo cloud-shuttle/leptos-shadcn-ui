@@ -17,6 +17,7 @@ mod tests;
 mod tdd_tests;
 
 mod advanced_date_picker_tests;
+pub mod advanced_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;

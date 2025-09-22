@@ -15,8 +15,8 @@ pub fn SelectContent(
     let open_state = expect_context::<Signal<bool>>();
     let set_open = expect_context::<Callback<bool>>();
     
-    let content_class = classes!(
-        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+    let content_class = format!(
+        "relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 {}",
         class.get().unwrap_or_default()
     );
 
@@ -51,15 +51,17 @@ pub fn SelectItem(
     let set_value = expect_context::<Callback<String>>();
     let set_open = expect_context::<Callback<bool>>();
     
-    let item_class = classes!(
-        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+    let item_class = format!(
+        "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 {}",
         class.get().unwrap_or_default()
     );
 
-    let is_selected = Signal::derive(move || value_state.get() == value);
+    let value_clone = value.clone();
+    let value_clone2 = value.clone();
+    let is_selected = Signal::derive(move || value_state.get() == value_clone);
 
     let handle_click = move |_e: MouseEvent| {
-        set_value.run(value.clone());
+        set_value.run(value_clone2.clone());
         set_open.run(false);
     };
 
@@ -85,8 +87,8 @@ pub fn SelectSeparator(
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: MaybeProp<String>,
 ) -> impl IntoView {
-    let separator_class = classes!(
-        "-mx-1 my-1 h-px bg-muted",
+    let separator_class = format!(
+        "-mx-1 my-1 h-px bg-muted {}",
         class.get().unwrap_or_default()
     );
 
@@ -108,8 +110,8 @@ pub fn SelectLabel(
     #[prop(into, optional)] style: MaybeProp<String>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
-    let label_class = classes!(
-        "py-1.5 pl-8 pr-2 text-sm font-semibold",
+    let label_class = format!(
+        "py-1.5 pl-8 pr-2 text-sm font-semibold {}",
         class.get().unwrap_or_default()
     );
 
@@ -133,8 +135,8 @@ pub fn SelectGroup(
     #[prop(into, optional)] style: MaybeProp<String>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
-    let group_class = classes!(
-        "p-1 text-muted-foreground",
+    let group_class = format!(
+        "p-1 text-muted-foreground {}",
         class.get().unwrap_or_default()
     );
 

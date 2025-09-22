@@ -343,11 +343,11 @@ mod integration_tests {
                 </ContextMenuTrigger>
                 <ContextMenuContent>
                     <ContextMenuItem>
-                        <span class="icon">✏️</span>
+                        <span class="icon">Edit</span>
                         "Edit"
                     </ContextMenuItem>
                     <ContextMenuItem>
-                        <span class="icon">🗑️</span>
+                        <span class="icon">Delete</span>
                         "Delete"
                     </ContextMenuItem>
                 </ContextMenuContent>

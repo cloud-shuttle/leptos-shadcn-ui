@@ -3,6 +3,7 @@
 pub mod signal_managed;
 pub mod default;
 pub mod new_york;
+pub mod default_components;
 
 pub use default::{
     AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,

@@ -20,6 +20,7 @@ mod tests_real;
 mod tests;
 
 mod leptos_v0_8_compatibility_tests;
+pub mod compatibility_tests;
 
 // #[cfg(test)]
 // mod implementation_tests;

@@ -17,7 +17,7 @@ mod tests;
 
 mod tdd_tests;
 
-mod implementation_tests;
+pub mod implementation_tests;
 
 // Signal-managed exports
 pub use signal_managed::*;

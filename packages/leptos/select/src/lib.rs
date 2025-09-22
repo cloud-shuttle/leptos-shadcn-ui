@@ -7,6 +7,8 @@
 pub mod signal_managed;
 pub mod default;
 pub mod new_york;
+pub mod default_components;
+pub mod new_york_components;
 
 // Re-export the components for easy access
 pub use default::*;

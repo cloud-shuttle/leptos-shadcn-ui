@@ -1,4 +1,4 @@
 // Default Select components
 // These components provide the standard Select functionality
 
-pub mod default_components;
+pub use crate::default_components::*;
