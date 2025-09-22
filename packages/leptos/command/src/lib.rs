@@ -10,6 +10,8 @@ mod new_york;
 #[cfg(not(feature = "new_york"))]
 mod default;
 
+pub mod default_components;
+
 mod tests;
 
 mod tdd_tests;
