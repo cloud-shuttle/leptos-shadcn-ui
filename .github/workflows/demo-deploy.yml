@@ -132,8 +132,9 @@ jobs:
         # Create a clean deployment directory
         mkdir -p gh-pages-demo
         
-        # Copy the built demo files
-        cp -r examples/comprehensive-demo/* gh-pages-demo/
+        # Copy the built WASM files and HTML
+        cp examples/comprehensive-demo/index.html gh-pages-demo/
+        cp -r examples/comprehensive-demo/pkg gh-pages-demo/
         
         # Create a simple index.html redirect to the demo
         cat > gh-pages-demo/index.html << 'EOF'
