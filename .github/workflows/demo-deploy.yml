@@ -61,9 +61,7 @@ jobs:
       run: npm install
 
     - name: Install Playwright Browsers
-      uses: microsoft/playwright-github-action@v1
-      with:
-        browsers: chromium firefox webkit
+      run: npx playwright install --with-deps chromium firefox webkit
 
     - name: Build comprehensive demo
       run: |
@@ -252,9 +250,7 @@ jobs:
       run: npm install
 
     - name: Install Playwright Browsers
-      uses: microsoft/playwright-github-action@v1
-      with:
-        browsers: chromium firefox webkit
+      run: npx playwright install --with-deps chromium firefox webkit
 
     - name: Run performance tests
       run: |
@@ -286,9 +282,7 @@ jobs:
       run: npm install
 
     - name: Install Playwright Browsers
-      uses: microsoft/playwright-github-action@v1
-      with:
-        browsers: chromium firefox webkit
+      run: npx playwright install --with-deps chromium firefox webkit
 
     - name: Run accessibility tests
       run: |
@@ -325,9 +319,7 @@ jobs:
       run: npm install
 
     - name: Install Playwright Browsers
-      uses: microsoft/playwright-github-action@v1
-      with:
-        browsers: chromium firefox webkit
+      run: npx playwright install --with-deps chromium firefox webkit
 
     - name: Run cross-browser tests
       run: |
