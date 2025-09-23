@@ -25,16 +25,16 @@ tailwind-rs-core = "0.8.1"
 tailwind-rs-wasm = "0.8.1"
 
 # Published ShadCN UI components (refactored versions)
-leptos-shadcn-drawer = "0.9.1"
-leptos-shadcn-context-menu = "0.9.1"
-leptos-shadcn-alert-dialog = "0.9.1"
-leptos-shadcn-select = "0.9.1"
-leptos-shadcn-command = "0.9.1"
+leptos-shadcn-drawer = "0.8.1"
+leptos-shadcn-context-menu = "0.8.1"
+leptos-shadcn-alert-dialog = "0.8.1"
+leptos-shadcn-select = "0.8.1"
+leptos-shadcn-command = "0.8.1"
 
 # Additional components for comprehensive demo
-leptos-shadcn-button = "0.9.0"
-leptos-shadcn-card = "0.9.0"
-leptos-shadcn-input = "0.9.0"
+leptos-shadcn-button = "0.8.1"
+leptos-shadcn-card = "0.8.1"
+leptos-shadcn-input = "0.8.1"
 
 [lib]
 crate-type = ["cdylib"]
