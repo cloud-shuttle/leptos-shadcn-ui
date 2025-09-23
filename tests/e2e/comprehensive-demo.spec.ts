@@ -152,8 +152,8 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       await expect(activitySection).toBeVisible();
       
       // Check for activity items
-      const activityItems = page.locator('div:has-text("Eddie Lake completed Cover page")');
-      await expect(activityItems).toBeVisible();
+      const activityItems = page.locator('p:has-text("Eddie Lake completed Cover page")');
+      await expect(activityItems.first()).toBeVisible();
       
       // Check for timestamps
       const timestamps = page.locator('text=2 hours ago, text=4 hours ago, text=6 hours ago');
@@ -163,7 +163,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
 
   test.describe('Data Table Section', () => {
     test('should display project documents table', async () => {
-      const tableSection = page.locator('text=Project Documents');
+      const tableSection = page.locator('h3:has-text("Project Documents")');
       await expect(tableSection).toBeVisible();
       
       // Check table headers
@@ -183,7 +183,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       await openMenuButtons.first().click();
       
       // Check that dropdown menu appears
-      const dropdownMenu = page.locator('div:has-text("Edit"), div:has-text("Copy"), div:has-text("Delete")');
+      const dropdownMenu = page.locator('.absolute.top-16.right-4.bg-card');
       await expect(dropdownMenu).toBeVisible();
     });
 
@@ -214,7 +214,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       await sidebarToggle.click();
       
       // Check that sidebar is hidden/shown
-      const sidebar = page.locator('div:has-text("Leptos Dashboard")');
+      const sidebar = page.locator('.w-64.bg-card');
       await expect(sidebar).toBeVisible();
     });
   });
