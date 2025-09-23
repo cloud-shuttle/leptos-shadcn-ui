@@ -33,7 +33,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
     });
 
     test('should have proper sidebar navigation', async () => {
-      const sidebar = page.locator('nav, .sidebar, [role="navigation"]').first();
+      const sidebar = page.locator('div.w-64.bg-card.border-r.border-border');
       await expect(sidebar).toBeVisible();
       
       // Check navigation links
@@ -214,7 +214,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       await sidebarToggle.click();
       
       // Check that sidebar is hidden/shown
-      const sidebar = page.locator('nav, .sidebar, [role="navigation"]').first();
+      const sidebar = page.locator('div.w-64.bg-card.border-r.border-border');
       await expect(sidebar).toBeVisible();
     });
   });
