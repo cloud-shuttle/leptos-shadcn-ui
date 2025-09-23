@@ -136,22 +136,6 @@ jobs:
         cp examples/comprehensive-demo/index.html gh-pages-demo/
         cp -r examples/comprehensive-demo/pkg gh-pages-demo/
         
-        # Create a simple index.html redirect to the demo
-        cat > gh-pages-demo/index.html << 'EOF'
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Leptos ShadCN UI - Comprehensive Demo</title>
-            <meta http-equiv="refresh" content="0; url=./index.html">
-        </head>
-        <body>
-            <p>Redirecting to demo...</p>
-        </body>
-        </html>
-        EOF
-        
         # Create a README for the demo
         cat > gh-pages-demo/README.md << 'EOF'
         # Leptos ShadCN UI - Comprehensive Demo
