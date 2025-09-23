@@ -193,17 +193,8 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command: 'cd examples/leptos && trunk serve --port 8082',
-      port: 8082,
-      reuseExistingServer: !isCI,
-      timeout: 120 * 1000,
-      stdout: 'pipe',
-      stderr: 'pipe',
-    },
-    // Additional server for WASM tests
-    {
-      command: 'cd minimal-wasm-test && python3 -m http.server 8083',
-      port: 8083,
+      command: 'cd examples/comprehensive-demo && python3 -m http.server 8001',
+      port: 8001,
       reuseExistingServer: !isCI,
       timeout: 30 * 1000,
       stdout: 'pipe',
@@ -231,7 +222,7 @@ export default defineConfig({
   maxFailures: isCI ? 10 : undefined,
   
   /* Update snapshots */
-  updateSnapshots: process.env.UPDATE_SNAPSHOTS === 'true',
+  updateSnapshots: process.env.UPDATE_SNAPSHOTS === 'true' ? 'all' : 'none',
   
   /* Ignore test files */
   testIgnore: [

@@ -25,13 +25,18 @@ pub fn AlertDialogOverlay(
     };
 
     view! {
-        <div
-            class=move || format!("alert-dialog-overlay {}", class.get().unwrap_or_default())
-            id=move || id.get().unwrap_or_default()
-            style=move || style.get().unwrap_or_default()
-            on:click=handle_click
+        <Show
+            when=move || open.get()
+            fallback=|| view! { <div></div> }
         >
-            {children.map(|c| c())}
-        </div>
+            <div
+                class=move || format!("fixed inset-0 z-50 bg-background/80 backdrop-blur-sm {}", class.get().unwrap_or_default())
+                id=move || id.get().unwrap_or_default()
+                style=move || style.get().unwrap_or_default()
+                on:click=handle_click
+            >
+                {children.map(|c| c())}
+            </div>
+        </Show>
     }
 }

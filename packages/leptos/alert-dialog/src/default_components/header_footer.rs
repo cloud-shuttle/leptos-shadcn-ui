@@ -15,7 +15,7 @@ pub fn AlertDialogHeader(
 ) -> impl IntoView {
     view! {
         <div
-            class=move || format!("alert-dialog-header {}", class.get().unwrap_or_default())
+            class=move || format!("flex flex-col space-y-2 text-center sm:text-left {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >
@@ -33,7 +33,7 @@ pub fn AlertDialogFooter(
 ) -> impl IntoView {
     view! {
         <div
-            class=move || format!("alert-dialog-footer {}", class.get().unwrap_or_default())
+            class=move || format!("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >

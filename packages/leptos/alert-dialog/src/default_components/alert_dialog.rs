@@ -16,31 +16,17 @@ pub fn AlertDialog(
     provide_context(open);
     provide_context(on_open_change);
 
-    // Handle escape key
-    Effect::new(move |_| {
-        if open.get() {
-            let handle_keydown = move |e: KeyboardEvent| {
-                if e.key() == "Escape" {
-                    open.set(false);
-                    if let Some(callback) = &on_open_change {
-                        callback.run(false);
-                    }
-                }
-            };
-
-            if let Some(window) = web_sys::window() {
-                if let Some(document) = window.document() {
-                    let closure = wasm_bindgen::closure::Closure::wrap(Box::new(handle_keydown) as Box<dyn Fn(KeyboardEvent)>);
-                    let _ = document.add_event_listener_with_callback("keydown", closure.as_ref().unchecked_ref());
-                    closure.forget();
-                }
-            }
-        }
-    });
+    // Handle escape key - use a simpler approach without global listeners
+    // The escape key handling will be managed by the content components
 
     view! {
-        <div>
-            {children.map(|c| c())}
-        </div>
+        <Show
+            when=move || open.get()
+            fallback=|| view! { <div></div> }
+        >
+            <div>
+                {children.map(|c| c())}
+            </div>
+        </Show>
     }
 }

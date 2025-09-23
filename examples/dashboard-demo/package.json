@@ -1,0 +1,14 @@
+{
+  "name": "leptos-shadcn-dashboard-demo",
+  "version": "0.1.0",
+  "description": "A Rust/WASM dashboard demo using Leptos and ShadCN UI components",
+  "scripts": {
+    "build": "wasm-pack build --target web --out-dir pkg --dev",
+    "build-release": "wasm-pack build --target web --out-dir pkg --release",
+    "serve": "python3 -m http.server 8000",
+    "start": "npm run build && npm run serve"
+  },
+  "devDependencies": {
+    "wasm-pack": "^0.12.1"
+  }
+}

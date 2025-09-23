@@ -15,7 +15,7 @@ pub fn AlertDialogTitle(
 ) -> impl IntoView {
     view! {
         <h2
-            class=move || format!("alert-dialog-title {}", class.get().unwrap_or_default())
+            class=move || format!("text-lg font-semibold {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >
@@ -33,7 +33,7 @@ pub fn AlertDialogDescription(
 ) -> impl IntoView {
     view! {
         <p
-            class=move || format!("alert-dialog-description {}", class.get().unwrap_or_default())
+            class=move || format!("text-sm text-muted-foreground {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >

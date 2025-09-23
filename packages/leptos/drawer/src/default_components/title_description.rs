@@ -15,7 +15,7 @@ pub fn DrawerTitle(
 ) -> impl IntoView {
     view! {
         <h2
-            class=move || format!("drawer-title {}", class.get().unwrap_or_default())
+            class=move || format!("text-lg font-semibold leading-none tracking-tight {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >
@@ -33,7 +33,7 @@ pub fn DrawerDescription(
 ) -> impl IntoView {
     view! {
         <p
-            class=move || format!("drawer-description {}", class.get().unwrap_or_default())
+            class=move || format!("text-sm text-muted-foreground {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >

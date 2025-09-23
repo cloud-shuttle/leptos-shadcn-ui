@@ -30,6 +30,7 @@ members = [
     "performance-audit",  # Performance audit system
     "leptos_v0_8_test_app",  # Leptos v0.8 compatibility test app
     "examples/leptos",  # WASM demo application
+    "examples/dashboard-demo",  # Dashboard demo application
     "wasm-demo",  # Dedicated WASM demo for leptos-shadcn-ui-wasm
     
     # Basic components (no internal dependencies)

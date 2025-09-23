@@ -25,8 +25,8 @@ pub fn ContextMenuItem(
     };
 
     let item_class = move || {
-        let base_class = "context-menu-item";
-        let disabled_class = if disabled.get().unwrap_or(false) { " disabled" } else { "" };
+        let base_class = "relative flex cursor-pointer select-none items-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-none transition-colors duration-150 hover:bg-gray-100 dark:hover:bg-gray-700 focus:bg-gray-100 dark:focus:bg-gray-700 active:bg-gray-200 dark:active:bg-gray-600 data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50";
+        let disabled_class = if disabled.get().unwrap_or(false) { " data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50" } else { "" };
         let custom_class = class.get().unwrap_or_default();
         format!("{}{} {}", base_class, disabled_class, custom_class)
     };

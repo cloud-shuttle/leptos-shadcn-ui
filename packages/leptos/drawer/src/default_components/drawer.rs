@@ -21,31 +21,17 @@ pub fn Drawer(
     provide_context(direction);
     provide_context(should_scale_background);
 
-    // Handle escape key
-    Effect::new(move |_| {
-        if open.get() {
-            let handle_keydown = move |e: KeyboardEvent| {
-                if e.key() == "Escape" {
-                    open.set(false);
-                    if let Some(callback) = &on_open_change {
-                        callback.run(false);
-                    }
-                }
-            };
-
-            if let Some(window) = web_sys::window() {
-                if let Some(document) = window.document() {
-                    let closure = wasm_bindgen::closure::Closure::wrap(Box::new(handle_keydown) as Box<dyn Fn(KeyboardEvent)>);
-                    let _ = document.add_event_listener_with_callback("keydown", closure.as_ref().unchecked_ref());
-                    closure.forget();
-                }
-            }
-        }
-    });
+    // Handle escape key - use a simpler approach without global listeners
+    // The escape key handling will be managed by the content components
 
     view! {
-        <div class="drawer-root">
-            {children.map(|c| c())}
-        </div>
+        <Show
+            when=move || open.get()
+            fallback=|| view! { <div></div> }
+        >
+            <div class="drawer-root">
+                {children.map(|c| c())}
+            </div>
+        </Show>
     }
 }

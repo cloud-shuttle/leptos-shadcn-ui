@@ -1,0 +1,49 @@
+# GitHub Pages Configuration for Leptos ShadCN UI Demo
+# This file configures GitHub Pages deployment settings
+
+# Enable GitHub Pages
+# Source: GitHub Actions
+# Branch: gh-pages (automatically created)
+
+# Custom domain (optional)
+# Uncomment and set your custom domain
+# custom_domain: your-domain.com
+
+# Redirect rules (optional)
+# Uncomment to add redirect rules
+# redirects:
+#   - from: /old-path
+#     to: /new-path
+#     status: 301
+
+# Security headers
+# These will be added to all responses
+security_headers:
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Cache control
+# Static assets will be cached for 1 year
+cache_control:
+  static: max-age=31536000
+  html: max-age=3600
+
+# Compression
+# Enable gzip compression for better performance
+compression: true
+
+# Analytics (optional)
+# Uncomment to enable Google Analytics
+# analytics:
+#   google_analytics: GA_MEASUREMENT_ID
+
+# SEO settings
+seo:
+  title: "Leptos ShadCN UI - Comprehensive Demo"
+  description: "Professional dashboard built with Leptos and ShadCN UI components. Experience 3-5x faster performance than React/Next.js."
+  keywords: ["leptos", "rust", "wasm", "shadcn", "ui", "dashboard", "performance", "webassembly"]
+  author: "Leptos ShadCN UI Team"
+  og_image: "/og-image.png"
+  twitter_card: "summary_large_image"

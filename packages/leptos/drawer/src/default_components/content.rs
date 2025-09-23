@@ -22,27 +22,32 @@ pub fn DrawerContent(
     };
 
     let content_class = move || {
-        let base_class = "drawer-content";
+        let base_class = "fixed z-50 bg-background";
         let direction_class = match direction.get() {
-            DrawerDirection::Top => " drawer-content-top",
-            DrawerDirection::Bottom => " drawer-content-bottom",
-            DrawerDirection::Left => " drawer-content-left",
-            DrawerDirection::Right => " drawer-content-right",
+            DrawerDirection::Top => " top-0 inset-x-0 border-b",
+            DrawerDirection::Bottom => " bottom-0 inset-x-0 border-t",
+            DrawerDirection::Left => " left-0 top-0 h-full w-3/4 border-r sm:max-w-sm",
+            DrawerDirection::Right => " right-0 top-0 h-full w-3/4 border-l sm:max-w-sm",
         };
         let custom_class = class.get().unwrap_or_default();
         format!("{}{} {}", base_class, direction_class, custom_class)
     };
 
     view! {
-        <div
-            class=content_class
-            id=move || id.get().unwrap_or_default()
-            style=move || style.get().unwrap_or_default()
-            on:click=handle_click
-            role="dialog"
-            aria-modal="true"
+        <Show
+            when=move || open_state.get()
+            fallback=|| view! { <div></div> }
         >
-            {children.map(|c| c())}
-        </div>
+            <div
+                class=content_class
+                id=move || id.get().unwrap_or_default()
+                style=move || style.get().unwrap_or_default()
+                on:click=handle_click
+                role="dialog"
+                aria-modal="true"
+            >
+                {children.map(|c| c())}
+            </div>
+        </Show>
     }
 }

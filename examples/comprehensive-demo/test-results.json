@@ -1,0 +1,902 @@
+{
+  "config": {
+    "configFile": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/playwright.config.ts",
+    "rootDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 5
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 5,
+    "webServer": {
+      "command": "npm run serve",
+      "port": 3000,
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "demo.spec.ts",
+      "file": "demo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Leptos ShadCN UI Comprehensive Demo",
+          "file": "demo.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should have working drawer component",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1922,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 57,
+                          "line": 52
+                        },
+                        "snippet": "  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 57,
+                            "line": 52
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n\n  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:55.992Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 57,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-7f85225c3e349203eba1",
+              "file": "demo.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "should have working alert dialog",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1894,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 63,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 63,
+                            "line": 68
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n\n  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:55.990Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 63,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-a4165762b554614cfa7d",
+              "file": "demo.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "should have working drawer component",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 2510,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 57,
+                          "line": 52
+                        },
+                        "snippet": "  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 57,
+                            "line": 52
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n\n  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:56.004Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 57,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-bef2615ec6a2ca4359bf",
+              "file": "demo.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "should have working alert dialog",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 3189,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 63,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 63,
+                            "line": 68
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n\n  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:56.003Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 63,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-09605e21896264f134f2",
+              "file": "demo.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "should have working drawer component",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 2198,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 57,
+                          "line": 52
+                        },
+                        "snippet": "  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 57,
+                            "line": 52
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n\n  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:55.988Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 57,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-9f523ecba743cf24c618",
+              "file": "demo.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "should have working alert dialog",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 1703,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 63,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 63,
+                            "line": 68
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n\n  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:59.520Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 63,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-558c4ae10f2015b8ac4d",
+              "file": "demo.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "should have working drawer component",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1466,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 57,
+                          "line": 52
+                        },
+                        "snippet": "  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 57,
+                            "line": 52
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n\n  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:59.792Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 57,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-c32111dd41ecba95d238",
+              "file": "demo.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "should have working alert dialog",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1531,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 63,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 63,
+                            "line": 68
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n\n  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:53:59.900Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 63,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-c71a00284e2ba4a46acd",
+              "file": "demo.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "should have working drawer component",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1316,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 57,
+                          "line": 52
+                        },
+                        "snippet": "  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 57,
+                            "line": 52
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })\n    2) <h2 id=\"\" class=\"drawer-title \">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })\n    3) <p class=\"text-muted-foreground mb-4\">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Drawer Component')\u001b[22m\n\n\n  50 |     \n  51 |     // Check if drawer content is visible\n> 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();\n     |                                                         ^\n  53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();\n  54 |     \n  55 |     // Close drawer\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:54:01.155Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 57,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-196395e620ac63eee806",
+              "file": "demo.spec.ts",
+              "line": 44,
+              "column": 7
+            },
+            {
+              "title": "should have working alert dialog",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1316,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63",
+                        "location": {
+                          "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                          "column": 63,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                            "column": 63,
+                            "line": 68
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:\n    1) <h3 id=\"\" class=\"text-2xl font-semibold leading-none tracking-tight \">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })\n    2) <h2 id=\"\" class=\"alert-dialog-title \">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Alert Dialog Component')\u001b[22m\n\n\n  66 |     \n  67 |     // Check if alert dialog content is visible\n> 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();\n     |                                                               ^\n  69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();\n  70 |     \n  71 |     // Close alert dialog\n    at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-23T03:54:01.611Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts",
+                        "column": 63,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "05384557491ebd602dd7-233ee18e64f5fed337a4",
+              "file": "demo.spec.ts",
+              "line": 60,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-23T03:53:55.634Z",
+    "duration": 7569.712,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  }
+}

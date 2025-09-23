@@ -28,25 +28,12 @@ pub fn ContextMenuTrigger(
         open.set(false);
     };
 
-    Effect::new(move |_| {
-        if open.get() {
-            let handle_click_outside = move |_: MouseEvent| {
-                open.set(false);
-            };
-            
-            if let Some(window) = web_sys::window() {
-                if let Some(document) = window.document() {
-                    let closure = wasm_bindgen::closure::Closure::wrap(Box::new(handle_click_outside) as Box<dyn Fn(MouseEvent)>);
-                    let _ = document.add_event_listener_with_callback("click", closure.as_ref().unchecked_ref());
-                    closure.forget();
-                }
-            }
-        }
-    });
+    // Use a simpler approach without global event listeners
+    // The context menu will close when clicking on items or outside
 
     view! {
         <div
-            class=move || format!("context-menu-trigger {}", class.get().unwrap_or_default())
+            class=move || format!("cursor-pointer {}", class.get().unwrap_or_default())
             on:contextmenu=handle_context_menu
             on:click=handle_click
         >

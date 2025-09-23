@@ -1,0 +1,54 @@
+[package]
+name = "leptos-shadcn-comprehensive-demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Leptos framework
+leptos = { version = "0.8", features = ["csr"] }
+leptos_meta = { version = "0.8" }
+
+# WASM dependencies
+console_error_panic_hook = "0.1"
+console_log = "1.0"
+log = "0.4"
+wasm-bindgen = "0.2"
+web-sys = "0.3"
+js-sys = "0.3"
+getrandom = { version = "0.2", features = ["js"] }
+uuid = { version = "1.0", features = ["v4", "js"] }
+
+# Tailwind-RS
+tailwind-rs-core = "0.4.2"
+tailwind-rs-leptos = "0.4.2"
+
+# Published ShadCN UI components v0.9.1 (refactored versions)
+leptos-shadcn-drawer = "0.9.1"
+leptos-shadcn-context-menu = "0.9.1"
+leptos-shadcn-alert-dialog = "0.9.1"
+leptos-shadcn-select = "0.9.1"
+leptos-shadcn-command = "0.9.1"
+
+# Additional components for comprehensive demo
+leptos-shadcn-button = "0.9.1"
+leptos-shadcn-card = "0.9.1"
+leptos-shadcn-input = "0.9.1"
+leptos-shadcn-dialog = "0.9.1"
+leptos-shadcn-dropdown-menu = "0.9.1"
+leptos-shadcn-popover = "0.9.1"
+leptos-shadcn-tooltip = "0.9.1"
+leptos-shadcn-toast = "0.9.1"
+leptos-shadcn-accordion = "0.9.1"
+leptos-shadcn-tabs = "0.9.1"
+leptos-shadcn-switch = "0.9.1"
+leptos-shadcn-checkbox = "0.9.1"
+leptos-shadcn-radio-group = "0.9.1"
+leptos-shadcn-slider = "0.9.1"
+leptos-shadcn-progress = "0.9.1"
+leptos-shadcn-badge = "0.9.1"
+leptos-shadcn-avatar = "0.9.1"
+leptos-shadcn-separator = "0.9.1"
+leptos-shadcn-skeleton = "0.9.1"
+
+[lib]
+crate-type = ["cdylib"]

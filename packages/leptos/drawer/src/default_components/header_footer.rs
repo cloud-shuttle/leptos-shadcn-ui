@@ -15,7 +15,7 @@ pub fn DrawerHeader(
 ) -> impl IntoView {
     view! {
         <div
-            class=move || format!("drawer-header {}", class.get().unwrap_or_default())
+            class=move || format!("grid gap-1.5 py-4 text-center sm:text-left {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >
@@ -33,7 +33,7 @@ pub fn DrawerFooter(
 ) -> impl IntoView {
     view! {
         <div
-            class=move || format!("drawer-footer {}", class.get().unwrap_or_default())
+            class=move || format!("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=move || style.get().unwrap_or_default()
         >

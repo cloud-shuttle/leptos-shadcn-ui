@@ -21,15 +21,24 @@ pub fn AlertDialogContent(
     };
 
     view! {
-        <div
-            class=move || format!("alert-dialog-content {}", class.get().unwrap_or_default())
-            id=move || id.get().unwrap_or_default()
-            style=move || style.get().unwrap_or_default()
-            on:click=handle_click
-            role="alertdialog"
-            aria-modal="true"
+        <Show
+            when=move || open.get()
+            fallback=|| view! { <div></div> }
         >
-            {children.map(|c| c())}
-        </div>
+            <div
+                class=move || format!("fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm {}", class.get().unwrap_or_default())
+                id=move || id.get().unwrap_or_default()
+                style=move || style.get().unwrap_or_default()
+                on:click=handle_click
+                role="alertdialog"
+                aria-modal="true"
+            >
+                <div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" on:click=move |_| open.set(false)>
+                    <div class="relative z-50 grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg sm:rounded-lg" on:click=handle_click>
+                        {children.map(|c| c())}
+                    </div>
+                </div>
+            </div>
+        </Show>
     }
 }

@@ -1,0 +1,447 @@
+<testsuites id="" name="" tests="10" failures="10" skipped="0" errors="0" time="7.569712000000001">
+<testsuite name="demo.spec.ts" timestamp="2025-09-23T03:53:55.649Z" hostname="chromium" tests="2" failures="2" skipped="0" time="3.816" errors="0">
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working drawer component" classname="demo.spec.ts" time="1.922">
+<failure message="demo.spec.ts:44:7 should have working drawer component" type="FAILURE">
+<![CDATA[  [chromium] › demo.spec.ts:44:7 › Leptos ShadCN UI Comprehensive Demo › should have working drawer component 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })
+        2) <h2 id="" class="drawer-title ">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })
+        3) <p class="text-muted-foreground mb-4">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Drawer Component')
+
+
+      50 |     
+      51 |     // Check if drawer content is visible
+    > 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();
+         |                                                         ^
+      53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();
+      54 |     
+      55 |     // Close drawer
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working alert dialog" classname="demo.spec.ts" time="1.894">
+<failure message="demo.spec.ts:60:7 should have working alert dialog" type="FAILURE">
+<![CDATA[  [chromium] › demo.spec.ts:60:7 › Leptos ShadCN UI Comprehensive Demo › should have working alert dialog 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })
+        2) <h2 id="" class="alert-dialog-title ">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Alert Dialog Component')
+
+
+      66 |     
+      67 |     // Check if alert dialog content is visible
+    > 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();
+         |                                                               ^
+      69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();
+      70 |     
+      71 |     // Close alert dialog
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="demo.spec.ts" timestamp="2025-09-23T03:53:55.649Z" hostname="firefox" tests="2" failures="2" skipped="0" time="5.699" errors="0">
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working drawer component" classname="demo.spec.ts" time="2.51">
+<failure message="demo.spec.ts:44:7 should have working drawer component" type="FAILURE">
+<![CDATA[  [firefox] › demo.spec.ts:44:7 › Leptos ShadCN UI Comprehensive Demo › should have working drawer component 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })
+        2) <h2 id="" class="drawer-title ">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })
+        3) <p class="text-muted-foreground mb-4">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Drawer Component')
+
+
+      50 |     
+      51 |     // Check if drawer content is visible
+    > 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();
+         |                                                         ^
+      53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();
+      54 |     
+      55 |     // Close drawer
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working alert dialog" classname="demo.spec.ts" time="3.189">
+<failure message="demo.spec.ts:60:7 should have working alert dialog" type="FAILURE">
+<![CDATA[  [firefox] › demo.spec.ts:60:7 › Leptos ShadCN UI Comprehensive Demo › should have working alert dialog 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })
+        2) <h2 id="" class="alert-dialog-title ">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Alert Dialog Component')
+
+
+      66 |     
+      67 |     // Check if alert dialog content is visible
+    > 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();
+         |                                                               ^
+      69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();
+      70 |     
+      71 |     // Close alert dialog
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="demo.spec.ts" timestamp="2025-09-23T03:53:55.649Z" hostname="webkit" tests="2" failures="2" skipped="0" time="3.901" errors="0">
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working drawer component" classname="demo.spec.ts" time="2.198">
+<failure message="demo.spec.ts:44:7 should have working drawer component" type="FAILURE">
+<![CDATA[  [webkit] › demo.spec.ts:44:7 › Leptos ShadCN UI Comprehensive Demo › should have working drawer component 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })
+        2) <h2 id="" class="drawer-title ">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })
+        3) <p class="text-muted-foreground mb-4">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Drawer Component')
+
+
+      50 |     
+      51 |     // Check if drawer content is visible
+    > 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();
+         |                                                         ^
+      53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();
+      54 |     
+      55 |     // Close drawer
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working alert dialog" classname="demo.spec.ts" time="1.703">
+<failure message="demo.spec.ts:60:7 should have working alert dialog" type="FAILURE">
+<![CDATA[  [webkit] › demo.spec.ts:60:7 › Leptos ShadCN UI Comprehensive Demo › should have working alert dialog 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })
+        2) <h2 id="" class="alert-dialog-title ">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Alert Dialog Component')
+
+
+      66 |     
+      67 |     // Check if alert dialog content is visible
+    > 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();
+         |                                                               ^
+      69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();
+      70 |     
+      71 |     // Close alert dialog
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="demo.spec.ts" timestamp="2025-09-23T03:53:55.649Z" hostname="Mobile Chrome" tests="2" failures="2" skipped="0" time="2.997" errors="0">
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working drawer component" classname="demo.spec.ts" time="1.466">
+<failure message="demo.spec.ts:44:7 should have working drawer component" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › demo.spec.ts:44:7 › Leptos ShadCN UI Comprehensive Demo › should have working drawer component 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })
+        2) <h2 id="" class="drawer-title ">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })
+        3) <p class="text-muted-foreground mb-4">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Drawer Component')
+
+
+      50 |     
+      51 |     // Check if drawer content is visible
+    > 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();
+         |                                                         ^
+      53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();
+      54 |     
+      55 |     // Close drawer
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working alert dialog" classname="demo.spec.ts" time="1.531">
+<failure message="demo.spec.ts:60:7 should have working alert dialog" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › demo.spec.ts:60:7 › Leptos ShadCN UI Comprehensive Demo › should have working alert dialog 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })
+        2) <h2 id="" class="alert-dialog-title ">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Alert Dialog Component')
+
+
+      66 |     
+      67 |     // Check if alert dialog content is visible
+    > 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();
+         |                                                               ^
+      69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();
+      70 |     
+      71 |     // Close alert dialog
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="demo.spec.ts" timestamp="2025-09-23T03:53:55.649Z" hostname="Mobile Safari" tests="2" failures="2" skipped="0" time="2.632" errors="0">
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working drawer component" classname="demo.spec.ts" time="1.316">
+<failure message="demo.spec.ts:44:7 should have working drawer component" type="FAILURE">
+<![CDATA[  [Mobile Safari] › demo.spec.ts:44:7 › Leptos ShadCN UI Comprehensive Demo › should have working drawer component 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Drawer Component') resolved to 3 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">🎯 Drawer Component</h3> aka getByRole('heading', { name: '🎯 Drawer Component' })
+        2) <h2 id="" class="drawer-title ">Drawer Component</h2> aka getByRole('heading', { name: 'Drawer Component', exact: true })
+        3) <p class="text-muted-foreground mb-4">The drawer component has been successfully refact…</p> aka getByText('The drawer component has been')
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Drawer Component')
+
+
+      50 |     
+      51 |     // Check if drawer content is visible
+    > 52 |     await expect(page.locator('text=Drawer Component')).toBeVisible();
+         |                                                         ^
+      53 |     await expect(page.locator('text=This drawer was refactored from 15k to 12k bytes')).toBeVisible();
+      54 |     
+      55 |     // Close drawer
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:52:57
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-9d2eb-ve-working-drawer-component-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Leptos ShadCN UI Comprehensive Demo › should have working alert dialog" classname="demo.spec.ts" time="1.316">
+<failure message="demo.spec.ts:60:7 should have working alert dialog" type="FAILURE">
+<![CDATA[  [Mobile Safari] › demo.spec.ts:60:7 › Leptos ShadCN UI Comprehensive Demo › should have working alert dialog 
+
+    Error: expect.toBeVisible: Error: strict mode violation: locator('text=Alert Dialog Component') resolved to 2 elements:
+        1) <h3 id="" class="text-2xl font-semibold leading-none tracking-tight ">⚠️ Alert Dialog Component</h3> aka getByRole('heading', { name: '⚠️ Alert Dialog Component' })
+        2) <h2 id="" class="alert-dialog-title ">Alert Dialog Component</h2> aka getByRole('heading', { name: 'Alert Dialog Component', exact: true })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('text=Alert Dialog Component')
+
+
+      66 |     
+      67 |     // Check if alert dialog content is visible
+    > 68 |     await expect(page.locator('text=Alert Dialog Component')).toBeVisible();
+         |                                                               ^
+      69 |     await expect(page.locator('text=This alert dialog was refactored from 12k to 9.5k bytes')).toBeVisible();
+      70 |     
+      71 |     // Close alert dialog
+        at /Users/peterhanssens/consulting/Leptos/leptos-shadcn-ui/examples/comprehensive-demo/tests/demo.spec.ts:68:63
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|test-results/demo-Leptos-ShadCN-UI-Comp-2d4f9-d-have-working-alert-dialog-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

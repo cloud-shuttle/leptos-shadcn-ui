@@ -28,7 +28,7 @@ pub fn ContextMenuContent(
 
     view! {
         <div
-            class=move || format!("context-menu-content {}", class.get().unwrap_or_default())
+            class=move || format!("fixed z-50 min-w-[10rem] overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-1 text-gray-900 dark:text-gray-100 shadow-xl backdrop-blur-sm {}", class.get().unwrap_or_default())
             id=move || id.get().unwrap_or_default()
             style=content_style
             on:click=handle_click
