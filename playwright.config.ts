@@ -195,7 +195,7 @@ export default defineConfig({
     {
       command: 'cd examples/comprehensive-demo && python3 -m http.server 8001',
       port: 8001,
-      reuseExistingServer: !isCI,
+      reuseExistingServer: true, // Always reuse existing server to avoid port conflicts
       timeout: 30 * 1000,
       stdout: 'pipe',
       stderr: 'pipe',
