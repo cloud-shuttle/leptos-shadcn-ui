@@ -124,7 +124,7 @@ export default defineConfig({
   
   /* Configure projects for major browsers */
   projects: [
-    // Desktop browsers
+    // Desktop browsers - Only Chromium for faster CI
     {
       name: 'chromium',
       use: { 
@@ -132,36 +132,37 @@ export default defineConfig({
         ...browserConfigs.chromium,
       },
     },
-    {
-      name: 'firefox',
-      use: { 
-        ...devices['Desktop Firefox'],
-        ...browserConfigs.firefox,
-      },
-    },
-    {
-      name: 'webkit',
-      use: { 
-        ...devices['Desktop Safari'],
-        ...browserConfigs.webkit,
-      },
-    },
+    // Disabled for faster CI - only Chromium installed
+    // {
+    //   name: 'firefox',
+    //   use: { 
+    //     ...devices['Desktop Firefox'],
+    //     ...browserConfigs.firefox,
+    //   },
+    // },
+    // {
+    //   name: 'webkit',
+    //   use: { 
+    //     ...devices['Desktop Safari'],
+    //     ...browserConfigs.webkit,
+    //   },
+    // },
     
-    // Mobile browsers
-    {
-      name: 'Mobile Chrome',
-      use: { 
-        ...devices['Pixel 5'],
-        ...browserConfigs['Mobile Chrome'],
-      },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { 
-        ...devices['iPhone 12'],
-        ...browserConfigs['Mobile Safari'],
-      },
-    },
+    // Mobile browsers - Disabled for faster CI
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: { 
+    //     ...devices['Pixel 5'],
+    //     ...browserConfigs['Mobile Chrome'],
+    //   },
+    // },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: { 
+    //     ...devices['iPhone 12'],
+    //     ...browserConfigs['Mobile Safari'],
+    //   },
+    // },
     
     // Test-specific projects
     {
