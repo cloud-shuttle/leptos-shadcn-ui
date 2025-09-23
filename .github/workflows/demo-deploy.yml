@@ -18,7 +18,7 @@ on:
   workflow_dispatch: # Allow manual triggering
 
 env:
-  RUST_VERSION: '1.75.0'
+  RUST_VERSION: '1.80.0'
   NODE_VERSION: '18'
   WASM_PACK_VERSION: '0.12.1'
 
@@ -66,6 +66,8 @@ jobs:
     - name: Build comprehensive demo
       run: |
         cd examples/comprehensive-demo
+        # Remove lock file to ensure compatibility
+        rm -f Cargo.lock
         wasm-pack build --target web --out-dir pkg --release
 
     - name: Start demo server
