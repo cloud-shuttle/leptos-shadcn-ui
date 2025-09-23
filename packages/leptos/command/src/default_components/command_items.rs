@@ -49,7 +49,6 @@ pub fn CommandGroupHeading(
             id=id.get()
             style=style.get()
             role="heading"
-            aria-level="3"
         >
             {children()}
         </div>

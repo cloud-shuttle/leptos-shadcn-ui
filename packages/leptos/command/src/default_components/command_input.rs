@@ -1,4 +1,5 @@
 use leptos::prelude::*;
+use leptos::wasm_bindgen::JsCast;
 use tailwind_fuse::tw_merge;
 
 const COMMAND_INPUT_CLASS: &str = "flex items-center border-b px-3";
@@ -23,9 +24,11 @@ pub fn CommandInput(
         class.get().unwrap_or_default()
     ));
     
-    let handle_input = move |ev: leptos::ev::InputEvent| {
-        let value = event_target_value(&ev);
-        context.search.set(value);
+    let handle_input = move |ev: leptos::ev::Event| {
+        if let Ok(input_ev) = ev.dyn_into::<leptos::ev::InputEvent>() {
+            let value = event_target_value(&input_ev);
+            context.search.set(value);
+        }
     };
     
     view! {
