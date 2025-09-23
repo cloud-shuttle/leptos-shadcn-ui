@@ -210,12 +210,19 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       const sidebarToggle = page.locator('button:has-text("☰")');
       await expect(sidebarToggle).toBeVisible();
       
+      // Check initial sidebar state
+      const sidebar = page.locator('div.w-64.bg-card.border-r.border-border');
+      const isInitiallyVisible = await sidebar.isVisible();
+      
       // Click sidebar toggle
       await sidebarToggle.click();
       
-      // Check that sidebar is hidden/shown
-      const sidebar = page.locator('div.w-64.bg-card.border-r.border-border');
-      await expect(sidebar).toBeVisible();
+      // Check that sidebar state changed
+      if (isInitiallyVisible) {
+        await expect(sidebar).not.toBeVisible();
+      } else {
+        await expect(sidebar).toBeVisible();
+      }
     });
   });
 
