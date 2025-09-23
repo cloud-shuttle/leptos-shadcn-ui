@@ -33,7 +33,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
     });
 
     test('should have proper sidebar navigation', async () => {
-      const sidebar = page.locator('div:has-text("Leptos Dashboard")');
+      const sidebar = page.locator('.w-64.bg-card.border-r.border-border');
       await expect(sidebar).toBeVisible();
       
       // Check navigation links
@@ -63,7 +63,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
 
   test.describe('Metrics Cards', () => {
     test('should display all metric cards', async () => {
-      const metricCards = page.locator('div:has-text("Total Revenue"), div:has-text("New Customers"), div:has-text("Active Accounts"), div:has-text("Growth Rate")');
+      const metricCards = page.locator('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4 > div');
       await expect(metricCards).toHaveCount(4);
       
       // Check individual cards
@@ -156,7 +156,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       await expect(activityItems.first()).toBeVisible();
       
       // Check for timestamps
-      const timestamps = page.locator('text=2 hours ago, text=4 hours ago, text=6 hours ago');
+      const timestamps = page.locator('p:has-text("2 hours ago"), p:has-text("4 hours ago"), p:has-text("6 hours ago")');
       await expect(timestamps.first()).toBeVisible();
     });
   });
@@ -214,7 +214,7 @@ test.describe('Comprehensive Dashboard Demo E2E Tests', () => {
       await sidebarToggle.click();
       
       // Check that sidebar is hidden/shown
-      const sidebar = page.locator('.w-64.bg-card');
+      const sidebar = page.locator('.w-64.bg-card.border-r.border-border');
       await expect(sidebar).toBeVisible();
     });
   });
