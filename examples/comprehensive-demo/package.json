@@ -15,7 +15,7 @@
   "devDependencies": {
     "@playwright/test": "^1.40.0",
     "concurrently": "^8.2.2",
-    "express": "^4.18.2",
+    "express": "^4.22.1",
     "cors": "^2.8.5",
     "portfinder": "^1.0.32"
   },
