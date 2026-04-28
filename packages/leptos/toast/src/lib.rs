@@ -15,6 +15,7 @@ pub use sonner::{
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 mod sonner_tests;

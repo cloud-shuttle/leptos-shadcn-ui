@@ -29,10 +29,10 @@ default = []
 essential = []
 essential_with_icons = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme"]
 all_components = [
-    "button", "input", "label", "card", "separator", "alert", "badge", "checkbox", "switch", 
-    "radio-group", "select", "textarea", "tabs", "accordion", "dialog", "popover", "tooltip", 
-    "toast", "skeleton", "progress", "slider", "table", "pagination", "aspect-ratio", 
-    "alert-dialog", "scroll-area", "hover-card", "command", "breadcrumb", "dropdown-menu", 
+    "button", "input", "label", "card", "separator", "alert", "badge", "checkbox", "switch",
+    "radio-group", "select", "textarea", "tabs", "accordion", "dialog", "popover", "tooltip",
+    "toast", "skeleton", "progress", "slider", "table", "pagination", "aspect-ratio",
+    "alert-dialog", "scroll-area", "hover-card", "command", "breadcrumb", "dropdown-menu",
     "context-menu", "navigation-menu", "input-otp", "default_theme", "new_york_theme"
 ]
 
@@ -128,11 +128,11 @@ wasm-bindgen-futures = "0.4"
 uuid = { version = "1.0", features = ["v4", "js"] }
 
 # Force getrandom to use WASM-compatible version
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }
 
 # WASM-specific configuration
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }
 
 # tailwind-rs-core for dynamic styling
 tailwind-rs-core = "0.3.0"

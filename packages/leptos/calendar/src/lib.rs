@@ -12,6 +12,8 @@ mod default;
 
 mod tests;
 
+#[cfg(test)]
+#[cfg(test)]
 mod tdd_tests;
 
 // Signal-managed module and exports

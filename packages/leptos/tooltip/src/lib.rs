@@ -10,6 +10,7 @@ pub mod new_york;
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 // Re-export the components for easy access

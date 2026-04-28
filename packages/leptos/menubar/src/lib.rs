@@ -9,6 +9,7 @@ pub use new_york::{Menubar as MenubarNewYork};
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 // Signal-managed exports

@@ -1,4 +1,5 @@
 use leptos::{ev::MouseEvent, prelude::*};
+use leptos_struct_component::StructComponent;
 use leptos_node_ref::AnyNodeRef;
 use leptos_struct_component::struct_component;
 use leptos_style::Style;
@@ -13,7 +14,7 @@ pub fn Tabs(
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     let internal_value = RwSignal::new(default_value.get().unwrap_or_default());
-    
+
     let value_state = Signal::derive(move || {
         if !value.get().is_empty() && value.get() != internal_value.get() {
             value.get()
@@ -94,7 +95,7 @@ pub fn TabsTrigger(
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     let ctx = expect_context::<TabsContextValue>();
-    
+
     let is_selected = Signal::derive(move || {
         ctx.value.get() == value.get().unwrap_or_default()
     });
@@ -143,7 +144,7 @@ pub fn TabsContent(
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     let ctx = expect_context::<TabsContextValue>();
-    
+
     let is_selected = Signal::derive(move || {
         ctx.value.get() == value.get().unwrap_or_default()
     });

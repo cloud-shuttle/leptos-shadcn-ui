@@ -13,4 +13,4 @@ web-sys = "0.3"
 js-sys = "0.3"
 
 # WASM-compatible getrandom
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }

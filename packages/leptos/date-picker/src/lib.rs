@@ -14,6 +14,7 @@ pub mod signal_managed;
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 mod advanced_date_picker_tests;

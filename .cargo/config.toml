@@ -3,7 +3,7 @@
 
 [build]
 # Build WASM with optimized settings
-target = "wasm32-unknown-unknown"
+# target = "wasm32-unknown-unknown"
 
 [term]
 verbose = false
@@ -16,6 +16,7 @@ git-fetch-with-cli = true
 [target.wasm32-unknown-unknown]
 # Enable size-optimized linker settings
 rustflags = [
+    "--cfg", "getrandom_backend=\"wasm_js\"",
     # Link-time optimization - most impactful for size reduction
     "-C", "link-arg=-s",               # Strip symbols
 

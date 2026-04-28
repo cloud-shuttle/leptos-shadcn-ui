@@ -9,6 +9,7 @@ pub use new_york::{Textarea as TextareaNewYork};
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 mod implementation_tests;

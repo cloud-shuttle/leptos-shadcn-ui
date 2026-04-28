@@ -14,6 +14,8 @@ pub use signal_managed::{
 
 mod tests;
 
+#[cfg(test)]
+#[cfg(test)]
 mod tdd_tests;
 
 mod implementation_tests;

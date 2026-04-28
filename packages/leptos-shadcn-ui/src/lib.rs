@@ -1,49 +1,49 @@
 //! # Leptos ShadCN UI
-//! 
-//! A comprehensive collection of beautiful, accessible UI components built for [Leptos](https://leptos.dev/) v0.8+, 
+//!
+//! A comprehensive collection of beautiful, accessible UI components built for [Leptos](https://leptos.dev/) v0.8+,
 //! inspired by [shadcn/ui](https://ui.shadcn.com/).
-//! 
+//!
 //! ## Features
-//! 
+//!
 //! - **25+ Components**: Button, Input, Card, Alert, and many more
 //! - **Leptos 0.8+**: Built specifically for Leptos v0.8+ compatibility
 //! - **Accessibility First**: All components follow accessibility best practices
 //! - **Tailwind CSS**: Seamless integration with Tailwind CSS
 //! - **Type Safety**: Full Rust type safety with proper error handling
-//! 
+//!
 //! ## Usage
-//! 
+//!
 //! See the [README.md](../README.md) for complete installation and usage instructions.
-//! 
+//!
 //! **Note**: Make sure to enable the features for the components you want to use:
-//! 
+//!
 //! ```toml
 //! [dependencies]
 //! leptos-shadcn-ui = { path = "path/to/leptos-shadcn-ui/packages/leptos-shadcn-ui", features = ["button", "input", "card"] }
 //! ```
-//! 
+//!
 //! ## Components
-//! 
+//!
 //! ### Form Components
 //! - Button, Input, Label, Checkbox, Switch, Radio Group, Select, Textarea
-//! 
-//! ### Layout Components  
+//!
+//! ### Layout Components
 //! - Card, Separator, Tabs, Accordion, Dialog, Popover, Tooltip
-//! 
+//!
 //! ### Feedback & Status
 //! - Alert, Badge, Skeleton, Progress, Toast, Table, Calendar, Date Picker, Pagination
-//! 
+//!
 //! ### Interactive Components
 //! - Slider, Toggle
-//! 
+//!
 //! ### Performance Monitoring
 //! - Performance Audit System - Comprehensive performance monitoring and optimization
 //! - Bundle Size Analysis - Component size tracking and optimization recommendations
 //! - Real-time Monitoring - Performance metrics collection and analysis
 //! - CLI Tool - Command-line interface for running audits and generating reports
-//! 
+//!
 //! ## License
-//! 
+//!
 //! MIT License - see the [LICENSE](../LICENSE) file for details.
 
 // Re-export all components (conditionally based on features)
@@ -127,13 +127,13 @@ pub use tailwind_fuse::tw_merge;
 #[cfg(feature = "all-components")]
 pub mod prelude {
     //! # Leptos ShadCN UI Prelude
-    //! 
+    //!
     //! This module re-exports the most commonly used components and types.
-    //! 
+    //!
     //! ```rust
     //! use leptos_shadcn_ui::prelude::*;
     //! ```
-    
+
     // Form components
     #[cfg(feature = "button")]
     pub use super::{Button, ButtonVariant, ButtonSize};
@@ -148,10 +148,10 @@ pub mod prelude {
     #[cfg(feature = "radio-group")]
     pub use super::{RadioGroup, RadioGroupProps};
     #[cfg(feature = "select")]
-    pub use super::{Select, SelectProps};
+    // pub use super::{Select, SelectProps}; // FIXME: use correct path from select crate
     #[cfg(feature = "textarea")]
     pub use super::{Textarea, TextareaProps};
-    
+
     // Layout components
     #[cfg(feature = "card")]
     pub use super::{Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter};
@@ -167,7 +167,7 @@ pub mod prelude {
     pub use super::Popover;
     #[cfg(feature = "tooltip")]
     pub use super::{Tooltip, TooltipContent, TooltipTrigger, TooltipProvider};
-    
+
     // Feedback components
     #[cfg(feature = "alert")]
     pub use super::{Alert, AlertTitle, AlertDescription, AlertVariant};
@@ -187,13 +187,13 @@ pub mod prelude {
     pub use super::DatePicker;
     #[cfg(feature = "pagination")]
     pub use super::Pagination;
-    
+
     // Interactive components
     #[cfg(feature = "slider")]
     pub use super::{Slider, SliderProps};
     #[cfg(feature = "toggle")]
     pub use super::{Toggle, ToggleProps};
-    
+
     // Utilities
     pub use super::tw_merge;
 }

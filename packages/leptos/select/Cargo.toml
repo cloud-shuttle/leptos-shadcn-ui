@@ -11,7 +11,7 @@ version = "0.9.1"
 
 [dependencies]
 tailwind_fuse = { workspace = true, features = ["variant"] }
-leptos = { workspace = true, features = ["ssr"] }
+leptos = { workspace = true }
 leptos-node-ref.workspace = true
 leptos-struct-component.workspace = true
 leptos-style.workspace = true

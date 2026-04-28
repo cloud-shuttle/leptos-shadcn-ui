@@ -43,7 +43,7 @@ pub fn ErrorFallback(
                     {error_info.message}
                 </p>
                 <div class="error-actions">
-                    <button 
+                    <button
                         class="error-retry"
                         on:click=move |_| {
                             // Simple page reload for now
@@ -99,7 +99,7 @@ pub fn RichErrorFallback(
     #[prop(into)] error_context: ErrorContext,
     #[prop(into, optional)] show_technical: MaybeProp<bool>,
 ) -> impl IntoView {
-    let show_details = signal(show_technical.get().unwrap_or(false));
+    let (show_details, set_show_details) = signal(show_technical.get().unwrap_or(false));
 
     let severity_class = move || match error_context.severity {
         ErrorSeverity::Info => "info",
@@ -150,7 +150,7 @@ pub fn RichErrorFallback(
                             <ul class="recovery-suggestions">
                                 {error_context.recovery_suggestions.iter().map(|suggestion| {
                                     view! {
-                                        <li class=recovery-item>
+                                        <li class="recovery-item">
                                             <span class="recovery-action">{suggestion.action.clone()}</span>
                                             {if let Some(explanation) = &suggestion.explanation {
                                                 view! {
@@ -186,7 +186,7 @@ pub fn RichErrorFallback(
                     <button
                         class="toggle-details"
                         on:click=move |_| {
-                            show_details.set(!show_details.get());
+                            set_show_details.set(!show_details.get());
                         }
                     >
                         {move || if show_details.get() { "Hide" } else { "Show" }}
@@ -415,7 +415,7 @@ mod tests {
             message: "Test error".to_string(),
             technical_details: Some("Technical details".to_string()),
         };
-        
+
         assert_eq!(error.message, "Test error");
         assert_eq!(error.technical_details, Some("Technical details".to_string()));
     }
@@ -431,7 +431,7 @@ mod tests {
     fn test_handle_error() {
         let result: Result<i32, &str> = Ok(42);
         assert_eq!(handle_error(result), Some(42));
-        
+
         let error_result: Result<i32, &str> = Err("Error");
         assert_eq!(handle_error(error_result), None);
     }
@@ -442,7 +442,7 @@ mod tests {
             message: "Simple error".to_string(),
             technical_details: None,
         };
-        
+
         assert_eq!(error.message, "Simple error");
         assert_eq!(error.technical_details, None);
     }
@@ -457,10 +457,10 @@ mod tests {
     #[test]
     fn test_use_error_handler() {
         let (has_error, set_has_error, set_error_info) = use_error_handler();
-        
+
         // Initially no error
         assert!(!has_error.get());
-        
+
         // Set an error
         let error = ErrorInfo {
             message: "Test error".to_string(),
@@ -468,7 +468,7 @@ mod tests {
         };
         set_error_info.set(Some(error));
         set_has_error.set(true);
-        
+
         // Check error is set
         assert!(has_error.get());
     }
@@ -479,11 +479,11 @@ mod tests {
             message: "Test error".to_string(),
             technical_details: Some("Technical".to_string()),
         };
-        
+
         let cloned = error.clone();
         assert_eq!(error.message, cloned.message);
         assert_eq!(error.technical_details, cloned.technical_details);
-        
+
         // Test debug formatting
         let debug_str = format!("{:?}", error);
         assert!(debug_str.contains("Test error"));

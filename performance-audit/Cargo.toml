@@ -11,44 +11,41 @@ keywords = ["leptos", "performance", "audit", "monitoring", "benchmark"]
 categories = ["development-tools", "web-programming"]
 
 [dependencies]
-# Core dependencies
-tokio = { version = "1.0", features = ["full"] }
+# Core dependencies (WASM-safe)
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 anyhow = "1.0"
 thiserror = "1.0"
-
-# File system and path handling
-walkdir = "2.0"
-glob = "0.3"
+log = "0.4"
 
 # Time and duration handling
 chrono = { version = "0.4", features = ["serde"] }
-
-# Async runtime
-futures = "0.3"
-
-# Logging
-log = "0.4"
-env_logger = "0.10"
 
 # Statistics and math
 online-statistics = "0.2"
 nalgebra = "0.32"
 
 # Random number generation
-rand = "0.8"
+rand = "0.10"
 
-# HTTP client
+# Desktop-only dependencies (filesystem, networking, async runtime)
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1.0", features = ["full"] }
+futures = "0.3"
 reqwest = { version = "0.12", features = ["json"] }
+walkdir = "2.0"
+glob = "0.3"
+env_logger = "0.10"
+clap = { version = "4.0", features = ["derive"] }
+indicatif = { version = "0.18", optional = true }
 
 [dev-dependencies]
-# Testing dependencies
-criterion = "0.5"
 proptest = "1.0"
-tempfile = "3.0"
 
-# Async testing
+# Desktop-only dev-dependencies
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+criterion = "0.5"
+tempfile = "3.0"
 tokio-test = "0.4"
 
 [[bench]]
@@ -61,11 +58,6 @@ monitoring = []
 benchmarks = []
 cli = ["indicatif"]
 web = ["wasm-bindgen", "web-sys"]
-
-# CLI dependencies
-[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-clap = { version = "4.0", features = ["derive"] }
-indicatif = { version = "0.18", optional = true }
 
 # Web dependencies (optional)
 [target.'cfg(target_arch = "wasm32")'.dependencies]

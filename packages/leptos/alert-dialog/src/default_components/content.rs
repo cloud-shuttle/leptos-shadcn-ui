@@ -1,7 +1,4 @@
 //! AlertDialog content component
-//! 
-//! This module contains the AlertDialogContent component for the main
-//! alert dialog content area.
 
 use leptos::prelude::*;
 use leptos_style::Style;
@@ -12,7 +9,7 @@ pub fn AlertDialogContent(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: MaybeProp<String>,
-    #[prop(optional)] children: Option<Children>,
+    children: ChildrenFn,
 ) -> impl IntoView {
     let open = expect_context::<RwSignal<bool>>();
 
@@ -35,7 +32,7 @@ pub fn AlertDialogContent(
             >
                 <div class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" on:click=move |_| open.set(false)>
                     <div class="relative z-50 grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg sm:rounded-lg" on:click=handle_click>
-                        {children.map(|c| c())}
+                        {children()}
                     </div>
                 </div>
             </div>

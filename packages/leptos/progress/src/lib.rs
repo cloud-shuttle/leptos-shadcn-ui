@@ -8,13 +8,14 @@ pub use default::{
     Progress, ProgressRoot, ProgressIndicator, ProgressLabel, ProgressVariant
 };
 pub use new_york::{
-    Progress as ProgressNewYork, ProgressRoot as ProgressRootNewYork, 
+    Progress as ProgressNewYork, ProgressRoot as ProgressRootNewYork,
     ProgressIndicator as ProgressIndicatorNewYork, ProgressLabel as ProgressLabelNewYork,
     ProgressVariant as ProgressVariantNewYork
 };
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 // Signal-managed exports

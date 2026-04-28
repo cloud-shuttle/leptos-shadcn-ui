@@ -9,6 +9,7 @@ pub use new_york::{Label as LabelNewYork};
 
 mod tests;
 
+#[cfg(test)]
 mod tdd_tests;
 
 mod implementation_tests;

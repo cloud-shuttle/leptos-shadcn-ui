@@ -29,6 +29,8 @@ pub mod compatibility_tests;
 // mod implementation_tests;
 
 #[cfg(test)]
+#[cfg(test)]
+#[cfg(test)]
 mod tdd_tests {
     pub mod basic_rendering_tests;
     // Temporarily disable other test modules until fixed

@@ -1,66 +1,68 @@
 //! Performance Audit System for leptos-shadcn-ui
-//! 
+//!
 //! This module provides comprehensive performance testing and monitoring
 //! for the leptos-shadcn-ui component library using TDD principles.
-//! 
+//!
 //! # Features
-//! 
+//!
 //! - **Bundle Size Analysis**: Analyze component bundle sizes and identify optimization opportunities
 //! - **Performance Monitoring**: Real-time monitoring of component render times and memory usage
 //! - **Optimization Roadmap**: Generate actionable recommendations for performance improvements
 //! - **Benchmarking**: Comprehensive benchmarking suite for performance regression testing
 //! - **CLI Tool**: Command-line interface for running audits and generating reports
-//! 
+//!
 //! # Quick Start
-//! 
+//!
 //! ```rust
 //! use leptos_shadcn_performance_audit::{run_performance_audit, PerformanceConfig};
-//! 
+//!
 //! #[tokio::main]
 //! async fn main() -> Result<(), Box<dyn std::error::Error>> {
 //!     let config = PerformanceConfig::default();
 //!     let results = run_performance_audit(config).await?;
-//!     
+//!
 //!     println!("Overall Performance Score: {:.1}/100", results.overall_score);
 //!     println!("Grade: {}", results.get_grade());
-//!     
+//!
 //!     Ok(())
 //! }
 //! ```
-//! 
+//!
 //! # CLI Usage
-//! 
+//!
 //! ```bash
 //! # Run complete performance audit
 //! performance-audit audit
-//! 
+//!
 //! # Analyze bundle sizes only
 //! performance-audit bundle --components-path packages/leptos
-//! 
+//!
 //! # Monitor performance in real-time
 //! performance-audit monitor --duration 30s --sample-rate 100ms
-//! 
+//!
 //! # Generate optimization roadmap
 //! performance-audit roadmap --output roadmap.json
 //! ```
-//! 
+//!
 //! # Architecture
-//! 
+//!
 //! The system is built with a modular architecture:
-//! 
+//!
 //! - `bundle_analysis`: Component bundle size analysis and optimization
 //! - `performance_monitoring`: Real-time performance metrics collection
 //! - `optimization_roadmap`: Smart recommendation generation
 //! - `benchmarks`: Performance regression testing
-//! 
+//!
 //! Each module is thoroughly tested using TDD principles to ensure reliability and maintainability.
 
 pub mod bundle_analysis;
 pub mod performance_monitoring;
 pub mod optimization_roadmap;
 pub mod benchmarks;
+#[cfg(not(target_arch = "wasm32"))]
 pub mod memory_safety;
 pub mod regression_testing;
+#[cfg(not(target_arch = "wasm32"))]
 pub mod automated_monitoring;
 
 use thiserror::Error;
@@ -70,16 +72,16 @@ use thiserror::Error;
 pub enum PerformanceAuditError {
     #[error("Bundle analysis failed: {0}")]
     BundleAnalysisError(String),
-    
+
     #[error("Performance monitoring failed: {0}")]
     PerformanceMonitoringError(String),
-    
+
     #[error("Optimization roadmap generation failed: {0}")]
     OptimizationRoadmapError(String),
-    
+
     #[error("Configuration error: {0}")]
     ConfigurationError(String),
-    
+
     #[error("IO error: {0}")]
     IoError(#[from] std::io::Error),
 }
@@ -126,7 +128,7 @@ impl PerformanceResults {
     pub fn meets_targets(&self) -> bool {
         self.overall_score >= 80.0
     }
-    
+
     /// Get performance grade (A, B, C, D, F)
     pub fn get_grade(&self) -> char {
         match self.overall_score {
@@ -143,7 +145,7 @@ impl PerformanceResults {
 pub async fn run_performance_audit(_config: PerformanceConfig) -> Result<PerformanceResults, PerformanceAuditError> {
     // Create mock bundle analysis results
     let mut bundle_results = bundle_analysis::BundleAnalysisResults::default();
-    
+
     // Add some sample components with various sizes
     let components = vec![
         ("button", 2048),    // 2KB - good
@@ -152,15 +154,15 @@ pub async fn run_performance_audit(_config: PerformanceConfig) -> Result<Perform
         ("calendar", 3072),  // 3KB - good
         ("dialog", 6144),    // 6KB - oversized
     ];
-    
+
     for (name, size_bytes) in components {
         let analysis = bundle_analysis::ComponentBundleAnalysis::new(name.to_string(), size_bytes);
         bundle_results.add_component_analysis(analysis);
     }
-    
+
     // Create mock performance monitoring results
     let mut performance_results = performance_monitoring::PerformanceMonitoringResults::default();
-    
+
     // Add sample performance metrics
     let performance_data = vec![
         ("button", 8, 512 * 1024),      // 8ms, 512KB - good
@@ -169,25 +171,25 @@ pub async fn run_performance_audit(_config: PerformanceConfig) -> Result<Perform
         ("calendar", 10, 640 * 1024),   // 10ms, 640KB - good
         ("dialog", 24, (1.5 * 1024.0 * 1024.0) as u64), // 24ms, 1.5MB - poor
     ];
-    
+
     for (name, render_time_ms, memory_bytes) in performance_data {
         let mut metrics = performance_monitoring::ComponentPerformanceMetrics::new(name.to_string());
         metrics.update_render_time(std::time::Duration::from_millis(render_time_ms));
         metrics.update_memory_usage(memory_bytes);
         performance_results.add_component_metrics(metrics);
     }
-    
+
     // Generate optimization roadmap
     let optimization_roadmap = optimization_roadmap::OptimizationRoadmapGenerator::generate_roadmap(
         &bundle_results,
         &performance_results,
     );
-    
+
     // Calculate overall score
     let bundle_score = bundle_results.overall_efficiency_score;
     let performance_score = performance_results.overall_performance_score;
     let overall_score = (bundle_score + performance_score) / 2.0;
-    
+
     Ok(PerformanceResults {
         bundle_analysis: bundle_results,
         performance_monitoring: performance_results,
@@ -203,7 +205,7 @@ mod tests {
     #[test]
     fn test_performance_config_defaults() {
         let config = PerformanceConfig::default();
-        
+
         // Test default configuration values
         assert_eq!(config.max_component_size_kb, 5.0);
         assert_eq!(config.max_render_time_ms, 16.0);
@@ -219,7 +221,7 @@ mod tests {
             optimization_roadmap: optimization_roadmap::OptimizationRoadmap::default(),
             overall_score: 85.0,
         };
-        
+
         assert!(results.meets_targets());
         assert_eq!(results.get_grade(), 'B');
     }
@@ -232,7 +234,7 @@ mod tests {
             optimization_roadmap: optimization_roadmap::OptimizationRoadmap::default(),
             overall_score: 65.0,
         };
-        
+
         assert!(!results.meets_targets());
         assert_eq!(results.get_grade(), 'D');
     }
@@ -246,7 +248,7 @@ mod tests {
             (65.0, 'D'),
             (45.0, 'F'),
         ];
-        
+
         for (score, expected_grade) in test_cases {
             let results = PerformanceResults {
                 bundle_analysis: bundle_analysis::BundleAnalysisResults::default(),
@@ -254,8 +256,8 @@ mod tests {
                 optimization_roadmap: optimization_roadmap::OptimizationRoadmap::default(),
                 overall_score: score,
             };
-            
-            assert_eq!(results.get_grade(), expected_grade, 
+
+            assert_eq!(results.get_grade(), expected_grade,
                 "Score {} should get grade {}", score, expected_grade);
         }
     }

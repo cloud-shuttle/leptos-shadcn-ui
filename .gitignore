@@ -188,3 +188,5 @@ target/tarpaulin/
 
 # Coverage data (keep .lcov for Codecov, ignore local copies)
 # *.lcov  # Uncomment if you don't want any lcov files in repo
+wr.sh
+.drover

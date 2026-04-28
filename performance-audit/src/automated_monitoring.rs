@@ -1,11 +1,13 @@
+#![cfg(not(target_arch = "wasm32"))]
 //! Automated Performance Monitoring Module
-//! 
+//!
 //! This module provides automated performance monitoring with real-time metrics collection,
 //! alerting, and optimization recommendations for leptos-shadcn-ui components.
 
 use std::collections::HashMap;
 use std::sync::Arc;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use rand::RngExt;
 use tokio::sync::RwLock;
 use tokio::time::interval;
 use serde::{Deserialize, Serialize};
@@ -243,10 +245,10 @@ impl AutomatedMonitor {
     /// Monitoring loop
     async fn monitoring_loop(self) {
         let mut interval = interval(self.config.monitoring_interval);
-        
+
         loop {
             interval.tick().await;
-            
+
             let is_monitoring = *self.is_monitoring.read().await;
             if !is_monitoring {
                 break;
@@ -259,7 +261,7 @@ impl AutomatedMonitor {
                     {
                         let mut history = self.metrics_history.write().await;
                         history.push(snapshot.clone());
-                        
+
                         // Cleanup old metrics
                         self.cleanup_old_metrics(&mut history).await;
                     }
@@ -267,7 +269,7 @@ impl AutomatedMonitor {
                     // Analyze trends
                     if let Ok(trends) = self.analyze_trends().await {
                         for trend in trends {
-                            println!("📈 Trend detected for {}: {:?} (strength: {:.2})", 
+                            println!("📈 Trend detected for {}: {:?} (strength: {:.2})",
                                 trend.component_name, trend.trend_direction, trend.trend_strength);
                         }
                     }
@@ -298,11 +300,11 @@ impl AutomatedMonitor {
 
         // Collect component metrics
         let mut component_metrics = HashMap::new();
-        
+
         // This would integrate with actual component monitoring
         // For now, we'll simulate metrics collection
         let components = vec!["button", "input", "select", "card", "badge"];
-        
+
         for component in components {
             let metrics = ComponentMetrics {
                 component_name: component.to_string(),
@@ -313,7 +315,7 @@ impl AutomatedMonitor {
                 success_rate: self.simulate_success_rate(component).await,
                 performance_score: 0.0, // Will be calculated
             };
-            
+
             component_metrics.insert(component.to_string(), metrics);
         }
 
@@ -345,7 +347,7 @@ impl AutomatedMonitor {
     /// Analyze performance trends
     async fn analyze_trends(&self) -> Result<Vec<PerformanceTrend>, PerformanceAuditError> {
         let history = self.metrics_history.read().await;
-        
+
         if history.len() < 10 {
             return Ok(Vec::new()); // Need at least 10 data points
         }
@@ -370,7 +372,7 @@ impl AutomatedMonitor {
         snapshots: &[&PerformanceSnapshot],
     ) -> Option<PerformanceTrend> {
         let mut render_times = Vec::new();
-        
+
         for snapshot in snapshots {
             if let Some(metrics) = snapshot.component_metrics.get(component_name) {
                 render_times.push(metrics.render_time_ms);
@@ -391,7 +393,7 @@ impl AutomatedMonitor {
 
         let slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
         let trend_strength = slope.abs().min(1.0);
-        
+
         let trend_direction = if slope > 0.1 {
             TrendDirection::Degrading
         } else if slope < -0.1 {
@@ -422,15 +424,15 @@ impl AutomatedMonitor {
         snapshot: &PerformanceSnapshot,
     ) -> Result<Vec<PerformanceAlert>, PerformanceAuditError> {
         let mut alerts = Vec::new();
-        
+
         // Check component-level alerts
         for (component_name, metrics) in &snapshot.component_metrics {
             // Performance degradation alert
             if let Some(baseline) = self.baseline_metrics.read().await.as_ref() {
                 if let Some(baseline_metrics) = baseline.component_metrics.get(component_name) {
-                    let performance_change = (metrics.render_time_ms - baseline_metrics.render_time_ms) 
+                    let performance_change = (metrics.render_time_ms - baseline_metrics.render_time_ms)
                         / baseline_metrics.render_time_ms * 100.0;
-                    
+
                     if performance_change > self.config.alert_thresholds.performance_degradation_threshold {
                         alerts.push(PerformanceAlert {
                             alert_id: format!("perf-deg-{}-{}", component_name, snapshot.timestamp),
@@ -457,9 +459,9 @@ impl AutomatedMonitor {
             // Memory usage alert
             if let Some(baseline) = self.baseline_metrics.read().await.as_ref() {
                 if let Some(baseline_metrics) = baseline.component_metrics.get(component_name) {
-                    let memory_change = (metrics.memory_usage_bytes as f64 - baseline_metrics.memory_usage_bytes as f64) 
+                    let memory_change = (metrics.memory_usage_bytes as f64 - baseline_metrics.memory_usage_bytes as f64)
                         / baseline_metrics.memory_usage_bytes as f64 * 100.0;
-                    
+
                     if memory_change > self.config.alert_thresholds.memory_usage_threshold {
                         alerts.push(PerformanceAlert {
                             alert_id: format!("memory-{}-{}", component_name, snapshot.timestamp),
@@ -496,7 +498,7 @@ impl AutomatedMonitor {
     /// Send alert through configured channels
     async fn send_alert(&self, alert: &PerformanceAlert) {
         println!("🚨 ALERT [{}]: {}", alert.severity, alert.message);
-        
+
         for channel in &self.config.alert_channels {
             match channel {
                 AlertChannel::Console => {
@@ -537,46 +539,46 @@ impl AutomatedMonitor {
     /// Generate performance recommendations
     fn generate_performance_recommendations(&self, component_name: &str, degradation_percent: f64) -> Vec<String> {
         let mut recommendations = Vec::new();
-        
+
         recommendations.push(format!(
             "Performance degradation of {:.1}% detected for {} component",
             degradation_percent, component_name
         ));
-        
+
         if degradation_percent > 20.0 {
             recommendations.push("Consider optimizing component rendering logic".to_string());
             recommendations.push("Review component lifecycle and state management".to_string());
             recommendations.push("Check for unnecessary re-renders".to_string());
         }
-        
+
         if degradation_percent > 10.0 {
             recommendations.push("Profile component performance with browser dev tools".to_string());
             recommendations.push("Consider implementing memoization".to_string());
         }
-        
+
         recommendations
     }
 
     /// Generate memory recommendations
     fn generate_memory_recommendations(&self, component_name: &str, memory_increase_percent: f64) -> Vec<String> {
         let mut recommendations = Vec::new();
-        
+
         recommendations.push(format!(
             "Memory usage increased by {:.1}% for {} component",
             memory_increase_percent, component_name
         ));
-        
+
         if memory_increase_percent > 30.0 {
             recommendations.push("Check for memory leaks in component cleanup".to_string());
             recommendations.push("Review component state and signal management".to_string());
             recommendations.push("Consider implementing proper resource disposal".to_string());
         }
-        
+
         if memory_increase_percent > 15.0 {
             recommendations.push("Profile memory usage with browser dev tools".to_string());
             recommendations.push("Review component lifecycle hooks".to_string());
         }
-        
+
         recommendations
     }
 
@@ -590,7 +592,7 @@ impl AutomatedMonitor {
     async fn cleanup_old_metrics(&self, history: &mut Vec<PerformanceSnapshot>) {
         let cutoff_time = SystemTime::now().duration_since(UNIX_EPOCH)
             .unwrap_or_default() - self.config.retention_period;
-        
+
         history.retain(|snapshot| snapshot.timestamp > cutoff_time.as_secs());
     }
 
@@ -605,7 +607,7 @@ impl AutomatedMonitor {
         } else {
             40.0
         };
-        
+
         let memory_score = if metrics.memory_usage_bytes < 1024 * 1024 {
             100.0 // < 1MB
         } else if metrics.memory_usage_bytes < 5 * 1024 * 1024 {
@@ -615,9 +617,9 @@ impl AutomatedMonitor {
         } else {
             40.0
         };
-        
+
         let success_score = metrics.success_rate * 100.0;
-        
+
         (render_score + memory_score + success_score) / 3.0
     }
 
@@ -626,92 +628,92 @@ impl AutomatedMonitor {
         if component_metrics.is_empty() {
             return 0.0;
         }
-        
+
         let total_score: f64 = component_metrics.values()
             .map(|metrics| metrics.performance_score)
             .sum();
-        
+
         total_score / component_metrics.len() as f64
     }
 
     // Simulation methods (would be replaced with actual monitoring in production)
-    
+
     async fn simulate_render_time(&self, _component: &str) -> f64 {
         // Simulate render time with some variation
         use rand::Rng;
-        let mut rng = rand::thread_rng();
-        rng.gen_range(10.0..50.0)
+        let mut rng = rand::rng();
+        rng.random_range(10.0..50.0)
     }
-    
+
     async fn simulate_memory_usage(&self, _component: &str) -> u64 {
         use rand::Rng;
-        let mut rng = rand::thread_rng();
-        rng.gen_range(1024..10240) // 1KB to 10KB
+        let mut rng = rand::rng();
+        rng.random_range(1024..10240) // 1KB to 10KB
     }
-    
+
     async fn simulate_bundle_size(&self, _component: &str) -> u64 {
         use rand::Rng;
-        let mut rng = rand::thread_rng();
-        rng.gen_range(1024..5120) // 1KB to 5KB
+        let mut rng = rand::rng();
+        rng.random_range(1024..5120) // 1KB to 5KB
     }
-    
+
     async fn simulate_error_count(&self, _component: &str) -> u32 {
         use rand::Rng;
-        let mut rng = rand::thread_rng();
-        rng.gen_range(0..5)
+        let mut rng = rand::rng();
+        rng.random_range(0..5)
     }
-    
+
     async fn simulate_success_rate(&self, _component: &str) -> f64 {
         use rand::Rng;
-        let mut rng = rand::thread_rng();
-        rng.gen_range(0.95..1.0)
+        let mut rng = rand::rng();
+        rng.random_range(0.95..1.0)
     }
-    
+
     async fn get_system_memory_usage(&self) -> u64 {
         // Would use actual system monitoring
         1024 * 1024 * 100 // 100MB
     }
-    
+
     async fn get_cpu_usage(&self) -> f64 {
         // Would use actual system monitoring
         25.0 // 25%
     }
-    
+
     async fn get_active_connections(&self) -> u32 {
         // Would use actual system monitoring
         10
     }
-    
+
     async fn get_request_rate(&self) -> f64 {
         // Would use actual system monitoring
         5.0 // 5 requests/second
     }
-    
+
     async fn get_error_rate(&self) -> f64 {
         // Would use actual system monitoring
         0.1 // 0.1 errors/second
     }
-    
+
     async fn write_alert_to_file(&self, alert: &PerformanceAlert, path: &str) -> Result<(), std::io::Error> {
         let alert_json = serde_json::to_string_pretty(alert)?;
         std::fs::write(path, alert_json)?;
         Ok(())
     }
-    
+
     async fn send_webhook_alert(&self, alert: &PerformanceAlert, url: &str) -> Result<(), Box<dyn std::error::Error>> {
         let client = reqwest::Client::new();
         let response = client.post(url)
             .json(alert)
             .send()
             .await?;
-        
+
         if !response.status().is_success() {
             return Err(format!("Webhook request failed with status: {}", response.status()).into());
         }
-        
+
         Ok(())
     }
-    
+
     async fn send_email_alert(&self, _alert: &PerformanceAlert, _recipients: &[String]) -> Result<(), Box<dyn std::error::Error>> {
         // Would integrate with email service
         println!("📧 Email alert would be sent to: {:?}", _recipients);
@@ -756,7 +758,7 @@ mod tests {
     async fn test_automated_monitor_creation() {
         let config = MonitoringConfig::default();
         let monitor = AutomatedMonitor::new(config);
-        
+
         // Test that monitor is created successfully
         assert!(*monitor.is_monitoring.read().await);
     }
@@ -765,7 +767,7 @@ mod tests {
     async fn test_alert_severity_determination() {
         let config = MonitoringConfig::default();
         let monitor = AutomatedMonitor::new(config);
-        
+
         assert_eq!(monitor.determine_alert_severity(5.0), AlertSeverity::Low);
         assert_eq!(monitor.determine_alert_severity(15.0), AlertSeverity::Medium);
         assert_eq!(monitor.determine_alert_severity(30.0), AlertSeverity::High);
@@ -776,7 +778,7 @@ mod tests {
     fn test_performance_score_calculation() {
         let config = MonitoringConfig::default();
         let monitor = AutomatedMonitor::new(config);
-        
+
         let metrics = ComponentMetrics {
             component_name: "test".to_string(),
             render_time_ms: 10.0,
@@ -786,7 +788,7 @@ mod tests {
             success_rate: 1.0,
             performance_score: 0.0,
         };
-        
+
         let score = monitor.calculate_performance_score(&metrics);
         assert!(score > 90.0); // Should be high score for good metrics
     }

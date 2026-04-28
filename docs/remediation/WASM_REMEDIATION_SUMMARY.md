@@ -158,7 +158,7 @@ uuid = { version = "1.0", features = ["v4", "js"] }
 leptos = { workspace = true }
 
 # ✅ ADDED: WASM-compatible random generation
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }
 
 [features]
 default = []

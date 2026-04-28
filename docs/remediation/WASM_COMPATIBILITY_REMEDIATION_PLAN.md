@@ -66,7 +66,7 @@ leptos = { workspace = true }
 # tempfile = "3.0"  # File system operations not available in WASM
 
 # ✅ ADDED: WASM-compatible alternatives
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }
 
 [features]
 default = ["wasm-testing"]
@@ -187,7 +187,7 @@ wasm-bindgen = "0.2"
 web-sys = "0.3"
 js-sys = "0.3"
 console_error_panic_hook = "0.1"
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }
 uuid = { version = "1.0", features = ["v4", "js"] }
 
 # Essential components only (no testing utilities)
@@ -425,7 +425,7 @@ leptos-shadcn-ui-wasm = "0.9.0"
 [dependencies]
 # Add WASM-compatible features
 uuid = { version = "1.0", features = ["v4", "js"] }
-getrandom = { version = "0.2", features = ["js"] }
+getrandom = { version = "0.4", features = ["wasm_js"] }
 ```
 
 3. **Update Test Configuration:**

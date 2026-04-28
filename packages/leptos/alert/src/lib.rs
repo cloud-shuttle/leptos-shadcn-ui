@@ -9,6 +9,8 @@ pub use new_york::{Alert as AlertNewYork, AlertTitle as AlertTitleNewYork, Alert
 
 mod tests;
 
+#[cfg(test)]
+#[cfg(test)]
 mod tdd_tests;
 
 // Signal-managed exports
